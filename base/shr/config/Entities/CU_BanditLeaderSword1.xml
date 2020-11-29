@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_LeaderOutlaw1</Model>
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>CU_LeaderOutlaw1_Walk</Anim>
+		  <Anim>CU_LeaderOutlaw1_Run1</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle1</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle2</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle3</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle4</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle5</Anim>
+		  <Anim>CU_LeaderOutlaw1_Idle6</Anim>
+		  <Anim>CU_LeaderOutlaw1_IdleAttack1</Anim>
+		  <Anim>CU_LeaderOutlaw1_Attack1</Anim>
+		  <Anim>CU_LeaderOutlaw1_Attack2</Anim>
+		  <Anim>CU_LeaderOutlaw1_Finish</Anim>
+		  <Anim>CU_LeaderOutlaw1_Hit</Anim>		
+		  <Anim>CU_LeaderOutlaw1_Dying1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>	
+		  <MaxHealth>200</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+		<Cost>
+			<Gold>200</Gold>
+			<Iron>30</Iron>
+			<Wood/>
+		</Cost>
+        <Category>Military</Category>
+		<Category>Leader</Category>
+		<Category>Sword</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>20</Exploration>		
+		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorAmount>2</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>30</ExperiencePoints>
+    	<Upgrade>                       
+    	   <Category>LeaderBandit</Category>
+    	    <Type>CU_BanditLeaderSword2</Type> 
+        </Upgrade>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <AnimSet>SET_CU_LEADEROUTLAW1</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+			  <HomeRadius>1500</HomeRadius>
+			  <SoldierType>CU_BanditSoldierSword1</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_LeaderOutlaw1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_LeaderOutlaw1_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_LeaderOutlaw1_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_LeaderOutlaw1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_LeaderOutlaw1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_LeaderOutlaw1_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_LeaderOutlaw1_Run1</BattleWalkAnim>
+	        <HitAnim>CU_LeaderOutlaw1_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>12</DamageAmount>	        
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2000</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
+	        
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_LEADER_SOLDIER</Type>
+                <Limit>8</Limit>
+            </Attachment>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+</root>

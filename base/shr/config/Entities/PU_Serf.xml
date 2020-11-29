@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Serf</Model> 
+          <Model2>PU_SerfHammer</Model2>
+          <Model3>PU_SerfPickax</Model3>
+          <Model4>PU_SerfAxe</Model4>
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>PU_Serf_Walk</Anim>
+		  <Anim>PU_Serf_Run</Anim>
+		  <Anim>PU_Serf_Idle1</Anim>
+		  <Anim>PU_Serf_Idle2</Anim>
+		  <Anim>PU_Serf_Idle3</Anim>
+		  <Anim>PU_Serf_Idle4</Anim>
+		  <Anim>PU_Serf_Idle5</Anim>
+		  <Anim>PU_Serf_Attack1</Anim>
+		  <Anim>PU_Serf_Dying</Anim>
+		  <Anim>PU_SerfHammer_Work1</Anim>
+		  <Anim>PU_SerfHammer_Work2</Anim>		
+		  <Anim>PU_SerfHammer_Walk</Anim>		
+		  <Anim>PU_SerfHammer_Run1</Anim>	
+		
+		  <Anim>PU_SerfPickax_Walk</Anim>
+		  <Anim>PU_SerfPickax_Run1</Anim>
+		  <Anim>PU_SerfPickax_Work1</Anim>
+		  <Anim>PU_SerfPickax_Idle1</Anim>
+		
+		  <Anim>PU_SerfAxe_Idle1</Anim>
+		  <Anim>PU_SerfAxe_Walk</Anim>
+		  <Anim>PU_SerfAxe_Run1</Anim>
+		  <Anim>PU_SerfAxe_Work1</Anim>
+		  
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>
+		  <MaxHealth> 200 </MaxHealth>
+		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorAmount>0</ArmorAmount>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Category>Serf</Category>
+        <Hat/>
+        <Cost>
+			  <Gold>50</Gold>
+        </Cost>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <RepairFactor>0.3</RepairFactor>
+		  <Exploration>24</Exploration>		
+		  
+		  <ModifyExploration>
+			  <Technology>T_Tracking</Technology>			
+        </ModifyExploration>
+        
+        
+			<!--Armor modifier-->
+        	<ModifyArmor>
+        		<Technology>T_Loom</Technology>
+        	</ModifyArmor>
+        	<!-- Speed Modifier-->
+        	<ModifySpeed>
+        		<Technology>T_Shoes</Technology>
+        	</ModifySpeed>
+        
+        <IdleTaskList>TL_SERF_IDLE</IdleTaskList>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+		
+    <!-- animation to be used when entity is suspended -->
+			  <SuspensionAnimation>PU_Serf_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_SERF</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_SERF_WALK</MoveTaskList> 
+			  <MoveIdleAnim>PU_Serf_Idle1</MoveIdleAnim>
+      <!-- used when buying a serf! -->
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+    <!-- this is required so the serf can be told to move around -->
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CSerfBehaviorProps">
+			  <Class>GGL::CSerfBehavior</Class>
+            <ApproachConstructionSiteTaskList>TL_SERF_GO_TO_CONSTRUCTION_SITE</ApproachConstructionSiteTaskList>
+            <TurnIntoBattleSerfTaskList>TL_SERF_TURN_INTO_BATTLE_SERF</TurnIntoBattleSerfTaskList>
+            <ResourceSearchRadius>4500</ResourceSearchRadius>
+            
+            <ExtractionInfo>
+                <ResourceEntityType>XD_Iron1</ResourceEntityType>
+                <Delay>3</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>            
+            <ExtractionInfo>
+                <ResourceEntityType>XD_Clay1</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_Stone1</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_Stone_BlockPath</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_Sulfur1</ResourceEntityType>
+                <Delay>3</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>                  
+            <ExtractionInfo>
+                <ResourceEntityType>XD_ClayPit1</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_IronPit1</ResourceEntityType>
+                <Delay>3</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_StonePit1</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_SulfurPit1</ResourceEntityType>
+                <Delay>3</Delay>
+                <Amount>1</Amount>
+            </ExtractionInfo>
+            <ExtractionInfo>
+                <ResourceEntityType>XD_ResourceTree</ResourceEntityType>
+                <Delay>4</Delay>
+                <Amount>2</Amount>
+            </ExtractionInfo>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CSerfBattleBehaviorProps">
+			  <Class>GGL::CSerfBattleBehavior</Class>
+	        
+<!--
+	            The task list below is the one driving the battle behavior
+	        -->
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+           
+	        <NormalAttackAnim1>PU_Serf_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Serf_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Serf_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Serf_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Serf_Idle1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Serf_Idle1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Serf_Run</BattleWalkAnim>
+
+            
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>5</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        <BattleWaitUntil>2400</BattleWaitUntil>
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+
+			<HealingPoints>1</HealingPoints>
+			<HealingSeconds>10</HealingSeconds>
+		  </Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CCamperBehaviorProperties">
+			  <Class>GGL::CCamperBehavior</Class>
+			  <Range>5000</Range>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>200</BasePriority>
+	    </Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectAttachmentBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectAttachmentBehavior</Class>
+		</Display>
+	</Behavior>
+
+</root>

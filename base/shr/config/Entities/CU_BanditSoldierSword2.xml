@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_SoldierOutlaw1</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>CU_SoldierOutlaw1_Walk</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle1</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle2</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle3</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle4</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle5</Anim>
+		  <Anim>CU_SoldierOutlaw1_Idle6</Anim>
+		  <Anim>CU_SoldierOutlaw1_IdleAttack1</Anim>
+		  <Anim>CU_SoldierOutlaw1_Dying1</Anim>
+		  <Anim>CU_SoldierOutlaw1_Attack1</Anim>
+		  <Anim>CU_SoldierOutlaw1_Attack2</Anim>
+		  <Anim>CU_SoldierOutlaw1_Finish</Anim>
+		  <Anim>CU_SoldierOutlaw1_Hit</Anim>
+		  <Anim>CU_SoldierOutlaw1_Run1</Anim>
+						
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>	
+		  <MaxHealth>150</MaxHealth>
+		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorAmount>3</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		<Cost>
+			<Gold>50</Gold>
+			<Iron>10</Iron>
+			<Wood/>
+		</Cost>
+        <Category>Military</Category>
+		<Category>Soldier</Category>
+		<Category>Sword</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>20</Exploration>
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>5</ExperiencePoints>
+    	<Upgrade>                       
+            <Category>SoldierBandit</Category>
+        </Upgrade>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <AnimSet>SET_CU_SOLDIEROUTLAW1</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_MILITARY_WALK</MoveTaskList>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+		  
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CSoldierBehaviorProps">
+			  <Class>GGL::CSoldierBehavior</Class>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <NormalAttackAnim1>CU_SoldierOutlaw1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_SoldierOutlaw1_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_SoldierOutlaw1_Attack2</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_SoldierOutlaw1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_SoldierOutlaw1_Attack1</MissAttackAnim> 
+	        <BattleIdleAnim>CU_SoldierOutlaw1_Idle1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_SoldierOutlaw1_Run1</BattleWalkAnim> 	        
+	        <HitAnim>CU_SoldierOutlaw1_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>12</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <MaxRange>200.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>1500</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CFormationBehaviorProperties">
+			  <Class>GGL::CFormationBehavior</Class>
+    		<IdleAnim>
+    		    <AnimID>CU_SoldierOutlaw1_Idle1</AnimID>
+    		    <Frequency>1</Frequency>
+    		</IdleAnim>		
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+</root>

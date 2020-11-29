@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\Interface"
   ],
+  "SelectedNode": "\\extra1",
   "PreviewInSolutionExplorer": false
 }
