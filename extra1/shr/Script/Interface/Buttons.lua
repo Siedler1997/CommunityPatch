@@ -627,12 +627,13 @@ end
 gvInterface_LastSerfID = 0
 
 function GUIAction_FindIdleSerf(_OnlyIdleSerfs)
-	
 	local PlayerID = GUI.GetPlayerID()	
 	local CurrentSerfID = Logic.GetNextIdleSerf(PlayerID, gvInterface_LastSerfID)	
 	local IdleSerfAmount = Logic.GetNumberOfIdleSerfs(PlayerID) 
 	
-	if IdleSerfAmount > 0 then
+	if (_OnlyIdleSerfs == nil and IdleSerfAmount == 0) or XGUIEng.IsModifierPressed( Keys.ModifierAlt ) == 1 then
+		KeyBindings_SelectUnit(UpgradeCategories.Serf,0)
+	else
 		if CurrentSerfID ~= 0 then		
 			if XGUIEng.IsModifierPressed( Keys.ModifierShift ) == 0 then
 				GUI.ClearSelection()
@@ -646,10 +647,7 @@ function GUIAction_FindIdleSerf(_OnlyIdleSerfs)
 			
 			GUI.SelectEntity( CurrentSerfID )	
 		end
-			
 		gvInterface_LastSerfID = CurrentSerfID
-	elseif _OnlyIdleSerfs == nil and IdleSerfAmount == 0 then
-		KeyBindings_SelectUnit(UpgradeCategories.Serf,0)
 	end
 end
 

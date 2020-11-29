@@ -116,19 +116,28 @@ function GameCallback_GUI_SelectionChanged()
 		
 		--Display Military Unit container
 		XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionMilitaryUnit,1)
-		
+			
+		XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
+
 		if Logic.IsEntityInCategory(EntityId,EntityCategories.Military) == 1 and Logic.IsHero(EntityId) == 0 then
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionLeader,1)
 		end
 		
 		if EntityType == Entities.PU_BattleSerf  then
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,1)	
-			XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,0)
-			XGUIEng.ShowWidget("Commands_Leader",0)
+			XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
+			--XGUIEng.ShowWidget("Commands_Leader",0)
 		else
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,0)
-			XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
+			--XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
+		end
+
+		if Logic.IsHero(EntityId) == 0 then
+			XGUIEng.ShowWidget("Command_Expel",1)
 			XGUIEng.ShowWidget("Commands_Leader",1)
+		else
+			XGUIEng.ShowWidget("Command_Expel",0)
+			XGUIEng.ShowWidget("Commands_Leader",0)
 		end
 		
 		--Scout and Thief
@@ -199,14 +208,13 @@ function GameCallback_GUI_SelectionChanged()
 				
 				end
 			else
-			--disbale Buy soldier Area for cannons
-				if Logic.IsEntityInCategory(EntityId,EntityCategories.Cannon) == 1 
-				or EntityType == Entities.PU_BattleSerf 
-				or EntityType == Entities.PU_Scout 
-				or EntityType == Entities.PU_Thief then
+			--disbale Buy soldier Area for units without possible soldier
+				if Logic.LeaderGetMaxNumberOfSoldiers(EntityId) == 0 then
 					XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldierArea ,0)
+					--XGUIEng.ShowWidget("Commands_Leader",0)
 				else
-					XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldierArea ,1)		
+					XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldierArea ,1)
+					--XGUIEng.ShowWidget("Commands_Leader",1)		
 				end
 				--XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldier,1)
 				
