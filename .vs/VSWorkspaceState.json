@@ -1,11 +1,19 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base",
+    "\\base\\shr",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\Script\\MapTools",
     "\\extra1",
     "\\extra1\\shr",
     "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface"
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\script",
+    "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\extra1",
+  "SelectedNode": "\\base\\shr\\Script\\MapTools\\Comfort.lua",
   "PreviewInSolutionExplorer": false
 }

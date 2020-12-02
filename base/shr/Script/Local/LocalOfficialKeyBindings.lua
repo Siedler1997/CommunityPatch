@@ -253,10 +253,12 @@ end
 -- Show/Hide Interface
 --------------------------------------------------------------------------------
 function KeyBindings_FreeCamState()
-	if XGUIEng.IsWidgetShown("Normal") == 1 then
-		XGUIEng.ShowWidget("Normal",0)
-	else
-		XGUIEng.ShowWidget("Normal",1)
+	if IsBriefingActive == nil or not IsBriefingActive() then
+		if XGUIEng.IsWidgetShown("Normal") == 1 then
+			XGUIEng.ShowWidget("Normal",0)
+		else
+			XGUIEng.ShowWidget("Normal",1)
+		end
 	end
 end
 

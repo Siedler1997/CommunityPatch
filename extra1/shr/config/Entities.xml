@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+	<Logic>
+		<DefaultWalkSpeed>240</DefaultWalkSpeed>
+	</Logic>
+
+	<!-- ********************************************
+	   PLAYERBUILDINGS
+	************************************************-->
+
+		<Entity>PB_Farm1</Entity>
+		<Entity>PB_Farm2</Entity>
+		<Entity>PB_Farm3</Entity>
+		<Entity>PB_Headquarters1</Entity>
+        <Entity>PB_Headquarters2</Entity>
+        <Entity>PB_Headquarters3</Entity>
+		<Entity>PB_Residence1</Entity>
+		<Entity>PB_Residence2</Entity>
+		<Entity>PB_Residence3</Entity>
+        <Entity>PB_GenericMine</Entity>
+        <Entity>PB_IronMine1</Entity>
+		<Entity>PB_IronMine2</Entity>
+		<Entity>PB_IronMine3</Entity>
+		<Entity>PB_StoneMine1</Entity>
+		<Entity>PB_StoneMine2</Entity>
+		<Entity>PB_StoneMine3</Entity>
+		<Entity>PB_SulfurMine1</Entity>
+		<Entity>PB_SulfurMine2</Entity>
+		<Entity>PB_SulfurMine3</Entity>
+		<Entity>PB_ClayMine1</Entity>
+		<Entity>PB_ClayMine2</Entity>
+		<Entity>PB_ClayMine3</Entity>
+
+	   	<Entity>PB_Brickworks1</Entity>
+	   	<Entity>PB_Brickworks2</Entity>
+
+	   	<Entity>PB_Sawmill1</Entity>
+	   	<Entity>PB_Sawmill2</Entity>
+
+	   	<Entity>PB_Outpost1</Entity>
+	   	<Entity>PB_Outpost2</Entity>
+	   	<Entity>PB_Outpost3</Entity>
+
+
+		<Entity>PB_Blacksmith1</Entity>
+		<Entity>PB_Blacksmith2</Entity>
+		<Entity>PB_Blacksmith3</Entity>
+		<Entity>PB_VillageCenter1</Entity>
+		<Entity>PB_VillageCenter2</Entity>
+		<Entity>PB_VillageCenter3</Entity>
+		<Entity>PB_Market1</Entity>
+		<Entity>PB_Market2</Entity>
+		<Entity>PB_University1</Entity>
+		<Entity>PB_University2</Entity>
+		<Entity>PB_Monastery1</Entity>
+		<Entity>PB_Monastery2</Entity>
+		<Entity>PB_Monastery3</Entity>
+        <Entity>PB_Barracks1</Entity>
+        <Entity>PB_Barracks2</Entity>
+
+		<Entity>PB_Weathermachine</Entity>
+		<Entity>PB_Weathermachine_Activated</Entity>
+		<Entity>PB_WeatherTower1</Entity>
+		<Entity>PB_PowerPlant1</Entity>
+		<Entity>PB_Archery1</Entity>
+		<Entity>PB_Archery2</Entity>
+		<Entity>PB_Alchemist1</Entity>
+		<Entity>PB_Alchemist2</Entity>
+		<Entity>PB_Bank1</Entity>
+		<Entity>PB_Bank2</Entity>
+		<Entity>PB_StoneMason1</Entity>
+		<Entity>PB_StoneMason2</Entity>
+		<Entity>PB_Foundry1</Entity>
+		<Entity>PB_Foundry2</Entity>
+		<Entity>PB_Stable1</Entity>
+		<Entity>PB_Stable2</Entity>
+
+		<Entity>PB_Tower1</Entity>
+		<Entity>PB_Tower2</Entity>
+		<Entity>PB_Tower2_Ballista</Entity>
+		<Entity>PB_Tower3</Entity>
+		<Entity>PB_Tower3_Cannon</Entity>
+
+		<Entity>PB_DarkTower1</Entity>
+		<Entity>PB_DarkTower2</Entity>
+		<Entity>PB_DarkTower2_Ballista</Entity>
+		<Entity>PB_DarkTower3</Entity>
+		<Entity>PB_DarkTower3_Cannon</Entity>
+
+		<Entity>PB_Beautification01</Entity>
+		<Entity>PB_Beautification02</Entity>
+		<Entity>PB_Beautification03</Entity>
+		<Entity>PB_Beautification04</Entity>
+		<Entity>PB_Beautification05</Entity>
+		<Entity>PB_Beautification06</Entity>
+		<Entity>PB_Beautification07</Entity>
+		<Entity>PB_Beautification08</Entity>
+		<Entity>PB_Beautification09</Entity>
+		<Entity>PB_Beautification10</Entity>
+		<Entity>PB_Beautification11</Entity>
+		<Entity>PB_Beautification12</Entity>
+
+
+	<!-- ********************************************
+	   COMPUTERPLAYERBUILDINGS
+	************************************************-->
+
+		<Entity>CB_Castle1</Entity>
+		<Entity>CB_Castle2</Entity>
+        <Entity>CB_MonasteryBuildingSite1</Entity>
+		<Entity>CB_MinerCamp1</Entity>
+		<Entity>CB_MinerCamp2</Entity>
+		<Entity>CB_MinerCamp3</Entity>
+		<Entity>CB_MinerCamp4</Entity>
+		<Entity>CB_MinerCamp5</Entity>
+		<Entity>CB_MinerCamp6</Entity>
+		<Entity>CB_Abbey01</Entity>
+		<Entity>CB_Abbey02</Entity>
+		<Entity>CB_Abbey03</Entity>
+		<Entity>CB_Abbey04</Entity>
+		<Entity>CB_InventorsHut1</Entity>
+		<Entity>CB_HermitHut1</Entity>
+		<Entity>CB_Bastille1</Entity>
+		<Entity>CB_Mint1</Entity>
+		<Entity>CB_Camp01</Entity>
+        <Entity>CB_Camp02</Entity>
+		<Entity>CB_Camp03</Entity>
+		<Entity>CB_Camp04</Entity>
+		<Entity>CB_Camp05</Entity>
+		<Entity>CB_Camp06</Entity>
+		<Entity>CB_Camp07</Entity>
+		<Entity>CB_Camp08</Entity>
+		<Entity>CB_Camp09</Entity>
+		<Entity>CB_Camp10</Entity>
+		<Entity>CB_Camp11</Entity>
+		<Entity>CB_Camp12</Entity>
+		<Entity>CB_Camp13</Entity>
+        <Entity>CB_Camp14</Entity>
+		<Entity>CB_Camp15</Entity>
+		<Entity>CB_Camp16</Entity>
+		<Entity>CB_Camp17</Entity>
+		<Entity>CB_Camp18</Entity>
+		<Entity>CB_Camp19</Entity>
+		<Entity>CB_Camp20</Entity>
+		<Entity>CB_Camp21</Entity>
+		<Entity>CB_Camp22</Entity>
+		<Entity>CB_Camp23</Entity>
+		<Entity>CB_Camp24</Entity>
+		<Entity>CB_FolklungCastle</Entity>
+		<Entity>CB_KaloixCastle</Entity>
+		<Entity>CB_CleycourtCastle</Entity>
+		<Entity>CB_BarmeciaCastle</Entity>
+		<Entity>CB_CrawfordCastle</Entity>
+		<Entity>CB_OldKingsCastle</Entity>
+		<Entity>CB_OldKingsCastleRuin</Entity>
+		<Entity>CB_RobberyTower1</Entity>
+		<Entity>CB_DarkCastle</Entity>
+	<!-- ********************************************
+	   COMPUTERPLAYERUNITS
+	************************************************-->
+
+
+        <Entity>CU_BlackKnight_SoldierSword3</Entity>
+		<Entity>CU_BanditLeaderSword1</Entity>
+		<Entity>CU_BanditSoldierSword1</Entity>
+		<Entity>CU_BanditLeaderSword2</Entity>
+		<Entity>CU_BanditSoldierSword2</Entity>
+
+		<Entity>CU_BlackKnight_LeaderMace1</Entity>
+		<Entity>CU_BlackKnight_SoldierMace1</Entity>
+
+		<Entity>CU_BlackKnight_LeaderMace2</Entity>
+		<Entity>CU_BlackKnight_SoldierMace2</Entity>
+
+    	<Entity>CU_Barbarian_LeaderClub1</Entity>
+    	<Entity>CU_Barbarian_SoldierClub1</Entity>
+
+    	<Entity>CU_Barbarian_LeaderClub2</Entity>
+    	<Entity>CU_Barbarian_SoldierClub2</Entity>
+
+
+    	<!--Entity>CU_LeaderOutlaw1</Entity-->
+    	<Entity>CU_Serf</Entity>
+    	<Entity>CU_Johannes</Entity>
+    	<Entity>CU_SmelterIdle</Entity>
+    	<Entity>CU_AlchemistIdle</Entity>
+    	<Entity>CU_MinerIdle</Entity>
+    	<Entity>CU_GCScholar</Entity>
+    	<Entity>CU_GCBlackKnight</Entity>
+    	<Entity>CU_NPC_Major_Barmecia</Entity>
+    	<Entity>CU_NPC_Major_Cleycourt</Entity>
+		<Entity>CU_Trader</Entity>
+		<Entity>CU_Hermit</Entity>
+		<Entity>CU_Leonardo</Entity>
+		<Entity>CU_Princess</Entity>
+		<Entity>CU_Garek</Entity>
+		<Entity>CU_RegentDovbar</Entity>
+		<Entity>CU_BishopOfCrawford</Entity>
+    	<Entity>XD_GCPodium</Entity>
+
+	<!-- ********************************************
+	   UNITS
+	************************************************-->
+	<!--Civil Player Units-->
+        <Entity>PU_Farmer</Entity>
+        <Entity>PU_Miner</Entity>
+        <Entity>PU_Coiner</Entity>
+        <Entity>PU_Smith</Entity>
+		<Entity>PU_Serf</Entity>
+		<Entity>PU_Trader</Entity>
+		<Entity>PU_Scholar</Entity>
+		<Entity>PU_Priest</Entity>
+		<Entity>PU_Trader</Entity>
+		<Entity>PU_Alchemist</Entity>
+		<Entity>PU_Treasurer</Entity>
+		<Entity>PU_Stonecutter</Entity>
+		<Entity>PU_Smelter</Entity>
+		<Entity>PU_BrickMaker</Entity>
+		<Entity>PU_Sawmillworker</Entity>
+		<Entity>PU_Engineer</Entity>
+		<Entity>PU_Travelling_Salesman</Entity>
+	<!--Military Player Units -->
+	    <!--Special: battle serf (unit serf is turned into for alarm mode) -->
+	    <Entity>PU_BattleSerf</Entity>
+
+	    <!--Heroes and related (hero-specific) entities-->
+	    <Entity>PU_Hero1</Entity> <!-- Dario:   Exploration -->
+	    <Entity>PU_Hero1a</Entity> <!-- Dario: FIRST VERSION -->
+	    <Entity>PU_Hero1b</Entity> <!-- Dario: SECOND VERSION -->
+	    <Entity>PU_Hero1c</Entity> <!-- Dario: LAST VERSION -->
+	 	<Entity>PU_Hero1_Hawk</Entity> <!-- Dario's hawk for exploration -->
+
+        <Entity>PU_Hero2</Entity> <!-- Pilgrim: Bombs -->
+        <Entity>PU_Hero2_Foundation1</Entity>
+	 	<Entity>PU_Hero2_Cannon1</Entity>
+
+	 	<Entity>PU_Hero3</Entity> <!-- Salim:   Self shooting cannons -->
+	 	<Entity>PU_Hero3_Trap</Entity>
+	 	<Entity>PU_Hero3_TrapCannon</Entity>
+
+        <Entity>PU_Hero4</Entity>  <!-- Erec:   ????? -->
+
+        <Entity>PU_Hero5</Entity>  <!-- Ari:   ????? -->
+        <Entity>PU_Hero5_Outlaw</Entity>
+
+        <Entity>PU_Hero6</Entity>  <!-- Helias:   ????? -->
+
+
+        <Entity>CU_BlackKnight</Entity>
+
+        <Entity>CU_Mary_de_Mortfichet</Entity>
+
+        <Entity>CU_Barbarian_Hero</Entity>
+        <Entity>CU_Barbarian_Hero_wolf</Entity>
+
+        <!--Sword fighters -->
+        <Entity>PU_LeaderSword1</Entity>
+        <Entity>PU_LeaderSword2</Entity>
+        <Entity>PU_LeaderSword3</Entity>
+        <Entity>PU_LeaderSword4</Entity>
+
+		<Entity>PU_SoldierSword1</Entity>
+		<Entity>PU_SoldierSword2</Entity>
+        <Entity>PU_SoldierSword3</Entity>
+        <Entity>PU_SoldierSword4</Entity>
+        <!--Spear men -->
+        <Entity>PU_LeaderPoleArm1</Entity>
+        <Entity>PU_LeaderPoleArm2</Entity>
+        <Entity>PU_LeaderPoleArm3</Entity>
+        <Entity>PU_LeaderPoleArm4</Entity>
+
+        <Entity>PU_SoldierPoleArm1</Entity>
+        <Entity>PU_SoldierPoleArm2</Entity>
+        <Entity>PU_SoldierPoleArm3</Entity>
+        <Entity>PU_SoldierPoleArm4</Entity>
+
+        <!-- Bow men -->
+        <Entity>PU_LeaderBow1</Entity>
+        <Entity>PU_LeaderBow2</Entity>
+        <Entity>PU_LeaderBow3</Entity>
+        <Entity>PU_LeaderBow4</Entity>
+
+        <Entity>PU_SoldierBow1</Entity>
+        <Entity>PU_SoldierBow2</Entity>
+        <Entity>PU_SoldierBow3</Entity>
+        <Entity>PU_SoldierBow4</Entity>
+
+        <!-- Cavalry-->
+        <Entity>PU_LeaderCavalry1</Entity>
+        <Entity>PU_LeaderCavalry2</Entity>
+        <Entity>PU_LeaderHeavyCavalry1</Entity>
+        <Entity>PU_LeaderHeavyCavalry2</Entity>
+
+
+        <Entity>PU_SoldierCavalry1</Entity>
+        <Entity>PU_SoldierCavalry2</Entity>
+        <Entity>PU_SoldierHeavyCavalry1</Entity>
+        <Entity>PU_SoldierHeavyCavalry2</Entity>
+
+
+        <!-- Vehicles -->
+        <Entity>PV_Cannon1</Entity>
+        <Entity>PV_Cannon2</Entity>
+        <Entity>PV_Cannon3</Entity>
+        <Entity>PV_Cannon4</Entity>
+
+<!--	 ********************************************
+		   ANIMALS
+	************************************************
+-->
+		<Entity>XA_Rabbit</Entity>
+		<Entity>XA_Wolf</Entity>
+		<Entity>XA_SheepDog</Entity>
+		<Entity>XA_Deer</Entity>
+		<Entity>XA_Doe</Entity>
+<!--
+-->
+
+	<!-- ********************************************
+	   VEHICLES
+	************************************************-->
+<!--
+		<Entity>GVTradingShip</Entity>
+-->
+
+
+	<!-- ********************************************
+	   DOODADS
+	************************************************-->
+
+		<Entity>XD_Tree1</Entity>
+		<Entity>XD_Tree2</Entity>
+		<Entity>XD_Tree3</Entity>
+		<Entity>XD_Tree4</Entity>
+		<Entity>XD_Tree5</Entity>
+		<Entity>XD_Tree6</Entity>
+		<Entity>XD_Tree7</Entity>
+		<Entity>XD_Tree8</Entity>
+		<Entity>XD_Fir1</Entity>
+		<Entity>XD_Fir2</Entity>
+		<Entity>XD_Pine1</Entity>
+		<Entity>XD_Pine2</Entity>
+		<Entity>XD_Pine3</Entity>
+		<Entity>XD_Pine4</Entity>
+		<Entity>XD_Pine5</Entity>
+		<Entity>XD_Pine6</Entity>
+		<Entity>XD_Cypress1</Entity>
+		<Entity>XD_Cypress2</Entity>
+		<Entity>XD_OrangeTree1</Entity>
+		<Entity>XD_OrangeTree2</Entity>
+		<Entity>XD_AppleTree1</Entity>
+		<Entity>XD_AppleTree2</Entity>
+		<Entity>XD_OliveTree1</Entity>
+		<Entity>XD_OliveTree2</Entity>
+		<Entity>XD_DarkTree1</Entity>
+		<Entity>XD_DarkTree2</Entity>
+		<Entity>XD_DarkTree3</Entity>
+		<Entity>XD_DarkTree4</Entity>
+		<Entity>XD_DarkTree5</Entity>
+		<Entity>XD_DarkTree6</Entity>
+		<Entity>XD_DarkTree7</Entity>
+		<Entity>XD_DarkTree8</Entity>
+		<Entity>XD_TreeEvelance1</Entity>
+
+		<Entity>XD_Sulfur1</Entity>
+		<Entity>XD_Iron1</Entity>
+		<Entity>XD_Stone1</Entity>
+		<Entity>XD_Stone_BlockPath</Entity>
+		<Entity>XD_Clay1</Entity>
+
+		<Entity>XD_SulfurPit1</Entity>
+		<Entity>XD_IronPit1</Entity>
+		<Entity>XD_StonePit1</Entity>
+		<Entity>XD_ClayPit1</Entity>
+
+		<Entity>XD_ClosedIronPit1</Entity>
+		<Entity>XD_ClosedStonePit1</Entity>
+		<Entity>XD_ClosedSulfurPit1</Entity>
+		<Entity>XD_ClosedClayPit1</Entity>
+
+        <Entity>XD_VillageCenter</Entity>
+
+		<Entity>XD_PlantDecal1</Entity>
+		<Entity>XD_PlantDecal2</Entity>
+		<Entity>XD_PlantDecal3</Entity>
+		<Entity>XD_PlantDecal4</Entity>
+		<Entity>XD_PlantDecalLarge1</Entity>
+		<Entity>XD_PlantDecalLarge2</Entity>
+		<Entity>XD_PlantDecalLarge3</Entity>
+		<Entity>XD_PlantDecalLarge4</Entity>
+		<Entity>XD_PlantDecalLarge5</Entity>
+
+        <Entity>XD_Greenery1</Entity>
+		<Entity>XD_Greenery2</Entity>
+		<Entity>XD_Greenery3</Entity>
+		<Entity>XD_Greenery4</Entity>
+        <Entity>XD_GreeneryVertical1</Entity>
+        <Entity>XD_GreeneryVertical2</Entity>
+        <Entity>XD_GreeneryBush1</Entity>
+        <Entity>XD_GreeneryBush2</Entity>
+        <Entity>XD_GreeneryBush3</Entity>
+        <Entity>XD_GreeneryBush4</Entity>
+        <Entity>XD_GreeneryBush5</Entity>
+        <Entity>XD_GreeneryBushHigh1</Entity>
+        <Entity>XD_GreeneryBushHigh2</Entity>
+        <Entity>XD_GreeneryBushHigh3</Entity>
+        <Entity>XD_GreeneryBushHigh4</Entity>
+		<Entity>XD_Bush1</Entity>
+		<Entity>XD_Bush2</Entity>
+		<Entity>XD_Bush3</Entity>
+		<Entity>XD_Bush4</Entity>
+		<Entity>XD_Corn1</Entity>
+		<Entity>XD_Plant1</Entity>
+		<Entity>XD_Plant2</Entity>
+		<Entity>XD_Plant3</Entity>
+		<Entity>XD_Plant4</Entity>
+		<Entity>XD_Plant5</Entity>
+		<Entity>XD_Plant6</Entity>
+		<Entity>XD_Rock1</Entity>
+		<Entity>XD_Rock2</Entity>
+		<Entity>XD_Rock3</Entity>
+		<Entity>XD_Rock4</Entity>
+		<Entity>XD_Rock5</Entity>
+		<Entity>XD_Rock6</Entity>
+		<Entity>XD_Rock7</Entity>
+		<Entity>XD_RockMedium1</Entity>
+		<Entity>XD_RockMedium2</Entity>
+		<Entity>XD_RockMedium3</Entity>
+		<Entity>XD_RockMedium4</Entity>
+		<Entity>XD_RockMedium5</Entity>
+		<Entity>XD_RockMedium6</Entity>
+		<Entity>XD_RockMedium7</Entity>
+		<Entity>XD_RockGrass2</Entity>
+		<Entity>XD_RockGrass3</Entity>
+		<Entity>XD_RockGrass4</Entity>
+		<Entity>XD_RockGrass5</Entity>
+		<Entity>XD_RockKhakiMedium1</Entity>
+		<Entity>XD_RockKhakiMedium2</Entity>
+		<Entity>XD_RockKhakiMedium3</Entity>
+		<Entity>XD_RockKhakiMedium4</Entity>
+		<Entity>XD_RockKhakiMedium5</Entity>
+		<Entity>XD_RockKhakiMedium6</Entity>
+		<Entity>XD_RockKhakiMedium7</Entity>
+		<Entity>XD_RockKhakiBright1</Entity>
+		<Entity>XD_RockKhakiBright2</Entity>
+		<Entity>XD_RockKhakiBright3</Entity>
+		<Entity>XD_RockKhakiBright4</Entity>
+		<Entity>XD_RockKhakiBright5</Entity>
+		<Entity>XD_RockKhakiBright6</Entity>
+		<Entity>XD_RockKhakiBright7</Entity>
+		<Entity>XD_Cliff1</Entity>
+		<Entity>XD_Cliff2</Entity>
+		<Entity>XD_CliffBright1</Entity>
+		<Entity>XD_CliffBright2</Entity>
+		<Entity>XD_CliffBright3</Entity>
+		<Entity>XD_CliffBright4</Entity>
+		<Entity>XD_CliffBright5</Entity>
+		<Entity>XD_CliffGrey1</Entity>
+		<Entity>XD_CliffGrey2</Entity>
+		<Entity>XD_CliffSteepBright01</Entity>
+		<Entity>XD_CliffSteepBright02</Entity>
+        <Entity>XD_Tree1_small</Entity>
+		<Entity>XD_Tree2_small</Entity>
+		<Entity>XD_Tree3_small</Entity>
+		<Entity>XD_Fir1_small</Entity>
+		<Entity>XD_Fir2_small</Entity>
+		<Entity>XD_Leaves</Entity>
+		<Entity>XD_DeadTree01</Entity>
+		<Entity>XD_DeadTree02</Entity>
+		<Entity>XD_DeadTree03</Entity>
+		<Entity>XD_DeadTree04</Entity>
+		<Entity>XD_DeadTree05</Entity>
+		<Entity>XD_DeadTree06</Entity>
+		<Entity>XD_Reed1</Entity>
+		<Entity>XD_Camp</Entity>
+		<Entity>XD_Camp_Internal</Entity>
+		<Entity>XD_LargeCampFire</Entity>
+		<Entity>XD_Torch</Entity>
+		<Entity>XD_CaveEntry</Entity>
+		<Entity>XD_PalisadeGate1</Entity>
+		<Entity>XD_PalisadeGate2</Entity>
+		<Entity>XD_Palisade1</Entity>
+		<Entity>XD_Palisade2</Entity>
+		<Entity>XD_Palisade3</Entity>
+		<Entity>XD_WallStraight</Entity>
+		<Entity>XD_WallStraightGate</Entity>
+		<Entity>XD_WallStraightGate_Closed</Entity>
+		<Entity>XD_WallDistorted</Entity>
+		<Entity>XD_WallCorner</Entity>
+		<Entity>XD_DarkWallStraight</Entity>
+		<Entity>XD_DarkWallStraightGate</Entity>
+		<Entity>XD_DarkWallStraightGate_Closed</Entity>
+		<Entity>XD_DarkWallDistorted</Entity>
+		<Entity>XD_DarkWallCorner</Entity>
+	    <Entity>XD_Signpost1</Entity>
+        <Entity>XD_Signpost2</Entity>
+	    <Entity>XD_Signpost3</Entity>
+	    <Entity>XD_ChestOpen</Entity>
+	    <Entity>XD_ChestClose</Entity>
+	    <Entity>XD_Sparkles</Entity>
+        <Entity>XD_MiscBarrel1</Entity>
+        <Entity>XD_MiscBarrel2</Entity>
+        <Entity>XD_MiscBox1</Entity>
+        <Entity>XD_MiscBox2</Entity>
+        <Entity>XD_MiscChest1</Entity>
+        <Entity>XD_MiscChest2</Entity>
+        <Entity>XD_MiscChest3</Entity>
+        <Entity>XD_MiscTable1</Entity>
+        <Entity>XD_MiscTable2</Entity>
+        <Entity>XD_MiscQuiver1</Entity>
+	    <Entity>XD_MiscBank1</Entity>
+	    <Entity>XD_MiscPile1</Entity>
+	    <Entity>XD_MiscSack1</Entity>
+	    <Entity>XD_MiscSack2</Entity>
+	    <Entity>XD_MiscSmallSack1</Entity>
+	    <Entity>XD_MiscSmallSack2</Entity>
+	    <Entity>XD_MiscSmallSack3</Entity>
+	    <Entity>XD_MiscShield</Entity>
+	    <Entity>XD_MiscSword</Entity>
+	    <Entity>XD_MiscSwordShield</Entity>
+	    <Entity>XD_MiscBow</Entity>
+	    <Entity>XD_MiscAxeShield</Entity>
+	    <Entity>XD_MiscPoleArm</Entity>
+	    <Entity>XD_MiscTent1</Entity>
+		<Entity>XD_MiscTrolley1</Entity>
+		<Entity>XD_MiscTrolley2</Entity>
+		<Entity>XD_MiscTrolley3</Entity>
+		<Entity>XD_MiscHaybale1</Entity>
+		<Entity>XD_MiscHaybale2</Entity>
+		<Entity>XD_MiscHaybale3</Entity>
+        <Entity>XD_ChestOrb</Entity>
+		<Entity>XD_TreeNorth1</Entity>
+		<Entity>XD_TreeNorth2</Entity>
+		<Entity>XD_TreeNorth3</Entity>
+		<Entity>XD_DeadTreeNorth1</Entity>
+		<Entity>XD_DeadTreeNorth2</Entity>
+		<Entity>XD_DeadTreeNorth3</Entity>
+		<Entity>XD_Reed2</Entity>
+		<Entity>XD_Willow1</Entity>
+		<Entity>XD_PlantNorth1</Entity>
+		<Entity>XD_PlantNorth2</Entity>
+		<Entity>XD_PlantNorth3</Entity>
+		<Entity>XD_PlantNorth4</Entity>
+		<Entity>XD_PlantNorth5</Entity>
+		<Entity>XD_PlantNorth6</Entity>
+		<Entity>XD_PlantNorth7</Entity>
+		<Entity>XD_RockNorth1</Entity>
+		<Entity>XD_RockNorth2</Entity>
+		<Entity>XD_RockNorth3</Entity>
+		<Entity>XD_RockNorth4</Entity>
+		<Entity>XD_PineNorth1</Entity>
+		<Entity>XD_PineNorth2</Entity>
+		<Entity>XD_PineNorth3</Entity>
+		<Entity>XD_Waterfall1</Entity>
+		<Entity>XD_Waterfall2</Entity>
+		<Entity>XD_Waterfall3</Entity>
+		<Entity>XD_Waterfall4</Entity>
+		<Entity>XD_Waterfall5</Entity>
+
+
+		<Entity>XD_RockDestroyableMedium1</Entity>
+
+
+		<Entity>XD_Bomb1</Entity>
+		<Entity>XD_SnowBarrier1</Entity>
+		<Entity>XD_StandardLarge</Entity>
+		<Entity>XD_StandartePlayerColor</Entity>
+		<Entity>XD_ResourceTree</Entity>
+		<Entity>XD_TreeStump1</Entity>
+
+		<Entity>XD_CliffEvelance1</Entity>
+		<Entity>XD_CliffEvelance2</Entity>
+		<Entity>XD_CliffEvelance3</Entity>
+		<Entity>XD_CliffEvelance4</Entity>
+		<Entity>XD_CliffEvelance5</Entity>
+		<Entity>XD_DeadTreeEvelance1</Entity>
+		<Entity>XD_DeadTreeEvelance2</Entity>
+		<Entity>XD_DeadTreeEvelance3</Entity>
+		<Entity>XD_Tomb1</Entity>
+		<Entity>XD_Tomb2</Entity>
+		<Entity>XD_Tomb3</Entity>
+		<Entity>XD_Tomb4</Entity>
+		<Entity>XD_Tomb5</Entity>
+		<Entity>XD_Tomb6</Entity>
+		<Entity>XD_Tomb7</Entity>
+		<Entity>XD_Tomb8</Entity>
+		<Entity>XD_Grave1</Entity>
+		<Entity>XD_GraveComplete1</Entity>
+		<Entity>XD_GraveComplete2</Entity>
+		<Entity>XD_GraveComplete3</Entity>
+		<Entity>XD_GraveComplete4</Entity>
+		<Entity>XD_GraveComplete5</Entity>
+		<Entity>XD_GraveComplete6</Entity>
+		<Entity>XD_GraveComplete7</Entity>
+		<Entity>XD_IronGrid1</Entity>
+		<Entity>XD_IronGrid2</Entity>
+		<Entity>XD_IronGrid3</Entity>
+		<Entity>XD_IronGrid4</Entity>
+		<Entity>XD_BoneHuman1</Entity>
+		<Entity>XD_BoneHuman2</Entity>
+		<Entity>XD_BoneHuman3</Entity>
+		<Entity>XD_BoneHuman4</Entity>
+		<Entity>XD_BoneHuman5</Entity>
+		<Entity>XD_BoneHuman6</Entity>
+		<Entity>XD_BoneHuman7</Entity>
+		<Entity>XD_BoneHuman8</Entity>
+		<Entity>XD_BoneAnimal1</Entity>
+		<Entity>XD_BoneAnimal2</Entity>
+		<Entity>XD_BoneAnimal3</Entity>
+		<Entity>XD_BoneAnimal4</Entity>
+		<Entity>XD_BoneAnimal5</Entity>
+		<Entity>XD_BoneAnimal6</Entity>
+		<Entity>XD_BoneAnimal7</Entity>
+		<Entity>XD_DeadBush1</Entity>
+		<Entity>XD_DeadBush2</Entity>
+		<Entity>XD_DeadBush3</Entity>
+		<Entity>XD_DeadBush4</Entity>
+		<Entity>XD_DeadBush5</Entity>
+		<Entity>XD_DeadBush6</Entity>
+		<Entity>XD_RockDarkEvelance1</Entity>
+		<Entity>XD_RockDarkEvelance2</Entity>
+		<Entity>XD_RockDarkEvelance3</Entity>
+		<Entity>XD_RockDarkEvelance4</Entity>
+		<Entity>XD_RockDarkEvelance5</Entity>
+		<Entity>XD_RockDarkEvelance6</Entity>
+		<Entity>XD_RockDarkEvelance7</Entity>
+		<Entity>XD_GeyserEvelance1</Entity>
+
+		<Entity>XD_WaterPlant1</Entity>
+		<Entity>XD_WaterPlant2</Entity>
+		<Entity>XD_Reed3</Entity>
+		<Entity>XD_Reed4</Entity>
+		<Entity>XD_WaterLily1</Entity>
+		<Entity>XD_WaterLily2</Entity>
+
+		<Entity>XD_RuinResidence1</Entity>
+		<Entity>XD_RuinResidence2</Entity>
+		<Entity>XD_RuinTower1</Entity>
+		<Entity>XD_RuinTower2</Entity>
+		<Entity>XD_RuinHouse1</Entity>
+		<Entity>XD_RuinHouse2</Entity>
+		<Entity>XD_RuinMonastery1</Entity>
+		<Entity>XD_RuinMonastery2</Entity>
+		<Entity>XD_RuinSmallTower1</Entity>
+		<Entity>XD_RuinSmallTower2</Entity>
+		<Entity>XD_RuinSmallTower3</Entity>
+		<Entity>XD_RuinSmallTower4</Entity>
+		<Entity>XD_RuinWall1</Entity>
+		<Entity>XD_RuinWall2</Entity>
+		<Entity>XD_RuinWall3</Entity>
+		<Entity>XD_RuinWall4</Entity>
+		<Entity>XD_RuinWall5</Entity>
+		<Entity>XD_RuinWall6</Entity>
+		<Entity>XD_RuinFragment1</Entity>
+		<Entity>XD_RuinFragment2</Entity>
+		<Entity>XD_RuinFragment3</Entity>
+		<Entity>XD_RuinFragment4</Entity>
+		<Entity>XD_RuinFragment5</Entity>
+		<Entity>XD_RuinFragment6</Entity>
+
+		<Entity>XD_DroppedSword</Entity>
+		<Entity>XD_DroppedShield</Entity>
+		<Entity>XD_DroppedSwordShield</Entity>
+
+	    <Entity>XD_DroppedBow</Entity>
+	    <Entity>XD_DroppedAxeShield</Entity>
+	    <Entity>XD_DroppedPoleArm</Entity>
+
+	<!-- ********************************************
+	   Construction and upgarde sites
+	************************************************-->
+		<Entity>ZB_ConstructionSiteArchery1</Entity>
+		<Entity>ZB_ConstructionSiteBarracks1</Entity>
+		<Entity>ZB_ConstructionSiteBlacksmith1</Entity>
+		<Entity>ZB_ConstructionSiteFarm1</Entity>
+		<Entity>ZB_ConstructionSiteIronMine1</Entity>
+		<Entity>ZB_ConstructionSiteMarket1</Entity>
+		<Entity>ZB_ConstructionSiteMint1</Entity>
+		<Entity>ZB_ConstructionSiteMonastery1</Entity>
+		<Entity>ZB_ConstructionSiteResidence1</Entity>
+		<Entity>ZB_ConstructionSiteSilverMine1</Entity>
+		<Entity>ZB_ConstructionSiteStables1</Entity>
+		<Entity>ZB_ConstructionSiteStonemason1</Entity>
+		<Entity>ZB_ConstructionSiteStoneMine1</Entity>
+		<Entity>ZB_ConstructionSiteSulfurMine1</Entity>
+		<Entity>ZB_ConstructionSiteUniversity1</Entity>
+		<Entity>ZB_ConstructionSiteVillageCenter1</Entity>
+		<Entity>ZB_ConstructionSite1</Entity>
+		<Entity>ZB_ConstructionSite2</Entity>
+		<Entity>ZB_ConstructionSite3</Entity>
+		<Entity>ZB_ConstructionSite4</Entity>
+		<Entity>ZB_ConstructionSite5</Entity>
+		<Entity>ZB_ConstructionSiteTower1</Entity>
+
+		<Entity>ZB_UpgradeSite1</Entity>
+		<Entity>ZB_UpgradeSite2</Entity>
+		<Entity>ZB_UpgradeSite3</Entity>
+		<Entity>ZB_UpgradeSite4</Entity>
+		<Entity>ZB_UpgradeSite5</Entity>
+		<Entity>ZB_UpgradeSiteArchery1</Entity>
+		<Entity>ZB_UpgradeSiteBarracks1</Entity>
+		<Entity>ZB_UpgradeSiteBlacksmith1</Entity>
+		<Entity>ZB_UpgradeSiteFarm1</Entity>
+		<Entity>ZB_UpgradeSiteIronMine1</Entity>
+		<Entity>ZB_UpgradeSiteMarket1</Entity>
+		<Entity>ZB_UpgradeSiteMint1</Entity>
+		<Entity>ZB_UpgradeSiteMonastery1</Entity>
+		<Entity>ZB_UpgradeSiteResidence1</Entity>
+		<Entity>ZB_UpgradeSiteStables1</Entity>
+		<Entity>ZB_UpgradeSiteStonemason1</Entity>
+		<Entity>ZB_UpgradeSiteStoneMine1</Entity>
+		<Entity>ZB_UpgradeSiteSulfurMine1</Entity>
+		<Entity>ZB_UpgradeSiteUniversity1</Entity>
+		<Entity>ZB_UpgradeSiteVillageCenter1</Entity>
+		<Entity>ZB_UpgradeSiteTower1</Entity>
+
+	<!-- ********************************************
+	   DUMMIES
+	************************************************-->
+
+		<Entity>ZXBox100</Entity>
+
+	<!-- ********************************************
+	   Script Related Entities
+	************************************************-->
+
+		<Entity>XD_Explore10</Entity>
+		<Entity>XD_ScriptEntity</Entity>
+		<Entity>XD_BuildBlockScriptEntity</Entity>
+
+	<!-- ********************************************
+	   Sound Related Entities
+	************************************************-->
+		<Entity>XS_Ambient</Entity>
+
+	<!-- ********************************************
+	   Cutscene Related Entities
+	************************************************-->
+		<Entity>XD_CoordinateEntity</Entity>
+
+<!--	 ********************************************
+		   Extra 1
+	************************************************
+--><!-- NPC -->
+		<Entity>CB_Mercenary</Entity>
+		<Entity>CB_TechTrader</Entity>
+
+
+		<!-- Workers -->
+		<Entity>PU_MasterBuilder</Entity>
+		<Entity>PU_Gunsmith</Entity>
+		<Entity>PU_TavernBarkeeper</Entity>
+
+		<!-- Military Units-->
+		<Entity>PU_LeaderRifle1</Entity>
+		<Entity>PU_LeaderRifle2</Entity>
+
+		<Entity>PU_SoldierRifle1</Entity>
+		<Entity>PU_SoldierRifle2</Entity>
+
+
+		<Entity>CU_Evil_LeaderBearman1</Entity>
+		<Entity>CU_Evil_SoldierBearman1</Entity>
+
+		<Entity>CU_Evil_LeaderSkirmisher1</Entity>
+		<Entity>CU_Evil_SoldierSkirmisher1</Entity>
+		<Entity>CU_Evil_Queen</Entity>
+		
+		<Entity>CB_Evil_Tower1</Entity>
+		<Entity>CB_Evil_Tower1_ArrowLauncher</Entity>
+
+		<Entity>CU_BanditLeaderBow1</Entity>
+		<Entity>CU_BanditSoldierBow1</Entity>
+		<Entity>CU_Merchant</Entity>
+		
+		<Entity>PU_Scout</Entity>
+		<Entity>PU_Thief</Entity>
+
+		<Entity>PU_Hero10</Entity>  <!-- Headhunter:   ????? -->
+		<Entity>PU_Hero11</Entity>  <!-- female Asian:   ????? -->
+
+		<!-- Buildings -->
+        <Entity>PB_DrawBridgeClosed1</Entity>
+		<Entity>PB_GenericBridge</Entity>
+
+		<Entity>XD_NeutralBridge1</Entity>
+		<Entity>XD_Bridge1</Entity>
+		<Entity>PB_Bridge1</Entity>
+
+		<Entity>XD_NeutralBridge2</Entity>
+		<Entity>XD_Bridge2</Entity>
+		<Entity>PB_Bridge2</Entity>
+
+		<Entity>XD_NeutralBridge3</Entity>
+		<Entity>XD_Bridge3</Entity>
+		<Entity>PB_Bridge3</Entity>
+
+		<Entity>XD_NeutralBridge4</Entity>
+		<Entity>XD_Bridge4</Entity>
+		<Entity>PB_Bridge4</Entity>
+		
+		<Entity>PB_DrawBridgeClosed1</Entity>
+		<Entity>XD_DrawBridgeOpen1</Entity>
+
+		<Entity>PB_DrawBridgeClosed2</Entity>
+		<Entity>XD_DrawBridgeOpen2</Entity>
+
+
+		<Entity>PB_MasterBuilderWorkshop</Entity>
+		<Entity>PB_Tavern1</Entity>
+		<Entity>PB_Tavern2</Entity>
+		<Entity>PB_GunsmithWorkshop1</Entity>
+		<Entity>PB_GunsmithWorkshop2</Entity>
+		
+		<!--Mission relevant stuff-->
+		<Entity>CB_DestroyAbleRuinHouse1</Entity>
+		<Entity>CB_DestroyAbleRuinMonastery1</Entity>
+		<Entity>CB_DestroyAbleRuinResidence1</Entity>
+		<Entity>CB_DestroyAbleRuinSmallTower1</Entity>
+		<Entity>CB_DestroyAbleRuinSmallTower3</Entity>
+		
+		<!--NPCs-->
+		<Entity>CU_Thief</Entity>
+		<Entity>CU_MasterBuilder</Entity>
+		
+		<Entity>CU_AfraidMasterBuilder</Entity>
+		<Entity>CU_AfraidAlchemist</Entity>
+		<Entity>CU_AfraidMiner</Entity>
+		<Entity>CU_AfraidSawmillworker</Entity>
+		<Entity>CU_AfraidSerf</Entity>
+		<Entity>CU_AfraidSmith</Entity>
+		<Entity>CU_AfraidStonecutter</Entity>
+		
+		<Entity>CU_SettlerIdle</Entity>
+		<Entity>CU_ScoutIdle</Entity>
+		<Entity>CU_PoleArmIdle</Entity>
+		<Entity>CU_Major02Idle</Entity>
+		<Entity>CU_Major01Idle</Entity>
+		<Entity>CU_EngineerIdle</Entity>
+		<Entity>CU_ChiefIdle</Entity>
+		<Entity>CU_CavalryIdle</Entity>
+		<Entity>CU_CaptainIdle</Entity>
+		<Entity>CU_BishopIdle</Entity>
+		<Entity>CU_BenedictineMonkIdle</Entity>
+		<Entity>CU_AssistentLeoIdle</Entity>
+		<Entity>CU_FarmerIdle</Entity>
+		<Entity>CU_Wanderer</Entity>
+		<Entity>CU_NPC_EvilGovernor</Entity>
+		
+		<Entity>XD_Evil_Camp01</Entity>
+		<Entity>XD_Evil_Camp02</Entity> 
+		<Entity>XD_Evil_Camp03</Entity> 
+		<Entity>XD_Evil_Camp04</Entity> 
+		<Entity>XD_Evil_Camp05</Entity> 
+		<Entity>XD_Evil_Camp06</Entity> 
+		<Entity>XD_Evil_Camp07</Entity> 
+		
+		<Entity>XD_SingnalFireOn</Entity> 
+		<Entity>XD_SingnalFireOff</Entity> 
+		
+		<Entity>CB_SteamMashine</Entity> 
+
+		<Entity>XD_TreeMoor1</Entity>
+		<Entity>XD_TreeMoor2</Entity>
+		<Entity>XD_TreeMoor3</Entity>
+		<Entity>XD_TreeMoor4</Entity>
+		<Entity>XD_TreeMoor5</Entity>
+		<Entity>XD_TreeMoor6</Entity>
+		<Entity>XD_TreeMoor7</Entity>
+		<Entity>XD_TreeMoor8</Entity>
+		<Entity>XD_TreeMoor9</Entity>
+		<Entity>XD_DeadTreeMoor1</Entity>
+		<Entity>XD_DeadTreeMoor2</Entity>
+		<Entity>XD_DeadTreeMoor3</Entity>
+		<Entity>XD_PlantMoor1</Entity>
+		<Entity>XD_PlantMoor2</Entity>
+		<Entity>XD_PlantMoor3</Entity>
+		<Entity>XD_PlantMoor4</Entity>
+		<Entity>XD_PlantMoor5</Entity>
+		<Entity>XD_PlantMoor6</Entity>
+		<Entity>XD_BushMoor1</Entity>
+		<Entity>XD_BushMoor2</Entity>
+		<Entity>XD_BushMoor3</Entity>
+		<Entity>XD_BushMoor4</Entity>
+		<Entity>XD_Cobweb1</Entity>
+		<Entity>XD_Cobweb2</Entity>
+		<Entity>XD_Cobweb3</Entity>
+		<Entity>XD_Cobweb4</Entity>
+
+		<Entity>XD_Fog1</Entity>
+		<Entity>XD_Fog2</Entity>
+		<Entity>XD_Fog3</Entity>
+		<Entity>XD_BlendingFog</Entity>	
+
+		<Entity>XD_CliffMoor1</Entity>
+		<Entity>XD_CliffMoor2</Entity>
+		<Entity>XD_CliffMoor3</Entity>
+		<Entity>XD_CliffMoor4</Entity>
+		<Entity>XD_CliffMoor5</Entity>
+
+		<Entity>XD_RockDarkMoor1</Entity>
+		<Entity>XD_RockDarkMoor2</Entity>
+		<Entity>XD_RockDarkMoor3</Entity>
+		<Entity>XD_RockDarkMoor4</Entity>
+		<Entity>XD_RockDarkMoor5</Entity>
+		<Entity>XD_RockDarkMoor6</Entity>
+		<Entity>XD_RockDarkMoor7</Entity>
+
+		<Entity>XD_Keg1</Entity>
+		<Entity>XD_ScoutTorch</Entity>
+	    <Entity>XD_SoldierRifle1_Rifle</Entity>
+	    <Entity>XD_SoldierRifle2_Rifle</Entity>
+        <Entity>XD_Evil_LeaderSkirmisher1_Drop</Entity>
+        <Entity>XD_Evil_LeaderBearman1_Drop</Entity>
+		<!-- indoors -->
+		<Entity>XD_IndoorsWallL</Entity>
+		<Entity>XD_IndoorsWallGirderL</Entity>
+		<Entity>XD_IndoorsWallDoorClosedL</Entity>
+		<Entity>XD_IndoorsWallDoorOpenL</Entity>
+		<Entity>XD_IndoorsWallWindowL</Entity>
+		<Entity>XD_IndoorsWallDecoration1L</Entity>
+		<Entity>XD_IndoorsWallBanner1L</Entity>
+		<Entity>XD_IndoorsArcade1L</Entity>
+		<Entity>XD_IndoorsArcade2L</Entity>
+
+		<Entity>XD_IndoorsWallR</Entity>
+		<Entity>XD_IndoorsWallGirderR</Entity>
+		<Entity>XD_IndoorsWallDoorClosedR</Entity>
+		<Entity>XD_IndoorsWallDoorOpenR</Entity>
+		<Entity>XD_IndoorsWallWindowR</Entity>
+		<Entity>XD_IndoorsWallDecoration1R</Entity>
+		<Entity>XD_IndoorsWallBanner1R</Entity>
+		<Entity>XD_IndoorsArcade1R</Entity>
+		<Entity>XD_IndoorsArcade2R</Entity>
+
+		<Entity>XD_IndoorsArcade1Edge1</Entity>
+		<Entity>XD_IndoorsArcade1Edge2</Entity>
+		<Entity>XD_IndoorsArcade1Edge3</Entity>
+		<Entity>XD_IndoorsArcade1Edge4</Entity>
+		<Entity>XD_IndoorsArcade2Edge1</Entity>
+		<Entity>XD_IndoorsArcade2Edge2</Entity>
+		<Entity>XD_IndoorsArcade2Edge3</Entity>
+		<Entity>XD_IndoorsArcade2Edge4</Entity>
+
+		<Entity>XD_IndoorsTable1</Entity>
+		<Entity>XD_IndoorsTorchL</Entity>
+		<Entity>XD_IndoorsTorchR</Entity>
+		<Entity>XD_IndoorsCandlestick</Entity>
+		
+		<Entity>ZB_ConstructionSiteBridge1</Entity>
+</root>

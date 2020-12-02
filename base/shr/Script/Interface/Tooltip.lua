@@ -238,25 +238,47 @@ end
 --------------------------------------------------------------------------------
 -- Display the Text for the Bless buttons
 --------------------------------------------------------------------------------
-function
-GUITooltip_BlessSettlers(_DisabledTooltip,_NormalTooltip,_NotUsed, _ShortCut)
+function GUITooltip_BlessSettlers(_DisabledTooltip, _NormalTooltip, _NotUsed, _ShortCut, _Technology)
+	local PID = GUI.GetPlayerID()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
-	
-	local ShortCutToolTip = " "
-	
-	if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 1 then		
-		TooltipText =  _DisabledTooltip
-	elseif XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then		
-		TooltipText = _NormalTooltip
+	local TooltipText = ""
+	local ShortCutToolTip = ""
+	local CostString = ""
+	local blessCategory = 0
+
+	if _Technology == Technologies.T_BlessSettlers1 then
+		blessCategory = BlessCategories.Construction
+	elseif _Technology == Technologies.T_BlessSettlers2 then
+		blessCategory = BlessCategories.Research
+	elseif _Technology == Technologies.T_BlessSettlers3 then
+		blessCategory = BlessCategories.Weapons
+	elseif _Technology == Technologies.T_BlessSettlers4 then
+		blessCategory = BlessCategories.Financial
+	else
+		blessCategory = BlessCategories.Canonisation
+	end
+
+	local techstate = Logic.GetTechnologyState(PID, _Technology)
+
+	if techstate == 0 then
+		TooltipText = TooltipText .. XGUIEng.GetStringTableText("MenuGeneric/TechnologyNotAvailable")
+	else
+		if _ShortCut ~= nil then
+			ShortCutToolTip = ShortCutToolTip .. XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+		end	
+
+		if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then
+			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_NormalTooltip)
+		else
+			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_DisabledTooltip)
+		end
+		CostString = CostString .. CreateCostString{Gold=InterfaceTool_GetBlessingCosts(PID, blessCategory)};			
 	end
 	
-	if _ShortCut ~= nil then
-		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
-	end
-	
-	CostString = ""
+	--Message("CostString: " .. CostString .. "   TooltipText: " .. TooltipText .. "   ShortCutToolTip: " .. ShortCutToolTip)
+
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
 end
 

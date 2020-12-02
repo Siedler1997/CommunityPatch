@@ -1,6 +1,5 @@
 Changelog
 - Fixes für auswählbare Grafikeinstellungen und leicht verbesserte Grafik (by yoq)
-- Mapeditoren für AddOns nun ebenfalls vorhanden
 - Dreckrandtexturen entfernt (by yoq)
 - Außenposten: 
 	* Arbeiter und Leibeigene betreten/verlassen ihn nun an der Innentür, nicht schon am Haupttor
@@ -61,6 +60,13 @@ Changelog
 	* Werden nun korrekt disabled, wenn der jeweilige Countdown aktiv ist
 	* zeigen nun eindeutigere Tooltips
 - Der Button zum Kauf von Bogen-Hauptmännern hat im Hauptspiel nun die gleiche Textur wie in den AddOns
+- Kapellen/Kirchen/Kathedralen
+	* Tootips im Hauptspiel gefixt
+		+ Heiligsprechung hat nun einen richtigen enabled-Tooltip
+		+ Läutet die Glocken gibt nun die korrekten Siedler an, die betroffen sind
+	* Predigten 
+		+ kosten Taler je nach Predigt und Anzahl der betroffenen Siedler
+		+ können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
 - Söldnerquartiere
 	* Ihre Angebote zeigen bei Entities ohne definierten Entity-Namen (also vor allem bei XDs und XAs) nun "???" im Tooltip als Einheitenart
 	* Die Button-Texturen weisen nun genauer auf die angebotene Einheit hin
@@ -70,12 +76,26 @@ Changelog
 		+ Die Kamera kann nun endlos gedreht werden, ohne an eine Grenze zu stoßen
 		+ Sie springt nun nicht mehr automatisch in die Ausgangslage zurück
 		+ Zum Zurückspringen in die Audganslage dient der Shortcut "[Strg] + [Leertaste]"
-	* Mit der Tastenkombination "[Alt] + [I]" kann man das Interface ein- und ausblenden (z.B. für Screenshot)
+	* Mit der Tastenkombination "[Alt] + [I]" kann man (außerhalb von Briefings) das Interface ein- und ausblenden
+	* Statthalter Kadir 
+		+ ist nun endlich ein richtiger NPC - mitsamt seinem ursprünglich angedachten Design
+		+ wird in der Nebelreich-Mission "Geld oder Leben" auch verwendet
 - Für Mapper:
+	* Die Entity "CU_NPC_EvilGovernor" (Statthalter Kadir) ist nun nutzbar (Script und Editor)
 	* 7 unnbenutzte Button-Texturen:
 		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> TransferMaterials)
 		+ Der Button "DummyButton07" enthält die originale Textur zum Kauf von Bogen-Hauptmännern
 	* Bei aktiviertem DebugScript werfen Söldnerquartiere nun keine Debug-Messages mehr bei Einhieten ohne definierten Entity-Namen
+	* Comforts
+		+ Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
+		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
+			-> return: int Segnungskosten
+		+ CreateCostString(_costs) by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
+			-> return: string CostString
+		+ HasPlayerEnoughResources(_costs): Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
+			-> return int reicht (1) oder reicht nicht (0)
+		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
+			-> return int Zufallszahl
 
 ToDos
 - Eigene Texturen für Veteranen und Varg (Recoloring?)
@@ -85,4 +105,11 @@ ToDos
 - Fernkämpfer-Nerf
 - MainWindow- und Savegame-Fixes (by mcb/Zedeg)
 - Darios Find-Button: Bessere Blink-Sichtbarkeit bei sehr hellen Spielerfarben (z.B. Weiß), etwa durch Verdunkelung oder default-color
-- neue Comforts
+- neue Comforts (bei Bedarf)
+- Countdowns 
+	* sollen während Briefings pausieren
+	* Sollen ein eigenes Hintergrund-Image bekommen
+- CBs
+	* Sollen abreißbar sein und dabei einen symbolischen Taler geben
+		+ Note: auch Wettermaschinen prüfen!
+	* sollen reparierbar sein
