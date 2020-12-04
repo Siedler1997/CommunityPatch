@@ -29,7 +29,7 @@
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
 			<Class>GGL::CGLBehaviorAnimationEx</Class>
 			<SuspensionAnimation>CU_NPC_EvilGovernor_Idle1</SuspensionAnimation>
-			<AnimSet>SET_CU_NPC_MAJOR_BARMECIA</AnimSet>
+			<AnimSet>SET_CU_NPC_EVILGOVERNOR</AnimSet>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorAnimation</Class>

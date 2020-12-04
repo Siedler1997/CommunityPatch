@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <!-- Civil player units -->
+	<AnimSet>SET_SMITH</AnimSet> 
+	<AnimSet>SET_FARMER</AnimSet>  
+	<AnimSet>SET_MINER</AnimSet>
+	<AnimSet>SET_SERF</AnimSet> 
+	<AnimSet>SET_PRIEST</AnimSet>  
+ 	<AnimSet>SET_SCHOLAR</AnimSet>
+ 	<AnimSet>SET_COINER</AnimSet>
+ 	<AnimSet>SET_SMELTER</AnimSet>
+ 	<AnimSet>SET_TRADER</AnimSet> 
+ 	<AnimSet>SET_BRICKMAKER</AnimSet> 
+ 	<AnimSet>SET_ALCHEMIST</AnimSet> 
+ 	<AnimSet>SET_TREASURER</AnimSet> 
+ 	<AnimSet>SET_STONECUTTER</AnimSet> 
+ 	<AnimSet>SET_SAWMILLWORKER</AnimSet> 
+ 	<AnimSet>SET_ENGINEER</AnimSet> 
+ 	<AnimSet>SET_TRAVELING_SALESMAN</AnimSet> 
+ 	
+ <!-- Heroes -->
+
+ 	<AnimSet>SET_HERO1</AnimSet>
+ 	<AnimSet>SET_HERO1A</AnimSet>
+ 	<AnimSet>SET_HERO1B</AnimSet>
+ 	<AnimSet>SET_HERO1C</AnimSet>
+ 	<AnimSet>SET_HERO2</AnimSet>
+ 	<AnimSet>SET_HERO3</AnimSet>
+ 	<AnimSet>SET_HERO4</AnimSet>
+ 	<AnimSet>SET_HERO5</AnimSet>
+ 	<AnimSet>SET_HERO6</AnimSet>
+ <!-- Military Units -->
+ 	<!-- Swordmen -->
+ 	<AnimSet>SET_LEADERSWORD1</AnimSet>
+ 	<AnimSet>SET_LEADERSWORD2</AnimSet>
+	<AnimSet>SET_LEADERSWORD3</AnimSet>
+	<AnimSet>SET_LEADERSWORD4</AnimSet>
+	
+	<AnimSet>SET_SOLDIERSWORD1</AnimSet>
+	<AnimSet>SET_SOLDIERSWORD2</AnimSet>
+	<AnimSet>SET_SOLDIERSWORD3</AnimSet>
+	<AnimSet>SET_SOLDIERSWORD4</AnimSet>
+	
+	<!-- Spear men -->	
+	<AnimSet>SET_LEADERPOLEARM1</AnimSet>
+	<AnimSet>SET_LEADERPOLEARM2</AnimSet>
+	<AnimSet>SET_LEADERPOLEARM3</AnimSet>
+	<AnimSet>SET_LEADERPOLEARM4</AnimSet>
+	
+	<AnimSet>SET_SOLDIERPOLEARM1</AnimSet>
+	<AnimSet>SET_SOLDIERPOLEARM2</AnimSet>
+	<AnimSet>SET_SOLDIERPOLEARM3</AnimSet>
+	<AnimSet>SET_SOLDIERPOLEARM4</AnimSet>
+	
+	<!-- Bow men -->
+	<AnimSet>SET_LEADERBOW1</AnimSet>
+	<AnimSet>SET_LEADERBOW2</AnimSet>
+	<AnimSet>SET_LEADERBOW3</AnimSet>
+	<AnimSet>SET_LEADERBOW4</AnimSet>
+	
+	<AnimSet>SET_SOLDIERBOW1</AnimSet>
+	<AnimSet>SET_SOLDIERBOW2</AnimSet>
+	<AnimSet>SET_SOLDIERBOW3</AnimSet>
+	<AnimSet>SET_SOLDIERBOW4</AnimSet>
+
+	<!-- Cavalry -->
+	<AnimSet>SET_LEADERCAVALRY1</AnimSet> 
+	<AnimSet>SET_LEADERCAVALRY2</AnimSet> 
+ 	
+ 	<AnimSet>SET_LEADERHEAVYCAVALRY1</AnimSet> 
+ 	<AnimSet>SET_LEADERHEAVYCAVALRY2</AnimSet> 
+ 	<!--OLD-->
+ 	<AnimSet>SET_LEADERCAVALRY3</AnimSet> 
+ 	<AnimSet>SET_LEADERCAVALRY4</AnimSet> 
+ 	
+ 	<AnimSet>SET_SOLDIERCAVALRY1</AnimSet> 
+ 	<AnimSet>SET_SOLDIERCAVALRY2</AnimSet> 	
+ 	
+ 	<AnimSet>SET_SOLDIERHEAVYCAVALRY1</AnimSet>
+ 	<AnimSet>SET_SOLDIERHEAVYCAVALRY2</AnimSet>
+ 	
+ 	<!--OLD-->
+ 	<AnimSet>SET_SOLDIERCAVALRY3</AnimSet>
+ 	<AnimSet>SET_SOLDIERCAVALRY4</AnimSet>
+	<!-- Milita --> 	
+ 	<AnimSet>SET_MILITIA</AnimSet>
+ 	
+	<!-- Vehicles  -->
+ 	<AnimSet>SET_CANNON1</AnimSet> 	   	
+ 	<AnimSet>SET_CANNON2</AnimSet> 	  
+ 	<AnimSet>SET_CANNON3</AnimSet>   	
+ 	<AnimSet>SET_CANNON4</AnimSet>   
+ 	 	
+	<!-- Other units -->
+  	<AnimSet>SET_BLACKKNIGHT</AnimSet>
+ 	<AnimSet>SET_BLACKKNIGHT_SOLDIERSWORD3</AnimSet> 
+ 	<!--AnimSet>SET_BANDITSOLDIERSWORD1</AnimSet-->
+ 	<AnimSet>SET_BANDITLEADERSWORD1</AnimSet>
+ 	
+ 	<AnimSet>SET_CU_LEADEROUTLAW1</AnimSet>
+ 	<AnimSet>SET_CU_SOLDIEROUTLAW1</AnimSet> 	
+ 	
+ 	
+ 	<AnimSet>SET_CU_NPC_MAJOR_BARMECIA</AnimSet>
+ 	<AnimSet>SET_CU_NPC_MAJOR_CLEYCOURT</AnimSet>
+  	<AnimSet>SET_CU_BISHOPOFCRAWFORD</AnimSet>
+  	<AnimSet>SET_CU_BLACKKNIGHT_LEADERMACE1</AnimSet>
+  	<AnimSet>SET_CU_BLACKKNIGHT_SOLDIERMACE1</AnimSet>
+  	
+  	<AnimSet>SET_CU_HERMIT</AnimSet>
+  	<AnimSet>SET_CU_GAREK</AnimSet>
+  	<AnimSet>SET_CU_TRADER</AnimSet>
+  	<AnimSet>SET_CU_LEONARDO</AnimSet>
+  	<AnimSet>SET_CU_PRINCESS</AnimSet>
+  	<AnimSet>SET_CU_REGENTDOVBAR</AnimSet>
+  	<AnimSet>SET_CU_MARY_DE_MORTFICHET</AnimSet>
+  	<AnimSet>SET_CU_BARBARIAN_LEADERCLUB1</AnimSet>
+  	<AnimSet>SET_CU_BARBARIAN_SOLDIERCLUB1</AnimSet>  	
+  	<AnimSet>SET_CU_BABARIAN_HERO_WOLF</AnimSet>
+  	
+	<!-- animals -->
+ 	<AnimSet>SET_HAWK</AnimSet>
+ 	<AnimSet>SET_RABBIT</AnimSet>
+	<AnimSet>SET_WOLF</AnimSet>
+ 	<AnimSet>SET_DEER</AnimSet>
+
+ 
+ 
+</root>

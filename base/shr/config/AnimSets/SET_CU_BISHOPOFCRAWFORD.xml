@@ -1,0 +1,52 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>CU_BishopOfCrawford_Walk</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle</Name>
+		<Animation>CU_BishopOfCrawford_Idle1</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>CU_BishopOfCrawford_Idle1</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>CU_BishopOfCrawford_Idle2</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>CU_BishopOfCrawford_Idle3</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>CU_BishopOfCrawford_Idle4</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle5</Name>
+		<Animation>CU_BishopOfCrawford_Idle5</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Talk1</Name>
+		<Animation>CU_BishopOfCrawford_Talk1</Animation>		
+    </Category>    
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Talk2</Name>
+		<Animation>CU_BishopOfCrawford_Talk2</Animation>		
+    </Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>CU_BishopOfCrawford_Idle1</Animation>
+	</Category>
+    
+</AnimSet>

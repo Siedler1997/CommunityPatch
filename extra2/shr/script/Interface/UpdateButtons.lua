@@ -376,6 +376,7 @@ function GUIUpdate_HeroButton()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()	
 	local EntityID = XGUIEng.GetBaseWidgetUserVariable(CurrentWidgetID, 0)
 	local SourceButton
+	
 	if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then	
 		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(GUI.GetPlayerID())
 		SourceButton = "FindHeroSource1"
@@ -398,7 +399,9 @@ function GUIUpdate_HeroButton()
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1, 255,255,255,255)	
 		end
 	else
-		if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero2) == 1 then
+		if Logic.GetEntityType( EntityID )	== Entities.PU_Hero1 then
+			SourceButton = "FindHeroSource0"
+		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero2) == 1 then
 			SourceButton = "FindHeroSource2"
 		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero3) == 1 then
 			SourceButton = "FindHeroSource3"
@@ -824,11 +827,14 @@ GUIUpdate_SettlersContainer(_number)
 	local WorkerType = Logic.GetEntityType(SettlerID)
 	local WorkerTypeName = Logic.GetEntityTypeName( WorkerType )
 	
-	
 	--set texture on WorkerButtons	
-	local TexturePath = "Data\\Graphics\\Textures\\GUI\\inHouse\\" .. WorkerTypeName .. ".png"
-	for j=0,4,1
-	do
+	local TexturePath = ""
+	if string.find(WorkerTypeName, "PU_") or WorkerType == Entities.CU_Serf then
+		TexturePath = TexturePath .. "Data\\Graphics\\Textures\\GUI\\inHouse\\" .. WorkerTypeName .. ".png"
+	else
+		TexturePath = TexturePath .. "Data\\Graphics\\Textures\\GUI\\b_help.png"
+	end
+	for j = 0, 4, 1 do
 		XGUIEng.SetMaterialTexture(ButtonName,j, TexturePath)		
 	end
 	

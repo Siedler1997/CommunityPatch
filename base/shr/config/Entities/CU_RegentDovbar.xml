@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>CU_RegentDovbar</Model> <!-- must be changed when proper model available -->
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>CU_RegentDovbar_Walk</Anim>
+		<Anim>CU_RegentDovbar_Run1</Anim>
+		<Anim>CU_RegentDovbar_Finish</Anim>
+		<Anim>CU_RegentDovbar_Dying1</Anim>
+		<Anim>CU_RegentDovbar_Dead</Anim>
+		<Anim>CU_RegentDovbar_Attack1</Anim>
+		<Anim>CU_RegentDovbar_Attack2</Anim>
+		<Anim>CU_RegentDovbar_Hit</Anim>
+		<Anim>CU_RegentDovbar_IdleAttack1</Anim>
+        <Anim>CU_RegentDovbar_Idle1</Anim>
+		<Anim>CU_RegentDovbar_Talk1</Anim>
+		<Anim>CU_RegentDovbar_Talk2</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>	
+		<MaxHealth> 50 </MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+        <Hat></Hat>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<Exploration>10</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>CU_RegentDovbar_Idle1</SuspensionAnimation>
+			<AnimSet>SET_HERO1</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>320</Speed>
+			<RotationSpeed>15</RotationSpeed>
+		<MoveTaskList>TL_NPC_WALK</MoveTaskList> 
+		<MoveIdleAnim>CU_RegentDovbar_Idle1</MoveIdleAnim> 
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+</root>

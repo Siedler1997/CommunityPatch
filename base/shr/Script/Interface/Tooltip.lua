@@ -423,7 +423,9 @@ GUITooltip_FindHero()
 	local TooltipString = " "
 	
 	if EntityID  ~= 0 then
-		if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then	
+		if Logic.GetEntityType( EntityID )	== Entities.PU_Hero1 then
+			TooltipString = "MenuTop/Find_hero0"
+		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then	
 			TooltipString = "MenuTop/Find_hero1"
 		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero2) == 1 then
 			TooltipString = "MenuTop/Find_hero2"

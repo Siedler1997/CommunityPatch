@@ -3,17 +3,17 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\Interface",
-    "\\base\\shr\\Script\\MapTools",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\en",
     "\\extra1",
     "\\extra1\\shr",
     "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\Interface",
     "\\extra2",
     "\\extra2\\shr",
     "\\extra2\\shr\\script",
     "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\base\\shr\\Script\\MapTools\\Comfort.lua",
+  "SelectedNode": "\\extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
   "PreviewInSolutionExplorer": false
 }

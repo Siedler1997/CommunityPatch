@@ -21,9 +21,9 @@ Changelog
 	* haben Rekrutierungskosten (Hauptmänner und Soldaten)
 - VideoPreviews (VPs)
 	* NPC-Einheiten, die erst mit den AddOns VPs bekommen haben (z.B. Barbaren), haben diese nun auch schon im Hauptspiel
-	* Dunkle Türme haben nun die VPs der normalen Türme (nicht ganz passend, aber ok)
+	* Dunkle Türme haben nun die VPs der normalen Türme
 	* Außenposten haben nun die VPs ihrer Hauptquartier-Counterparts
-	* Veteranen (CU_VeteranXXX) nutzen nun die VPs von Barbaren und schwarzen Rittern (nicht ganz passend, aber ok)
+	* Veteranen (CU_VeteranXXX) nutzen nun die VPs von Barbaren und schwarzen Rittern
 	* Dombaustellen verwenden die VP der Kathedrale
 	* CU_Serfs (Arbeiter der Dombaustelle) haben die VP von Leibeigenen
 - Musik
@@ -33,7 +33,7 @@ Changelog
 - Leibeigene regenerieren nun ebenfalls langsam ihre HP (1 HP / 10 Sek.)
 - Dombaustellen
 	* Arbeiter-Icons im Siedler-Menü zeigen nun Leibeigenen-Icons
-	* Overhead-Arbeiter-Icons zeigen nun Minenarbeiter (nicht gerade korrekt, aber besser als Bankiers)
+	* Overhead-Arbeiter-Icons zeigen nun Minenarbeiter
 - Formationen
 	* stehen nun auch der Kavallerie zur Verfügung
 	* Bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
@@ -53,7 +53,7 @@ Changelog
 	* Zeigen bei Soldaten nun die Anzahl der Hauptmännern dieser Art im Tooltip an
 	* Bei Bogenschützen wird beim Finden nun nicht mehr nach Entwicklungsstufe unterschieden
 	* Bei Leibeigenen kann nun gleichzeitig [Alt] gedrückt gehalten werden um alle Leibeigene - beschäftigt oder nicht - durchzugehen
-- Es ertönt nun ein kleiner Benachrichtigungs-Sound wenn Gebäude zerstört und eigene (aus-)gebaut werden
+- Es ertönt nun ein kleiner Ambient-Sound wenn Gebäude zerstört und eigene (aus-)gebaut werden
 - Der BuySoldier-Button wird nun ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
 - Der Entlassen-Button wird nun ausbeblendet, wenn Helden selektiert sind
 - Fähigkeiten-Buttons von Dieben und Kundschaftern
@@ -63,7 +63,7 @@ Changelog
 - Kapellen/Kirchen/Kathedralen
 	* Tootips im Hauptspiel gefixt
 		+ Heiligsprechung hat nun einen richtigen enabled-Tooltip
-		+ Läutet die Glocken gibt nun die korrekten Siedler an, die betroffen sind
+		+ Läutet die Glocken gibt nun korrekt die Siedler an, die betroffen sind
 	* Predigten 
 		+ kosten Taler je nach Predigt und Anzahl der betroffenen Siedler
 		+ können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
@@ -80,14 +80,24 @@ Changelog
 	* Statthalter Kadir 
 		+ ist nun endlich ein richtiger NPC - mitsamt seinem ursprünglich angedachten Design
 		+ wird in der Nebelreich-Mission "Geld oder Leben" auch verwendet
+- Zivilie NPCs 
+	* können sterben
+		+ und crashen dabei nicht mehr das Spiel (Leonardo, Bischof, ...)
+		+ verschwinden nun auch nach ihrem Ableben
+	* Zeigen im Siedler-Menü von Gebäuden nun kein weißes Quadrat mehr, sondern ein Fragezeichen
+- Darios Entwicklungsstufen haben nun leicht unterschiedliche Kampfwerte
+	* PU_Hero1b hat einen Rüstungspunkt mehr (=4)
+	* PU_Hero1c hat zusätzlich dazu auch zwei Angriffspunkte mehr (=18)
+- Kala hat nun den Helden-Selektionsring
 - Für Mapper:
-	* Die Entity "CU_NPC_EvilGovernor" (Statthalter Kadir) ist nun nutzbar (Script und Editor)
+	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
+	* Die Entity "CU_NPC_EvilGovernor" (Statthalter Kadir) ist nun nutzbar (per Script und Editor)
+	* Die Entity "PU_Hero1" sieht nun aus wie Dovbar - inkl. Find-Button
 	* 7 unnbenutzte Button-Texturen:
-		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> TransferMaterials)
+		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> "TransferMaterials")
 		+ Der Button "DummyButton07" enthält die originale Textur zum Kauf von Bogen-Hauptmännern
 	* Bei aktiviertem DebugScript werfen Söldnerquartiere nun keine Debug-Messages mehr bei Einhieten ohne definierten Entity-Namen
 	* Comforts
-		+ Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
 		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
 			-> return: int Segnungskosten
 		+ CreateCostString(_costs) by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
@@ -96,20 +106,33 @@ Changelog
 			-> return int reicht (1) oder reicht nicht (0)
 		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
 			-> return int Zufallszahl
+- Bekannte Bugs/Einschränkungen
+	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
+		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
+	* VideoPreviews z.T. nicht ganz passend
+		+ gibt leider keine genauen VideoPreviews für diese Einheiten, sieht aber mMn. besser aus als Blackscreen
+	* Kadir hat metallische Reflektionen
+		+ keine Ahnung warum...
+	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
+		+ Grund: Sie haben einfach keine
+	* Dovbar hat weder Audio-Feedback noch Helden-Fähigkeiten
+		+ Feedback: Es gibt halt keine Audio-Files für ihn
+		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
-- Eigene Texturen für Veteranen und Varg (Recoloring?)
-- MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 - CU-Soldaten sollen auch Sold verlangen
-- Fernkämpfer-Nerf
 - MainWindow- und Savegame-Fixes (by mcb/Zedeg)
 - Darios Find-Button: Bessere Blink-Sichtbarkeit bei sehr hellen Spielerfarben (z.B. Weiß), etwa durch Verdunkelung oder default-color
-- neue Comforts (bei Bedarf)
-- Countdowns 
-	* sollen während Briefings pausieren
-	* Sollen ein eigenes Hintergrund-Image bekommen
 - CBs
 	* Sollen abreißbar sein und dabei einen symbolischen Taler geben
 		+ Note: auch Wettermaschinen prüfen!
 	* sollen reparierbar sein
+- Countdowns 
+	* sollen während Briefings pausieren
+	* Sollen ein eigenes Hintergrund-Image bekommen
+- MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
+- Fernkämpfer-Nerf
+- neue Comforts (bei Bedarf)
+- Kadirs "Reflektionen" entfernen (Modell)
+- Eigene Texturen für Veteranen und Varg (Recoloring?)

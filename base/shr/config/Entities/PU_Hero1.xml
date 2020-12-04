@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for Dario -->
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_RegentDovbar</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_RegentDovbar_Walk</Anim>
+		  <Anim>CU_RegentDovbar_Run1</Anim>
+		  <Anim>CU_RegentDovbar_Finish</Anim>
+		  <Anim>CU_RegentDovbar_Dying1</Anim>
+		  <Anim>CU_RegentDovbar_Dead</Anim>
+		  <Anim>CU_RegentDovbar_Attack1</Anim>
+		  <Anim>CU_RegentDovbar_Attack2</Anim>
+		  <Anim>CU_RegentDovbar_Hit</Anim>
+		  <Anim>CU_RegentDovbar_IdleAttack1</Anim>
+		  <Anim>CU_RegentDovbar_Idle1</Anim>			
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+        <Convertible>false</Convertible>
+        <Category>Hero</Category>
+        <Category>Military</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>4</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>CU_RegentDovbar_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_HERO1</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_RegentDovbar_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>	
+	                
+			  <NormalAttackAnim1>CU_RegentDovbar_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_RegentDovbar_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_RegentDovbar_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_RegentDovbar_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>CU_RegentDovbar_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_RegentDovbar_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_RegentDovbar_Run1</BattleWalkAnim>
+	        <HitAnim>CU_RegentDovbar_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	 
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+   
+
+</root>
