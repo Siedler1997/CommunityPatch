@@ -321,10 +321,10 @@ end
 
 
 --------------------------------------------------------------------------------
--- Quit game
+-- Quit game (Triggerfix by mcb)
 --------------------------------------------------------------------------------
 function QuitGame()
-
+	Trigger.DisableTriggerSystem(1)
 	-- Network game?
 	if XNetwork ~= nil and XNetwork.Manager_IsGameRunning() == 1 then
 
@@ -390,9 +390,10 @@ end
 
 
 --------------------------------------------------------------------------------
--- Quit application
+-- Quit application (Triggerfix by mcb)
 --------------------------------------------------------------------------------
 function QuitApplication()
+	Trigger.DisableTriggerSystem(1)
     if Framework.CheckIDV() then
 		QuitGame()
     else

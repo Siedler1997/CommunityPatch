@@ -3,17 +3,16 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\en",
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Entities",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
+    "\\extra1\\shr\\config",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2\\shr\\config",
+    "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
+  "SelectedNode": "\\extra2\\shr\\config\\Entities\\CB_LighthouseActivated.xml",
   "PreviewInSolutionExplorer": false
 }

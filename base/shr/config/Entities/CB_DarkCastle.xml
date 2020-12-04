@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>CB_DarkCastle</Model>
+		<Anim></Anim>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>7000</MaxHealth>
+	    <ArmorAmount>5</ArmorAmount>
+		<Upgrade>
+			<Category>Beautification01</Category>
+		</Upgrade>
+        <ApproachPos>
+            <X>-1000</X>
+            <Y>0</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-600</X>
+            <Y>100</Y>			
+        </DoorPos>
+       <Blocked1>
+            <X>-700</X>
+            <Y>800</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>900</X>
+            <Y>-900</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-800</X>
+            <Y>900</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>1000</X>
+            <Y>-1000</Y>
+        </TerrainPos2>
+		<Exploration>30</Exploration>
+	</Logic>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+ <Behavior>
+    <Logic classname="EGL::CGLEBehaviorProps">
+     <Class>GGL::CBuildingBehavior</Class>
+  </Logic>
+    <Display classname="GD::CBuildingBehaviorProps">
+     <Class>GD::CBuildingBehavior</Class>
+     <Banner>Default</Banner>
+     <NumDamageEffects>55</NumDamageEffects>
+     <NumDestroyEffects>37</NumDestroyEffects>
+  </Display>
+ </Behavior>
+</root>

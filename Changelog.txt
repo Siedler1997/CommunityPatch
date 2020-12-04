@@ -50,6 +50,7 @@ Changelog
 - FindView-Buttons
 	* Werden nun stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
 	* Darios Button leuchtet nun in der Spielerfarbe statt nur blau
+		+ Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird stattdessen eine dunklere Farbe gewählt
 	* Zeigen bei Soldaten nun die Anzahl der Hauptmännern dieser Art im Tooltip an
 	* Bei Bogenschützen wird beim Finden nun nicht mehr nach Entwicklungsstufe unterschieden
 	* Bei Leibeigenen kann nun gleichzeitig [Alt] gedrückt gehalten werden um alle Leibeigene - beschäftigt oder nicht - durchzugehen
@@ -80,6 +81,9 @@ Changelog
 	* Statthalter Kadir 
 		+ ist nun endlich ein richtiger NPC - mitsamt seinem ursprünglich angedachten Design
 		+ wird in der Nebelreich-Mission "Geld oder Leben" auch verwendet
+- Bewaffnete NPCs (Banditen, Barbaren, Bärenmenschen) verlangen nun ebenfalls Sold
+- Non-Player-Buildings unter Spielerkontrolle gefixt
+	* sind nun abreißbar
 - Zivilie NPCs 
 	* können sterben
 		+ und crashen dabei nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -89,6 +93,12 @@ Changelog
 	* PU_Hero1b hat einen Rüstungspunkt mehr (=4)
 	* PU_Hero1c hat zusätzlich dazu auch zwei Angriffspunkte mehr (=18)
 - Kala hat nun den Helden-Selektionsring
+- In Kanonengießereien können nun Arbeiter und in Tavernen Esser gesichtet werden
+- Rekrutierungskosten zwischen Hauptmännern und Soldaten leichter Kavallerie ausgeglichen
+	* Berittene Bogenschützen (Stufe 1) kosten nun Holz
+	* Berittene Armbrustschützen (Stufe 2) kosten nun Eisen
+- Mauern sind nun erheblich solider
+- Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Für Mapper:
 	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
 	* Die Entity "CU_NPC_EvilGovernor" (Statthalter Kadir) ist nun nutzbar (per Script und Editor)
@@ -107,12 +117,14 @@ Changelog
 		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
 			-> return int Zufallszahl
 - Bekannte Bugs/Einschränkungen
+	* Kala's Tod hat einen stack overflow verursacht
+		+ nur ein mal - und bislang nicht reproduzierbar...
 	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
 		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
 	* VideoPreviews z.T. nicht ganz passend
 		+ gibt leider keine genauen VideoPreviews für diese Einheiten, sieht aber mMn. besser aus als Blackscreen
 	* Kadir hat metallische Reflektionen
-		+ keine Ahnung warum...
+		+ Liegt vllt. an seinem Modell...
 	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
 		+ Grund: Sie haben einfach keine
 	* Dovbar hat weder Audio-Feedback noch Helden-Fähigkeiten
@@ -120,19 +132,30 @@ Changelog
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
-- Auch normale Arbeiter sollen automatisch HP regenerieren
-- CU-Soldaten sollen auch Sold verlangen
-- MainWindow- und Savegame-Fixes (by mcb/Zedeg)
-- Darios Find-Button: Bessere Blink-Sichtbarkeit bei sehr hellen Spielerfarben (z.B. Weiß), etwa durch Verdunkelung oder default-color
-- CBs
-	* Sollen abreißbar sein und dabei einen symbolischen Taler geben
-		+ Note: auch Wettermaschinen prüfen!
-	* sollen reparierbar sein
+- Default VideoPreview
+- Setzen der Arbeiteranzahl eines Gebäudes
+	* vllt. auch nur 2 States (pausiert und aktiv)
+- Korrekte Anzeige für den Kauf von Soldaten
+- Einstellung der Spielgeschwindigkeit
+- Setzen einer Markierung per Held
+- Wetteranzeige
+	* Anzeige von aktuellem Wetter und Zeit bis zum Wechsel
+	* Langzeitwetter
+- CBs sollen reparierbar sein
 - Countdowns 
 	* sollen während Briefings pausieren
 	* Sollen ein eigenes Hintergrund-Image bekommen
-- MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
 - Fernkämpfer-Nerf
+- BattleMusic bei vom Spieler besiegtnen Einheiten
+- MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
+- Anordnung von Maps unabhängig von Farben (by Zedeg)
+- Auch normale Arbeiter sollen automatisch HP regenerieren
+	* scheint leider nicht möglich zu sein
 - neue Comforts (bei Bedarf)
+- Kalas Tod: stack overflow(?)
+	* bislang nur ein mal passiert
 - Kadirs "Reflektionen" entfernen (Modell)
 - Eigene Texturen für Veteranen und Varg (Recoloring?)
+- Organisatorisches
+	* Indikator für CP-Installation einführen
+	* (De-)Installer mit Backup-funktion

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>CB_Abbey03</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>500</MaxHealth>
+	    <ArmorAmount>5</ArmorAmount>
+		<Upgrade>
+			<Category>Beautification01</Category>
+		</Upgrade>
+        <ApproachPos>
+            <X>100</X>
+            <Y>-200</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>50</X>
+            <Y>0</Y>			
+        </DoorPos>
+       <Blocked1>
+            <X>-100</X>
+            <Y>100</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>100</X>
+            <Y>-100</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-200</X>
+            <Y>200</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>200</X>
+            <Y>-200</Y>
+        </TerrainPos2>
+		<Exploration>30</Exploration>
+	</Logic>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>DefaultBend</Banner>
+		</Display>
+
+	</Behavior>
+</root>

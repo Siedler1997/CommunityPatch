@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_Evil_LeaderBearman1</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_Evil_LeaderBearman1_Walk</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_Run1</Anim>		  
+		  <Anim>CU_Evil_LeaderBearman1_Idle1</Anim>		
+		  <Anim>CU_Evil_LeaderBearman1_Idle2</Anim>	
+		  <Anim>CU_Evil_LeaderBearman1_Idle3</Anim>	
+		  <Anim>CU_Evil_LeaderBearman1_Idle4</Anim>	
+		  <Anim>CU_Evil_LeaderBearman1_Idle5</Anim>	
+		  <Anim>CU_Evil_LeaderBearman1_Idle6</Anim>	
+		  <Anim>CU_Evil_LeaderBearman1_Attack1</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_Attack2</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_IdleAttack1</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_Finish</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_Dying1</Anim>
+		  <Anim>CU_Evil_LeaderBearman1_Hit</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>50</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <Fearless>true</Fearless>
+		  <Convertible>false</Convertible>
+        <Hat/>
+        <Cost>
+			  <Gold>150</Gold>
+			  <Iron>30</Iron>
+			  <Wood/>
+        </Cost>
+       
+        
+        <Category>Military</Category>
+        <Category>Leader</Category>
+        <Category>Sword</Category>
+        <Category>Melee</Category>
+        <Category>EvilLeader</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>20</Exploration>
+		  <ArmorClass>ArmorClassFur</ArmorClass>
+		  <ArmorAmount>2</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>20</ExperiencePoints>
+    	
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>CU_Evil_LeaderBearman1_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_CU_EVIL_LEADERBEARMAN1</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_Evil_LeaderBearman1_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+            <HomeRadius>1500</HomeRadius>
+			
+			  <SoldierType>CU_Evil_SoldierBearman1</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_Evil_LeaderBearman1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Evil_LeaderBearman1_Finish</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Evil_LeaderBearman1_Attack2</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Evil_LeaderBearman1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Evil_LeaderBearman1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Evil_LeaderBearman1_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Evil_LeaderBearman1_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Evil_LeaderBearman1_Hit</HitAnim>
+
+	        <DamageClass>DC_Evil</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2000</AutoAttackRange>
+	        
+			  <HealingPoints>2</HealingPoints>
+	        <HealingSeconds>10</HealingSeconds>
+
+			  <UpkeepCost>20</UpkeepCost>
+		  </Logic>
+	</Behavior>
+    
+	<Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_LEADER_SOLDIER</Type>
+                <Limit>16</Limit>
+            </Attachment>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_Evil_LeaderBearman1_Drop</EntityType>
+        </Logic>
+    </Behavior>
+</root>

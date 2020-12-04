@@ -242,11 +242,11 @@ function GameCallback_GUI_SelectionChanged()
 		local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(EntityType)
 		
 		
-		--Display Worker buttons for buildings with more then one worker
+		--Display Worker buttons for buildings with at least one worker
 		do 
 			--Does the building have Workers?
 			local MaxNumberOfworkers = Logic.GetMaxNumWorkersInBuilding(EntityId)
-			if MaxNumberOfworkers > 1 then
+			if MaxNumberOfworkers > 0 then
 				--YES!
 				--Display Buttons				
 				XGUIEng.ShowWidget(gvGUI_WidgetID.BuildingTabs,1)

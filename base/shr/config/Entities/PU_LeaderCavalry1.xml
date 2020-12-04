@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_LeaderCavalry1</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>PU_LeaderCavalry1_Run1</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle1</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle2</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle3</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle4</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle5</Anim>
+		  <Anim>PU_LeaderCavalry1_Idle6</Anim>
+		  <Anim>PU_LeaderCavalry1_Attack1</Anim>
+		  <Anim>PU_LeaderCavalry1_Dying1</Anim>
+		  <Anim>PU_LeaderCavalry1_Walk</Anim>
+		  <Anim>PU_LeaderCavalry1_Hit</Anim>
+				
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>150</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Gold>200</Gold>
+			  <Iron>0</Iron>
+			  <Wood>60</Wood>
+        </Cost>
+        <Category>Military</Category>
+        <Category>Leader</Category>
+        <Category>CavalryLight</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>23</Exploration>
+		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorAmount>0</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>25</ExperiencePoints>
+    	 
+
+    
+
+    
+
+    
+
+    <!--Armor modifier-->
+        <ModifyArmor>
+        	<Technology>T_SoftArcherArmor</Technology>
+        </ModifyArmor>
+        
+        <ModifyArmor>
+        	<Technology>T_PaddedArcherArmor</Technology>
+        </ModifyArmor>
+        
+        <ModifyArmor>
+        	<Technology>T_LeatherArcherArmor</Technology>
+        </ModifyArmor>
+        
+        
+
+    
+
+    
+
+    
+
+    <!-- Damage Modifier-->
+         <!--ModifyDamage>
+        	<Technology>T_Fletching</Technology>
+        </ModifyDamage-->
+        <ModifyExploration>
+        	<Technology>T_Fletching</Technology>
+        </ModifyExploration>
+        
+         <ModifyMaxRange>
+			  <Technology>T_Fletching</Technology>
+		</ModifyMaxRange>
+         <ModifyDamage>
+        	<Technology>T_BodkinArrow</Technology>
+        </ModifyDamage>
+        
+        
+        
+
+    
+
+    
+
+    <!-- Speed Modifier-->
+        <ModifySpeed>
+        	<Technology>T_Shoeing</Technology>
+        </ModifySpeed>
+        
+    	<Upgrade>
+           
+            <Type>PU_LeaderCavalry2</Type> 
+            <Category>LeaderCavalry</Category>
+        </Upgrade>
+    	<AttractionSlots>2</AttractionSlots>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>PU_LeaderCavalry1_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_LEADERCAVALRY1</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>500</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_LeaderCavalry1_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Stable</BarrackUpgradeCategory>
+            <HomeRadius>2000</HomeRadius>
+            
+			  <SoldierType>PU_SoldierCavalry1</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE_BOW</BattleTaskList>
+            
+	        <NormalAttackAnim1>PU_LeaderCavalry1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_LeaderCavalry1_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_LeaderCavalry1_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_LeaderCavalry1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>PU_LeaderCavalry1_Idle1</MissAttackAnim>
+	        <BattleIdleAnim>PU_LeaderCavalry1_Idle1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_LeaderCavalry1_Run1</BattleWalkAnim>
+	        <HitAnim>PU_LeaderCavalry1_Hit</HitAnim>
+
+            <DamageClass>DC_Pierce</DamageClass>
+	        <DamageAmount>8</DamageAmount>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2500</BattleWaitUntil>
+	        
+	        <MissChance>12</MissChance>
+	        
+	        <ProjectileEffectID>FXCavalryArrow</ProjectileEffectID>
+	        <MaxRange>2300</MaxRange>
+	        <MinRange>500</MinRange>
+	        <AutoAttackRange>2300</AutoAttackRange>
+	        
+			  <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
+	        
+	        <UpkeepCost>20</UpkeepCost>
+		  </Logic>
+	</Behavior>
+    
+	<Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_LEADER_SOLDIER</Type>
+                <Limit>3</Limit>
+            </Attachment>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <!--
+    The Follow Behavior is now a base class of the Battle Behavior.  It thus need
+    not and must not be specified as an extra behavior.  Since the formation 
+    behavior has no properties, there is no need to change the properties of the
+    battle behavior (or behaviors derived from that, such as the soldier and leader
+    behaviors).
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorFollow</Class>
+		</Logic>
+	</Behavior>
+	-->
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <!--
+	The Battle Behavior is now a base class of the Leader Behavior.  Hence, the
+	battle behavior properties are now part of the leader behavior properties and
+	specified there, and the battle behavior should not be explicitly added to the
+	list of behaviors!
+	<Behavior>
+	    <Logic classname="GGL::CBattleBehaviorProps">
+	        <Class>GGL::CBattleBehavior</Class>
+	    </Logic>
+	</Behavior>
+	-->
+
+
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+
+
+
+
+
+
+    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedBow</EntityType>
+        </Logic>
+    </Behavior>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</root>

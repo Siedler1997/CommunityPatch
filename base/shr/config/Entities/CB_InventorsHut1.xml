@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>CB_InventorsHut1</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>2000</MaxHealth>
+		<ArmorAmount>5</ArmorAmount>
+		<Upgrade>
+			<Category>Beautification06</Category>
+		</Upgrade>
+        <ApproachPos>
+            <X>0</X>
+            <Y>-700</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>0</X>
+            <Y>0</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-900</X>
+            <Y>600</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>900</X>
+            <Y>-600</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-1000</X>
+            <Y>700</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>1000</X>
+            <Y>-700</Y>
+        </TerrainPos2>
+ 
+		<Exploration>20</Exploration>
+	</Logic>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>Default</Banner>
+			<NumDamageEffects>23</NumDamageEffects>
+			<NumDestroyEffects>20</NumDestroyEffects>
+		</Display>
+	</Behavior>
+</root>

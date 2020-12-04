@@ -356,9 +356,16 @@ function GUIUpdate_HeroButton()
 	local EntityID = XGUIEng.GetBaseWidgetUserVariable(CurrentWidgetID, 0)
 	local SourceButton
 
-	if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then	
+	if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then
+		SourceButton = "FindHeroSource1"	
+		--Gibt die Spielerfarbe zurück und speichert ihre RGB_Werte in 3 Variablen
 		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(GUI.GetPlayerID())
-		SourceButton = "FindHeroSource1"
+		--Zu helle Spielerfarben (Weiß, Hellgrau) werden auf Dunkelgrau gesetzt
+		if ColorR > 180 and ColorG > 180 and ColorB > 180 then
+			ColorR = 136
+			ColorG = 136
+			ColorB = 136
+		end
 		XGUIEng.TransferMaterials(SourceButton, CurrentWidgetID)
 		if Logic.SentinelGetUrgency(EntityID) == 1 then	
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1, 255,255,255,255)
@@ -709,8 +716,7 @@ GUIUpdate_SentinelAbility(_WidgetID, _EntityID)
 	end
 end
 
-function
-GUIUpdate_SettlersInBuilding()
+function GUIUpdate_SettlersInBuilding()
 	
 	local PlayerID = GUI.GetPlayerID()
 	local EntityId = GUI.GetSelectedEntity()

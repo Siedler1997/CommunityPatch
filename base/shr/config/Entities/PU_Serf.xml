@@ -158,30 +158,27 @@
 	<Behavior>
 		  <Logic classname="GGL::CSerfBattleBehaviorProps">
 			  <Class>GGL::CSerfBattleBehavior</Class>
-	        
-<!--
-	            The task list below is the one driving the battle behavior
-	        -->
-	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+
+				<BattleTaskList>TL_BATTLE</BattleTaskList>
            
-	        <NormalAttackAnim1>PU_Serf_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>PU_Serf_Attack1</NormalAttackAnim2>
-	        <CounterAttackAnim>PU_Serf_Attack1</CounterAttackAnim>
-	        <FinishingMoveAnim>PU_Serf_Attack1</FinishingMoveAnim>
-	        <MissAttackAnim>PU_Serf_Idle1</MissAttackAnim>
-	        <BattleIdleAnim>PU_Serf_Idle1</BattleIdleAnim>
-	        <BattleWalkAnim>PU_Serf_Run</BattleWalkAnim>
+				<NormalAttackAnim1>PU_Serf_Attack1</NormalAttackAnim1>
+				<NormalAttackAnim2>PU_Serf_Attack1</NormalAttackAnim2>
+				<CounterAttackAnim>PU_Serf_Attack1</CounterAttackAnim>
+				<FinishingMoveAnim>PU_Serf_Attack1</FinishingMoveAnim>
+				<MissAttackAnim>PU_Serf_Idle1</MissAttackAnim>
+				<BattleIdleAnim>PU_Serf_Idle1</BattleIdleAnim>
+				<BattleWalkAnim>PU_Serf_Run</BattleWalkAnim>
 
             
-	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>5</DamageAmount>
-	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
-	        <BattleWaitUntil>2400</BattleWaitUntil>
-	        <MaxRange>250.0f</MaxRange>
-	        <MinRange>0.0f</MinRange>
+				<DamageClass>DC_Strike</DamageClass>
+				<DamageAmount>5</DamageAmount>
+				<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+				<BattleWaitUntil>2400</BattleWaitUntil>
+				<MaxRange>250.0f</MaxRange>
+				<MinRange>0.0f</MinRange>
 
-			<HealingPoints>1</HealingPoints>
-			<HealingSeconds>10</HealingSeconds>
+				<HealingPoints>1</HealingPoints>
+				<HealingSeconds>10</HealingSeconds>
 		  </Logic>
 	</Behavior>
 	<Behavior>
