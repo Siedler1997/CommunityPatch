@@ -960,7 +960,6 @@ GUIUpdate_WeatherForecast()
 	
 end
 
-
 --Modified by CP
 function GUIUpdate_AlarmButton()
 	local RemainingAlarmTimeInPercent = Logic.GetAlarmRechargeTimeInPercent(GUI.GetPlayerID())
@@ -995,7 +994,6 @@ function GUIUpdate_AlarmButton()
 	XGUIEng.SetProgressBarValues("OP_ActivateAlarm_Recharge", RemainingAlarmTimeInPercent, 100)
 end
 
-
 function
 GUIUpdate_TaxesButtons()
 	
@@ -1008,14 +1006,19 @@ GUIUpdate_TaxesButtons()
 	
 end
 
-
-
-function
-GUIUpdate_OvertimesButtons()
-	
+function GUIUpdate_OvertimesButtons()
 	local BuildingID = GUI.GetSelectedEntity()
 	local RemainingOvertimeTimeInPercent = Logic.GetOvertimeRechargeTimeAtBuilding(BuildingID)
 	local ProgressBarWidget = XGUIEng.GetWidgetID( "OvertimesButton_Recharge" );
+	local MaxNumberOfworkers = Logic.GetCurrentMaxNumWorkersInBuilding(BuildingID)
+	
+	if MaxNumberOfworkers == 0 then
+		XGUIEng.ShowWidget("BuildingResume",1)
+		XGUIEng.ShowWidget("BuildingShutDown",0)
+	else
+		XGUIEng.ShowWidget("BuildingResume",0)
+		XGUIEng.ShowWidget("BuildingShutDown",1)
+	end
 
 	if Logic.IsOvertimeActiveAtBuilding(BuildingID) == 1 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes  ,1)	

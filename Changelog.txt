@@ -98,6 +98,7 @@ Changelog
 	* Berittene Bogenschützen (Stufe 1) kosten nun Holz
 	* Berittene Armbrustschützen (Stufe 2) kosten nun Eisen
 - Mauern sind nun erheblich solider
+- Gebäude können nun stillgelegt werden (Button im Siedler-Menü des Gebäudes)
 - Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Für Mapper:
 	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
@@ -117,8 +118,8 @@ Changelog
 		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
 			-> return int Zufallszahl
 - Bekannte Bugs/Einschränkungen
-	* Kala's Tod hat einen stack overflow verursacht
-		+ nur ein mal - und bislang nicht reproduzierbar...
+	* Kala's Tod verursacht selten stack overflow
+		+ nur ein mal bislang - und scheinbar nicht reproduzierbar...
 	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
 		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
 	* VideoPreviews z.T. nicht ganz passend
@@ -132,16 +133,13 @@ Changelog
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
-- Default VideoPreview
-- Setzen der Arbeiteranzahl eines Gebäudes
-	* vllt. auch nur 2 States (pausiert und aktiv)
-- Korrekte Anzeige für den Kauf von Soldaten
 - Einstellung der Spielgeschwindigkeit
 - Setzen einer Markierung per Held
 - Wetteranzeige
 	* Anzeige von aktuellem Wetter und Zeit bis zum Wechsel
 	* Langzeitwetter
 - CBs sollen reparierbar sein
+- Korrekte Anzeige für den Kauf von Soldaten
 - Countdowns 
 	* sollen während Briefings pausieren
 	* Sollen ein eigenes Hintergrund-Image bekommen

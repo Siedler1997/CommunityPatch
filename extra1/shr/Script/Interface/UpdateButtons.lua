@@ -408,7 +408,7 @@ function GUIUpdate_HeroButton()
 	else
 		if Logic.GetEntityType( EntityID )	== Entities.PU_Hero1 then
 			SourceButton = "FindHeroSource0"
-		if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero2) == 1 then
+		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero2) == 1 then
 			SourceButton = "FindHeroSource2"
 		elseif Logic.IsEntityInCategory(EntityID,EntityCategories.Hero3) == 1 then
 			SourceButton = "FindHeroSource3"
@@ -1010,12 +1010,19 @@ end
 
 
 
-function
-GUIUpdate_OvertimesButtons()
-	
+function GUIUpdate_OvertimesButtons()
 	local BuildingID = GUI.GetSelectedEntity()
 	local RemainingOvertimeTimeInPercent = Logic.GetOvertimeRechargeTimeAtBuilding(BuildingID)
 	local ProgressBarWidget = XGUIEng.GetWidgetID( "OvertimesButton_Recharge" );
+	local MaxNumberOfworkers = Logic.GetCurrentMaxNumWorkersInBuilding(BuildingID)
+	
+	if MaxNumberOfworkers == 0 then
+		XGUIEng.ShowWidget("BuildingResume",1)
+		XGUIEng.ShowWidget("BuildingShutDown",0)
+	else
+		XGUIEng.ShowWidget("BuildingResume",0)
+		XGUIEng.ShowWidget("BuildingShutDown",1)
+	end
 
 	if Logic.IsOvertimeActiveAtBuilding(BuildingID) == 1 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes  ,1)	

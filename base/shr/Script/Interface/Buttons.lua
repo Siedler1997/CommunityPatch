@@ -534,9 +534,14 @@ function GUIAction_SetAmountOfWorkers(_amount)
 		NewAmount = MaxNumberOfworkers	
 	end
 	
+	if Logic.IsOvertimeActiveAtBuilding(BuildingID) == 1 then
+		GUI.ToggleOvertimeAtBuilding(BuildingID)
+	end
+
 	GUI.SetCurrentMaxNumWorkersInBuilding(BuildingID,NewAmount)
 	
 	InterfaceTool_UpdateWorkerAmountButtons()
+	GUIUpdate_OvertimesButtons()
 end
 
 
@@ -544,8 +549,6 @@ end
 -- Force Settlers to work
 --------------------------------------------------------------------------------
 function GUIAction_ForceSettlersToWork()
-	
-	
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local BuildingID = GUI.GetSelectedEntity()
 	
@@ -558,7 +561,11 @@ function GUIAction_ForceSettlersToWork()
 		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/Note_BuildingUnderConstruction"))				
 		return
 	end
-	
+
+	if Logic.GetCurrentMaxNumWorkersInBuilding(BuildingID) == 0 then
+		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/Note_BuildingShutDown"))				
+		return
+	end
 	
 	local BuildingType =  Logic.GetEntityType( BuildingID )
 	local BuildingCategory = Logic.GetUpgradeCategoryByBuildingType( BuildingType )
