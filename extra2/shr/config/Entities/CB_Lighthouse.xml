@@ -13,10 +13,22 @@
 		<MaxHealth>600</MaxHealth>
 		<ArmorClass>ArmorClassFortification</ArmorClass> 
 		<ArmorAmount>5</ArmorAmount>
+		<Exploration>30</Exploration>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
 		<Upgrade>
 			<Category>Beautification01</Category>
 		</Upgrade>
-		<Exploration>20</Exploration>
+
         <ApproachPos>
             <X>100</X>
             <Y>-400</Y>

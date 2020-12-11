@@ -11,11 +11,23 @@
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <UpgradeSite>ZB_UpgradeSiteTower1</UpgradeSite>
 		  <MaxHealth>1200</MaxHealth>
-		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
 		  <ArmorAmount>6</ArmorAmount>
 	      <Category>MilitaryBuilding</Category>
 		  <Category>Military</Category>
+		
 		  <Exploration>33</Exploration>
+
+		  <!-- Armor -->
+		  <ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		  </ModifyArmor>
+
+		  <!-- Exploration -->
+		  <ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		  </ModifyExploration>
+		
 		<Upgrade>
 			<Category>Beautification09</Category>
 		</Upgrade>     

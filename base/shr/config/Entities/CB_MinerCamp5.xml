@@ -39,9 +39,20 @@
         <TerrainPos2>
             <X>290</X>
             <Y>-370</Y>
-        </TerrainPos2>  
+        </TerrainPos2>
 
-		<Exploration>30</Exploration>
+		<Exploration>15</Exploration>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+		
 	</Logic>
 	<Behavior>
 		<Logic classname="EGL::CGLEBehaviorProps">

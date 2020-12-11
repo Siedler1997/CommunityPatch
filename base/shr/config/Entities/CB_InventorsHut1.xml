@@ -12,6 +12,19 @@
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<MaxHealth>2000</MaxHealth>
 		<ArmorAmount>5</ArmorAmount>
+		<ArmorClass>ArmorClassFortification</ArmorClass>
+		<Exploration>20</Exploration>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
 		<Upgrade>
 			<Category>Beautification06</Category>
 		</Upgrade>
@@ -40,8 +53,7 @@
             <X>1000</X>
             <Y>-700</Y>
         </TerrainPos2>
- 
-		<Exploration>20</Exploration>
+
 	</Logic>
 	<Behavior>
 		<Logic classname="EGL::CGLEBehaviorProps">

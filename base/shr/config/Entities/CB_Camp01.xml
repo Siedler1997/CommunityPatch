@@ -12,6 +12,12 @@
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<MaxHealth>300</MaxHealth>
 	    <ArmorAmount>0</ArmorAmount>
+		
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
 		<Upgrade>
 			<Category>Beautification09</Category>
 		</Upgrade>
@@ -40,7 +46,7 @@
             <X>300</X>
             <Y>-400</Y>
         </TerrainPos2>
-		<Exploration>30</Exploration>
+		<Exploration>15</Exploration>
 	</Logic>
 	<Behavior>
 		<Logic classname="EGL::CGLEBehaviorProps">

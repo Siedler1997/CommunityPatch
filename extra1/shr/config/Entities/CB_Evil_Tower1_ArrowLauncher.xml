@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"	encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PB_Tower2_Ballista</Model>
+		<RenderInFoW>false</RenderInFoW>
+	</Display>
+	<Logic classname="EGL::CGLEEntityProps">
+		<Class>EGL::CGLEEntity</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<DoNotExecute>false</DoNotExecute>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Exploration>30</Exploration>	
+    	<Category>MilitaryBuilding</Category>
+		<Category>Military</Category> 
+		<Category>Cannon</Category> 	
+        <!--NumBlockedPoints>2</NumBlockedPoints-->
+        <SnapTolerance>30.0f</SnapTolerance>
+		<MapFileDontSave>true</MapFileDontSave>
+		<Visible>false</Visible>
+	</Logic>
+	
+	<Behavior>
+    	<Logic classname="GGL::CAutoCannonBehaviorProps">
+    	    <Class>GGL::CAutoCannonBehavior</Class>
+    	    <NumberOfShots>0</NumberOfShots>
+    	    <RotationSpeed>20</RotationSpeed>
+    	    <CannonBallEffectType>FXArrow</CannonBallEffectType>
+  			<ProjectileOffsetFront>100</ProjectileOffsetFront>
+    	    <ReloadTime>500</ReloadTime>
+    	    <MaxAttackRange>2800.0f</MaxAttackRange>
+    	     <MinRange>200.0f</MinRange>
+    	    <DamageClass>DC_Evil</DamageClass>
+    	    <DamageAmount>20</DamageAmount>
+    	    <DamageRange>300</DamageRange>
+    	    <AutoAttackRange>2800</AutoAttackRange>
+    	    <BattleTaskList>TL_BATTLE_BALISTATOWER</BattleTaskList>
+    	</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+    </Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+		</Logic>
+	</Behavior>
+
+</root>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_SoldierSword4</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>PU_SoldierSword4_Walk</Anim>
+		  <Anim>PU_SoldierSword4_Run1</Anim>
+		  <Anim>PU_SoldierSword4_Idle1</Anim>
+		  <Anim>PU_SoldierSword4_Idle2</Anim>	
+		  <Anim>PU_SoldierSword4_Idle3</Anim>	
+		  <Anim>PU_SoldierSword4_Idle4</Anim>	
+		  <Anim>PU_SoldierSword4_Idle5</Anim>	
+		  <Anim>PU_SoldierSword4_Idle6</Anim>			
+		  <Anim>PU_SoldierSword4_Attack1</Anim>
+		  <Anim>PU_SoldierSword4_Attack2</Anim>
+		  <Anim>PU_SoldierSword4_IdleAttack1</Anim>
+		  <Anim>PU_SoldierSword4_Finish</Anim>
+		  <Anim>PU_SoldierSword4_Dying1</Anim>
+		  <Anim>PU_SoldierSword4_Hit</Anim>	
+		
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>150</MaxHealth>
+		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorAmount>5</ArmorAmount>
+		<DodgeChance>0</DodgeChance> 
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Gold>60</Gold>
+			  <Iron>50</Iron>
+			  <Wood/>
+        </Cost>
+       
+
+    
+
+    
+<!--Armor modifier-->
+        <ModifyArmor>
+        	<Technology>T_LeatherMailArmor</Technology>
+        </ModifyArmor>
+        
+        <ModifyArmor>
+        	<Technology>T_ChainMailArmor</Technology>
+        </ModifyArmor>
+        
+        <ModifyArmor>
+        	<Technology>T_PlateMailArmor</Technology>
+        </ModifyArmor>
+        
+        
+
+    
+
+    
+<!-- Damage Modifier-->
+         <ModifyDamage>
+        	<Technology>T_MasterOfSmithery</Technology>
+        </ModifyDamage>
+         <ModifyDamage>
+        	<Technology>T_IronCasting</Technology>
+        </ModifyDamage>
+        
+        
+
+    
+
+    
+<!-- Speed Modifier-->
+        <ModifySpeed>
+        	<Technology>T_BetterTrainingBarracks</Technology>
+        </ModifySpeed>
+        
+        <Category>Military</Category>
+        <Category>Soldier</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>20</Exploration>
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>25</ExperiencePoints>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>PU_SoldierSword4_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_SOLDIERSWORD4</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSoldierMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_MILITARY_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_SoldierSword4_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CSoldierBehaviorProps">
+			  <Class>GGL::CSoldierBehavior</Class>
+			  <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <NormalAttackAnim1>PU_SoldierSword4_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_SoldierSword4_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_SoldierSword4_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_SoldierSword4_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>PU_SoldierSword4_IdleAttack1</MissAttackAnim> 
+	        <BattleIdleAnim>PU_SoldierSword4_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_SoldierSword4_Run1</BattleWalkAnim> 
+	        <HitAnim>PU_SoldierSword4_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>18</DamageAmount>
+	        <MaxRandomDamageBonus>3</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>1500</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CFormationBehaviorProperties">
+			  <Class>GGL::CFormationBehavior</Class>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle1</AnimID>
+    		    <Frequency>99</Frequency>
+    		</IdleAnim>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle2</AnimID>
+    		    <Frequency>2</Frequency>
+    		</IdleAnim>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle3</AnimID>
+    		    <Frequency>2</Frequency>
+    		</IdleAnim>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle4</AnimID>
+    		    <Frequency>2</Frequency>
+    		</IdleAnim>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle5</AnimID>
+    		    <Frequency>2</Frequency>
+    		</IdleAnim>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword4_Idle6</AnimID>
+    		    <Frequency>1</Frequency>
+    		</IdleAnim>		
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CSoldierEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>300</BasePriority>
+	        <ShouldEvade>false</ShouldEvade>
+	    </Logic>
+	</Behavior>
+
+
+    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedSword</EntityType>
+        </Logic>
+    </Behavior>
+
+
+
+
+
+
+
+
+
+</root>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"	encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PB_DarkTower3_Cannon</Model>
+		<RenderInFoW>false</RenderInFoW>
+	</Display>
+	<Logic classname="EGL::CGLEEntityProps">
+		<Class>EGL::CGLEEntity</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<DoNotExecute>false</DoNotExecute>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Exploration>30</Exploration>	
+    <Category>MilitaryBuilding</Category>
+		<Category>Military</Category> 
+		<Category>Cannon</Category> 	
+		<Category>SplashDamage</Category>
+        <!--NumBlockedPoints>2</NumBlockedPoints-->
+        <SnapTolerance>30.0f</SnapTolerance>
+		<MapFileDontSave>true</MapFileDontSave>
+	</Logic>
+	
+	<Behavior>
+    	<Logic classname="GGL::CAutoCannonBehaviorProps">
+    	    <Class>GGL::CAutoCannonBehavior</Class>
+    	    <NumberOfShots>0</NumberOfShots>
+    	    <RotationSpeed>7</RotationSpeed>
+    	    <CannonBallEffectType>FXCannonTowerBall</CannonBallEffectType>
+  			<ProjectileOffsetFront>100</ProjectileOffsetFront>
+    	    <ReloadTime>5000</ReloadTime>
+    	    <MaxAttackRange>3000.0f</MaxAttackRange>
+    	    <MinRange>800.0f</MinRange>
+    	    <DamageClass>DC_Chaos</DamageClass>
+    	    <DamageAmount>40</DamageAmount>
+    	    <DamageRange>700</DamageRange>
+    	    <BattleTaskList>TL_BATTLE_CANNONTOWER</BattleTaskList>
+    	    <AutoAttackRange>3000</AutoAttackRange>
+    	</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+    </Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+		</Logic>
+	</Behavior>
+
+
+</root>

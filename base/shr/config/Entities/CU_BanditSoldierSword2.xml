@@ -24,7 +24,7 @@
 		  <AccessCategory>AccessCategorySettler</AccessCategory>	
 		  <MaxHealth>150</MaxHealth>
 		  <ArmorClass>ArmorClassLeather</ArmorClass>
-		  <ArmorAmount>3</ArmorAmount> 
+		  <ArmorAmount>2</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>

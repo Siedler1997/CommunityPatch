@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_BanditLeaderBow1</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_BanditLeaderBow1_Walk</Anim>
+		  <Anim>CU_BanditLeaderBow1_Run1</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle1</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle2</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle3</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle4</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle5</Anim>
+		  <Anim>CU_BanditLeaderBow1_Idle6</Anim>
+		  <Anim>CU_BanditLeaderBow1_IdleAttack1</Anim>
+		  <Anim>CU_BanditLeaderBow1_Attack1</Anim>
+		  <Anim>CU_BanditLeaderBow1_Hit</Anim>		
+		  <Anim>CU_BanditLeaderBow1_Dying1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>	
+		  <AccessCategory>AccessCategorySettler</AccessCategory>			
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Gold>150</Gold>
+			  <Iron>0</Iron>			  
+			  <Wood>60</Wood>			  
+        </Cost>
+        <Category>Military</Category>
+        <Category>Leader</Category>
+        <Category>Bow</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <MaxHealth>150</MaxHealth>
+		  <Exploration>25</Exploration>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
+		  <ArmorAmount>0</ArmorAmount>
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>25</ExperiencePoints>
+    	
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>CU_BanditLeaderBow1_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_CU_BANDITLEADERBOW1</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>340</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_BanditLeaderBow1_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>			
+			  <BarrackUpgradeCategory>Archery</BarrackUpgradeCategory>			
+            <HomeRadius>2000</HomeRadius>
+
+			  <SoldierType>CU_BanditSoldierBow1</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE_BOW</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_BanditLeaderBow1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_BanditLeaderBow1_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_BanditLeaderBow1_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_BanditLeaderBow1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_BanditLeaderBow1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_BanditLeaderBow1_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_BanditLeaderBow1_Run1</BattleWalkAnim>
+	        <HitAnim>CU_BanditLeaderBow1_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Pierce</DamageClass>
+	        <DamageAmount>10</DamageAmount>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2600</BattleWaitUntil>
+	        
+	        <MissChance>9</MissChance>
+	        
+	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
+	        <MaxRange>2500</MaxRange>
+	        <MinRange>500.0f</MinRange>	        
+	        <AutoAttackRange>2500</AutoAttackRange>
+	        
+			  <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
+	        
+	        <UpkeepCost>20</UpkeepCost>
+	        
+		  </Logic>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_LEADER_SOLDIER</Type>
+                <Limit>4</Limit>
+            </Attachment>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+
+
+    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedBow</EntityType>
+        </Logic>
+    </Behavior>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</root>

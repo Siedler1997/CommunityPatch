@@ -9,9 +9,21 @@
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <MaxHealth>1200</MaxHealth>
-		  <ArmorClass>ArmorClassFortification</ArmorClass> 
 		  <ArmorAmount>5</ArmorAmount>
-		  <Upgrade>
+		<ArmorClass>ArmorClassFortification</ArmorClass>
+		<Exploration>30</Exploration>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
+		<Upgrade>
 			<Category>Beautification04</Category>
 		  </Upgrade>      
        
@@ -27,8 +39,7 @@
 				<Sulfur></Sulfur>
             </Cost>
             <Type>PB_Mint2</Type>
-        </Upgrade-->
-		  <Exploration>30</Exploration>      
+        </Upgrade-->    
 
          <ApproachPos>
             <X>-550</X>

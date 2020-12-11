@@ -58,47 +58,67 @@ Changelog
 - Der BuySoldier-Button wird nun ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
 - Der Entlassen-Button wird nun ausbeblendet, wenn Helden selektiert sind
 - Fähigkeiten-Buttons von Dieben und Kundschaftern
-	* Werden nun korrekt disabled, wenn der jeweilige Countdown aktiv ist
+	* Werden nun korrekt disabled, wenn der jeweilige Cooldown aktiv ist
 	* zeigen nun eindeutigere Tooltips
 - Der Button zum Kauf von Bogen-Hauptmännern hat im Hauptspiel nun die gleiche Textur wie in den AddOns
 - Kapellen/Kirchen/Kathedralen
 	* Tootips im Hauptspiel gefixt
-		+ Heiligsprechung hat nun einen richtigen enabled-Tooltip
-		+ Läutet die Glocken gibt nun korrekt die Siedler an, die betroffen sind
+		+ "Heiligsprechung" hat nun einen richtigen enabled-Tooltip
+		+ "Läutet die Glocken" gibt nun korrekt die Siedler an, die betroffen sind
 	* Predigten 
-		+ kosten Taler je nach Predigt und Anzahl der betroffenen Siedler
+		+ kosten je nach Predigt und Anzahl der betroffenen Siedler Taler
 		+ können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
 - Söldnerquartiere
-	* Ihre Angebote zeigen bei Entities ohne definierten Entity-Namen (also vor allem bei XDs und XAs) nun "???" im Tooltip als Einheitenart
+	* Angebote zeigen bei Entities ohne definierten Entity-Namen (also vor allem bei XDs und XAs) nun "???" im Tooltip als Einheitenart
 	* Die Button-Texturen weisen nun genauer auf die angebotene Einheit hin
 - Kamera
 	* Maximaler Zoom ist jetzt auf Faktor 1,4 festgesetzt, um den Bug der "verschwindenden Texturen" bei hoher Distanz zu entschärfen	
 	* Bei Rotation
 		+ Die Kamera kann nun endlos gedreht werden, ohne an eine Grenze zu stoßen
 		+ Sie springt nun nicht mehr automatisch in die Ausgangslage zurück
-		+ Zum Zurückspringen in die Audganslage dient der Shortcut "[Strg] + [Leertaste]"
+		+ Zum Zurückspringen in die Ausgangslage dient der Shortcut "[Strg] + [Leertaste]"
 	* Mit der Tastenkombination "[Alt] + [I]" kann man (außerhalb von Briefings) das Interface ein- und ausblenden
 	* Statthalter Kadir 
 		+ ist nun endlich ein richtiger NPC - mitsamt seinem ursprünglich angedachten Design
 		+ wird in der Nebelreich-Mission "Geld oder Leben" auch verwendet
 - Bewaffnete NPCs (Banditen, Barbaren, Bärenmenschen) verlangen nun ebenfalls Sold
-- Non-Player-Buildings unter Spielerkontrolle gefixt
+- Non-Player-Buildings unter Spielerkontrolle
 	* sind nun abreißbar
+	* profitieren (fast) alle von den Technologien "Stadtwache" und "Maurerhandwerk"
+	* haben fast alle die ArmorClass regulärer Gebäude - inkl. deren Stärken/Schwächen
 - Zivilie NPCs 
 	* können sterben
 		+ und crashen dabei nicht mehr das Spiel (Leonardo, Bischof, ...)
-		+ verschwinden nun auch nach ihrem Ableben
+		+ verschwinden nun wirklich nach ihrem Ableben
 	* Zeigen im Siedler-Menü von Gebäuden nun kein weißes Quadrat mehr, sondern ein Fragezeichen
 - Darios Entwicklungsstufen haben nun leicht unterschiedliche Kampfwerte
 	* PU_Hero1b hat einen Rüstungspunkt mehr (=4)
 	* PU_Hero1c hat zusätzlich dazu auch zwei Angriffspunkte mehr (=18)
 - Kala hat nun den Helden-Selektionsring
 - In Kanonengießereien können nun Arbeiter und in Tavernen Esser gesichtet werden
-- Rekrutierungskosten zwischen Hauptmännern und Soldaten leichter Kavallerie ausgeglichen
+- Milizsoldaten profitieren nun jenen den Technologien, die auch Leibeigene betreffen
+- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 	* Berittene Bogenschützen (Stufe 1) kosten nun Holz
 	* Berittene Armbrustschützen (Stufe 2) kosten nun Eisen
-- Mauern sind nun erheblich solider
-- Gebäude können nun stillgelegt werden (Button im Siedler-Menü des Gebäudes)
+- Soldaten haben nun Rüstungspunkte und Rüstungsart ihrer Hauptmänner
+- Mauern sind nun deutlich solider
+- Türme
+	* haben nun die richtige ArmorClass -> solider gegen Schützen, empfindlicher gegen Artillerie
+	* haben eine etwas höhere Sichtweite
+	* Kanonentürme haben eine etwas erhöhte Angriffsreichweite
+- Wohstätten
+	* haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
+	* sind nun stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
+- Kanonen
+	* werden wirklich von der Technologie "Verbessertes Fahrgestell" beeinflusst
+	* bekommen mit "Schießpulver" wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
+	* Nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+- Gebäude können nun stillgelegt werden (per Button im Siedler-Menü des Gebäudes)
+- Der Schaden an Nebelkriegern wird nun korrekt berechnet
+- Scharfschützen
+	* sind nicht mehr so effektiv gegen Gebäude
+	* Leichte Scharfschützen verursachen nun auch Bonusschaden gegen Nebelkrieger
+	* Schwere Scharfschützen zielen nun erheblich besser
 - Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Für Mapper:
 	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
@@ -107,7 +127,7 @@ Changelog
 	* 7 unnbenutzte Button-Texturen:
 		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> "TransferMaterials")
 		+ Der Button "DummyButton07" enthält die originale Textur zum Kauf von Bogen-Hauptmännern
-	* Bei aktiviertem DebugScript werfen Söldnerquartiere nun keine Debug-Messages mehr bei Einhieten ohne definierten Entity-Namen
+	* Bei aktiviertem DebugScript werfen Söldnerquartiere nun keine Debug-Messages mehr bei Einheiten ohne definierten Entity-Namen
 	* Comforts
 		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
 			-> return: int Segnungskosten
@@ -119,7 +139,7 @@ Changelog
 			-> return int Zufallszahl
 - Bekannte Bugs/Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
-		+ nur ein mal bislang - und scheinbar nicht reproduzierbar...
+		+ nur ein mal bislang - und scheinbar nicht reproduzierbar(?)
 	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
 		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
 	* VideoPreviews z.T. nicht ganz passend
@@ -133,8 +153,9 @@ Changelog
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
+- Formationen doch erst mit Taktiken(?)
 - Einstellung der Spielgeschwindigkeit
-- Setzen einer Markierung per Held
+- Setzen einer Markierung per Held (SP only)
 - Wetteranzeige
 	* Anzeige von aktuellem Wetter und Zeit bis zum Wechsel
 	* Langzeitwetter
