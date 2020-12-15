@@ -396,3 +396,58 @@ function PayResources_FeedbackNotEnoughRes( _resType, _nMissing )
 	end
 	Message(Umlaute(mistext))
 end
+
+--------------------------------------------------------------------------------
+-- Returns a time-string  with the format "days hours" or "hours:minutes:seconds"
+--------------------------------------------------------------------------------
+function GetClockTimeString(_sec)
+assert(type(_sec) == "number" , "ERROR: _sec must be a number!" );
+
+	local Seconds = _sec
+	local Minutes = math.floor(Seconds/60)
+	local Hours = math.floor(Minutes/60)	
+	local Days = math.floor(Hours/24)	
+	local MSec_Rest = math.mod(math.floor(Seconds), 60)
+	local SMin_Rest = math.mod(math.floor(Minutes), 60)
+	local SSec_Rest = math.mod(math.floor(SMin_Rest), 60)	
+	local DHour_Rest = math.mod(math.floor(Hours), 24)
+
+	local String = " "
+
+	if Minutes == 0 then	--less than one minute -> only seconds
+		String = String .. _sec
+		String = String .. " " .. XGUIEng.GetStringTableText("MenuGeneric/SecondsGeneric")
+	elseif Hours == 0 then	--less than one hour -> only minutes:seconds
+		String = String .. Minutes .. ":"
+		if MSec_Rest < 10 then
+			String = String .. "0" .. MSec_Rest
+		else
+			String = String .. MSec_Rest
+		end
+		String = String .. " " .. XGUIEng.GetStringTableText("MenuGeneric/MinutesGeneric")
+	elseif days == 0 then	--less than one day -> only hours:minutes:seconds
+		String = String .. Hours .. ":"
+		if SMin_Rest < 10 then
+			String = String .. "0" .. SMin_Rest
+		else
+			String = String .. SMin_Rest
+		end
+		if SSec_Rest < 10 then
+			String = String .. "0" .. SSec_Rest
+		else
+			String = String .. SSec_Rest
+		end
+		String = String .. " " .. XGUIEng.GetStringTableText("MenuGeneric/HoursGeneric")
+	else	--one day or more -> only days and hours
+		String = String .. Days
+		String = String .. " " .. XGUIEng.GetStringTableText("MenuGeneric/DaysGeneric")
+		if DHour_Rest < 10 then
+			String = String .. "0" .. DHour_Rest
+		else
+			String = String .. DHour_Rest
+		end
+		String = String .. " " .. XGUIEng.GetStringTableText("MenuGeneric/HoursGeneric")
+	end
+
+	return String
+end

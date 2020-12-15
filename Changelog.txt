@@ -82,7 +82,7 @@ Changelog
 		+ ist nun endlich ein richtiger NPC - mitsamt seinem ursprünglich angedachten Design
 		+ wird in der Nebelreich-Mission "Geld oder Leben" auch verwendet
 - Bewaffnete NPCs (Banditen, Barbaren, Bärenmenschen) verlangen nun ebenfalls Sold
-- Non-Player-Buildings unter Spielerkontrolle
+- Non-Player-Buildings
 	* sind nun abreißbar
 	* profitieren (fast) alle von den Technologien "Stadtwache" und "Maurerhandwerk"
 	* haben fast alle die ArmorClass regulärer Gebäude - inkl. deren Stärken/Schwächen
@@ -119,6 +119,10 @@ Changelog
 	* sind nicht mehr so effektiv gegen Gebäude
 	* Leichte Scharfschützen verursachen nun auch Bonusschaden gegen Nebelkrieger
 	* Schwere Scharfschützen zielen nun erheblich besser
+- Der Zahltags-Countdown wird nicht mehr in Sekunden, sondern im Format "Min:Sek" angegeben
+- Der Zahltags-Tooltip gibt zusätzliche Infos bzgl. Wettervorhersage
+	* Das aktuelle Wetter wird dort nochmal als Text angegeben
+	* Das nächste Wetter sowie die Zeit bis zum Wechsel wird angezeigt (bei weniger als einer Stunde bis dahin)
 - Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Für Mapper:
 	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
@@ -137,6 +141,8 @@ Changelog
 			-> return int reicht (1) oder reicht nicht (0)
 		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
 			-> return int Zufallszahl
+		+ GetClockTimeString(_sec): Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
+			-> return string Zeit
 - Bekannte Bugs/Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
 		+ nur ein mal bislang - und scheinbar nicht reproduzierbar(?)
@@ -153,19 +159,15 @@ Changelog
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
-- Formationen doch erst mit Taktiken(?)
+- Langzeitwetter
 - Einstellung der Spielgeschwindigkeit
 - Setzen einer Markierung per Held (SP only)
-- Wetteranzeige
-	* Anzeige von aktuellem Wetter und Zeit bis zum Wechsel
-	* Langzeitwetter
 - CBs sollen reparierbar sein
 - Korrekte Anzeige für den Kauf von Soldaten
 - Countdowns 
 	* sollen während Briefings pausieren
 	* Sollen ein eigenes Hintergrund-Image bekommen
-- Fernkämpfer-Nerf
-- BattleMusic bei vom Spieler besiegtnen Einheiten
+- BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 - MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
 - Anordnung von Maps unabhängig von Farben (by Zedeg)
 - Auch normale Arbeiter sollen automatisch HP regenerieren
@@ -176,5 +178,6 @@ ToDos
 - Kadirs "Reflektionen" entfernen (Modell)
 - Eigene Texturen für Veteranen und Varg (Recoloring?)
 - Organisatorisches
+	* FeatureList besser sortieren
 	* Indikator für CP-Installation einführen
 	* (De-)Installer mit Backup-funktion

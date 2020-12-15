@@ -373,20 +373,36 @@ end
 -- Display payday tooltip
 --------------------------------------------------------------------------------
 
-function
-GUITooltip_Payday()
-	
+function GUITooltip_Payday()
 	local TooltipString = ""
 	local PlayerID = GUI.GetPlayerID()
-	local PaydayTimeLeft = math.ceil(Logic.GetPlayerPaydayTimeLeft(PlayerID)/1000)
+	local PaydayTimeLeft = GetClockTimeString(math.ceil(Logic.GetPlayerPaydayTimeLeft(PlayerID)/1000))
 	local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)	
 	local PaydayCosts = Logic.GetPlayerPaydayCost(PlayerID)
 	
-	--local TooltipString= " @color:200,200,200,255 " .. XGUIEng.GetStringTableText("IngameMenu/NameTaxday") .. "@cr " .. PaydayTimeLeft .. " @color:255,255,255,255 seconds left until you get @color:200,200,200,255 " .. PaydayCosts .. " @color:255,255,255,255 Gold Taxes" 
-	local TooltipString= " @color:200,200,200,255 " .. XGUIEng.GetStringTableText("IngameMenu/NameTaxday") .. " @cr " .. PaydayTimeLeft .. " @color:255,255,255,255 " .. XGUIEng.GetStringTableText("IngameMenu/TimeUntilTaxday")
+	local TooltipString= " @color:200,200,200,255 " .. XGUIEng.GetStringTableText("IngameMenu/NameTaxday") .. " @cr @color:255,255,255,255 " .. PaydayTimeLeft .. " " .. XGUIEng.GetStringTableText("IngameMenu/TimeUntilTaxday")
 		
 	XGUIEng.SetText("TooltipTopText", TooltipString)
-		
+
+	--Displays next weather state and when it arrives
+	local WeatherTowerAmount, WeatherTowerID = Logic.GetPlayerEntities(GUI.GetPlayerID(),Entities.PB_WeatherTower1,1)
+	if WeatherTowerAmount >= 1 and Logic.IsConstructionComplete(WeatherTowerID) == 1 then
+		local NextWeatherState = Logic.GetNextWeatherState()
+		local SecondsLeftToNextWeatherPeriod = math.floor(Logic.GetTimeToNextWeatherPeriod())
+		local CurrentWeatherState = Logic.GetWeatherState()
+		local CurrentWeatherString = ""
+		local NextWeatherString = ""
+		if CurrentWeatherState == 1 then CurrentWeatherString = CurrentWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_summer")
+		elseif CurrentWeatherState == 2 then CurrentWeatherString = CurrentWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_rain")
+		elseif CurrentWeatherState == 3 then CurrentWeatherString = CurrentWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_winter") end
+		if NextWeatherState == 1 then NextWeatherString = NextWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_summer")
+		elseif NextWeatherState == 2 then NextWeatherString = NextWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_rain")
+		elseif NextWeatherState == 3 then NextWeatherString = NextWeatherString .. XGUIEng.GetStringTableText("MenuTop/payday_weather_winter") end
+		XGUIEng.AddRawTextAtEnd("TooltipTopText", " @cr @cr " .. XGUIEng.GetStringTableText("MenuTop/payday_weather") .. ": "..CurrentWeatherString)
+		if NextWeatherState ~= CurrentWeatherState and Logic.IsWeatherChangeActive() ~= true and SecondsLeftToNextWeatherPeriod <= 3600 then
+			XGUIEng.AddRawTextAtEnd("TooltipTopText", " @cr "..NextWeatherString.." " .. XGUIEng.GetStringTableText("MenuTop/payday_weather_arrive") .. " " .. GetClockTimeString(SecondsLeftToNextWeatherPeriod))
+		end
+	end
 end 
 
 function
