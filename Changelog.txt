@@ -115,6 +115,10 @@ Changelog
 	* Nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
 - Gebäude können nun stillgelegt werden (per Button im Siedler-Menü des Gebäudes)
 - Der Schaden an Nebelkriegern wird nun korrekt berechnet
+- Gebäude im Alarm-Modus richten etwas mehr Schaden an
+- Wetter-Effekte etwas gemischt
+	* Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
+	* Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
 - Scharfschützen
 	* sind nicht mehr so effektiv gegen Gebäude
 	* Leichte Scharfschützen verursachen nun auch Bonusschaden gegen Nebelkrieger
@@ -128,7 +132,7 @@ Changelog
 	* Mapeditoren für die AddOns sind nun im jeweiligen bin-Ordner enthalten
 	* Die Entity "CU_NPC_EvilGovernor" (Statthalter Kadir) ist nun nutzbar (per Script und Editor)
 	* Die Entity "PU_Hero1" sieht nun aus wie Dovbar - inkl. Find-Button
-	* 7 unnbenutzte Button-Texturen:
+	* 7 unbenutzte Button-Texturen:
 		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> "TransferMaterials")
 		+ Der Button "DummyButton07" enthält die originale Textur zum Kauf von Bogen-Hauptmännern
 	* Bei aktiviertem DebugScript werfen Söldnerquartiere nun keine Debug-Messages mehr bei Einheiten ohne definierten Entity-Namen
@@ -145,7 +149,8 @@ Changelog
 			-> return string Zeit
 - Bekannte Bugs/Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
-		+ nur ein mal bislang - und scheinbar nicht reproduzierbar(?)
+		+ nur ein mal bislang
+		+ konnte ich noch nicht reproduzieren
 	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
 		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
 	* VideoPreviews z.T. nicht ganz passend
@@ -159,14 +164,14 @@ Changelog
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 
 ToDos
-- Langzeitwetter
-- Einstellung der Spielgeschwindigkeit
+- Langzeitwetter (SP only)
+- Einstellung der Spielgeschwindigkeit (SP only)
 - Setzen einer Markierung per Held (SP only)
 - CBs sollen reparierbar sein
-- Korrekte Anzeige für den Kauf von Soldaten
+- Korrekte Kostenanzeige für den Kauf von Soldaten
 - Countdowns 
 	* sollen während Briefings pausieren
-	* Sollen ein eigenes Hintergrund-Image bekommen
+	* Sollen ein eigenes Hintergrund-Image bekommen(?)
 - BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 - MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
 - Anordnung von Maps unabhängig von Farben (by Zedeg)
