@@ -24,7 +24,7 @@
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>		
 		  <MaxHealth>150</MaxHealth>
-		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass>
 		<ArmorAmount>2</ArmorAmount>
 		<NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
@@ -34,6 +34,33 @@
 			  <Iron>10</Iron>
 			  <Wood/>
         </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
         <Upgrade>                       
     	   <Category>SoldierBarbarian</Category>    	    
         </Upgrade>

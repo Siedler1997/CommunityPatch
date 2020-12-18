@@ -33,7 +33,32 @@
 			  <Iron>30</Iron>
 			  <Wood/>
         </Cost>
-       
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
         
         <Category>Military</Category>
         <Category>Leader</Category>

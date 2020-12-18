@@ -30,8 +30,34 @@
 			  <Iron>30</Iron>
 			  <Wood/>
         </Cost>
-        
-        <Upgrade>                       
+		
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_LeatherMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_ChainMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PlateMailArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+		<Upgrade>                       
     	   <Category>BlackKnightLeaderMace1</Category>    	    
         </Upgrade>
         

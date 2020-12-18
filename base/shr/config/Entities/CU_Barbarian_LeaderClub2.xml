@@ -31,6 +31,33 @@
 			  <Iron>30</Iron>
 			  <Wood/>
         </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
         <Upgrade>                       
     	   <Category>LeaderBarbarian</Category>    	    
         </Upgrade>
@@ -41,7 +68,7 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>20</Exploration>
-		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass>
 		  <ArmorAmount>2</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

@@ -39,13 +39,26 @@
 		+ Zeigen im Siedler-Menü von Gebäuden nun kein weißes Quadrat mehr, sondern ein Fragezeichen
 		+ Statthalter Kadir verwendet in der Nebelreich-Mission 'Geld oder Leben' sein ursprünglich angedachtes Design
 	* NPCs (Militär)
-		+ Bewaffnete NPCs (Banditen, Barbaren, Bärenmenschen) verlangen ebenfalls Sold
+		+ verlangen ebenfalls Sold
 		+ Veteranen (CU_VeteranXXX) können keine Gefolgsleute mehr haben
 		+ Banditen
-			/ zählen als Schwertkämpfer
+			/ zählen theoretisch als Schwertkämpfer
 			/ können Soldaten an Kasernen nachfüllen
 			/ haben Rekrutierungskosten (Hauptmänner und Soldaten)
+			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
+			/ haben die gleiche DamageClass wie schwere Kavallerie
 		+ Der Schaden an Nebelkriegern wird korrekt berechnet
+		+ Barbaren haben die gleiche ArmorClass wie Speerkämpfer und Schützen
+		+ profitieren von verschiedenen Waffen- und Rüstungstechnologien
+			/ Schwarze Ritter: Technologien der Schwertkämpfer
+			/ Barbaren: Technologien der Speerkämpfer
+			/ Banditen: Waffentechnologien der Schwertkämpfer, Rüstungstechnologien der Speerkämpfer
+			/ Bogen-Banditen: Technologien der Bogenschützen
+			/ Speerwerfer: Technologien der Bogenschützen
+			/ Bärenmenschen: Technologien der Speerkämpfer
+			/ Veteranen: Je nach Typ wie Barbaren/Schwarze Ritter
+		+ Nahkämpfer profitieren von der Technologie 'Marschieren'
+		+ Fernkämpfer profitieren von der Technologie 'Meisterschütze'
 	* Militärische Einheiten
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
@@ -172,9 +185,6 @@
 		+ Feedback: Es gibt halt keine Audio-Files für ihn
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 - ToDos:
-	* Söldner
-		+ Techs
-		+ Armor- & DamageClass(?)
 	* Langzeitwetter (SP only)
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Setzen einer Markierung per Held (SP only)

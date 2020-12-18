@@ -23,7 +23,7 @@
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>	
 		  <MaxHealth>150</MaxHealth>
-		  <ArmorClass>ArmorClassLeather</ArmorClass>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass>
 		  <ArmorAmount>2</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance>
 		  <NeedsPlayer>true</NeedsPlayer>
@@ -33,6 +33,33 @@
 			<Iron>10</Iron>
 			<Wood/>
 		</Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
         <Category>Military</Category>
 		<Category>Soldier</Category>
 		<Category>Sword</Category>
@@ -85,7 +112,7 @@
 	        <BattleWalkAnim>CU_SoldierOutlaw1_Run1</BattleWalkAnim> 	        
 	        <HitAnim>CU_SoldierOutlaw1_Hit</HitAnim>
 	        
-	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageClass>DC_Chaos</DamageClass>
 	        <DamageAmount>12</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        

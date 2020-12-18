@@ -1,27 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_BanditLeaderBow1</Model> 
+		  <Model>CU_Evil_LeaderSkirmisher1</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
-		  <Anim>CU_BanditLeaderBow1_Walk</Anim>
-		  <Anim>CU_BanditLeaderBow1_Run1</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle1</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle2</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle3</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle4</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle5</Anim>
-		  <Anim>CU_BanditLeaderBow1_Idle6</Anim>
-		  <Anim>CU_BanditLeaderBow1_IdleAttack1</Anim>
-		  <Anim>CU_BanditLeaderBow1_Attack1</Anim>
-		  <Anim>CU_BanditLeaderBow1_Hit</Anim>		
-		  <Anim>CU_BanditLeaderBow1_Dying1</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Walk</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Run1</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle1</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle2</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle3</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle4</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle5</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Idle6</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_IdleAttack1</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Attack1</Anim>
+		  <Anim>CU_Evil_LeaderSkirmisher1_Hit</Anim>		
+		  <Anim>CU_Evil_LeaderSkirmisher1_Dying1</Anim>
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>	
 		  <AccessCategory>AccessCategorySettler</AccessCategory>			
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <Fearless>true</Fearless>
+		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
 			  <Gold>150</Gold>
@@ -55,25 +57,26 @@
 		<ModifySpeed>
 			<Technology>T_BetterTrainingArchery</Technology>
 		</ModifySpeed>
-		
+
         <Category>Military</Category>
         <Category>Leader</Category>
         <Category>Bow</Category>
+        <Category>EvilLeader</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <MaxHealth>150</MaxHealth>
-		  <Exploration>25</Exploration>
-		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
-		  <ArmorAmount>0</ArmorAmount>
+		  <MaxHealth>50</MaxHealth>
+		  <Exploration>20</Exploration>
+		  <ArmorClass>ArmorClassFur</ArmorClass> 
+		  <ArmorAmount>2</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-    	<ExperiencePoints>25</ExperiencePoints>
+    	<ExperiencePoints>30</ExperiencePoints>
     	
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
-			  <SuspensionAnimation>CU_BanditLeaderBow1_Idle1</SuspensionAnimation>			
-			  <AnimSet>SET_CU_BANDITLEADERBOW1</AnimSet>
+			  <SuspensionAnimation>CU_Evil_LeaderSkirmisher1_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_CU_EVIL_LEADERSKIRMISHER1</AnimSet>
 		  </Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorAnimation</Class>
@@ -82,10 +85,10 @@
 	<Behavior>
 		  <Logic classname="EGL::CMovementBehaviorProps">
 			  <Class>GGL::CLeaderMovement</Class>
-			  <Speed>340</Speed>
+			  <Speed>360</Speed>
 			  <RotationSpeed>30</RotationSpeed>
 			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
-			  <MoveIdleAnim>CU_BanditLeaderBow1_Idle1</MoveIdleAnim>
+			  <MoveIdleAnim>CU_Evil_LeaderSkirmisher1_Idle1</MoveIdleAnim>
 		</Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorMovement</Class>
@@ -102,34 +105,34 @@
 			  <BarrackUpgradeCategory>Archery</BarrackUpgradeCategory>			
             <HomeRadius>2000</HomeRadius>
 
-			  <SoldierType>CU_BanditSoldierBow1</SoldierType>
+			  <SoldierType>CU_Evil_SoldierSkirmisher1</SoldierType>
 			
-	        <BattleTaskList>TL_BATTLE_BOW</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_SKIRMISHER</BattleTaskList>
 	        
-	        <NormalAttackAnim1>CU_BanditLeaderBow1_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>CU_BanditLeaderBow1_Attack1</NormalAttackAnim2>
-	        <CounterAttackAnim>CU_BanditLeaderBow1_Attack1</CounterAttackAnim>
-	        <FinishingMoveAnim>CU_BanditLeaderBow1_Attack1</FinishingMoveAnim>
-	        <MissAttackAnim>CU_BanditLeaderBow1_Attack1</MissAttackAnim>
-	        <BattleIdleAnim>CU_BanditLeaderBow1_IdleAttack1</BattleIdleAnim>
-	        <BattleWalkAnim>CU_BanditLeaderBow1_Run1</BattleWalkAnim>
-	        <HitAnim>CU_BanditLeaderBow1_Hit</HitAnim>
+	        <NormalAttackAnim1>CU_Evil_LeaderSkirmisher1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Evil_LeaderSkirmisher1_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Evil_LeaderSkirmisher1_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Evil_LeaderSkirmisher1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Evil_LeaderSkirmisher1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Evil_LeaderSkirmisher1_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Evil_LeaderSkirmisher1_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Evil_LeaderSkirmisher1_Hit</HitAnim>
 	        
-	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>10</DamageAmount>
-	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
+	        <DamageClass>DC_Evil</DamageClass>
+	        <DamageAmount>13</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
-	        <BattleWaitUntil>2600</BattleWaitUntil>
+	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        
-	        <MissChance>9</MissChance>
+	        <MissChance>2</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
-	        <MaxRange>2500</MaxRange>
-	        <MinRange>500.0f</MinRange>	        
-	        <AutoAttackRange>2500</AutoAttackRange>
+	        <MaxRange>2000</MaxRange>
+	        <MinRange>0.0f</MinRange>	        
+	        <AutoAttackRange>2000</AutoAttackRange>
 	        
-			  <HealingPoints>5</HealingPoints>
-	        <HealingSeconds>3</HealingSeconds>
+			  <HealingPoints>2</HealingPoints>
+	        <HealingSeconds>10</HealingSeconds>
 	        
 	        <UpkeepCost>20</UpkeepCost>
 	        
@@ -141,7 +144,7 @@
 			  <Class>GGL::CLimitedAttachmentBehavior</Class>
             <Attachment>
                 <Type>ATTACHMENT_LEADER_SOLDIER</Type>
-                <Limit>4</Limit>
+                <Limit>16</Limit>
             </Attachment>
 		</Logic>
 	</Behavior>
@@ -172,21 +175,8 @@
     <Behavior>
         <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
             <Class>GGL::CReplaceableEntityBehavior</Class>
-            <EntityType>XD_DroppedBow</EntityType>
+            <EntityType>XD_Evil_LeaderSkirmisher1_Drop</EntityType>
         </Logic>
     </Behavior>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </root>

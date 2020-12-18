@@ -35,7 +35,33 @@
 			  <Iron>0</Iron>
 			  <Wood>30</Wood>
         </Cost>
-        
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyExploration>
+			<Technology>T_Fletching</Technology>
+		</ModifyExploration>
+		<ModifyMaxRange>
+			<Technology>T_Fletching</Technology>
+		</ModifyMaxRange>
+		<ModifyDamage>
+			<Technology>T_BodkinArrow</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingArchery</Technology>
+		</ModifySpeed>
 
         <Category>Military</Category>
         <Category>Soldier</Category>
