@@ -109,6 +109,9 @@
 	        <MinRange>0.0f</MinRange>
 	        
 	        <AutoAttackRange>1500</AutoAttackRange>
+
+			<HealingPoints>1</HealingPoints>
+			<HealingSeconds>10</HealingSeconds>
 		</Logic>
 	</Behavior>
 	

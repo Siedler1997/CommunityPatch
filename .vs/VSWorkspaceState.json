@@ -3,18 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\en",
-    "\\base\\shr\\text\\en\\InGame",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Entities",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2\\shr\\text",
+    "\\extra2\\shr\\text\\de",
+    "\\extra2\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\base\\shr\\text\\en\\InGame\\IngameMenu.xml",
+  "SelectedNode": "\\extra2\\shr\\text\\de\\InGame\\Names.xml",
   "PreviewInSolutionExplorer": false
 }

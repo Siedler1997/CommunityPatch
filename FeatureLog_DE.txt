@@ -1,0 +1,201 @@
+- Gebäude
+	* richten im Alarm-Modus etwas mehr Schaden an
+	* können stillgelegt werden (per Button im Siedler-Menü)
+	* Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	* Non-Player-Buildings (Allgemein)
+		+ sind nun abreißbar
+		+ profitieren (fast) alle von den Technologien 'Stadtwache' und 'Maurerhandwerk'
+		+ haben fast alle die ArmorClass regulärer Gebäude - inkl. deren Stärken/Schwächen
+	* Dunkle Türme:
+		+ sind ausbaubar
+		+ werden im englischen richtig geschrieben (z.B. 'Cannon-Tower')
+	* Dombaustellen
+		+ Arbeiter-Icons im Siedler-Menü zeigen nun Leibeigenen-Icons
+		+ Overhead-Arbeiter-Icons zeigen nun Minenarbeiter
+	* Wohstätten
+		+ haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
+		+ sind nun stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
+	* Mauern sind deutlich solider
+	* Außenposten
+		* werden von Arbeitern und Leibeigenen an der Innentür betreten/verlassen, nicht schon am Haupttor
+		* sind baubar (nur die erste Stufe, nach Erforschung von 'Architektur')
+		* verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
+		* können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
+		* profitieren von Maurerhandwerk und Stadtwache
+	* Türme
+		* haben die richtige ArmorClass -> solider gegen Schützen, empfindlicher gegen Artillerie
+		* haben eine etwas höhere Sichtweite
+		* Kanonentürme haben eine leicht erhöhte Angriffsreichweite
+- Einheiten
+	* Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
+	* Wird beim Drücken auf den Entlassen-Button gleichzeitig [Strg] gedrückt, werden alle selektierten Einheiten (außer Helden) sofort entlassen
+	* Formationen
+		+ bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
+		+ werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+	* NPCs (Zivilisten)
+		+ können sterben
+			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
+			/ verschwinden nun wirklich nach ihrem Ableben
+		+ Zeigen im Siedler-Menü von Gebäuden nun kein weißes Quadrat mehr, sondern ein Fragezeichen
+		+ Statthalter Kadir verwendet in der Nebelreich-Mission 'Geld oder Leben' sein ursprünglich angedachtes Design
+	* NPCs (Militär)
+		+ Bewaffnete NPCs (Banditen, Barbaren, Bärenmenschen) verlangen ebenfalls Sold
+		+ Veteranen (CU_VeteranXXX) können keine Gefolgsleute mehr haben
+		+ Banditen
+			/ zählen als Schwertkämpfer
+			/ können Soldaten an Kasernen nachfüllen
+			/ haben Rekrutierungskosten (Hauptmänner und Soldaten)
+		+ Der Schaden an Nebelkriegern wird korrekt berechnet
+	* Militärische Einheiten
+		+ Leibeigene/Milizen
+			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
+			/ Milizsoldaten profitieren von jenen Technologien, die auch Leibeigene betreffen
+		+ Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
+			/ Berittene Bogenschützen (Stufe 1) kosten Holz
+			/ Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		+ Kanonen
+			/ werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
+			/ bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
+			/ nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+		+ Scharfschützen
+			/ sind nicht mehr ganz so effektiv gegen Gebäude
+			/ Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
+			/ Schwere Scharfschützen zielen erheblich besser
+	* Helden
+		+ Darios Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
+			/ PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
+			/ PU_Hero1c (Dario ab 'Old Kings Castle') hat zusätzlich dazu auch zwei Angriffspunkte mehr (=18)
+- GUI
+	* Kamera
+		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
+		+ Bei Rotation
+			/ kann die Kamera endlos gedreht werden, ohne an eine Grenze zu stoßen
+			/ springt sie nicht mehr automatisch in die Ausgangslage zurück
+			/ kann sie mit dem Shortcut '[Strg] + [Leertaste]' in die Ausgangslage zurückgesetzt werden 
+		* Mit dem shortcut '[Alt] + [I]' kann man (außerhalb von Briefings) das Interface ein- und ausblenden
+	* Tooltips gefixt bzw. ergänzt
+		+ 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
+		+ 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
+		+ 'Fährtenlesen' hat einen Erforscht-Tooltip
+		+ Formations-Buttons haben DisabledTooltips, wenn 'Stehendes Heer' noch nicht erforscht wurde
+		+ In den Tooltips der Find-Buttons von Soldaten wird die Anzahl der Hauptmänner dieser Art angezeigt
+		+ Alle Kundschafter- und Diebesfähigkeiten haben den richtigen Tooltip in Abhängigkeit der jeweiligen Technologie
+		+ Wird gerade eine Technologie erforscht, wird in ihrem Tooltip darauf hingewiesen, wenn ein anderes, identisches Gebäude selektiert ist
+		* Söldnerquartier-Angebote zeigen bei Entities ohne definierten Entity-Namen (vor allem XDs und XAs) '???' als Einheitenart an
+		+ Zahltag
+			/ Der Countdown wird nicht mehr in Sekunden, sondern im Format "Min:Sek" angegeben
+			/ Ist ein Wetterturm vorhanden, stehen hier zusätzliche Infos zu dem Thema
+				- Das aktuelle Wetter wird nochmal als Text angegeben
+				- Das nächste Wetter sowie die Zeit bis zum Wechsel wird angezeigt (bei weniger als einer Stunde bis zum Eintreten)
+	* Söldnerquartier:Button-Texturen weisen genauer auf die angebotene Einheit hin
+	* Formations-Buttons
+		+ stehen auch bei selektierter Kavallerie zur Verfügung
+		+ verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
+	* Ergänzte und korrigierte SelectionNames und OverheadNames
+		+ Außenposten -> 'Außenposten'
+		+ Veteranen
+			/ CU_VeteranLieutenant -> 'Berserker'
+			/ CU_VeteranCaptain -> 'Schwarzer Eliteritter'
+			/ CU_VeteranMajor -> 'Todesritter'
+	* VideoPreviews (VPs)
+		+ NPC-Einheiten, die erst mit den AddOns VPs bekommen haben (z.B. Barbaren), haben diese auch schon im Hauptspiel
+		+ Dunkle Türme haben die VPs der normalen Türme
+		+ Außenposten haben die VPs ihrer Hauptquartier-Counterparts
+		+ Veteranen (CU_VeteranXXX) nutzen die VPs von Barbaren und schwarzen Rittern
+		+ Dombaustellen verwenden die VP der Kathedrale
+		+ CU_Serfs (Arbeiter der Dombaustelle) haben die VP von Leibeigenen
+	* Der Button zum Kauf von Bogen-Hauptmännern hat im Hauptspiel die gleiche Textur wie in den AddOns
+	* Fähigkeiten-Buttons von Dieben und Kundschaftern werden disabled, wenn der jeweilige Cooldown aktiv ist
+	* Gruppenstärke
+		+ rechnet bei Nebelkriegern in 2er-Schritten (1 Helm = 2 Krieger)
+		+ wird bei Einheiten, die keine Soldaten rekrutieren können, komplett ausgeblendet
+		+ wird bei 0/x Soldaten nicht mehr fehlerhaft angezeigt
+	* Der Button zum Kauf von Soldaten wird ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
+	* Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
+	* Kala hat den üblichen Helden-Selektionsring
+	* In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
+	* Find-Buttons
+		+ werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
+		+ Darios Button leuchtet in der Spielerfarbe statt nur blau
+			/ Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+		+ unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
+		+ erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
+	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
+	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
+- Diverses
+	* Im Hauptmenü sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
+	* Die Grafik ist allgemein etwas besser (by yoq)
+	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
+	* Steuer-Predigt-Exploit entschärft
+		+ Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
+		+ Predigten kosten Taler abhängig von der "Stufe" der Peedigt und der Anzahl der betroffenen Siedler
+	* Musik
+		+ Winter/Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
+		+ In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
+		+ In den AddOns werden wieder alle Kampf-Tracks abgespielt statt nur zwei davon
+	* Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+	* Wetter-Effekte sind etwas gemischter
+		+ Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
+		+ Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+- Für Mapper
+	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
+	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
+	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
+	* 7 unbenutzte Button-Texturen:
+		+ Sind über Dummy-Buttons (DummyButton0X) erreichbar (-> "TransferMaterials")
+		+ Der Button "DummyButton07" enthält die originale Textur zum Kauf von Bogen-Hauptmännern
+	* Bei aktiviertem DebugScript werfen Söldnerquartiere keine Debug-Messages mehr bei Einheiten ohne definierten Entity-Namen
+	* Comforts
+		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
+			-> return: int Segnungskosten
+		+ CreateCostString(_costs) by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
+			-> return: string CostString
+		+ HasPlayerEnoughResources(_costs): Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
+			-> return int reicht (1) oder reicht nicht (0)
+		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
+			-> return int Zufallszahl
+		+ GetClockTimeString(_sec): Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
+			-> return string Zeit
+- Bekannte Bugs & Einschränkungen
+	* Kala's Tod verursacht selten stack overflow
+		+ nur ein mal bislang
+		+ konnte ich noch nicht reproduzieren
+	* Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
+		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
+	* VideoPreviews z.T. nicht ganz passend
+		+ gibt leider keine genauen VideoPreviews für diese Entities, sieht aber mMn. besser aus als Blackscreen
+	* Kadir hat metallische Reflektionen
+		+ Liegt vmtl. an seinem Modell...
+	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
+		+ Grund: Sie haben einfach keine
+	* Dovbar hat weder Audio-Feedback noch Helden-Fähigkeiten
+		+ Feedback: Es gibt halt keine Audio-Files für ihn
+		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
+- ToDos:
+	* Söldner
+		+ Techs
+		+ Armor- & DamageClass(?)
+	* Langzeitwetter (SP only)
+	* Einstellung der Spielgeschwindigkeit (SP only)
+	* Setzen einer Markierung per Held (SP only)
+	* CBs sollen reparierbar sein
+	* Korrekte Kostenanzeige für den Kauf von Soldaten
+	* Countdowns 
+		+ sollen während Briefings pausieren
+		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
+	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
+	* MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
+	* Anordnung von Maps unabhängig von Farben (by Zedeg)
+	* Auch normale Arbeiter sollen automatisch HP regenerieren
+		+ scheint leider nicht möglich zu sein
+	* neue Comforts (bei Bedarf)
+	* Kalas Tod: stack overflow(?)
+		+ bislang nur ein mal passiert
+	* Kadirs "Reflektionen" entfernen (Modell?)
+	* Eigene Texturen für Veteranen und Varg (Recoloring?)
+	* Organisatorisches
+		+ FeatureList 
+			/ Auflistung der geänderten SelectionNames
+			/ auch auf Englisch
+		+ Indikator für CP-Installation einführen
+		+ (De-)Installer mit Backup-funktion
