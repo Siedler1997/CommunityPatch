@@ -10,7 +10,7 @@
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<MaxHealth>500</MaxHealth>
+		<MaxHealth>1400</MaxHealth>
 	    <ArmorAmount>5</ArmorAmount>
 		<ArmorClass>ArmorClassFortification</ArmorClass>
 		<Exploration>30</Exploration>
@@ -26,8 +26,59 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>CB_Castle1</Category>
+			<Time>40.0</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<Type>CB_Castle2</Type>
 		</Upgrade>
+		<ConstructionInfo>
+			<Time>40</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-200</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-100</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>100</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteMarket1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>8</X>
             <Y>-650</Y>

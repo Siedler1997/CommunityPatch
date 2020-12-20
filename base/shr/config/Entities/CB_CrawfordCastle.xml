@@ -27,8 +27,64 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>CrawfordCastle</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>160</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-800</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-500</X>
+					<Y>-800</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-800</X>
+					<Y>-300</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-800</X>
+					<Y>300</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-500</X>
+					<Y>800</Y>
+				</Position>
+				<Orientation>270</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-300</X>
+					<Y>800</Y>
+				</Position>
+				<Orientation>270</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSite4</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>-600</X>
             <Y>-300</Y>

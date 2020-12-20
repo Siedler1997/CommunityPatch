@@ -83,7 +83,7 @@
 	        <HitAnim>XA_Wolf_IdleAttack1</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>10</DamageAmount>
+	        <DamageAmount>14</DamageAmount>
 	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>1500</BattleWaitUntil>

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_BlackKnight_Blackknight</Model>
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_BlackKnight_Blackknight_Walk</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Idle1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_IdleAttack1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Attack1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Attack2</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Finish</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Dying1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Run1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Hit</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Order1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Talk1</Anim>
+		  <Anim>CU_BlackKnight_Blackknight_Talk2</Anim>
+  		  <Anim>CU_BlackKnight_Blackknight_Dead</Anim>		
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>	
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+         <Convertible>false</Convertible>
+        <Category>Military</Category>
+        <Category>Melee</Category>        
+        <Category>Hero</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>5</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <AnimSet>SET_BLACKKNIGHT</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+
+			  <SoldierType>CU_BlackKnight_SoldierSword3</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_BlackKnight_Blackknight_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_BlackKnight_Blackknight_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>CU_BlackKnight_Blackknight_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_BlackKnight_Blackknight_Attack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_BlackKnight_Blackknight_Run1</BattleWalkAnim>
+	        <HitAnim>CU_BlackKnight_Blackknight_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>22</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <MaxRange>200.0</MaxRange>
+	        <MinRange>0.0</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	 <Behavior>
+        <Logic classname="GGL::CInflictFearAbilityProps">
+            <Class>GGL::CInflictFearAbility</Class>
+            <RechargeTimeSeconds>120</RechargeTimeSeconds>
+            <TaskList>TL_BATTLE_SPECIAL</TaskList>
+            <Animation>CU_BlackKnight_Blackknight_Order1</Animation>
+            <Range>1000.0</Range>
+            <FlightDistance>2000.0</FlightDistance>
+            <FlightDuration>20</FlightDuration>
+        </Logic>
+    </Behavior>
+
+
+	<Behavior>
+	    <Logic classname="GGL::CRangedEffectAbilityProps">
+	        <Class>GGL::CRangedEffectAbility</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+	        <AffectsHostiles>true</AffectsHostiles>
+	        <AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+	        <Range>1000.0</Range>
+	        <DurationInSeconds>60</DurationInSeconds>
+	        <Effect>FXKerberosFear</Effect>
+	        
+<!--DamageFactor>5.0</DamageFactor-->
+	        <ArmorFactor>0.8</ArmorFactor>
+	        
+<!--HealthRecoveryFactor>0.3</HealthRecoveryFactor-->
+	    </Logic>
+	</Behavior>
+
+
+
+</root>

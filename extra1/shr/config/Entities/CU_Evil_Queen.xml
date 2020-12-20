@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_Evil_Queen</Model>
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_Evil_Queen_Walk</Anim>
+		  <Anim>CU_Evil_Queen_Idle1</Anim>
+		  <Anim>CU_Evil_Queen_IdleAttack1</Anim>
+		  <Anim>CU_Evil_Queen_Attack1</Anim>
+		  <Anim>CU_Evil_Queen_Attack2</Anim>
+		  <Anim>CU_Evil_Queen_Finish</Anim>
+		  <Anim>CU_Evil_Queen_Dying1</Anim>
+		  <Anim>CU_Evil_Queen_Run1</Anim>
+		  <Anim>CU_Evil_Queen_Hit</Anim>
+		  <Anim>CU_Evil_Queen_PoisonAttack</Anim>		 
+		  <Anim>CU_Evil_Queen_PoisonDart</Anim>		 
+  		  <Anim>CU_Evil_Queen_Dead</Anim>		
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>	
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+         <Convertible>false</Convertible>
+        <Category>Military</Category>
+        <Category>Melee</Category>        
+        <Category>Hero</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>5</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <AnimSet>SET_CU_EVIL_QUEEN</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+
+			  <!--SoldierType>CU_BlackKnight_SoldierSword3</SoldierType-->
+			
+	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_Evil_Queen_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Evil_Queen_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Evil_Queen_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Evil_Queen_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Evil_Queen_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Evil_Queen_Attack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Evil_Queen_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Evil_Queen_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Evil</DamageClass>
+	        <DamageAmount>22</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <MaxRange>200.0</MaxRange>
+	        <MinRange>0.0</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CShurikenAbilityProps">
+	        <Class>GGL::CShurikenAbility</Class>
+<!--	        <RechargeTimeSeconds>30</RechargeTimeSeconds>
+-->	        <RechargeTimeSeconds>30</RechargeTimeSeconds>
+	        <TaskList>TL_SHURIKEN_SPECIAL</TaskList>
+	        <Animation>CU_Evil_Queen_PoisonDart</Animation> 
+	        <Range>3000.0</Range>
+	        <MaxArcDegree>90</MaxArcDegree>
+	        <NumberShuriken>10</NumberShuriken>
+	        <ProjectileType>FXKalaArrow</ProjectileType> 
+	        <ProjectileOffsetHeight>120.0</ProjectileOffsetHeight> 
+	        <!--
+	        <ProjectileOffsetFront/>
+	        <ProjectileOffsetRight/>
+	        -->
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>20</DamageAmount>
+	    </Logic>
+	</Behavior>
+
+
+	<Behavior>
+	    <Logic classname="GGL::CCircularAttackProps">
+	        <Class>GGL::CCircularAttack</Class>
+<!--	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+-->	        <RechargeTimeSeconds>110</RechargeTimeSeconds>
+	        <TaskList>TL_BATTLE_SPECIAL</TaskList>
+	        <Animation>CU_Evil_Queen_PoisonAttack</Animation>
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>25</DamageAmount>
+	        <Range>1200.0</Range>
+      		<Effect>FXKalaPoison</Effect>
+	    </Logic>
+	</Behavior>
+
+
+
+</root>

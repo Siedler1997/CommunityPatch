@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for the Asian female -->
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Hero11</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>PU_Hero11_Walk</Anim>
+		  <Anim>PU_Hero11_Idle1</Anim>
+		  <Anim>PU_Hero11_IdleAttack1</Anim>
+		  <Anim>PU_Hero11_Attack1</Anim>
+		  <Anim>PU_Hero11_Attack2</Anim>		
+		  <Anim>PU_Hero11_Finish</Anim>
+		  <Anim>PU_Hero11_Dying1</Anim>
+		  <Anim>PU_Hero11_Run1</Anim>
+		  <Anim>PU_Hero11_Dead</Anim>		  
+		  <Anim>PU_Hero11_Hit</Anim>	
+		  <Anim>PU_Hero11_PlaceRocket</Anim>	
+		  <Anim>PU_Hero11_Attack3</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>        
+        <Category>Hero</Category>
+        <Category>Military</Category>
+        <Category>Melee</Category>
+        <Category>Hero11</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>3</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>PU_Hero11_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_HERO11</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Hero11_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+			  <NormalAttackAnim1>PU_Hero11_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Hero11_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Hero11_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Hero11_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Hero11_Attack2</MissAttackAnim>
+	        <BattleIdleAnim>PU_Hero11_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Hero11_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Hero11_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>20</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+
+	
+  <Behavior>
+    <Logic classname="GGL::CInflictFearAbilityProps">
+      <Class>GGL::CInflictFearAbility</Class>
+<!--      <RechargeTimeSeconds>120</RechargeTimeSeconds>
+-->      <RechargeTimeSeconds>120</RechargeTimeSeconds>
+      <TaskList>TL_FIREWORKS_SPECIAL</TaskList>
+      <Animation>PU_Hero11_PlaceRocket</Animation>
+      <Range>1000.0</Range>
+      <FlightDistance>3000.0</FlightDistance>
+      <FlightDuration>20</FlightDuration>
+      <Effect>FXYukiFireworksFear</Effect>
+    </Logic>
+  </Behavior>
+
+
+	 <Behavior>
+        <Logic classname="GGL::CMotivateWorkersAbilityProps">
+            <Class>GGL::CMotivateWorkersAbility</Class>
+<!--      <RechargeTimeSeconds>120</RechargeTimeSeconds>
+-->      <RechargeTimeSeconds>120</RechargeTimeSeconds>
+            <TaskList>TL_MOTIVATE_SPECIAL</TaskList>
+            <Animation>PU_Hero11_PlaceRocket</Animation>
+            <Range>2000.0</Range>
+            <WorkTimeBonus>200</WorkTimeBonus>
+      			<Effect>FXYukiFireworksJoy</Effect>
+        </Logic>
+    </Behavior>
+	
+	
+	<Behavior>
+	    <Logic classname="GGL::CShurikenAbilityProps">
+	        <Class>GGL::CShurikenAbility</Class>
+<!--	        <RechargeTimeSeconds>30</RechargeTimeSeconds>
+-->	        <RechargeTimeSeconds>90</RechargeTimeSeconds>
+	        <TaskList>TL_SHURIKEN_SPECIAL</TaskList>
+	        <Animation>PU_Hero11_Attack3</Animation> 
+	        <Range>3000.0</Range>
+	        <MaxArcDegree>90</MaxArcDegree>
+	        <NumberShuriken>4</NumberShuriken>
+	        <ProjectileType>FXYukiShuriken</ProjectileType> 
+	        <ProjectileOffsetHeight>120.0</ProjectileOffsetHeight> 
+	        <!--
+	        <ProjectileOffsetFront/>
+	        <ProjectileOffsetRight/>
+	        -->
+	        <DamageClass>DC_Chaos</DamageClass>
+	        <DamageAmount>38</DamageAmount>
+	    </Logic>
+	</Behavior>
+
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+   
+
+</root>

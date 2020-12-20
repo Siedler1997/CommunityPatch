@@ -13,8 +13,50 @@
 		<MaxHealth>500</MaxHealth>
 	    <ArmorAmount>5</ArmorAmount>
 		<Upgrade>
-			<Category>Beautification04</Category>
+			<Category>MinerCampX</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>30</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-500</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-500</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-100</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteBlacksmith1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>-280</X>
             <Y>30</Y>

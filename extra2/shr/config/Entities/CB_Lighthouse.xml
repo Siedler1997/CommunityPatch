@@ -26,9 +26,50 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>CB_Lighthouse</Category>
 		</Upgrade>
 
+		<ConstructionInfo>
+			<Time>80</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-450</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-200</X>
+					<Y>-450</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-450</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-450</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSite1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>100</X>
             <Y>-400</Y>

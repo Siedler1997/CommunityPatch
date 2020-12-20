@@ -13,8 +13,29 @@
 		<MaxHealth>500</MaxHealth>
 	    <ArmorAmount>5</ArmorAmount>
 		<Upgrade>
-			<Category>Beautification09</Category>
+			<Category>MinerCampX</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>20</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>0</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>-140</X>
             <Y>30</Y>

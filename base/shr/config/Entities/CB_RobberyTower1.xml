@@ -10,7 +10,7 @@
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<MaxHealth>600</MaxHealth>
+		<MaxHealth>1200</MaxHealth>
 		<ArmorAmount>5</ArmorAmount>
 		<ArmorClass>ArmorClassFortification</ArmorClass>
 		<Exploration>30</Exploration>
@@ -26,12 +26,49 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification01</Category>
-		</Upgrade> 
-		
-        <!--Upgrade>
-            <Type>PB_Bastille2</Type>            
-        </Upgrade-->
+			<Category>RobberyTower1</Category>
+		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>110</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-200</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteBlacksmith1</ConstructionSite>
+		</ConstructionInfo>
 
         <ApproachPos>
             <X>100</X>

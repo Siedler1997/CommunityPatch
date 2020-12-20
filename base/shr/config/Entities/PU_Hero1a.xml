@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for Dario --><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Hero1a</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>PU_Hero1a_Walk</Anim>
+		  <Anim>PU_Hero1a_Hit</Anim>
+		  <Anim>PU_Hero1a_Idle1</Anim>
+		  <Anim>PU_Hero1a_IdleAttack1</Anim>
+		  <Anim>PU_Hero1a_Attack1</Anim>
+		  <Anim>PU_Hero1a_Attack2</Anim>		
+		  <Anim>PU_Hero1a_Finish</Anim>
+		  <Anim>PU_Hero1a_Dying1</Anim>
+		  <Anim>PU_Hero1a_Run1</Anim>
+		  <Anim>PU_Hero1a_Dead</Anim>		
+		  <Anim>PU_Hero1a_Talk2</Anim>	
+		  <Anim>PU_Hero1a_Order1</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>
+        <Category>Hero1</Category>
+        <Category>Hero</Category>
+        <Category>Military</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>3</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>PU_Hero1a_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_HERO1A</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Hero1a_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+			  <NormalAttackAnim1>PU_Hero1a_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Hero1a_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Hero1a_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Hero1a_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Hero1a_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Hero1a_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Hero1a_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Hero1a_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CHeroHawkBehaviorProps">
+	        <Class>GGL::CHeroHawkBehavior</Class>
+	        <HawkEntityType>PU_Hero1_Hawk</HawkEntityType>
+	        <RechargeTimeSeconds>60</RechargeTimeSeconds>
+	        <HawkMaxRange>10000</HawkMaxRange>
+        </Logic>
+    </Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CSentinelBehaviorProps">
+	        <Class>GGL::CSentinelBehavior</Class>
+	        <Range>4000.0</Range>
+	    </Logic>
+	</Behavior>
+	
+	 <Behavior>
+        <Logic classname="GGL::CInflictFearAbilityProps">
+            <Class>GGL::CInflictFearAbility</Class>
+            <RechargeTimeSeconds>120</RechargeTimeSeconds>
+            <TaskList>TL_BATTLE_SPECIAL</TaskList>
+            <Animation>PU_Hero1a_Order1</Animation>
+            <Range>1000.0</Range>
+            <FlightDistance>2000.0</FlightDistance>
+            <FlightDuration>20</FlightDuration>
+            <Effect>FXDarioFear</Effect>
+        </Logic>
+    </Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+   
+</root>

@@ -29,9 +29,18 @@
 		  </ModifyExploration>
 		
 		<Upgrade>
-			<Category>Beautification09</Category>
+			<Category>Evil_Tower1</Category>
 		</Upgrade>     
         <ConstructionInfo>
+			<Time>80</Time>
+			<Cost>
+				<Clay>0</Clay>
+				<Wood>300</Wood>
+				<Stone>100</Stone>
+				<Gold/>
+				<Iron/>
+				<Sulfur/>
+			</Cost>
             <BuilderSlot>
                 <Position>
                     <X>100</X>

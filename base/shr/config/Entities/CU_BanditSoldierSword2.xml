@@ -23,7 +23,7 @@
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>	
 		  <MaxHealth>150</MaxHealth>
-		  <ArmorClass>ArmorClassJerkin</ArmorClass>
+		  <ArmorClass>ArmorClassLeather</ArmorClass>
 		  <ArmorAmount>2</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance>
 		  <NeedsPlayer>true</NeedsPlayer>
@@ -36,15 +36,15 @@
 
 		<!--Armor modifier-->
 		<ModifyArmor>
-			<Technology>T_SoftArcherArmor</Technology>
+			<Technology>T_LeatherMailArmor</Technology>
 		</ModifyArmor>
 
 		<ModifyArmor>
-			<Technology>T_PaddedArcherArmor</Technology>
+			<Technology>T_ChainMailArmor</Technology>
 		</ModifyArmor>
 
 		<ModifyArmor>
-			<Technology>T_LeatherArcherArmor</Technology>
+			<Technology>T_PlateMailArmor</Technology>
 		</ModifyArmor>
 
 		<!-- Damage Modifier-->

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for Pilgrim, the explosives specialist -->
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Hero2</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>PU_Hero2_Walk</Anim>
+		  <Anim>PU_Hero2_Hit</Anim>
+		  <Anim>PU_Hero2_Idle1</Anim>
+		  <Anim>PU_Hero2_IdleAttack1</Anim>
+		  <Anim>PU_Hero2_Attack1</Anim>
+		  <Anim>PU_Hero2_Attack2</Anim>		
+		  <Anim>PU_Hero2_Finish</Anim>
+		  <Anim>PU_Hero2_Dying1</Anim>
+		  <Anim>PU_Hero2_Run1</Anim>
+		  <Anim>PU_Hero2_Dead</Anim>				
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>
+        <Category>Military</Category>
+        <Category>Hero</Category>
+        <Category>Hero2</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>4</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>PU_Hero2_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_HERO2</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Hero2_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+			  <NormalAttackAnim1>PU_Hero2_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Hero2_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Hero2_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Hero2_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Hero2_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Hero2_Attack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Hero2_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Hero2_Hit</HitAnim>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>22</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+    <Behavior>
+        <Logic classname="GGL::CHeroBehaviorProps">
+            <Class>GGL::CHeroBehavior</Class>
+        </Logic>
+    </Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CHeroAbilityProps">
+			  <Class>GGL::CBombPlacerBehavior</Class>
+			  <RechargeTimeSeconds>60</RechargeTimeSeconds>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		  <Logic classname="GGL::CCannonBuilderBehaviorProps">
+			  <Class>GGL::CCannonBuilderBehavior</Class>
+			  <RechargeTimeSeconds>180</RechargeTimeSeconds>
+			  <BuildCannonTaskList>TL_BUILD_CANNON</BuildCannonTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+
+</root>

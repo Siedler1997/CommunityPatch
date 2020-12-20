@@ -19,8 +19,28 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification09</Category>
+			<Category>CampXX</Category>
 		</Upgrade>
+		<ConstructionInfo>
+			<Time>20</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteResidence1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>-140</X>
             <Y>30</Y>

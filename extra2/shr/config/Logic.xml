@@ -882,7 +882,129 @@
     	<FirstBuilding>CB_Mercenary</FirstBuilding>
 	</BuildingUpgrade>
 
-  <AlarmRechargeTime>180000</AlarmRechargeTime>
+
+	<!-- Community Patch -->
+	<BuildingUpgrade>
+		<Category>Abbey01</Category>
+		<FirstBuilding>CB_Abbey01</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Abbey02</Category>
+		<FirstBuilding>CB_Abbey02</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Abbey03</Category>
+		<FirstBuilding>CB_Abbey03</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Abbey04</Category>
+		<FirstBuilding>CB_Abbey04</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>BarmeciaCastle</Category>
+		<FirstBuilding>CB_BarmeciaCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Bastille1</Category>
+		<FirstBuilding>CB_Bastille1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>CampXX</Category>
+		<FirstBuilding>CB_Camp01</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Castle1</Category>
+		<FirstBuilding>CB_Castle1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>CleycourtCastle</Category>
+		<FirstBuilding>CB_CleycourtCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>CrawfordCastle</Category>
+		<FirstBuilding>CB_CrawfordCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>DarkCastle</Category>
+		<FirstBuilding>CB_DarkCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>FolklungCastle</Category>
+		<FirstBuilding>CB_FolklungCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>HermitHut1</Category>
+		<FirstBuilding>CB_HermitHut1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>InventorsHut1</Category>
+		<FirstBuilding>CB_InventorsHut1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>KaloixCastle</Category>
+		<FirstBuilding>CB_KaloixCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>MinerCampX</Category>
+		<FirstBuilding>CB_MinerCamp1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Mint1</Category>
+		<FirstBuilding>CB_Mint1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>OldKingsCastle</Category>
+		<FirstBuilding>CB_OldKingsCastle</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>RobberyTower1</Category>
+		<FirstBuilding>CB_RobberyTower1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Wall_Generic</Category>
+		<FirstBuilding>XD_WallCorner</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Evil_Tower1</Category>
+		<FirstBuilding>CB_Evil_Tower1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>SteamMashine</Category>
+		<FirstBuilding>CB_SteamMashine</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>DestroyAbleRuin</Category>
+		<FirstBuilding>CB_DestroyAbleRuinHouse1</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Lighthouse</Category>
+		<FirstBuilding>CB_Lighthouse</FirstBuilding>
+	</BuildingUpgrade>
+	
+	<AlarmRechargeTime>180000</AlarmRechargeTime>
 
   <OvertimeRechargeTimeInMs>240000</OvertimeRechargeTimeInMs>
 

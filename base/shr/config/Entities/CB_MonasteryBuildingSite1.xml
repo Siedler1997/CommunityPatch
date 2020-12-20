@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>CB_MonasteryBuildingSite1</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>2000</MaxHealth>
+		<ArmorAmount>5</ArmorAmount>
+		<ArmorClass>ArmorClassFortification</ArmorClass>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+
+		<!-- Exploration-->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+		
+		<ApproachPos>
+            <X>-790</X>
+            <Y>-800</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-360</X>
+            <Y>-800</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-600</X>
+            <Y>700</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>700</X>
+            <Y>-800</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-700</X>
+            <Y>800</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>800</X>
+            <Y>-900</Y>
+        </TerrainPos2>  
+        		        <Worker>CU_Serf</Worker>
+        <MaxWorkers>10</MaxWorkers>
+        <InitialMaxWorkers>10</InitialMaxWorkers> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK_START</Start>
+            <Work>TL_CU_SERF_WORK</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK1_START</Start>
+            <Work>TL_CU_SERF_WORK1</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK2_START</Start>
+            <Work>TL_CU_SERF_WORK2</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK3_START</Start>
+            <Work>TL_CU_SERF_WORK3</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK4_START</Start>
+            <Work>TL_CU_SERF_WORK4</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK5_START</Start>
+            <Work>TL_CU_SERF_WORK5</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK6_START</Start>
+            <Work>TL_CU_SERF_WORK6</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK7_START</Start>
+            <Work>TL_CU_SERF_WORK7</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK8_START</Start>
+            <Work>TL_CU_SERF_WORK8</Work>
+        </WorkTaskList> 
+        <WorkTaskList>
+            <Start>TL_CU_SERF_WORK9_START</Start>
+            <Work>TL_CU_SERF_WORK9</Work>
+        </WorkTaskList>
+		<ConstructionInfo>
+			<Time>140</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>600</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>400</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>0</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-600</X>
+					<Y>800</Y>
+				</Position>
+				<Orientation>290</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteMonastery1</ConstructionSite>
+		</ConstructionInfo>
+        <Upgrade>
+            <Category>CB_MonasteryBuildingSite</Category>
+        </Upgrade>
+		<Exploration>20</Exploration>
+	</Logic>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>Default</Banner>
+		</Display>
+	</Behavior>
+</root>

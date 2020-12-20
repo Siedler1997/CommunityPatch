@@ -10,7 +10,7 @@
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<MaxHealth>500</MaxHealth>
+		<MaxHealth>1000</MaxHealth>
 	    <ArmorAmount>5</ArmorAmount>
 		<ArmorClass>ArmorClassFortification</ArmorClass>
 		<Exploration>20</Exploration>
@@ -26,8 +26,50 @@
 		</ModifyExploration>
 		
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>Abbey01</Category>
 		</Upgrade>
+		
+		<ConstructionInfo>
+			<Time>70</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-500</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-500</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>500</Y>
+				</Position>
+				<Orientation>270</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSite2</ConstructionSite>
+		</ConstructionInfo>
+		
 		<ApproachPos>
             <X>-700</X>
             <Y>0</Y>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for Dario -->
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_Mary_de_Mortfichet</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>CU_Mary_de_Mortfichet_Walk</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Idle1</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_IdleAttack1</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Attack1</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Attack2</Anim>		
+		  <Anim>CU_Mary_de_Mortfichet_Finish</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Dying1</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Run1</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Dead</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Talk2</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_Talk1</Anim>		
+		  <Anim>CU_Mary_de_Mortfichet_Hit</Anim>
+		  <Anim>CU_Mary_de_Mortfichet_PoisonAttack</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>        
+        <Category>Hero</Category>
+        <Category>Military</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>3</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>CU_Mary_de_Mortfichet_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_CU_MARY_DE_MORTFICHET</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_Mary_de_Mortfichet_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+	    <Logic classname="GGL::CHeroBehaviorProps">
+	        <Class>GGL::CHeroBehavior</Class>
+	    </Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+			  <NormalAttackAnim1>CU_Mary_de_Mortfichet_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Mary_de_Mortfichet_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Mary_de_Mortfichet_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Mary_de_Mortfichet_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Mary_de_Mortfichet_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Mary_de_Mortfichet_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Mary_de_Mortfichet_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Mary_de_Mortfichet_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+
+	
+	<Behavior>
+	    <Logic classname="GGL::CRangedEffectAbilityProps">
+	        <Class>GGL::CRangedEffectAbility</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds><!--120-->
+	        <AffectsHostiles>true</AffectsHostiles>
+	        <AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+	        <Range>1000.0</Range>
+	        <DurationInSeconds>60</DurationInSeconds>
+	        <DamageFactor>0.5</DamageFactor>
+	        <Effect>FXMaryDemoralize</Effect>
+	        
+<!--ArmorFactor>-0.8</ArmorFactor>
+	        <HealthRecoveryFactor>0.3</HealthRecoveryFactor-->
+	    </Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+	    <Logic classname="GGL::CCircularAttackProps">
+	        <Class>GGL::CCircularAttack</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+	        <TaskList>TL_BATTLE_POISON</TaskList>
+	        <Animation>CU_Mary_de_Mortfichet_PoisonAttack</Animation>
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>45</DamageAmount>
+	        <Range>1500.0</Range>
+	        <Effect>FXMaryPoison</Effect>
+	    </Logic>
+	</Behavior>
+
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+   
+
+</root>

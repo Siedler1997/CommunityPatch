@@ -3,6 +3,7 @@
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>ED::CDisplayBuilding</Class>
 		<Model>XD_DarkWallStraightGate</Model>
+		<RenderInFoW>true</RenderInFoW>
 	</Display>
 	<Logic classname="GGL::CGLBuildingProps">
         <Class>GGL::CBuilding</Class>
@@ -14,8 +15,22 @@
         <ForceNoPlayer>false</ForceNoPlayer>
         <IsWall>true</IsWall>
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>Wall_Generic</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>30</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
+		</ConstructionInfo>
+		
 		<BlockingArea> 
 	        <Blocked1>
 	            <X>100</X> 

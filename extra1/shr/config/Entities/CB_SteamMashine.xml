@@ -26,8 +26,29 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification06</Category>
+			<Category>SteamMashine</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>30</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>0</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
+		</ConstructionInfo>
+		
 		<ApproachPos>
             <X>-100</X>
             <Y>-200</Y>

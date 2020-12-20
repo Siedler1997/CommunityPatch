@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>60</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>1000</Gold>
+		  <Clay/>
+		  <Wood/>
+		  <Stone/>		
+		  <Iron>800</Iron>
+		  <Sulfur>100</Sulfur>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	<ArmorModifier>
+		  <Value>4</Value>
+		  <Operation>+</Operation>
+	</ArmorModifier>
+
+	<Conditions>	
+		<RequiredTecConditions>3</RequiredTecConditions>
+		<TecCondition>
+			  <TecType>T_PlateMailArmor</TecType>
+			  <TecCategoryType/>
+		</TecCondition>
+		<TecCondition>
+			  <TecType>T_LeatherArcherArmor</TecType>
+			  <TecCategoryType/>
+		</TecCondition>
+		<TecCondition>
+			  <TecType>T_FleeceLinedLeatherArmor</TecType>
+			  <TecCategoryType/>
+		</TecCondition>
+		
+		<EntityCondition>
+			  <EntityType>PB_Headquarters3</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

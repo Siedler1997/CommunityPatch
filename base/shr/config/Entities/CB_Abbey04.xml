@@ -26,8 +26,29 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification01</Category>
+			<Category>Abbey04</Category>
 		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>20</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-150</X>
+					<Y>150</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>-200</X>
             <Y>0</Y>

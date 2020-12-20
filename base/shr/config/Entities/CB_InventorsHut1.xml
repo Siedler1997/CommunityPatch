@@ -26,8 +26,64 @@
 		</ModifyExploration>
 
 		<Upgrade>
-			<Category>Beautification06</Category>
+			<Category>InventorsHut1</Category>
 		</Upgrade>
+		
+		<ConstructionInfo>
+			<Time>110</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>700</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>400</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>-500</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-1000</X>
+					<Y>300</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-1000</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>700</Y>
+				</Position>
+				<Orientation>270</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteUniversity1</ConstructionSite>
+		</ConstructionInfo>
+		
         <ApproachPos>
             <X>0</X>
             <Y>-700</Y>

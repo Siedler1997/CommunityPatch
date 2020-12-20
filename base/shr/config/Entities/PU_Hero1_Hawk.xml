@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 
+    THIS IS AN EARLY, NON-FINAL VERSION.  PLEASE HEED THE COMMENTS IN THIS FILE! 
+    Try to keep the comments - if you delete them, other people may not easily 
+    understand the meaning of some of the tags used herein.
+-->
+
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>XA_Hawk</Model>
+		<Anim>XA_Hawk_Fly</Anim>
+	</Display>
+	<Logic classname="GGL::CGLAnimalProps">
+		<Class>GGL::CAnimal</Class>
+		<AccessCategory>AccessCategoryAnimal</AccessCategory>
+		<DefaultTaskList>TL_HAWK_IDLE</DefaultTaskList> <!-- Data checker should check that this is not hunt -->
+		<TerritoryRadius>10000</TerritoryRadius>
+		<WanderRangeMin>4000</WanderRangeMin>
+		<WanderRangeMax>8000</WanderRangeMax>				
+		<NeedsPlayer>true</NeedsPlayer>
+		<MaxHealth>20</MaxHealth> 
+		<MapFileDontSave>true</MapFileDontSave>
+		<Exploration>30</Exploration>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<CanDrown>false</CanDrown>
+		<ShyRange>0</ShyRange>
+	</Logic>
+	<Behavior>
+	    <Logic classname="GGL::CHawkBehaviorProps">
+	        <Class>GGL::CHawkBehavior</Class>
+	        <ExploreTaskList>TL_HAWK_EXPLORE</ExploreTaskList>
+	        <MaxCirclingDistance>500.0</MaxCirclingDistance>
+	    </Logic>
+	</Behavior>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+		<!-- animation to be used when entity is suspended -->
+			<SuspensionAnimation>XA_Hawk_Fly</SuspensionAnimation>
+			<!--
+			    I presume there will be an animation set for each type of soldier
+			-->
+			<AnimSet>SET_HAWK</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CBehaviorAnimalMovement</Class>
+			<Speed>500</Speed>
+			<RotationSpeed>80</RotationSpeed>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<!--Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior-->
+	<!--Behavior>
+		<Logic classname="GGL::CSoldierBehaviorProps">
+			<Class>GGL::CSoldierBehavior</Class>
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <NormalAttackAnim1>PU_SoldierSword1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_SoldierSword1_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_SoldierSword1_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_SoldierSword1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>PU_SoldierSword1_Idle1</MissAttackAnim>
+	        <BattleIdleAnim>PU_SoldierSword1_Idle1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_SoldierSword1_Walk</BattleWalkAnim>
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>10</DamageAmount>
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+		</Logic>
+	</Behavior-->
+	<!--Behavior>
+		<Logic classname="GGL::CFormationBehaviorProperties">
+			<Class>GGL::CFormationBehavior</Class>
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword1_Idle1</AnimID>
+    		    <Frequency>3</Frequency>
+    		</IdleAnim>		
+    		<IdleAnim>
+    		    <AnimID>PU_SoldierSword1_IdleAttack1</AnimID>
+    		    <Frequency>1</Frequency>
+    		</IdleAnim>		
+		</Logic>
+	</Behavior-->
+	
+	<!-- 
+	    Currently, animals do not support "nice" dying, they are just
+	    registered for deletion.  Since the hawk is an animal, leaving
+	    this dying behavior in will lead to GetEntity() potentially 
+	    after the hawk has been removed from logic by the animal
+	    behavior.
+	-->
+	<!--Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior-->
+
+</root>

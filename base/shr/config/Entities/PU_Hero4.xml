@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for Erec --><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Hero4</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>PU_Hero4_Walk</Anim>
+		  <Anim>PU_Hero4_Hit</Anim>
+		  <Anim>PU_Hero4_Idle1</Anim>
+		  <Anim>PU_Hero4_IdleAttack1</Anim>
+		  <Anim>PU_Hero4_Attack1</Anim>
+		  <Anim>PU_Hero4_Attack2</Anim>		
+		  <Anim>PU_Hero4_Finish</Anim>
+		  <Anim>PU_Hero4_Dying1</Anim>
+		  <Anim>PU_Hero4_Run1</Anim>
+		  <Anim>PU_Hero4_Dead</Anim>	
+		  <Anim>PU_Hero4_CircularAttack</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>
+        <Category>Hero</Category>
+        <Category>Hero4</Category>
+        <Category>Military</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>22</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>4</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>PU_Hero4_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_HERO4</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Hero4_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>PU_Hero4_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Hero4_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Hero4_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Hero4_Finish</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Hero4_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Hero4_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Hero4_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Hero4_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        
+	        <MaxRange>250.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+    <Behavior>
+        <Logic classname="GGL::CHeroBehaviorProps">
+            <Class>GGL::CHeroBehavior</Class>
+        </Logic>
+    </Behavior>
+
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CRangedEffectAbilityProps">
+	        <Class>GGL::CRangedEffectAbility</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+	        <AffectsOwn>true</AffectsOwn>
+	        <AffectsFriends>true</AffectsFriends>
+	        <AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+	        <Range>1000.0</Range>
+	        <DurationInSeconds>60</DurationInSeconds>
+	        <DamageFactor>2.0</DamageFactor>
+	        
+<!--ArmorFactor>0.8</ArmorFactor>
+	        <HealthRecoveryFactor>0.3</HealthRecoveryFactor-->
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CCircularAttackProps">
+	        <Class>GGL::CCircularAttack</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+	        <TaskList>TL_BATTLE_SPECIAL</TaskList>
+	        <Animation>PU_Hero4_CircularAttack</Animation>
+	        <DamageClass>DC_Hero</DamageClass>
+	        <DamageAmount>80</DamageAmount>
+	        <Range>400.0</Range>
+	    </Logic>
+	</Behavior>
+
+
+</root>

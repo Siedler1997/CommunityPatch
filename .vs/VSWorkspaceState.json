@@ -5,12 +5,14 @@
     "\\base\\shr",
     "\\base\\shr\\config",
     "\\base\\shr\\config\\Entities",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\text",
-    "\\extra2\\shr\\text\\de",
-    "\\extra2\\shr\\text\\de\\InGame"
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\config",
+    "\\extra1\\shr\\config\\Entities",
+    "\\extra1\\shr\\text",
+    "\\extra1\\shr\\text\\de",
+    "\\extra1\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\extra2\\shr\\text\\de\\InGame\\Names.xml",
+  "SelectedNode": "\\extra2\\shr\\config\\Entities\\PU_Hero10.xml",
   "PreviewInSolutionExplorer": false
 }
