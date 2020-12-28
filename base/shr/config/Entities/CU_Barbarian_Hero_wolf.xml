@@ -133,7 +133,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CLimitedLifespanBehaviorProps">
 	        <Class>GGL::CLimitedLifespanBehavior</Class>
-	        <LifespanSeconds>180</LifespanSeconds>
+	        <LifespanSeconds>150</LifespanSeconds>
 	    </Logic>
 	</Behavior>
 

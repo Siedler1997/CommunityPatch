@@ -20,6 +20,8 @@
 		+ geben beim Abriss 150 Holz und 50 Steine
 	* Mauern 
 		+ sind deutlich solider
+		+ können repariert werden
+		+ profitieren von der Technologie 'Maurerhandwerk'
 		+ Dunkle Mauern sind, wie normale Mauern auch, im 'Nebel des Krieges' sichtbar
 	* Außenposten
 		+ werden von Arbeitern und Leibeigenen an der Innentür betreten/verlassen, nicht schon am Haupttor
@@ -93,6 +95,10 @@
 			/ Helias, Varg, Kala: 'Holz härten', 'Drechseln'
 			/ Dario, Pilgrim, Salim, Erec, Kerberos, Mary, Yuki, Dovbar: 'Meisterschmied', 'Eisengießen'
 			/ Drake: 'Bleikugel', 'Kimme und Korn'
+		+ können eine Markierung setzen, die den Bereich dauerhaft aufdeckt
+			/ die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
+			/ das Setzen einer neuen Markierung entfernt zugleich die Alte
+			/ wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
 		+ Darios Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
 			/ PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
 			/ PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt und dazu auch zwei Angriffspunkte mehr (=18)
@@ -104,7 +110,7 @@
 			/ haben einen Rüstungspunkt weniger (=3)
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
 		+ Vargs Wölfe
-			/ Cooldown beträgt 3:30 Min (vorher: 3 Min.)
+			/ haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
 			/ werden zu 3. beschworen (vorher: 2)
 			/ verlangen keinen Sold
 			/ sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
@@ -173,6 +179,10 @@
 	* Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
 	* Kala hat den üblichen Helden-Selektionsring
 	* In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
+	* Hilfe-Button
+		+ gibt bei jedem Helden spezifische Hilfe
+		+ gibt bei Kanonen eine eigene Hilfe
+		+ gibt bei Türmen Tipps in Abhängigkeit ihrer Ausbaustufe
 	* Find-Buttons
 		+ werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
 		+ Darios Button leuchtet in der Spielerfarbe statt nur blau
@@ -201,9 +211,12 @@
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
-	* Kanonen gehören zusätzlich der EntityCategory 'LongRange' an
+	* Kanonen 
+		+ gehören zusätzlich der EntityCategory 'LongRange' an
+		+ haben als SoldierType 'PV_Cannon1', was aufgrund von max. 0 Soldaten aber eig. irrelevant ist
 	* Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		+ Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
+	* Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
 	* 6 unbenutzte Button-Texturen:
 		+ Sind über 6 Dummy-Buttons (DummyButton0X) erreichbar (-> 'TransferMaterials')
 		+ Die Zählung beginnt ab 'DummyButton02' -> 'DummyButton01' existiert nicht!
@@ -235,10 +248,14 @@
 	* Dovbar hat weder Audio-Feedback noch Helden-Fähigkeiten
 		+ Feedback: Es gibt halt keine Audio-Files für ihn
 		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
+	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
+		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 - ToDos:
-	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
+	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
+	* Audio-Files für Dovbar (Kundschafter) und Söldner (Dieb?)
+	* 'gvGUI_StateID'-Table um die neuen Buttons ergänzen
 	* Einstellung der Spielgeschwindigkeit (SP only)
-	* Setzen einer Markierung per Held (SP only)
+	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
 	* Countdowns 
 		+ sollen während Briefings pausieren

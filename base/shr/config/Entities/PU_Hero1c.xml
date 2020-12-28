@@ -122,21 +122,8 @@
 	        <BattleWaitUntil>2000</BattleWaitUntil>
 
 	        <AutoAttackRange>2200</AutoAttackRange>
-	        
-	        
-
-      
 
       <!-- Rate of healing is HealingPoints/HealingSeconds.  Both values are integers. -->
-	        
-
-      
-
-      <!-- 
-	            In the below example 10 health points every 3 seconds.  Note that 9/3 is not
-	            the same as 3/1, because in the former case you need to survive the 3 seconds to
-	            get the 9 points, in the latter you get only 3, but each second.
-	        -->
 	        <HealingPoints>8</HealingPoints>
 	        <HealingSeconds>2</HealingSeconds>
 		  </Logic>

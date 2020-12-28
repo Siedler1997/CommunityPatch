@@ -288,6 +288,29 @@ GUIAction_Hero1LookAtHawk()
 		XGUIEng.HighLightButton(CurrentWidgetID,0)	
 	end
 end
+
+--------------------------------------------------------------------------------
+-- Place an exploration-marker
+--------------------------------------------------------------------------------
+function GUIAction_HeroGenericExplore() 
+	local PlayerID = GUI.GetPlayerID()
+	local heroId = GUI.GetSelectedEntity()
+	if Logic.IsHero(heroId) == 1 then
+		if IsExisting("cp_p"..PlayerID.."_marker_pos") then
+			local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
+			GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
+			Explore.Hide("cp_p"..PlayerID.."explorer")
+			DestroyEntity("cp_p"..PlayerID.."_marker_pos")
+		end
+		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+			local _pos = GetPosition(heroId)
+			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
+			GUI.CreateMinimapMarker(_pos.X, _pos.Y, 2)
+			Explore.Show("cp_p"..PlayerID.."explorer", _pos, 2000)
+		end
+	end
+end
+
 --------------------------------------------------------------------------------
 -- Protect Units by fear the enemies
 --------------------------------------------------------------------------------
@@ -1018,13 +1041,9 @@ end
 ---------------------------------------------------------------------------------------
 -- function will be called by a button in the interface
 ---------------------------------------------------------------------------------------
-function 
-GUIAction_OnlineHelp()
-	
+function GUIAction_OnlineHelp()
 	local CurrentTime = Game.RealTimeGetMs() / 1000		
-	if 		gvOnlineHelp_LastTimeStarted == nil 
-		or 	( CurrentTime - gvOnlineHelp_LastTimeStarted ) > 2.0
-	then			
+	if gvOnlineHelp_LastTimeStarted == nil or (CurrentTime - gvOnlineHelp_LastTimeStarted) > 2.0 then			
 		--get current selection
 		local SelectedEntityID = GUI.GetSelectedEntity()
 		
@@ -1035,26 +1054,38 @@ GUIAction_OnlineHelp()
 		if Logic.IsBuilding( SelectedEntityID ) == 1 then	
 			UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(EntityType)
 		else
-			UpgradeCategory = Logic.LeaderGetSoldierUpgradeCategory( SelectedEntityID )
+			UpgradeCategory = Logic.LeaderGetSoldierUpgradeCategory(SelectedEntityID)
 		end
-		
-		
-		
+				
+		local SpokenText = 0	
+		local Text = ""	
+
 		--get random text and sound
 		local RandomHelp = XGUIEng.GetRandom(1+ table.getn(HintTable["global"]))
-				
-		local SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable["global"][RandomHelp]]
-		local Text 			= XGUIEng.GetStringTableText("VoicesMentorHelp/" .. HintTable["global"][RandomHelp])
 			
 		--is something selected
 		if SelectedEntityID ~= nil then	
 			--YES!
 			if HintTable[UpgradeCategory] ~= nil then
-		
-				-- use text from Upgradecategory		
-				SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable[UpgradeCategory]]
-				Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/" .. HintTable[UpgradeCategory])			
-			
+				if UpgradeCategory == UpgradeCategories.Tower or UpgradeCategory == UpgradeCategories.DarkTower then
+					if EntityType == Entities.PB_Tower2 or  EntityType == Entities.PB_DarkTower2 then
+						SpokenText	= Sounds["VoicesMentorHelp_BUILDING_Ballistatower"]
+						Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/BUILDING_Ballistatower")		
+					elseif EntityType == Entities.PB_Tower3 or  EntityType == Entities.PB_DarkTower3 then
+						SpokenText	= Sounds["VoicesMentorHelp_BUILDING_Cannontower"]
+						Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/BUILDING_Cannontower")	
+					else
+						SpokenText	= Sounds["VoicesMentorHelp_BUILDING_Watchtower"]
+						Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/BUILDING_Watchtower")
+					end
+				else
+					-- use text from Upgradecategory		
+					SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable[UpgradeCategory]]
+					Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/" .. HintTable[UpgradeCategory])			
+				end
+			else						
+				SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable["global"][RandomHelp]]
+				Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/" .. HintTable["global"][RandomHelp])
 			end
 			
 			if Logic.IsWorker(SelectedEntityID) == 1 then
@@ -1062,17 +1093,42 @@ GUIAction_OnlineHelp()
 				Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Workers")
 			end
 			
-			
 			if Logic.IsHero(SelectedEntityID) == 1 then
-				SpokenText	= Sounds.VoicesMentorHelp_UNIT_Heroes
-				Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Heroes")
+				if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.Hero1) == 1 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Dario
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Dario")
+				elseif EntityType == Entities.PU_Hero2 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Pilgrim
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Pilgrim")
+				elseif EntityType == Entities.PU_Hero3 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Salim
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Salim")
+				elseif EntityType == Entities.PU_Hero4 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Erec
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Erec")
+				elseif EntityType == Entities.PU_Hero5 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Ari
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Ari")
+				elseif EntityType == Entities.PU_Hero6 then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Helias
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Helias")
+				elseif EntityType == Entities.CU_BlackKnight then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Kerberos
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Kerberos")
+				elseif EntityType == Entities.CU_Mary_de_Mortfichet then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_MarydeMortfichet
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_MarydeMortfichet")
+				elseif EntityType == Entities.CU_Barbarian_Hero then
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Varg
+					Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Varg")
+				else
+					SpokenText	= Sounds.VoicesMentorHelp_UNIT_Heroes
+					Text 		= XGUIEng.GetStringTableText("VoicesMentorHelp/UNIT_Heroes")
+				end
 			end
-			
-			if GUIAction_AOOnlineHelp ~= nil then
-				SpokenText, Text = GUIAction_AOOnlineHelp(SelectedEntityID, SpokenText, Text)
-			end
-		
-			
+		else
+			SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable["global"][RandomHelp]]
+			Text		= XGUIEng.GetStringTableText("VoicesMentorHelp/" .. HintTable["global"][RandomHelp])
 		end
 	
 		Sound.StartOnlineHelpSound(SpokenText, 0)	

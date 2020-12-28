@@ -3,16 +3,16 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\text",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra1\\shr\\config\\Entities",
-    "\\extra1\\shr\\text",
-    "\\extra1\\shr\\text\\de",
-    "\\extra1\\shr\\text\\de\\InGame"
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\Interface",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\script",
+    "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\extra2\\shr\\config\\Entities\\PU_Hero10.xml",
+  "SelectedNode": "\\base\\shr\\text\\en\\InGame\\MenuHero1.xml",
   "PreviewInSolutionExplorer": false
 }

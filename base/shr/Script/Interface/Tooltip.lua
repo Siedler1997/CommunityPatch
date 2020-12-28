@@ -295,8 +295,8 @@ GUITooltip_NormalButton(_TooltipString, _ShortCut)
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 	end
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, _TooltipString)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
+	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, _TooltipString)
 end
 
 --------------------------------------------------------------------------------
@@ -482,4 +482,22 @@ function GUITooltip_Formations(_NormalTooltip, _DisabledTooltip)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
 	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, "")
+end
+
+--------------------------------------------------------------------------------
+-- Display Text for buttons that are only usable in singleplayer-mode
+--------------------------------------------------------------------------------
+function GUITooltip_SinglePlayerButton(_NormalTooltip, _ShortCut)
+	local ShortCutToolTip = " "
+	local TooltipText = ""
+
+	if XNetwork.Manager_IsGameRunning() == 1 then
+		TooltipText = TooltipText .. "MenuGeneric/FeatureNotAvailable"
+	else
+		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+		TooltipText = TooltipText .. _NormalTooltip
+	end
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
+	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
 end

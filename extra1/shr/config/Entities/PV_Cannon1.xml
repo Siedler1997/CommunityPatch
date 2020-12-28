@@ -83,6 +83,8 @@
 		
             <HomeRadius>1500</HomeRadius>
 
+			  <SoldierType>PV_Cannon1</SoldierType>
+
 		    <BattleTaskList>TL_BATTLE_VEHICLE</BattleTaskList>
 	        
 	        <NormalAttackAnim1>PV_Cannon1_Shoot</NormalAttackAnim1>

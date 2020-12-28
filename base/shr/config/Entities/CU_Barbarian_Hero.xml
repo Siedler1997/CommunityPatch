@@ -158,7 +158,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CSummonBehaviorProps">
 	        <Class>GGL::CSummonBehavior</Class>
-	        <RechargeTimeSeconds>210</RechargeTimeSeconds>
+	        <RechargeTimeSeconds>180</RechargeTimeSeconds>
 	        <SummonedEntityType>CU_Barbarian_Hero_wolf</SummonedEntityType>
 	        <NumberOfSummonedEntities>3</NumberOfSummonedEntities>
 	        <SummonTaskList>TL_HERO5_SUMMON</SummonTaskList>

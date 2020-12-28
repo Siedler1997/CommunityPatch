@@ -14,6 +14,12 @@
         <Category>Wall</Category>
         <ForceNoPlayer>false</ForceNoPlayer>
         <IsWall>true</IsWall>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+		
 		<Upgrade>
 			<Category>Wall_Generic</Category>
 		</Upgrade>
@@ -28,6 +34,34 @@
 				<Iron />
 				<Sulfur />
 			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-200</X>
+					<Y>-100</Y>
+				</Position>
+				<Orientation>45</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-200</Y>
+				</Position>
+				<Orientation>45</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>100</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>225</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>100</Y>
+				</Position>
+				<Orientation>225</Orientation>
+			</BuilderSlot>
 			<ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
 		</ConstructionInfo>
 		
