@@ -126,6 +126,7 @@ function GameCallback_GUI_SelectionChanged()
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,1)	
 			XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
 			--XGUIEng.ShowWidget("Commands_Leader",0)
+			FunnyComment = Sounds.VoicesSerf_SERF_FunnyComment_rnd_01
 		else
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,0)
 			--XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
@@ -179,7 +180,7 @@ function GameCallback_GUI_SelectionChanged()
 				elseif EntityType == Entities.CU_Barbarian_Hero then
 
 					FunnyComment = Sounds.VoicesHero9_HERO9_FunnyComment_rnd_01	
-				
+
 				end
 			else
 			--disbale Buy soldier Area for units without possible soldier
@@ -190,7 +191,7 @@ function GameCallback_GUI_SelectionChanged()
 				end
 				--XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldier,1)
 				
-				FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
+				--FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
 			end
 		
 		end	
@@ -451,6 +452,9 @@ function GameCallback_GUI_SelectionChanged()
 		end
 	end
 	
+	if FunnyComment == 0 and Logic.IsLeader( EntityId ) == 1 then
+		FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
+	end
 	
 	--funny comment only for settlers
 	if FunnyComment ~= 0 then

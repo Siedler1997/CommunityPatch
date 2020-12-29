@@ -59,6 +59,7 @@
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
 		+ Schwarze Ritter haben einen Rüstungspunkt mehr (=3)
+		+ haben Audio-Feedback
 		+ profitieren von verschiedenen Waffen- und Rüstungstechnologien
 			/ Schwarze Ritter: Technologien der Schwertkämpfer
 			/ Barbaren: Technologien der Speerkämpfer
@@ -72,7 +73,8 @@
 	* Militärische Einheiten
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
-			/ Milizsoldaten profitieren von jenen Technologien, die auch Leibeigene betreffen
+			/ Milizen profitieren von jenen Technologien, die auch Leibeigene betreffen
+			/ Milizen haben das AudioFeedback von Leibeigenen
 		+ Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			/ Berittene Bogenschützen (Stufe 1) kosten Holz
 			/ Berittene Armbrustschützen (Stufe 2) kosten Eisen
@@ -84,6 +86,7 @@
 			/ sind nicht mehr ganz so effektiv gegen Gebäude
 			/ Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
 			/ Schwere Scharfschützen zielen erheblich besser
+		+ Diebe und Kundschafter geben ihre persönlichen FunnyComments zum Besten
 	* Helden
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
 		+ profitieren von der neuen Technologie 'Aegis'
@@ -103,17 +106,20 @@
 			/ PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
 			/ PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt und dazu auch zwei Angriffspunkte mehr (=18)
 		+ Drake hat einen Rüstungspunkt weniger (=3)
+		+ Varg hat einen Rüstungspunkt weniger (=3)
 		+ Aris Banditen
 			/ werden zu 5. beschworen (vorher: 3)
 			/ haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
 			/ wechseln nicht mehr dauernd in die Walk-Animation
 			/ haben einen Rüstungspunkt weniger (=3)
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
+			/ geben Audio-Feedback
 		+ Vargs Wölfe
 			/ haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
 			/ werden zu 3. beschworen (vorher: 2)
 			/ verlangen keinen Sold
 			/ sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
+			/ geben Audio-Feedback
 		+ Vargs 'Berserkerwut'
 			/ hält für 1:00 Min (vorher: 40 Sek.)
 			/ bewirkt keine einmalige HP-Regeneration mehr
@@ -129,6 +135,7 @@
 			/ kann über etwas größere Distanz gehalten werden
 		+ Darios Falke hat doppelte Sichtweite (15sm -> 30sm)
 		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch Kanonen
+		+ Dovbar hat das AudioFeedback von Kundschaftern
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -182,7 +189,7 @@
 	* Hilfe-Button
 		+ gibt bei jedem Helden spezifische Hilfe
 		+ gibt bei Kanonen eine eigene Hilfe
-		+ gibt bei Türmen Tipps in Abhängigkeit ihrer Ausbaustufe
+		+ gibt bei Türmen Hilfe in Abhängigkeit ihrer Ausbaustufe
 	* Find-Buttons
 		+ werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
 		+ Darios Button leuchtet in der Spielerfarbe statt nur blau
@@ -197,7 +204,7 @@
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	* Steuer-Predigt-Exploit entschärft
 		+ Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
-		+ Predigten kosten Taler abhängig von der "Stufe" der Predigt und der Anzahl der betroffenen Siedler
+		+ Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
 	* Musik
 		+ Winter/Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		+ In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
@@ -206,6 +213,7 @@
 	* Wetter-Effekte sind etwas gemischter
 		+ Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		+ Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+	* ein paar EasterEggs;)
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
@@ -245,15 +253,11 @@
 		+ Vmtl. wegen seinem Modell(?)
 	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
 		+ Grund: Sie haben einfach keine
-	* Dovbar hat weder Audio-Feedback noch Helden-Fähigkeiten
-		+ Feedback: Es gibt halt keine Audio-Files für ihn
-		+ Fähigkeiten: Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
+	* Dovbar hat keine Helden-Fähigkeiten
+		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 - ToDos:
-	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
-	* Audio-Files für Dovbar (Kundschafter) und Söldner (Dieb?)
-	* 'gvGUI_StateID'-Table um die neuen Buttons ergänzen
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
@@ -265,6 +269,7 @@
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
 	* Anordnung von Maps unabhängig von Farben (by Zedeg)
+	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* neue Comforts (bei Bedarf)
@@ -272,7 +277,7 @@
 		+ bislang nur ein mal passiert
 	* Kadirs "Reflektionen" entfernen (Modell?)
 	* Eigene Texturen für Veteranen und Varg (Recoloring?)
-	* Umsetzung in Vanilla DEdK
+	* Umsetzung in Vanilla-DEdK
 	* Organisatorisches
 		+ FeatureList 
 			/ Auflistung aller geänderten/neuen SelectionNames

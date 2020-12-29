@@ -2,17 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\base",
+    "\\base\\lng",
+    "\\base\\lng\\de",
+    "\\base\\lng\\de\\Sounds",
+    "\\base\\lng\\de\\Sounds\\VoicesHero0",
+    "\\base\\lng\\en",
+    "\\base\\lng\\en\\Sounds",
+    "\\base\\lng\\en\\Sounds\\VoicesHero0",
     "\\base\\shr",
-    "\\base\\shr\\text",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\base\\shr\\text\\en\\InGame\\MenuHero1.xml",
+  "SelectedNode": "\\base\\shr\\config\\Entities\\PU_Hero5_Outlaw.xml",
   "PreviewInSolutionExplorer": false
 }

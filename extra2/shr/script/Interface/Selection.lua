@@ -127,6 +127,7 @@ function GameCallback_GUI_SelectionChanged()
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,1)	
 			XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
 			--XGUIEng.ShowWidget("Commands_Leader",0)
+			FunnyComment = Sounds.VoicesSerf_SERF_FunnyComment_rnd_01
 		else
 			XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionBattleSerf ,0)
 			--XGUIEng.ShowWidget(gvGUI_WidgetID.CommandsGeneric,1)
@@ -205,6 +206,9 @@ function GameCallback_GUI_SelectionChanged()
 				elseif EntityType == Entities.CU_Evil_Queen then
 					FunnyComment = Sounds.AOVoicesHero12_HERO12_FunnyComment_rnd_01
 				
+				--Community Patch
+				elseif EntityType == Entities.PU_Hero1 then
+					FunnyComment = Sounds.AOVoicesScout_Scout_FunnyComment_rnd_01
 				
 				end
 			else
@@ -218,7 +222,7 @@ function GameCallback_GUI_SelectionChanged()
 				end
 				--XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldier,1)
 				
-				FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
+				--FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
 			end
 		
 		end	
@@ -506,6 +510,9 @@ function GameCallback_GUI_SelectionChanged()
 		
 	end
 	
+	if FunnyComment == 0 and Logic.IsLeader( EntityId ) == 1 then
+		FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04
+	end
 	
 	--funny comment only for settlers
 	if FunnyComment ~= 0 then

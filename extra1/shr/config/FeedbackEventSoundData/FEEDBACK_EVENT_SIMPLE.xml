@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!--	Param1:	Feedbacktype	0 = Yes
+					1 = No
+					2 = Special
+					3 = Attack
+					4 = Drowned
+					5 = serf done building repair or construction
+					6 = serf has no resources found
+					7 = Hero died
+		Param2: Entity Type-->
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+		<Data classname="GGUI::SoundFeedback::CData">			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesHero4\HERO4_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesHero8\HERO8_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesHero9\HERO9_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>aovoicesscout\scout_yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Thief</EntityType>
+				<SoundID>aovoicesthief\thief_yes_rnd_01</SoundID>
+						 
+
+			</ValueSound>
+			
+			
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Serf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<!-- Leaders -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Archery1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Archery2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Stable1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Stable2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Barracks1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Barracks2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>			
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5_Outlaw</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1</EntityType>
+				<SoundID>AOVoicesScout\Scout_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>Military\SO_Bearman_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+<!--		<Warn>true</Warn>-->
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>0</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesHero4\HERO4_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_NO_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_NO_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesHero8\HERO8_No_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesHero9\HERO9_No_rnd_01</SoundID>
+			</ValueSound>
+			
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_No_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_No_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_No_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>aovoicesscout\scout_no_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Thief</EntityType>
+				<SoundID>aovoicesthief\thief_no_rnd_01</SoundID>
+			</ValueSound>
+			
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Serf</EntityType>
+				<SoundID>VoicesSerf\SERF_No_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Headquarters3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow4</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Archery1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Archery2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Stable1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Stable2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<!-- -->			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm4</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword4</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Barracks1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PB_Barracks2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>			
+				<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			
+			
+			
+			<!-- Workers -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Farmer</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Miner</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Smith</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Coiner</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Priest</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scholar</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Trader</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BrickMaker</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>		
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Stonecutter</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>		
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Treasurer</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>							
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Sawmillworker</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>		
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Smelter</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>		
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Alchemist</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>		
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Engineer</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>	
+			
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Gunsmith</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_MasterBuilder</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_TavernBarkeeper</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5_Outlaw</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1</EntityType>
+				<SoundID>AOVoicesScout\Scout_No_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
+				<SoundID>VoicesSerf\SERF_No_rnd_01</SoundID>
+			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>Military\SO_Bearman_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+				
+<!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
+				<Value>0</Value>
+				<SoundID>VoicesMenotor\comment_no_rnd_01</SoundID>
+			</ValueSound>-->
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+<!--		<Warn>true</Warn>-->
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>1</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<!-- Special ability -->
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		
+		<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_PlaceBomb_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_BuildTrap_rnd_01</SoundID>
+			</ValueSound>
+			<!--ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>Hero3\HERO3_NO_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>Hero3\HERO3_NO_rnd_01</SoundID>
+			</ValueSound-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_ConvertSettler_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_InflictFear_rnd_01</SoundID>
+			</ValueSound>
+		
+		<Warn>true</Warn>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>2</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<!-- Attack -->
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+		<Data classname="GGUI::SoundFeedback::CData">			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesHero4\HERO4_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesHero8\HERO8_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesHero9\HERO9_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderRifle2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>aovoicesscout\scout_attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Thief</EntityType>
+				<SoundID>aovoicesthief\thief_attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			
+			
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Serf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>		
+				<!-- -->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5_Outlaw</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_LeaderMace2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_LeaderClub2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderSword2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1</EntityType>
+				<SoundID>AOVoicesScout\Scout_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_BattleSerf</EntityType>
+				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderBearman1</EntityType>
+				<SoundID>Military\SO_Bearman_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
+				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			
+		<ParameterIndex>2</ParameterIndex>
+		</Data>
+<!--		<Warn>true</Warn>-->
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>3</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+        <Data classname="GGUI::SoundFeedback::CSingleSound">
+        	<SoundID>VoicesMentor\ATTACK_UnitsDrowned_rnd_01</SoundID>
+        </Data>
+		<Warn>true</Warn>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>4</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+        <Data classname="GGUI::SoundFeedback::CSingleSound">
+        	<SoundID>VoicesSerf\SERF_WorkIsDone_rnd_01</SoundID>
+        </Data>
+		<Warn>true</Warn>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>5</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+        <Data classname="GGUI::SoundFeedback::CSingleSound">
+        	<SoundID>VoicesSerf\SERF_CanNotFindResources_rnd_01</SoundID>
+        </Data>
+		<Warn>true</Warn>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>6</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueSound">
+		<Data classname="GGUI::SoundFeedback::CData">			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero1_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero1_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero1_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero2_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero3_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero4_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero5_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero6_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero7_rnd_01</SoundID>
+			</ValueSound>
+			
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero8_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesMentor\HERO_HeroDiedHero9_rnd_01</SoundID>
+			</ValueSound>
+			
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesMentor\HERO_HeroDiedHero10_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesMentor\HERO_HeroDiedHero11_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesMentor\HERO_HeroDiedHero12_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue>7</ParameterValue>
+		<CanBeIgnored>true</CanBeIgnored>
+	</Sound>
+	
+</root>

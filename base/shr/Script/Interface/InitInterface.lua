@@ -292,7 +292,6 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.VCMP_PointGame[8]= 	XGUIEng.GetWidgetID( "VCMP_Team8PointGame" )
 	
 	
-	
 	-- Convert state names into IDs
 	gvGUI_StateID = {}
 	gvGUI_StateID.Selection = 						GUI.GetStateNameByID( "Selection" )
