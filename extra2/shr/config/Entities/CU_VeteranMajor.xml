@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_BlackKnight_LeaderMace1</Model> 
+		  <Model>CU_VeteranMajor</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
 		  <Anim>CU_BlackKnight_LeaderMace1_Walk</Anim>
 		  <Anim>CU_BlackKnight_LeaderMace1_Run1</Anim>

@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\lng",
-    "\\base\\lng\\de",
-    "\\base\\lng\\de\\Sounds",
-    "\\base\\lng\\de\\Sounds\\VoicesHero0",
-    "\\base\\lng\\en",
-    "\\base\\lng\\en\\Sounds",
-    "\\base\\lng\\en\\Sounds\\VoicesHero0",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities"
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MainMenu",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\graphics",
+    "\\extra2\\shr\\graphics\\TexturesLow",
+    "\\extra2\\shr\\graphics\\TexturesMed"
   ],
-  "SelectedNode": "\\base\\shr\\config\\Entities\\PU_Hero5_Outlaw.xml",
+  "SelectedNode": "\\base\\shr\\Script\\MainMenu\\Options.lua",
   "PreviewInSolutionExplorer": false
 }

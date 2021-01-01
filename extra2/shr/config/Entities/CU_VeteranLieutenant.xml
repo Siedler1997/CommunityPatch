@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_Barbarian_SoldierClub1</Model> 
+		  <Model>CU_VeteranLieutenant</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
 		  <Anim>CU_Barbarian_SoldierClub1_Walk</Anim>
 		  <Anim>CU_Barbarian_SoldierClub1_Run1</Anim>

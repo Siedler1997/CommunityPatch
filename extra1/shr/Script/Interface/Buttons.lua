@@ -1167,7 +1167,6 @@ function GUIAction_OnlineHelp()
 		GUI.ClearNotes()
 		GUI.AddNote(Text)
 	end
-	end
 end
 
 

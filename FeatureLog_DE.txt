@@ -198,6 +198,11 @@
 		+ erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
 	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
+- Hauptmenü
+	* Der Reiter 'Spieler' ist reaktiviert
+		+ Spielername kann ingame geändert werden
+		+ Das Geschlecht kann angegeben werden (Kosmetik)
+	* Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 - Diverses
 	* Im Hauptmenü sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
 	* Die Grafik ist allgemein etwas besser (by yoq)
@@ -258,6 +263,16 @@
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 - ToDos:
+	* Hauptmenü
+		+ Geschlechtsauswahl 
+			/ mit Effekt
+			/ Tooltips anpassen (Sex-Buttons)
+		+ MP-Window fixen
+	* Alternativer, leicht erhöhter Schwierigkeitsgrad für original-Kampagnen
+		+ Technologien
+		+ Tribute(?)
+		+ Countdowns(?)
+		+ Einstellung im Haupt-/Kampagnenmenü
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
