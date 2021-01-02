@@ -196,12 +196,13 @@
 			/ Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
 		+ unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
 		+ erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
+	* Die Einstellung des Geschlechts (siehe 'Hauptmenü') schlägt sich in diversen Tooltips und anderen Texten nieder
 	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Hauptmenü
 	* Der Reiter 'Spieler' ist reaktiviert
-		+ Spielername kann ingame geändert werden
-		+ Das Geschlecht kann angegeben werden (Kosmetik)
+		+ Spielername kann geändert werden
+		+ Das Geschlecht kann angegeben werden
 	* Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 - Diverses
 	* Im Hauptmenü sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
@@ -246,6 +247,8 @@
 			-> return int Zufallszahl
 		+ GetClockTimeString(_sec): Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
 			-> return string Zeit
+		+ UserTool_GetPlayerNameWithTitle(_PlayerID): Gibt den Namen des Spielers inkl. dem vom Geschlecht abhängigen Titel zurück
+			-> return string Spielername
 - Bekannte Bugs & Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
 		+ nur ein mal bislang
@@ -262,11 +265,12 @@
 		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
+	* Die Sprachausgabe geht unabhängig vom Geschlecht von einem männlichen Spieler aus
+		+ Grund: Es gibt einfach keine Audio-Files mit weiblicher Anrede
+		+ Einzige (realistische) Lösung: Audio-Files entfernen
+			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
 - ToDos:
 	* Hauptmenü
-		+ Geschlechtsauswahl 
-			/ mit Effekt
-			/ Tooltips anpassen (Sex-Buttons)
 		+ MP-Window fixen
 	* Alternativer, leicht erhöhter Schwierigkeitsgrad für original-Kampagnen
 		+ Technologien

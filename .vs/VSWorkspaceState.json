@@ -3,14 +3,16 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MainMenu",
+    "\\base\\shr\\text",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\base\\shr\\text\\en",
+    "\\base\\shr\\text\\en\\InGame",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\graphics",
-    "\\extra2\\shr\\graphics\\TexturesLow",
-    "\\extra2\\shr\\graphics\\TexturesMed"
+    "\\extra2\\shr\\script",
+    "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\base\\shr\\Script\\MainMenu\\Options.lua",
+  "SelectedNode": "\\base\\shr\\text\\en\\InGame\\MainMenu.xml",
   "PreviewInSolutionExplorer": false
 }

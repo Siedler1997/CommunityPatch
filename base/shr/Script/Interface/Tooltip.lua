@@ -286,24 +286,34 @@ end
 --------------------------------------------------------------------------------
 -- Display Text for a normal button
 --------------------------------------------------------------------------------
-function
-GUITooltip_NormalButton(_TooltipString, _ShortCut)
+function GUITooltip_NormalButton(_TooltipString, _ShortCut)
 	local CostString = " "
 	local ShortCutToolTip = " "
-	
+	local TextString = ""
+
 	if _ShortCut ~= nil then
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 	end
+
+	if _TooltipString == "MenuResources/Motivation" then
+		if UserTool_GetLocalPlayerSex() == 1 then
+			TextString = string.format(XGUIEng.GetStringTableText(_TooltipString), XGUIEng.GetStringTableText("MenuGeneric/Female_Salut_Generic"))
+		else
+			TextString = string.format(XGUIEng.GetStringTableText(_TooltipString), XGUIEng.GetStringTableText("MenuGeneric/Male_Salut_Generic"))
+		end
+	else
+		TextString = XGUIEng.GetStringTableText(_TooltipString)
+	end
+
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, _TooltipString)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText, TextString)
 end
 
 --------------------------------------------------------------------------------
 -- Display generic tooltip (AnSu: put Normal Button and this function together)
 --------------------------------------------------------------------------------
-function
-GUITooltip_Generic(_TooltipString)
+function GUITooltip_Generic(_TooltipString)
 	GUITooltip_NormalButton(_TooltipString, _ShortCut)
 	if string.find(_TooltipString, "Find_") and not string.find(_TooltipString, "_hero") then
 		GUITooltip_FindUnits(_TooltipString)
