@@ -1148,11 +1148,11 @@ function GUIAction_OnlineHelp()
 			end
 			--]]
 			if EntityType == Entities.PU_Scout then
-				AOSpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Scout
-				AOText 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Scout")
+				SpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Scout
+				Text 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Scout")
 			elseif EntityType == Entities.PU_Thief then
-				AOSpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Thief
-				AOText 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Thief")
+				SpokenText	= Sounds.AOVoicesMentorHelp_UNIT_Thief
+				Text 			= XGUIEng.GetStringTableText("AOVoicesMentorHelp/UNIT_Thief")
 			end
 		else
 			SpokenText	= Sounds["VoicesMentorHelp_" .. HintTable["global"][RandomHelp]]

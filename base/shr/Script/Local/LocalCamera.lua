@@ -44,7 +44,7 @@ function Camera_InitParams()
 	gvCamera.DefaultFlag = 1
 	
 	-- Auto rotation flip back flag
-	gvCamera.RotationFlipBackFlag = 1
+	gvCamera.RotationFlipBackFlag = 0
 	
 	-- Manual camera values
 	gvCamera.ManualAngle = 36

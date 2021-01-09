@@ -122,6 +122,9 @@
 			/ geben Audio-Feedback
 		+ Vargs 'Berserkerwut'
 			/ hält für 1:00 Min (vorher: 40 Sek.)
+			/ betrifft auch Verbündete
+			/ Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
+			/ wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
 			/ bewirkt keine einmalige HP-Regeneration mehr
 			/ erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
 		+ Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
@@ -134,7 +137,7 @@
 			/ kann auf etwas größerer Distanz gestartet werden
 			/ kann über etwas größere Distanz gehalten werden
 		+ Darios Falke hat doppelte Sichtweite (15sm -> 30sm)
-		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch Kanonen
+		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch Ari und Kanonen
 		+ Dovbar hat das AudioFeedback von Kundschaftern
 - GUI
 	* Kamera
@@ -197,15 +200,41 @@
 		+ unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
 		+ erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
 	* Die Einstellung des Geschlechts (siehe 'Hauptmenü') schlägt sich in diversen Tooltips und anderen Texten nieder
+	* Briefing-Window verschönert
+		+ Es gibt keine Lücke mehr am linken Bildschirmrand
+		+ Der obere Balken ist etwas kleiner
+		+ Der schwarze Hintergrund beider Balken ist leicht transparent
+		+ Multiple-Choice-Seiten
+			/ Headline hat die gleiche Farbe wie bei normalen Seiten
+			/ Buttons sind so weit unten wie möglich
+				-> mehr Platz für Beschreibungstext
+			/ Button-Highlights werden nach dem Klick auf einen Button wieder entfernt
 	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
-- Hauptmenü
-	* Der Reiter 'Spieler' ist reaktiviert
-		+ Spielername kann geändert werden
-		+ Das Geschlecht kann angegeben werden
-	* Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 - Diverses
-	* Im Hauptmenü sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
+	* Hauptmenü
+		+ Der Reiter 'Spieler' ist reaktiviert
+			/ Spielername kann geändert werden
+			/ Das Geschlecht kann angegeben werden
+		+ Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
+		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
+		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
+	* Kampagnen-Maps modifiziert
+		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
+		+ in manchen Missionen können gegnerische Truppen respawnen
+			/ z.T. abhängig vom Schwierigkeitsgrad
+		+ 'Old Kings Castle'
+			/ Gegen einen Tribut von 2.000 Talern werden alle Ruinen am Schloss und in der Siedlung entfernt
+		+ 'Schlacht um Evelance' ist ein würdigeres Finale
+			/ Gegner sind zahlreicher
+			/ Gegner bilden richtig Truppen in Militärgebäuden aus
+			/ Gegnerische Türme sind höher ausgebaut
+		+ Auf Schwierigkeitsgrad Schwer allgemein
+			/ Gegner verfügen z.T. über mehr/stärkere Befestigungen 
+			/ Gegner profitieren von allen Waffen-/Rüstungstechnologien
+			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
+			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
+		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	* Die Grafik ist allgemein etwas besser (by yoq)
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	* Steuer-Predigt-Exploit entschärft
@@ -225,18 +254,29 @@
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
+	* 'MapEditorTools' 
+		+ stehen auch im Hauptspiels zur Verfügung
+		+ Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
+			/ d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+	* Fehlende orignale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
+		+ Andere sind in den AddOns vorhanden, aber anders definiert
 	* Kanonen 
 		+ gehören zusätzlich der EntityCategory 'LongRange' an
 		+ haben als SoldierType 'PV_Cannon1', was aufgrund von max. 0 Soldaten aber eig. irrelevant ist
 	* Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		+ Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
 	* Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
+	* Der Aufruf von 'GDB.GetValue("Game\\Campaign_Difficulty")' gibt den Kampagnen-Schwierigkeitsgrad zurück
+		-> return: int Normal (0) oder Schwer (1)
 	* 6 unbenutzte Button-Texturen:
 		+ Sind über 6 Dummy-Buttons (DummyButton0X) erreichbar (-> 'TransferMaterials')
 		+ Die Zählung beginnt ab 'DummyButton02' -> 'DummyButton01' existiert nicht!
 		+ Der Button 'DummyButton07' enthält die originale Textur zum Kauf von Bogen-Hauptmännern
 	* Bei aktiviertem DebugScript werfen Söldnerquartiere keine Debug-Messages mehr bei Einheiten ohne definierten Entity-Namen
 	* Comforts
+		+ StartCountdown(_Limit, _Callback, _Show): Startet einen Countdown
+			/ Abbrechbar mit StopCountdown(_Id)
+		+ SetAIUnitsToBuild( _aiID, ... ): Bestimmt, welche Einheitenarten die KI ausbilden kann
 		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
 			-> return: int Segnungskosten
 		+ CreateCostString(_costs) by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
@@ -247,8 +287,14 @@
 			-> return int Zufallszahl
 		+ GetClockTimeString(_sec): Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
 			-> return string Zeit
+		+ ResearchAllMilitaryTechs(_PlayerId): Gibt der angegebenen PlayerId alle militärischen Techs des Hauptspiels (also ohne AddOn)
+		+ ResearchAllMilitaryTechsAddOn(_PlayerId): Wie 'ResearchAllMilitaryTechs', aber zusätzlich mit AddOn-Technologien
 		+ UserTool_GetPlayerNameWithTitle(_PlayerID): Gibt den Namen des Spielers inkl. dem vom Geschlecht abhängigen Titel zurück
 			-> return string Spielername
+		+ SucheAufDerWelt(_player, _entity, _groesse, _punkthier) by Peermanent? / JugarTeam? / Kingsia?: Sucht Entities und gibt sie per Table zurück
+			-> return table Entities
+		+ IstDrin(_wert, _table) by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
+			-> return bool true/false
 - Bekannte Bugs & Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
 		+ nur ein mal bislang
@@ -267,16 +313,17 @@
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 	* Die Sprachausgabe geht unabhängig vom Geschlecht von einem männlichen Spieler aus
 		+ Grund: Es gibt einfach keine Audio-Files mit weiblicher Anrede
-		+ Einzige (realistische) Lösung: Audio-Files entfernen
+		+ Einzige (realistische) Lösung wäre, Audio-Files zu entfernen
 			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
 - ToDos:
+	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+		/ Umsetzung in 'Legenden'
+		/ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)
+		/ Testing
 	* Hauptmenü
 		+ MP-Window fixen
-	* Alternativer, leicht erhöhter Schwierigkeitsgrad für original-Kampagnen
-		+ Technologien
-		+ Tribute(?)
-		+ Countdowns(?)
-		+ Einstellung im Haupt-/Kampagnenmenü
+		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
+	* Random(?) Crash in '03_Neighborhood'
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
 	* Korrekte Kostenanzeige für den Kauf von Soldaten

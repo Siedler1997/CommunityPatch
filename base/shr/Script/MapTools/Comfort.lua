@@ -1814,3 +1814,195 @@ function GetRandom(_min, _max)
 	assert(type(_min)=="number" and type(_max)=="number")
 	return math.random(_min, _max)
 end
+
+-- Feeds the AI with a recruitment plan
+function SetAIUnitsToBuild( _aiID, ... )
+    for i = table.getn(DataTable), 1, -1 do
+        if DataTable[i].player == _aiID and DataTable[i].AllowedTypes then
+            DataTable[i].AllowedTypes = arg;
+        end
+    end
+end
+
+--Researchs Armor-, Attack- and other useful techs for military purposes
+function ResearchAllMilitaryTechs(_PlayerId)
+	ResearchTechnology( Technologies.T_LeatherMailArmor, _PlayerId );
+	ResearchTechnology( Technologies.T_ChainMailArmor, _PlayerId );
+	ResearchTechnology( Technologies.T_PlateMailArmor, _PlayerId );
+	ResearchTechnology( Technologies.T_SoftArcherArmor, _PlayerId );
+	ResearchTechnology( Technologies.T_LeatherArcherArmor, _PlayerId );
+	ResearchTechnology( Technologies.T_PaddedArcherArmor, _PlayerId );
+	
+	ResearchTechnology( Technologies.T_PlateBardingArmor, _PlayerId );
+
+	ResearchTechnology( Technologies.T_MasterOfSmithery, _PlayerId );
+	ResearchTechnology( Technologies.T_IronCasting, _PlayerId );
+
+	ResearchTechnology( Technologies.T_Fletching, _PlayerId );
+	ResearchTechnology( Technologies.T_BodkinArrow, _PlayerId );
+
+	ResearchTechnology( Technologies.T_WoodAging, _PlayerId );
+	ResearchTechnology( Technologies.T_Turnery, _PlayerId );
+
+	ResearchTechnology( Technologies.T_EnhancedGunPowder, _PlayerId );
+	ResearchTechnology( Technologies.T_BlisteringCannonballs, _PlayerId );
+
+	ResearchTechnology( Technologies.T_Loom, _PlayerId );
+	ResearchTechnology( Technologies.T_Shoes, _PlayerId );
+
+	ResearchTechnology( Technologies.T_Masonry, _PlayerId );
+
+	ResearchTechnology( Technologies.T_BetterTrainingArchery, _PlayerId );
+	ResearchTechnology( Technologies.T_BetterTrainingBarracks, _PlayerId );
+	ResearchTechnology( Technologies.T_Shoeing, _PlayerId );
+	ResearchTechnology( Technologies.T_BetterChassis, _PlayerId );
+end
+
+-- (von Peermanent? oder JugarTeam?) geändert bei Kingsia
+function SucheAufDerWelt(_player, _entity, _groesse, _punkthier)
+	local punktX1, punktX2, punktY1, punktY2, data
+	local gefunden = {}
+	local rueck
+	if not _groesse then
+		_groesse = Logic.WorldGetSize() 
+	end
+	if not _punkthier then
+		_punkthier = {X = _groesse/2, Y = _groesse/2}
+	end
+	if _player == 0 then
+		data ={
+		Logic.GetEntitiesInArea(_entity, _punkthier.X, _punkthier.Y, math.floor(_groesse * 0.71), 16)
+		}
+	else
+		data ={
+		Logic.GetPlayerEntitiesInArea(_player,_entity, _punkthier.X, _punkthier.Y, math.floor(_groesse * 0.71), 16)
+		}
+	end
+	if data[1] >= 16 then -- Aufteilen angesagt
+		local _klgroesse = _groesse / 2 
+		local punktX1 = _punkthier.X - _groesse / 4
+		local punktX2 = _punkthier.X + _groesse / 4
+		local punktY1 = _punkthier.Y - _groesse / 4
+		local punktY2 = _punkthier.Y + _groesse / 4
+		rueck = SucheAufDerWelt(_player, _entity, _klgroesse, {X=punktX1,Y=punktY1})
+		for i = 1, table.getn(rueck) do
+			if not IstDrin(rueck[i], gefunden) then -- wegen Überschneidungen
+				table.insert(gefunden, rueck[i])
+			end
+		end
+		rueck = SucheAufDerWelt(_player, _entity, _klgroesse, {X=punktX1,Y=punktY2})
+		for i = 1, table.getn(rueck) do
+			if not IstDrin(rueck[i], gefunden) then
+				table.insert(gefunden, rueck[i])
+			end
+		end
+		rueck = SucheAufDerWelt(_player, _entity, _klgroesse, {X=punktX2,Y=punktY1})
+		for i = 1, table.getn(rueck) do
+			if not IstDrin(rueck[i], gefunden) then
+				table.insert(gefunden, rueck[i])
+			end
+		end
+		rueck = SucheAufDerWelt(_player, _entity, _klgroesse, {X=punktX2,Y=punktY2})
+		for i = 1, table.getn(rueck) do
+			if not IstDrin(rueck[i], gefunden) then
+				table.insert(gefunden, rueck[i])
+			end
+		end
+	else
+		table.remove(data,1)
+		for i = 1, table.getn(data) do
+			if not IstDrin(data[i], gefunden) then
+				table.insert(gefunden, data[i])
+			end
+		end
+	end
+	return gefunden
+end 
+function IstDrin(_wert, _table)
+	if _table == nil then return false end
+	for k, v in pairs(_table) do
+		if v == _wert then 
+			return true
+		end 
+	end
+	return false
+end
+
+-- Countdown-Comfort --------------------------------------------------------------------------------------
+function StartCountdown(_Limit, _Callback, _Show)
+    assert(type(_Limit) == "number")
+    assert( not _Callback or type(_Callback) == "function" )
+    Counter.Index = (Counter.Index or 0) + 1
+    if _Show and CountdownIsVisisble() then
+        assert(false, "StartCountdown: A countdown is already visible")
+    end
+    Counter["counter" .. Counter.Index] = {Limit = _Limit, TickCount = 0, Callback = _Callback, Show = _Show, Finished = false}
+    if _Show then
+        MapLocal_StartCountDown(_Limit)
+    end
+    if Counter.JobId == nil then
+        Counter.JobId = StartSimpleJob("CountdownTick")
+    end
+    return Counter.Index
+end
+ 
+function StopCountdown(_Id)
+    if Counter.Index == nil then
+        return
+    end
+    if _Id == nil then
+        for i = 1, Counter.Index do
+            if Counter.IsValid("counter" .. i) then
+                if Counter["counter" .. i].Show then
+                    MapLocal_StopCountDown()
+                end
+                Counter["counter" .. i] = nil
+            end
+        end
+    else
+        if Counter.IsValid("counter" .. _Id) then
+            if Counter["counter" .. _Id].Show then
+                MapLocal_StopCountDown()
+            end
+            Counter["counter" .. _Id] = nil
+        end
+    end
+end
+ 
+function CountdownTick()
+    local empty = true
+    for i = 1, Counter.Index do
+        if Counter.IsValid("counter" .. i) then
+            if Counter.Tick("counter" .. i) then
+                Counter["counter" .. i].Finished = true
+            end
+            if Counter["counter" .. i].Finished and not IsBriefingActive() then
+                if Counter["counter" .. i].Show then
+                    MapLocal_StopCountDown()
+                end
+ 
+                -- callback function
+                if type(Counter["counter" .. i].Callback) == "function" then
+                    Counter["counter" .. i].Callback()
+                end
+ 
+                Counter["counter" .. i] = nil
+            end
+            empty = false
+        end
+    end
+    if empty then
+        Counter.JobId = nil
+        Counter.Index = nil
+        return true
+    end
+end
+ 
+function CountdownIsVisisble()
+    for i = 1, Counter.Index do
+        if Counter.IsValid("counter" .. i) and Counter["counter" .. i].Show then
+            return true
+        end
+    end
+    return false
+end

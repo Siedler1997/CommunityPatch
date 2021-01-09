@@ -57,9 +57,9 @@ function UserTool_GetPlayerNameWithTitle(_PlayerID)
 	local PlayerName = UserTool_GetPlayerName(_PlayerID)
 	
 	if UserTool_GetLocalPlayerSex() == 1 then
-		PlayerName = PlayerName .. " " .. XGUIEng.GetStringTableText("MenuGeneric/Female_Pronoun_Generic")) .. " " .. PlayerName
+		PlayerName = PlayerName .. " " .. XGUIEng.GetStringTableText("MenuGeneric/Female_Pronoun_Generic") .. " " .. PlayerName
 	else
-		PlayerName = PlayerName .. " " .. XGUIEng.GetStringTableText("MenuGeneric/Male_Pronoun_Generic")) .. " " .. PlayerName
+		PlayerName = PlayerName .. " " .. XGUIEng.GetStringTableText("MenuGeneric/Male_Pronoun_Generic") .. " " .. PlayerName
 	end
 	
 	-- Return name
