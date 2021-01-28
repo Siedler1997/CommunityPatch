@@ -1,26 +1,27 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 function createArmyWayDefenders()
+	armyWayDefenders1 = {}
+    armyWayDefenders2 = {}
+    armyCamp1 = {}
 
 	troopsDefenders = {
         Entities.CU_Evil_LeaderBearman1,
         Entities.CU_Evil_LeaderSkirmisher1,
     	}
-    local experience = MEDIUM_EXPERIENCE
-    if CP_Difficulty == 1 then
-        MEDIUM_EXPERIENCE = MEDIUM_EXPERIENCE + 2
+
+    if CP_Difficulty == 0 then
+        createArmy(2,4,armyWayDefenders1,2,"armyWay1",MEDIUM_EXPERIENCE,troopsDefenders)
+        createArmy(2,5,armyWayDefenders2,2,"armyWay2",MEDIUM_EXPERIENCE,troopsDefenders)
+        createArmy(2,6,armyCamp1,4,"armyCamp1",MEDIUM_EXPERIENCE,troopsDefenders)
+    else
+        createArmy(2,4,armyWayDefenders1,4,"armyWay1",VERYHIGH_EXPERIENCE,troopsDefenders)
+        createArmy(2,5,armyWayDefenders2,4,"armyWay2",VERYHIGH_EXPERIENCE,troopsDefenders)
+        createArmy(2,6,armyCamp1,7,"armyCamp1",VERYHIGH_EXPERIENCE,troopsDefenders)
     end
-	armyWayDefenders1 = {}
-    createArmy(2,4,armyWayDefenders1,2,"armyWay1",experience,troopsDefenders)
-
-    armyWayDefenders2 = {}
-    createArmy(2,5,armyWayDefenders2,2,"armyWay2",experience,troopsDefenders)
-
-    armyCamp1 = {}
-    createArmy(2,6,armyCamp1,4,"armyCamp1",experience,troopsDefenders)
 
     StartSimpleJob("controlArmyWayDefenders")
 
-    end
+end
 ------------------------------------------------------------------------------------------------------------------------------------
 function controlArmyWayDefenders()
 
@@ -39,14 +40,18 @@ function controlArmyWayDefenders()
     end
 ------------------------------------------------------------------------------------------------------------------------------------
 function createArmyCamps()
+    local strength = 3
+    if CP_Difficulty == 1 then
+        strength = strength * 2
+    end
 
     armyCamp2 = {}
 
-    createArmy(2,7,armyCamp2,3,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders)
+    createArmy(2,7,armyCamp2,strength,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders)
 
     armyCamp3 = {}
 
-    createArmy(2,8,armyCamp3,3,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders)
+    createArmy(2,8,armyCamp3,strength,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders)
 
     delayArmyAdvancing = 10
 

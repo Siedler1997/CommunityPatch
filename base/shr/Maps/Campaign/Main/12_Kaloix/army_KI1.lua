@@ -4,7 +4,7 @@ setupArmyKI1 = function()
 
 	armyKI1.player 				= 6
 	armyKI1.id					= 1
-	armyKI1.strength				= 2
+	armyKI1.strength			= 2
 	armyKI1.retreatStrength		= 1
 	armyKI1.position				= GetPosition("KI1_Position")
 	armyKI1.baseDefenseRange		= 6000
@@ -66,9 +66,7 @@ IncreaseArmyRetreatSize = function()
 end
 
 AllowBowLeader = function()
-
 	table.insert(armyKI1.AllowedTypes, UpgradeCategories.LeaderBow)
-
 end
 
 AllowCannon1 = function()
@@ -76,6 +74,8 @@ AllowCannon1 = function()
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon1)
 	else
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 6)
 	end
 end
 
@@ -84,6 +84,9 @@ AllowCannon2 = function()
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
 	else
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon3)
+		
+		armyKI1.strength = armyKI1.strength + 3
+		table.insert(armyKI1.AllowedTypes, UpgradeCategories.LeaderHeavyCavalry)
 	end
 end
 

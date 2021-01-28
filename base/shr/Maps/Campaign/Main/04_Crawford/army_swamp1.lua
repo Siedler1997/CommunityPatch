@@ -14,18 +14,21 @@ createArmySwamp1 = function()
 		SetupArmy(armySwamp1)
 
 	--	create
-		local soldiers = 4			
+		local soldiers = 4
+		local experience = LOW_EXPERIENCE
+		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 4
+			experience = HIGH_EXPERIENCE
+			etype = Entities.CU_BanditLeaderSword2
 		end
 		local troopDescription = {
 		
 			maxNumberOfSoldiers	= soldiers,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= experience,
+			leaderType			= etype
 		}			
-
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1
 	
 		EnlargeArmy(armySwamp1,troopDescription)
 

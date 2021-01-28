@@ -15,6 +15,7 @@
 		  <MaxHealth>200</MaxHealth>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
 			  <Gold>100</Gold>

@@ -247,11 +247,15 @@
   </Model>
   
   <Model id="CU_LeaderOutlaw1">
-    <Effect>SettlerPlayerColorSpecular</Effect>
+	  <Effect>SettlerPlayerColorSpecular</Effect>
+	  <OcclusionReceiver>True</OcclusionReceiver>
+	  <SelectionRadius>80</SelectionRadius>
   </Model>
     
   <Model id="CU_BlackKnight_LeaderMace1">
-    <Effect>SettlerPlayerColorSpecular</Effect>
+	  <Effect>SettlerPlayerColorSpecular</Effect>
+	  <OcclusionReceiver>True</OcclusionReceiver>
+	  <SelectionRadius>80</SelectionRadius>
   </Model>
   
   <Model id="CU_BlackKnight_SoldierMace1">
@@ -259,7 +263,9 @@
   </Model>
   
   <Model id="CU_BanditLeaderSword1">
-    <Effect>SettlerPlayerColorSpecular</Effect>
+	  <Effect>SettlerPlayerColorSpecular</Effect>
+	  <OcclusionReceiver>True</OcclusionReceiver>
+	  <SelectionRadius>80</SelectionRadius>
   </Model>
 
   <Model id="CU_BanditSoldierSword1">
@@ -271,15 +277,13 @@
   </Model>
 
   <Model id="CU_BlackKnight_SoldierSword3">
-    <Effect>SettlerPlayerColor</Effect>
+	  <SelectionRadius>80</SelectionRadius>
+	  <Effect>SettlerPlayerColor</Effect>
+	  <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
 
   <Model id="CU_Leonardo">
     <Effect>SettlerPlayerColorSpecular</Effect>
-  </Model>
-
-  <Model id="CU_NPC_EvilGovernor">
-	<Effect>SettlerPlayerColorSpecular</Effect>
   </Model>
 
   <Model id="CU_RegentDovbar">
@@ -401,8 +405,7 @@
   <Model id="CU_Barbarian_LeaderClub1">
     <Effect>SettlerPlayerColorSpecular</Effect>
     <OcclusionReceiver>True</OcclusionReceiver>
-    <SelectionRadius>100</SelectionRadius>
-    <SelectionTexture>Selection_hero</SelectionTexture>
+    <SelectionRadius>80</SelectionRadius>
  </Model>
 
  
@@ -688,35 +691,34 @@
     <SelectionTexture>Selection_Soldier</SelectionTexture>
     <OcclusionReceiver>True</OcclusionReceiver>
   </Model>
-  
-  <Model id="PV_Cannon1">
-    <SelectionRadius>165</SelectionRadius>
-    <Effect>SimpleUnitPlayerColorSpecular</Effect>
-    <SelectionTexture>Selection_Soldier</SelectionTexture>
-    <OcclusionReceiver>True</OcclusionReceiver>
-  </Model>
-  
-  
-  <Model id="PV_Cannon2">
-    <SelectionRadius>165</SelectionRadius>
-    <Effect>SimpleUnitPlayerColorSpecular</Effect>
-    <SelectionTexture>Selection_Soldier</SelectionTexture>
-    <OcclusionReceiver>True</OcclusionReceiver>
-  </Model>
-  
-  <Model id="PV_Cannon3">
-    <SelectionRadius>165</SelectionRadius>
-    <Effect>SimpleUnitPlayerColorSpecular</Effect>
-    <SelectionTexture>Selection_Soldier</SelectionTexture>
-    <OcclusionReceiver>True</OcclusionReceiver>
-  </Model>
-  
-  <Model id="PV_Cannon4">
-    <SelectionRadius>165</SelectionRadius>
-    <Effect>SimpleUnitPlayerColorSpecular</Effect>
-    <SelectionTexture>Selection_Soldier</SelectionTexture>
-    <OcclusionReceiver>True</OcclusionReceiver>
-  </Model>
+
+	<Model id="PV_Cannon1">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>150</SelectionRadius>
+	</Model>
+
+	<Model id="PV_Cannon2">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>160</SelectionRadius>
+	</Model>
+
+	<Model id="PV_Cannon3">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>170</SelectionRadius>
+	</Model>
+
+	<Model id="PV_Cannon4">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>180</SelectionRadius>
+	</Model>
        
   <Model id="PU_Hero3_Cannon1">
     <SelectionRadius>165</SelectionRadius>
@@ -3145,9 +3147,10 @@
   
   
   <Model id="CU_Evil_Queen">
-    <SelectionRadius>100</SelectionRadius>    
-    <SelectionTexture>Selection_hero</SelectionTexture>
-    <OcclusionReceiver>True</OcclusionReceiver>
+	  <Effect>SettlerPlayerColor</Effect>
+	  <SelectionRadius>100</SelectionRadius>
+	  <OcclusionReceiver>True</OcclusionReceiver>
+	  <SelectionTexture>Selection_hero</SelectionTexture>
   </Model>
   
   
@@ -3410,5 +3413,250 @@
   <Model id="XD_ThiefBomb">
     <UseSurfaceHeight>True</UseSurfaceHeight>
   </Model>
+	
+	<Model id="PB_DarkTower1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+
+	<Model id="PB_DarkTower2">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+
+	<Model id="PB_DarkTower2_Ballista">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+
+	<Model id="PB_DarkTower3">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+
+	<Model id="PB_DarkTower3_Cannon">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+		<Effect>SimpleObjectSpecular</Effect>
+	</Model>
+
+	<!-- Community Patch-->
+	<Model id="CB_Abbey01">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Abbey02">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Abbey03">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Abbey04">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_BarmeciaCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Bastille1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp01">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp02">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp03">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp04">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp05">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp06">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp07">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp08">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp09">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp10">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp11">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp12">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp13">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp14">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp15">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp16">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp17">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp18">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp19">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp20">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp21">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp22">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp23">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Camp24">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Castle1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Castle2">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_CleycourtCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_CrawfordCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_DarkCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_FolklungCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_HermitHut1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_InventorsHut1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_KaloixCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp2">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp3">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp4">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp5">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MinerCamp6">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Mint1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_MonasteryBuildingSite1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_OldKingsCastle">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_OldKingsCastleRuin">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_RobberyTower1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CU_Barbarian_Hero">
+		<Effect>SettlerPlayerColor</Effect>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>100</SelectionRadius>
+		<SelectionTexture>Selection_hero</SelectionTexture>
+	</Model>
+	<Model id="PU_Hero3_Foundation1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
+	<Model id="SalimTrapPlayer">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
+	<Model id="XD_DarkWallCorner">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_DarkWallDistorted">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_DarkWallStraight">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_DarkWallStraightGate">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_DarkWallStraightGate_Closed">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_WallCorner">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_WallDistorted">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_WallStraight">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_WallStraightGate">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_WallStraightGate_Closed">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+
+	<Model id="CB_EvilTower1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_Mercenary">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CB_SteamMashine">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="CU_NPC_EvilGovernor">
+		<Effect>SettlerPlayerColor</Effect>
+	</Model>
+	<Model id="XD_RuinHouse1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_RuinMonastery1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_RuinResidence1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_RuinSmallTower1">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_RuinSmallTower3">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
   
 </root>

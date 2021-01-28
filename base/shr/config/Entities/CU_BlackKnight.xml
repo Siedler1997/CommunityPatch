@@ -90,7 +90,7 @@
 
 			  <SoldierType>CU_BlackKnight_SoldierSword3</SoldierType>
 			
-	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
 	        
 	        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
@@ -154,7 +154,7 @@
 	        <Effect>FXKerberosFear</Effect>
 	        
 <!--DamageFactor>5.0</DamageFactor-->
-	        <ArmorFactor>0.8</ArmorFactor>
+	        <ArmorFactor>0.5</ArmorFactor>
 	        
 <!--HealthRecoveryFactor>0.3</HealthRecoveryFactor-->
 	    </Logic>

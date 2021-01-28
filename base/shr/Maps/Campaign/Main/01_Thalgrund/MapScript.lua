@@ -194,7 +194,22 @@ function Mission_FirstMapAction()
 
 		start1stQuest()		
 		start2ndSubQuest()				
+		
+		if CP_Difficulty == 1 then
+			local vcpos1 = GetPosition("vc_empty1")
+			DestroyEntity("vc_empty1")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos1.X,vcpos1.Y,90,0)
+				
+			local vcpos2 = GetPosition("vc_empty2")
+			DestroyEntity("vc_empty2")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos2.X,vcpos2.Y,0,0)
+	
+			local bosspos1 = GetPosition("Jail")
+			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
+			LookAt(bossID1, "gate")
+		end
 
+		--Tools.ExploreArea(-1, -1, 900)
 	end
 
 

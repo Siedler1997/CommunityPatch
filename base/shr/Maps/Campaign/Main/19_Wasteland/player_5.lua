@@ -33,6 +33,19 @@ createPlayer5 = function()
 		--------------------------------------------------
 		extracting = false
 	}
+
+	if CP_Difficulty == 1 then
+		aiDescription.refresh = {
+			gold				=	30,
+			clay				=	20,
+			iron				=	20,
+			sulfur				=	20,
+			stone				=	20,
+			wood				=	20,
+			updateTime			=	10
+		}
+	end
+
 	SetupPlayerAi(playerId,aiDescription)
 	--[[
 	-- upgrade soldiers

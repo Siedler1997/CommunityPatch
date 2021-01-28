@@ -78,7 +78,7 @@ function ControlAttackers2()
 				
 					local experience = LOW_EXPERIENCE
 					if CP_Difficulty == 1 then
-						experience = experience + 1
+						experience = experience + 2
 					end
 
 					local troopDescription = {

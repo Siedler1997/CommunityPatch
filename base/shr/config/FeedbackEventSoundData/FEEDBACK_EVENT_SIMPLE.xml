@@ -228,6 +228,10 @@
 				<EntityType>PU_BattleSerf</EntityType>
 				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
 			
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
 				<Value>0</Value>
@@ -519,6 +523,10 @@
 				<EntityType>PU_BattleSerf</EntityType>
 				<SoundID>VoicesSerf\SERF_No_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
 			
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
 				<Value>0</Value>
@@ -762,6 +770,10 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_BattleSerf</EntityType>
 				<SoundID>VoicesSerf\SERF_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
 			
 		<ParameterIndex>2</ParameterIndex>

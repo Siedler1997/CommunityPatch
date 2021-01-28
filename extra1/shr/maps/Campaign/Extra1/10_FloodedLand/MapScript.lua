@@ -52,6 +52,7 @@ function FirstMapAction()
 	CP_Difficulty = GDB.GetValue("Game\\Campaign_Difficulty")
 
 	-- load scripts
+	IncludeGlobals("MapEditorTools")
 	IncludeLocals("army_ambush")
 	IncludeLocals("army_big1")
 	IncludeLocals("army_big2")
@@ -117,8 +118,9 @@ function FirstMapAction()
 	LocalMusic.UseSet = DARKMOORMUSIC
 
 	start1stChapter()
-
-	end
+	
+	--Tools.ExploreArea(-1, -1, 900)
+end
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 

@@ -31,9 +31,9 @@
 		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
-			  <Gold>30</Gold>
+			  <Gold>50</Gold>
 			  <Iron>0</Iron>
-			  <Wood>30</Wood>
+			  <Wood>10</Wood>
         </Cost>
 
 		<!--Armor modifier-->
@@ -65,6 +65,7 @@
 
         <Category>Military</Category>
         <Category>Soldier</Category>
+		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>20</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

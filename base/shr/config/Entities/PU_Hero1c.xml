@@ -102,7 +102,7 @@
 		  <Logic classname="GGL::CLeaderBehaviorProps">
 			  <Class>GGL::CLeaderBehavior</Class>
 			  <SoldierType>PU_SoldierSword4</SoldierType>			
-	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
 	        
 			  <NormalAttackAnim1>PU_Hero1c_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>PU_Hero1c_Attack2</NormalAttackAnim2>
@@ -133,10 +133,24 @@
 	    <Logic classname="GGL::CHeroHawkBehaviorProps">
 	        <Class>GGL::CHeroHawkBehavior</Class>
 	        <HawkEntityType>PU_Hero1_Hawk</HawkEntityType>
-	        <RechargeTimeSeconds>60</RechargeTimeSeconds>
+	        <RechargeTimeSeconds>180</RechargeTimeSeconds>
 	        <HawkMaxRange>10000</HawkMaxRange>
         </Logic>
     </Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CRangedEffectAbilityProps">
+			<Class>GGL::CRangedEffectAbility</Class>
+			<AffectsOwn>true</AffectsOwn>
+			<AffectsFriends>true</AffectsFriends>
+			<AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+			<RechargeTimeSeconds>180</RechargeTimeSeconds>
+			<Range>1500.0</Range>
+			<DurationInSeconds>60</DurationInSeconds>
+			<DamageFactor>0.5</DamageFactor>
+			<ArmorFactor>3.0</ArmorFactor>
+		</Logic>
+	</Behavior>
 
 	<Behavior>
 	    <Logic classname="GGL::CSentinelBehaviorProps">

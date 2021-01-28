@@ -38,9 +38,9 @@ end
 function InitPlayerColorMapping()
 
 	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(2,ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR3)
+	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(6,NPC_COLOR)
 	
@@ -48,10 +48,10 @@ function InitPlayerColorMapping()
 	if BriefingCaravan2ShowStart == nil then
 		Display.SetPlayerColorMapping(7,FRIENDLY_COLOR1)
 	else
-		Display.SetPlayerColorMapping(7,FRIENDLY_COLOR3)
+		Display.SetPlayerColorMapping(7,ENEMY_COLOR2)
 	end
 	
-	Display.SetPlayerColorMapping(8,ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(8,KERBEROS_COLOR)
 		
 end
 ------------------------------------------------------------------------------
@@ -106,6 +106,8 @@ function FirstMapAction()
 
 	-- start
 	start1stChapter()	
+
+	--Tools.ExploreArea(-1, -1, 900)
 end
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

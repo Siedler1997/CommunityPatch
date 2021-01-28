@@ -74,7 +74,7 @@ function controlArmyAttack(_army)
             if CP_Difficulty == 0 then
                 createArmy(2,_army.info.id,_army,2,_army.info.spawnPosition,MEDIUM_EXPERIENCE,troopsAttacker)
             else
-                createArmy(2,_army.info.id,_army,2,_army.info.spawnPosition,VERYHIGH_EXPERIENCE,troopsAttacker)
+                createArmy(2,_army.info.id,_army,4,_army.info.spawnPosition,VERYHIGH_EXPERIENCE,troopsAttacker)
             end
             _army.info.state = ATTACK
 

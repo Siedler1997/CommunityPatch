@@ -35,7 +35,7 @@ function CreateArmyAttackersByIndex(_index)
 	local experience = LOW_EXPERIENCE
 	if CP_Difficulty == 1 then
 		soldiers = soldiers + 4
-		experience = experience + 1
+		experience = experience + 2
 	end
 	
 	local troopDescription = {

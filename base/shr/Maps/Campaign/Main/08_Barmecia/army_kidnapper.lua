@@ -5,12 +5,16 @@ createArmyKidnapper = function()
 
 		Report("Setting up kidnapper army")
 		
+		local strength = 4
+		if CP_Difficulty == 1 then
+			strength = 6
+		end
 		
 		ArmyKidnapper								= {}
 	
 		ArmyKidnapper.player 					= gvMission.PlayerIDRobbers1
 		ArmyKidnapper.id								= 1
-		ArmyKidnapper.strength					= 4
+		ArmyKidnapper.strength					= strength
 		ArmyKidnapper.position					= GetPosition("BanditsHQ1")
 		ArmyKidnapper.rodeLength				= 1500
 		ArmyKidnapper.beAgressive			= true
@@ -20,9 +24,11 @@ createArmyKidnapper = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
+		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 2
-			experience = experience + 1
+			experience = experience + 2
+			etype = Entities.CU_BanditLeaderSword2
 		end
 
 		local troopDescription = {
@@ -30,10 +36,10 @@ createArmyKidnapper = function()
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers = soldiers,
 			experiencePoints 	= experience,
+			leaderType			= etype
 		}			
 
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1
-		for i = 1,4 do
+		for i = 1, strength do
 			EnlargeArmy(ArmyKidnapper,troopDescription)
 		end
 

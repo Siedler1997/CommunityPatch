@@ -16,10 +16,11 @@
 		  <MaxHealth>200</MaxHealth>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
-			  <Gold>100</Gold>
-			  <Iron>50</Iron>
+			  <Gold>200</Gold>
+			  <Iron/>
 			  <Wood/>
         </Cost>
         
@@ -29,7 +30,7 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
-		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorClass>ArmorClassFur</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
@@ -71,7 +72,7 @@
 			
 			  <SoldierType>PU_SoldierSword1</SoldierType>
 			
-	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
 	        
 	        <NormalAttackAnim1>XA_Wolf_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>XA_Wolf_Attack1</NormalAttackAnim2>
@@ -82,7 +83,7 @@
 	        <BattleWalkAnim>XA_Wolf_Run</BattleWalkAnim>
 	        <HitAnim>XA_Wolf_IdleAttack1</HitAnim>
 
-	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageClass>DC_Evil</DamageClass>
 	        <DamageAmount>14</DamageAmount>
 	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
 	        

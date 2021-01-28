@@ -7,9 +7,6 @@
 		+ sind reparierbar
 		+ profitieren (fast) alle von den Technologien 'Stadtwache' und 'Maurerhandwerk'
 		+ haben fast alle die ArmorClass regulärer Gebäude - inkl. deren Stärken/Schwächen
-	* Dunkle Türme:
-		+ sind ausbaubar
-		+ werden im englischen wie normale Türme geschrieben (z.B. 'Cannon-Tower')
 	* Dombaustellen
 		+ Arbeiter-Icons im Siedler-Menü zeigen Leibeigenen-Icons
 		+ Overhead-Arbeiter-Icons zeigen Minenarbeiter
@@ -32,7 +29,11 @@
 	* Türme
 		+ haben die richtige ArmorClass -> solider gegen Schützen, empfindlicher gegen Artillerie
 		+ haben eine etwas höhere Sichtweite
+		+ Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
 		+ Kanonentürme haben eine leicht erhöhte Angriffsreichweite
+		+ dunkle Türme
+			/ sind ausbaubar
+			/ werden im englischen wie normale Türme geschrieben (z.B. 'Cannon-Tower')
 	* Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
 - Einheiten
 	* Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
@@ -48,17 +49,24 @@
 		+ Statthalter Kadir verwendet in der Nebelreich-Mission 'Geld oder Leben' sein ursprünglich angedachtes Design
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
-		+ Veteranen (CU_VeteranXXX) können keine Gefolgsleute mehr haben
+		+ 'Veteranen' 
+			/ 'Raubritter' als neue Veteranenart, die schon im Hauptspiel erscheinen kann
+			/ können keine Gefolgsleute mehr haben
+			/ regenerieren ihre Lebenspunkte etwas schneller
+			/ haben etwas weniger Lebenspunkte
 		+ Banditen
 			/ zählen theoretisch als Schwertkämpfer
 			/ können Soldaten an Kasernen nachfüllen
 			/ haben Rekrutierungskosten (Hauptmänner und Soldaten)
 			/ haben die gleiche DamageClass wie schwere Kavallerie
-		+ Der Schaden an Nebelkriegern wird korrekt berechnet
+		+ Der Schaden an Nebelkriegern wird korrekt berechnet (fällt aber kaum auf)
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
-		+ Schwarze Ritter haben einen Rüstungspunkt mehr (=3)
+			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		+ Schwarze Ritter 
+			/ haben einen Rüstungspunkt mehr (=3)
+			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		+ haben Audio-Feedback
 		+ profitieren von verschiedenen Waffen- und Rüstungstechnologien
 			/ Schwarze Ritter: Technologien der Schwertkämpfer
@@ -69,7 +77,9 @@
 			/ Bärenmenschen: Technologien der Speerkämpfer
 			/ Veteranen: Je nach Typ wie Barbaren/Schwarze Ritter
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
-		+ Wölfe haben die gleichen Stats wie Vargs beschworene Wölfe
+		+ Wilde Wölfe 
+			/ haben die gleichen Stats wie die von Varg beschworenen Exemplare
+			/ sind nicht von Helias konvertierbar
 	* Militärische Einheiten
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
@@ -102,9 +112,16 @@
 			/ die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
 			/ das Setzen einer neuen Markierung entfernt zugleich die Alte
 			/ wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
-		+ Darios Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
-			/ PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
-			/ PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt und dazu auch zwei Angriffspunkte mehr (=18)
+		+ Dario
+			/ Falke hat doppelte Sichtweite (15 SM -> 30 SM)
+			/ Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
+				* PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
+				* PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
+			/ Bei Verwendung von 'Falkensicht' gibt Dario ein Audio-Feedback zurück
+			/ In den AddOns wird bei seiner Königs-Version (PU_Hero1c) die Fähigkeit 'Falkenauge' durch 'Schild des Königs' ersetzt
+				* Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
+				* reduziert zugleich Angriff jener Einheiten auf 50%
+				* Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
 		+ Drake hat einen Rüstungspunkt weniger (=3)
 		+ Varg hat einen Rüstungspunkt weniger (=3)
 		+ Aris Banditen
@@ -114,12 +131,14 @@
 			/ haben einen Rüstungspunkt weniger (=3)
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
 			/ geben Audio-Feedback
+			/ sind nicht von Helias konvertierbar
 		+ Vargs Wölfe
 			/ haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
 			/ werden zu 3. beschworen (vorher: 2)
 			/ verlangen keinen Sold
 			/ sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
 			/ geben Audio-Feedback
+			/ sind nicht von Helias konvertierbar
 		+ Vargs 'Berserkerwut'
 			/ hält für 1:00 Min (vorher: 40 Sek.)
 			/ betrifft auch Verbündete
@@ -129,15 +148,22 @@
 			/ erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
 		+ Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
 		+ Helias 'Segnung' 
-			/ erhöht die Rüstung Betroffener um 100% (vorher: 40%)
+			/ erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
 			/ heilt Betroffene um 25% ihrer maximalen HP
 		+ Helias Bekehrung
 			/ Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
 			/ benötigt weniger Zeit
 			/ kann auf etwas größerer Distanz gestartet werden
 			/ kann über etwas größere Distanz gehalten werden
-		+ Darios Falke hat doppelte Sichtweite (15sm -> 30sm)
-		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch Ari und Kanonen
+		+ Yukis 'Feuerwerk der Furcht'
+			/ Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
+			/ ist nun identisch mit den Versionen von Dario und Kerberos
+		+ Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
+		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch 
+			/ Ari 
+			/ Kanonen
+			/ Bogen-Banditen
+			/ Speerwerfer
 		+ Dovbar hat das AudioFeedback von Kundschaftern
 - GUI
 	* Kamera
@@ -146,7 +172,10 @@
 			/ kann die Kamera endlos gedreht werden, ohne an eine Grenze zu stoßen
 			/ springt sie nicht mehr automatisch in die Ausgangslage zurück
 			/ kann sie mit dem Shortcut '[Strg] + [Leertaste]' in die Ausgangslage zurückgesetzt werden 
-		* Mit dem shortcut '[Alt] + [I]' kann man (außerhalb von Briefings) das Interface ein- und ausblenden
+		+ Mit dem shortcut '[Alt] + [I]' kann man (außerhalb von Briefings) das Interface ein- und ausblenden
+		+ Entfernungsnebel bei schlechtem Wetter (Regen, Schnee) beeinflusst nicht mehr so sehr die Sicht
+			/ Nebeneffekt: Einige Settings wirken etwas heller
+			/ Im Gegenzug ist speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
 	* Tooltips gefixt bzw. ergänzt
 		+ Ausbau-Button Festung -> Zitadelle: 'ermöglicht'-Teil ergänzt
 		+ 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
@@ -163,11 +192,17 @@
 				- Das aktuelle Wetter wird nochmal als Text angegeben
 				- Das nächste Wetter sowie die Zeit bis zum Wechsel wird angezeigt (bei weniger als einer Stunde bis zum Eintreten)
 	* Söldnerquartier:Button-Texturen weisen genauer auf die angebotene Einheit hin
+	* Selektionsringe einiger Gebäude und Einheiten gefixt
+		+ Alle Gebäude haben den Gebäude-Selektionsring
+			/ gilt auch für Pilgrims Kanone und Salims Falle
+		+ Alle Helden haben den Helden-Selektionsring
+		+ Alle Militäreinheiten haben den gleichen Einheiten-Selektionsring
 	* Formations-Buttons
 		+ stehen auch bei selektierter Kavallerie zur Verfügung
 		+ verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
 	* Ergänzte und korrigierte SelectionNames und OverheadNames
 		+ Außenposten -> 'Außenposten'
+		+ CU_BlackKnight_SoldierSword3 -> Raubritter
 		+ Veteranen
 			/ CU_VeteranLieutenant -> 'Berserker'
 			/ CU_VeteranCaptain -> 'Schwarzer Eliteritter'
@@ -221,18 +256,21 @@
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
 	* Kampagnen-Maps modifiziert
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
+		+ Drakes Gewehrschüsse in Cutscenes sind vertont
 		+ in manchen Missionen können gegnerische Truppen respawnen
 			/ z.T. abhängig vom Schwierigkeitsgrad
 		+ 'Old Kings Castle'
 			/ Gegen einen Tribut von 2.000 Talern werden alle Ruinen am Schloss und in der Siedlung entfernt
 		+ 'Schlacht um Evelance' ist ein würdigeres Finale
 			/ Gegner sind zahlreicher
-			/ Gegner bilden richtig Truppen in Militärgebäuden aus
+			/ Gegner bilden auch Truppen in Militärgebäuden aus
 			/ Gegnerische Türme sind höher ausgebaut
 		+ Auf Schwierigkeitsgrad Schwer allgemein
-			/ Gegner verfügen z.T. über mehr/stärkere Befestigungen 
-			/ Gegner profitieren von allen Waffen-/Rüstungstechnologien
+			/ Gegnerische Befestigungen sind zäher, zahlreicher und/oder höher ausgebaut 
+			/ Gegnerische Truppen sind zäher, stärker, erfahrener und zahlreicher
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
+			/ Dem Spieler stehen z.T. weniger Siedlungsplätze zur Verfügung
+			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude schlechter
 			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	* Die Grafik ist allgemein etwas besser (by yoq)
@@ -252,17 +290,43 @@
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
+	* Die Entity 'CU_BlackKnight_SoldierSword3' 
+		+ ist ein eigenständiger Leader 
+		+ ist der o.g. Hauptspiel-Veteran
+		+ ist insgesamt schwächer als andere Veteranen
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
-	* 'MapEditorTools' 
+	* Verschiedene Versionen von CU_Barbarian_LeaderClub und CU_BlackKnight_LeaderMace unterscheiden sich leicht
+		+ Versionen mit 1er-Endung haben Soldatenmaximum von 4
+		+ Versionen mit 2er-Endung haben Soldatenmaximum von 8 und kosten etwas mehr Taler
+		+ Stats sind identisch
+		+ Über ihre UpgradeCategories können die höheren Stufen zugänglich gemacht werden (auch der KI)
+		+ Banditen (CU_BanditLeaderSword) sind dahingehend unverändert
+	* TaskLists
+		+ Schwertführende Einheiten nutzen neue TaskList 'TL_BATTLE_SWORD'
+		+ manche Einheiten nutzen andere TaskLists als zuvor
+	* Neue Effekte
+		+ FXExplosionBallista: Effekt, der beim Aufprall eines Ballistaturm-Geschosses erscheint
+		+ FXExplosionCannon: Effekt, der beim Aufprall eines Kaonenturm-Geschosses erscheint
+	* Die 'MapEditorTools' 
 		+ stehen auch im Hauptspiels zur Verfügung
 		+ Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
-			/ d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
-	* Fehlende orignale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
+			-> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+	* Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
 		+ Andere sind in den AddOns vorhanden, aber anders definiert
-	* Kanonen 
-		+ gehören zusätzlich der EntityCategory 'LongRange' an
-		+ haben als SoldierType 'PV_Cannon1', was aufgrund von max. 0 Soldaten aber eig. irrelevant ist
+	* Darios Fähigkeit 'Schild des Königs'
+		+ ist intern die gleiche Fähigkeit wie 'Falkensicht' (Abilities.AbilitySendHawk)
+		+ existiert auch schon im Hauptspiel, ist mangels Falken-Ersatz (Kundschafter-Fernrohr) aber absichtlich nicht verfügbar
+	* Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
+		+ Ari (PU_Hero5)
+		+ Kanonen (alle Arten)
+		+ Bogen-Banditen (CU_BanditLeaderBow1)
+		+ Speerwerfer (CU_Evil_LeaderSkirmisher1)
+	* Die Soldaten-Entity 'CU_BlackKnight_SoldierSword3' 
+		/ ist dem Hauptmann 'CU_VeteranMayor' zugeordnet
+		/ hat ähnlich hohe Stats wie o.g. Veteran
+		/ hat ein richtiges Soldaten-Verhalten
+	* Kanonen haben als SoldierType 'PV_Cannon1', was bei max. 0 Soldaten aber eig. irrelevant ist
 	* Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		+ Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
 	* Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
@@ -295,6 +359,10 @@
 			-> return table Entities
 		+ IstDrin(_wert, _table) by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
 			-> return bool true/false
+		+ CP_ActivateEvilMod(_playerId, _unitstate, _towerstate): Erlaub einem Spieler, in Militärgebäuden 'böse' Einheiten zu rekrutieren und mit Leibeigenen dunkle Türme zu bauen
+			/ Abfrage der Einheiten mittels 'CP_GetEvilModUnitState(_playerId)'
+			/ Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
+			/ Verwendung: siehe Kommentar in 'Comforts.lua'
 - Bekannte Bugs & Einschränkungen
 	* Kala's Tod verursacht selten stack overflow
 		+ nur ein mal bislang
@@ -313,19 +381,25 @@
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 	* Die Sprachausgabe geht unabhängig vom Geschlecht von einem männlichen Spieler aus
 		+ Grund: Es gibt einfach keine Audio-Files mit weiblicher Anrede
-		+ Einzige (realistische) Lösung wäre, Audio-Files zu entfernen
+		+ Einzige (realistische) Lösung: Audio-Files zu entfernen
 			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
+
 - ToDos:
+	* andere Lagerfeuer wie "CampInternal" nutzbar
+	* NPCs mit Lebensbalken (und ggf. selektierbar)
+	* CBs mit Fähnchen (soweit nicht vorhanden und sinnvoll)
+	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
-		/ Umsetzung in 'Legenden'
-		/ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)
-		/ Testing
+		+ Umsetzung in 'Legenden'
+		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
+		+ Testing
 	* Hauptmenü
 		+ MP-Window fixen
 		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
-	* Random(?) Crash in '03_Neighborhood'
+	* Random(?) Crashs
+		+ erste 2 Verstärkungen in '03_Neighborhood'
 	* Einstellung der Spielgeschwindigkeit (SP only)
-	* Langzeitwetter (SP only -> "XNetwork.Manager_IsGameRunning() == 1")
+	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
 	* Countdowns 
 		+ sollen während Briefings pausieren
@@ -341,8 +415,7 @@
 	* neue Comforts (bei Bedarf)
 	* Kalas Tod: stack overflow(?)
 		+ bislang nur ein mal passiert
-	* Kadirs "Reflektionen" entfernen (Modell?)
-	* Eigene Texturen für Veteranen und Varg (Recoloring?)
+	* Eigene Texturen für Veteranen und Varg?
 	* Umsetzung in Vanilla-DEdK
 	* Organisatorisches
 		+ FeatureList 

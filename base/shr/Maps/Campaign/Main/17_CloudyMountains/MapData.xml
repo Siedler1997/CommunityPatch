@@ -717,7 +717,7 @@
    </Position>
    <Orientation>9.000000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>4</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name>InvetorsHut</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -792,7 +792,7 @@
    </Position>
    <Orientation>2.170000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>4</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name>Leonardo</Name>
    <ScriptCommandLine></ScriptCommandLine>

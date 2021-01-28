@@ -118,6 +118,14 @@ function FirstMapAction()
         DestroyEntity("vc_empty")
         Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
         Logic.CreateEntity(Entities.XD_RuinSmallTower2,towerpos.X,towerpos.Y,0,0)
+        
+		local bosspos1 = GetPosition("armySpawn")
+		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 300),0,0,3,0)
+		LookAt(bossID1, "Drake")
+		local bosspos2 = GetPosition("armyOutpost")
+		local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos2.X + 100),(bosspos2.Y + 500),0,0,3,0)
+		--LookAt(bossID2, "Drake")
 	end
+
 	--Tools.ExploreArea(-1, -1, 900)
 end

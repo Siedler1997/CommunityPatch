@@ -20,10 +20,11 @@ function CreateArmyRobbers()
 	ArmyRobbers.spawnPos			=	GetPosition("RobbersSpawnPos")
 	if CP_Difficulty == 0 then
 		ArmyRobbers.respawnTime			=	5*60
+		ArmyRobbers.maxSpawnAmount		= 	1
 	else
-		ArmyRobbers.respawnTime			=	60
+		ArmyRobbers.respawnTime			=	3*60
+		ArmyRobbers.maxSpawnAmount		= 	2
 	end
-	ArmyRobbers.maxSpawnAmount		= 	1
 	ArmyRobbers.endless				=	true
 	
 	-- Spawn generator

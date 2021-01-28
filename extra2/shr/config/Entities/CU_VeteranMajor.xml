@@ -21,13 +21,13 @@
 	<Logic classname="GGL::CGLSettlerProps">
 			<Class>GGL::CSettler</Class>
 			<AccessCategory>AccessCategorySettler</AccessCategory>		
-			<MaxHealth>1200</MaxHealth>
+			<MaxHealth>1000</MaxHealth>
 			<NeedsPlayer>true</NeedsPlayer>
 			<ForceNoPlayer>false</ForceNoPlayer>
 			<Hat/>
 			<Cost>
-				<Gold>150</Gold>
-				<Iron>30</Iron>
+				<Gold>1000</Gold>
+				<Iron>200</Iron>
 				<Wood/>
 			</Cost>
 
@@ -64,16 +64,12 @@
 			<Category>Sword</Category>
 			<Category>Melee</Category>
 			<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-			<Exploration>20</Exploration>
-			<ArmorClass>ArmorClassLeather</ArmorClass>
+			<Exploration>21</Exploration>
+			<ArmorClass>ArmorClassHero</ArmorClass>
 			<ArmorAmount>10</ArmorAmount> 
 			<DodgeChance>0</DodgeChance> 
 			<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-			<ExperiencePoints>30</ExperiencePoints>    	
-			<Upgrade>                       
-			   <Category>BlackKnightLeaderMace1</Category>
-			    <Type>CU_BlackKnight_LeaderMace2</Type> 
-		    </Upgrade>
+			<ExperiencePoints>50</ExperiencePoints>    	
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
@@ -107,6 +103,8 @@
 			  <Class>GGL::CLeaderBehavior</Class>
 			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
             <HomeRadius>1500</HomeRadius>
+			  
+			  <SoldierType>CU_BlackKnight_SoldierSword3</SoldierType>
 			
 	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
 	        
@@ -119,7 +117,7 @@
 	        <BattleWalkAnim>CU_BlackKnight_LeaderMace1_Run1</BattleWalkAnim>
 	        <HitAnim>CU_BlackKnight_LeaderMace1_Hit</HitAnim>
 
-	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageClass>DC_Chaos</DamageClass>
 	        <DamageAmount>50</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
@@ -130,7 +128,7 @@
 	        <AutoAttackRange>2000</AutoAttackRange>
 	        
 			  <HealingPoints>5</HealingPoints>
-	        <HealingSeconds>3</HealingSeconds>
+	        <HealingSeconds>2</HealingSeconds>
 
 			  <UpkeepCost>20</UpkeepCost>
 		  </Logic>

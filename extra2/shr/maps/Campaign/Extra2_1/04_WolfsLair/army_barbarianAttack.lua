@@ -81,10 +81,17 @@ function ControlBarbarianAttack()
 					}
 						
 					local troopLeaderType = {}
-					troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub2
+					
+					if CP_Difficulty == 0 then
+						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub1
+						troopLeaderType[4] = Entities.PV_Cannon2
+					else
+						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub2
+						troopLeaderType[4] = Entities.PV_Cannon3
+					end
+
 					troopLeaderType[2] = Entities.CU_BanditLeaderSword2
 					troopLeaderType[3] = Entities.CU_BanditLeaderBow1
-					troopLeaderType[4] = Entities.PV_Cannon2
 
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
 						

@@ -101,5 +101,11 @@ function FirstMapAction()
 	-- Increase support timer
 	if CP_Difficulty == 1 then
 		timeForSupport = timeForSupport + 60 * 15
+
+		local bosspos1 = GetPosition("armyOutpost")
+		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
+		LookAt(bossID1, "supportNogersund")
 	end
+
+	--Tools.ExploreArea(-1, -1, 900)
 end

@@ -25,8 +25,8 @@ function beginChapterOne()
     -- sub quest
 
     createBriefingKeyKeeper()
+end
 
-    end
 ------------------------------------------------------------------------------------------------------------------------------------
 function endChapterOne()
 

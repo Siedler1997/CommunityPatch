@@ -17,10 +17,10 @@ setupArmyKerberosDefense = function()
 		                                    	  	
 		-- Spawn parameter                  	  	
 		if CP_Difficulty == 0 then
-			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.CU_BlackKnight_LeaderMace2, 4},
-															{ Entities.CU_BlackKnight_LeaderMace2, 4},
-															{ Entities.CU_BlackKnight_LeaderMace2, 4},
-															{ Entities.CU_Barbarian_LeaderClub2, 4},
+			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.CU_BlackKnight_LeaderMace2, 8},
+															{ Entities.CU_BlackKnight_LeaderMace2, 8},
+															{ Entities.CU_BlackKnight_LeaderMace2, 8},
+															{ Entities.CU_Barbarian_LeaderClub2, 8},
 															{ Entities.PU_LeaderBow4, 8},
 															{ Entities.PV_Cannon1, 0} 
 														}

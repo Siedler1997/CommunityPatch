@@ -108,7 +108,7 @@
 		  <Logic classname="GGL::CSoldierBehaviorProps">
 			  <Class>GGL::CSoldierBehavior</Class>
 
-	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
 	        <NormalAttackAnim1>PU_SoldierCavalry4_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>PU_SoldierCavalry4_Attack1</NormalAttackAnim2>
 	        <CounterAttackAnim>PU_SoldierCavalry4_Idle1</CounterAttackAnim> 

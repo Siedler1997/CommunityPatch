@@ -127,13 +127,15 @@ function FirstMapAction()
 		Logic.CreateEntity(Entities.PB_DarkTower3, 23100, 40900, 0, 2);
 		SetEntityName(Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 42000, 0, 2), "tower12")
 
-		--local smpos = {X = 35600, Y = 45400}
+		local smpos = {X = 35600, Y = 45400}
 		local tpos = GetPosition("control1")
 		SetEntityName(Logic.CreateEntity(Entities.PB_DarkTower3, tpos.X, tpos.Y, 0, 2), "tower13")
 		DestroyEntity("control1")
 		SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
 		Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
 	end
+
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 

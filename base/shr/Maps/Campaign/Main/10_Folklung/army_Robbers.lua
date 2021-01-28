@@ -2,12 +2,16 @@ createArmyRobbers = function()
 	
 		Report("Setting up robbers army")
 		
+		local strength = 4
+		if CP_Difficulty == 1 then
+			strength = 6
+		end
 		
 		ArmyRobbersSwampA								= {}
 	
 		ArmyRobbersSwampA.player 						= gvMission.PlayerIDRobbersSwamp
 		ArmyRobbersSwampA.id								= 4
-		ArmyRobbersSwampA.strength					= 4
+		ArmyRobbersSwampA.strength					= strength
 		ArmyRobbersSwampA.position					= GetPosition("RobbersSwampAHQ")
 		ArmyRobbersSwampA.rodeLength				= 100
 		ArmyRobbersSwampA.beAgressive				= true		
@@ -18,9 +22,11 @@ createArmyRobbers = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
+		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 2
-			experience = experience + 1
+			experience = experience + 2
+			etype = Entities.CU_BanditLeaderSword2
 		end
 
 		local troopDescription = {
@@ -28,14 +34,12 @@ createArmyRobbers = function()
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers = soldiers,
 			experiencePoints 	= experience,
-		}			
+			leaderType			= etype
+		}		
 
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1
-
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+		for i = 1, strength do
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+		end
 
 	  StartJob("ArmyRobbersSwampA")
 end
@@ -58,9 +62,11 @@ end
 RefreshRobbers = function()
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
+		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 2
-			experience = experience + 1
+			experience = experience + 2
+			etype = Entities.CU_BanditLeaderSword2
 		end
 
 		local troopDescription = {
@@ -68,17 +74,12 @@ RefreshRobbers = function()
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers = soldiers,
 			experiencePoints 	= experience,
+			leaderType			= etype
 		}			
-
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1
-
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
-		EnlargeArmy(ArmyRobbersSwampA,troopDescription)
 		
+		for i = 1, 6 do
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+		end
 		
 		
 		ArmyRobbersSwampA.position					= GetPosition("ArmyRobbersCenter")

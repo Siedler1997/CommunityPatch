@@ -267,7 +267,41 @@ function Mission_FirstMapAction()
 	--
 	--
 	--	startQuestDestroyKerberos()
+	
+	if CP_Difficulty == 1 then
+		local vcpos1 = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos1.X,vcpos1.Y,0,0)
+		
+		local vcpos2 = GetPosition("p5_vc1_empty1")
+		DestroyEntity("p5_vc1_empty1")
+		Logic.CreateEntity(Entities.XD_RuinTower2,vcpos2.X,vcpos2.Y,0,0)
 
+		local vcpos3 = GetPosition("p5_vc1_empty2")
+		DestroyEntity("p5_vc1_empty2")
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
+
+
+		for i = 1, 3 do
+			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
+		end
+		DestroyEntity("p5_vc1")
+		DestroyEntity("p5_vc2")
+		
+		local bosspos1 = GetPosition("spawn1")
+		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
+		LookAt(bossID1, "Helias")
+		
+		local bosspos2 = GetPosition("spawn2")
+		local bossID2 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos2.X - 100),(bosspos2.Y + 500),0,0,3,0)
+		LookAt(bossID2, "Helias")
+		
+		local bosspos3 = GetPosition("enemyCastle")
+		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
+		LookAt(bossID3, "Helias")
+	end
+
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 

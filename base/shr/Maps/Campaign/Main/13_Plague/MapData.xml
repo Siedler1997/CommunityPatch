@@ -79,6 +79,21 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>PB_DarkTower1</Type>
+		<Position>
+			<X>5.000000e+002</X>
+			<Y>5.000000e+002</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>7</PlayerID>
+		<Health>-1</Health>
+		<Name></Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>PB_Tower2</Type>
    <Position>
@@ -1392,7 +1407,7 @@
    </Position>
    <Orientation>2.700000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -1677,7 +1692,7 @@
    </Position>
    <Orientation>1.170000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>8</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name>ChangeCannon1</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -1887,7 +1902,7 @@
    </Position>
    <Orientation>0.000000e+000</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -2457,7 +2472,7 @@
    </Position>
    <Orientation>7.100000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>8</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name>ChangeCannon2</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -9507,7 +9522,7 @@
    </Position>
    <Orientation>0.000000e+000</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -9522,7 +9537,7 @@
    </Position>
    <Orientation>9.000000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -9552,7 +9567,7 @@
    </Position>
    <Orientation>0.000000e+000</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>6</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -35412,7 +35427,7 @@
    </Position>
    <Orientation>2.760000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>4</PlayerID>
    <Health>-1</Health>
    <Name>NPC_Miner1</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -35802,7 +35817,7 @@
    </Position>
    <Orientation>0.000000e+000</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>4</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -36822,7 +36837,7 @@
    </Position>
    <Orientation>1.150000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>6</PlayerID>
+   <PlayerID>4</PlayerID>
    <Health>-1</Health>
    <Name>npcPilgrim</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -39537,7 +39552,7 @@
    </Position>
    <Orientation>2.150000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>7</PlayerID>
+   <PlayerID>4</PlayerID>
    <Health>-1</Health>
    <Name>NPC_CliffJumper</Name>
    <ScriptCommandLine></ScriptCommandLine>

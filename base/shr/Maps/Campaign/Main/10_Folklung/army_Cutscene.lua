@@ -1,12 +1,17 @@
 createArmyCutscene = function()
+	local etype = Entities.CU_Barbarian_LeaderClub1
+	if CP_Difficulty == 1 then
+		etype = Entities.CU_Barbarian_LeaderClub2
+	end
+
 	local FolklungPos = "P2_Barracks2"
 	Sword1Pos = GetPosition("P5_SwordmenPosition1")
 	Sword2Pos = GetPosition("P5_SwordmenPosition2")
 	Sword3Pos = GetPosition("P5_SwordmenPosition3")
 
-	Sword1ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Sword1Pos.X,Sword1Pos.Y,0,0,3,0)
-	Sword2ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Sword2Pos.X,Sword2Pos.Y,0,0,3,0)
-	Sword3ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Sword3Pos.X,Sword3Pos.Y,0,0,3,0)
+	Sword1ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Sword1Pos.X,Sword1Pos.Y,0,0,3,0)
+	Sword2ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Sword2Pos.X,Sword2Pos.Y,0,0,3,0)
+	Sword3ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Sword3Pos.X,Sword3Pos.Y,0,0,3,0)
 	Logic.LeaderChangeFormationType( Sword1ID, 4 )	
 	Logic.LeaderChangeFormationType( Sword2ID, 4 )	
 	Logic.LeaderChangeFormationType( Sword3ID, 4 )	
@@ -32,9 +37,9 @@ createArmyCutscene = function()
 	Spear2Pos = GetPosition("P5_SpearmenPosition2")
 	Spear3Pos = GetPosition("P5_SpearmenPosition3")
 		
-	Spear1ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Spear1Pos.X,Spear1Pos.Y,0,0,3,0)
-	Spear2ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Spear2Pos.X,Spear2Pos.Y,0,0,3,0)
-	Spear3ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,Entities.CU_Barbarian_LeaderClub1,0,4,Spear3Pos.X,Spear3Pos.Y,0,0,3,0)
+	Spear1ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Spear1Pos.X,Spear1Pos.Y,0,0,3,0)
+	Spear2ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Spear2Pos.X,Spear2Pos.Y,0,0,3,0)
+	Spear3ID = AI.Entity_CreateFormation(gvMission.PlayerIDBesieger,etype,0,8,Spear3Pos.X,Spear3Pos.Y,0,0,3,0)
 	Logic.LeaderChangeFormationType( Spear1ID, 4 )	
 	Logic.LeaderChangeFormationType( Spear2ID, 4 )	
 	Logic.LeaderChangeFormationType( Spear3ID, 4 )		

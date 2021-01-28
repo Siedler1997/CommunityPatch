@@ -21,13 +21,13 @@
 	<Logic classname="GGL::CGLSettlerProps">
 			<Class>GGL::CSettler</Class>
 			<AccessCategory>AccessCategorySettler</AccessCategory>		
-			<MaxHealth>800</MaxHealth>
+			<MaxHealth>600</MaxHealth>
 			<NeedsPlayer>true</NeedsPlayer>
 			<ForceNoPlayer>false</ForceNoPlayer>
 			<Hat/>
 			<Cost>
-				<Gold>150</Gold>
-				<Iron>30</Iron>
+				<Gold>600</Gold>
+				<Iron>100</Iron>
 				<Wood/>
 			</Cost>
 
@@ -64,16 +64,12 @@
 			<Category>Sword</Category>
 			<Category>Melee</Category>
 			<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-			<Exploration>20</Exploration>
+			<Exploration>21</Exploration>
 			<ArmorClass>ArmorClassJerkin</ArmorClass>
 			<ArmorAmount>6</ArmorAmount> 
 			<DodgeChance>0</DodgeChance> 
 			<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-			<ExperiencePoints>30</ExperiencePoints>    	
-			<Upgrade>                       
-			   <Category>BlackKnightLeaderMace1</Category>
-			    <Type>CU_BlackKnight_LeaderMace2</Type> 
-		    </Upgrade>
+			<ExperiencePoints>50</ExperiencePoints>    	
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
@@ -130,7 +126,7 @@
 	        <AutoAttackRange>2000</AutoAttackRange>
 	        
 			  <HealingPoints>5</HealingPoints>
-	        <HealingSeconds>3</HealingSeconds>
+	        <HealingSeconds>2</HealingSeconds>
 
 			  <UpkeepCost>20</UpkeepCost>
 		  </Logic>

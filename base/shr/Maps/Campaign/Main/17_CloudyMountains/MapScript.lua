@@ -16,6 +16,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
 end
 
 
@@ -28,6 +29,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3,ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(4,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
@@ -56,6 +58,7 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)
 		ResearchAllMilitaryTechs(5)
 	end
 	
@@ -160,9 +163,16 @@ function Mission_FirstMapAction()
 	local pos = GetPosition("Dario")
 	Camera.ScrollSetLookAt(pos.X, pos.Y)
 	
-	LocalMusic.UseSet = EUROPEMUSIC
+	LocalMusic.UseSet = HIGHLANDMUSIC
 	
 	start1stQuest()
 	
 --	EnableDebugging()
+
+	if CP_Difficulty == 1 then
+		local bosspos1 = GetPosition("HQ_AI1")
+		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 1000),(bosspos1.Y - 1000),0,0,3,0)
+		--LookAt(bossID1, "MinerClayMine")
+	end
+	--Tools.ExploreArea(-1, -1, 900)
 end

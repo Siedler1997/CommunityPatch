@@ -15,6 +15,7 @@ CP_Difficulty = 0
 function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
@@ -27,7 +28,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR2)
-	Display.SetPlayerColorMapping(7,PLAYER_COLOR)
+	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
 end
@@ -46,6 +47,7 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -160,9 +162,19 @@ function Mission_FirstMapAction()
 	if CP_Difficulty == 1 then
 		local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
 		for i = 1, table.getn(towers1) do
-			ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
+			if IsExisting(towers1[i]) then
+				ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
+			end
 		end
+
+		local bosspos1 = GetPosition("KI3_SpawnPos")
+		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
+		LookAt(bossID1, "RescueObject1")
+		
+		local bosspos2 = GetPosition("KI2_SpawnPos")
+		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
+		LookAt(bossID2, "Banned_Info_NPC")
 	end
 --	EnableDebugging()
-
+	--Tools.ExploreArea(-1, -1, 900)
 end

@@ -18,15 +18,21 @@ createArmyDefenders2 = function()
 		SetupArmy(armyDefenders2)
 	
 	--	create
+		local experience = 0
+		local etype = Entities.CU_BlackKnight_LeaderMace1
+		if CP_Difficulty == 1 then
+			experience = HIGH_EXPERIENCE
+			etype = Entities.CU_BlackKnight_LeaderMace2
+		end
 
 		local troopDescription = {
 		
-			maxNumberOfSoldiers	= 4,
+			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 2,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= experience,
 		}				
 
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1			
+		troopDescription.leaderType = etype
 		EnlargeArmy(armyDefenders2,troopDescription)
 		EnlargeArmy(armyDefenders2,troopDescription)
 		

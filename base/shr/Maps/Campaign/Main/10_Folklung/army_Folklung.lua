@@ -6,12 +6,12 @@ createArmyFolklungA = function()
 	ArmyFolklungA.strength			= 	6
 	ArmyFolklungA.rodeLength			= 	8000
 	                                	
-	ArmyFolklungA.spawnTypes 		= 	{	 {Entities.PU_LeaderSword3, 6},
-											 {Entities.PU_LeaderSword3, 6},
-											 {Entities.PU_LeaderSword3, 6},
-											 {Entities.PU_LeaderSword3, 6},
-											 {Entities.PU_LeaderPoleArm3, 6},
-											 {Entities.PU_LeaderBow3, 6}
+	ArmyFolklungA.spawnTypes 		= 	{	 {Entities.PU_LeaderSword3, 8},
+											 {Entities.PU_LeaderSword3, 8},
+											 {Entities.PU_LeaderSword3, 8},
+											 {Entities.PU_LeaderSword3, 8},
+											 {Entities.PU_LeaderPoleArm3, 8},
+											 {Entities.PU_LeaderBow3, 8}
 										}
 
   ArmyFolklungA.endless = true

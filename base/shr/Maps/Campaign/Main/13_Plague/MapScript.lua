@@ -92,7 +92,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Village with Pilgrim (Verino)
 	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)			-- Aris leader merchant and support troops that follow heroes
 
-	Display.SetPlayerColorMapping(7, NPC_COLOR)				-- NPCs
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)			-- Pirates
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR2)		-- infected village
 
 end
@@ -222,17 +222,23 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 1 then
 			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 48, 0) }
 			for i = 1, table.getn(towers1) do
-				ReplaceEntity(towers1[i], Entities.PB_Tower3)
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_Tower3)
+				end
 			end
 			local towers2 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 48, 0) }
 			for i = 1, table.getn(towers2) do
-				ReplaceEntity(towers2[i], Entities.PB_Tower3)
+				if IsExisting(towers2[i]) then
+					ReplaceEntity(towers2[i], Entities.PB_Tower3)
+				end
 			end
 			
 			Logic.CreateEntity(Entities.PB_Tower3, 35500, 27800, 0, 2);
 			Logic.CreateEntity(Entities.PB_Tower3, 40400, 27300, 0, 2);
 			Logic.CreateEntity(Entities.PB_Tower3, 44900, 24000, 0, 2);
 		end
+
+		--Tools.ExploreArea(-1, -1, 900)
 end
 
 

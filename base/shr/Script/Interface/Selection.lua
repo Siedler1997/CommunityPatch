@@ -2,6 +2,7 @@
 -- Selection 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function GameCallback_GUI_SelectionChanged()
+	local PlayerID = GUI.GetPlayerID()
 
 	-- Hide selection widgets
 	XGUIEng.ShowAllSubWidgets(gvGUI_WidgetID.SelectionView,0)	
@@ -307,13 +308,23 @@ function GameCallback_GUI_SelectionChanged()
 			elseif 	UpgradeCategory == UpgradeCategories.Barracks then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Barracks,1)
 				XGUIEng.ShowWidget(gvGUI_WidgetID.ToggleRecruitGroups,1)
+
+				if CP_GetEvilModUnitState(PlayerID) > 0 then
+					XGUIEng.ShowWidget("Group_Evil_Melee", 1)
+					if CP_GetEvilModUnitState(PlayerID) == 1 or CP_GetEvilModUnitState(PlayerID) == 3 then
+						XGUIEng.ShowWidget("Buy_LeaderBlackKnight", 1)
+						XGUIEng.ShowWidget("Buy_LeaderBarbarian", 1)
+						XGUIEng.ShowWidget("Buy_LeaderBanditAxe", 1)
+					end
+				end
+
 				ButtonStem =  "Upgrade_Barracks"
 			
 			--Is EntityType the Archery?
 			elseif 	UpgradeCategory == UpgradeCategories.Archery then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Archery,1)
 				XGUIEng.ShowWidget(gvGUI_WidgetID.ToggleRecruitGroups,1)
-				ButtonStem =  "Upgrade_Archery"			
+				ButtonStem =  "Upgrade_Archery"	
 			
 			--Is EntityType the Foundry?
 			elseif 	UpgradeCategory == UpgradeCategories.Foundry then

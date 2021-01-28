@@ -15,8 +15,8 @@ CP_Difficulty = 0
 function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
-	--Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
-	--Logic.SetDiplomacyState( 4, 6, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 4, 6, Diplomacy.Hostile )
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -28,6 +28,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(5,BARMECIA_COLOR)
 	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(7,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
@@ -162,13 +163,22 @@ function Mission_FirstMapAction()
 	-- Start prelude
 	start1stQuest()
 
-	--Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleHiResJob("GetDarioPos")
 	if CP_Difficulty == 1 then
 		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
 		Logic.CreateEntity(Entities.PB_Tower3, 44800, 10400, 0, 6);
 		Logic.CreateEntity(Entities.PB_Tower3, 41500, 10300, 0, 6);
+		
+		local towers1 = { Logic.GetPlayerEntities(6, Entities.PB_Tower2, 5, 0) }
+		for i = 1, table.getn(towers1) do
+			if IsExisting(towers1[i]) then
+				ReplaceEntity(towers1[i], Entities.PB_Tower3)
+			end
+		end
 	end
+
+	--Tools.ExploreArea(-1, -1, 900)
+
 end
 --[[
 function GetDarioPos()

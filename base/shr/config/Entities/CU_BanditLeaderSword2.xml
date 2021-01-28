@@ -26,8 +26,8 @@
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
 		<Cost>
-			<Gold>200</Gold>
-			<Iron>30</Iron>
+			<Gold>150</Gold>
+			<Iron>50</Iron>
 			<Wood/>
 		</Cost>
 
@@ -102,7 +102,7 @@
 			  <Class>GGL::CLeaderBehavior</Class>
 			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
 			  <HomeRadius>1500</HomeRadius>
-			  <SoldierType>CU_BanditSoldierSword1</SoldierType>
+			  <SoldierType>CU_BanditSoldierSword2</SoldierType>
 			
 	        <BattleTaskList>TL_BATTLE</BattleTaskList>
 	        
@@ -149,5 +149,11 @@
 		</Logic>
 	</Behavior>
 
+	<Behavior>
+		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+			<Class>GGL::CReplaceableEntityBehavior</Class>
+			<EntityType>XD_DroppedAxeShield</EntityType>
+		</Logic>
+	</Behavior>
 
 </root>

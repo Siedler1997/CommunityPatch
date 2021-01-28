@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CTaskList>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_ORIENTATION_TO_TARGET</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_WAIT_FOR_LATEST_ATTACK</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_CHECK_RANGE</TaskType>
+    </Task>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_ORIENTATION_TO_TARGET</TaskType>
+    </Task>
+  
+    <!--Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+    </Task-->
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_LATEST_ATTACK_TURN</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_FIRE_PROJECTILE</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgsSound" classid="0x2cfedfcd">
+        <TaskType>TASK_PLAY_SOUND</TaskType> 
+        <SoundID>Military\SO_BallistaFire_rnd_1</SoundID> 
+        <Volume>100</Volume> 
+    </Task>
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_BATTLE_WAIT_UNTIL</TaskType>		
+	</Task>
+</CTaskList>

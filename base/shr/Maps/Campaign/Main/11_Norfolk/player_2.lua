@@ -37,7 +37,20 @@ createPlayer2 = function()
 			randomTime			=	30
 		}
 	}
-	SetupPlayerAi(playerId,aiDescription)
+
+	if CP_Difficulty == 1 then
+		aiDescription.refresh = {
+			gold				=	60,
+			clay				=	20,
+			iron				=	40,
+			sulfur				=	5,
+			stone				=	40,
+			wood				=	20,
+			updateTime			=	10
+		}
+	end
+
+	SetupPlayerAi(playerId, aiDescription)
 
 	local position = GetPosition("SulfurTowerCheck")
 	

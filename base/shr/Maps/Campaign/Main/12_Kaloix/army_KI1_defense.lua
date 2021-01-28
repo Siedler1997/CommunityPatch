@@ -10,8 +10,8 @@ setupArmyKI1Defense = function()
 	armyKI1Defense.baseDefenseRange		= 3000
 	armyKI1Defense.outerDefenseRange	= 4000
 	armyKI1Defense.rodeLength			= 3000
-	armyKI1.beAgressive				=	true
-	armyKI1Defense.AllowedTypes 		= {  UpgradeCategories.BlackKnightLeaderMace1}
+	armyKI1Defense.beAgressive			=	false
+	armyKI1Defense.AllowedTypes 		= { UpgradeCategories.BlackKnightLeaderMace1 }
 	armyKI1Defense.Attack				= false
 	armyKI1Defense.AttackAllowed		= false
 
@@ -32,6 +32,7 @@ setupArmyKI1Defense = function()
 	TimeLine.Enter("Allow Cannon1", TimeLine.Seconds + 2101, "DefenseAllowCannon1" )
 	TimeLine.Enter("Army Size 8", TimeLine.Seconds + 2401, "DefenseIncreaseArmySize" )
 	TimeLine.Enter("Allow Cannon2", TimeLine.Seconds + 2701, "DefenseAllowCannon2" )
+	TimeLine.Enter("Allow Cavalry", TimeLine.Seconds + 3000, "DefenseAllowCavalry" )
 	TimeLine.Enter("UpgradeArmy", TimeLine.Seconds + 4000, "DefenseUpgradeArmy" )
 
 	
@@ -54,29 +55,36 @@ end
 
 DefenseAllowCannon1 = function()
 	if CP_Difficulty == 0 then
-		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon1)
+		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon1)
 	else
-		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
+		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon2)
 	end
 end
 
 DefenseAllowCannon2 = function()
 	if CP_Difficulty == 0 then
-		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
+		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon2)
 	else
-		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon3)
+		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon3)
 	end
+end
+
+DefenseAllowCavalry = function()
+	table.insert(armyKI1Defense.AllowedTypes, UpgradeCategories.LeaderHeavyCavalry)
+		
+	local bosspos1 = GetPosition("KI1_Target1")
+	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X + -300),(bosspos1.Y + 1500),0,0,3,0)
 end
 
 DefenseUpgradeArmy = function()
 	for i = 1, 2 do
-	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 6)
-	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 6)
-	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 6)
 
-	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 6)
-	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 6)
-	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 6)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 6)
 	end
 
 end

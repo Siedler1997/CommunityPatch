@@ -11,12 +11,16 @@ createArmyRobbersEast = function()
 
 		Report("Setting up robbers army")
 		
-		
+		local strength = 4
+		if CP_Difficulty == 1 then
+			strength = 6
+		end
+
 		ArmyRobbersEast								= {}
 	
 		ArmyRobbersEast.player 						= gvMission.PlayerIDRobbers2
 		ArmyRobbersEast.id								= gvMission.PlayerIDRobbers2
-		ArmyRobbersEast.strength					= 4
+		ArmyRobbersEast.strength					= strength
 		ArmyRobbersEast.position					= GetPosition("BanditsHQ2")
 		ArmyRobbersEast.rodeLength				= 1000
 		ArmyRobbersEast.beAgressive				= true
@@ -29,9 +33,11 @@ createArmyRobbersEast = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
+		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 2
-			experience = experience + 1
+			experience = experience + 2
+			etype = Entities.CU_BanditLeaderSword2
 		end
 
 		local troopDescription = {
@@ -39,10 +45,9 @@ createArmyRobbersEast = function()
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers = soldiers,
 			experiencePoints 	= experience,
-		}			
-
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1
-		for i = 1,4 do
+			leaderType			= etype
+		}		
+		for i = 1, strength do
 			EnlargeArmy(ArmyRobbersEast,troopDescription)
 		end
 
@@ -159,9 +164,13 @@ end
 			--	create 
 			local soldiers = 6
 			local experience = LOW_EXPERIENCE
+			local strength = 4
+			local etype = Entities.CU_BanditLeaderSword1
 			if CP_Difficulty == 1 then
+				strength = 6
 				soldiers = soldiers + 2
-				experience = experience + 1
+				experience = experience + 2
+				etype = Entities.CU_BanditLeaderSword2
 			end
 					
 			local troopDescription = {
@@ -169,13 +178,13 @@ end
 					minNumberOfSoldiers	= 0,
 					maxNumberOfSoldiers = soldiers,
 					experiencePoints 	= experience,
+					leaderType			= etype
 				}			
 	
 				-- define new attacking armies
 				
 				if ArmyRobbersEast.control.attack >= 0 then
-					troopDescription.leaderType = Entities.CU_BanditLeaderSword1
-					for i = 1,4 do
+					for i = 1, strength do
 						EnlargeArmy(ArmyRobbersEast,troopDescription)
 					end
 				end

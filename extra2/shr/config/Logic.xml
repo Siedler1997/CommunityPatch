@@ -884,6 +884,11 @@
 
 
 	<!-- Community Patch -->
+	<SettlerUpgrade>
+		<Category>AggressiveWolf</Category>
+		<FirstSettler>CU_AggressiveWolf</FirstSettler>
+	</SettlerUpgrade>
+	
 	<BuildingUpgrade>
 		<Category>Abbey01</Category>
 		<FirstBuilding>CB_Abbey01</FirstBuilding>

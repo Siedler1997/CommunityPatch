@@ -36,7 +36,20 @@ createPlayer4 = function()
 		}	
 	
 	}
-	SetupPlayerAi(playerId,aiDescription)
+	
+	if CP_Difficulty == 1 then
+		aiDescription.refresh = {
+			gold				=	60,
+			clay				=	20,
+			iron				=	10,
+			sulfur				=	20,
+			stone				=	20,
+			wood				=	20,
+			updateTime			=	10
+		}
+	end
+
+	SetupPlayerAi(playerId, aiDescription)
 
 	local position = GetPosition("TowerIronCheck1")
 	local position2 = GetPosition("P4BuildIronMines")
@@ -55,11 +68,11 @@ createPlayer4 = function()
 
 	FeedAiWithConstructionPlanFile(playerId, iron)	
 
-	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, 4)
-	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, 4)
 	if CP_Difficulty == 1 then
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 3)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, 4)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, 4)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 4)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 4)
 	end
 
 	setupArmyP4Intruder()

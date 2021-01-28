@@ -246,6 +246,36 @@
 			<Anim>XF_ExplosionShrapnel999</Anim>
 		</Display>
     </Effect>
+
+	<Effect id="FXExplosionBallista">
+		<Logic classname="EGL::CGLEEffectProps">
+			<Class>EGL::CEffect</Class>
+			<Duration>5</Duration>
+			<SoundID>Military\SO_BallistaHit_rnd_1</SoundID>
+			<SoundVolume>127</SoundVolume>
+			<SoundLooped>false</SoundLooped>
+		</Logic>
+		<Display classname="ED::CHAnimEffectProps">
+			<Class>ED::CHAnimEffect</Class>
+			<Model>Effects/XF_ExplosionShrapnel</Model>
+			<Anim>XF_ExplosionShrapnel999</Anim>
+		</Display>
+	</Effect>
+
+	<Effect id="FXExplosionCannon">
+		<Logic classname="EGL::CGLEEffectProps">
+			<Class>EGL::CEffect</Class>
+			<Duration>5</Duration>
+			<SoundID>Military\SO_CannonHit_rnd_1</SoundID>
+			<SoundVolume>127</SoundVolume>
+			<SoundLooped>false</SoundLooped>
+		</Logic>
+		<Display classname="ED::CHAnimEffectProps">
+			<Class>ED::CHAnimEffect</Class>
+			<Model>Effects/XF_Explosion</Model>
+			<Anim>XF_Explosion990</Anim>
+		</Display>
+	</Effect>
         
     <Effect id="FXDie">
 		<Logic classname="EGL::CGLEEffectProps">
@@ -303,7 +333,7 @@
             <GravityFactor>800.0f</GravityFactor>
             <HeightOffsetStart>680.0</HeightOffsetStart>
             <HeightOffsetTarget>0.0</HeightOffsetTarget>
-            <ImpactEffectID>FXExplosion</ImpactEffectID>
+            <ImpactEffectID>FXExplosionCannon</ImpactEffectID>
         </Logic>  
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -322,7 +352,7 @@
             <GravityFactor>800.0f</GravityFactor>
             <HeightOffsetStart>600.0</HeightOffsetStart>
             <HeightOffsetTarget>0.0</HeightOffsetTarget>
-            <ImpactEffectID>FXExplosion</ImpactEffectID>
+            <ImpactEffectID>FXExplosionBallista</ImpactEffectID>
         </Logic>  
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -648,6 +678,6 @@
 			<Model>Effects\XF_KalaArrow</Model>
 		</Display>
     </Effect>
-    
+
 
 </root>

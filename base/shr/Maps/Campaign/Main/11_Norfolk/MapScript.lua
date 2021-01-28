@@ -16,9 +16,11 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 
 	Logic.SetDiplomacyState( 3, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 4, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 3, 6, Diplomacy.Hostile )
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -26,10 +28,11 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-       Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+    Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
 
@@ -161,6 +164,13 @@ function Mission_FirstMapAction()
 	
 	-- Start cutscene and prelude after
 	start1stQuest()
+
+	if CP_Difficulty == 1 then
+		local bosspos1 = GetPosition("P2Defense2")
+		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X + 1500),(bosspos1.Y + 0),0,0,3,0)
+		--LookAt(bossID1, "MinerClayMine")
+	end
+
 	--Tools.ExploreArea(-1, -1, 900)
 	--EnableDebugging()
 end

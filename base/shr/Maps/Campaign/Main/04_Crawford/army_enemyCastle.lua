@@ -32,12 +32,20 @@ createArmyEnemyCastle = function()
 			minNumberOfSoldiers	= 2,
 			experiencePoints 	= experience,
 		}				
-
-		troopDescription.leaderType = Entities.PV_Cannon1				
+		
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.PV_Cannon1
+		else
+			troopDescription.leaderType = Entities.PV_Cannon2
+		end			
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
-
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
+		
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+		else
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+		end				
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
@@ -77,13 +85,17 @@ createArmyEnemyCastle = function()
 
 		local troopDescription = {
 		
-			maxNumberOfSoldiers	= 4,
+			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 2,
 			experiencePoints 	= experience,
 		}				
 
-
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
+		
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+		else
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+		end					
 		EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 		
 		if CP_Difficulty == 1 then

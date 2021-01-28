@@ -29,7 +29,7 @@
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
         <Cost>
-			  <Gold>30</Gold>
+			  <Gold>40</Gold>
 			  <Iron>0</Iron>
 			  <Wood>30</Wood>
         </Cost>
@@ -63,6 +63,7 @@
 		
         <Category>Military</Category>
         <Category>Soldier</Category>
+		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>25</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

@@ -134,7 +134,7 @@
       <TaskList>TL_FIREWORKS_SPECIAL</TaskList>
       <Animation>PU_Hero11_PlaceRocket</Animation>
       <Range>1000.0</Range>
-      <FlightDistance>3000.0</FlightDistance>
+      <FlightDistance>2000.0</FlightDistance>
       <FlightDuration>20</FlightDuration>
       <Effect>FXYukiFireworksFear</Effect>
     </Logic>

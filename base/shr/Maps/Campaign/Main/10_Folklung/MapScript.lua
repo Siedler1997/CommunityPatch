@@ -195,6 +195,13 @@ function Mission_FirstMapAction()
 		
 	--BurningHouse
 	Logic.HurtEntity(GetID("BurningHouse"),400)
+	
+	if CP_Difficulty == 1 then
+		local vcpos = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
+	end
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 

@@ -2495,7 +2495,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_Foundry1</Type>
+   <Type>PB_Foundry2</Type>
    <Position>
     <X>4.730000e+004</X>
     <Y>1.540000e+004</Y>

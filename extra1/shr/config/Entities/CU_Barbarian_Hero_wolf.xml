@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>XA_Wolf</Model>
+			<Anim>XA_Wolf_Run</Anim>
+			<Anim>XA_Wolf_Wait</Anim>
+			<Anim>XA_Wolf_Attack1</Anim>
+			<Anim>XA_Wolf_Dying1</Anim>
+			<Anim>XA_Wolf_IdleAttack1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>200</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <Convertible>false</Convertible>
+        <Hat/>
+        <Cost>
+			  <Gold>100</Gold>
+			  <Iron>50</Iron>
+			  <Wood/>
+        </Cost>
+        
+        <Category>Military</Category>
+        <Category>Leader</Category>
+        <Category>CavalryLight</Category>
+        <Category>Melee</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>30</Exploration>
+		  <ArmorClass>ArmorClassFur</ArmorClass>
+		  <ArmorAmount>0</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>10</ExperiencePoints>
+    	
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>XA_Wolf_Wait</SuspensionAnimation>
+			  <AnimSet>SET_CU_BABARIAN_HERO_WOLF</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>500</Speed>
+			  <RotationSpeed>40</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>XA_Wolf_Wait</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+            <HomeRadius>1500</HomeRadius>
+			
+			  <SoldierType>PU_SoldierSword1</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
+	        
+	        <NormalAttackAnim1>XA_Wolf_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>XA_Wolf_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>XA_Wolf_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>XA_Wolf_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>XA_Wolf_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>XA_Wolf_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>XA_Wolf_Run</BattleWalkAnim>
+	        <HitAnim>XA_Wolf_IdleAttack1</HitAnim>
+
+	        <DamageClass>DC_Evil</DamageClass>
+	        <DamageAmount>14</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>1500</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2000</AutoAttackRange>
+	        
+			  <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
+		  </Logic>
+	</Behavior>
+    
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+<!--    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedSwordShield</EntityType>
+        </Logic>
+    </Behavior>
+-->
+	<Behavior>
+	    <Logic classname="GGL::CSummonedBehaviorProps">
+	        <Class>GGL::CSummonedBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CLimitedLifespanBehaviorProps">
+	        <Class>GGL::CLimitedLifespanBehavior</Class>
+	        <LifespanSeconds>150</LifespanSeconds>
+	    </Logic>
+	</Behavior>
+
+
+</root>

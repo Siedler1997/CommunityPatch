@@ -117,19 +117,24 @@ end
 -- Place Building
 --------------------------------------------------------------------------------
 function GUIAction_PlaceBuilding( _UpgradeCategory )
-
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	
 	XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "BuildingGroup")
 		
 	local PlayerID = GUI.GetPlayerID()
-	Logic.FillBuildingCostsTable( Logic.GetBuildingTypeByUpgradeCategory(_UpgradeCategory, PlayerID ), InterfaceGlobals.CostTable )
+	local UCat = _UpgradeCategory
+
+	if UCat == UpgradeCategories.Tower and CP_GetEvilModTowerState(PlayerID) == 1 then
+		UCat = UpgradeCategories.DarkTower
+	end
+
+	Logic.FillBuildingCostsTable( Logic.GetBuildingTypeByUpgradeCategory(UCat, PlayerID ), InterfaceGlobals.CostTable )
 	
 	-- Does the player have enough mones?
 	if InterfaceTool_HasPlayerEnoughResources_Feedback( InterfaceGlobals.CostTable ) == 1 then			
 		-- YES!
 		XGUIEng.HighLightButton(CurrentWidgetID,1)
-		GUI.ActivatePlaceBuildingState(_UpgradeCategory)
+		GUI.ActivatePlaceBuildingState(UCat)
 		--Sound.PlayGUISound( Sounds.klick_rnd_1, 0 )
 		
 	end
@@ -269,6 +274,7 @@ GUIAction_Hero1LookAtHawk()
 	
 	if gvGUI.HawkIsFlying == 0 then
 		if HawkEntity ~= nil then
+			Sound.PlayFeedbackSound( Sounds.VoicesHero1_HERO1_SeeThruHawksEyes_rnd_01, 0 )	
 			Camera.ZoomSetAngle(90)	
 			Camera.ZoomSetDistance(4700)
 			Camera.FollowEntity(HawkEntity)
@@ -311,6 +317,15 @@ function GUIAction_HeroGenericExplore()
 			Explore.Show("cp_p"..PlayerID.."explorer", _pos, 2000)
 		end
 	end
+end
+
+--------------------------------------------------------------------------------
+-- King's Defense'
+--------------------------------------------------------------------------------
+function GUIAction_Hero1Defense()
+	Sound.PlayFeedbackSound( Sounds.VoicesHero1_HERO1_ProtectPeople_rnd_01, 0 )	
+	Logic.HeroSetAbilityChargeSeconds(HeroSelection_GetCurrentSelectedHeroID(), Abilities.AbilitySendHawk, 0)
+	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
 end
 
 --------------------------------------------------------------------------------

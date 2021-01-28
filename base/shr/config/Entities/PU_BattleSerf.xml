@@ -88,7 +88,7 @@
             <TurnIntoSerfTaskList>TL_BATTLE_SERF_TURN_INTO_SERF</TurnIntoSerfTaskList>
             <HomeRadius>0</HomeRadius>
 
-	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
 	        
 	        <NormalAttackAnim1>PU_Militia_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>PU_Militia_Attack2</NormalAttackAnim2>

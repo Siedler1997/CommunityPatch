@@ -1,11 +1,6 @@
 
 -- attackers from East
 
-ATTACK_DELAY_TOWER2 							= 3 * 60
-if CP_Difficulty == 1 then
-	ATTACK_DELAY_TOWER2 = ATTACK_DELAY_TOWER2 - 30
-end
-
 createArmyTower2 = function()
 
 	--	set up
@@ -15,14 +10,17 @@ createArmyTower2 = function()
 		armyTower2.player 				= 5
 		armyTower2.id					= 2
 		armyTower2.strength				= 2
-		if CP_Difficulty == 1 then
-			armyTower2.strength = armyTower2.strength + 1
-		end
 		armyTower2.position				= GetPosition("spawn2")
 		armyTower2.rodeLength			= 2000
 		armyTower2.control				= {}
 		armyTower2.control.timer		= 0
 		armyTower2.control.delay		= ATTACK_DELAY_TOWER2
+		if CP_Difficulty == 0 then
+			armyTower2.control.delay		= 3 * 60
+		else
+			armyTower2.strength = armyTower2.strength + 2
+			armyTower2.control.delay		= 2 * 60
+		end
 		
 		SetupArmy(armyTower2)
 	
@@ -68,7 +66,11 @@ createArmyTower2 = function()
 
 			if HasFullStrength(armyTower2) then
 	
-				armyTower2.control.delay = ATTACK_DELAY_TOWER2 + Logic.GetRandom(180)
+				if CP_Difficulty == 0 then
+					armyTower2.control.delay = 3 * 60 + Logic.GetRandom(180)
+				else
+					armyTower2.control.delay = 2 * 60 + Logic.GetRandom(180)
+				end
 			
 				StartJob("ControlArmyTower2")
 				
@@ -80,28 +82,26 @@ createArmyTower2 = function()
 
 			local troopDescription = {
 			
-				maxNumberOfSoldiers	= 4,
+				maxNumberOfSoldiers	= 8,
 				minNumberOfSoldiers	= 0,
 				experiencePoints 	= LOW_EXPERIENCE,
 			}				
 		
 			if CP_Difficulty == 0 then
 				if Logic.GetRandom(100) > 60 then
-
 					troopDescription.leaderType = Entities.PU_LeaderPoleArm1
-				
 				else
-			
 					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
-			
 				end
 			
 				EnlargeArmy(armyTower2,troopDescription)
 			else
+				troopDescription.experiencePoints = HIGH_EXPERIENCE
 				troopDescription.leaderType = Entities.PU_LeaderPoleArm2
 				EnlargeArmy(armyTower2, troopDescription)
 				EnlargeArmy(armyTower2, troopDescription)
-				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+				EnlargeArmy(armyTower2, troopDescription)
 				EnlargeArmy(armyTower2, troopDescription)
 			end
 		

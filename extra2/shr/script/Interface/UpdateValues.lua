@@ -569,30 +569,34 @@ end
 -- Update recharge time for hero ability
 --------------------------------------------------------------------------------
 function GUIUpdate_HeroAbility(_ability, _button)
+	local button = _button
 	if _ability ~= nil then
 		local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 		local SelectedEntityID = GUI.GetSelectedEntity()
 	
 		if Logic.IsHero(SelectedEntityID) == 1 then
 			SelectedEntityID = HeroSelection_GetCurrentSelectedHeroID()	
+			if Logic.GetEntityType(SelectedEntityID) == Entities.PU_Hero1c and _ability == Abilities.AbilitySendHawk then
+				button = "Hero1_KingsDefense"
+			end
 		end
 	
 		local RechargeTime = Logic.HeroGetAbilityRechargeTime(SelectedEntityID, _ability)
 		local TimeLeft = Logic.HeroGetAbiltityChargeSeconds(SelectedEntityID, _ability)
 		if TimeLeft == RechargeTime then		
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1,0,0,0,0)
-			XGUIEng.DisableButton(_button,0)
+			XGUIEng.DisableButton(button,0)
 		end
 		if TimeLeft < RechargeTime then
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1,214,44,24,189)						
-			XGUIEng.DisableButton(_button,1)
+			XGUIEng.DisableButton(button,1)
 		end
 		XGUIEng.SetProgressBarValues(CurrentWidgetID,TimeLeft, RechargeTime)
 	else
 		if XNetwork.Manager_IsGameRunning() == 1 then						
-			XGUIEng.DisableButton(_button,1)
+			XGUIEng.DisableButton(button,1)
 		else						
-			XGUIEng.DisableButton(_button,0)
+			XGUIEng.DisableButton(button,0)
 		end
 	end
 end

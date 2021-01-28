@@ -7,7 +7,7 @@ function CreateArmyPatrol()
 		
 	ArmyPatrol.player 		= 	2
 	ArmyPatrol.id			= 	4
-	ArmyPatrol.strength		= 	4
+	ArmyPatrol.strength		= 	5
 	ArmyPatrol.position		= 	GetPosition("P2_RandomSpawn_1")
 	ArmyPatrol.rodeLength	= 	2000
 	ArmyPatrol.delay		=	2
@@ -30,9 +30,9 @@ function CreateArmyPatrolTroops()
 	local RandomPos 			= GetRandom(4)+1
 	ArmyPatrol.position		= GetPosition("P2_RandomSpawn_"..RandomPos)
 	
-	local experience = LOW_EXPERIENCE
+	local experience = MEDIUM_EXPERIENCE
 	if CP_Difficulty == 1 then
-		experience = experience + 2
+		experience = experience + 1
 	end
 	local troopDescription = {
 
@@ -41,9 +41,34 @@ function CreateArmyPatrolTroops()
 		experiencePoints 	= experience,
 	}
 
+	troopDescription.leaderType = Entities.PU_LeaderSword2
+	EnlargeArmy(ArmyPatrol,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+	EnlargeArmy(ArmyPatrol,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderBow2
+	EnlargeArmy(ArmyPatrol,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderRifle1
+	EnlargeArmy(ArmyPatrol,troopDescription)
+	
+	if CP_Difficulty == 1 then
+		troopDescription.leaderType = Entities.PU_LeaderSword2
+		EnlargeArmy(ArmyPatrol,troopDescription)
+		troopDescription.leaderType = Entities.PU_LeaderBow2
+		EnlargeArmy(ArmyPatrol,troopDescription)
+		troopDescription.leaderType = Entities.PU_LeaderRifle1
+		EnlargeArmy(ArmyPatrol,troopDescription)
+	end
+	
+	troopDescription.experiencePoints = troopDescription.experiencePoints + 1
+	troopDescription.leaderType = Entities.CU_BlackKnight_SoldierSword3
+	EnlargeArmy(ArmyPatrol,troopDescription)
+	--[[
 	troopDescription.leaderType = Entities.PU_LeaderCavalry2
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	EnlargeArmy(ArmyPatrol,troopDescription)
+	if CP_Difficulty == 1 then
+		EnlargeArmy(ArmyPatrol,troopDescription)
+	end
 	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	EnlargeArmy(ArmyPatrol,troopDescription)
@@ -52,6 +77,7 @@ function CreateArmyPatrolTroops()
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		EnlargeArmy(ArmyPatrol,troopDescription)
 	end
+	--]]
 
 	Redeploy(ArmyPatrol, ArmyPatrol.position)
 

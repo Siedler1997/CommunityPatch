@@ -26,8 +26,8 @@
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
         <Cost>
-			  <Gold>150</Gold>
-			  <Iron>30</Iron>
+			  <Gold>120</Gold>
+			  <Iron>60</Iron>
 			  <Wood/>
         </Cost>
 		
@@ -142,7 +142,7 @@
 			  <Class>GGL::CLimitedAttachmentBehavior</Class>
             <Attachment>
                 <Type>ATTACHMENT_LEADER_SOLDIER</Type>
-                <Limit>4</Limit>
+                <Limit>8</Limit>
             </Attachment>
 		</Logic>
 	</Behavior>

@@ -14,7 +14,7 @@ function createArmyStone()
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderSkirmisher1)
-        createArmy(2,3,armyStone,4,"army2",MEDIUM_EXPERIENCE,troopsDefender,16,2000)
+        createArmy(2,3,armyStone,4,"army2",HIGH_EXPERIENCE,troopsDefender,16,2000)
     end
 
     delayTickerArmyStone = 5

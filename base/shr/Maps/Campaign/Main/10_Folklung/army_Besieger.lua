@@ -17,11 +17,11 @@ createArmyBesiegerA = function()
 													 }
 	else
 		ArmyBesiegerA.strength			= 	8	                                	
-		ArmyBesiegerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub1, 4}, 
-													{Entities.CU_Barbarian_LeaderClub1, 4}, 
-													{Entities.CU_Barbarian_LeaderClub1, 4}, 
-													{Entities.CU_Barbarian_LeaderClub1, 4},
-													{Entities.CU_Barbarian_LeaderClub1, 4}, 
+		ArmyBesiegerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, 8}, 
+													{Entities.CU_Barbarian_LeaderClub2, 8}, 
+													{Entities.CU_Barbarian_LeaderClub2, 8}, 
+													{Entities.CU_Barbarian_LeaderClub2, 8},
+													{Entities.CU_Barbarian_LeaderClub2, 8}, 
 													{Entities.PU_LeaderBow2, 4}, 
 													{Entities.PU_LeaderBow2, 4}, 
 													{Entities.PV_Cannon1, 4}

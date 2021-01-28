@@ -119,5 +119,11 @@ function FirstMapAction()
         local vcpos = GetPosition("vc_empty")
         DestroyEntity("vc_empty")
         Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
+        
+		local bosspos1 = GetPosition("army5")
+		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X + 900),(bosspos1.Y + 50),0,0,3,0)
+		--LookAt(bossID1, "dario")
     end
+
+    --Tools.ExploreArea(-1, -1, 900)
 end

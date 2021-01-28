@@ -34,5 +34,3 @@ function endChapterOne()
 	StartCutscene(Cutscenes[MISSIONCOMPLETECUTSCENE],Victory)
 
     end
-
-

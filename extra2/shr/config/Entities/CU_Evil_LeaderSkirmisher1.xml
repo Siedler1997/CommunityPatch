@@ -26,9 +26,9 @@
 		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
-			  <Gold>150</Gold>
+			  <Gold>200</Gold>
 			  <Iron>0</Iron>			  
-			  <Wood>60</Wood>			  
+			  <Wood>30</Wood>			  
         </Cost>
 
 		<!--Armor modifier-->
@@ -62,6 +62,7 @@
         <Category>Leader</Category>
         <Category>Bow</Category>
         <Category>EvilLeader</Category>
+		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>50</MaxHealth>
 		  <Exploration>20</Exploration>

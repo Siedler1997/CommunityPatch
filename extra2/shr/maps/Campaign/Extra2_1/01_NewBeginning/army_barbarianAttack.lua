@@ -67,8 +67,12 @@ function ControlBarbarianAttack()
 					ArmyBarbarianAttack[i].position	= GetPosition("armySpawn")
 				
 					local experience = LOW_EXPERIENCE
-					if CP_Difficulty == 1 then
+					local troopLeaderType = {}
+					if CP_Difficulty == 0 then
+						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub1
+					else
 						experience = experience + 3
+						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub2
 					end
 
 					local troopDescription = {
@@ -78,10 +82,8 @@ function ControlBarbarianAttack()
 						experiencePoints 	= experience,
 					}
 						
-					local troopLeaderType = {}
-					troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub1
 					troopLeaderType[2] = Entities.CU_BanditLeaderBow1
-					troopLeaderType[3] = Entities.CU_BanditLeaderSword1	
+					troopLeaderType[3] = Entities.CU_BanditLeaderSword2
 
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
 						

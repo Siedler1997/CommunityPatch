@@ -16,11 +16,6 @@
 
 -- East iron and sulfur mines
 
-SPAWN_TIME_RESOURCE2	= 5 * 60
-if CP_Difficulty == 1 then
-	SPAWN_TIME_RESOURCE2 = SPAWN_TIME_RESOURCE2 - 60
-end
-
 createArmyResources2 = function()
 
 	--	set up
@@ -42,7 +37,7 @@ createArmyResources2 = function()
 
 		local troopDescription = {
 		
-			maxNumberOfSoldiers	= 4,
+			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= LOW_EXPERIENCE,
 		}				
@@ -50,17 +45,25 @@ createArmyResources2 = function()
 --		troopDescription.leaderType = Entities.PU_LeaderSword1				
 --		EnlargeArmy(armyResources2,troopDescription)
 
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
-		EnlargeArmy(armyResources2,troopDescription)
-
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderBow1
-		else
-			troopDescription.leaderType = Entities.PU_LeaderBow2
-		end				
-		EnlargeArmy(armyResources2,troopDescription)
+			EnlargeArmy(armyResources2,troopDescription)
 
-		troopDescription.leaderType = Entities.CU_BanditLeaderSword1				
+			troopDescription.leaderType = Entities.CU_BanditLeaderSword1				
+			EnlargeArmy(armyResources2,troopDescription)
+
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
+		else
+			troopDescription.experiencePoints = HIGH_EXPERIENCE
+			troopDescription.leaderType = Entities.PU_LeaderBow2
+			EnlargeArmy(armyResources2,troopDescription)
+
+			troopDescription.leaderType = Entities.CU_BanditLeaderSword2			
+			EnlargeArmy(armyResources2,troopDescription)
+
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+		end		
+			
 		EnlargeArmy(armyResources2,troopDescription)
 	
 	--	job		
@@ -94,7 +97,7 @@ createArmyResources2 = function()
 	Action_ControlArmyResources2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 		
-		if 		HasFullStrength(armyResources2)	== false 
+		if HasFullStrength(armyResources2)	== false 
 			and	IsDead("tower2a") 				== false 
 			and	IsDead("tower2b") 				== false
 			then
@@ -108,13 +111,19 @@ createArmyResources2 = function()
 
 			if Logic.GetRandom() > 50 then
 			
-				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
+				if CP_Difficulty == 0 then
+					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
+				else
+					troopDescription.experiencePoints = HIGH_EXPERIENCE
+					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+				end
 				
 			else
 
 				if CP_Difficulty == 0 then
 					troopDescription.leaderType = Entities.PU_LeaderSword1
 				else
+					troopDescription.experiencePoints = HIGH_EXPERIENCE
 					troopDescription.leaderType = Entities.PU_LeaderSword2
 				end				 
 
@@ -128,7 +137,11 @@ createArmyResources2 = function()
 			
 			Retreat(armyResources2)
 			
-			armyResources2.control.timer = SPAWN_TIME_RESOURCE2
+			if CP_Difficulty == 0 then
+				armyResources2.control.timer = 5 * 60
+			else
+				armyResources2.control.timer = 3 * 60
+			end
 			
 		else
 

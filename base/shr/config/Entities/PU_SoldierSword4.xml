@@ -109,7 +109,7 @@
 	<Behavior>
 		  <Logic classname="GGL::CSoldierBehaviorProps">
 			  <Class>GGL::CSoldierBehavior</Class>
-			  <BattleTaskList>TL_BATTLE</BattleTaskList>
+			  <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
 	        <NormalAttackAnim1>PU_SoldierSword4_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>PU_SoldierSword4_Attack2</NormalAttackAnim2>
 	        <CounterAttackAnim>PU_SoldierSword4_Finish</CounterAttackAnim>

@@ -19,6 +19,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Hostile )
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -31,7 +32,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos in northeast
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- Avala (Mountain village)
 	Display.SetPlayerColorMapping(7, NPC_COLOR)				-- NPCs
-	
+	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -48,6 +49,7 @@ function Mission_InitTechnologies()
 		ResearchAllMilitaryTechs(3)
 		ResearchAllMilitaryTechs(5)
 		ResearchAllMilitaryTechs(6)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -169,4 +171,15 @@ function Mission_FirstMapAction()
 --	EnableDebugging()
 
 --	StartCutscene("MissionComplete")
+
+	if CP_Difficulty == 1 then
+		local hq_ai1_pos = GetPosition("HQ_AI1")
+
+		Logic.CreateEntity(Entities.XD_RockDestroyableMedium1, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
+
+		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_BlackKnight_SoldierSword3,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
+		LookAt(bossID1, "Garek")
+	end
+
+	--Tools.ExploreArea(-1, -1, 900)
 end

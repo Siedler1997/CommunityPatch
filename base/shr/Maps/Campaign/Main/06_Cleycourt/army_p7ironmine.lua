@@ -11,19 +11,20 @@ setupArmyP7IronMine = function()
 	                                	
 	-- Spawn parameter
 	if CP_Difficulty == 1 then
-		ArmyP7IronMine.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace1, 4},
+		ArmyP7IronMine.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace2, 8},
 												{Entities.PU_LeaderPoleArm2, 4},
 												{Entities.PU_LeaderBow2, 4} }
+		ArmyP7IronMine.maxSpawnAmount		= 	2
 	else
 		ArmyP7IronMine.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace1, 4},
 												{Entities.PU_LeaderPoleArm1, 4},
 												{Entities.PU_LeaderBow1, 4} }
+		ArmyP7IronMine.maxSpawnAmount		= 	1
 	end
 										
 	ArmyP7IronMine.spawnPos				= 	GetPosition("SpawnPos")
 	ArmyP7IronMine.spawnGenerator		= 	"SpawnGenerator"
 	ArmyP7IronMine.respawnTime			= 	60
-	ArmyP7IronMine.maxSpawnAmount		= 	1
 	ArmyP7IronMine.endless				= 	true
 	ArmyP7IronMine.refresh				= 	false
                                     	

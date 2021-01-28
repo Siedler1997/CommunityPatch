@@ -1,11 +1,6 @@
 
 -- At west ironmines
 
-SPAWN_TIME_RESOURCE1 = 5 * 60
-if CP_Difficulty == 1 then
-	SPAWN_TIME_RESOURCE1 = SPAWN_TIME_RESOURCE1 - 60
-end
-
 createArmyResources1 = function()
 
 	--	set up
@@ -27,7 +22,7 @@ createArmyResources1 = function()
 
 		local troopDescription = {
 		
-			maxNumberOfSoldiers	= 4,
+			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= LOW_EXPERIENCE,
 		}				
@@ -37,12 +32,15 @@ createArmyResources1 = function()
 
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderBow1
+			EnlargeArmy(armyResources1,troopDescription)
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 		else
+			troopDescription.experiencePoints = HIGH_EXPERIENCE
 			troopDescription.leaderType = Entities.PU_LeaderBow2
-		end			
-		EnlargeArmy(armyResources1,troopDescription)
+			EnlargeArmy(armyResources1,troopDescription)
 
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
+			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+		end						
 		EnlargeArmy(armyResources1,troopDescription)
 	
 	--	job		
@@ -76,21 +74,28 @@ createArmyResources1 = function()
 	Action_ControlArmyResources1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 		
-		if 		HasFullStrength(armyResources1)	== false 
+		if HasFullStrength(armyResources1)	== false 
 			and	IsDead("tower1a") 				== false 
 			and	IsDead("tower1b") 				== false
 			then
 
 			local troopDescription = {
 			
-				maxNumberOfSoldiers	= 4,
+				maxNumberOfSoldiers	= 8,
 				minNumberOfSoldiers	= 0,
 				experiencePoints 	= LOW_EXPERIENCE,
 			}				
+			
+			if CP_Difficulty == 1 then
+				troopDescription.experiencePoints = HIGH_EXPERIENCE
+			end
 
 			if Logic.GetRandom() > 30 then
-			
-				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1				
+				if CP_Difficulty == 0 then
+					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
+				else
+					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+				end
 				
 			else
 			
@@ -111,7 +116,11 @@ createArmyResources1 = function()
 			
 			Retreat(armyResources1)
 			
-			armyResources1.control.timer = SPAWN_TIME_RESOURCE1
+			if CP_Difficulty == 0 then
+				armyResources1.control.timer = 5 * 60
+			else
+				armyResources1.control.timer = 3 * 60
+			end
 			
 		else
 

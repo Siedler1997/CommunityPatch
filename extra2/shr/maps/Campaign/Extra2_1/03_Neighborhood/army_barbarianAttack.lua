@@ -79,7 +79,11 @@ function ControlBarbarianAttack()
 						experiencePoints 	= experience,
 					}
 				
-					troopDescription.leaderType = Entities.CU_Barbarian_LeaderClub1
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.CU_Barbarian_LeaderClub1
+					else
+						troopDescription.leaderType = Entities.CU_Barbarian_LeaderClub2
+					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -91,7 +95,11 @@ function ControlBarbarianAttack()
 						
 					end		
 			
-					troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+					else
+						troopDescription.leaderType = Entities.CU_BanditLeaderSword2
+					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -115,7 +123,11 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					troopDescription.leaderType = Entities.PV_Cannon1
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.PV_Cannon1
+					else
+						troopDescription.leaderType = Entities.PV_Cannon2
+					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -127,7 +139,11 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					troopDescription.leaderType = Entities.PV_Cannon2
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.PV_Cannon2
+					else
+						troopDescription.leaderType = Entities.PV_Cannon3
+					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
 					for j=1,ArmyBarbarianAttack[i].spawnCount do

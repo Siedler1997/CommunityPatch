@@ -147,5 +147,18 @@ function Mission_FirstMapAction()
 	TimeLine.Start()
 
 --	EnableDebugging()
+	if CP_Difficulty == 1 then
+		local vcpos = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
+		
+		local vcpos2 = GetPosition("vc_empty2")
+		DestroyEntity("vc_empty2")
 
+		local bosspos = GetPosition("KerberosCamp")
+		local bossID = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
+		LookAt(bossID, "Dario")
+	end
+
+	--Tools.ExploreArea(-1, -1, 900)
 end

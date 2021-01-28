@@ -10,6 +10,13 @@ VERYHIGH_EXPERIENCE 	= 3
 UPGRADE     = 0
 TECHNOLOGY  = 1
 
+CP_EvilMod = {}	
+for i = 1, 8 do
+	CP_EvilMod[i] = {}
+	CP_EvilMod[i].UnitState = 0
+	CP_EvilMod[i].TowerState = 0
+end
+
 -------------------------------------------------------------------------------------------------------
 -- Start the briefing system by using the specified briefing table.
 -- @param _briefing Table with all pages of the briefing (see tutorial for more information).
@@ -2005,4 +2012,41 @@ function CountdownIsVisisble()
         end
     end
     return false
+end
+
+
+--------------------------------------------------------------------------------
+--[[
+	Allows creation of evil units and buildings by a specific player
+	_unitstate:
+		0 -> deactivate (no extra units available)
+		1 -> dark units (Black Knights, Barbarians, Bandits and Wolves)
+		2 -> Nephilim (without effect in base game)
+		3 -> All evil units from 1 and 2
+	_towerstate:
+		0 -> deactivate (regular towers)
+		1 -> dark towers
+
+		Notes:	
+			- The comfort usually just allows the recruitment of basic units (4 soldiers per leader).
+				To allow the promoted ones (8 soldiers per leader) you have to upgrade leaders and soldiers manually with
+				'Logic.UpgradeSettlerCategory(_UpgradeCategory, _playerId)'
+				e.g. 
+					Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, 1)
+					Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, 1)
+			- It currently doesn't allow the construction of Nephilim-Towers (evil residences).
+--]]
+--------------------------------------------------------------------------------
+function CP_ActivateEvilMod(_playerId, _unitstate, _towerstate)
+    assert(type(_playerId) == "number" and type(_unitstate) == "number" and type(_towerstate) == "number");
+	CP_EvilMod[_playerId].UnitState = _unitstate
+	CP_EvilMod[_playerId].TowerState = _towerstate
+end
+
+function CP_GetEvilModUnitState(_playerId)
+	return CP_EvilMod[_playerId].UnitState
+end
+
+function CP_GetEvilModTowerState(_playerId)
+	return CP_EvilMod[_playerId].TowerState
 end

@@ -24,7 +24,7 @@
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
         <Cost>
-			  <Gold>150</Gold>
+			  <Gold>170</Gold>
 			  <Iron>0</Iron>			  
 			  <Wood>60</Wood>			  
         </Cost>
@@ -58,7 +58,8 @@
 		
         <Category>Military</Category>
         <Category>Leader</Category>
-        <Category>Bow</Category>
+		<Category>Bow</Category>
+		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>150</MaxHealth>
 		  <Exploration>25</Exploration>

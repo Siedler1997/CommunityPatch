@@ -187,7 +187,8 @@ end
 
 
 function Cutscene_MISSIONCOMPLETE_Shoot()    
-	SetHostile(2,3)
+	SetHostile(2,3)	
+	Sound.PlayGUISound(Sounds.Military_SO_Rifleman_rnd_1)
 end
 
 function Cutscene_MISSIONCOMPLETE_Text02()

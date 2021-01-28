@@ -3,15 +3,15 @@ timeForAttack = 60 * 20
 function createBanditArmies()
 	armyBandit1 = {}
 	local troopsBandit = {
-        Entities.CU_BanditLeaderSword1,
+        Entities.CU_BanditLeaderSword2,
         Entities.CU_BanditLeaderBow1,
-        Entities.CU_BanditLeaderSword1
+        Entities.CU_BanditLeaderSword2
     	}    
 
 	if CP_Difficulty == 0 then
-        createArmy(6,1,armyBandit1,7,"banditArmy",HIGH_EXPERIENCE,troopsBandit)
+        createArmy(6,1,armyBandit1,7,"banditArmy",VERYHIGH_EXPERIENCE,troopsBandit)
     else
-        createArmy(6,1,armyBandit1,5,"banditArmy",MEDIUM_EXPERIENCE,troopsBandit)
+        createArmy(6,1,armyBandit1,6,"banditArmy",HIGH_EXPERIENCE,troopsBandit)
     end
 	armyBandit1.control.job = 1
 

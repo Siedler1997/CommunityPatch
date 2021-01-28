@@ -34,12 +34,23 @@ createPlayer3 = function()
 			delay				=	30,
 			randomTime			=	30
 		}	
-		
+	}
+
+	if CP_Difficulty == 1 then
+		aiDescription.refresh = {
+			gold				=	10,
+			clay				=	5,
+			iron				=	5,
+			sulfur				=	5,
+			stone				=	5,
+			wood				=	5,
+			updateTime			=	10
 		}
+	end
 		
 	Tools.GiveResouces(3, 3000, 3000, 3000, 3000,3000, 3000)
 
-	SetupPlayerAi(playerId,aiDescription)
+	SetupPlayerAi(playerId, aiDescription)
 
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)

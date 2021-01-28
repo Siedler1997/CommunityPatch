@@ -3,16 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\10_Folklung",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MapTools",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\config",
-    "\\extra2\\shr\\script\\MapTools",
-    "\\extra2\\shr\\text"
+    "\\extra2\\shr\\text",
+    "\\extra2\\shr\\text\\en",
+    "\\extra2\\shr\\text\\en\\InGame"
   ],
-  "SelectedNode": "\\extra2\\shr\\text\\en\\InGame\\CM06_01_RestoringTheFaith.xml",
+  "SelectedNode": "\\base\\shr\\Script\\MapTools\\Comfort.lua",
   "PreviewInSolutionExplorer": false
 }

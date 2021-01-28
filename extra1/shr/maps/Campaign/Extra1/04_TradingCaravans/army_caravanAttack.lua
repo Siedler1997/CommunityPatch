@@ -9,7 +9,7 @@ function CreateArmyCaravanAttack()
 	ArmyCaravanAttack.id			= 5
 	ArmyCaravanAttack.strength		= 2
 	if CP_Difficulty == 1 then
-		ArmyCaravanAttack.strength = ArmyCaravanAttack.strength + 2
+		ArmyCaravanAttack.strength = ArmyCaravanAttack.strength * 3
 	end
 	ArmyCaravanAttack.position		= GetPosition("Caravan_WP1")
 	ArmyCaravanAttack.rodeLength	= 4000
@@ -82,6 +82,9 @@ function ArmyCaravanAttackRandomSpawn()
 			EnlargeArmy(ArmyCaravanAttack,troopDescription)
 
 			if CP_Difficulty == 1 then
+				EnlargeArmy(ArmyCaravanAttack,troopDescription)
+				EnlargeArmy(ArmyCaravanAttack,troopDescription)
+				troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
 				EnlargeArmy(ArmyCaravanAttack,troopDescription)
 				EnlargeArmy(ArmyCaravanAttack,troopDescription)
 			end

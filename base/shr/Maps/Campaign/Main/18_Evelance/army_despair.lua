@@ -20,7 +20,7 @@ setupArmyDespair = function()
 		ArmyDespair.spawnTypes 			=	{ 	{ Entities.CU_BlackKnight_LeaderMace2, 4},
 												{ Entities.PU_LeaderBow4, 4},
 												{ Entities.PV_Cannon3, 0},
-												{ Entities.CU_Barbarian_LeaderClub1, 12},
+												{ Entities.CU_Barbarian_LeaderClub2, 12},
 												{ Entities.PU_LeaderBow4, 12} }
 	else
 		ArmyDespair.strength			=	8
