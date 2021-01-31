@@ -139,13 +139,12 @@ end
 
 --------------------------------------------------------------------------------
 -- Calculate constrcution score
-function
-Score.OnBuildingConstructionComplete(_BuildingID, _PlayerID)
-	
-	Score.Player[_PlayerID]["buildings"] = Score.Player[_PlayerID]["buildings"] + Score.ConstructionPoints 
-	
-	Score.Player[_PlayerID]["all"] 	= Score.Player[_PlayerID]["all"] 
-									+ Score.ConstructionPoints 
+function Score.OnBuildingConstructionComplete(_BuildingID, _PlayerID)
+	if _PlayerID ~= 0 then
+		Score.Player[_PlayerID]["buildings"] = Score.Player[_PlayerID]["buildings"] + Score.ConstructionPoints 
+		Score.Player[_PlayerID]["all"] 	= Score.Player[_PlayerID]["all"] 
+										+ Score.ConstructionPoints 
+	end
 end
 
 

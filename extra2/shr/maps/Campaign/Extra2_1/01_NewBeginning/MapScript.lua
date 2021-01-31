@@ -109,7 +109,9 @@ function FirstMapAction()
 	if CP_Difficulty == 1 then
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 48, 0) }
 		for i = 2, table.getn(towers1) do
-			ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+			if IsExisting(towers1[i]) then
+				ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+			end
 		end
 		DestroyEntity("p4_extratower")
         local towerpos = GetPosition("p4_watchtower")

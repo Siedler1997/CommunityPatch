@@ -7,10 +7,11 @@
     "\\base\\shr\\Script\\MapTools",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\text",
-    "\\extra2\\shr\\text\\en",
-    "\\extra2\\shr\\text\\en\\InGame"
+    "\\extra2\\shr\\maps",
+    "\\extra2\\shr\\maps\\Campaign",
+    "\\extra2\\shr\\maps\\Campaign\\Extra2_1",
+    "\\extra2\\shr\\text"
   ],
-  "SelectedNode": "\\base\\shr\\Script\\MapTools\\Comfort.lua",
+  "SelectedNode": "\\extra2\\shr\\maps\\Campaign\\Extra2_2",
   "PreviewInSolutionExplorer": false
 }

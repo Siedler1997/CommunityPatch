@@ -67,10 +67,18 @@ function GUIAction_ToggleMenu( _Menu, _Status )
 	end
 	
 	-- Check network
-	if _Menu == gvGUI_WidgetID.NetworkWindow 
-	or _Menu == gvGUI_WidgetID.BuyHeroWindow then
-		if XNetwork.Manager_DoesExist() == 0 then
+	if _Menu == "NetworkWindow" or _Menu == gvGUI_WidgetID.BuyHeroWindow then
+		local NameType = {Framework.GetCurrentMapTypeAndCampaignName()}
+		local Type = NameType[1]
+		if Type == -1 then	
 			DoneFlag = 1
+			XGUIEng.ShowWidget("GameEndScreen", 1)
+			XGUIEng.ShowAllSubWidgets("GameEndScreen",0)
+			XGUIEng.ShowWidget("GameEndScreen_WindowHint", 1)
+		else
+			if XNetwork.Manager_DoesExist() == 0 then
+				DoneFlag = 1
+			end
 		end
 	end
 	

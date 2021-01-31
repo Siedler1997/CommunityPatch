@@ -245,7 +245,7 @@ function Mission_FirstMapAction()
 
 		StartCutscene("Intro", startQuestDestroyOutpost)
 		--StartSimpleHiResJob("GetDarioPos")
-		Tools.ExploreArea(-1, -1, 900)
+		--Tools.ExploreArea(-1, -1, 900)
 end
 --[[
 function GetDarioPos()

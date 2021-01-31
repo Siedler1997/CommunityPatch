@@ -1045,19 +1045,16 @@ GUIUpdate_ChangeWeatherButtons(_Button, _Technology,_WeatherState)
 
 end
 
-function
-GUIUpdate_DisplayButtonOnlyInMode(_ModeFlag)
-	
+function GUIUpdate_DisplayButtonOnlyInMode(_ModeFlag)
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local NameType = {Framework.GetCurrentMapTypeAndCampaignName()}
+	local Type = NameType[1]	
 	
 	--_ModeFlag 0 = SP
 	--_ModeFlag 1 = MP
 	--_ModeFlag 2 = Campaign (used for tipps button)
-	
+
 	if _ModeFlag == 2 then
-		local NameType = {Framework.GetCurrentMapTypeAndCampaignName()}
-		local Type = NameType[1]
-		
 		if Type == -1 then
 			if Logic.PlayerGetGameState( GUI.GetPlayerID() ) == 3 
 			or Logic.PlayerGetGameState( GUI.GetPlayerID() ) == 2 then
@@ -1070,18 +1067,22 @@ GUIUpdate_DisplayButtonOnlyInMode(_ModeFlag)
 		return
 	end
 	
-	
 	local MapName= Framework.GetCurrentMapName()
-			
-	if XNetwork.Manager_DoesExist() == _ModeFlag
-	or (MapName == "00_Tutorial1" 	and (CurrentWidgetID ~= XGUIEng.GetWidgetID( "MainMenuWindow_RestartGame" ) )) 
-	or (MapName == "00_Tutorial1" 	and (CurrentWidgetID ~= XGUIEng.GetWidgetID( "GameEndScreen_WindowRestartGame" ) ))
-	or XNetworkUbiCom.Manager_DoesExist() == 1 then		
-		XGUIEng.DisableButton(CurrentWidgetID ,1)	
-	else
+
+	if Type == -1 and CurrentWidgetID == XGUIEng.GetWidgetID("MainMenuWindow_NetworkGame") and MapName ~= "00_Tutorial1" then
+		XGUIEng.SetText("MainMenuWindow_NetworkGame", XGUIEng.GetStringTableText("WindowMisc/MainMenu_ButtonTipps"))
 		XGUIEng.DisableButton(CurrentWidgetID ,0)	
+	else
+		if XNetwork.Manager_DoesExist() == _ModeFlag	-- MP
+		or (MapName == "00_Tutorial1" and (CurrentWidgetID ~= XGUIEng.GetWidgetID( "MainMenuWindow_RestartGame" ) )) 
+		or (MapName == "00_Tutorial1" and (CurrentWidgetID ~= XGUIEng.GetWidgetID( "GameEndScreen_WindowRestartGame" ) ))
+		or XNetworkUbiCom.Manager_DoesExist() == 1 then		
+			XGUIEng.DisableButton(CurrentWidgetID ,1)	
+		else
+			XGUIEng.DisableButton(CurrentWidgetID ,0)	
+		end
 	end
-	
+
 end
 
 function

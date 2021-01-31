@@ -255,6 +255,7 @@
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
 	* Kampagnen-Maps modifiziert
+		+ Nutzloser Netzwerk-Button im Hauptmenü durch Tipps-Button ersetzt
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
 		+ Drakes Gewehrschüsse in Cutscenes sind vertont
 		+ in manchen Missionen können gegnerische Truppen respawnen
@@ -336,7 +337,9 @@
 		+ Sind über 6 Dummy-Buttons (DummyButton0X) erreichbar (-> 'TransferMaterials')
 		+ Die Zählung beginnt ab 'DummyButton02' -> 'DummyButton01' existiert nicht!
 		+ Der Button 'DummyButton07' enthält die originale Textur zum Kauf von Bogen-Hauptmännern
-	* Bei aktiviertem DebugScript werfen Söldnerquartiere keine Debug-Messages mehr bei Einheiten ohne definierten Entity-Namen
+	* Bei aktiviertem DebugScript gibt es weniger 'nutzlose' Debug-Messages
+		+ Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
+		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0'
 	* Comforts
 		+ StartCountdown(_Limit, _Callback, _Show): Startet einen Countdown
 			/ Abbrechbar mit StopCountdown(_Id)
@@ -385,12 +388,17 @@
 			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
 
 - ToDos:
-	* andere Lagerfeuer wie "CampInternal" nutzbar
-	* NPCs mit Lebensbalken (und ggf. selektierbar)
-	* CBs mit Fähnchen (soweit nicht vorhanden und sinnvoll)
+	* 'Die Smaragdebene'
+		+ Barbaren 
+			/ unter Spieler-Kontrolle
+			/ ggf mit Kosten
+		+ Andere Spielerfarben
+		+ Stationäre Feind-Veteranen
+	* NPCs 
+		+ mit Lebensbalken
+		+ beeinflusst von zivilen Techs
 	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
-		+ Umsetzung in 'Legenden'
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
 	* Hauptmenü
