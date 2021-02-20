@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Thief</Model> 
+		  <Model2>PU_ThiefCarry</Model2> 
+		  <Model2>PU_ThiefSerf</Model2> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>PU_Thief_Walk</Anim>
+		  <Anim>PU_Thief_Run1</Anim>
+		  <Anim>PU_Thief_Idle1</Anim>		
+		  <Anim>PU_Thief_Idle2</Anim>	
+		  <Anim>PU_Thief_Idle3</Anim>	
+		  <Anim>PU_Thief_Idle4</Anim>	
+		  <Anim>PU_Thief_Idle5</Anim>	
+		  <Anim>PU_Thief_Idle6</Anim>	
+		  <Anim>PU_Thief_Attack1</Anim>
+		  <Anim>PU_Thief_Attack2</Anim>
+		  <Anim>PU_Thief_IdleAttack1</Anim>
+		  <Anim>PU_Thief_Finish</Anim>
+		  <Anim>PU_Thief_Dying1</Anim>
+		  <Anim>PU_Thief_Hit</Anim>	
+		  <Anim>PU_Thief_Dead</Anim>	
+		  <Anim>PU_Thief_Bomb</Anim>	
+		  <Anim>PU_ThiefCarry_Run1</Anim>
+		  <Anim>PU_ThiefCarry_Idle1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>200</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Gold>300</Gold>
+			  <Iron>30</Iron>
+			  <Wood/>
+        </Cost>
+       <AttractionSlots>5</AttractionSlots>        
+        <Category>Military</Category>        
+        <Category>Melee</Category>
+        <Category>Thief</Category>        
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>18</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>1</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_THIEF_IDLE</IdleTaskList>
+    	<ExperiencePoints>40</ExperiencePoints>
+		<Fearless>true</Fearless>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+		
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>PU_Thief_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_THIEF</AnimSet>
+			  <ExtraSet>
+			      <Model>PU_ThiefCarry</Model>
+    			  <AnimSet>SET_THIEF_CARRY</AnimSet>
+			  </ExtraSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_THIEF_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Thief_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+            <HomeRadius>1500</HomeRadius>
+			
+	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>PU_Thief_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Thief_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Thief_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Thief_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Thief_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Thief_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Thief_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Thief_Hit</HitAnim>
+
+	        <DamageClass>DC_Pierce</DamageClass>
+	        <DamageAmount>5</DamageAmount>
+	        <MaxRandomDamageBonus>8</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>0</AutoAttackRange>
+	        
+			  <HealingPoints>3</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		  </Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+    
+	<Behavior>
+	    <Logic classname="GGL::CCamouflageBehaviorProps">
+	        <Class>GGL::CThiefCamouflageBehavior</Class>
+	        <DurationSeconds>15</DurationSeconds>  <!-- Time between being discovered and returning to sneak mode -->
+	        <DiscoveryRange>300.0</DiscoveryRange>
+	    </Logic>
+	    <Display classname="GD::CCamouflageBehaviorProps">
+	        <Class>GD::CCamouflageBehavior</Class>
+	        <CamouflageModelID>PU_ThiefSerf</CamouflageModelID>
+	        <CamouflageAlpha>255</CamouflageAlpha>
+	    </Display>
+	</Behavior>	
+
+	<Behavior>
+	    <Logic classname="GGL::CThiefBehaviorProperties">
+	        <Class>GGL::CThiefBehavior</Class>
+	        <SecondsNeededToSteal>5</SecondsNeededToSteal>
+	        <MinimumAmountToSteal>100</MinimumAmountToSteal>
+	        <MaximumAmountToSteal>200</MaximumAmountToSteal>
+	        <CarryingModelID>PU_ThiefCarry</CarryingModelID>
+	        <StealGoodsTaskList>TL_THIEF_STEAL_GOODS</StealGoodsTaskList>
+	        <SecureGoodsTaskList>TL_THIEF_SECURE_GOODS</SecureGoodsTaskList>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CKegPlacerBehaviorProperties">
+			  <Class>GGL::CKegPlacerBehavior</Class>
+			  <RechargeTimeSeconds>90</RechargeTimeSeconds> <!-- The time between two keg attacks -->
+			  <SecondsNeededToArm>5</SecondsNeededToArm>
+			  <SecondsNeededToDisarm>3</SecondsNeededToDisarm>
+			  <PlaceKegTaskList>TL_PLACE_KEG</PlaceKegTaskList>
+			  <DisarmKegTaskList>TL_DISARM_KEG</DisarmKegTaskList>
+			  <KegEntityType>XD_Keg1</KegEntityType>
+		</Logic>
+	</Behavior>
+
+</root>

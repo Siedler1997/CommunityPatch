@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>PU_Scout</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>PU_Scout_Walk</Anim>
+		  <Anim>PU_Scout_Run1</Anim>
+		  <Anim>PU_Scout_Idle1</Anim>
+		  <Anim>PU_Scout_Idle2</Anim>
+		  <Anim>PU_Scout_Idle3</Anim>
+		  <Anim>PU_Scout_Idle4</Anim>
+		  <Anim>PU_Scout_Idle5</Anim>
+		  <Anim>PU_Scout_Idle6</Anim>
+		  <Anim>PU_Scout_IdleAttack1</Anim>
+		  <Anim>PU_Scout_Attack1</Anim>
+		  <Anim>PU_Scout_Hit</Anim>		
+		  <Anim>PU_Scout_Dying1</Anim>
+		  <Anim>PU_Scout_PlaceTorch</Anim>
+		  <Anim>PU_Scout_Explore</Anim>
+		  <Anim>PU_Scout_ShowResources</Anim>
+		  <Anim>PU_Scout_IdleExplore</Anim>
+		  
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>200</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Gold>100</Gold>
+			  <Iron>50</Iron>
+			  <Wood/>
+        </Cost>
+       
+        
+        <Category>Military</Category>
+        <Category>Leader</Category>        
+        <Category>Melee</Category>
+        <Category>Scout</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>18</Exploration>
+		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorAmount>1</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+    	<ExperiencePoints>40</ExperiencePoints>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>PU_Scout_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_SCOUT</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_Scout_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+            <HomeRadius>2000</HomeRadius>
+			
+	        <BattleTaskList>TL_BATTLE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>PU_Scout_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>PU_Scout_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>PU_Scout_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>PU_Scout_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>PU_Scout_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>PU_Scout_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>PU_Scout_Run1</BattleWalkAnim>
+	        <HitAnim>PU_Scout_Hit</HitAnim>
+
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>10</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>1500</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>0</AutoAttackRange>
+	        
+            <HealingPoints>10</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
+	        
+		  </Logic>
+	</Behavior>
+    
+
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+    <!--Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedSwordShield</EntityType>
+        </Logic>
+    </Behavior-->
+
+
+	<Behavior>
+		<Logic classname="GGL::CAbilityScoutBinocularProps">
+			<Class>GGL::CAbilityScoutBinocular</Class>
+			<RechargeTimeSeconds>20</RechargeTimeSeconds>
+            <NumberOfExplorationEntities>8</NumberOfExplorationEntities>           
+            <SpacingOfExplorationEntities>1000</SpacingOfExplorationEntities>          
+            <ExplorationRangeOfExplorationEntities>15</ExplorationRangeOfExplorationEntities> <!-- In m, not cm!! -->
+            <ExplorationEntityType>XD_ScriptEntity</ExplorationEntityType>                 
+            <ExplorationTaskList>TL_EXPLORE_WITH_BINOCULARS</ExplorationTaskList>                   
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CTorchPlacerBehaviorProperties">
+			<Class>GGL::CTorchPlacerBehavior</Class>
+            <TorchEntity>XD_ScoutTorch</TorchEntity>                 
+            <TaskList>TL_PLACE_TORCH</TaskList>   
+            <RechargeTimeSeconds>150</RechargeTimeSeconds>                
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CPointToResourceBehaviorProperties">
+			<Class>GGL::CPointToResourceBehavior</Class>
+            <TaskList>TL_POINT_TO_RESOURCE</TaskList>                   
+            <SearchRadius>6300.0f</SearchRadius> <!-- This value may not exceed 6300!! -->
+		</Logic>
+	</Behavior>
+</root>
+

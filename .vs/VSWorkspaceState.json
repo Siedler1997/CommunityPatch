@@ -3,15 +3,13 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MapTools",
+    "\\extra1",
+    "\\extra1\\shr",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Campaign",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_1",
-    "\\extra2\\shr\\text"
+    "\\extra2\\shr\\config",
+    "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Campaign\\Extra2_2",
+  "SelectedNode": "\\extra2\\shr\\config\\Entities\\CU_Evil_LeaderBearman1.xml",
   "PreviewInSolutionExplorer": false
 }

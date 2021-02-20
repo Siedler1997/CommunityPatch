@@ -96,8 +96,12 @@
 			/ sind nicht mehr ganz so effektiv gegen Gebäude
 			/ Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
 			/ Schwere Scharfschützen zielen erheblich besser
-		+ Diebe und Kundschafter geben ihre persönlichen FunnyComments zum Besten
+		+ Diebe und Kundschafter 
+			/ geben ihre persönlichen FunnyComments zum Besten
+			/ profitieren von 'Webstuhl' und 'Hochwertige Schuhe'
+		+ Schwertkämpfer haben einen eigenen Kampf-Sound
 	* Helden
+		+ haben (je nach Waffe) anderen Kampf-Sound
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
 		+ profitieren von der neuen Technologie 'Aegis'
 			/ erhöht die Rüstung um 4 Punkte
@@ -374,8 +378,6 @@
 		+ gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
 	* VideoPreviews z.T. nicht ganz passend
 		+ gibt leider keine genauen VideoPreviews für diese Entities, sieht aber mMn. besser aus als Blackscreen
-	* Kadir hat metallische Reflektionen
-		+ Vmtl. wegen seinem Modell(?)
 	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
 		+ Grund: Sie haben einfach keine
 	* Dovbar hat keine Helden-Fähigkeiten
@@ -388,12 +390,6 @@
 			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
 
 - ToDos:
-	* 'Die Smaragdebene'
-		+ Barbaren 
-			/ unter Spieler-Kontrolle
-			/ ggf mit Kosten
-		+ Andere Spielerfarben
-		+ Stationäre Feind-Veteranen
 	* NPCs 
 		+ mit Lebensbalken
 		+ beeinflusst von zivilen Techs

@@ -53,8 +53,9 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
+	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
+	Display.SetPlayerColorMapping(7, BARBARIAN_COLOR)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
