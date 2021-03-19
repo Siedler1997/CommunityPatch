@@ -65,8 +65,8 @@
 			<Category>Melee</Category>
 			<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 			<Exploration>21</Exploration>
-			<ArmorClass>ArmorClassHero</ArmorClass>
-			<ArmorAmount>10</ArmorAmount> 
+			<ArmorClass>ArmorClassLeather</ArmorClass>
+			<ArmorAmount>14</ArmorAmount> 
 			<DodgeChance>0</DodgeChance> 
 			<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
 			<ExperiencePoints>50</ExperiencePoints>    	
@@ -117,7 +117,7 @@
 	        <BattleWalkAnim>CU_BlackKnight_LeaderMace1_Run1</BattleWalkAnim>
 	        <HitAnim>CU_BlackKnight_LeaderMace1_Hit</HitAnim>
 
-	        <DamageClass>DC_Chaos</DamageClass>
+	        <DamageClass>DC_Strike</DamageClass>
 	        <DamageAmount>50</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        

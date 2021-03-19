@@ -63,6 +63,7 @@
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
+			/ haben zei Schadenpunkte mehr (=14)
 			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		+ Schwarze Ritter 
 			/ haben einen Rüstungspunkt mehr (=3)
@@ -255,6 +256,7 @@
 		+ Der Reiter 'Spieler' ist reaktiviert
 			/ Spielername kann geändert werden
 			/ Das Geschlecht kann angegeben werden
+				* Die Wahl beeinflusst nur so Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
 		+ Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
@@ -384,17 +386,21 @@
 		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
-	* Die Sprachausgabe geht unabhängig vom Geschlecht von einem männlichen Spieler aus
-		+ Grund: Es gibt einfach keine Audio-Files mit weiblicher Anrede
-		+ Einzige (realistische) Lösung: Audio-Files zu entfernen
-			/ Nachteil: Z.T. drastisch reduzierte Anzahl an Sprüchen
+
 
 - ToDos:
+	* AddOn-Entities im Hauptspiel (Wölfe, Bogen-Banditen, Schafe, usw.)
+	* AddOn-Sounds (Wölfe)
+	* VeteranSword als eigene Entity
+	* Evil-Mod um Veteranen ergänzen (nur eine Art, im Setup zu definieren)
+	* Fernkampf-Veteran(?)
+	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* NPCs 
 		+ mit Lebensbalken
 		+ beeinflusst von zivilen Techs
 	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+		+ Wolfsrudel
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
 	* Hauptmenü

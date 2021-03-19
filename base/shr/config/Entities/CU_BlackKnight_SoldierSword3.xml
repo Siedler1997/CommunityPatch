@@ -66,8 +66,8 @@
         <Category>Melee</Category>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<Exploration>21</Exploration>
-		<ArmorClass>ArmorClassHero</ArmorClass>
-		<ArmorAmount>6</ArmorAmount>
+		<ArmorClass>ArmorClassLeather</ArmorClass>
+		<ArmorAmount>10</ArmorAmount>
 		<DodgeChance>0</DodgeChance>
 		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>50</ExperiencePoints>
@@ -117,8 +117,8 @@
 	        <BattleWalkAnim>PU_SoldierSword3_Run1</BattleWalkAnim> 
 	        <HitAnim>PU_SoldierSword3_Hit</HitAnim>
 	        
-	        <DamageClass>DC_Chaos</DamageClass>
-	        <DamageAmount>28</DamageAmount>
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>30</DamageAmount>
 	        <MaxRandomDamageBonus>3</MaxRandomDamageBonus>
 
 			  <BattleWaitUntil>1500</BattleWaitUntil>

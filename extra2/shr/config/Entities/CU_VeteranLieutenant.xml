@@ -116,7 +116,7 @@
 	        <HitAnim>CU_Barbarian_SoldierClub1_Hit</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>30</DamageAmount>
+	        <DamageAmount>38</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>
