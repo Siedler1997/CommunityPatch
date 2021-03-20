@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CTasksList>
+
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>XA_Wolf_Wait</AnimID>
+		<PlayBackwards>false</PlayBackwards>
+	</Task> 
+
+    	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1000</Thousandths>
+	</Task>
+
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>XA_Wolf_Idle1</AnimID>
+		<PlayBackwards>false</PlayBackwards>
+	</Task> 
+    
+    <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+		<TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+		<Thousandths>1000</Thousandths>
+	</Task>
+			
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<AnimID>XA_Wolf_Run</AnimID>
+		<PlayBackwards>false</PlayBackwards>
+	</Task> 
+
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		 <TaskType>TASK_WANDER</TaskType>
+	</Task>
+</CTasksList>
+

@@ -356,5 +356,6 @@
 	<!-- Community Patch -->
 
 		<TaskList>TL_BATTLE_SWORD</TaskList>
+		<TaskList>TL_BATTLE_CLAW</TaskList>
 
 </root>

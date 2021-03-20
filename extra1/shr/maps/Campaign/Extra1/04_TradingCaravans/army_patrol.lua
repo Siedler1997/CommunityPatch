@@ -60,7 +60,7 @@ function CreateArmyPatrolTroops()
 	end
 	
 	troopDescription.experiencePoints = troopDescription.experiencePoints + 1
-	troopDescription.leaderType = Entities.CU_BlackKnight_SoldierSword3
+	troopDescription.leaderType = Entities.CU_VeteranCaptain
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	--[[
 	troopDescription.leaderType = Entities.PU_LeaderCavalry2

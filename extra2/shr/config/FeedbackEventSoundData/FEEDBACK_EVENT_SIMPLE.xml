@@ -283,6 +283,10 @@
 				<EntityType>CU_BanditLeaderBow1</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow2</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -660,6 +664,10 @@
 				<EntityType>CU_BanditLeaderBow1</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow2</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -968,6 +976,10 @@
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BanditLeaderBow1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BanditLeaderBow2</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
 

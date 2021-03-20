@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_VeteranLieutenant</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_Barbarian_SoldierClub1_Walk</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Run1</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Idle1</Anim>		
+		  <Anim>CU_Barbarian_SoldierClub1_Idle2</Anim>	
+		  <Anim>CU_Barbarian_SoldierClub1_Idle3</Anim>	
+		  <Anim>CU_Barbarian_SoldierClub1_Idle4</Anim>	
+		  <Anim>CU_Barbarian_SoldierClub1_Idle5</Anim>	
+		  <Anim>CU_Barbarian_SoldierClub1_Idle6</Anim>	
+		  <Anim>CU_Barbarian_SoldierClub1_Attack1</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Attack2</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_IdleAttack1</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Finish</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Dying1</Anim>
+		  <Anim>CU_Barbarian_SoldierClub1_Hit</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+			<Class>GGL::CSettler</Class>
+			<AccessCategory>AccessCategorySettler</AccessCategory>		
+			<MaxHealth>600</MaxHealth>
+			<NeedsPlayer>true</NeedsPlayer>
+			<ForceNoPlayer>false</ForceNoPlayer>
+			<Hat/>
+			<Cost>
+				<Gold>600</Gold>
+				<Iron>100</Iron>
+				<Wood/>
+			</Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_WoodAging</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_Turnery</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+		
+			<Convertible>false</Convertible>
+			<Fearless>true</Fearless>
+			<Category>Military</Category>
+			<Category>Leader</Category>
+			<Category>Sword</Category>
+			<Category>Melee</Category>
+			<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+			<Exploration>21</Exploration>
+			<ArmorClass>ArmorClassJerkin</ArmorClass>
+			<ArmorAmount>6</ArmorAmount> 
+			<DodgeChance>0</DodgeChance> 
+			<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+			<ExperiencePoints>50</ExperiencePoints>    	
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>CU_Barbarian_SoldierClub1_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_CU_BARBARIAN_SOLDIERCLUB1</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_Barbarian_SoldierClub1_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
+            <HomeRadius>1500</HomeRadius>
+			
+	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_Barbarian_SoldierClub1_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Barbarian_SoldierClub1_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Barbarian_SoldierClub1_Finish</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Barbarian_SoldierClub1_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Barbarian_SoldierClub1_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Barbarian_SoldierClub1_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Barbarian_SoldierClub1_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Barbarian_SoldierClub1_Hit</HitAnim>
+
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>30</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        
+	        <MaxRange>200</MaxRange>
+	        <MinRange>0.0f</MinRange>
+	        <AutoAttackRange>2000</AutoAttackRange>
+	        
+			  <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+
+			  <UpkeepCost>20</UpkeepCost>
+		  </Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+    <Behavior>
+        <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+            <Class>GGL::CReplaceableEntityBehavior</Class>
+            <EntityType>XD_DroppedShield</EntityType>
+        </Logic>
+    </Behavior>
+</root>

@@ -177,7 +177,7 @@ function Mission_FirstMapAction()
 
 		Logic.CreateEntity(Entities.XD_RockDestroyableMedium1, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
 
-		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_BlackKnight_SoldierSword3,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
+		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
 		LookAt(bossID1, "Garek")
 	end
 

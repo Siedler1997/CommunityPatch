@@ -874,6 +874,16 @@
 		<FirstBuilding>XD_WallCorner</FirstBuilding>
 	</BuildingUpgrade>
 	
+	<SettlerUpgrade>
+		<Category>LeaderBanditBow</Category>
+		<FirstSettler>CU_BanditLeaderBow1</FirstSettler>
+	</SettlerUpgrade>
+
+	<SettlerUpgrade>
+		<Category>SoldierBanditBow</Category>
+		<FirstSettler>CU_BanditSoldierBow1</FirstSettler>
+	</SettlerUpgrade>
+	
   <AlarmRechargeTime>180000</AlarmRechargeTime>
   
   <OvertimeRechargeTimeInMs>240000</OvertimeRechargeTimeInMs>

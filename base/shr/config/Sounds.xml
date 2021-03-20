@@ -1245,7 +1245,10 @@
 	<ID>VoicesHero0\Scout_Yes_rnd_10</ID>
 	<ID>VoicesHero0\Scout_Yes_rnd_10</ID>
 	<ID>VoicesHero0\Scout_FunnyComment_rnd_04</ID>
-    
+
+	<ID>Military\SO_Bearman_rnd_1</ID>
+	<ID>Military\SO_Bearman_rnd_2</ID>
+	<ID>Military\SO_Bearman_rnd_3</ID>
 </root>
     
     

@@ -191,19 +191,19 @@ function Mission_FirstMapAction()
 
 	if CP_Difficulty == 1 then
 		local bosspos1 = GetPosition("KerberosDefenseSpawnPos")
-		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 200),bosspos1.Y,0,0,3,0)
+		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 200),bosspos1.Y,0,0,3,0)
 
 		local bosspos2 = GetPosition("DespairSpawn")
-		local bossID2 = AI.Entity_CreateFormation(4,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos2.X - 600),bosspos2.Y,0,0,3,0)
+		local bossID2 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 600),bosspos2.Y,0,0,3,0)
 		
 		for i = 1, 4 do
 			local bosspos3 = GetPosition("P5DefenseSpawnPos"..i)
-			local bossID3 = AI.Entity_CreateFormation(4,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
+			local bossID3 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
 			LookAt(bossID3, "Seer")
 		end
 		
 		local bosspos4 = GetPosition("PrincessDefend")
-		local bossID4 = AI.Entity_CreateFormation(4,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos4.X + 100),bosspos4.Y,0,0,3,0)
+		local bossID4 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos4.X + 100),bosspos4.Y,0,0,3,0)
 		LookAt(bossID4, "Seer")
 	end
 

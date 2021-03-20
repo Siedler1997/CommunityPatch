@@ -1,0 +1,41 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>CU_BanditLeaderBow1_Run1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle5</Name>
+		<Animation>CU_BanditLeaderBow1_Idle1</Animation>
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>CU_BanditLeaderBow1_Dying1</Animation>
+    </Category>
+</AnimSet>

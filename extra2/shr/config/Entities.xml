@@ -1038,6 +1038,12 @@
 
 		<Entity>XD_TemplarAltar</Entity>
 
+	<!--	 ********************************************
+		   Community Patch
+	************************************************
+	-->
+	<Entity>CU_BanditLeaderBow2</Entity>
+	<Entity>CU_BanditSoldierBow2</Entity>
     
 </root> 
         

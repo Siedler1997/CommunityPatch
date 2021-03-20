@@ -71,7 +71,7 @@ createArmyCave2 = function()
 				EnlargeArmy(armyCave2,troopDescription)
 			else
 				troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
-				troopDescription.leaderType = Entities.CU_BlackKnight_SoldierSword3
+				troopDescription.leaderType = Entities.CU_VeteranCaptain
 				EnlargeArmy(armyCave2,troopDescription)
 				troopDescription.experiencePoints = HIGH_EXPERIENCE
 				troopDescription.leaderType = Entities.CU_BanditLeaderSword2

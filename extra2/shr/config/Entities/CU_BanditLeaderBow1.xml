@@ -68,7 +68,11 @@
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>25</ExperiencePoints>
-    	
+
+		<Upgrade>
+			<Category>LeaderBanditBow</Category>
+			<Type>CU_BanditLeaderBow2</Type>
+		</Upgrade>
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">

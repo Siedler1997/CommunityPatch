@@ -205,7 +205,7 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos2.X,vcpos2.Y,0,0)
 	
 			local bosspos1 = GetPosition("Jail")
-			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
+			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
 			LookAt(bossID1, "gate")
 		end
 

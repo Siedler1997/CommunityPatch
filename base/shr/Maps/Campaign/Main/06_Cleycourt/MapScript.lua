@@ -156,7 +156,7 @@ function Mission_FirstMapAction()
 		DestroyEntity("vc_empty2")
 
 		local bosspos = GetPosition("KerberosCamp")
-		local bossID = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
+		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
 		LookAt(bossID, "Dario")
 	end
 

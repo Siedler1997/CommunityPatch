@@ -167,7 +167,7 @@ function Mission_FirstMapAction()
 
 	if CP_Difficulty == 1 then
 		local bosspos1 = GetPosition("P2Defense2")
-		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X + 1500),(bosspos1.Y + 0),0,0,3,0)
+		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + 1500),(bosspos1.Y + 0),0,0,3,0)
 		--LookAt(bossID1, "MinerClayMine")
 	end
 

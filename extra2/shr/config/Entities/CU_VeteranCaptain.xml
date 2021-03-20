@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?><root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_VeteranCaptain</Model> 
+		  <Model>CU_BlackKnight_SoldierSword3</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
-		  <Anim>CU_BlackKnight_SoldierMace1_Walk</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Run1</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle1</Anim>		
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle2</Anim>	
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle3</Anim>	
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle4</Anim>	
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle5</Anim>	
-		  <Anim>CU_BlackKnight_SoldierMace1_Idle6</Anim>	
-		  <Anim>CU_BlackKnight_SoldierMace1_Attack1</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Attack2</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_IdleAttack1</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Finish</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Dying1</Anim>
-		  <Anim>CU_BlackKnight_SoldierMace1_Hit</Anim>	
+		<Anim>PU_SoldierSword3_Walk</Anim>
+		<Anim>PU_SoldierSword3_Run1</Anim>
+		<Anim>PU_SoldierSword3_Idle1</Anim>
+		<Anim>PU_SoldierSword3_Idle2</Anim>
+		<Anim>PU_SoldierSword3_Idle3</Anim>
+		<Anim>PU_SoldierSword3_Idle4</Anim>
+		<Anim>PU_SoldierSword3_Idle5</Anim>
+		<Anim>PU_SoldierSword3_Idle6</Anim>
+		<Anim>PU_SoldierSword3_Attack1</Anim>
+		<Anim>PU_SoldierSword3_Attack2</Anim>
+		<Anim>PU_SoldierSword3_IdleAttack1</Anim>
+		<Anim>PU_SoldierSword3_Finish</Anim>
+		<Anim>PU_SoldierSword3_Dying1</Anim>
+		<Anim>PU_SoldierSword3_Hit</Anim>
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 			<Class>GGL::CSettler</Class>
@@ -74,8 +74,8 @@
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>
-			  <SuspensionAnimation>CU_BlackKnight_SoldierMace1_Idle1</SuspensionAnimation>
-			  <AnimSet>SET_CU_BLACKKNIGHT_SOLDIERMACE1</AnimSet>
+			  <SuspensionAnimation>PU_SoldierSword3_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_BLACKKNIGHT_SOLDIERSWORD3</AnimSet>
 		  </Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorAnimation</Class>
@@ -86,8 +86,8 @@
 			  <Class>GGL::CLeaderMovement</Class>
 			  <Speed>400</Speed>
 			  <RotationSpeed>30</RotationSpeed>
-			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
-			  <MoveIdleAnim>CU_BlackKnight_SoldierMace1_Idle1</MoveIdleAnim>
+			  <MoveTaskList>TL_MILITARY_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_SoldierSword3_Idle1</MoveIdleAnim>
 		</Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorMovement</Class>
@@ -104,16 +104,16 @@
 			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
             <HomeRadius>1500</HomeRadius>
 			
-	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
-	        
-	        <NormalAttackAnim1>CU_BlackKnight_SoldierMace1_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>CU_BlackKnight_SoldierMace1_Attack2</NormalAttackAnim2>
-	        <CounterAttackAnim>CU_BlackKnight_SoldierMace1_Finish</CounterAttackAnim>
-	        <FinishingMoveAnim>CU_BlackKnight_SoldierMace1_Attack1</FinishingMoveAnim>
-	        <MissAttackAnim>CU_BlackKnight_SoldierMace1_Attack1</MissAttackAnim>
-	        <BattleIdleAnim>CU_BlackKnight_SoldierMace1_IdleAttack1</BattleIdleAnim>
-	        <BattleWalkAnim>CU_BlackKnight_SoldierMace1_Run1</BattleWalkAnim>
-	        <HitAnim>CU_BlackKnight_SoldierMace1_Hit</HitAnim>
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
+
+			  <NormalAttackAnim1>PU_SoldierSword3_Attack1</NormalAttackAnim1>
+			  <NormalAttackAnim2>PU_SoldierSword3_Attack2</NormalAttackAnim2>
+			  <CounterAttackAnim>PU_SoldierSword3_Finish</CounterAttackAnim>
+			  <FinishingMoveAnim>PU_SoldierSword3_Finish</FinishingMoveAnim>
+			  <MissAttackAnim>PU_SoldierSword3_IdleAttack1</MissAttackAnim>
+			  <BattleIdleAnim>PU_SoldierSword3_IdleAttack1</BattleIdleAnim>
+			  <BattleWalkAnim>PU_SoldierSword3_Run1</BattleWalkAnim>
+			  <HitAnim>PU_SoldierSword3_Hit</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
 	        <DamageAmount>34</DamageAmount>
@@ -154,7 +154,7 @@
     <Behavior>
         <Logic classname="GGL::CReplaceableEntityBehaviorProperties">
             <Class>GGL::CReplaceableEntityBehavior</Class>
-            <EntityType>XD_DroppedShield</EntityType>
+            <EntityType>XD_DroppedSword</EntityType>
         </Logic>
     </Behavior>
 </root>

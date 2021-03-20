@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CTaskList>
+
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_MOVE_TO_TARGET</TaskType>
+    </Task>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_RESOLVE_BATTLE_COLLISION</TaskType>
+    </Task>
+    
+    <!-- TASK_CHECK_RANGE MUST always be done right after TASK_MOVE_TO_TARGET! -->
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_CHECK_RANGE</TaskType>
+    </Task>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_ORIENTATION_TO_TARGET</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+    </Task>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_ATTACK_ANIM</TaskType>
+    </Task>
+   
+    <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+        <TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+        <Thousandths>500</Thousandths>
+    </Task>
+    <Task classname="EGL::CGLETaskArgsSound" classid="0x2cfedfcd">
+        <TaskType>TASK_PLAY_SOUND</TaskType> 
+        <SoundID>Military\SO_Bearman_rnd_1</SoundID> 
+        <Volume>100</Volume> 
+    </Task>
+    <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+        <TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+        <Thousandths>1000</Thousandths>
+    </Task>
+     <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_HURT</TaskType>
+    </Task>
+
+    <!-- 
+        set animation here, I don't know whether this is easy to do if 
+        TL_BATTLE is to be used for different types of entity
+    -->
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_SET_BATTLE_IDLE_ANIM</TaskType>
+    </Task>
+    
+   
+    
+	<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+		<TaskType>TASK_BATTLE_WAIT_UNTIL</TaskType>		
+	</Task>
+     
+</CTaskList>

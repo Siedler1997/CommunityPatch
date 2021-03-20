@@ -190,8 +190,6 @@ function Mission_FirstMapAction()
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
 		--]]
 	end
-	
-	Tools.ExploreArea(-1, -1, 900)
 end
 
 

@@ -222,23 +222,23 @@ function Mission_FirstMapAction()
 			
 			for i = 1, 3 do
 				local bosspos3 = GetPosition("tower_spawn"..i)
-				local bossID3 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
+				local bossID3 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
 				LookAt(bossID3, "supportA")
 			end
 			local bosspos4 = GetPosition("tower_spawn4")
-			local bossID4 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos4.X,(bosspos4.Y + 300),0,0,3,0)
+			local bossID4 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos4.X,(bosspos4.Y + 300),0,0,3,0)
 			LookAt(bossID4, "dario")
 			
 			local bosspos5 = GetPosition("army1")
-			local bossID5 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos5.X + 250),(bosspos5.Y + 300),0,0,3,0)
+			local bossID5 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos5.X + 250),(bosspos5.Y + 300),0,0,3,0)
 			LookAt(bossID5, "tower_spawn1")
-			local bossID6 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos5.X + 250),bosspos5.Y,0,0,3,0)
+			local bossID6 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos5.X + 250),bosspos5.Y,0,0,3,0)
 			LookAt(bossID6, "tower_spawn1")
 			
 			local bosspos7 = GetPosition("defend1")
-			local bossID7 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos7.X + 100),(bosspos7.Y + 100),0,0,3,0)
+			local bossID7 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos7.X + 100),(bosspos7.Y + 100),0,0,3,0)
 			LookAt(bossID7, "tower_spawn1")
-			local bossID8 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos7.X + 100),(bosspos7.Y - 350),0,0,3,0)
+			local bossID8 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos7.X + 100),(bosspos7.Y - 350),0,0,3,0)
 			LookAt(bossID8, "tower_spawn1")
 		end
 		--SetPosition("dario",GetPosition("defend1"))

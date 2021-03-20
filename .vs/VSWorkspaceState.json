@@ -3,15 +3,16 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\graphics",
     "\\extra1",
     "\\extra1\\shr",
+    "\\extra1\\shr\\config",
+    "\\extra1\\shr\\config\\Entities",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Campaign"
+    "\\extra2\\shr\\config",
+    "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\base\\shr\\config\\Entities\\CU_Barbarian_SoldierClub2.xml",
+  "SelectedNode": "\\base\\shr\\graphics\\Videos",
   "PreviewInSolutionExplorer": false
 }

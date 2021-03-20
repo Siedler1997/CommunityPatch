@@ -149,6 +149,11 @@
 	<AnimSet>SET_CU_EVIL_QUEEN</AnimSet>
 	
 	<AnimSet>SET_CU_BANDITLEADERBOW1</AnimSet>
- 
+
+	<!-- Community Patch -->
+	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
+	<AnimSet>SET_SHEEP</AnimSet>
+	<AnimSet>SET_SHEEP2</AnimSet>
+	<AnimSet>SET_SHEEP3</AnimSet>
  
 </root>

@@ -289,15 +289,15 @@ function Mission_FirstMapAction()
 		DestroyEntity("p5_vc2")
 		
 		local bosspos1 = GetPosition("spawn1")
-		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
+		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
 		LookAt(bossID1, "Helias")
 		
 		local bosspos2 = GetPosition("spawn2")
-		local bossID2 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos2.X - 100),(bosspos2.Y + 500),0,0,3,0)
+		local bossID2 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 100),(bosspos2.Y + 500),0,0,3,0)
 		LookAt(bossID2, "Helias")
 		
 		local bosspos3 = GetPosition("enemyCastle")
-		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
+		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
 		LookAt(bossID3, "Helias")
 	end
 

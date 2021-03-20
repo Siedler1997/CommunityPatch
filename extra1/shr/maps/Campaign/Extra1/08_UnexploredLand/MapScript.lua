@@ -126,7 +126,7 @@ function FirstMapAction()
 		Logic.CreateEntity(Entities.XD_LargeCampFire, 45300, 65800, 180, 7);
 		--[[
 		local bosspos4 = GetPosition("tower_spawn4")
-		local bossID4 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,bosspos4.X,(bosspos4.Y + 300),0,0,3,0)
+		local bossID4 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos4.X,(bosspos4.Y + 300),0,0,3,0)
 		LookAt(bossID4, "dario")
 		--]]
 	end

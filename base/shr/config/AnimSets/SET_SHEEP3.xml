@@ -1,0 +1,37 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>CU_Sheep3_Walk</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle</Name>
+		<Animation>CU_Sheep3_Idle1</Animation>
+    </Category>
+   
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>CU_Sheep3_Idle2</Animation>
+    </Category>
+       
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>CU_Sheep3_Idle3</Animation>
+    </Category>
+
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>CU_Sheep3_Idle4</Animation>
+    </Category>
+       
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>CU_Sheep3_Idle1</Animation>
+    </Category>       
+       
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>CU_Sheep3_Dying</Animation>
+    </Category>
+   
+</AnimSet>

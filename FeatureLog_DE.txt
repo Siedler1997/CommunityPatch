@@ -50,7 +50,6 @@
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
-			/ 'Raubritter' als neue Veteranenart, die schon im Hauptspiel erscheinen kann
 			/ können keine Gefolgsleute mehr haben
 			/ regenerieren ihre Lebenspunkte etwas schneller
 			/ haben etwas weniger Lebenspunkte
@@ -59,6 +58,9 @@
 			/ können Soldaten an Kasernen nachfüllen
 			/ haben Rekrutierungskosten (Hauptmänner und Soldaten)
 			/ haben die gleiche DamageClass wie schwere Kavallerie
+		+ Bogenschützen-Banditen
+			/ haben 150 Lebenspunkte (vorher: 120)
+			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		+ Der Schaden an Nebelkriegern wird korrekt berechnet (fällt aber kaum auf)
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
@@ -81,6 +83,11 @@
 		+ Wilde Wölfe 
 			/ haben die gleichen Stats wie die von Varg beschworenen Exemplare
 			/ sind nicht von Helias konvertierbar
+		+ AddOn-Einheiten sind schon früher (also im Hauptspiel bzw. Nebelreich) zu finden
+			/ Bogen-Banditen
+			/ Schafe
+			/ Veteranen
+			/ Wilde Wölfe
 	* Militärische Einheiten
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
@@ -297,13 +304,9 @@
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
-	* Die Entity 'CU_BlackKnight_SoldierSword3' 
-		+ ist ein eigenständiger Leader 
-		+ ist der o.g. Hauptspiel-Veteran
-		+ ist insgesamt schwächer als andere Veteranen
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
-	* Verschiedene Versionen von CU_Barbarian_LeaderClub und CU_BlackKnight_LeaderMace unterscheiden sich leicht
+	* Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
 		+ Versionen mit 1er-Endung haben Soldatenmaximum von 4
 		+ Versionen mit 2er-Endung haben Soldatenmaximum von 8 und kosten etwas mehr Taler
 		+ Stats sind identisch
@@ -389,10 +392,10 @@
 
 
 - ToDos:
-	* AddOn-Entities im Hauptspiel (Wölfe, Bogen-Banditen, Schafe, usw.)
-	* AddOn-Sounds (Wölfe)
-	* VeteranSword als eigene Entity
-	* Evil-Mod um Veteranen ergänzen (nur eine Art, im Setup zu definieren)
+	* Evil-Mod um 
+		+ Veteranen ergänzen (nur eine Art, im Setup zu definieren)
+		+ Wohnstätten(?)
+	* GUI: Rand-Cliping entfernen (Koordinaten/Größe anpassen)
 	* Fernkampf-Veteran(?)
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* NPCs 
@@ -401,6 +404,7 @@
 	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
 		+ Wolfsrudel
+		+ Varg
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
 	* Hauptmenü
@@ -408,6 +412,7 @@
 		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
 	* Random(?) Crashs
 		+ erste 2 Verstärkungen in '03_Neighborhood'
+	* AddOn-Entities im Hauptspiel (je nach Bedarf)
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
@@ -425,7 +430,11 @@
 	* neue Comforts (bei Bedarf)
 	* Kalas Tod: stack overflow(?)
 		+ bislang nur ein mal passiert
-	* Eigene Texturen für Veteranen und Varg?
+	* Eigene Texturen für
+		+ Veteranen
+		+ Varg
+		+ Bogen-Banditen-Hauptmänner
+		+ Nebelkrieger-Hauptmänner
 	* Umsetzung in Vanilla-DEdK
 	* Organisatorisches
 		+ FeatureList 

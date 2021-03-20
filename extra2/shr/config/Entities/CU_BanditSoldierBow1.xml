@@ -67,7 +67,11 @@
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>25</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-    	<ExperiencePoints>10</ExperiencePoints>    	
+    	<ExperiencePoints>10</ExperiencePoints>
+		<Upgrade>
+			<Category>SoldierBanditBow</Category>
+			<Type>CU_BanditSoldierBow2</Type>
+		</Upgrade>  	
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">

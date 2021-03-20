@@ -949,4 +949,18 @@
 		<Entity>XD_IndoorsCandlestick</Entity>
 		
 		<Entity>ZB_ConstructionSiteBridge1</Entity>
+	
+	<!--	 ********************************************
+		   Community Patch
+	************************************************
+	-->
+	<Entity>CU_BanditLeaderBow2</Entity>
+	<Entity>CU_BanditSoldierBow2</Entity>
+	<Entity>CU_VeteranCaptain</Entity>
+	<Entity>CU_VeteranLieutenant</Entity>
+	<Entity>CU_VeteranMajor</Entity>
+	<Entity>CU_Sheep</Entity>
+	<Entity>CU_Sheep2</Entity>
+	<Entity>CU_Sheep3</Entity>
+	<Entity>CU_AggressiveWolf</Entity>
 </root>

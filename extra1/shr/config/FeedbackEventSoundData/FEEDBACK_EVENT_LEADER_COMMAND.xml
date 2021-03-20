@@ -99,6 +99,11 @@
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
 
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>
@@ -200,6 +205,10 @@
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
 
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>
@@ -299,6 +308,10 @@
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
 
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>
@@ -399,6 +412,10 @@
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
 
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>
@@ -499,6 +516,10 @@
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
 
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>

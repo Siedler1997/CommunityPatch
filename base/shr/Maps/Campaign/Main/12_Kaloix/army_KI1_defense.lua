@@ -73,7 +73,7 @@ DefenseAllowCavalry = function()
 	table.insert(armyKI1Defense.AllowedTypes, UpgradeCategories.LeaderHeavyCavalry)
 		
 	local bosspos1 = GetPosition("KI1_Target1")
-	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X + -300),(bosspos1.Y + 1500),0,0,3,0)
+	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + -300),(bosspos1.Y + 1500),0,0,3,0)
 end
 
 DefenseUpgradeArmy = function()

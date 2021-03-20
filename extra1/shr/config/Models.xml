@@ -3658,5 +3658,20 @@
 	<Model id="XD_RuinSmallTower3">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>
-  
+
+	<Model id="CU_VeteranLieutenant">
+		<SelectionRadius>80</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
+	<Model id="CU_VeteranCaptain">
+		<SelectionRadius>80</SelectionRadius>
+		<Effect>SettlerPlayerColorSpecular</Effect>
+		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
+	<Model id="CU_VeteranMajor">
+		<SelectionRadius>80</SelectionRadius>
+		<Effect>SettlerPlayerColorSpecular</Effect>
+		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
 </root>

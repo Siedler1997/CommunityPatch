@@ -168,11 +168,11 @@ function Mission_FirstMapAction()
 		end
 
 		local bosspos1 = GetPosition("KI3_SpawnPos")
-		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
+		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
 		LookAt(bossID1, "RescueObject1")
 		
 		local bosspos2 = GetPosition("KI2_SpawnPos")
-		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_BlackKnight_SoldierSword3,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
+		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
 		LookAt(bossID2, "Banned_Info_NPC")
 	end
 --	EnableDebugging()
