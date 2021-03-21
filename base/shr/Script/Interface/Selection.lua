@@ -324,6 +324,14 @@ function GameCallback_GUI_SelectionChanged()
 			elseif 	UpgradeCategory == UpgradeCategories.Archery then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Archery,1)
 				XGUIEng.ShowWidget(gvGUI_WidgetID.ToggleRecruitGroups,1)
+
+				if CP_GetEvilModUnitState(PlayerID) > 0 then
+					XGUIEng.ShowWidget("Group_Evil_Range", 1)
+					if CP_GetEvilModUnitState(PlayerID) == 1 or CP_GetEvilModUnitState(PlayerID) == 3 then
+						XGUIEng.ShowWidget("Buy_LeaderBanditBow", 1)
+					end
+				end
+
 				ButtonStem =  "Upgrade_Archery"	
 			
 			--Is EntityType the Foundry?

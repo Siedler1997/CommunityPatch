@@ -13,7 +13,7 @@ function Cutscene_MISSIONCOMPLETE_Start()
         
         
     SetPosition("Helias", GetPosition("CUTSCENE_HELIAS_EXTRO"))
-    CreateEntity(1, Entities.PU_Hero10, GetPosition("CUTSCENE_HEADHUNTER_MOVE"), "HEADHUNTER" )
+    CreateEntity(1, Entities.CU_Hero10, GetPosition("CUTSCENE_HEADHUNTER_MOVE"), "HEADHUNTER" )
     CreateEntity(1, Entities.PU_Hero1c, GetPosition("CUTSCENE_MOVE_START_DARIO"), "DARIO" )
     --CreateEntity(1, Entities.PU_Hero10, GetPosition("CUTSCENE_QUINTOS_EXTRO"), "QUINTOS" )
     

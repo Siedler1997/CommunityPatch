@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- This is the file for the Headhunter -->
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_Hero10</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>
+		  <Anim>CU_Hero10_Walk</Anim>
+		  <Anim>CU_Hero10_Hit</Anim>
+		  <Anim>CU_Hero10_Idle1</Anim>
+		  <Anim>CU_Hero10_Idle2</Anim>
+		  <Anim>CU_Hero10_Idle3</Anim>
+		  <Anim>CU_Hero10_Idle4</Anim>
+		  <Anim>CU_Hero10_Idle5</Anim>		  
+		  <Anim>CU_Hero10_Idle6</Anim>		  
+		  <Anim>CU_Hero10_IdleAttack1</Anim>
+		  <Anim>CU_Hero10_Attack1</Anim>		  		  
+		  <Anim>CU_Hero10_Dying1</Anim>
+		  <Anim>CU_Hero10_Run1</Anim>
+		  <Anim>CU_Hero10_Dead</Anim>	
+		  <Anim>CU_Hero10_SniperAttack</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth>600</MaxHealth>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+        <Hat/>
+        <Cost>
+			  <Money>1</Money>
+        </Cost>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+		
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_LeadShot</Technology>
+		</ModifyDamage>
+		<ModifyExploration>
+			<Technology>T_Sights</Technology>
+		</ModifyExploration>
+		<ModifyMaxRange>
+			<Technology>T_Sights</Technology>
+		</ModifyMaxRange>
+		
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingArchery</Technology>
+		</ModifySpeed>
+		
+        <Convertible>false</Convertible>
+        <Category>Hero</Category>
+        <Category>Hero10</Category>
+        <Category>Military</Category>
+        <Category>Rifle</Category>
+        <Category>LongRange</Category>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>28</Exploration>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorAmount>3</ArmorAmount> 
+		  <DodgeChance>0</DodgeChance> 
+        <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+        <ExperiencePoints>20</ExperiencePoints>
+		<Fearless>true</Fearless>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>			
+			  <SuspensionAnimation>CU_Hero10_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_CU_HERO10</AnimSet>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>400</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_Hero10_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
+			  <SoldierType>PU_SoldierSword4</SoldierType>
+			
+	        <BattleTaskList>TL_BATTLE_RIFLE</BattleTaskList>
+	        
+	        <NormalAttackAnim1>CU_Hero10_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>CU_Hero10_Attack1</NormalAttackAnim2>
+	        <CounterAttackAnim>CU_Hero10_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>CU_Hero10_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>CU_Hero10_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>CU_Hero10_IdleAttack1</BattleIdleAnim>
+	        <BattleWalkAnim>CU_Hero10_Run1</BattleWalkAnim>
+	        <HitAnim>CU_Hero10_Hit</HitAnim>
+	        
+	        <DamageClass>DC_Hero</DamageClass>
+	         <DamageAmount>28</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        
+	        
+	        <BattleWaitUntil>3500</BattleWaitUntil>
+	        
+	        <MissChance>2</MissChance>
+	        
+	        <ProjectileEffectID>FXBulletRifleman</ProjectileEffectID>
+	        <MaxRange>2800</MaxRange>
+	        <MinRange>500.0f</MinRange>
+	        <AutoAttackRange>2800</AutoAttackRange>
+	      
+	        <HealingPoints>8</HealingPoints>
+	        <HealingSeconds>2</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+    <Behavior>
+        <Logic classname="GGL::CHeroBehaviorProps">
+            <Class>GGL::CHeroBehavior</Class>
+        </Logic>
+    </Behavior>
+
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>500</BasePriority>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CRangedEffectAbilityProps">
+	        <Class>GGL::CRangedEffectAbility</Class>
+	        <RechargeTimeSeconds>120</RechargeTimeSeconds>
+	        <AffectsOwn>true</AffectsOwn>
+	        <AffectsFriends>true</AffectsFriends>
+	        <AffectsLongRangeOnly>true</AffectsLongRangeOnly>
+	        <Range>1500.0</Range>
+	        <DurationInSeconds>60</DurationInSeconds>
+	        <DamageFactor>2.0</DamageFactor>
+          <!--
+          <ArmorFactor>0.8</ArmorFactor>
+	        <HealthRecoveryFactor>0.3</HealthRecoveryFactor>
+	        -->
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CSniperAbilityProps">
+	        <Class>GGL::CSniperAbility</Class>
+	        <RechargeTimeSeconds>90</RechargeTimeSeconds>
+	        <TaskList>TL_SNIPE_SPECIAL</TaskList>
+	        <Animation>CU_Hero10_SniperAttack</Animation>
+	        <DamageFactor>1.0f</DamageFactor>
+	        <Range>5500.0</Range>
+	    </Logic>
+	</Behavior>
+
+
+</root>

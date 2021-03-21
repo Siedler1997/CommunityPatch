@@ -98,6 +98,10 @@
 				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Attack_rnd_01</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -204,6 +208,10 @@
 				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -307,6 +315,10 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
 			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
@@ -413,6 +425,10 @@
 				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -517,6 +533,10 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Evil_LeaderSkirmisher1</EntityType>
 				<SoundID>Military\SO_Skirmisher_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
 			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">

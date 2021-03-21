@@ -287,6 +287,10 @@
 				<EntityType>CU_BanditLeaderBow2</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Yes_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -662,6 +666,10 @@
 				<EntityType>CU_BanditLeaderBow2</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_No_rnd_01</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -980,6 +988,10 @@
 				<EntityType>CU_BanditLeaderBow2</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_Attack_rnd_01</SoundID>
+			</ValueSound>
 
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
@@ -1098,6 +1110,12 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Evil_Queen</EntityType>
 				<SoundID>AOVoicesMentor\HERO_HeroDiedHero12_rnd_01</SoundID>
+			</ValueSound>
+
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesMentor\HERO_HeroDiedHero10_rnd_01</SoundID>
 			</ValueSound>
 			
 			<ParameterIndex>2</ParameterIndex>

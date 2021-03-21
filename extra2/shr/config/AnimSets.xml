@@ -157,4 +157,7 @@
 	
 	<!-- extra2 -->
 	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
+	
+	<!-- Community Patch -->
+	<AnimSet>SET_CU_HERO10</AnimSet>
 </root>

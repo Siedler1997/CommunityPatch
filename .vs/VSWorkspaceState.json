@@ -3,16 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\graphics",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra1\\shr\\config\\Entities",
+    "\\base\\shr\\config",
+    "\\base\\shr\\Maps",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\config",
-    "\\extra2\\shr\\config\\Entities"
+    "\\extra2\\shr\\text",
+    "\\extra2\\shr\\text\\en",
+    "\\extra2\\shr\\text\\en\\InGame"
   ],
-  "SelectedNode": "\\base\\shr\\graphics\\Videos",
+  "SelectedNode": "\\base\\shr\\config\\Entities.xml",
   "PreviewInSolutionExplorer": false
 }

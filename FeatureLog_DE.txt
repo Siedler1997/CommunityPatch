@@ -305,6 +305,9 @@
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
+	* Es gibt eine andere Version von Drake mit Kapuze
+		+ namentlich 'CU_Hero10'
+		+ hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
 	* Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
 		+ Versionen mit 1er-Endung haben Soldatenmaximum von 4
@@ -392,11 +395,12 @@
 
 
 - ToDos:
-	* Evil-Mod um 
-		+ Veteranen ergänzen (nur eine Art, im Setup zu definieren)
-		+ Wohnstätten(?)
 	* GUI: Rand-Cliping entfernen (Koordinaten/Größe anpassen)
-	* Fernkampf-Veteran(?)
+		+ Pause-Screen
+		+ TopMenu
+		+ Bottom Menu
+		+ Preview
+		+ Transparenz in Cutscenes
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* NPCs 
 		+ mit Lebensbalken

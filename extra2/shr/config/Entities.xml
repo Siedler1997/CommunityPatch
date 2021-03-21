@@ -1044,6 +1044,7 @@
 	-->
 	<Entity>CU_BanditLeaderBow2</Entity>
 	<Entity>CU_BanditSoldierBow2</Entity>
+	<Entity>CU_Hero10</Entity>
     
 </root> 
         

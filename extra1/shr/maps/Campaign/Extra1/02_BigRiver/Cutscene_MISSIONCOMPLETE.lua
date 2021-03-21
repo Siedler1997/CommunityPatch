@@ -16,7 +16,7 @@ function Cutscene_MISSIONCOMPLETE_Start()
      CreateEntity(1, Entities.PU_Hero2, GetPosition("CUTSCENE_MOVE_START_PILGRIM3"), "PILGRIM3" ) 
      CreateEntity(1, Entities.PU_Hero5, GetPosition("CUTSCENE_MOVE_START_ARI3"), "ARI3" )
      CreateEntity(8, Entities.CU_Thief, GetPosition("CUTSCENE_MOVE_START_THIEF"), "THIEF" )
-     CreateEntity(7, Entities.PU_Hero10, GetPosition("CUTSCENE_MOVE_START_QUINTOS"), "QUINTOS" ) 
+     CreateEntity(7, Entities.CU_Hero10, GetPosition("CUTSCENE_MOVE_START_QUINTOS"), "QUINTOS" ) 
          
          
 end

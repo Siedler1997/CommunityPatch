@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!--	Param1: ability type
+			Param2: entity type	-->
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_SendHawk_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilitySendHawk</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1a</EntityType>
+				<SoundID>VoicesHero1\HERO1_ProtectPeople_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1b</EntityType>
+				<SoundID>VoicesHero1\HERO1_ProtectPeople_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1c</EntityType>
+				<SoundID>VoicesHero1\HERO1_ProtectPeople_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_InflictFear_rnd_01</SoundID>
+			</ValueSound>
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_FireworksFear_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityInflictFear</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_PlaceBomb_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityPlaceBomb</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero2</EntityType>
+				<SoundID>VoicesHero2\HERO2_BuildCannon_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_BuildTrap_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityBuildCannon</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero3</EntityType>
+				<SoundID>VoicesHero3\HERO3_Heal_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesHero4\HERO4_AuraOfWar_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_Bless_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_BlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_Madness_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesHero8\HERO8_MoraleDamage_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesHero9\HERO9_Berserk_rnd_01</SoundID>
+			</ValueSound>
+			<!--Addon-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_longrangeaura_rnd_01</SoundID>
+			</ValueSound>
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_longrangeaura_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityRangedEffect</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero4</EntityType>
+				<SoundID>VoicesHero4\HERO4_CircularAttack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Mary_de_Mortfichet</EntityType>
+				<SoundID>VoicesHero8\HERO8_PoisonAttack_rnd_01</SoundID>
+			</ValueSound>
+			<!--AddOn-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_poisonrange_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityCircularAttack</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_CallBandits_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Barbarian_Hero</EntityType>
+				<SoundID>VoicesHero9\HERO9_CallWolfs_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilitySummon</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_Camouflage_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityCamouflage</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero6</EntityType>
+				<SoundID>VoicesHero6\HERO6_ConvertSettler_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityConvertSettlers</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	<!--AddOn-->
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_sniperattack_rnd_01</SoundID>
+			</ValueSound>
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Hero10</EntityType>
+				<SoundID>AOVoicesHero10\HERO10_sniperattack_rnd_01</SoundID>
+			</ValueSound>
+			
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilitySniper</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_fireworksmotivate_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityMotivateWorkers</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero11</EntityType>
+				<SoundID>AOVoicesHero11\HERO11_Shuriken_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_poisonarrows_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityShuriken</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Thief</EntityType>
+				<SoundID>AOVoicesThief\Thief_PlaceExplosive_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityPlaceKeg</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>AOVoicesScout\Scout_UseBinocular_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityScoutBinoculars</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>AOVoicesScout\Scout_findresources_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityScoutFindResources</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+	
+	<Sound classname="GGUI::SoundFeedback::CParamValueExSound">
+		<Data classname="GGUI::SoundFeedback::CData">
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Scout</EntityType>
+				<SoundID>AOVoicesScout\Scout_torches_rnd_01</SoundID>
+			</ValueSound>
+			<ParameterIndex>2</ParameterIndex>
+		</Data>
+		<CanBeIgnored>true</CanBeIgnored>
+		<ParameterIndex>1</ParameterIndex>
+		<ParameterValue classname="GGUI::SoundFeedback::CAbilityType">
+			<AbilityType>AbilityScoutTorches</AbilityType>
+		</ParameterValue>
+		<StopOnValid>true</StopOnValid>
+	</Sound>
+
+
+</root>

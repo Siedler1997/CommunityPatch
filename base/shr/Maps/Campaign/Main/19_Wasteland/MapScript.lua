@@ -175,6 +175,7 @@ function Mission_FirstMapAction()
 		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
 		LookAt(bossID2, "Banned_Info_NPC")
 	end
+	--CP_ActivateEvilMod(1, 1, 1)
 --	EnableDebugging()
 	--Tools.ExploreArea(-1, -1, 900)
 end
