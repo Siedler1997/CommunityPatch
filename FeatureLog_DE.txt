@@ -61,7 +61,9 @@
 		+ Bogenschützen-Banditen
 			/ haben 150 Lebenspunkte (vorher: 120)
 			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
-		+ Der Schaden an Nebelkriegern wird korrekt berechnet (fällt aber kaum auf)
+		+ Nebelkriegern 
+			/ Schaden an ihnen wird korrekt berechnet (fällt aber kaum auf)
+			/ Hauptmänner haben 100 Lebenspunkte (vorher: 50)
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
@@ -176,7 +178,6 @@
 			/ Kanonen
 			/ Bogen-Banditen
 			/ Speerwerfer
-		+ Dovbar hat das AudioFeedback von Kundschaftern
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -256,6 +257,11 @@
 			/ Buttons sind so weit unten wie möglich
 				-> mehr Platz für Beschreibungstext
 			/ Button-Highlights werden nach dem Klick auf einen Button wieder entfernt
+	* Einige Widgets schließen richtig am Bildschirmrand bzw. anderen Widgets ab
+		+ Titelleiste
+		+ Bodenleiste
+		+ Minimap
+		+ VideoPreview
 	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 - Diverses
@@ -304,7 +310,10 @@
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
 	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
-	* Der Held 'PU_Hero1' sieht aus wie Dovbar - inkl. Find-Button
+	* Der Held 'PU_Hero1' sieht aus wie Dovbar
+		+ inkl. Find-Button
+		+ MultiSelection-Button (Textur by Zedeg)
+		+ AudioFeedback stammt von den Kundschaftern
 	* Es gibt eine andere Version von Drake mit Kapuze
 		+ namentlich 'CU_Hero10'
 		+ hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
@@ -395,12 +404,7 @@
 
 
 - ToDos:
-	* GUI: Rand-Cliping entfernen (Koordinaten/Größe anpassen)
-		+ Pause-Screen
-		+ TopMenu
-		+ Bottom Menu
-		+ Preview
-		+ Transparenz in Cutscenes
+	* Rand-Clipping bei Briefing-Minimap entfernen 
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* NPCs 
 		+ mit Lebensbalken
@@ -408,6 +412,7 @@
 	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
 		+ Wolfsrudel
+		+ AddOn-Units (Bogen-Bandits, Veteranen, Schafe, Wölfe)
 		+ Varg
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
@@ -424,10 +429,12 @@
 		+ sollen während Briefings pausieren
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
-	* Dovbar: eigener MultiSelection-Button
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
-	* MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg)
-	* Anordnung von Maps unabhängig von Farben (by Zedeg)
+	* Third-Party-Funcs
+		+ MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg): LocalMusic_UpdateMusic()
+		+ Anordnung von Maps unabhängig von der Formatierung (by Zedeg): LoadMap_MinimizeName(_string)
+		+ Dovbar: eigener MultiSelection-Button
+	* Neue Spielerfarben(?)
 	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
@@ -444,5 +451,6 @@
 		+ FeatureList 
 			/ Auflistung aller geänderten/neuen SelectionNames
 			/ auch auf Englisch
+		+ Quellenverzeichnung (also Nennung aller Autoren)
 		+ Indikator für CP-Installation
 		+ (De-)Installer mit Backup-funktion(?)

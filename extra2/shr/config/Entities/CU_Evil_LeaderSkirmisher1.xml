@@ -64,7 +64,7 @@
         <Category>EvilLeader</Category>
 		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <MaxHealth>50</MaxHealth>
+		  <MaxHealth>100</MaxHealth>
 		  <Exploration>20</Exploration>
 		  <ArmorClass>ArmorClassFur</ArmorClass> 
 		  <ArmorAmount>2</ArmorAmount>
