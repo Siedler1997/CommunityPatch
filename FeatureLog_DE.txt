@@ -264,6 +264,9 @@
 		+ VideoPreview
 	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
+		+ u.a. werden Spielstände (dank Zedeg)
+			/ auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
+			/ unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
 - Diverses
 	* Hauptmenü
 		+ Der Reiter 'Spieler' ist reaktiviert
@@ -273,6 +276,7 @@
 		+ Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
+		+ Wenn eine Karte lädt, wird ein zufälliger Fakt eingeblendet bzw. eine Theroie angezeigt
 	* Kampagnen-Maps modifiziert
 		+ Nutzloser Netzwerk-Button im Hauptmenü durch Tipps-Button ersetzt
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
@@ -302,6 +306,7 @@
 		+ Winter/Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		+ In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
 		+ In den AddOns werden wieder alle Kampf-Tracks abgespielt statt nur zwei davon
+		+ Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
 	* Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
 	* Wetter-Effekte sind etwas gemischter
 		+ Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
@@ -404,6 +409,9 @@
 
 
 - ToDos:
+	* FunFacts im LoadingScreen
+		+ mehr davon
+		+ auf Englisch übersetzen
 	* Rand-Clipping bei Briefing-Minimap entfernen 
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* NPCs 
@@ -430,10 +438,6 @@
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
-	* Third-Party-Funcs
-		+ MusicFix bzgl. Pause/Spielbeschleunigung (by Zedeg): LocalMusic_UpdateMusic()
-		+ Anordnung von Maps unabhängig von der Formatierung (by Zedeg): LoadMap_MinimizeName(_string)
-		+ Dovbar: eigener MultiSelection-Button
 	* Neue Spielerfarben(?)
 	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
 	* Auch normale Arbeiter sollen automatisch HP regenerieren

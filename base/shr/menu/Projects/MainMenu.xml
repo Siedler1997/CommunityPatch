@@ -1499,6 +1499,59 @@
                   <NumberOfLinesToPrint>0</NumberOfLinesToPrint>
                   <LineDistanceFactor>0</LineDistanceFactor>
                 </WidgetList>
+                <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
+                  <Name>LoadScreen_RandomInfo</Name>
+                  <Rectangle>
+                    <X>714</X>
+                    <Y>50</Y>
+                    <W>300</W>
+                    <H>400</H>
+                  </Rectangle>
+                  <IsShown>True</IsShown>
+                  <ZPriority>1</ZPriority>
+                  <MotherID>LoadScreen</MotherID>
+                  <Group></Group>
+                  <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                  <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                  <BackgroundMaterial>
+                    <Texture></Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>0</Red>
+                      <Green>0</Green>
+                      <Blue>0</Blue>
+                      <Alpha>160</Alpha>
+                    </Color>
+                  </BackgroundMaterial>
+                  <StringHelper>
+                    <Font>
+                      <FontName>data\menu\fonts\medium11bold.met</FontName>
+                    </Font>
+                    <String>
+                      <StringTableKey></StringTableKey>
+                      <RawString>Tipp</RawString>
+                    </String>
+                    <StringFrameDistance>0</StringFrameDistance>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </StringHelper>
+                  <UpdateFunction>
+                    <LuaCommand></LuaCommand>
+                  </UpdateFunction>
+                  <UpdateManualFlag>True</UpdateManualFlag>
+                  <FirstLineToPrint>0</FirstLineToPrint>
+                  <NumberOfLinesToPrint>0</NumberOfLinesToPrint>
+                  <LineDistanceFactor>0</LineDistanceFactor>
+                </WidgetList>
                 <WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
                   <Name>LoadScreenPic01</Name>
                   <Rectangle>

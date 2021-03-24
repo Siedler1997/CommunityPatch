@@ -123,7 +123,7 @@ LocalMusic_UpdateMusic()
 
 	if LocalMusic.BattlesOnTheMap == 0 then
 		--Music is playing?
-		if  LocalMusic.SongLength  > Logic.GetTime() then	 
+		if  LocalMusic.SongLength  > XGUIEng.GetSystemTime() then	 
 			return
 		end	
 	end
@@ -151,7 +151,8 @@ LocalMusic_UpdateMusic()
 	end
 	
 	--is briefing running?
- 	if IsBriefingActive ~= nil and IsBriefingActive() == true then
+ 	if (IsBriefingActive ~= nil and IsBriefingActive() == true )
+ 	 or (IsCutsceneActive ~= nil and IsCutsceneActive() == true) then
 		SetToUse = LocalMusic.SetBriefing
 	end
 	
@@ -162,9 +163,12 @@ LocalMusic_UpdateMusic()
 	
 	
 	Sound.StartMusic( SongToPlay, 127)
-	LocalMusic.SongLength =  Logic.GetTime() + SetToUse[Random][2] + 2
+	LocalMusic.SongLength =  XGUIEng.GetSystemTime() + SetToUse[Random][2] + 2
 	
-	LocalMusic.BattlesOnTheMap = 0
+    if LocalMusic.BattlesOnTheMap ~= 0 then
+        LocalMusic.LastBattleMusicStarted = LocalMusic.SongLength
+        LocalMusic.BattlesOnTheMap = 0
+    end
 	
 	--GUI.AddNote(SetToUse[Random][1] .. " is currently playing")
 	
