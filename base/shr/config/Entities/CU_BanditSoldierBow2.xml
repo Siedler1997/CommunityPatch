@@ -69,7 +69,7 @@
     	<ExperiencePoints>10</ExperiencePoints>
 		<Upgrade>
 			<Category>SoldierBanditBow</Category>
-		</Upgrade> 	
+		</Upgrade>
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
@@ -109,11 +109,11 @@
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
 	        <DamageAmount>8</DamageAmount>
-	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        
-	        <MissChance>9</MissChance>
+	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        

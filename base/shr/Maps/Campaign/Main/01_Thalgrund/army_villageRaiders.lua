@@ -18,7 +18,7 @@ createArmyVillageRaiders = function()
 		SetupArmy(armyVillageRaidersA)
 
 	--	create army	a
-			
+
 		local troopDescription = {
 		
 			maxNumberOfSoldiers	= 0,
@@ -48,11 +48,7 @@ createArmyVillageRaiders = function()
 			
 		troopDescription.maxNumberOfSoldiers = 0
 		
-		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.PU_LeaderBow1
-		else
-			troopDescription.leaderType = Entities.PU_LeaderBow2
-		end
+		troopDescription.leaderType = Entities.CU_BanditLeaderBow1
 		EnlargeArmy(armyVillageRaidersB,troopDescription)
 	
 

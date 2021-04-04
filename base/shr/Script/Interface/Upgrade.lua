@@ -108,6 +108,7 @@ InterfaceTool_UpdateUpgradeButtons(_EntityType, _UpgradeCategory, _ButtonNameSte
 			end
 		end
 	end
+	--Message("Upgrades: " .. Upgrades[1])
 
 end
 

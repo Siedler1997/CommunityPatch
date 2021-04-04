@@ -1472,7 +1472,7 @@
                       <Red>0</Red>
                       <Green>0</Green>
                       <Blue>0</Blue>
-                      <Alpha>0</Alpha>
+                      <Alpha>128</Alpha>
                     </Color>
                   </BackgroundMaterial>
                   <StringHelper>

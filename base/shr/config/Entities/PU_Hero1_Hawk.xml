@@ -22,7 +22,7 @@
 		<NeedsPlayer>true</NeedsPlayer>
 		<MaxHealth>20</MaxHealth> 
 		<MapFileDontSave>true</MapFileDontSave>
-		<Exploration>30</Exploration>
+		<Exploration>20</Exploration>
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<CanDrown>false</CanDrown>
 		<ShyRange>0</ShyRange>

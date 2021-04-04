@@ -3,14 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
+    "\\base\\shr\\config",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MapTools",
+    "\\extra1",
+    "\\extra1\\shr",
     "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\MainMenu"
+    "\\extra2\\shr"
   ],
-  "SelectedNode": "\\base\\shr\\text\\de\\InGame\\LoadScreenTipps.xml",
+  "SelectedNode": "\\base\\shr\\Script\\MapTools\\Comfort.lua",
   "PreviewInSolutionExplorer": false
 }

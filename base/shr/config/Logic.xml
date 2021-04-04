@@ -873,6 +873,11 @@
 		<Category>Wall_Generic</Category>
 		<FirstBuilding>XD_WallCorner</FirstBuilding>
 	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Grange</Category>
+		<FirstBuilding>CB_Grange</FirstBuilding>
+	</BuildingUpgrade>
 	
 	<SettlerUpgrade>
 		<Category>LeaderBanditBow</Category>

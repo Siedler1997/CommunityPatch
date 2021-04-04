@@ -1,0 +1,52 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+	
+	<Category classname="EGL::CGLEAnimCategory" classid="0xceb17718">
+		<Name>Idle</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+    </Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle5</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Talk1</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Talk2</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>XA_Dragon_Wait</Animation>
+	</Category>
+	
+</AnimSet>

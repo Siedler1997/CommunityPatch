@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<DrawPlayerColor>true</DrawPlayerColor>
+		<Model>XA_Dragon</Model>
+		<Anim>XA_Wolf_Wait</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth> 600 </MaxHealth>
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>10</ArmorAmount>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat/>
+		<Exploration>10</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>XA_Dragon_Wait</SuspensionAnimation>
+			<AnimSet>SET_DRAGON</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>150</Speed>
+			<RotationSpeed>25</RotationSpeed>
+			<MoveTaskList>TL_NPC_WALK</MoveTaskList>
+			<MoveIdleAnim>XA_Wolf_Wait</MoveIdleAnim>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>100</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+	<!--
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+        <DrawPlayerColor>true</DrawPlayerColor>
+		<Model>XA_Dragon</Model>
+            <Anim>XA_Dragon_Wait</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>		
+		<MaxHealth> 600 </MaxHealth>
+		<ArmorClass>ArmorClassNone</ArmorClass> 
+		<ArmorAmount>10</ArmorAmount>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat/>
+		<Exploration>10</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>XA_Dragon_Wait</SuspensionAnimation>
+			<AnimSet>SET_DRAGON</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>150</Speed>
+			<RotationSpeed>25</RotationSpeed>
+			<MoveTaskList>TL_NPC_WALK</MoveTaskList> 
+			<MoveIdleAnim>XA_Dragon_Wait</MoveIdleAnim> 
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>100</BasePriority>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+	-->
+</root>

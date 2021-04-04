@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_Stone1</Model>
+		<Model2>XD_Stone2</Model2>
+		<Model3>XD_Stone3</Model3>
+        <RenderInFoW>true</RenderInFoW>
+	</Display>
+	<Logic classname="GGL::CResourceDoodadProperties">
+		<Class>GGL::CResourceDoodad</Class>
+        <AccessCategory>AccessCategoryResourceDoodad</AccessCategory>
+		<Model1>XD_Stone2</Model1>
+		<Model2>XD_Stone3</Model2>
+		<DoNotExecute>True</DoNotExecute>
+		<ApproachPos>
+		    <X>0</X>
+		    <Y>0</Y>
+		</ApproachPos>
+		<ApproachR>500</ApproachR>
+        <Blocked1>
+            <X>-100</X>
+            <Y>100</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>100</X>
+            <Y>-100</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>0</X>
+            <Y>0</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>200</X>
+            <Y>200</Y>
+        </TerrainPos2>
+        <Radius>230</Radius>
+        <Center>
+            <X>0</X>
+            <Y>0</Y>
+        </Center>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLResourceDoodadBehaviorProps">
+			<Class>GGL::CResourceDoodadBehavior</Class>
+			<Resource>
+				<Good>StoneRaw</Good>
+				<Amount>400</Amount>
+				<IsAccessExclusive>false</IsAccessExclusive>
+			</Resource>
+		</Logic>
+	</Behavior>
+</root>

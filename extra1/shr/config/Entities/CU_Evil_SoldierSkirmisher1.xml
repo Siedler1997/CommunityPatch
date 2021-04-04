@@ -109,14 +109,14 @@
 	        <HitAnim>CU_Evil_LeaderSkirmisher1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Evil</DamageClass>
-	        <DamageAmount>15</DamageAmount>
-	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
+	        <DamageAmount>12</DamageAmount>
+	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        
 	        <AutoAttackRange>2000</AutoAttackRange>
 	        
-	        <MissChance>9</MissChance>
+	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        

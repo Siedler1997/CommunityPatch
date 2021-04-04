@@ -134,12 +134,12 @@
 	        <HitAnim>PU_SoldierBow2_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>10</DamageAmount>
-	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        <DamageAmount>8</DamageAmount>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        
-	        <MissChance>9</MissChance>
+	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        

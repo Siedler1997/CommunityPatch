@@ -2050,3 +2050,204 @@ end
 function CP_GetEvilModTowerState(_playerId)
 	return CP_EvilMod[_playerId].TowerState
 end
+
+--------------------------------------------------------------------------------
+-- Erstellt ein Rudel Wölfe, dass sich aktiv in seinem Revier bewegt
+-- by Siedler1997
+function RaidersCreate(_data)
+	local dat = _data
+	if raid_table == nil then
+		raid_counter = 0
+		raid_ccount = 0
+		raid_table = {}
+		StartSimpleJob("RaidersControl")
+	end
+	local _runits = {}
+	local position = GetPosition(dat.pos)
+	for k = 1, dat.samount do 
+		local indpos = Zufall_Kreis(position, 500, true)
+		local eid = AI.Entity_CreateFormation(dat.player, Entities.CU_AggressiveWolf,0,0,(indpos.X),(indpos.Y),0,0,0,0);
+		table.insert(_runits, eid)
+	end
+	local _rdata = {r_spos = dat.pos, r_rev = dat.revier, r_range = dat.range, r_sam = dat.samount, r_resam = dat.ramount, r_fast = dat.fast_resp, r_cpos = position}
+	local raid_group = {raid_units = _runits, raid_data = _rdata}
+	table.insert(raid_table, raid_group)
+	raid_counter = raid_counter + 1
+	return raid_counter
+end
+
+function RaidersControl()
+	raid_ccount = raid_ccount + 1
+	for i = 1, table.getn(raid_table) do
+		local rtable = raid_table[i]
+		if rtable ~= 0 then
+			for w = 1, table.getn(rtable.raid_units) do	--entfernt tote Wölfe aus den Tabellen
+				if not IsExisting(rtable.raid_units[w]) then
+					table.remove(rtable.raid_units, w)
+				end
+			end
+			if table.getn(rtable.raid_units) == 0 then	--Gibt es keine Wölfe mehr ist Schluss
+				RaidersDelete(rtable)
+			end
+			--Vermehrung alle 60 Sek (bzw. 90 wegen reset von raid_ccount)
+			if raid_ccount == 60 or rtable.raid_data.r_fast == true then
+				if table.getn(rtable.raid_units) < rtable.raid_data.r_resam and table.getn(rtable.raid_units) >= 2 then	--Limit noch nicht erreicht? Mind. 2 Wölfe vorhanden?
+					local nachw_zahl = math.ceil(table.getn(rtable.raid_units)/4)	--Nachwuchs (aufgerundet) = aktuelle Anzahl / 4
+					if (table.getn(rtable.raid_units) + nachw_zahl) > rtable.raid_data.r_resam then
+						--Message("units: " .. table.getn(rtable.raid_units) + nachw_zahl)
+						--Message("maximum: " .. rtable.raid_data.r_resam)
+						nachw_zahl = nachw_zahl * 0 + rtable.raid_data.r_resam - table.getn(rtable.raid_units)	--Nachwuchs = Maximum - aktuelle Anzahl
+					end
+					--Message("nachw_zahl: " .. nachw_zahl)
+					for k = 1, nachw_zahl do
+						local adultp = GetPosition(rtable.raid_units[k])
+						local eid = AI.Entity_CreateFormation(GetPlayer(rtable.raid_units[k]), Entities.CU_AggressiveWolf,0,0,(adultp.X),(adultp.Y),0,0,0,0);
+						table.insert(rtable.raid_units, eid)
+					end
+				end
+			end
+			if raid_ccount == 90 then	--Positionswechsel
+				if type(rtable.raid_data.r_rev) == "table" then
+					local newpos_zahl = GetRandom(1, table.getn(rtable.raid_data.r_rev))
+					local newpos_anchor = GetPosition(rtable.raid_data.r_rev[newpos_zahl])
+					for k = 1, table.getn(rtable.raid_units) do
+						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
+						Attack(rtable.raid_units[k], indpos)
+					end
+					rtable.raid_data.r_cpos = newpos_anchor
+				else
+--					local newpos_anchor
+--					repeat
+					local newpos_anchor = Zufall_Kreis(GetPosition(rtable.raid_data.r_spos), rtable.raid_data.r_rev, true)
+--					until SameSector(rtable.raid_units[1], newpos_anchor) == false
+					for k = 1, table.getn(rtable.raid_units) do
+						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
+						Attack(rtable.raid_units[k], indpos)
+					end
+					rtable.raid_data.r_cpos = newpos_anchor
+				end
+			end
+			if math.mod(raid_ccount, 5) == 0 then	--Kontrolle
+				local enemy = GetNearestEnemyInArea(GetPlayer(rtable.raid_units[1]), rtable.raid_data.r_cpos, rtable.raid_data.r_range)
+				if enemy ~= false then
+					for k = 1, table.getn(rtable.raid_units) do
+						if Logic.GetCurrentTaskList(rtable.raid_units[k]) ~= nil then
+							if not string.find(Logic.GetCurrentTaskList(rtable.raid_units[k]), "TL_BATTLE_CLAW") then
+								Attack(rtable.raid_units[k], GetPosition(enemy))
+							end
+						end
+					end
+				else
+					for k = 1, table.getn(rtable.raid_units) do
+						if GetDistance(GetPosition(rtable.raid_units[k]), rtable.raid_data.r_cpos) > rtable.raid_data.r_range then
+							local indpos = Zufall_Kreis(rtable.raid_data.r_cpos, 500, true)
+							Move(rtable.raid_units[k], indpos)
+						end
+					end
+				end
+			end
+		end
+	end
+	if raid_ccount == 90 then
+		raid_ccount = 0
+	end
+end
+
+function RaidersAreAlive(_id)
+	if raid_table[_id] ~= 0 then
+		return true
+	else
+		return false
+	end
+end
+
+function RaidersDelete(_id)
+	--Message("Delete")
+	--[[
+	for i = 1, table.getn(raid_table[_id].raid_units) do
+		DestroyEntity(raid_table[_id].raid_units[i])
+	end
+	--]]
+	raid_table[_id] = 0
+end
+
+-- Gibt den nächstgelegenen Gegner in der Nähe zurück
+-- by Siedler1997
+function GetNearestEnemyInArea(_player, _pos, _range)
+	local minrange = _range/4
+	local enemytable = {}
+	local etable2 = {}
+	local etable3 = {}
+	local etable4 = {}
+	for i = 1,8 do
+		if Logic.GetDiplomacyState(_player, i) == Diplomacy.Hostile then
+			local enemies = SucheAufDerWelt(i, 0, _range, _pos)
+			for k = 1, table.getn(enemies) do
+				if GetDistance(enemies[k], _pos) < minrange then
+					table.insert(enemytable, enemies[k])
+				elseif GetDistance(enemies[k], _pos) < minrange*2 then
+					table.insert(etable2, enemies[k])
+				elseif GetDistance(enemies[k], _pos) < minrange*3 then
+					table.insert(etable3, enemies[k])
+				else
+					table.insert(etable4, enemies[k])
+				end
+			end
+		end
+	end
+	for x = 1, table.getn(etable2) do table.insert(enemytable, etable2[x]) end
+	for y = 1, table.getn(etable3) do table.insert(enemytable, etable3[y]) end
+	for z = 1, table.getn(etable4) do table.insert(enemytable, etable4[z]) end
+	if table.getn(enemytable) ~= 0 then
+		return enemytable[1]
+	else
+		return false
+	end
+end
+
+function GetDistance(_a, _b)
+    if type(_a) ~= "table" then
+        _a = GetPosition(_a)
+    end
+    if type(_b) ~= "table" then
+        _b = GetPosition(_b)
+    end
+    return math.sqrt((_a.X - _b.X)^2+(_a.Y - _b.Y)^2)
+end
+
+-- Liefert eine zufällige Position innerhalb eines Kreises
+-- by Siedler1997
+function Zufall_Kreis(_pos, _radius, _bcheck)
+	local posi = _pos
+	local radi = _radius
+	local punktX = posi.X + GetRandom(-radi, radi)
+	local punktY = posi.Y + GetRandom(-radi, radi)
+	local worldsize = Logic.WorldGetSize()--/100
+	if math.sqrt((posi.X-punktX)^2+(posi.Y-punktY)^2) <= radi then
+		return IsPositionInMap({X=punktX, Y=punktY}, true)
+	else
+		return Zufall_Kreis(_pos, _radius)
+	end
+end
+
+-- Prüft, ob eine Position innerhalb der Map liegt
+-- by Siedler1997
+function IsPositionInMap(_pos, _correction)
+	local wsize = Logic.WorldGetSize()
+	local posX = _pos.X
+	local posY = _pos.Y
+	if _correction == false then	--nur Überprüfung?
+		if posX >= 0 and posY >= 0 and posX <= wsize and posY <= wsize then
+			return true
+		else
+			return false
+		end
+	else	--Werte werden korrigiert
+		if posX < 0 then posX = posX * 0 end
+		if posY < 0 then posY = posY * 0 end
+		if posX > wsize then posX = wsize end
+		if posY > wsize then posY = wsize end
+		local newpos = {X=posX, Y=posY}
+		return newpos
+	end
+end

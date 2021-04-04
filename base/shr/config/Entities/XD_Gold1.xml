@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_Gold1</Model>
+		<Model2>XD_Gold2</Model2>
+		<Model3>XD_Gold3</Model3>
+		<RenderInFoW>true</RenderInFoW>
+	</Display>
+	<Logic classname="GGL::CResourceDoodadProperties">
+		<Class>GGL::CResourceDoodad</Class>
+        <AccessCategory>AccessCategoryResourceDoodad</AccessCategory>
+		<Model1>XD_Gold2</Model1>
+		<Model2>XD_Gold3</Model2>
+		<DoNotExecute>True</DoNotExecute>
+		<ApproachPos>
+		    <X>0</X>
+		    <Y>0</Y>
+		</ApproachPos>
+		<ApproachR>500</ApproachR>
+        <TerrainPos1>
+            <X>-150</X>
+            <Y>150</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>150</X>
+            <Y>-150</Y>
+        </TerrainPos2>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLResourceDoodadBehaviorProps">
+			<Class>GGL::CResourceDoodadBehavior</Class>
+			<Resource>
+				<Good>GoldRaw</Good>
+				<Amount>400</Amount>
+			</Resource>
+
+            </Logic>
+	</Behavior>
+</root>

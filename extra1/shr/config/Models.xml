@@ -3630,6 +3630,30 @@
 	<Model id="XD_WallStraightGate_Closed">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>
+	<Model id="CB_Grange">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
+	<Model id="XD_Gold1">
+		<CastShadow>False</CastShadow>
+	</Model>
+	<Model id="XD_Gold2">
+		<CastShadow>False</CastShadow>
+	</Model>
+	<Model id="XD_Gold3">
+		<CastShadow>False</CastShadow>
+	</Model>
+	<Model id="XD_WreckedBoat01">
+		<CastShadow>True</CastShadow>
+		<ShareShadowRaster>True</ShareShadowRaster>
+		<TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+		<TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+	</Model>
+	<Model id="XD_WreckedBoat02">
+		<CastShadow>True</CastShadow>
+		<ShareShadowRaster>True</ShareShadowRaster>
+		<TerrainLightColorPortion>0.1</TerrainLightColorPortion>
+		<TerrainVertexColorPortion>0.9</TerrainVertexColorPortion>
+	</Model>
 
 	<Model id="CB_EvilTower1">
 		<SelectionTexture>Selection_Building</SelectionTexture>

@@ -137,8 +137,8 @@
 	        <HitAnim>PU_SoldierBow3_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>12</DamageAmount>
-	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        <DamageAmount>10</DamageAmount>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        

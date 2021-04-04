@@ -151,6 +151,7 @@
 	<AnimSet>SET_CU_BANDITLEADERBOW1</AnimSet>
 
 	<!-- Community Patch -->
+	<AnimSet>SET_Dragon</AnimSet>
 	<AnimSet>SET_CU_HERO10</AnimSet>
 	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
 	<AnimSet>SET_SHEEP</AnimSet>

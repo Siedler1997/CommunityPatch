@@ -743,6 +743,11 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>CB_Grange</Entity>
+	<Entity>CU_Dragon</Entity>
+	<Entity>XD_Gold1</Entity>
+	<Entity>XD_WreckedBoat01</Entity>
+	<Entity>XD_WreckedBoat02</Entity>
 	<Entity>CU_BanditLeaderBow1</Entity>
 	<Entity>CU_BanditLeaderBow2</Entity>
 	<Entity>CU_BanditSoldierBow1</Entity>

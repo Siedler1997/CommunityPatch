@@ -22,7 +22,7 @@
 		  <MaxHealth>100</MaxHealth>
 		  <ArmorClass>ArmorClassNone</ArmorClass>
 		  <ArmorAmount>0</ArmorAmount>
-		  <NeedsPlayer>true</NeedsPlayer>
+		<NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
         <Cost>
@@ -136,8 +136,8 @@
 	        <HitAnim>PU_SoldierCavalry1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>8</DamageAmount>
-	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
+	        <DamageAmount>6</DamageAmount>
+	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2500</BattleWaitUntil>
 	        

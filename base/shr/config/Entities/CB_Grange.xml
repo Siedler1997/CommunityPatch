@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>CB_Grange</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<UpgradeSite>ZB_UpgradeSiteVillageCenter1</UpgradeSite>
+		<Category>Grange</Category>
+		<Category>DefendableBuilding</Category>
+		<MaxHealth>800</MaxHealth>
+		<ArmorClass>ArmorClassFortification</ArmorClass>
+		<ArmorAmount>4</ArmorAmount>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
+        <BuildOn>XD_VillageCenter</BuildOn>
+        <HideBase>true</HideBase>
+        <Upgrade>
+        	<Time>40.0</Time>        		
+            <Category>VillageCenter</Category>
+            <Cost>
+			    <Clay/>
+			    <Wood>300</Wood>
+				<Stone>100</Stone>
+				<Gold/>
+				<Iron/>
+				<Sulfur/>
+            </Cost>
+            <Type>PB_VillageCenter1</Type>            
+        </Upgrade>
+		<Exploration>40</Exploration>
+		<NumberOfAttractableSettlers>25</NumberOfAttractableSettlers>
+
+		<ConstructionInfo>
+			<Time>80</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+            <BuilderSlot>
+                <Position>
+                    <X>400</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>200</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>-200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>0</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>600</X>
+                    <Y>-100</Y>
+                </Position>
+                <Orientation>180</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>600</X>
+                    <Y>-300</Y>
+                </Position>
+                <Orientation>180</Orientation>
+            </BuilderSlot>    
+            <ConstructionSite>ZB_ConstructionSiteVillageCenter1</ConstructionSite>
+		</ConstructionInfo>
+		
+        <ApproachPos>
+            <X>-10</X>
+            <Y>-600</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>43</X>
+            <Y>412</Y>			
+        </DoorPos>
+        <DoorPos>
+            <X>-150</X>
+            <Y>50</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-700</X>
+            <Y>-500</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>500</X>
+            <Y>600</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-800</X>
+            <Y>-600</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>600</X>
+            <Y>700</Y>
+        </TerrainPos2>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>Default</Banner>
+			<NumDamageEffects>27</NumDamageEffects>
+			<NumDestroyEffects>27</NumDestroyEffects>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			<Class>GGL::CLimitedAttachmentBehavior</Class>
+			<Attachment>
+				<Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+				<Limit>10</Limit>
+			</Attachment>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		<Logic classname="GGL::CDefendableBuildingBehaviorProps">
+			<Class>GGL::CDefendableBuildingBehavior</Class>
+		</Logic>
+	</Behavior>
+</root>

@@ -58,7 +58,7 @@ function WeatherSets_SetupSnow(_ID, _Rain, _Snow)
 		Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 1)
 	end
 
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 152,172,182, 3000,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 152,172,182, 4000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0,  40, -15, -75,  116,144,164, 255,234,202)
 end
 
@@ -79,7 +79,7 @@ function WeatherSets_SetupRain(_ID, _Rain, _Snow)
 		Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 0)
 	end
 
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 3000,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 4000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0, 40, -15, -50,  120,110,110,  205,204,180)
 end
 
@@ -89,14 +89,14 @@ function WeatherSets_SetupEvelance(_ID)
 	Display.GfxSetSetSkyBox(_ID, 0.0, 1.0, "YSkyBox07")
 	Display.GfxSetSetSnowStatus(_ID, 0, 1.0, 0)
 	Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 0)
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 29,36,44, 4000,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 29,36,44, 5000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0, 40, -15, -50,  102,108,108, 96,75,54)
 end
 function WeatherSets_SetupEvelanceSnow(_ID)
 	Display.GfxSetSetSkyBox(_ID, 0.0, 1.0, "YSkyBox01")
 	Display.GfxSetSetSnowStatus(_ID, 0, 1.0, 1)
 	Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 1)
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 81,96,104, 2000,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 81,96,104, 4000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0, 40, -15, -50,  87,108,123, 191,176,152)
 end
 
@@ -131,7 +131,7 @@ function WeatherSets_SetupMediterraneanRain(_ID)
 	Display.GfxSetSetRainEffectStatus(_ID, 0.0, 1.0, 1)
 	Display.GfxSetSetSnowStatus(_ID, 0, 1.0, 0)
 	Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 0)
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 3500,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 4000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0, 40, -15, -50,  120,110,110,  255,254,230)
 end
 
@@ -158,7 +158,7 @@ function WeatherSets_SetupHighlandRain(_ID)
 	Display.GfxSetSetRainEffectStatus(_ID, 0.0, 1.0, 1)
 	Display.GfxSetSetSnowStatus(_ID, 0, 1.0, 0)
 	Display.GfxSetSetSnowEffectStatus(_ID, 0.0, 0.8, 0)
-	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 3000,12000)
+	Display.GfxSetSetFogParams(_ID, 0.0, 1.0, 1, 102,132,142, 4000,12000)
 	Display.GfxSetSetLightParams(_ID,  0.0, 1.0, 40, -15, -50,  120,110,110,  255,254,230)
 end
 

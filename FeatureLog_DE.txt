@@ -41,6 +41,7 @@
 	* Formationen
 		+ bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
 		+ werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+	* Alle Fernkämpfer (außer Helden und Kanonen) verursachen etwas weniger Schaden (idR. -2 Punkte)
 	* NPCs (Zivilisten)
 		+ können sterben
 			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -127,7 +128,7 @@
 			/ das Setzen einer neuen Markierung entfernt zugleich die Alte
 			/ wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
 		+ Dario
-			/ Falke hat doppelte Sichtweite (15 SM -> 30 SM)
+			/ Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			/ Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
 				* PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
 				* PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
@@ -136,8 +137,30 @@
 				* Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				* reduziert zugleich Angriff jener Einheiten auf 50%
 				* Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
-		+ Drake hat einen Rüstungspunkt weniger (=3)
-		+ Varg hat einen Rüstungspunkt weniger (=3)
+		+ Drake 
+			/ hat einen Rüstungspunkt weniger (=3)
+			/ hat 4 Schadenpunkte weniger (=24)
+			/ seine Fähigkeit 'Feuerkraft' betrifft auch
+				* Ari 
+				* Kanonen
+				* Bogen-Banditen
+				* Speerwerfer
+		+ Varg 
+			/ hat einen Rüstungspunkt weniger (=3)
+			/ seine Wölfe
+				* haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
+				* werden zu 3. beschworen (vorher: 2)
+				* verlangen keinen Sold
+				* sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
+				* geben Audio-Feedback
+				* sind nicht von Helias konvertierbar
+			/ seine Fähigkeit 'Berserkerwut'
+				* hält für 1:00 Min (vorher: 40 Sek.)
+				* betrifft auch Verbündete
+				* Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
+				* wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
+				* bewirkt keine einmalige HP-Regeneration mehr
+				* erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
 		+ Aris Banditen
 			/ werden zu 5. beschworen (vorher: 3)
 			/ haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
@@ -146,38 +169,20 @@
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
 			/ geben Audio-Feedback
 			/ sind nicht von Helias konvertierbar
-		+ Vargs Wölfe
-			/ haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
-			/ werden zu 3. beschworen (vorher: 2)
-			/ verlangen keinen Sold
-			/ sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
-			/ geben Audio-Feedback
-			/ sind nicht von Helias konvertierbar
-		+ Vargs 'Berserkerwut'
-			/ hält für 1:00 Min (vorher: 40 Sek.)
-			/ betrifft auch Verbündete
-			/ Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
-			/ wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
-			/ bewirkt keine einmalige HP-Regeneration mehr
-			/ erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
 		+ Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
-		+ Helias 'Segnung' 
-			/ erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
-			/ heilt Betroffene um 25% ihrer maximalen HP
-		+ Helias Bekehrung
-			/ Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
-			/ benötigt weniger Zeit
-			/ kann auf etwas größerer Distanz gestartet werden
-			/ kann über etwas größere Distanz gehalten werden
+		+ Helias
+			/ seine Fähigkeit 'Segnung' 
+				* erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
+				* heilt Betroffene um 25% ihrer maximalen HP
+			/ Helias Bekehrung
+				* Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
+				* benötigt weniger Zeit
+				* kann auf etwas größerer Distanz gestartet werden
+				* kann über etwas größere Distanz gehalten werden
 		+ Yukis 'Feuerwerk der Furcht'
 			/ Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
-			/ ist nun identisch mit den Versionen von Dario und Kerberos
+			/ ist identisch mit den Versionen von Dario und Kerberos
 		+ Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
-		+ Drakes Fähigkeit 'Feuerkraft' betrifft auch 
-			/ Ari 
-			/ Kanonen
-			/ Bogen-Banditen
-			/ Speerwerfer
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -311,17 +316,23 @@
 	* Wetter-Effekte sind etwas gemischter
 		+ Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		+ Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+	* Geröllhaufen werden, wie Steinhaufen auch, mit dem Abbau kleiner
 	* ein paar EasterEggs;)
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
-	* Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir) ist nutzbar (per Script und Editor)
+	* Neue, aber eigentlich in den Files vorhandene Entities sind verfügbar
+		+ Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir)
+		+ Held 'CU_Hero10'
+			+ eine Variante von Drake mit Kapuze (wie auf dem Nebelreich-Cover)
+			+ hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
+		+ Deko-Objekte 'XD_WreckedBoat01' und 'XD_WreckedBoat02' (Bootsfracks)
+		+ Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+		+ Der Drache ist theoretisch als 'CU_Dragon' nutzbar
+		+ Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar
 		+ inkl. Find-Button
 		+ MultiSelection-Button (Textur by Zedeg)
 		+ AudioFeedback stammt von den Kundschaftern
-	* Es gibt eine andere Version von Drake mit Kapuze
-		+ namentlich 'CU_Hero10'
-		+ hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
 	* Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
 		+ Versionen mit 1er-Endung haben Soldatenmaximum von 4
@@ -349,10 +360,6 @@
 		+ Kanonen (alle Arten)
 		+ Bogen-Banditen (CU_BanditLeaderBow1)
 		+ Speerwerfer (CU_Evil_LeaderSkirmisher1)
-	* Die Soldaten-Entity 'CU_BlackKnight_SoldierSword3' 
-		/ ist dem Hauptmann 'CU_VeteranMayor' zugeordnet
-		/ hat ähnlich hohe Stats wie o.g. Veteran
-		/ hat ein richtiges Soldaten-Verhalten
 	* Kanonen haben als SoldierType 'PV_Cannon1', was bei max. 0 Soldaten aber eig. irrelevant ist
 	* Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		+ Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
@@ -393,6 +400,9 @@
 			/ Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
 			/ Verwendung: siehe Kommentar in 'Comforts.lua'
 - Bekannte Bugs & Einschränkungen
+	* Der Drache ist unsichtbar
+		+ Grund: zu viele Bones im Modell und dadurch nicht vom Spiel darstellbar
+		+ Mögliche Lösung: Bones entfernen, aber dann nicht mehr animierbar
 	* Kala's Tod verursacht selten stack overflow
 		+ nur ein mal bislang
 		+ konnte ich noch nicht reproduzieren
@@ -409,6 +419,10 @@
 
 
 - ToDos:
+	* Raiders:
+		+ GetPlayer-Error (Z. 2104)
+		+ Zuteilung per unique Id
+	* Strings mit "Schützen schießen schneller und treffen besser" gegen die Wahrheit austauschen
 	* FunFacts im LoadingScreen
 		+ mehr davon
 		+ auf Englisch übersetzen
@@ -417,8 +431,9 @@
 	* NPCs 
 		+ mit Lebensbalken
 		+ beeinflusst von zivilen Techs
-	* Unbenutztes Ende in "Land unter" (auf schwer)
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+		+ Wasteland-Dörfer: Namen im Auftragsbuch
+		+ Goldhaufen (wenige!)
 		+ Wolfsrudel
 		+ AddOn-Units (Bogen-Bandits, Veteranen, Schafe, Wölfe)
 		+ Varg
@@ -439,7 +454,6 @@
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* Neue Spielerfarben(?)
-	* Originale Namen von Yuki und Drake einbauen (Mirai, Quintos)
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* neue Comforts (bei Bedarf)
@@ -451,6 +465,7 @@
 		+ Bogen-Banditen-Hauptmänner
 		+ Nebelkrieger-Hauptmänner
 	* Umsetzung in Vanilla-DEdK
+	* AeK-Soundtrack bei Installation kopieren
 	* Organisatorisches
 		+ FeatureList 
 			/ Auflistung aller geänderten/neuen SelectionNames

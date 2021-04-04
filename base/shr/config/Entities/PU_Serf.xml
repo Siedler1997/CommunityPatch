@@ -153,7 +153,12 @@
                 <Delay>4</Delay>
                 <Amount>2</Amount>
             </ExtractionInfo>
-		</Logic>
+			  <ExtractionInfo>
+				  <ResourceEntityType>XD_Gold1</ResourceEntityType>
+				  <Delay>4</Delay>
+				  <Amount>1</Amount>
+			  </ExtractionInfo>
+		  </Logic>
 	</Behavior>
 	<Behavior>
 		  <Logic classname="GGL::CSerfBattleBehaviorProps">

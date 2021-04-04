@@ -120,12 +120,12 @@
 	        <HitAnim>CU_BanditLeaderBow1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>10</DamageAmount>
+	        <DamageAmount>8</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2600</BattleWaitUntil>
 	        
-	        <MissChance>9</MissChance>
+	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        <MaxRange>2500</MaxRange>

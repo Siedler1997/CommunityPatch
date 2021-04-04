@@ -301,7 +301,12 @@ function GameCallback_GUI_SelectionChanged()
 			--Is EntityType the Village?
 			elseif  UpgradeCategory == UpgradeCategories.VillageCenter then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Village,1)							
-				ButtonStem = "Upgrade_Village"							
+				ButtonStem = "Upgrade_Village"			
+			
+			--Is EntityType the Grange?
+			elseif  UpgradeCategory == UpgradeCategories.Grange then
+				XGUIEng.ShowWidget("Grange", 1)							
+				ButtonStem = ""						
 			
 			--Is EntityType the residence?
 			elseif 	UpgradeCategory == UpgradeCategories.Residence then			

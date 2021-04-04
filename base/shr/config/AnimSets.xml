@@ -125,6 +125,7 @@
  	<AnimSet>SET_DEER</AnimSet>
 
 	<!-- Community Patch -->
+	<AnimSet>SET_DRAGON</AnimSet>
 	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
 	<AnimSet>SET_SHEEP</AnimSet>
 	<AnimSet>SET_SHEEP2</AnimSet>

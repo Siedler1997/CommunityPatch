@@ -990,6 +990,11 @@
 	</BuildingUpgrade>
 
 	<BuildingUpgrade>
+		<Category>Grange</Category>
+		<FirstBuilding>CB_Grange</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
 		<Category>Evil_Tower1</Category>
 		<FirstBuilding>CB_Evil_Tower1</FirstBuilding>
 	</BuildingUpgrade>

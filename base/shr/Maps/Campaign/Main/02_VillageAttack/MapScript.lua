@@ -69,7 +69,7 @@
 -- This function is called from main script to initialize the diplomacy states
 function Mission_InitDiplomacy()
 
-	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile	)
+	--Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile	)
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile 	)
 	Logic.SetDiplomacyState( 1,	4, Diplomacy.Friendly 	)
 	Logic.SetDiplomacyState( 1,	5, Diplomacy.Friendly 	)
@@ -206,10 +206,17 @@ function Mission_FirstMapAction()
 			local bosspos2 = GetPosition("tower2")
 			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 			LookAt(bossID2, "defendRoute")
+
+			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, samount = 2, ramount = 8, fast_resp = false})
+			RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, samount = 2, ramount = 6, fast_resp = false})
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
+		Tools.ExploreArea(-1, -1, 900)
+		StartSimpleHiResJob("GetDarioPos")
 	end
 
 
-
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end

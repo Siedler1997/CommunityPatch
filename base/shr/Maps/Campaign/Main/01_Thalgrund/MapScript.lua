@@ -73,7 +73,7 @@
 function Mission_InitDiplomacy()
 
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
-	
+	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1,	8, Diplomacy.Friendly )
 
@@ -85,7 +85,7 @@ function Mission_InitPlayerColorMapping()
 	
 	Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- East village
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- West village
-
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Kerberos' units
 	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- NPCs; yellow
 	Display.SetPlayerColorMapping(5, NPC_COLOR)				-- Gate
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- NPCs; yellow
@@ -108,6 +108,7 @@ function Mission_InitTechnologies()
 
 	DisableExpanding(GetHumanPlayer())
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+		ResearchAllMilitaryTechs(3)
 		ResearchAllMilitaryTechs(7)
 	end
 end
@@ -207,10 +208,19 @@ function Mission_FirstMapAction()
 			local bosspos1 = GetPosition("Jail")
 			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
 			LookAt(bossID1, "gate")
+			
+			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, samount = 2, ramount = 6, fast_resp = false})
+			RaidersCreate({player = 3, pos = "rudelpos2", revier = 2000, range = 4000, samount = 2, ramount = 6, fast_resp = false})
+			RaidersCreate({player = 3, pos = "rudelpos3", revier = 2000, range = 4000, samount = 2, ramount = 6, fast_resp = false})
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
+		Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleHiResJob("GetDarioPos")
 	end
 
-
-
+	--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
