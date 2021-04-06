@@ -58,10 +58,9 @@
     
 
     <!-- Damage Modifier-->
-          <!--ModifyDamage>
-        	<Technology>T_Fletching</Technology>
-        </ModifyDamage-->
-        
+		<ModifyDamage>
+			<Technology>T_BetterTrainingArchery</Technology>
+		</ModifyDamage>
         <ModifyExploration>
         	<Technology>T_Fletching</Technology>
         </ModifyExploration>

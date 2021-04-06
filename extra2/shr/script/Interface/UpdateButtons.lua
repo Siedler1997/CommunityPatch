@@ -1200,10 +1200,7 @@ end
 gvGUI.HighlightButtonCounter  = 1
 
 
-function
-GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
-
-		
+function GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
 		if GDB.GetValue( "Game\\HighlightNewWorkerHaveNoFarmOrResidenceButtonsFlag" ) == 0 then	
 		
 			gvGUI.HighlightButtonCounter = 1 - gvGUI.HighlightButtonCounter 
@@ -1227,3 +1224,4 @@ GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
 		end
 
 end
+

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>50</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>200</Gold>
+		  <Clay/>
+		  <Wood>200</Wood>
+		  <Stone/>		
+		  <Iron/>
+		  <Sulfur/>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<SpeedModifier>
+		<Value>30</Value>
+		<Operation>+</Operation>
+	</SpeedModifier>
+
+	<DamageModifier>
+		<Value>1</Value>
+		<Operation>+</Operation>
+	</DamageModifier>
+
+	<Conditions>	
+		  <EntityCondition>
+			  <EntityType>PB_Archery2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

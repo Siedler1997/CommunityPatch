@@ -56,7 +56,10 @@
          <ModifyMaxRange>
 			  <Technology>T_Sights</Technology>
 		</ModifyMaxRange>
-       
+
+		<ModifyDamage>
+			<Technology>T_BetterTrainingArchery</Technology>
+		</ModifyDamage>
 
     <!-- Speed Modifier-->
         

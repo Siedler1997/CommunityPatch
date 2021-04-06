@@ -41,7 +41,9 @@
 	* Formationen
 		+ bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
 		+ werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
-	* Alle Fernkämpfer (außer Helden und Kanonen) verursachen etwas weniger Schaden (idR. -2 Punkte)
+	* Alle Fernkämpfer (außer Helden und Kanonen) 
+		+ verursachen etwas weniger Schaden (idR. -2 Punkte)
+		+ bekommen durch 'Meisterschütze' einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
 	* NPCs (Zivilisten)
 		+ können sterben
 			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -55,7 +57,7 @@
 			/ regenerieren ihre Lebenspunkte etwas schneller
 			/ haben etwas weniger Lebenspunkte
 		+ Banditen
-			/ zählen theoretisch als Schwertkämpfer
+			/ zählen als Schwertkämpfer
 			/ können Soldaten an Kasernen nachfüllen
 			/ haben Rekrutierungskosten (Hauptmänner und Soldaten)
 			/ haben die gleiche DamageClass wie schwere Kavallerie
@@ -68,7 +70,7 @@
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
-			/ haben zei Schadenpunkte mehr (=14)
+			/ haben zwei Schadenpunkte mehr (=14)
 			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		+ Schwarze Ritter 
 			/ haben einen Rüstungspunkt mehr (=3)
@@ -199,6 +201,8 @@
 		+ 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
 		+ 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
 		+ 'Fährtenlesen' hat einen Erforscht-Tooltip
+		+ Bei 'Meisterschütze' steht der korrekte Effekt (Erhöhung der Bewegungsgeschwindigkeit & Schaden)
+		+ Bei 'Kimme und Korn' steht der korrekte Effekt (Erhöhung der Reichweite)
 		+ Formations-Buttons haben DisabledTooltips, wenn 'Stehendes Heer' noch nicht erforscht wurde
 		+ In den Tooltips der Find-Buttons von Soldaten wird die Anzahl der Hauptmänner dieser Art angezeigt
 		+ Alle Kundschafter- und Diebesfähigkeiten haben den richtigen Tooltip in Abhängigkeit der jeweiligen Technologie
@@ -232,6 +236,9 @@
 		+ Veteranen (CU_VeteranXXX) nutzen die VPs von Barbaren und schwarzen Rittern
 		+ Dombaustellen verwenden die VP der Kathedrale
 		+ CU_Serfs (Arbeiter der Dombaustelle) haben die VP von Leibeigenen
+	* Fortschrittsanzeige in Kanonengießereien beim Kanonenbau gefixt/verschönert
+		+ Icon, dass die zu bauende Kanonenart anzeigt (analog zur Technologie-Erforschung)
+		+ Anzeige erscheint auch dann schon, wenn der Kanonengießer gerade nicht im Gebäude ist
 	* Der Button zum Kauf von Bogen-Hauptmännern hat im Hauptspiel die gleiche Textur wie in den AddOns
 	* Fähigkeiten-Buttons von Dieben und Kundschaftern werden disabled, wenn der jeweilige Cooldown aktiv ist
 	* Gruppenstärke
@@ -320,6 +327,7 @@
 	* ein paar EasterEggs;)
 - Für Mapper
 	* Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
+	* Einige Entities sind regulär im Editor verfügbar - auch ohne Group-Werkzeug
 	* Neue, aber eigentlich in den Files vorhandene Entities sind verfügbar
 		+ Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir)
 		+ Held 'CU_Hero10'
@@ -329,6 +337,8 @@
 		+ Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
 		+ Der Drache ist theoretisch als 'CU_Dragon' nutzbar
 		+ Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
+		+ Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
+	* Söldnerquartiere und Tech-Trader erlauben bis zu 6 Angebote
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar
 		+ inkl. Find-Button
 		+ MultiSelection-Button (Textur by Zedeg)
@@ -419,18 +429,22 @@
 
 
 - ToDos:
+	* LightBricks-Technologie(?)
+	* (theoretisch) nutzbare Wettermaschinen
+	* NPCs 
+		+ erhöhte Lebenspunkte
+		+ erhöhte Sichtweite
+		+ beeinflusst von zivilen Techs
+		+ mit Lebensbalken
+	* Helden-Summorings als eigene Entities
 	* Raiders:
 		+ GetPlayer-Error (Z. 2104)
 		+ Zuteilung per unique Id
-	* Strings mit "Schützen schießen schneller und treffen besser" gegen die Wahrheit austauschen
 	* FunFacts im LoadingScreen
 		+ mehr davon
 		+ auf Englisch übersetzen
 	* Rand-Clipping bei Briefing-Minimap entfernen 
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
-	* NPCs 
-		+ mit Lebensbalken
-		+ beeinflusst von zivilen Techs
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
 		+ Wasteland-Dörfer: Namen im Auftragsbuch
 		+ Goldhaufen (wenige!)
@@ -448,6 +462,7 @@
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
+	* Helden sollen Erfahrung sammeln können
 	* Countdowns 
 		+ sollen während Briefings pausieren
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
@@ -460,6 +475,7 @@
 	* Kalas Tod: stack overflow(?)
 		+ bislang nur ein mal passiert
 	* Eigene Texturen für
+		+ Tech-Trader
 		+ Veteranen
 		+ Varg
 		+ Bogen-Banditen-Hauptmänner
@@ -470,6 +486,7 @@
 		+ FeatureList 
 			/ Auflistung aller geänderten/neuen SelectionNames
 			/ auch auf Englisch
+		+ entityblacklist.xml an richtigen Ort kopieren
 		+ Quellenverzeichnung (also Nennung aller Autoren)
 		+ Indikator für CP-Installation
 		+ (De-)Installer mit Backup-funktion(?)

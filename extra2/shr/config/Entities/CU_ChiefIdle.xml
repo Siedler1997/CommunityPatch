@@ -20,8 +20,10 @@
 		<MaxHealth> 50 </MaxHealth>
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat></Hat>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<Exploration>10</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
 	</Logic>
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">

@@ -7,12 +7,18 @@
 	<Logic classname="GGL::CGLBuildingProps">
 		<Class>GGL::CBuilding</Class>
 		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+		<Category>Workplace</Category>
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<MaxHealth>300</MaxHealth>
 	    <ArmorAmount>0</ArmorAmount>
 
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+		
 		<!-- Exploration -->
 		<ModifyExploration>
 			<Technology>T_TownGuard</Technology>
@@ -69,7 +75,7 @@
 	<Behavior>
 		<Logic classname="GGL::CBuildingMerchantBehaviorProps">
 			<Class>GGL::CBuildingTechTraderBehavior</Class>
-			<MaximumSlotCount>5</MaximumSlotCount>
+			<MaximumSlotCount>6</MaximumSlotCount>
 			<ActivationDistance>1500</ActivationDistance>
 			<TraderEntityType>CU_Merchant</TraderEntityType>
 			<IsEmptyStringKey>MerchantStates/Empty</IsEmptyStringKey>

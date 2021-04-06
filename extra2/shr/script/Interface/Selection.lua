@@ -386,8 +386,8 @@ function GameCallback_GUI_SelectionChanged()
 			elseif 	UpgradeCategory == UpgradeCategories.Foundry then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Foundry,1)
 				ButtonStem =  "Upgrade_Foundry"			
-				local CannonProgress = Logic.GetCannonProgress(EntityId)
-				if CannonProgress ~= 100 then
+				--local CannonProgress = Logic.GetCannonProgress(EntityId)
+				if gvGUI_CannonButtonIDArray[EntityId] ~= nil then
 					XGUIEng.ShowWidget(gvGUI_WidgetID.CannonInProgress,1)
 				else			
 					XGUIEng.ShowWidget(gvGUI_WidgetID.CannonInProgress,0)
@@ -853,16 +853,13 @@ function GameCallback_OnBuildingConstructionComplete(_BuildingID, _PlayerID)
 end
 
 
-function
-GameCallback_OnCannonConstructionComplete(_BuildingID, _empty)
-
-
+function GameCallback_OnCannonConstructionComplete(_BuildingID, _empty)
+	gvGUI_CannonButtonIDArray[_BuildingID] = nil
 	local BuildingID = GUI.GetSelectedEntity()
 	
 	if _BuildingID == BuildingID then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.CannonInProgress,0)
 	end
-
 end
 
 

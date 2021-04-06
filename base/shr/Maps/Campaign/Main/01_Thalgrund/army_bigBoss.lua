@@ -38,10 +38,9 @@ createArmyBigBoss = function()
 
 		--	create bandit boss
 			if CP_Difficulty == 0 then
-				troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+				troopDescription.leaderType = Entities.PU_LeaderCavalry1
 			else
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
-				troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+				troopDescription.leaderType = Entities.PU_LeaderCavalry2
 			end
 			EnlargeArmy(armyBigBossA,troopDescription)
 

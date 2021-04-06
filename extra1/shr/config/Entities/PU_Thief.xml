@@ -37,11 +37,12 @@
 			  <Iron>30</Iron>
 			  <Wood/>
         </Cost>
-       <AttractionSlots>5</AttractionSlots>        
-        <Category>Military</Category>        
-        <Category>Melee</Category>
-        <Category>Thief</Category>        
-		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+       <AttractionSlots>5</AttractionSlots>
+		<Category>Military</Category>
+		<Category>Leader</Category>
+		<Category>Thief</Category>
+		<Category>Melee</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>18</Exploration>
 		  <ArmorClass>ArmorClassHero</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 

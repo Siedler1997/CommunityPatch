@@ -788,28 +788,6 @@ GUIUpdate_TaxSumOfTaxes()
 end
 
 
-
-function
-GUIUpdate_CannonProgress()
-	
-	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
-	
-	local BuildingID = GUI.GetSelectedEntity()
-	
-	if BuildingID == nil then
-		return
-	end
-	
-	local value = Logic.GetCannonProgress(BuildingID)
-	
-	if value == 100 then
-		value = 0 
-	end
-		
-	XGUIEng.SetProgressBarValues(CurrentWidgetID,value, 100)
-end
-
-
 function
 GUIUpdate_HintText()
 

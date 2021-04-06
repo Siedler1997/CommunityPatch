@@ -34,12 +34,12 @@
 			  <Iron>50</Iron>
 			  <Wood/>
         </Cost>
-       
-        
-        <Category>Military</Category>
-        <Category>Leader</Category>        
-        <Category>Melee</Category>
-        <Category>Scout</Category>
+
+
+		<Category>Military</Category>
+		<Category>Leader</Category>
+		<Category>Scout</Category>
+		<Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>18</Exploration>
 		  <ArmorClass>ArmorClassNone</ArmorClass>

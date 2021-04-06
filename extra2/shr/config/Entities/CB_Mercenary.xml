@@ -14,6 +14,11 @@
 		<MaxHealth>300</MaxHealth>
 	    <ArmorAmount>0</ArmorAmount>
 
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+		
 		<!-- Exploration -->
 		<ModifyExploration>
 			<Technology>T_TownGuard</Technology>
@@ -69,7 +74,7 @@
 	<Behavior>
 		<Logic classname="GGL::CBuildingMerchantBehaviorProps">
 			<Class>GGL::CBuildingMercenaryBehavior</Class>
-			<MaximumSlotCount>4</MaximumSlotCount>
+			<MaximumSlotCount>6</MaximumSlotCount>
 			<ActivationDistance>1500</ActivationDistance>
 			<TraderEntityType>CU_Merchant</TraderEntityType>
 			<IsEmptyStringKey>MerchantStates/Empty</IsEmptyStringKey>

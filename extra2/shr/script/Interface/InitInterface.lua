@@ -156,12 +156,16 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.TroopMerchantOffers[2] = XGUIEng.GetWidgetID( "BuyTroopOfferContainer2" )
 	gvGUI_WidgetID.TroopMerchantOffers[3] = XGUIEng.GetWidgetID( "BuyTroopOfferContainer3" )
 	gvGUI_WidgetID.TroopMerchantOffers[4] = XGUIEng.GetWidgetID( "BuyTroopOfferContainer4" )
+	gvGUI_WidgetID.TroopMerchantOffers[5] = XGUIEng.GetWidgetID( "BuyTroopOfferContainer5" )
+	gvGUI_WidgetID.TroopMerchantOffers[6] = XGUIEng.GetWidgetID( "BuyTroopOfferContainer6" )
 	
 	gvGUI_WidgetID.TroopMerchantOfferAmount= {}
 	gvGUI_WidgetID.TroopMerchantOfferAmount[1] = XGUIEng.GetWidgetID( "Amount_TroopOffer1" )
 	gvGUI_WidgetID.TroopMerchantOfferAmount[2] = XGUIEng.GetWidgetID( "Amount_TroopOffer2" )
 	gvGUI_WidgetID.TroopMerchantOfferAmount[3] = XGUIEng.GetWidgetID( "Amount_TroopOffer3" )
 	gvGUI_WidgetID.TroopMerchantOfferAmount[4] = XGUIEng.GetWidgetID( "Amount_TroopOffer4" )
+	gvGUI_WidgetID.TroopMerchantOfferAmount[5] = XGUIEng.GetWidgetID( "Amount_TroopOffer5" )
+	gvGUI_WidgetID.TroopMerchantOfferAmount[6] = XGUIEng.GetWidgetID( "Amount_TroopOffer6" )
 	
 	gvGUI_WidgetID.SelectionScout=			XGUIEng.GetWidgetID( "Selection_Scout" )
 	gvGUI_WidgetID.SelectionThief=			XGUIEng.GetWidgetID( "Selection_Thief" )
@@ -425,6 +429,7 @@ function Interface_Init()
 	GUIAction_Research_Init()
 	GUIAction_Market_Init()
 	GUIAction_Upgrade_Init()
+	GUIAction_BuyCannon_Init()
 	
 	gvGUI.FunnyCommentsSelectionCounter = 0
 	gvGUI.LastSelectedEntityID = 0

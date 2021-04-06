@@ -57,9 +57,12 @@
     
 
     <!-- Damage Modifier-->
-         <!--ModifyDamage>
-        	<Technology>T_Fletching</Technology>
-        </ModifyDamage-->
+		<ModifyDamage>
+			<Technology>T_BetterTrainingArchery</Technology>
+		</ModifyDamage>
+         <ModifyDamage>
+        	<Technology>T_BodkinArrow</Technology>
+        </ModifyDamage>
         
         <ModifyExploration>
         	<Technology>T_Fletching</Technology>
@@ -68,9 +71,6 @@
          <ModifyMaxRange>
 			  <Technology>T_Fletching</Technology>
 		</ModifyMaxRange>
-         <ModifyDamage>
-        	<Technology>T_BodkinArrow</Technology>
-        </ModifyDamage>
         
          
 

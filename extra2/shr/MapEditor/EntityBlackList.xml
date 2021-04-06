@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<EntityName>PU_Hero2_Cannon1</EntityName>
+	<EntityName>PU_Hero2_Foundation1</EntityName>
+	<EntityName>PU_Hero3_Trap</EntityName>
+	<EntityName>PU_Hero3_TrapCannon</EntityName>
+	<EntityName>PB_GenericBridge</EntityName>
+	<EntityName>PB_GenericMine</EntityName>
+	<EntityName>XD_Bomb1</EntityName>
+	<EntityName>XD_ClayPit1</EntityName>
+	<EntityName>XD_ClosedClayPit1</EntityName>
+	<EntityName>XD_ClosedIronPit1</EntityName>
+	<EntityName>XD_ClosedStonePit1</EntityName>
+	<EntityName>XD_ClosedSulfurPit1</EntityName>
+	<EntityName>XD_IronPit1</EntityName>
+	<EntityName>XD_Leaves</EntityName>
+	<EntityName>XD_ResourceTree</EntityName>
+	<EntityName>XD_StonePit1</EntityName>
+	<EntityName>XD_SulfurPit1</EntityName>
+	<EntityName>CU_Dragon</EntityName>
+	<EntityName>CU_Merchant</EntityName>
+</root>
