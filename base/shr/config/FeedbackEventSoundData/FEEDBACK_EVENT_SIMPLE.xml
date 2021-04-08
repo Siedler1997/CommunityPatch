@@ -232,6 +232,18 @@
 				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_LeaderOutlaw1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_GCBlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_RegentDovbar</EntityType>
+				<SoundID>VoicesHero0\Scout_Yes_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BanditLeaderBow1</EntityType>
@@ -256,6 +268,18 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranMajor</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep2</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep3</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
 			</ValueSound>
 			
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
@@ -509,6 +533,10 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Serf</EntityType>
+				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Hero5_Outlaw</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
@@ -552,6 +580,18 @@
 				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_LeaderOutlaw1</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_GCBlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_No_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_RegentDovbar</EntityType>
+				<SoundID>VoicesHero0\Scout_No_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BanditLeaderBow1</EntityType>
@@ -576,6 +616,18 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranMajor</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep2</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep3</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
 			</ValueSound>
 			
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
@@ -825,6 +877,18 @@
 				<EntityType>CU_BlackKnight_SoldierSword3</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_LeaderOutlaw1</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_GCBlackKnight</EntityType>
+				<SoundID>VoicesHero7\HERO7_No_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_RegentDovbar</EntityType>
+				<SoundID>VoicesHero0\Scout_No_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BanditLeaderBow1</EntityType>
@@ -849,6 +913,18 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranMajor</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep2</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Sheep3</EntityType>
+				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
 			</ValueSound>
 			
 		<ParameterIndex>2</ParameterIndex>

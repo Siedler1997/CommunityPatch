@@ -270,6 +270,7 @@ function InterfaceTool_GetBlessingCosts(_PID, _BlessCategory)
 							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Sawmillworker)
 							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Stonecutter)
 							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Miner)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.CU_Serf)
 	elseif _BlessCategory == BlessCategories.Research then
 		BlessPrice = BlessPrice + 50 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Scholar)
 							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Engineer)

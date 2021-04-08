@@ -3,7 +3,7 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_RegentDovbar</Model> 
+		  <Model>PU_Hero1</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
 		  <Anim>CU_RegentDovbar_Walk</Anim>
 		  <Anim>CU_RegentDovbar_Run1</Anim>

@@ -15,14 +15,31 @@
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		<Class>GGL::CSettler</Class>
-		<AccessCategory>AccessCategorySettler</AccessCategory>	
-		<MaxHealth> 50 </MaxHealth>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth>100</MaxHealth>
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-        <Hat></Hat>
+		<Hat></Hat>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		<Exploration>10</Exploration>
+		<Exploration>18</Exploration>
 		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>1</ArmorAmount>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier -->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+		
 	</Logic>
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
@@ -56,10 +73,37 @@
 			<DyingTaskList>TL_DIE</DyingTaskList>
 		</Logic>
 	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
 	<Behavior>
 		<Logic classname="GGL::CCamperBehaviorProperties">
 			<Class>GGL::CCamperBehavior</Class>
-			<Range>2000</Range>
+			<Range>5000</Range>
 		</Logic>
 	</Behavior>
 </root>

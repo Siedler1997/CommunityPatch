@@ -279,6 +279,7 @@
         <EntityType>PU_BrickMaker</EntityType>
 		<EntityType>PU_Sawmillworker</EntityType>
 		<EntityType>PU_Stonecutter</EntityType>
+		<EntityType>CU_Serf</EntityType>
     </BlessCategory>
 
     <BlessCategory>
@@ -322,6 +323,7 @@
 		<EntityType>PU_Smelter</EntityType>
         <EntityType>PU_Trader</EntityType>
 		<EntityType>PU_Treasurer</EntityType>
+		<EntityType>CU_Serf</EntityType>
     </BlessCategory>
 
 

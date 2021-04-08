@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>CU_GCBlackKnight</Model> <!-- must be changed when proper model available -->
+        <DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>CU_BlackKnight_Blackknight_Walk</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Idle1</Anim>		
+		<Anim>CU_BlackKnight_Blackknight_IdleAttack1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Attack1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Attack2</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Finish</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Dying1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Run1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Hit</Anim> 
+		<Anim>CU_BlackKnight_Blackknight_Order1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Talk1</Anim>
+		<Anim>CU_BlackKnight_Blackknight_Talk2</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>	
+		<MaxHealth>300</MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat></Hat>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<Exploration>18</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>3</ArmorAmount>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_PlateBardingArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>CU_BlackKnight_Blackknight_Idle1</SuspensionAnimation>
+			<AnimSet>SET_BLACKKNIGHT</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>400</Speed>
+			<RotationSpeed>15</RotationSpeed>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			<MoveIdleAnim>CU_BlackKnight_Blackknight_Idle1</MoveIdleAnim>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
+		</Logic>
+	</Behavior>
+</root>

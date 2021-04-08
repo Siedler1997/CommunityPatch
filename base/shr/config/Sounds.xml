@@ -1220,6 +1220,9 @@
 	<!--Community Patch-->
 	<ID>AmbientSounds\Wolf_rnd_1</ID>
 	<ID>AmbientSounds\Wolf_rnd_2</ID>
+	<ID>AmbientSounds\Sheep_rnd_1</ID>
+	<ID>AmbientSounds\Sheep_rnd_2</ID>
+	<ID>AmbientSounds\Sheep_rnd_3</ID>
 
 	<ID>VoicesHero0\Scout_Attack_rnd_01</ID>
 	<ID>VoicesHero0\Scout_Attack_rnd_02</ID>

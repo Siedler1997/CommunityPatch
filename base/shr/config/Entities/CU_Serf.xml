@@ -10,28 +10,37 @@
                 <Anim>PU_Serf_Idle2</Anim> 
                 <Anim>PU_Serf_Idle3</Anim> 
                 <Anim>PU_Serf_Idle4</Anim>
-				<Anim>PU_Serf_Attack1</Anim>
                 <Anim>PU_Serf_Dying</Anim> 
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		<Class>GGL::CSettler</Class>
 		<AccessCategory>AccessCategorySettler</AccessCategory>		
-		<MaxHealth> 200 </MaxHealth>
-		<ArmorClass>ArmorClassHero</ArmorClass> 
-		<ArmorAmount>6</ArmorAmount>
+		<MaxHealth> 150 </MaxHealth>
+		<ArmorClass>ArmorClassJerkin</ArmorClass> 
+		<ArmorAmount>1</ArmorAmount>
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
         <Hat></Hat>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<Exploration>10</Exploration>
-		<ExperiencePoints>1000</ExperiencePoints>
+		<Category>Worker</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
 	</Logic>
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
 			<Class>GGL::CGLBehaviorAnimationEx</Class>
 		<!-- animation to be used when entity is suspended -->
 			<SuspensionAnimation>PU_Serf_Idle1</SuspensionAnimation>
-			<AnimSet>SET_SERF</AnimSet>
+			<AnimSet>SET_CU_SERF</AnimSet>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorAnimation</Class>
@@ -42,6 +51,7 @@
 			<Class>GGL::CSettlerMovement</Class>
 			<Speed>320</Speed>
 			<RotationSpeed>15</RotationSpeed>
+			<MoveIdleAnim>PU_Serf_Idle1</MoveIdleAnim>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorMovement</Class>
@@ -50,36 +60,31 @@
 	<Behavior>
 		<Logic classname="GGL::CWorkerBehaviorProps">
 			<Class>GGL::CWorkerBehavior</Class>
-					
-				<WorkTaskListsPerCycle>1</WorkTaskListsPerCycle>
 				
-				<WorkTaskList>TL_CU_SERF_WORK_START</WorkTaskList>
-				<WorkIdleTaskList>TL_CU_SERF_IDLE</WorkIdleTaskList> <!-- should ideally have special idling -->
-				<WorkWaitUntil>3000</WorkWaitUntil> <!-- time in ms! (use TASK_WORK_WAIT_UNTIL) -->
-				<NoWorkMotivationMalus>16</NoWorkMotivationMalus>
-				
-				<EatTaskList>TL_WORKER_EAT_START</EatTaskList>
-				<EatIdleTaskList>TL_CU_SERF_IDLE</EatIdleTaskList>
-				<EatWait>3000</EatWait> <!-- this would wait X sec  in task list, use TASK_EAT_WAIT -->
-            	<NoFoodMotivationMalus>31</NoFoodMotivationMalus> <!-- should ideally have special idling -->
+			<WorkTaskList>TL_CU_SERF_WORK_START</WorkTaskList>
+			<WorkIdleTaskList>TL_WORKER_IDLE_START</WorkIdleTaskList>
+			<WorkWaitUntil>20000</WorkWaitUntil>
+			<WorkTimeChangeWork>-50</WorkTimeChangeWork>
+			<ExhaustedWorkMotivationMalus>0.2</ExhaustedWorkMotivationMalus>
+
+			<EatTaskList>TL_WORKER_EAT_START</EatTaskList>
+			<EatIdleTaskList>TL_WORKER_IDLE_START</EatIdleTaskList>
+			<EatWait>2000</EatWait>
+			<WorkTimeChangeFarm>.7</WorkTimeChangeFarm>
             	
-            	<RestTaskList>TL_WORKER_REST_START</RestTaskList>
-            	<RestIdleTaskList>TL_CU_SERF_IDLE</RestIdleTaskList> <!-- should ideally have special idling -->
-            	<RestWait>3000</RestWait> <!-- this would wait X sec  in task list, use TASK_REST_WAIT -->
-            	<NoRestMotivationMalus>16</NoRestMotivationMalus>
+            <RestTaskList>TL_WORKER_REST_START</RestTaskList>
+            <RestIdleTaskList>TL_WORKER_IDLE_START</RestIdleTaskList>
+            <RestWait>3000</RestWait>
+			<WorkTimeChangeResidence>.5</WorkTimeChangeResidence>
             	
-            	<IdleTaskList>TL_WORKER_IDLE</IdleTaskList> <!-- for normal idling -->
-            	
-            	<LeaveTaskList>TL_WORKER_LEAVE</LeaveTaskList>
-            	
-            	<InitialMotivation>100</InitialMotivation>
-            	<MotivationThresholdSad>70</MotivationThresholdSad>
-            	<MotivationThresholdAngry>40</MotivationThresholdAngry>
-            	<MotivationThresholdLeave>10</MotivationThresholdLeave>
-            	
-				<RegularPay>15</RegularPay>
-				<NoPayMotivationMalus>31</NoPayMotivationMalus>
+            <IdleTaskList>TL_WORKER_IDLE</IdleTaskList>
+
+			<WorkTimeChangeCamp>.1</WorkTimeChangeCamp>
 			
+			<WorkTimeMaxChangeFarm>100</WorkTimeMaxChangeFarm>
+			<WorkTimeMaxChangeResidence>400</WorkTimeMaxChangeResidence>
+			
+            <LeaveTaskList>TL_WORKER_LEAVE</LeaveTaskList>
 		</Logic>
 	</Behavior>
 
@@ -91,7 +96,7 @@
 	<Behavior>
 		<Logic classname="GGL::CCamperBehaviorProperties">
 			<Class>GGL::CCamperBehavior</Class>
-			<Range>2000</Range>
+			<Range>5000</Range>
 		</Logic>
 	</Behavior>
 	
@@ -99,6 +104,33 @@
 		<Logic classname="GGL::CGLBehaviorPropsDying">
 			<Class>GGL::CGLBehaviorDying</Class>
 			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CWorkerAlarmModeBehaviorProps">
+			<Class>GGL::CWorkerAlarmModeBehavior</Class>
+			<GoToDefendableBuildingTaskList>TL_WORKER_GO_TO_DEFENDABLE_BUILDING</GoToDefendableBuildingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		<Logic classname="GGL::CWorkerFleeBehaviorProps">
+			<Class>GGL::CWorkerFleeBehavior</Class>
+			<FlightTaskList>TL_WORKER_FLEE</FlightTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>100</BasePriority>
 		</Logic>
 	</Behavior>
 </root>

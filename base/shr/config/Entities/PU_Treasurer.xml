@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+				<Model>PU_Treasurer</Model> 
+				<Model2>PU_TreasurerCarry</Model2>     
+				<Anim>PU_Treasurer_Walk</Anim>
+        		<Anim>PU_Treasurer_Idle1</Anim>
+				<Anim>PU_Treasurer_Idle2</Anim>
+				<Anim>PU_Treasurer_Idle3</Anim>
+				<Anim>PU_Treasurer_Idle4</Anim>
+				<Anim>PU_Treasurer_Dying</Anim>
+				<Anim>PU_TreasurerCarry_Walk</Anim>
+				<DrawPlayerColor>True</DrawPlayerColor>		
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>
+		  <AccessCategory>AccessCategorySettler</AccessCategory>		
+		  <MaxHealth> 100 </MaxHealth>
+		  <ArmorClass>ArmorClassNone</ArmorClass> 
+		  <ArmorAmount>1</ArmorAmount>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <HeadSet/>
+		  <Hat/>
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <Exploration>18</Exploration>
+		  <Category>Worker</Category>
+		  
+			<!--Armor modifier-->
+        	<ModifyArmor>
+        		<Technology>T_Loom</Technology>
+        	</ModifyArmor>
+        	<!-- Speed Modifier-->
+        	<ModifySpeed>
+        		<Technology>T_Shoes</Technology>
+        	</ModifySpeed>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+				  <Class>GGL::CGLBehaviorAnimationEx</Class>		
+    				<!-- animation to be used when entity is suspended -->
+				  <SuspensionAnimation>PU_Treasurer_Idle1</SuspensionAnimation>
+				  <AnimSet>SET_TREASURER</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+				  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CSettlerMovement</Class>
+			  <Speed>320</Speed>
+			  <RotationSpeed>15</RotationSpeed>
+			  <MoveIdleAnim>PU_Treasurer_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+				  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CWorkerBehaviorProps">
+			  <Class>GGL::CWorkerBehavior</Class>
+				
+				  <WorkTaskList>TL_TREASURER_WORK_START</WorkTaskList>				
+				  <WorkIdleTaskList>TL_WORKER_IDLE_START</WorkIdleTaskList> 
+				  <WorkWaitUntil>15000</WorkWaitUntil>
+				<WorkTimeChangeWork>-50</WorkTimeChangeWork>
+				<ExhaustedWorkMotivationMalus>0.2</ExhaustedWorkMotivationMalus>
+      		
+				<EatTaskList>TL_WORKER_EAT_START</EatTaskList>
+				<EatIdleTaskList>TL_WORKER_IDLE_START</EatIdleTaskList>
+		      	<EatWait>2000</EatWait> 
+				<WorkTimeChangeFarm>.7</WorkTimeChangeFarm>
+		      	
+    			<RestTaskList>TL_WORKER_REST_START</RestTaskList>
+    			<RestIdleTaskList>TL_WORKER_IDLE_START</RestIdleTaskList> 
+    			<RestWait>3000</RestWait>
+				<WorkTimeChangeResidence>.5</WorkTimeChangeResidence>
+				
+				<WorkTimeChangeCamp>.1</WorkTimeChangeCamp>
+      		
+			  <WorkTimeMaxChangeFarm>100</WorkTimeMaxChangeFarm>
+			    <WorkTimeMaxChangeResidence>400</WorkTimeMaxChangeResidence>
+            	
+    			<LeaveTaskList>TL_WORKER_LEAVE</LeaveTaskList>
+            	
+				<AmountResearched>1.5</AmountResearched>
+            	
+            	<ResourceToRefine>GoldRaw</ResourceToRefine>
+            	<TransportAmount>5</TransportAmount>
+            	<TransportModel>PU_TreasurerCarry</TransportModel>
+            	<TransportAnim>PU_TreasurerCarry_Walk</TransportAnim>
+		  </Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+				  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CCamperBehaviorProperties">
+				  <Class>GGL::CCamperBehavior</Class>
+				  <Range>5000</Range>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+				  <Class>GGL::CGLBehaviorDying</Class>
+				  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CWorkerAlarmModeBehaviorProps">
+	        <Class>GGL::CWorkerAlarmModeBehavior</Class>
+	        <GoToDefendableBuildingTaskList>TL_WORKER_GO_TO_DEFENDABLE_BUILDING</GoToDefendableBuildingTaskList>
+	    </Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+	    <Logic classname="GGL::CWorkerFleeBehaviorProps">
+	        <Class>GGL::CWorkerFleeBehavior</Class>
+	        <FlightTaskList>TL_WORKER_FLEE</FlightTaskList>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>100</BasePriority>
+	    </Logic>
+	</Behavior>
+
+</root>

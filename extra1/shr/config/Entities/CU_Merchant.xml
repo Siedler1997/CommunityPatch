@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_Trader</Model> <!-- must be changed when proper model available -->
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>PU_Trader_Walk</Anim>
+        <Anim>PU_Trader_Idle1</Anim>
+		<Anim>PU_Trader_Idle2</Anim>
+		<Anim>PU_Trader_Idle3</Anim>
+		<Anim>PU_Trader_Idle4</Anim>
+		<Anim>PU_Trader_Idle5</Anim>
+		<Anim>PU_Trader_Dying</Anim>
+		<Anim>PU_Trader_Talk1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth>100</MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat></Hat>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<Exploration>18</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>1</ArmorAmount>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<AnimSet>SET_CU_TRADER</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>320</Speed>
+			<RotationSpeed>15</RotationSpeed>
+			<MoveTaskList>TL_NPC_WALK</MoveTaskList> 
+			<MoveIdleAnim>PU_Trader_Idle1</MoveIdleAnim> 
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+<!--	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>-->
+	<Behavior>
+		<Logic classname="GGL::CSettlerMerchantBehaviorProps">
+			<Class>GGL::CSettlerMerchantBehavior</Class>
+			<InitTaskList>TL_TRADER_INIT</InitTaskList>
+			<MoveOutTaskList>TL_TRADER_MOVEOUT</MoveOutTaskList>
+			<MoveInTaskList>TL_TRADER_MOVEIN</MoveInTaskList>
+		</Logic>
+	</Behavior>
+</root>

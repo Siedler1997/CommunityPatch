@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>GD::CDisplaySettler</Class>
+		  <Model>CU_PoleArmIdle</Model> 
+		  <DrawPlayerColor>True</DrawPlayerColor>		
+		  <Anim>PU_LeaderPoleArm3_Walk</Anim>
+		  <Anim>PU_LeaderPoleArm3_Run1</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle1</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle2</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle3</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle4</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle5</Anim>
+		  <Anim>PU_LeaderPoleArm3_Idle6</Anim>
+		  <Anim>PU_LeaderPoleArm3_Dying1</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		  <Class>GGL::CSettler</Class>	
+		  <AccessCategory>AccessCategorySettler</AccessCategory>			
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+       
+		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		  <MaxHealth>200</MaxHealth>
+		  <Exploration>20</Exploration>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount>
+		  <DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_SoftArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PaddedArcherArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_LeatherArcherArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+	</Logic>
+	<Behavior>
+		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
+			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>PU_LeaderPoleArm3_Idle1</SuspensionAnimation>			
+			  <AnimSet>SET_LEADERPOLEARM3</AnimSet>
+		  </Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CMovementBehaviorProps">
+			  <Class>GGL::CLeaderMovement</Class>
+			  <Speed>360</Speed>
+			  <RotationSpeed>30</RotationSpeed>
+			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>PU_LeaderPoleArm3_Idle1</MoveIdleAnim>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> 
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CGLBehaviorPropsDying">
+			  <Class>GGL::CGLBehaviorDying</Class>
+			  <DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
+		</Logic>
+	</Behavior>
+
+
+</root>

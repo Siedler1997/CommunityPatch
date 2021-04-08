@@ -56,6 +56,10 @@
 		<ModifySpeed>
 			<Technology>T_Shoes</Technology>
 		</ModifySpeed>
+		
+		<ModifyExploration>
+			<Technology>T_Tracking</Technology>
+		</ModifyExploration>
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">

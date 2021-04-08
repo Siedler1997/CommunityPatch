@@ -45,11 +45,15 @@
 		+ verursachen etwas weniger Schaden (idR. -2 Punkte)
 		+ bekommen durch 'Meisterschütze' einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
 	* NPCs (Zivilisten)
-		+ können sterben
+		+ können wirklich sterben
 			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
 			/ verschwinden wirklich nach ihrem Ableben
 		+ Zeigen im Siedler-Menü von Gebäuden kein weißes Quadrat mehr, sondern ein Fragezeichen
 		+ Statthalter Kadir verwendet in der Nebelreich-Mission 'Geld oder Leben' sein ursprünglich angedachtes Design
+		+ haben einen Lebensbalken
+		+ haben bessere Stats
+			/ mehr Lebenspunkte (idR. 100)
+			/ höhere Sichtweite
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
@@ -96,8 +100,14 @@
 	* Militärische Einheiten
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
-			/ Milizen profitieren von jenen Technologien, die auch Leibeigene betreffen
-			/ Milizen haben das AudioFeedback von Leibeigenen
+			/ Leibeigene 
+				- haben einen Rüstungspunkt mehr (=1)
+				- haben 50 Lebenspunkte weniger (=150)
+				- bewegen sich etwas langsamer
+			/ Milizen 
+				- haben einen Rüstungspunkt mehr (=2)
+				- profitieren von jenen Technologien, die auch Leibeigene betreffen
+				- Milizen haben das AudioFeedback von Leibeigenen
 		+ Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			/ Berittene Bogenschützen (Stufe 1) kosten Holz
 			/ Berittene Armbrustschützen (Stufe 2) kosten Eisen
@@ -111,7 +121,7 @@
 			/ Schwere Scharfschützen zielen erheblich besser
 		+ Diebe und Kundschafter 
 			/ geben ihre persönlichen FunnyComments zum Besten
-			/ profitieren von 'Webstuhl' und 'Hochwertige Schuhe'
+			/ profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 		+ Schwertkämpfer haben einen eigenen Kampf-Sound
 	* Helden
 		+ haben (je nach Waffe) anderen Kampf-Sound
@@ -132,37 +142,37 @@
 		+ Dario
 			/ Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			/ Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
-				* PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
-				* PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
+				- PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
+				- PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
 			/ Bei Verwendung von 'Falkensicht' gibt Dario ein Audio-Feedback zurück
 			/ In den AddOns wird bei seiner Königs-Version (PU_Hero1c) die Fähigkeit 'Falkenauge' durch 'Schild des Königs' ersetzt
-				* Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
-				* reduziert zugleich Angriff jener Einheiten auf 50%
-				* Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
+				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
+				- reduziert zugleich Angriff jener Einheiten auf 50%
+				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
 		+ Drake 
 			/ hat einen Rüstungspunkt weniger (=3)
 			/ hat 4 Schadenpunkte weniger (=24)
 			/ seine Fähigkeit 'Feuerkraft' betrifft auch
-				* Ari 
-				* Kanonen
-				* Bogen-Banditen
-				* Speerwerfer
+				- Ari 
+				- Kanonen
+				- Bogen-Banditen
+				- Speerwerfer
 		+ Varg 
 			/ hat einen Rüstungspunkt weniger (=3)
 			/ seine Wölfe
-				* haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
-				* werden zu 3. beschworen (vorher: 2)
-				* verlangen keinen Sold
-				* sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
-				* geben Audio-Feedback
-				* sind nicht von Helias konvertierbar
+				- haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
+				- werden zu 3. beschworen (vorher: 2)
+				- verlangen keinen Sold
+				- sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
+				- geben Audio-Feedback
+				- sind nicht von Helias konvertierbar
 			/ seine Fähigkeit 'Berserkerwut'
-				* hält für 1:00 Min (vorher: 40 Sek.)
-				* betrifft auch Verbündete
-				* Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
-				* wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
-				* bewirkt keine einmalige HP-Regeneration mehr
-				* erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
+				- hält für 1:00 Min (vorher: 40 Sek.)
+				- betrifft auch Verbündete
+				- Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
+				- wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
+				- bewirkt keine einmalige HP-Regeneration mehr
+				- erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
 		+ Aris Banditen
 			/ werden zu 5. beschworen (vorher: 3)
 			/ haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
@@ -174,13 +184,13 @@
 		+ Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
 		+ Helias
 			/ seine Fähigkeit 'Segnung' 
-				* erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
-				* heilt Betroffene um 25% ihrer maximalen HP
+				- erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
+				- heilt Betroffene um 25% ihrer maximalen HP
 			/ Helias Bekehrung
-				* Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
-				* benötigt weniger Zeit
-				* kann auf etwas größerer Distanz gestartet werden
-				* kann über etwas größere Distanz gehalten werden
+				- Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
+				- benötigt weniger Zeit
+				- kann auf etwas größerer Distanz gestartet werden
+				- kann über etwas größere Distanz gehalten werden
 		+ Yukis 'Feuerwerk der Furcht'
 			/ Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
 			/ ist identisch mit den Versionen von Dario und Kerberos
@@ -219,6 +229,7 @@
 			/ gilt auch für Pilgrims Kanone und Salims Falle
 		+ Alle Helden haben den Helden-Selektionsring
 		+ Alle Militäreinheiten haben den gleichen Einheiten-Selektionsring
+		+ AddOn-Zivilisten haben alle den ridhtigen Zivilisten-Selektionsring
 	* Formations-Buttons
 		+ stehen auch bei selektierter Kavallerie zur Verfügung
 		+ verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
@@ -284,7 +295,7 @@
 		+ Der Reiter 'Spieler' ist reaktiviert
 			/ Spielername kann geändert werden
 			/ Das Geschlecht kann angegeben werden
-				* Die Wahl beeinflusst nur so Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
+				- Die Wahl beeinflusst nur so Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
 		+ Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
@@ -338,6 +349,15 @@
 		+ Der Drache ist theoretisch als 'CU_Dragon' nutzbar
 		+ Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
 		+ Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
+		+ Der Soldat 'CU_LeaderOutlaw1' (Räuber) mit dem Aussehen von Aris Räuber
+		+ 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
+	* NPCs können vom Spieler normal kontrolliert werden
+		+ einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
+		+ auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
+			/ können nicht kämpfen
+			/ reagieren nicht auf Angriffe
+		+ Der Selektionsring ist der gleiche wie bei normalen Arbeitern, nur ggf. etwas größer
+		+ sie werden, je nach Typ, von zivilen oder militärischen Technologien beeinflusst
 	* Söldnerquartiere und Tech-Trader erlauben bis zu 6 Angebote
 	* Der Held 'PU_Hero1' sieht aus wie Dovbar
 		+ inkl. Find-Button
@@ -429,19 +449,20 @@
 
 
 - ToDos:
-	* LightBricks-Technologie(?)
+	* Technologien
+		+ LightBricks
+		+ PickAxe
+		+ LevyTaxes
+	* Dombaustelle
+		+ Working-Tasklist optimieren
+		+ Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 	* (theoretisch) nutzbare Wettermaschinen
-	* NPCs 
-		+ erhöhte Lebenspunkte
-		+ erhöhte Sichtweite
-		+ beeinflusst von zivilen Techs
-		+ mit Lebensbalken
-	* Helden-Summorings als eigene Entities
 	* Raiders:
 		+ GetPlayer-Error (Z. 2104)
 		+ Zuteilung per unique Id
 	* FunFacts im LoadingScreen
 		+ mehr davon
+		+ besser geschrieben
 		+ auf Englisch übersetzen
 	* Rand-Clipping bei Briefing-Minimap entfernen 
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
@@ -449,7 +470,7 @@
 		+ Wasteland-Dörfer: Namen im Auftragsbuch
 		+ Goldhaufen (wenige!)
 		+ Wolfsrudel
-		+ AddOn-Units (Bogen-Bandits, Veteranen, Schafe, Wölfe)
+		+ AddOn-Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
 		+ Varg
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
@@ -480,6 +501,8 @@
 		+ Varg
 		+ Bogen-Banditen-Hauptmänner
 		+ Nebelkrieger-Hauptmänner
+		+ Leonardos Assistent
+		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
 	* AeK-Soundtrack bei Installation kopieren
 	* Organisatorisches

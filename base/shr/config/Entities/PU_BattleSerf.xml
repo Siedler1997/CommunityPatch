@@ -36,7 +36,7 @@
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		<Exploration>24</Exploration>
 		<ArmorClass>ArmorClassLeather</ArmorClass>
-		<ArmorAmount>1</ArmorAmount> 
+		<ArmorAmount>2</ArmorAmount> 
 		<DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>0</ExperiencePoints>
@@ -50,6 +50,7 @@
 		<ModifyArmor>
 			<Technology>T_Loom</Technology>
 		</ModifyArmor>
+		
 		<!-- Speed Modifier -->
 		<ModifySpeed>
 			<Technology>T_Shoes</Technology>

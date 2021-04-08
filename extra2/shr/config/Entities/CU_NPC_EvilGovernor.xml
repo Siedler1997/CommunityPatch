@@ -3,26 +3,42 @@
 	<Display classname="ED::CDisplayEntityProps">
 		<Class>GD::CDisplaySettler</Class>
 		<Model>CU_NPC_EvilGovernor</Model>
-        <DrawPlayerColor>True</DrawPlayerColor>
-		  <Anim>CU_NPC_EvilGovernor_Walk</Anim>
-    	  <Anim>CU_NPC_EvilGovernor_Idle1</Anim>
-		  <Anim>CU_NPC_EvilGovernor_Idle2</Anim>
-		  <Anim>CU_NPC_EvilGovernor_Idle3</Anim>
-		  <Anim>CU_NPC_EvilGovernor_Idle4</Anim>
-		  <Anim>CU_NPC_EvilGovernor_Dying</Anim>
-          <Anim>CU_NPC_EvilGovernor_Talk1</Anim>           
-          <Anim>CU_NPC_EvilGovernor_Talk2</Anim>
+		<DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>CU_NPC_EvilGovernor_Walk</Anim>
+		<Anim>CU_NPC_EvilGovernor_Idle1</Anim>
+		<Anim>CU_NPC_EvilGovernor_Idle2</Anim>
+		<Anim>CU_NPC_EvilGovernor_Idle3</Anim>
+		<Anim>CU_NPC_EvilGovernor_Idle4</Anim>
+		<Anim>CU_NPC_EvilGovernor_Dying</Anim>
+		<Anim>CU_NPC_EvilGovernor_Talk1</Anim>
+		<Anim>CU_NPC_EvilGovernor_Talk2</Anim>
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		<Class>GGL::CSettler</Class>
-		<AccessCategory>AccessCategorySettler</AccessCategory>	
-		<MaxHealth> 50 </MaxHealth>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth>100</MaxHealth>
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-        	<Hat></Hat>
+		<Hat></Hat>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		<Exploration>10</Exploration>
+		<Exploration>18</Exploration>
 		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>1</ArmorAmount>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier -->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
 
 	</Logic>
 	<Behavior>
@@ -40,8 +56,8 @@
 			<Class>GGL::CSettlerMovement</Class>
 			<Speed>320</Speed>
 			<RotationSpeed>15</RotationSpeed>
-		<MoveTaskList>TL_NPC_WALK</MoveTaskList> 
-		<MoveIdleAnim>CU_NPC_EvilGovernor_Idle1</MoveIdleAnim>
+			<MoveTaskList>TL_NPC_WALK</MoveTaskList>
+			<MoveIdleAnim>CU_NPC_EvilGovernor_Idle1</MoveIdleAnim>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorMovement</Class>
@@ -57,6 +73,39 @@
 		<Logic classname="GGL::CGLBehaviorPropsDying">
 			<Class>GGL::CGLBehaviorDying</Class>
 			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
 		</Logic>
 	</Behavior>
 </root>

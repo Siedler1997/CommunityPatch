@@ -35,9 +35,9 @@
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>
-		  <MaxHealth> 200 </MaxHealth>
-		  <ArmorClass>ArmorClassNone</ArmorClass>
-		  <ArmorAmount>0</ArmorAmount>
+		  <MaxHealth> 150 </MaxHealth>
+		  <ArmorClass>ArmorClassJerkin</ArmorClass>
+		  <ArmorAmount>1</ArmorAmount>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Category>Serf</Category>
@@ -80,7 +80,7 @@
 	<Behavior>
 		  <Logic classname="EGL::CMovementBehaviorProps">
 			  <Class>GGL::CLeaderMovement</Class>
-			  <Speed>400</Speed>
+			  <Speed>360</Speed>
 			  <RotationSpeed>30</RotationSpeed>
 			  <MoveTaskList>TL_SERF_WALK</MoveTaskList> 
 			  <MoveIdleAnim>PU_Serf_Idle1</MoveIdleAnim>

@@ -180,7 +180,6 @@
     	<Entity>CU_Barbarian_SoldierClub2</Entity>
 
 
-    	<!--Entity>CU_LeaderOutlaw1</Entity-->
     	<Entity>CU_Serf</Entity>
     	<Entity>CU_Johannes</Entity>
     	<Entity>CU_SmelterIdle</Entity>
@@ -1044,6 +1043,7 @@
 	-->
 	<Entity>CB_Grange</Entity>
 	<Entity>CU_Dragon</Entity>
+	<Entity>CU_LeaderOutlaw1</Entity>
 	<Entity>XD_Gold1</Entity>
 	<Entity>XD_WreckedBoat01</Entity>
 	<Entity>XD_WreckedBoat02</Entity>

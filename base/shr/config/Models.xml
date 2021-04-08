@@ -283,13 +283,15 @@
   </Model>
 
   <Model id="CU_Leonardo">
-    <Effect>SettlerPlayerColorSpecular</Effect>
+	  <SelectionRadius>65</SelectionRadius>
+	  <Effect>SettlerPlayerColor</Effect>
+	  <SelectionTexture>Selection_civilian</SelectionTexture>
   </Model>
 
   <Model id="CU_RegentDovbar">
-    <Effect>SettlerPlayerColorSpecular</Effect>
-	<SelectionRadius>100</SelectionRadius>
-	<SelectionTexture>Selection_hero</SelectionTexture>
+	  <SelectionRadius>80</SelectionRadius>
+	  <Effect>SettlerPlayerColor</Effect>
+	  <SelectionTexture>Selection_civilian</SelectionTexture>
   </Model>
 
   <Model id="PU_Alchemist">
@@ -2911,9 +2913,70 @@
 		<SelectionRadius>100</SelectionRadius>
 		<SelectionTexture>Selection_hero</SelectionTexture>
 	</Model>
+	<Model id="CU_BishopOfCrawford">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Garek">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_GCBlackKnight">
+		<SelectionRadius>80</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Hermit">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_NPC_Major_Barmecia">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_NPC_Major_Cleycourt">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Princess">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Sheep1">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Sheep2">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="CU_Sheep3">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="PU_Hero1">
+		<Effect>SettlerPlayerColorSpecular</Effect>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>100</SelectionRadius>
+		<SelectionTexture>Selection_hero</SelectionTexture>
+	</Model>
 	<Model id="PU_Hero3_Foundation1">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 		<OcclusionReceiver>True</OcclusionReceiver>
+	</Model>
+	<Model id="PU_Travelling_Salesman">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
 	</Model>
 	<Model id="SalimTrapPlayer">
 		<SelectionTexture>Selection_Building</SelectionTexture>

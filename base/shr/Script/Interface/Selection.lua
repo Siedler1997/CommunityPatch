@@ -66,9 +66,10 @@ function GameCallback_GUI_SelectionChanged()
 	end
 	
 	-- Is selected entity a serf?
-	if Logic.IsSerf( EntityId ) == 1 then		
-
+	if Logic.IsSerf( EntityId ) == 1 then	
+		if EntityType == Entities.PU_Serf then
 			FunnyComment = Sounds.VoicesSerf_SERF_FunnyComment_rnd_01
+		end
 			
 			local OnlySerfsSelected = 1
 			

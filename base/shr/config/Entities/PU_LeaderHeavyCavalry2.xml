@@ -116,7 +116,6 @@
 		</Display>
 	</Behavior>
 	<Behavior> 
-    
 		  <Logic classname="EGL::CGLEBehaviorProps">
 			  <Class>GGL::CBehaviorWalkCommand</Class>
 		</Logic>

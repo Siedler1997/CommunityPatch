@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>PU_Smelter</Model> <!-- must be changed when proper model available -->
+                <DrawPlayerColor>True</DrawPlayerColor>
+		<Anim>PU_Smelter_Walk</Anim>
+                <Anim>PU_Smelter_Idle1</Anim> 
+                <Anim>PU_Smelter_Idle2</Anim> 
+                <Anim>PU_Smelter_Idle3</Anim> 
+                <Anim>PU_Smelter_Idle4</Anim>
+                <Anim>PU_Smelter_Dying</Anim> 
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>
+		<MaxHealth>100</MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Hat></Hat>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<Exploration>18</Exploration>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+
+		<ArmorClass>ArmorClassNone</ArmorClass>
+		<ArmorAmount>1</ArmorAmount>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_Loom</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier -->
+		<ModifySpeed>
+			<Technology>T_Shoes</Technology>
+		</ModifySpeed>
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>PU_Smelter_Idle1</SuspensionAnimation>
+			<AnimSet>SET_SMELTER</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>320</Speed>
+			<RotationSpeed>15</RotationSpeed>
+		<MoveTaskList>TL_NPC_WALK</MoveTaskList> 
+		<MoveIdleAnim>PU_Smelter_Idle1</MoveIdleAnim>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
+		</Logic>
+	</Behavior>
+</root>
