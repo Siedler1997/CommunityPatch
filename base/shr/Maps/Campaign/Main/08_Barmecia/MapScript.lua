@@ -74,7 +74,7 @@ function Mission_InitPlayerColorMapping()
  	-- set player colors
 	
 		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR1)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR2)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, BARMECIA_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, PLAYER_FRIEND_COLOR)	
@@ -180,19 +180,26 @@ function Mission_FirstMapAction()
 		DestroyEntity("vc_empty1")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
 
-		--[[
-		local vcpos2 = GetPosition("vc_empty2")
-		DestroyEntity("vc_empty2")
-		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos2.X,vcpos2.Y,270,0)
-		
-		local vcpos3 = GetPosition("vc_empty3")
-		DestroyEntity("vc_empty3")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
-		--]]
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = 2, ramount = 6})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = 3, ramount = 9})
 	end
+	local bossID1 = SetEntityName(AI.Entity_CreateFormation(5,Entities.CU_LeaderOutlaw1,0,0,4300,19600,0,0,3,0), "kidnapper_boss")
+	local bossID2 = SetEntityName(AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,47900,18800,0,0,3,0), "robber_boss")
+	LookAt("kidnapper_boss", "campfire_kidnapper")
+	LookAt("robber_boss", "campfire_robber")
+
+	LookAt("TraderMarket1", "campfire_kidnapper")
+
+	--StartSimpleHiResJob("GetDarioPos")
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
-
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
 
 function CreateDummyBriefing(_Callback, _Position)
 

@@ -2,7 +2,8 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		<Class>ED::CDisplayBuilding</Class>
-		<Model>PB_Weathermachine</Model>		
+		<Model>PB_Weathermachine_Activated</Model>
+		<Anim>PB_Weathermachine_Activated_600</Anim>	
 	</Display>
 	<Logic classname="GGL::CGLBuildingProps">
 		<Class>GGL::CBuilding</Class>
@@ -16,6 +17,23 @@
 		<Worker></Worker>
         <MaxWorkers>0</MaxWorkers>
         <InitialMaxWorkers>0</InitialMaxWorkers>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+
+
+
+		<!-- Exploration-->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+		
 		<Upgrade>
 			<Category>Weathermachine</Category>
 		</Upgrade>

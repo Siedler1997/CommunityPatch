@@ -96,7 +96,7 @@ function Mission_InitPlayerColorMapping()
 	-- set player colors
 	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, PLAYER_FRIEND_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, ENEMY_COLOR1)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, BARBARIAN_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
@@ -200,10 +200,21 @@ function Mission_FirstMapAction()
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
+
+		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 4, ramount = 10})		
+		RaidersCreate({player = 5, pos = "rudelpos2", revier = 3000, range = 4000, samount = 4, ramount = 12})
 	end
-	--Tools.ExploreArea(-1, -1, 900)
+
+	StartSimpleHiResJob("GetDarioPos")
+	Tools.ExploreArea(-1, -1, 900)
 end
 
+--
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--
 
 function StartOldCutscene()
 	--Briefing	

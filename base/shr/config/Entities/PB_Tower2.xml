@@ -10,14 +10,17 @@
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <UpgradeSite>ZB_UpgradeSiteTower1</UpgradeSite>
-		  <MaxHealth>1200</MaxHealth>
+		  <MaxHealth>1000</MaxHealth>
 		  <ArmorClass>ArmorClassFortification</ArmorClass> 
-		  <ArmorAmount>6</ArmorAmount>
+		  <ArmorAmount>4</ArmorAmount>
       <Category>MilitaryBuilding</Category>
 		  <Category>Military</Category>
 		  
 		
   <!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
 		  <ModifyArmor>
 		  	<Technology>T_Masonry</Technology>		  
 		</ModifyArmor>     
@@ -30,7 +33,7 @@
 		
         <Upgrade>
 			  <Category>Tower</Category> 
-			  <Time>15.0</Time>  
+			  <Time>30.0</Time>  
             <Cost>
 				    <Clay>0</Clay>
 				    <Wood/>
@@ -41,7 +44,7 @@
             </Cost>
             <Type>PB_Tower3</Type>     			
 		  </Upgrade>
-		  <Exploration>35</Exploration>        
+		  <Exploration>33</Exploration>        
         <ConstructionInfo>
             <BuilderSlot>
                 <Position>

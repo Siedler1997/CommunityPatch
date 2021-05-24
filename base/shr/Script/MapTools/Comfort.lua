@@ -1856,7 +1856,8 @@ function ResearchAllMilitaryTechs(_PlayerId)
 
 	ResearchTechnology( Technologies.T_Loom, _PlayerId );
 	ResearchTechnology( Technologies.T_Shoes, _PlayerId );
-
+	
+	ResearchTechnology( Technologies.T_LightBricks, _PlayerId );
 	ResearchTechnology( Technologies.T_Masonry, _PlayerId );
 
 	ResearchTechnology( Technologies.T_BetterTrainingArchery, _PlayerId );
@@ -2057,10 +2058,12 @@ end
 function RaidersCreate(_data)
 	local dat = _data
 	if raid_table == nil then
-		raid_counter = 0
+		raid_counter = 1
 		raid_ccount = 0
 		raid_table = {}
 		StartSimpleJob("RaidersControl")
+	else
+		raid_counter = raid_counter + 1
 	end
 	local _runits = {}
 	local position = GetPosition(dat.pos)
@@ -2069,72 +2072,31 @@ function RaidersCreate(_data)
 		local eid = AI.Entity_CreateFormation(dat.player, Entities.CU_AggressiveWolf,0,0,(indpos.X),(indpos.Y),0,0,0,0);
 		table.insert(_runits, eid)
 	end
-	local _rdata = {r_spos = dat.pos, r_rev = dat.revier, r_range = dat.range, r_sam = dat.samount, r_resam = dat.ramount, r_fast = dat.fast_resp, r_cpos = position}
-	local raid_group = {raid_units = _runits, raid_data = _rdata}
+	local _rdata = {r_player = dat.player, r_spos = dat.pos, r_rev = dat.revier, r_range = dat.range, r_sam = dat.samount, r_resam = dat.ramount, r_cpos = position}
+	local raid_group = {raid_id = raid_counter, raid_units = _runits, raid_data = _rdata}
 	table.insert(raid_table, raid_group)
-	raid_counter = raid_counter + 1
 	return raid_counter
 end
 
+--Steuert die Wolfsrudel
 function RaidersControl()
 	raid_ccount = raid_ccount + 1
+	local raidersToDelete = { };
 	for i = 1, table.getn(raid_table) do
 		local rtable = raid_table[i]
-		if rtable ~= 0 then
+		if RaidersAreAlive(raid_table[i].raid_id) then	--Existiert das Rudel noch?
 			for w = 1, table.getn(rtable.raid_units) do	--entfernt tote Wölfe aus den Tabellen
 				if not IsExisting(rtable.raid_units[w]) then
 					table.remove(rtable.raid_units, w)
 				end
 			end
-			if table.getn(rtable.raid_units) == 0 then	--Gibt es keine Wölfe mehr ist Schluss
-				RaidersDelete(rtable)
-			end
-			--Vermehrung alle 60 Sek (bzw. 90 wegen reset von raid_ccount)
-			if raid_ccount == 60 or rtable.raid_data.r_fast == true then
-				if table.getn(rtable.raid_units) < rtable.raid_data.r_resam and table.getn(rtable.raid_units) >= 2 then	--Limit noch nicht erreicht? Mind. 2 Wölfe vorhanden?
-					local nachw_zahl = math.ceil(table.getn(rtable.raid_units)/4)	--Nachwuchs (aufgerundet) = aktuelle Anzahl / 4
-					if (table.getn(rtable.raid_units) + nachw_zahl) > rtable.raid_data.r_resam then
-						--Message("units: " .. table.getn(rtable.raid_units) + nachw_zahl)
-						--Message("maximum: " .. rtable.raid_data.r_resam)
-						nachw_zahl = nachw_zahl * 0 + rtable.raid_data.r_resam - table.getn(rtable.raid_units)	--Nachwuchs = Maximum - aktuelle Anzahl
-					end
-					--Message("nachw_zahl: " .. nachw_zahl)
-					for k = 1, nachw_zahl do
-						local adultp = GetPosition(rtable.raid_units[k])
-						local eid = AI.Entity_CreateFormation(GetPlayer(rtable.raid_units[k]), Entities.CU_AggressiveWolf,0,0,(adultp.X),(adultp.Y),0,0,0,0);
-						table.insert(rtable.raid_units, eid)
-					end
-				end
-			end
-			if raid_ccount == 90 then	--Positionswechsel
-				if type(rtable.raid_data.r_rev) == "table" then
-					local newpos_zahl = GetRandom(1, table.getn(rtable.raid_data.r_rev))
-					local newpos_anchor = GetPosition(rtable.raid_data.r_rev[newpos_zahl])
-					for k = 1, table.getn(rtable.raid_units) do
-						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
-						Attack(rtable.raid_units[k], indpos)
-					end
-					rtable.raid_data.r_cpos = newpos_anchor
-				else
---					local newpos_anchor
---					repeat
-					local newpos_anchor = Zufall_Kreis(GetPosition(rtable.raid_data.r_spos), rtable.raid_data.r_rev, true)
---					until SameSector(rtable.raid_units[1], newpos_anchor) == false
-					for k = 1, table.getn(rtable.raid_units) do
-						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
-						Attack(rtable.raid_units[k], indpos)
-					end
-					rtable.raid_data.r_cpos = newpos_anchor
-				end
-			end
-			if math.mod(raid_ccount, 5) == 0 then	--Kontrolle
-				local enemy = GetNearestEnemyInArea(GetPlayer(rtable.raid_units[1]), rtable.raid_data.r_cpos, rtable.raid_data.r_range)
+			
+			if math.mod(raid_ccount, 5) == 0 then	--Kontrolle (Angriff/Rückzug)
+				local enemy = GetNearestEnemyInArea(rtable.raid_data.r_player, rtable.raid_data.r_cpos, rtable.raid_data.r_range)
 				if enemy ~= false then
 					for k = 1, table.getn(rtable.raid_units) do
-						if Logic.GetCurrentTaskList(rtable.raid_units[k]) ~= nil then
-							if not string.find(Logic.GetCurrentTaskList(rtable.raid_units[k]), "TL_BATTLE_CLAW") then
-								Attack(rtable.raid_units[k], GetPosition(enemy))
-							end
+						if not string.find(Logic.GetCurrentTaskList(rtable.raid_units[k]), "TL_BATTLE_CLAW") then
+							Attack(rtable.raid_units[k], GetPosition(enemy))
 						end
 					end
 				else
@@ -2146,29 +2108,80 @@ function RaidersControl()
 					end
 				end
 			end
+			if math.mod(raid_ccount, 60) == 0 then	--Vermehrung (wenn noch mind. 2 Wölfe vorhanden)
+				if table.getn(rtable.raid_units) < rtable.raid_data.r_resam and table.getn(rtable.raid_units) >= 2 then	--Limit noch nicht erreicht? Mind. 2 Wölfe vorhanden?
+					local nachw_zahl = math.ceil(table.getn(rtable.raid_units)/4)										--Nachwuchs (aufgerundet) = aktuelle Anzahl / 4
+					if (table.getn(rtable.raid_units) + nachw_zahl) > rtable.raid_data.r_resam then
+						nachw_zahl = nachw_zahl * 0 + rtable.raid_data.r_resam - table.getn(rtable.raid_units)			--Nachwuchs = Maximum - aktuelle Anzahl
+					end
+					for k = 1, nachw_zahl do
+						local adultp = GetPosition(rtable.raid_units[k])
+						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, Entities.CU_AggressiveWolf,0,0,(adultp.X),(adultp.Y),0,0,0,0);
+						table.insert(rtable.raid_units, eid)
+					end
+				end
+			end
+			if math.mod(raid_ccount, 90) == 0 then	--Positionswechsel (Radius/Waypoints)
+				if type(rtable.raid_data.r_rev) == "table" then
+					local newpos_zahl = GetRandom(1, table.getn(rtable.raid_data.r_rev))
+					local newpos_anchor = GetPosition(rtable.raid_data.r_rev[newpos_zahl])
+					for k = 1, table.getn(rtable.raid_units) do
+						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
+						Attack(rtable.raid_units[k], indpos)
+					end
+					rtable.raid_data.r_cpos = newpos_anchor
+				else
+					local newpos_anchor = Zufall_Kreis(GetPosition(rtable.raid_data.r_spos), rtable.raid_data.r_rev, true)
+					for k = 1, table.getn(rtable.raid_units) do
+						local indpos = Zufall_Kreis(newpos_anchor, 500, true)
+						Attack(rtable.raid_units[k], indpos)
+					end
+					rtable.raid_data.r_cpos = newpos_anchor
+				end
+			end
+		else
+			table.insert(raidersToDelete, raid_table[i].raid_id)
 		end
 	end
-	if raid_ccount == 90 then
+	
+	if table.getn(raidersToDelete) > 0 then	--Entfernt "leere" Wolfsrudel aus dem table
+		for i = 1, table.getn(raidersToDelete) do
+			RaidersDelete(raidersToDelete[i])
+		end
+	end
+	
+	if raid_ccount == 180 then	--Setzt den Counter zurück, damit er keine utopischen Werte annimmt
 		raid_ccount = 0
 	end
 end
 
+--Gibt zurück, ob ein Rudel noch Wölfe enthält, also existent ist
 function RaidersAreAlive(_id)
-	if raid_table[_id] ~= 0 then
-		return true
-	else
-		return false
+	local alive = false;
+	for i = 1, table.getn(raid_table) do
+		if raid_table[i].raid_id == _id then
+			if table.getn(raid_table[i].raid_units) > 0 then
+				alive = true;
+			end
+		end
 	end
+	return alive;
 end
 
+--Entfernt das Rudel aus der Liste und tötet alle verbliebenen Wölfe (falls extern aufgerufen)
 function RaidersDelete(_id)
-	--Message("Delete")
-	--[[
-	for i = 1, table.getn(raid_table[_id].raid_units) do
-		DestroyEntity(raid_table[_id].raid_units[i])
+	for i = 1, table.getn(raid_table) do
+		if raid_table[i].raid_id == _id then
+			for k = 1, table.getn(raid_table[i].raid_units) do
+				if IsExisting(raid_table[i].raid_units[k]) then
+					--DestroyEntity(raid_table[i].raid_units[k])
+					SetHealth(raid_table[i].raid_units[k] ,0)
+				end
+			end
+			table.remove(raid_table,i)
+			return true;
+		end
 	end
-	--]]
-	raid_table[_id] = 0
 end
 
 -- Gibt den nächstgelegenen Gegner in der Nähe zurück

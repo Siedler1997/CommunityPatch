@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_SulfurMine3</Model>
+		  <Anim>PB_SulfurMine3_pit_down_600</Anim> 
+		  <Anim>PB_SulfurMine3_conveyor_602</Anim>	
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <Category>Workplace</Category>
+		  <Category>DefendableBuilding</Category>  
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <MaxHealth>1400</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount> 
+		  
+		
+  <!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		  <ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+		   		
+		
+  <!-- Exploration-->
+		  <ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+        <BuildOn>XD_SulfurPit1</BuildOn>
+        <Worker>PU_Miner</Worker>
+        <Category>SulfurSupplier</Category>
+        <MaxWorkers>7</MaxWorkers>
+        <InitialMaxWorkers>7</InitialMaxWorkers>
+		  <WorkTaskList>
+			  <Start>TL_MINER_SULFURMINE_WORK3_START</Start> 
+			  <Work>TL_MINER_SULFURMINE_WORK3</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+			  <Start>TL_MINER_SULFURMINE_WORK4_START</Start> 
+			  <Work>TL_MINER_SULFURMINE_WORK4</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+			  <Start>TL_MINER_SULFURMINE_WORK_INSIDE_START</Start> 
+			  <Work>TL_MINER_SULFURMINE_WORK_INSIDE</Work> 
+		</WorkTaskList>
+        <Exploration>30</Exploration>
+		  <Upgrade>
+			  <Category>SulfurMine</Category> 
+		</Upgrade>
+        <ConstructionInfo>
+            <BuilderSlot>
+                <Position>
+                    <X>700</X>
+                    <Y>400</Y>
+                </Position>
+                <Orientation>180</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>700</X>
+                    <Y>100</Y>
+                </Position>
+                <Orientation>180</Orientation>
+            </BuilderSlot>  
+            <BuilderSlot>
+                <Position>
+                    <X>-100</X>
+                    <Y>-500</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>                      
+            <BuilderSlot>
+                <Position>
+                    <X>-300</X>
+                    <Y>800</Y>
+                </Position>
+                <Orientation>290</Orientation>
+            </BuilderSlot>                      
+            <ConstructionSite>ZB_ConstructionSiteSulfurMine1</ConstructionSite>
+        </ConstructionInfo>
+        <ApproachPos>
+            <X>700</X>
+            <Y>550</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+		    <X>550</X>
+		    <Y>540</Y>		
+        </DoorPos>
+        <Blocked1>
+            <X>-370</X>
+            <Y>620</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>550</X>
+            <Y>-350</Y>
+        </Blocked2>
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+    <Behavior>
+        <Logic classname="GGL::CMineBehaviorProperties">
+            <Class>GGL::CMineBehavior</Class>
+            <AmountToMine>6</AmountToMine>
+        </Logic>
+    </Behavior>
+    
+    
+
+<!--AnSu: I will test if it is better to have all buildings as defender buildings-->
+    <Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>           
+            <Attachment>
+                <Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+                <Limit>10</Limit>
+            </Attachment>
+		</Logic>		 
+	</Behavior>
+    
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>15</NumDamageEffects>
+			  <NumDestroyEffects>13</NumDestroyEffects>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CUVAnimBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CUVAnimBehavior</Class>
+		</Display>
+	</Behavior>    
+   
+	<Behavior>
+	    <Logic classname="GGL::CDefendableBuildingBehaviorProps">
+	        <Class>GGL::CDefendableBuildingBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectSwitchBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectSwitchBehavior</Class>
+		</Display>
+	</Behavior>
+
+</root>

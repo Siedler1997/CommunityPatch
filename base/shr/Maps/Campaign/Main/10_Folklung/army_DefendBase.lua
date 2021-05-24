@@ -10,9 +10,13 @@ createArmyDefendBase = function()
 
 	if CP_Difficulty == 0 then
 		table.insert(ArmyDefendBase.spawnTypes, {Entities.CU_Barbarian_LeaderClub1, 4})
+		table.insert(ArmyDefendBase.spawnTypes, {Entities.CU_Barbarian_LeaderClub1, 4})
 	else
 		table.insert(ArmyDefendBase.spawnTypes, {Entities.CU_Barbarian_LeaderClub2, 8})
+		table.insert(ArmyDefendBase.spawnTypes, {Entities.CU_Barbarian_LeaderClub2, 8})
+		table.insert(ArmyDefendBase.spawnTypes, {Entities.PV_Cannon1, 4})
 	end
+
   ArmyDefendBase.endless = true
     
 	-- Attack parameter

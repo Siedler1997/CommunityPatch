@@ -14,6 +14,7 @@ CP_Difficulty = 0
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to initialize the diplomacy states
 function Mission_InitDiplomacy()
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 end
 
@@ -26,6 +27,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
 	Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
 	Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
@@ -158,7 +160,18 @@ function Mission_FirstMapAction()
 		local bosspos = GetPosition("KerberosCamp")
 		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
 		LookAt(bossID, "Dario")
+		
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = 2, ramount = 6})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = 4, ramount = 10})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

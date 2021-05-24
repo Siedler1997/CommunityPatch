@@ -285,6 +285,9 @@ function Mission_FirstMapAction()
 		for i = 1, 3 do
 			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
 		end
+		for i = 1, 5 do
+			ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
+		end
 		DestroyEntity("p5_vc1")
 		DestroyEntity("p5_vc2")
 		
@@ -299,9 +302,17 @@ function Mission_FirstMapAction()
 		local bosspos3 = GetPosition("enemyCastle")
 		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
 		LookAt(bossID3, "Helias")
+
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, samount = 2, ramount = 10})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = 2, ramount = 6})
+		RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = 3, ramount = 8})
+		RaidersCreate({player = 6, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 3500, samount = 2, ramount = 7})
+		RaidersCreate({player = 6, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 3500, samount = 2, ramount = 8})
+		--SetPosition("Dario", GetPosition(bossID3))
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
 
 
@@ -310,3 +321,10 @@ StartIntroPart2 = function()
 	StartCutscene("Cutscene1", startQuestTower1)
 
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

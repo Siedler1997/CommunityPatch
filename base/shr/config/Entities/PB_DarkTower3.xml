@@ -9,13 +9,16 @@
 		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
-		  <MaxHealth>1400</MaxHealth>
+		  <MaxHealth>1200</MaxHealth>
 		  <ArmorClass>ArmorClassFortification</ArmorClass> 
-		  <ArmorAmount>6</ArmorAmount>
+		  <ArmorAmount>5</ArmorAmount>
       <Category>MilitaryBuilding</Category>
 		  <Category>Military</Category>
 		  
 		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
 		<ModifyArmor>
 		  	<Technology>T_Masonry</Technology>		  
 		</ModifyArmor>     
@@ -28,7 +31,7 @@
         <Upgrade>
 			  <Category>DarkTower</Category> 			
 		</Upgrade>
-		  <Exploration>35</Exploration>        
+		  <Exploration>33</Exploration>        
         <ConstructionInfo>
             <BuilderSlot>
                 <Position>

@@ -4,12 +4,20 @@
 createArmyDefenders1 = function()
 
 	--	set up
+		local strength = 3
+		local experience = 0
+		local etype = Entities.CU_BlackKnight_LeaderMace1
+		if CP_Difficulty == 1 then
+			strength = 4
+			experience = HIGH_EXPERIENCE
+			etype = Entities.CU_BlackKnight_LeaderMace2
+		end
 
 		armyDefenders1						= {}
 	
 		armyDefenders1.player 				= 5
 		armyDefenders1.id					= 7
-		armyDefenders1.strength				= 3
+		armyDefenders1.strength				= strength
 		armyDefenders1.position				= GetPosition("spawn1")
 		armyDefenders1.rodeLength			= 4000
 		armyDefenders1.control				= {}
@@ -18,12 +26,6 @@ createArmyDefenders1 = function()
 		SetupArmy(armyDefenders1)
 	
 	--	create
-		local experience = 0
-		local etype = Entities.CU_BlackKnight_LeaderMace1
-		if CP_Difficulty == 1 then
-			experience = HIGH_EXPERIENCE
-			etype = Entities.CU_BlackKnight_LeaderMace2
-		end
 
 		local troopDescription = {
 		
@@ -41,6 +43,11 @@ createArmyDefenders1 = function()
 			troopDescription.leaderType = Entities.PU_LeaderBow1
 		else
 			troopDescription.leaderType = Entities.PU_LeaderBow2
+		end
+		EnlargeArmy(armyDefenders1,troopDescription)
+
+		if CP_Difficulty == 1 then
+			troopDescription.leaderType = Entities.PV_Cannon1
 		end
 		EnlargeArmy(armyDefenders1,troopDescription)
 	

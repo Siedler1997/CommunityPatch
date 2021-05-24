@@ -49,21 +49,16 @@ createArmyResources2 = function()
 			troopDescription.leaderType = Entities.PU_LeaderBow1
 			EnlargeArmy(armyResources2,troopDescription)
 
-			troopDescription.leaderType = Entities.CU_BanditLeaderSword1				
-			EnlargeArmy(armyResources2,troopDescription)
-
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 		else
 			troopDescription.experiencePoints = HIGH_EXPERIENCE
 			troopDescription.leaderType = Entities.PU_LeaderBow2
 			EnlargeArmy(armyResources2,troopDescription)
 
-			troopDescription.leaderType = Entities.CU_BanditLeaderSword2			
-			EnlargeArmy(armyResources2,troopDescription)
-
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 		end		
-			
+						
+		EnlargeArmy(armyResources2,troopDescription)
 		EnlargeArmy(armyResources2,troopDescription)
 	
 	--	job		

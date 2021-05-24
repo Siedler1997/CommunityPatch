@@ -3,16 +3,17 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MainMenu",
     "\\extra1",
     "\\extra1\\shr",
     "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\MainMenu",
     "\\extra2",
     "\\extra2\\shr",
     "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2\\shr\\script\\MainMenu"
   ],
-  "SelectedNode": "\\extra2\\shr\\script\\Interface\\InterfaceTools.lua",
+  "SelectedNode": "\\extra2\\shr\\script\\MainMenu\\LoadScreen.lua",
   "PreviewInSolutionExplorer": false
 }

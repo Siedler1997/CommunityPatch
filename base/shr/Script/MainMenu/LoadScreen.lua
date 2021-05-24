@@ -6,11 +6,6 @@ function LoadScreen_Init( _LoadSaveGameFlag, _MapName, _MapType, _MapCampaignNam
 	local PictureNumber = 1 + XGUIEng.GetRandom( 5 )
 	local PictureName = "data\\graphics\\textures\\gui\\mainmenu\\loadscreen0" .. PictureNumber .. ".png"
 	XGUIEng.SetMaterialTexture( "LoadScreenPic01", 0, PictureName )
-	
-	-- Set funfact
-	local FunFactNumber = 1 + XGUIEng.GetRandom( 18 )
-	local FunFactString = XGUIEng.GetStringTableText("LoadScreenTipps/LoadScreen_Header") .. ": @cr @cr "
-	XGUIEng.SetText("LoadScreen_RandomInfo", FunFactString .. XGUIEng.GetStringTableText("LoadScreenTipps/LoadScreen_Tipp" .. FunFactNumber))
 
 	-- Show load screen
 	XGUIEng.ShowAllSubWidgets( "Screens", 0 )
@@ -19,16 +14,21 @@ function LoadScreen_Init( _LoadSaveGameFlag, _MapName, _MapType, _MapCampaignNam
 	-- Set mouse
 	Mouse.CursorSet( 2 )
 		
-	-- Set headline
+	-- Set headline and text
 	-- Loading save game
 	if _LoadSaveGameFlag == 0 then
-		-- Nope: get map name
+		-- Nope: get map name and description
 		local MapNameString, MapDescString = Framework.GetMapNameAndDescription( _MapName, _MapType, _MapCampaignName )
 		XGUIEng.SetText( "LoadScreen_MapInfo", MapNameString )
+		XGUIEng.SetText( "LoadScreen_RandomInfo", MapDescString )
 	else
-		-- Yes: get save game description
+		-- Yes: get save game name and random info
 		local Description = Framework.GetSaveGameString( _MapName )
 		XGUIEng.SetText( "LoadScreen_MapInfo", Description )
+
+		local FunFactNumber = 1 + XGUIEng.GetRandom( 18 )
+		local FunFactString = XGUIEng.GetStringTableText("LoadScreenTipps/LoadScreen_Header") .. ": @cr @cr "
+		XGUIEng.SetText("LoadScreen_RandomInfo", FunFactString .. XGUIEng.GetStringTableText("LoadScreenTipps/LoadScreen_Tipp" .. FunFactNumber))
 	end
 
 	-- Set dev news

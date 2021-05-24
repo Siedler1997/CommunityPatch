@@ -2,6 +2,10 @@
 	* richten im Alarm-Modus etwas mehr Schaden an
 	* können stillgelegt werden (per Button im Siedler-Menü)
 	* Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	* profitieren von der neuen Technologie 'Leichte Ziegel'
+		+ wirkt analog zu 'Maurerhandwerk'
+		+ erhöht die Verteidigung von Gebäuden um 2 Punkte
+		+ erforschbar in der Ziegelbrennerei
 	* Non-Player-Buildings (Allgemein)
 		+ sind abreißbar und geben dabei symbolische 50 Taler
 		+ sind reparierbar
@@ -11,10 +15,6 @@
 		+ Arbeiter-Icons im Siedler-Menü zeigen Leibeigenen-Icons
 		+ Overhead-Arbeiter-Icons zeigen Minenarbeiter
 		+ 'Normale' Leibeigne bauen sie nun an passenderen Position mit besserer Blickrichtung
-	* Wohstätten
-		+ haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
-		+ sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
-		+ geben beim Abriss 150 Holz und 50 Steine
 	* Mauern 
 		+ sind deutlich solider
 		+ können repariert werden
@@ -26,14 +26,21 @@
 		+ verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
 		+ können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
 		+ profitieren von Maurerhandwerk und Stadtwache
+	* Ziergebäude
+		+ haben 100 Lebenspunkte weniger (=200)
+		+ profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
 	* Türme
-		+ haben die richtige ArmorClass -> solider gegen Schützen, empfindlicher gegen Artillerie
-		+ haben eine etwas höhere Sichtweite
+		+ haben die richtige ArmorClass -> solider gegen alles außer Artillerie
+		+ haben auf jeder Stufe 200 Lebenspunkte weniger (=800/1000/1200)
+		+ haben weniger und nach Stufe gestaffelte Verteidigung (=3/4/5)
+		+ Ausbau dauert doppelt so lange (=30 Sek.)
 		+ Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
-		+ Kanonentürme haben eine leicht erhöhte Angriffsreichweite
-		+ dunkle Türme
-			/ sind ausbaubar
-			/ werden im englischen wie normale Türme geschrieben (z.B. 'Cannon-Tower')
+		+ dunkle Türme sind ausbaubar
+	* Wohstätten
+		+ haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
+		+ sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
+		+ geben beim Abriss 150 Holz und 50 Steine
+		+ haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
 	* Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
 - Einheiten
 	* Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
@@ -49,7 +56,7 @@
 			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
 			/ verschwinden wirklich nach ihrem Ableben
 		+ Zeigen im Siedler-Menü von Gebäuden kein weißes Quadrat mehr, sondern ein Fragezeichen
-		+ Statthalter Kadir verwendet in der Nebelreich-Mission 'Geld oder Leben' sein ursprünglich angedachtes Design
+		+ Statthalter Kadir mit eigenem Design
 		+ haben einen Lebensbalken
 		+ haben bessere Stats
 			/ mehr Lebenspunkte (idR. 100)
@@ -70,7 +77,8 @@
 			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		+ Nebelkriegern 
 			/ Schaden an ihnen wird korrekt berechnet (fällt aber kaum auf)
-			/ Hauptmänner haben 100 Lebenspunkte (vorher: 50)
+			/ haben mehr Lebenspunkte (Hauptmänner: 150, Soldaten: 100)
+			/ haben einen Rüstungspunkt weniger (=1)
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
@@ -107,7 +115,7 @@
 			/ Milizen 
 				- haben einen Rüstungspunkt mehr (=2)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
-				- Milizen haben das AudioFeedback von Leibeigenen
+				- haben das AudioFeedback von Leibeigenen
 		+ Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			/ Berittene Bogenschützen (Stufe 1) kosten Holz
 			/ Berittene Armbrustschützen (Stufe 2) kosten Eisen
@@ -195,6 +203,7 @@
 			/ Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
 			/ ist identisch mit den Versionen von Dario und Kerberos
 		+ Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
+		+ Kala hat einen Rüstungspunkt weniger (=4)
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -295,11 +304,13 @@
 		+ Der Reiter 'Spieler' ist reaktiviert
 			/ Spielername kann geändert werden
 			/ Das Geschlecht kann angegeben werden
-				- Die Wahl beeinflusst nur so Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
-		+ Unter 'Extras sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
+				- Die Wahl beeinflusst nur Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
+		+ Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
-		+ Wenn eine Karte lädt, wird ein zufälliger Fakt eingeblendet bzw. eine Theroie angezeigt
+		+ Wenn eine Karte lädt
+			/ wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
+			/ wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
 	* Kampagnen-Maps modifiziert
 		+ Nutzloser Netzwerk-Button im Hauptmenü durch Tipps-Button ersetzt
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
@@ -346,7 +357,7 @@
 			+ hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
 		+ Deko-Objekte 'XD_WreckedBoat01' und 'XD_WreckedBoat02' (Bootsfracks)
 		+ Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
-		+ Der Drache ist theoretisch als 'CU_Dragon' nutzbar
+		+ Der Drache ist theoretisch als 'CU_Dragon' nutzbar (aber leider unsichtbar)
 		+ Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
 		+ Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
 		+ Der Soldat 'CU_LeaderOutlaw1' (Räuber) mit dem Aussehen von Aris Räuber
@@ -376,6 +387,7 @@
 	* Neue Effekte
 		+ FXExplosionBallista: Effekt, der beim Aufprall eines Ballistaturm-Geschosses erscheint
 		+ FXExplosionCannon: Effekt, der beim Aufprall eines Kaonenturm-Geschosses erscheint
+	* In den Files vorhandene Sounds sind per Script verfügbar (siehe Datei 'Sounds.xml')
 	* Die 'MapEditorTools' 
 		+ stehen auch im Hauptspiels zur Verfügung
 		+ Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
@@ -388,12 +400,17 @@
 	* Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
 		+ Ari (PU_Hero5)
 		+ Kanonen (alle Arten)
-		+ Bogen-Banditen (CU_BanditLeaderBow1)
+		+ Bogen-Banditen (CU_BanditLeaderBow1+2)
 		+ Speerwerfer (CU_Evil_LeaderSkirmisher1)
 	* Kanonen haben als SoldierType 'PV_Cannon1', was bei max. 0 Soldaten aber eig. irrelevant ist
 	* Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		+ Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
 	* Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
+	* LevyTaxes ist nun funktionsfähig
+		+ Button wird denoch ausgeblendet, da das Feature schwer zu balancen ist
+		+ kann mit Aufruf folgender Funktionen in der IPCM aktiviert werden
+			/ 'XGUIEng.ShowWidget("Levy_Duties",1)' im Hauptquartier
+			/ 'XGUIEng.ShowWidget("OP_Levy_Duties",1)' in Außenpopsten
 	* Der Aufruf von 'GDB.GetValue("Game\\Campaign_Difficulty")' gibt den Kampagnen-Schwierigkeitsgrad zurück
 		-> return: int Normal (0) oder Schwer (1)
 	* 6 unbenutzte Button-Texturen:
@@ -446,40 +463,35 @@
 		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
+	* NPCs belegen Plätze in Wohnhäuser/Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
+		+ Grund: in der Hinsicht zählen sie scheinbar als Arbeiter
 
 
 - ToDos:
-	* Technologien
-		+ LightBricks
-		+ PickAxe
-		+ LevyTaxes
-	* Dombaustelle
-		+ Working-Tasklist optimieren
-		+ Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
-	* (theoretisch) nutzbare Wettermaschinen
-	* Raiders:
-		+ GetPlayer-Error (Z. 2104)
-		+ Zuteilung per unique Id
+	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+		+ Wasteland-Dörfer: Namen im Auftragsbuch
+		+ Goldhaufen
+		+ Grange
+		+ Schiffswracks
+		+ Wolfsrudel
+		+ Neue Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
+		+ Varg
+		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
+		+ Testing
+	* Auftragsbuch-Highlight
+	* Kontrollierbare Schäferhunde
 	* FunFacts im LoadingScreen
 		+ mehr davon
 		+ besser geschrieben
 		+ auf Englisch übersetzen
+	* Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 	* Rand-Clipping bei Briefing-Minimap entfernen 
 	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
-	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
-		+ Wasteland-Dörfer: Namen im Auftragsbuch
-		+ Goldhaufen (wenige!)
-		+ Wolfsrudel
-		+ AddOn-Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
-		+ Varg
-		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
-		+ Testing
 	* Hauptmenü
 		+ MP-Window fixen
 		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
 	* Random(?) Crashs
 		+ erste 2 Verstärkungen in '03_Neighborhood'
-	* AddOn-Entities im Hauptspiel (je nach Bedarf)
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten

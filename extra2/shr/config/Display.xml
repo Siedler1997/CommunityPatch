@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <!-- Shadow properties -->
+
+  <ShadowBlur>False</ShadowBlur>
+  <ShadowRasterSize>64</ShadowRasterSize>
+  
+  <!-- The shadow strength is now defined in the ShadowDecal.fx file -->
+  <ShadowStrength>0.88</ShadowStrength>
+  
+  <!-- "Invalid position" color properties -->
+  
+  <InvalidPositionColorModulate>
+    <R>255</R>
+    <G> 31</G>
+    <B>  0</B>
+  </InvalidPositionColorModulate>
+
+  <InvalidPositionColorEmissive>
+    <R>32</R>
+    <G> 4</G>
+    <B> 0</B>
+  </InvalidPositionColorEmissive>
+
+  <!-- Fog of War strength -->
+  
+  <!-- Values must be in range 0 to 255  and should be a multiple of 16. -->
+  <FogOfWarNeverSeenLuminance>16</FogOfWarNeverSeenLuminance>
+  <FogOfWarSeenLuminance>128</FogOfWarSeenLuminance>
+    
+  <!-- Scale for selection for models with decal -->
+
+  <SelectionRadiusScaleForModelsWithDecal>0.75</SelectionRadiusScaleForModelsWithDecal>
+
+  <!-- Aura Properties -->
+  
+  <AuraRadius>200</AuraRadius>
+  <AuraHeight>20</AuraHeight>
+  <AuraTexture>Effects/aura_heal</AuraTexture>
+  
+  <!-- Acknowledgements -->
+  
+  <CommandAcknowledgementModel>YCommandAck</CommandAcknowledgementModel>
+  <CommandAcknowledgementDuration>1.5</CommandAcknowledgementDuration>
+
+  <!-- Player colors -->
+
+  <!-- Player 0 (Invalid) -->
+  <PlayerColor>
+    <R>  0</R>
+    <G>  0</G>
+    <B>  0</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>  0</R>
+    <G>  0</G>
+    <B>  0</B>
+  </MiniMapColor>
+  
+  <!-- Player 1 (First player) -->
+  <PlayerColor>
+    <R> 15</R>
+    <G> 64</G>
+    <B> 255</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R> 15</R>
+    <G> 64</G>
+    <B> 255</B>
+  </MiniMapColor>
+  
+  <!-- Player 2 -->
+  <PlayerColor>
+    <R>226</R>
+    <G>  0</G>
+    <B>  0</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>226</R>
+    <G>  0</G>
+    <B>  0</B>
+  </MiniMapColor>
+  
+  <!-- Player 3 -->  
+  <PlayerColor>
+    <R>235</R>
+    <G>255</G>
+    <B>53</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>235</R>
+    <G>255</G>
+    <B>53</B>
+  </MiniMapColor>
+  
+  <!-- Player 4 -->  
+  <PlayerColor>
+    <R>  0</R>
+    <G>235</G>
+    <B>209</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>  0</R>
+    <G>235</G>
+    <B>209</B>
+  </MiniMapColor>
+  
+  <!-- Player 5 -->
+  <PlayerColor>
+    <R> 252</R>
+    <G> 164</G>
+    <B> 39</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R> 252</R>
+    <G> 164</G>
+    <B> 39</B>
+  </MiniMapColor>
+  
+  <!-- Player 6 -->
+  <PlayerColor>
+    <R>178</R>
+    <G>  2</G>
+    <B>255</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>178</R>
+    <G>  2</G>
+    <B>255</B>
+  </MiniMapColor>
+
+  <!-- Player 7 -->
+  <PlayerColor>
+    <R>255</R>
+    <G>79</G>
+    <B>200</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>255</R>
+    <G>79</G>
+    <B>200</B>
+  </MiniMapColor>
+  
+  <!-- Player 8 -->
+  <PlayerColor>
+    <R>115</R>
+    <G>209</G>
+    <B> 65</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>115</R>
+    <G>209</G>
+    <B> 65</B>
+  </MiniMapColor>
+  
+    <!-- Player 9 -->
+  <PlayerColor>
+    <R>0</R>
+    <G>140</G>
+    <B> 2</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>0</R>
+    <G>140</G>
+    <B> 2</B>
+  </MiniMapColor>
+  
+      <!-- Player 10 -->
+  <PlayerColor>
+    <R>184</R>
+    <G>184</G>
+    <B> 184</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>184</R>
+    <G>184</G>
+    <B> 184</B>
+  </MiniMapColor>
+  
+        <!-- Player 11 -->
+  <PlayerColor>
+    <R>184</R>
+    <G>182</G>
+    <B> 90</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>184</R>
+    <G>182</G>
+    <B> 90</B>
+  </MiniMapColor>
+
+        <!-- Player 12 -->
+  <PlayerColor>
+    <R>136</R>
+    <G>136</G>
+    <B> 136</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>136</R>
+    <G>136</G>
+    <B> 136</B>
+  </MiniMapColor>
+
+        <!-- Player 13 -->
+  <PlayerColor>
+    <R>230</R>
+    <G>230</G>
+    <B> 230</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>230</R>
+    <G>230</G>
+    <B> 230</B>
+  </MiniMapColor>
+
+        <!-- Player 14 -->
+  <PlayerColor>
+    <R>57</R>
+    <G>57</G>
+    <B> 57</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>57</R>
+    <G>57</G>
+    <B> 57</B>
+  </MiniMapColor>
+
+        <!-- Player 15 -->
+  <PlayerColor>
+    <R>139</R>
+    <G>223</G>
+    <B> 255</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>139</R>
+    <G>223</G>
+    <B> 255</B>
+  </MiniMapColor>
+
+        <!-- Player 16 -->
+  <PlayerColor>
+    <R>255</R>
+    <G>150</G>
+    <B> 214</B>
+  </PlayerColor>
+  <MiniMapColor>
+    <R>255</R>
+    <G>150</G>
+    <B> 214</B>
+  </MiniMapColor>
+
+	<!-- Player 17: Red Prince -->
+	<PlayerColor>
+		<R>111</R>
+		<G>5</G>
+		<B> 41</B>
+	</PlayerColor>
+	<MiniMapColor>
+		<R>111</R>
+		<G>5</G>
+		<B> 41</B>
+	</MiniMapColor>
+
+	<!-- Player 18: Village -->
+	<PlayerColor>
+		<R>39</R>
+		<G>62</G>
+		<B> 11</B>
+	</PlayerColor>
+	<MiniMapColor>
+		<R>39</R>
+		<G>62</G>
+		<B> 11</B>
+	</MiniMapColor>
+
+	<!-- Player 19: Cloister -->
+	<PlayerColor>
+		<R>193</R>
+		<G>134</G>
+		<B> 198</B>
+	</PlayerColor>
+	<MiniMapColor>
+		<R>193</R>
+		<G>134</G>
+		<B> 198</B>
+	</MiniMapColor>
+
+	<!-- Player 20: Bandits -->
+	<PlayerColor>
+		<R>103</R>
+		<G>65</G>
+		<B> 28</B>
+	</PlayerColor>
+	<MiniMapColor>
+		<R>103</R>
+		<G>65</G>
+		<B> 28</B>
+	</MiniMapColor>
+</root>
+

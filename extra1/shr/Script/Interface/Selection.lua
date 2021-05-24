@@ -910,7 +910,8 @@ GUIAction_WorkerFeedbackBySelection( _WorkerID )
 			and Motivation < gvGUI.MotivationThresholds.Angry 
 			then	
 				SoundID = Sounds.VoicesWorker_WORKER_Unhappy_rnd_01		
-		
+		else
+			SoundID = Sounds.VoicesWorker_WORKER_FunnyComment_rnd_01
 		end
 	end
 	

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_Monastery2</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <Category>Workplace</Category>
+		  <Category>DefendableBuilding</Category>  
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <UpgradeSite>ZB_UpgradeSiteMonastery1</UpgradeSite>
+		  <MaxHealth>3500</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>5</ArmorAmount>     
+		  
+		
+  <!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		  <ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+				
+		
+  <!-- Exploration-->
+		  <ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+        <Worker>PU_Priest</Worker>
+        <MaxWorkers>8</MaxWorkers>
+        <InitialMaxWorkers>8</InitialMaxWorkers>
+		  <WorkTaskList>
+		    <Start>TL_PRIEST_WORK2_START</Start> 
+		    <Work>TL_PRIEST_WORK2</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_PRIEST_WORK3_START</Start> 
+		    <Work>TL_PRIEST_WORK3</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_PRIEST_WORK_INSIDE_START</Start> 
+		    <Work>TL_PRIEST_WORK_INSIDE</Work> 
+		</WorkTaskList>
+		  <Upgrade>
+            <Category>Monastery</Category>
+            <Time>90.0</Time>  
+            <Cost>
+			    <Clay>0</Clay>
+			    <Wood>200</Wood>
+				    <Stone>600</Stone>
+				    <Gold>300</Gold>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <Type>PB_Monastery3</Type>
+        </Upgrade>
+		  <Exploration>30</Exploration>
+        <ConstructionInfo>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>600</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>400</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>0</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>-200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-600</X>
+                    <Y>800</Y>
+                </Position>
+                <Orientation>290</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-400</X>
+                    <Y>-900</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>            
+            <BuilderSlot>
+                <Position>
+                    <X>-100</X>
+                    <Y>-900</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>200</X>
+                    <Y>-900</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>         
+            <ConstructionSite>ZB_ConstructionSiteMonastery1</ConstructionSite>
+        </ConstructionInfo>
+        <ApproachPos>
+            <X>-700</X>
+            <Y>200</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-480</X>
+            <Y>195</Y>			
+        </DoorPos>
+        
+        <Blocked1>
+            <X>-600</X>
+            <Y>700</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>700</X>
+            <Y>-800</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-700</X>
+            <Y>800</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>800</X>
+            <Y>-900</Y>
+        </TerrainPos2>  
+                
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	
+	
+
+
+
+  <!--AnSu: I will test if it is better to have all buildings as defender buildings-->
+    <Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>           
+            <Attachment>
+                <Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+                <Limit>20</Limit>
+            </Attachment>
+		</Logic>		 
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>63</NumDamageEffects>
+			  <NumDestroyEffects>34</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CAffectMotivationBehaviorProps">
+	        <Class>GGL::CAffectMotivationBehavior</Class>
+	        <MotivationEffect>0.1</MotivationEffect>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CDefendableBuildingBehaviorProps">
+	        <Class>GGL::CDefendableBuildingBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+
+
+</root>

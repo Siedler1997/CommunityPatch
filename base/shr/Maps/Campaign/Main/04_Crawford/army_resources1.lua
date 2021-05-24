@@ -9,7 +9,7 @@ createArmyResources1 = function()
 	
 		armyResources1.player 				= 5
 		armyResources1.id					= 3
-		armyResources1.strength				= 2
+		armyResources1.strength				= 3
 		armyResources1.position				= GetPosition("defend1")
 		armyResources1.rodeLength			= 6500
 		armyResources1.beAgressive			= true
@@ -41,6 +41,7 @@ createArmyResources1 = function()
 
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 		end						
+		EnlargeArmy(armyResources1,troopDescription)
 		EnlargeArmy(armyResources1,troopDescription)
 	
 	--	job		

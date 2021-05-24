@@ -17,6 +17,9 @@
 
 		<!-- Armor -->
 		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
 			<Technology>T_Masonry</Technology>
 		</ModifyArmor>
 		

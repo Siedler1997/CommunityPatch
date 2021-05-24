@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_Market1</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <Category>Workplace</Category>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <UpgradeSite>ZB_UpgradeSiteMarket1</UpgradeSite>
+		  <MaxHealth>1200</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount> 
+		  
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+				
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+		  <Category>IronSupplier</Category>
+			<Category>ClaySupplier</Category>
+			<Category>StoneSupplier</Category>
+			<Category>SulfurSupplier</Category>
+			<Category>GoldSupplier</Category>
+			<Category>WoodSupplier</Category>
+        
+
+    
+
+    
+
+    
+<!--Worker>PU_Trader</Worker>
+        <MaxWorkers>3</MaxWorkers>
+        <InitialMaxWorkers>3</InitialMaxWorkers>
+		  <WorkTaskList>
+		    <Start>TL_TRADER_WORK_START</Start> 
+		    <Work>TL_TRADER_WORK</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_TRADER_WORK1_START</Start> 
+		    <Work>TL_TRADER_WORK1</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_TRADER_WORK2_START</Start> 
+		    <Work>TL_TRADER_WORK2</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_TRADER_WORK_INSIDE_START</Start> 
+		    <Work>TL_TRADER_WORK_INSIDE</Work> 
+		</WorkTaskList-->
+        <Upgrade>
+            <Category>Market</Category>
+            <Time>40.0</Time>  
+            <Cost>
+			    <Clay>100</Clay>
+			    <Wood/>
+				    <Stone>200</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <Type>PB_Market2</Type>
+        </Upgrade>
+		  <Exploration>30</Exploration>
+        <ConstructionInfo>
+            <Time>80</Time>
+            <Cost>
+			    <Clay>0</Clay>
+			    <Wood>200</Wood>
+				    <Stone>400</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <BuilderSlot>
+                <Position>
+                <X>500</X>
+                <Y>-700</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                <X>0</X>
+                <Y>-700</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+             <BuilderSlot>
+                <Position>
+                <X>-700</X>
+                <Y>-400</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                <X>-500</X>
+                <Y>700</Y>
+                </Position>
+                <Orientation>315</Orientation>
+            </BuilderSlot>             
+            <ConstructionSite>ZB_ConstructionSiteMarket1</ConstructionSite>
+        </ConstructionInfo>
+        <LeavePos>
+            <X>-700</X>
+            <Y>-200</Y>
+        </LeavePos>
+        <ApproachPos>
+            <X>-700</X>
+            <Y>-100</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>200</X>
+            <Y>400</Y>			
+        </DoorPos>
+                
+        <Blocked1>
+            <X>-600</X>
+            <Y>600</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>600</X>
+            <Y>-600</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-700</X>
+            <Y>700</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>700</X>
+            <Y>-700</Y>
+        </TerrainPos2>    
+        
+              
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	
+
+  
+
+
+
+  
+
+<!--Behavior>
+		  <Logic classname="GGL::CServiceBuildingBehaviorProperties">
+			  <Class>GGL::CMarketBehavior</Class>
+			  <InitialWorkAmount>4.5</InitialWorkAmount>
+			  <Work>
+			    <Technology>GT_Banking</Technology>
+    			<WorkAmount>6.0</WorkAmount>
+			</Work>
+		</Logic>
+	</Behavior-->
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>17</NumDamageEffects>
+			  <NumDestroyEffects>15</NumDestroyEffects>
+		</Display>
+	</Behavior>
+
+
+
+
+</root>

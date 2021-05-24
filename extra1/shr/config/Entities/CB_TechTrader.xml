@@ -11,13 +11,8 @@
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<MaxHealth>300</MaxHealth>
+		<MaxHealth>500</MaxHealth>
 	    <ArmorAmount>0</ArmorAmount>
-
-		<!-- Armor -->
-		<ModifyArmor>
-			<Technology>T_Masonry</Technology>
-		</ModifyArmor>
 		
 		<!-- Exploration -->
 		<ModifyExploration>

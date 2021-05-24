@@ -22,22 +22,35 @@ createArmyRobbers = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
-		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty == 1 then
 			soldiers = soldiers + 2
 			experience = experience + 2
-			etype = Entities.CU_BanditLeaderSword2
 		end
 
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers = soldiers,
-			experiencePoints 	= experience,
-			leaderType			= etype
-		}		
+			experiencePoints 	= experience
+		}	
 
-		for i = 1, strength do
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			
+			troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+		else
+			troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			
+			troopDescription.leaderType = Entities.CU_BanditLeaderSword2
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
+			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
 			EnlargeArmy(ArmyRobbersSwampA,troopDescription)
 		end
 

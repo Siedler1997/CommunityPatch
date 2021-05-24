@@ -3,10 +3,11 @@ createArmyFolklungA = function()
 
 	ArmyFolklungA.player 			= 	gvMission.PlayerIDFolklung
 	ArmyFolklungA.id				= 	3
-	ArmyFolklungA.strength			= 	6
+	ArmyFolklungA.strength			= 	7
 	ArmyFolklungA.rodeLength			= 	8000
 	                                	
 	ArmyFolklungA.spawnTypes 		= 	{	 {Entities.PU_LeaderSword3, 8},
+											 {Entities.PU_LeaderSword3, 8},
 											 {Entities.PU_LeaderSword3, 8},
 											 {Entities.PU_LeaderSword3, 8},
 											 {Entities.PU_LeaderSword3, 8},

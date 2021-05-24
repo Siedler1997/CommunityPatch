@@ -67,10 +67,10 @@
         <Category>EvilLeader</Category>
 		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <MaxHealth>100</MaxHealth>
+		  <MaxHealth>150</MaxHealth>
 		  <Exploration>20</Exploration>
 		  <ArmorClass>ArmorClassFur</ArmorClass> 
-		  <ArmorAmount>2</ArmorAmount>
+		  <ArmorAmount>1</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>30</ExperiencePoints>

@@ -60,31 +60,32 @@
 	<Behavior>
 		<Logic classname="GGL::CWorkerBehaviorProps">
 			<Class>GGL::CWorkerBehavior</Class>
-				
+
+			<WorkTaskListsPerCycle>1</WorkTaskListsPerCycle>
+
 			<WorkTaskList>TL_CU_SERF_WORK_START</WorkTaskList>
-			<WorkIdleTaskList>TL_WORKER_IDLE_START</WorkIdleTaskList>
-			<WorkWaitUntil>20000</WorkWaitUntil>
-			<WorkTimeChangeWork>-50</WorkTimeChangeWork>
+			<WorkIdleTaskList>TL_CU_SERF_IDLE</WorkIdleTaskList>
+			<WorkWaitUntil>3000</WorkWaitUntil>
 			<ExhaustedWorkMotivationMalus>0.2</ExhaustedWorkMotivationMalus>
 
 			<EatTaskList>TL_WORKER_EAT_START</EatTaskList>
-			<EatIdleTaskList>TL_WORKER_IDLE_START</EatIdleTaskList>
-			<EatWait>2000</EatWait>
+			<EatIdleTaskList>TL_CU_SERF_IDLE</EatIdleTaskList>
+			<EatWait>3000</EatWait>
 			<WorkTimeChangeFarm>.7</WorkTimeChangeFarm>
-            	
-            <RestTaskList>TL_WORKER_REST_START</RestTaskList>
-            <RestIdleTaskList>TL_WORKER_IDLE_START</RestIdleTaskList>
-            <RestWait>3000</RestWait>
+
+			<RestTaskList>TL_WORKER_REST_START</RestTaskList>
+			<RestIdleTaskList>TL_CU_SERF_IDLE</RestIdleTaskList>
+			<RestWait>3000</RestWait>
 			<WorkTimeChangeResidence>.5</WorkTimeChangeResidence>
-            	
-            <IdleTaskList>TL_WORKER_IDLE</IdleTaskList>
+
+			<IdleTaskList>TL_WORKER_IDLE</IdleTaskList>
 
 			<WorkTimeChangeCamp>.1</WorkTimeChangeCamp>
-			
+
 			<WorkTimeMaxChangeFarm>100</WorkTimeMaxChangeFarm>
 			<WorkTimeMaxChangeResidence>400</WorkTimeMaxChangeResidence>
 			
-            <LeaveTaskList>TL_WORKER_LEAVE</LeaveTaskList>
+			<LeaveTaskList>TL_WORKER_LEAVE</LeaveTaskList>
 		</Logic>
 	</Behavior>
 

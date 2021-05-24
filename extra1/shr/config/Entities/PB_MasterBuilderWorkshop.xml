@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+    <Display classname="ED::CDisplayEntityProps">
+          <Class>ED::CDisplayBuilding</Class>
+          <Model>PB_MasterBuilderWorkshop</Model>
+    </Display>
+    <Logic classname="GGL::CGLBuildingProps">
+          <Class>GGL::CBuilding</Class>
+          <AccessCategory>AccessCategoryBuilding</AccessCategory>
+          <Category>Workplace</Category>
+          <NeedsPlayer>true</NeedsPlayer>
+          <ForceNoPlayer>false</ForceNoPlayer>
+          <UpgradeSite>ZB_UpgradeSite1</UpgradeSite>
+          <MaxHealth>1200</MaxHealth>
+          <ArmorClass>ArmorClassFortification</ArmorClass> 
+          <ArmorAmount>3</ArmorAmount> 
+          
+        <!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+        <ModifyArmor>
+            <Technology>T_Masonry</Technology>        
+        </ModifyArmor>     
+                
+        <!-- Exploration-->
+        <ModifyExploration>
+            <Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+        
+        <Upgrade>
+            <Category>MasterBuilderWorkshop</Category>
+        </Upgrade>
+
+        <Worker>PU_MasterBuilder</Worker>
+        <MaxWorkers>2</MaxWorkers>
+        <InitialMaxWorkers>2</InitialMaxWorkers>
+        <WorkTaskList>
+            <Start>TL_MASTER_BUILDER_WORK1_START</Start> 
+            <Work>TL_MASTER_BUILDER_WORK1</Work> 
+        </WorkTaskList>
+        <WorkTaskList>
+            <Start>TL_MASTER_BUILDER_WORK2_START</Start> 
+            <Work>TL_MASTER_BUILDER_WORK2</Work> 
+        </WorkTaskList>
+
+        
+        <Exploration>30</Exploration>
+        
+        <ConstructionInfo>
+            <Time>80</Time>
+            <Cost>
+                <Clay>0</Clay>
+                <Wood>200</Wood>
+                    <Stone>400</Stone>
+                    <Gold/>
+                    <Iron/>
+                    <Sulfur/>
+            </Cost>
+            <BuilderSlot>
+                <Position>
+                <X>-100</X>
+                <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                <X>200</X>
+                <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+             <BuilderSlot>
+                <Position>
+                <X>-600</X>
+                <Y>0</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                <X>-600</X>
+                <Y>200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>             
+            <ConstructionSite>ZB_ConstructionSite1</ConstructionSite>
+        </ConstructionInfo>
+        
+        <LeavePos>
+            <X>0</X>
+            <Y>-600</Y>
+        </LeavePos>
+        
+        <ApproachPos>
+            <X>100</X>
+            <Y>-600</Y>
+        </ApproachPos>
+        
+        <ApproachR>0</ApproachR>
+        
+        <DoorPos>
+            <X>50</X>
+            <Y>-200</Y>          
+        </DoorPos>
+                
+        <Blocked1>
+            <X>-500</X>
+            <Y>-500</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>400</X>
+            <Y>300</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-600</X>
+            <Y>-600</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>500</X>
+            <Y>400</Y>
+        </TerrainPos2>    
+        
+              
+    </Logic>
+    <Behavior>
+          <Logic classname="EGL::CGLEBehaviorProps">
+              <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+        </Logic>
+          <Display classname="ED::CBehaviorProps">
+              <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+        </Display>
+    </Behavior>
+    
+    <Behavior>
+          <Logic classname="EGL::CGLEBehaviorProps">
+              <Class>GGL::CBuildingBehavior</Class>
+        </Logic>
+          <Display classname="GD::CBuildingBehaviorProps">
+              <Class>GD::CBuildingBehavior</Class>
+              <Banner>Default</Banner>
+              <NumDamageEffects>37</NumDamageEffects>
+              <NumDestroyEffects>19</NumDestroyEffects>
+        </Display>
+    </Behavior>
+
+</root>

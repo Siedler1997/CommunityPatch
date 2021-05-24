@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_StoneMason2</Model>
+		  <Anim>PB_StoneMason2_600</Anim>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <Category>Workplace</Category>
+		  <Category>DefendableBuilding</Category>  
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <MaxHealth>1700</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount>  
+		  
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+		 		
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+        <Worker>PU_Stonecutter</Worker>
+        <MaxWorkers>6</MaxWorkers>
+        <InitialMaxWorkers>6</InitialMaxWorkers>        
+		  <WorkTaskList>
+		    <Start>TL_STONECUTTER_WORK2_START</Start> 
+		    <Work>TL_STONECUTTER_WORK2</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_STONECUTTER_WORK3_START</Start> 
+		    <Work>TL_STONECUTTER_WORK3</Work> 
+		</WorkTaskList>
+		  <WorkTaskList>
+		    <Start>TL_STONECUTTER_WORK_INSIDE_START</Start> 
+		    <Work>TL_STONECUTTER_WORK_INSIDE</Work> 
+		</WorkTaskList>
+        <Exploration>30</Exploration>
+        <Upgrade>
+            <Category>StoneMason</Category>
+        </Upgrade>
+        <ConstructionInfo>
+            <BuilderSlot>
+                <Position>
+                    <X>300</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>100</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-500</X>
+                    <Y>200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-500</X>
+                    <Y>400</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <ConstructionSite>ZB_ConstructionSiteStonemason1</ConstructionSite>
+        </ConstructionInfo>
+         <ApproachPos>
+            <X>-500</X>
+            <Y>-250</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>250</X>
+            <Y>-250</Y>			
+        </DoorPos>
+        
+        <Blocked1>
+            <X>-400</X>
+            <Y>500</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>400</X>
+            <Y>-500</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-500</X>
+            <Y>600</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>500</X>
+            <Y>-600</Y>
+        </TerrainPos2>      
+        	
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+    <Behavior>
+        <Logic classname="GGL::CResourceRefinerBehaviorProperties">
+            <Class>GGL::CResourceRefinerBehavior</Class>
+            <ResourceType>Stone</ResourceType>
+            <InitialFactor>4</InitialFactor>
+            <SupplierCategory>StoneSupplier</SupplierCategory>
+           
+        </Logic>
+    </Behavior>
+    
+    <!--AnSu: I will test if it is better to have all buildings as defender buildings-->
+    <Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>           
+            <Attachment>
+                <Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+                <Limit>10</Limit>
+            </Attachment>
+		</Logic>		 
+	</Behavior>
+    
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>23</NumDamageEffects>
+			  <NumDestroyEffects>17</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CDefendableBuildingBehaviorProps">
+	        <Class>GGL::CDefendableBuildingBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+
+</root>

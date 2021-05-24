@@ -60,6 +60,7 @@ function Mission_InitDiplomacy()
 	-- 	8 enemy
 
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile 	)
+	Logic.SetDiplomacyState( 1,	6, Diplomacy.Hostile	)
 	Logic.SetDiplomacyState( 1,	8, Diplomacy.Hostile	)
 	Logic.SetDiplomacyState( 8,	3, Diplomacy.Hostile	)
 
@@ -80,6 +81,8 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(2,NPC_COLOR)
 		Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
 		Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
+		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+		Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 		Display.SetPlayerColorMapping(7,NPC_COLOR)
 		Display.SetPlayerColorMapping(8,CLEYCOURT_COLOR)
 
@@ -213,6 +216,18 @@ function Mission_FirstMapAction()
 		local vcpos3 = GetPosition("vc_empty3")
 		DestroyEntity("vc_empty3")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
+		
+			RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 2, ramount = 6})
+			RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2", "rudelpos2_wp3"}, range = 4000, samount = 4, ramount = 12})
 	end
-	--Tools.ExploreArea(-1, -1, 900)
+
+	--StartSimpleHiResJob("GetDarioPos")
+	Tools.ExploreArea(-1, -1, 900)
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

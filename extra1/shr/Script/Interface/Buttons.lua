@@ -1236,3 +1236,18 @@ GUIAction_ToNextWorkerNoFarm()
 	end
 
 end
+
+function GUIAction_LevyTaxes()
+	local PlayerID = GUI.GetPlayerID()	
+	local Motivation = Logic.GetAverageMotivation(PlayerID)
+
+	if Motivation >= gvGUI.MotivationThresholds.Angry then
+		local gold = 5 * Logic.GetNumberOfAttractedWorker(PlayerID)
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_LevyTaxesDone"), gold))
+		Sound.PlayFeedbackSound(Sounds.VoicesMentor_INFO_Payday_rnd_01 , 0 )
+		GUI.LevyTax()
+	else
+		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_LevyTaxesFailed"))
+		Sound.PlayFeedbackSound(Sounds.LevyTaxes , 0 )
+	end
+end

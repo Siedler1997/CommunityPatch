@@ -39,7 +39,6 @@ createArmyEnemyCastle = function()
 			troopDescription.leaderType = Entities.PV_Cannon2
 		end			
 		EnlargeArmy(armyEnemyCastle,troopDescription)
-		EnlargeArmy(armyEnemyCastle,troopDescription)
 		
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
@@ -58,6 +57,13 @@ createArmyEnemyCastle = function()
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)			
+		
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.PV_Cannon1
+		else
+			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+		end			
+		EnlargeArmy(armyEnemyCastle,troopDescription)
 
 	--	job		
 		
@@ -105,7 +111,11 @@ createArmyEnemyCastle = function()
 			EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 		end
 		
-		troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
+		if CP_Difficulty == 0 then
+			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
+		else
+			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+		end		
 		EnlargeArmy(armyDefendEnemyCastle,troopDescription)			
 		EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 

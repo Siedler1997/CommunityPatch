@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_Archery2</Model>
+		  <Anim>PB_Archery2_600</Anim>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>		  
+      <Category>MilitaryBuilding</Category>
+      <Category>SerfConversionBuilding</Category>
+		  <MaxHealth>2000</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>4</ArmorAmount>  
+		  <!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+		
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration> 
+        
+		  <Exploration>30</Exploration> 
+		  <Upgrade>
+			  <Category>Archery</Category> 			  
+		</Upgrade>   
+        <ConstructionInfo>
+            
+
+      
+<!--Time>50</Time>
+            <Cost>
+				    <Clay>300</Clay>
+				    <Wood>60</Wood>
+					<Stone></Stone>
+					<Gold></Gold>
+					<Iron></Iron>
+					<Sulfur></Sulfur>
+            </Cost-->
+            <BuilderSlot>
+                <Position>
+                    <X>600</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-400</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>-500</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-700</X>
+                    <Y>700</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-500</X>
+                    <Y>900</Y>
+                </Position>
+                <Orientation>290</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>400</X>
+                    <Y>900</Y>
+                </Position>
+                <Orientation>290</Orientation>
+            </BuilderSlot>             
+            <ConstructionSite>ZB_ConstructionSiteArchery1</ConstructionSite>
+        </ConstructionInfo>
+        
+
+    
+
+    <!--MilitaryInfo>
+            <LeaderLimit>100</LeaderLimit>
+            <SoldierLimit>1000</SoldierLimit>
+            <DamageClass>DC_Bow</DamageClass>
+        </MilitaryInfo-->
+        <ApproachPos>
+            <X>-670</X>
+            <Y>600</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-600</X>
+            <Y>600</Y>
+        </DoorPos>
+    	
+    	<Blocked1>
+            <X>-600</X>
+            <Y>800</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>700</X>
+            <Y>-700</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-700</X>
+            <Y>900</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>800</X>
+            <Y>-800</Y>
+        </TerrainPos2>
+        
+    	
+    	
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CUVAnimBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CUVAnimBehavior</Class>
+		</Display>
+	</Behavior>
+		
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>39</NumDamageEffects>
+			  <NumDestroyEffects>36</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="GGL::CBarrackBehaviorProperties">
+			  <Class>GGL::CBarrackBehavior</Class>
+			  <LeaveTaskList>TL_LEAVE_ARCHERY</LeaveTaskList>
+			  <TrainingTime>30</TrainingTime>
+			  <TrainingTaskList>TL_TRAIN1_ARCHERY2</TrainingTaskList>
+			  <TrainingTaskList>TL_TRAIN2_ARCHERY2</TrainingTaskList>
+			  <TrainingTaskList>TL_TRAIN3_ARCHERY2</TrainingTaskList>
+		</Logic>
+	</Behavior>
+
+
+
+
+</root>

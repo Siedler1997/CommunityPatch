@@ -31,7 +31,7 @@ function Mission_InitPlayerColorMapping()
     Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(4,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 

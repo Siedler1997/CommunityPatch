@@ -52,7 +52,7 @@
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>22</Exploration>
 		  <ArmorClass>ArmorClassHero</ArmorClass>
-		  <ArmorAmount>5</ArmorAmount> 
+		  <ArmorAmount>4</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
         <IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
         <ExperiencePoints>20</ExperiencePoints>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_GunsmithWorkshop1</Model>
+		  <Anim>PB_GunsmithWorkshop1_castinghouse_600</Anim>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <UpgradeSite>ZB_UpgradeSite1</UpgradeSite>
+      	  <Category>Workplace</Category>
+      		<Category>DefendableBuilding</Category>  
+		  <MaxHealth>1200</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount> 
+		  
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+		   		
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		 
+        <Worker>PU_Gunsmith</Worker>
+        <MaxWorkers>2</MaxWorkers>
+        <InitialMaxWorkers>2</InitialMaxWorkers>
+        <WorkTaskList>
+            <Start>TL_GUNSMITH_WORK_START</Start> 
+            <Work>TL_GUNSMITH_WORK</Work> 
+        </WorkTaskList>        
+        <WorkTaskList>
+            <Start>TL_GUNSMITH_WORK_INSIDE_START</Start> 
+            <Work>TL_GUNSMITH_WORK_INSIDE</Work> 
+        </WorkTaskList>
+         <Upgrade>
+            <Category>GunsmithWorkshop</Category>
+            <Time>40.0</Time>  
+            <Cost>
+			    <Clay></Clay>
+			    <Wood/>
+				    <Stone>300</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur>200</Sulfur>
+            </Cost>
+            <Type>PB_GunsmithWorkshop2</Type>
+        </Upgrade>
+        <ConstructionInfo>
+        	<Time>110</Time>
+            <Cost>
+			    <Clay></Clay>
+			    <Wood></Wood>
+				    <Stone>400</Stone>
+				    <Gold/>
+				    <Iron/>
+				 <Sulfur>300</Sulfur>
+            </Cost>
+           <BuilderSlot>
+                <Position>
+                    <X>400</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+           <BuilderSlot>
+                <Position>
+                    <X>100</X>
+                    <Y>-600</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-600</X>
+                    <Y>300</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>            
+            <BuilderSlot>
+                <Position>
+                    <X>-600</X>
+                    <Y>500</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>             
+            <ConstructionSite>ZB_ConstructionSite1</ConstructionSite>
+        </ConstructionInfo>       
+		  <Exploration>30</Exploration>
+		  <ApproachPos>
+            <X>-600</X>
+            <Y>100</Y>
+           </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-100</X>
+            <Y>100</Y>			
+        </DoorPos>
+         
+         <LeavePos>
+            <X>-600</X>
+            <Y>0</Y>
+        </LeavePos>
+        
+       <Blocked1>
+            <X>-500</X>
+            <Y>-500</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>500</X>
+            <Y>500</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-600</X>
+            <Y>-600</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>600</X>
+            <Y>600</Y>
+        </TerrainPos2>
+        
+        
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+    <Behavior>
+        <Logic classname="GGL::CResourceRefinerBehaviorProperties">
+            <Class>GGL::CResourceRefinerBehavior</Class>
+            <ResourceType>Sulfur</ResourceType>
+            <InitialFactor>4</InitialFactor>
+            <SupplierCategory>SulfurSupplier</SupplierCategory>
+        </Logic>
+    </Behavior>
+    
+    
+
+<!--AnSu: I will test if it is better to have all buildings as defender buildings-->
+    <Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>           
+            <Attachment>
+                <Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+                <Limit>10</Limit>
+            </Attachment>
+		</Logic>		 
+	</Behavior>
+    
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>42</NumDamageEffects>
+			  <NumDestroyEffects>30</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectSwitchBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectSwitchBehavior</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectAttachmentBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectAttachmentBehavior</Class>
+		</Display>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CDefendableBuildingBehaviorProps">
+	        <Class>GGL::CDefendableBuildingBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+
+
+</root>

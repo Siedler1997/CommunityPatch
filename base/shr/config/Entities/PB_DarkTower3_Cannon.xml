@@ -34,7 +34,7 @@
     	    <DamageAmount>40</DamageAmount>
     	    <DamageRange>700</DamageRange>
     	    <BattleTaskList>TL_BATTLE_CANNONTOWER</BattleTaskList>
-    	    <AutoAttackRange>3000</AutoAttackRange>
+    	    <AutoAttackRange>2800</AutoAttackRange>
     	</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorMovement</Class>

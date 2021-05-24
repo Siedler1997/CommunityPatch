@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_Foundry1</Model>
+		  <Anim>PB_Foundry1_Cannon1_600</Anim>
+		  <Anim>PB_Foundry1_Cannon2_601</Anim>
+		  <Anim>PB_Foundry1_Cannon3_602</Anim>
+		  <Anim>PB_Foundry1_Cannon4_603</Anim>
+		  
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <UpgradeSite>ZB_UpgradeSiteMarket1</UpgradeSite>
+      <Category>MilitaryBuilding</Category>
+		  <MaxHealth>1200</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>3</ArmorAmount>        
+		  
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+		     		
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+        <Worker>PU_Smelter</Worker>
+        <MaxWorkers>1</MaxWorkers>
+        <InitialMaxWorkers>1</InitialMaxWorkers>
+        <WorkTaskList>
+            <Start>TL_SMELTER_WORK1_START</Start> 
+            <Work>TL_SMELTER_WORK1_WAIT</Work> 
+        </WorkTaskList>
+        <WorkTaskList>
+            <Start>TL_SMELTER_WORK1_START</Start> 
+            <Work>TL_SMELTER_WORK1</Work> 
+        </WorkTaskList>
+        <WorkTaskList>
+            <Start>TL_SMELTER_WORK1_START</Start> 
+            <Work>TL_SMELTER_WORK2</Work> 
+        </WorkTaskList>
+       <Exploration>30</Exploration>
+         <Upgrade>
+            <Category>Foundry</Category>
+            <Time>40.0</Time>  
+       
+            <Cost>
+			    <Clay>150</Clay>
+			    <Wood/>
+				    <Stone>200</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <Type>PB_Foundry2</Type>
+        </Upgrade>
+        <ConstructionInfo>
+        	<Time>110</Time>
+            <Cost>
+			    <Clay>500</Clay>
+			    <Wood>300</Wood>
+				    <Stone>0</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <BuilderSlot>
+                <Position>
+                    <X>600</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>100</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-200</X>
+                    <Y>-800</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>            
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>-100</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-800</X>
+                    <Y>500</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>          
+            <ConstructionSite>ZB_ConstructionSiteMarket1</ConstructionSite>
+        </ConstructionInfo>       
+		  <Exploration>30</Exploration>
+        <ApproachPos>
+            <X>600</X>
+            <Y>-800</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>600</X>
+            <Y>-100</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-700</X>
+            <Y>600</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>800</X>
+            <Y>-700</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-800</X>
+            <Y>700</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>900</X>
+            <Y>-800</Y>
+        </TerrainPos2>		
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+ 	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>21</NumDamageEffects>
+			  <NumDestroyEffects>21</NumDestroyEffects>
+		</Display>
+	</Behavior>
+
+	<Behavior>
+		  <Logic classname="GGL::CFoundryBehaviorProperties">
+			  <Class>GGL::CFoundryBehavior</Class>
+			  <CannonInfo>
+			      <Cannon>PV_Cannon1</Cannon>
+			      <TaskList>TL_SMELTER_WORK1</TaskList>
+			  </CannonInfo>
+			  <CannonInfo>
+			      <Cannon>PV_Cannon2</Cannon>
+			      <TaskList>TL_SMELTER_WORK2</TaskList>
+			  </CannonInfo>
+		</Logic>
+	</Behavior>
+
+
+
+
+
+
+</root>

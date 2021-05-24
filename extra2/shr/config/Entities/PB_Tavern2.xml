@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		  <Class>ED::CDisplayBuilding</Class>
+		  <Model>PB_Tavern2</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		  <Class>GGL::CBuilding</Class>
+		  <AccessCategory>AccessCategoryBuilding</AccessCategory>
+		  <NeedsPlayer>true</NeedsPlayer>
+		  <ForceNoPlayer>false</ForceNoPlayer>
+		  <UpgradeSite>ZB_UpgradeSite1</UpgradeSite>
+		  <Category>Barracks</Category>
+		  <Category>Farm</Category>
+      	  <Category>MilitaryBuilding</Category>     
+      	  <Category>DefendableBuilding</Category>   
+          <Category>ThiefRefuge</Category> 
+		  <MaxHealth>1500</MaxHealth>
+		  <ArmorClass>ArmorClassFortification</ArmorClass> 
+		  <ArmorAmount>2</ArmorAmount>
+		  
+		  
+		  <Worker>PU_TavernBarkeeper</Worker>
+        <MaxWorkers>1</MaxWorkers>
+        <WorkTaskList>
+            <Start>TL_TAVERNBARKEEPER_WORK_START1</Start> 
+            <Work>TL_TAVERNBARKEEPER_WORK1</Work> 
+        </WorkTaskList>
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+				
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+		  <Exploration>30</Exploration> 
+		  
+		  
+	   <Upgrade>
+        	<Category>Tavern</Category>       
+       </Upgrade>
+        <ConstructionInfo>
+        	<Time>90</Time>
+        	<Cost>
+			    <Clay>0</Clay>
+			    <Wood>300</Wood>
+				    <Stone>0</Stone>
+				    <Gold>400</Gold>
+				    <Iron/>
+				    <Sulfur/>
+            </Cost>
+            <BuilderSlot>
+                <Position>
+                    <X>0</X>
+                    <Y>-700</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>300</X>
+                    <Y>-700</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-600</X>
+                    <Y>500</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-600</X>
+                    <Y>200</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+                  
+            <ConstructionSite>ZB_ConstructionSite1</ConstructionSite>
+        </ConstructionInfo>
+        <ApproachPos>
+            <X>-600</X>
+            <Y>-400</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>100</X>
+            <Y>-400</Y>
+        </DoorPos>
+        
+         <LeavePos>
+            <X>-600</X>
+            <Y>-500</Y>
+        </LeavePos>
+ 		
+ 		
+ 		<Blocked1>
+            <X>-500</X>
+            <Y>-600</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>400</X>
+            <Y>600</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-600</X>
+            <Y>-700</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>500</X>
+            <Y>700</Y>
+        </TerrainPos2>	
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>Default</Banner>
+		  <NumDamageEffects>27</NumDamageEffects>
+		  <NumDestroyEffects>21</NumDestroyEffects>
+		</Display>
+
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			  <Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_WORKER_FARM</Type>
+                <Limit>6</Limit>
+                <IsActive>false</IsActive>
+            </Attachment>
+            <Attachment>
+                <Type>ATTACHMENT_DEFENDER_BUILDING</Type>
+                <Limit>10</Limit>
+            </Attachment>            
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CFarmBehavior</Class>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CDefendableBuildingBehaviorProps">
+	        <Class>GGL::CDefendableBuildingBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	
+	<Behavior>
+		  <Logic classname="GGL::CBarrackBehaviorProperties">
+			  <Class>GGL::CBarrackBehavior</Class>
+			  <LeaveTaskList>TL_LEAVE_TAVERN</LeaveTaskList>
+			  <TrainingTime>30</TrainingTime>
+			  <TrainingTaskList>TL_TRAIN1_TAVERN2</TrainingTaskList>
+			  <TrainingTaskList>TL_TRAIN2_TAVERN2</TrainingTaskList>
+			  <TrainingTaskList>TL_TRAIN3_TAVERN2</TrainingTaskList>
+		</Logic>
+	</Behavior>
+</root>

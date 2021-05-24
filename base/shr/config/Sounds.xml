@@ -1218,6 +1218,11 @@
     <ID>Coiner01</ID>
 
 	<!--Community Patch-->
+	<ID>Buildings\so_weathermachineelectro</ID>
+	<ID>Misc\so_buildingonfire_loop_1</ID>
+	<ID>Misc\so_buildingonfire_loop_2</ID>
+	<ID>Misc\so_buildingonfire_loop_3</ID>
+
 	<ID>AmbientSounds\Wolf_rnd_1</ID>
 	<ID>AmbientSounds\Wolf_rnd_2</ID>
 	<ID>AmbientSounds\Sheep_rnd_1</ID>

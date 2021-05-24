@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>PB_WeatherTower1</Model>		
+		<Anim>PB_WeatherTower1_turn_600</Anim>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<MaxHealth>1200</MaxHealth>
+		<ArmorClass>ArmorClassFortification</ArmorClass> 
+		<ArmorAmount>5</ArmorAmount>
+		<Exploration>20</Exploration>
+        <MaxWorkers>0</MaxWorkers>
+        <InitialMaxWorkers>0</InitialMaxWorkers>
+        
+        
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+		  	<Technology>T_Masonry</Technology>		  
+		</ModifyArmor>     
+				
+		<!-- Exploration-->
+		<ModifyExploration>
+        	<Technology>T_TownGuard</Technology>
+        </ModifyExploration>   
+		
+        <Upgrade>            
+            <Category>Weathermachine</Category>
+        </Upgrade>
+        <ConstructionInfo>
+             <Time>40</Time>
+            <Cost>
+				    <Clay>0</Clay>
+				    <Wood>500</Wood>				
+				    <Stone>0</Stone>
+				    <Gold/>
+				    <Iron/>
+				    <Sulfur>500</Sulfur>
+            </Cost>
+            <BuilderSlot>
+                <Position>
+                    <X>-300</X>
+                    <Y>0</Y>
+                </Position>
+                <Orientation>0</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>-100</X>
+                    <Y>300</Y>
+                </Position>
+                <Orientation>270</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>0</X>
+                    <Y>-300</Y>
+                </Position>
+                <Orientation>90</Orientation>
+            </BuilderSlot>
+            <BuilderSlot>
+                <Position>
+                    <X>200</X>
+                    <Y>300</Y>
+                </Position>
+                <Orientation>270</Orientation>
+            </BuilderSlot>           
+            <ConstructionSite>ZB_ConstructionSiteTower1</ConstructionSite>
+        </ConstructionInfo>  
+        <ApproachPos>
+            <X>-0</X>
+            <Y>300</Y>
+        </ApproachPos>
+		  <ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>100</X>
+            <Y>50</Y>			
+        </DoorPos>
+        <Blocked1>
+            <X>-200</X>
+            <Y>200</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>200</X>
+            <Y>-200</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-300</X>
+            <Y>300</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>300</X>
+            <Y>-300</Y>            
+        </TerrainPos2>      
+	</Logic>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+   
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		  <Display classname="GD::CBuildingBehaviorProps">
+			  <Class>GD::CBuildingBehavior</Class>
+			  <Banner>Default</Banner>
+			  <NumDamageEffects>22</NumDamageEffects>
+			  <NumDestroyEffects>14</NumDestroyEffects>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectSwitchBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectSwitchBehavior</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		  <Logic classname="EGL::CGLEBehaviorProps">
+			  <Class>EGL::CParticleEffectAttachmentBehavior</Class>
+		</Logic>
+		  <Display classname="ED::CBehaviorProps">
+			  <Class>ED::CParticleEffectAttachmentBehavior</Class>
+		</Display>
+	</Behavior>
+</root>
