@@ -158,7 +158,6 @@ function Mission_FirstMapAction()
 	CreateChestOpener("Helias")
 	CreateChestOpener("Erec")
 		
-	CreateRandomChests()
 		
 	StartChestQuest()
 			
@@ -196,25 +195,30 @@ function Mission_FirstMapAction()
 	--BurningHouse
 	Logic.HurtEntity(GetID("BurningHouse"),400)
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomChests()
+	else
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
+
+		ReplaceEntity("TheRock2", Entities.XD_Rock7)
+		ReplaceEntity("TheRock3", Entities.XD_Rock7)
 
 		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 4, ramount = 10})		
 		RaidersCreate({player = 5, pos = "rudelpos2", revier = 3000, range = 4000, samount = 4, ramount = 12})
 	end
 
-	StartSimpleHiResJob("GetDarioPos")
-	Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
---
+--[[
 function GetDarioPos()
 	local pos = GetPosition("Dario")
 	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
 end
---
+--]]
 
 function StartOldCutscene()
 	--Briefing	

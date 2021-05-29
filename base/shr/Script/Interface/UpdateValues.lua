@@ -665,10 +665,11 @@ GUIUpdate_StopWatch()
 	end
 
 	if SecondsLeft == 60 then		
-		Sound.Play2DSound( Sounds.Smith01,0 )
+		--Sound.Play2DSound( Sounds.Smith01,0 )
+		Sound.Play2DSound(Sounds.Misc_Countdown1, 0,50)
 	end
 	
-	
+	--[[
 	local MiliSecondsLeft = math.floor((gvGUI.UltimatumTime*1000)-(Logic.GetTimeMs() - (gvGUI.UltimatumStartTime*1000)))
 	if MiliSecondsLeft == 5000
 	or MiliSecondsLeft == 4000
@@ -677,8 +678,16 @@ GUIUpdate_StopWatch()
 	or MiliSecondsLeft == 1000 then
 		Sound.Play2DSound( Sounds.Smith01,0 )
 	end
-	
+	--]]
+
 	XGUIEng.SetText("StopWatchCounter", String)	
+
+	StopWatchSecondsLeft = TotalSeconds
+
+	-- do not show stopwatch when time has run out
+	if TotalSeconds < 0 then
+		GUIAction_ToggleStopWatch(0, 0)
+	end
 	
 end
 --AnSu: Not here!

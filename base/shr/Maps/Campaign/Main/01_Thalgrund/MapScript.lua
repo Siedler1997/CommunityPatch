@@ -85,7 +85,7 @@ function Mission_InitPlayerColorMapping()
 	
 	Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- East village
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- West village
-	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Kerberos' units
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Wolves
 	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- NPCs; yellow
 	Display.SetPlayerColorMapping(5, NPC_COLOR)				-- Gate
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- NPCs; yellow
@@ -156,7 +156,6 @@ function Mission_FirstMapAction()
 --		CreateChestOpener("Salim")
 --		CreateChestOpener("Helias")
 	
-		CreateRandomGoldChests()
 		
 		StartChestQuest()
 	
@@ -196,7 +195,9 @@ function Mission_FirstMapAction()
 		start1stQuest()		
 		start2ndSubQuest()				
 		
-		if CP_Difficulty == 1 then
+		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()
+		else
 			local vcpos1 = GetPosition("vc_empty1")
 			DestroyEntity("vc_empty1")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos1.X,vcpos1.Y,90,0)

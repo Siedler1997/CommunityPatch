@@ -47,6 +47,7 @@ end
 -- see Player_1.lua !!!
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+		ResearchAllMilitaryTechs(6)
 		ResearchAllMilitaryTechs(7)
 	end
 end
@@ -136,8 +137,6 @@ function Mission_FirstMapAction()
 --		CreateChestOpener("Pilgrim")
 --		CreateChestOpener("Salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -149,7 +148,10 @@ function Mission_FirstMapAction()
 	TimeLine.Start()
 
 --	EnableDebugging()
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)

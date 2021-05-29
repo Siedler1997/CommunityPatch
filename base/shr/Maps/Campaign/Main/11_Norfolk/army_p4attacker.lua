@@ -12,15 +12,8 @@ setupArmyP4Attacker = function()
 	ArmyP4Attacker.position				= 	GetPosition("P4AttackPos")
 	ArmyP4Attacker.rodeLength			= 	3000
 	ArmyP4Attacker.beAgressive			=	true
-	                                	
-	if CP_Difficulty == 1 then
-		ArmyP4Attacker.AllowedTypes = 	{	UpgradeCategories.LeaderBarbarian,
-											UpgradeCategories.LeaderBarbarian,
-											UpgradeCategories.LeaderBarbarian,
-											UpgradeCategories.LeaderBow }
-	else
-		ArmyP4Attacker.AllowedTypes = 	{ 	UpgradeCategories.LeaderBarbarian }
-	end
+	    
+	ArmyP4Attacker.AllowedTypes = 	{ 	UpgradeCategories.LeaderBarbarian }
 
 	-- Attack parameter
 	ArmyP4Attacker.retreatStrength		= 	0

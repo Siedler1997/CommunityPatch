@@ -173,7 +173,6 @@ function Mission_FirstMapAction()
 --		CreateChestOpener("Salim")
 --		CreateChestOpener("Helias")
 	
-		CreateRandomGoldChests()
 		
 		StartChestQuest()
 		
@@ -198,7 +197,9 @@ function Mission_FirstMapAction()
 
 		startQuestMoveToCastle()
 	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()
+		else
 			local bosspos1 = GetPosition("guard1")
 			local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 500),(bosspos1.Y - 450),0,0,3,0)
 			LookAt(bossID1, "MinerClayMine")

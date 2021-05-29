@@ -4,16 +4,14 @@
     "\\base",
     "\\base\\shr",
     "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MainMenu",
+    "\\base\\shr\\Script\\Interface",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\MainMenu",
+    "\\extra1\\shr\\config",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\MainMenu"
+    "\\extra2\\shr\\config"
   ],
-  "SelectedNode": "\\extra2\\shr\\script\\MainMenu\\LoadScreen.lua",
+  "SelectedNode": "\\extra2\\shr\\config\\Sounds.xml",
   "PreviewInSolutionExplorer": false
 }

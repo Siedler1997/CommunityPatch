@@ -13,6 +13,7 @@
 start1stQuest = function()
 
 	WinterAttackCountdown = 1200
+	WinterAttackAttackRunning = false
 	WinterTime = 4200 -- 4200 Zeit bis Wintereinbruch
 
 --	Input.KeyBindDown (Keys.NumPad8, "setupNorfolkWinterArmy()")
@@ -117,6 +118,8 @@ start2ndQuest = function()
 	EnableNpcMarker("IronNPC")
 	InitNPC("IronNPC")
 	SetNPCLookAtTarget("IronNPC", 1)
+
+	--StartCountdown(60, Action_WeatherChange, false)
 end
 
 -------------------------------------------------------------------------------------------------------------------------

@@ -228,7 +228,6 @@ function Mission_FirstMapAction()
 --		CreateChestOpener("Pilgrim")
 --		CreateChestOpener("Salim")
 	
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -268,7 +267,9 @@ function Mission_FirstMapAction()
 	--
 	--	startQuestDestroyKerberos()
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomChests()
+	else
 		local vcpos1 = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos1.X,vcpos1.Y,0,0)

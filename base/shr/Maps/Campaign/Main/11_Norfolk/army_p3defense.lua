@@ -1,28 +1,30 @@
-setupArmyP4Defense = function()
+setupArmyP3Defense = function()
 
-	ArmyP4Defense1		= {}
+	ArmyP3Defense1		= {}
+	ArmyP3Defense2		= {}
 
-	initArmyP4Defense(ArmyP4Defense1, "ArmyP4Defense1", 0, "P4DefensePos", 6000)
+	initArmyP3Defense(ArmyP3Defense1, "ArmyP3Defense1", 1, "Concentrating_Area", 7000, 4)
+	initArmyP3Defense(ArmyP3Defense2, "ArmyP3Defense2", 2, "Concentrating_Area2", 3500, 3)
 
-	StartJob("ControlArmyP4Defense")
+	StartJob("ControlArmyP3Defense")
 
 end
 
-initArmyP4Defense = function(_army, _name, _index, _pos, _defenseRange)
+initArmyP3Defense = function(_army, _name, _index, _pos, _defenseRange, _strength)
 
-	_army.player 			= 	4
+	_army.player 			= 	3
 	_army.id				= 	_index
-	_army.strength			= 	8
+	_army.strength			= 	_strength
 	_army.position			= 	GetPosition(_pos)
 	_army.rodeLength		= 	_defenseRange
 	
-	_army.AllowedTypes 		= 	{ UpgradeCategories.LeaderBarbarian }
+	_army.AllowedTypes 		= 	{	UpgradeCategories.LeaderBow	}
 	_army.ignoreAttack		=	true
 
 	-- Attack parameter
 	_army.retreatStrength	= 	0
 
-	_army.baseDefenseRange	= 	_defenseRange - 2000
+	_army.baseDefenseRange	= 	_defenseRange
 	_army.outerDefenseRange	= 	_defenseRange
                                       	
 	_army.Attack			= 	false
@@ -42,15 +44,16 @@ end
 --
 -----------------------------------------------------------------------------------------------------------------------	
 	-------------------------------------------------------------------------------------------------------------------
-	Condition_ControlArmyP4Defense = function()
+	Condition_ControlArmyP3Defense = function()
 	-------------------------------------------------------------------------------------------------------------------
-		return Counter.Tick2("ControlArmyP4Defense",10)
+		return Counter.Tick2("ControlArmyP3Defense",10)
 	end
 		
 	-------------------------------------------------------------------------------------------------------------------
-	Action_ControlArmyP4Defense = function()
+	Action_ControlArmyP3Defense = function()
 	-------------------------------------------------------------------------------------------------------------------
-		TickOffensiveAIController(ArmyP4Defense1)
+		TickOffensiveAIController(ArmyP3Defense1)
+		TickOffensiveAIController(ArmyP3Defense2)
 		return false		
 	end
 -----------------------------------------------------------------------------------------------------------------------

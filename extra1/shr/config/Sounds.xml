@@ -1448,6 +1448,7 @@
 	<ID>AOVoicesThief\Thief_Yes_rnd_10</ID>
 
 	<!--Community Patch-->
+	<ID>Smith01</ID>
 	<ID>Buildings\so_weathermachineelectro</ID>
 	<ID>Misc\so_buildingonfire_loop_1</ID>
 	<ID>Misc\so_buildingonfire_loop_2</ID>
@@ -1458,6 +1459,7 @@
 	<ID>AmbientSounds\Sheep_rnd_1</ID>
 	<ID>AmbientSounds\Sheep_rnd_2</ID>
 	<ID>AmbientSounds\Sheep_rnd_3</ID>
+	<ID>Misc\so_signalhorn</ID>
 </root>
 
 

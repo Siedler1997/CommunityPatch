@@ -153,7 +153,7 @@
 	        <AffectsOwn>true</AffectsOwn>
 	        <AffectsFriends>true</AffectsFriends>
 	        <AffectsOnlyMilitary>true</AffectsOnlyMilitary>
-	        <Range>1000.0</Range>
+	        <Range>1500.0</Range>
 	        <DurationInSeconds>60</DurationInSeconds>
 	        <DamageFactor>2.0</DamageFactor>
 	        

@@ -313,7 +313,12 @@ Interface_InitWidgets()
 	gvGUI_StateID.NPCInteraction =					GUI.GetStateNameByID( "NPCInteraction" )
 	gvGUI_StateID.ConvertBuilding =					GUI.GetStateNameByID( "ConvertBuildingCommand" )
 	gvGUI_StateID.ConvertSettler =					GUI.GetStateNameByID( "ConvertSettlerCommand" )
-
+	
+	--reactivate Quest stuff
+	if StopWatchSecondsLeft ~= nil and StopWatchSecondsLeft > 0 then
+		XGUIEng.ShowWidget("MapProgressStuff",1)
+		XGUIEng.ShowWidget("StopWatch",1)
+	end
 end 
 
 function Interface_Init()

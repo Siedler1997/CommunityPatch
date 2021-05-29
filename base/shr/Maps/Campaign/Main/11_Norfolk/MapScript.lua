@@ -21,6 +21,10 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 3, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 6, Diplomacy.Hostile )
+	
+	Logic.SetDiplomacyState( 2, 4, Diplomacy.Friendly )
+	Logic.SetDiplomacyState( 2, 6, Diplomacy.Friendly )
+	Logic.SetDiplomacyState( 4, 6, Diplomacy.Friendly )
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -32,7 +36,8 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,BARBARIAN_COLOR)
-	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
+	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR1)
+	Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
 
@@ -60,6 +65,7 @@ function Mission_InitTechnologies()
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive attacks without help
 		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(6)
 	end
 end
 
@@ -106,6 +112,7 @@ function Mission_FirstMapAction()
 	IncludeLocals("army_p4defense")
 	IncludeLocals("army_p4intruders")
 	IncludeLocals("army_p4winterattacker")
+	IncludeLocals("army_bosses")
 
 	IncludeLocals("briefing_ingredients")
 	IncludeLocals("briefing_ironmines")
@@ -153,8 +160,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -165,12 +170,33 @@ function Mission_FirstMapAction()
 	-- Start cutscene and prelude after
 	start1stQuest()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
+		SetPosition ("Ingredient", GetPosition("GoldChest1"))
+
 		local bosspos1 = GetPosition("P2Defense2")
 		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + 1500),(bosspos1.Y + 0),0,0,3,0)
-		--LookAt(bossID1, "MinerClayMine")
+		SetEntityName(bossID1, "P2_Boss")
+
+		local bosspos2 = GetPosition("P4DefensePos")
+		local bossID2 = AI.Entity_CreateFormation(6,Entities.CU_Barbarian_Hero,0,0,(bosspos2.X + 300),(bosspos2.Y + 1700),0,0,0,0)
+		SetEntityName(bossID2, "P4_Boss")
+
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, samount = 2, ramount = 6})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = 3, ramount = 8})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--ResearchAllMilitaryTechs(1)
+	--StartSimpleHiResJob("GetDarioPos")
 	--EnableDebugging()
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

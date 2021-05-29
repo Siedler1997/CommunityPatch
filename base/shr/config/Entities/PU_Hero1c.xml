@@ -165,7 +165,7 @@
             <RechargeTimeSeconds>120</RechargeTimeSeconds>
             <TaskList>TL_BATTLE_SPECIAL</TaskList>
             <Animation>PU_Hero1c_Order1</Animation>
-            <Range>1000.0</Range>            
+            <Range>1500.0</Range>            
             <FlightDistance>2000.0</FlightDistance>
             <FlightDuration>20</FlightDuration>
             <Effect>FXDarioFear</Effect>

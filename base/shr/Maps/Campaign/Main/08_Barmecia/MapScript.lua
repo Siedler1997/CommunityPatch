@@ -148,7 +148,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Helias")
 		CreateChestOpener("Erec")
 		
-		CreateRandomChests()
 		
 		StartChestQuest()
 	
@@ -175,7 +174,9 @@ function Mission_FirstMapAction()
 
 	StartCutscene("Intro", start1stQuest)
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomChests()
+	else
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)

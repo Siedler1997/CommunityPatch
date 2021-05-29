@@ -106,6 +106,7 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
 		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive the enemy attacks without help
 		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(6)
 		ResearchAllMilitaryTechs(8)
 	end
 end
@@ -187,8 +188,6 @@ function Mission_FirstMapAction()
 --		CreateChestOpener("Pilgrim")
 --		CreateChestOpener("Salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -203,7 +202,10 @@ function Mission_FirstMapAction()
 		
 --		EnableDebugging()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 

@@ -12,7 +12,7 @@ setupArmyP4WinterAttacker = function()
 	
 	P4WinterAttackGathered = true
 
---	TimeLine.Enter("Start P4 WinterAttack", TimeLine.Seconds + 600, "StartArmyP4WinterAttacker")
+	TimeLine.Enter("Start P4 WinterAttack", TimeLine.Seconds + 600, "StartArmyP4WinterAttacker")
 end
 
 SetupArmyP4WinterGather = function(_army)
@@ -23,6 +23,10 @@ SetupArmyP4WinterGather = function(_army)
 	
 	_army.strength = 4
 	
+	if CP_Difficulty == 1 then
+		_army.strength = _army.strength + 2
+	end
+
 	_army.baseDefenseRange	= 	1
 	_army.outerDefenseRange	= 	1000
 	
@@ -48,6 +52,7 @@ SetupArmyP4WinterAttack = function(_army)
 
 	_army.AttackAllowed = true
 
+	_army.beAgressive = true
 end
 
 StartArmyP4WinterAttacker = function()
@@ -73,15 +78,8 @@ initArmyP4WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 	_army.position			= 	GetPosition(_pos)
 	_army.rodeLength		= 	_defenseRange
 	_army.beAgressive		=	true
-	
-	if CP_Difficulty == 1 then
-		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderBarbarian,
-										UpgradeCategories.LeaderBarbarian,
-										UpgradeCategories.LeaderBarbarian,
-										UpgradeCategories.LeaderBow }
-	else
-		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderBarbarian }
-	end
+
+	_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderBarbarian }
 
 	-- Attack parameter
 	_army.retreatStrength	= 	0
@@ -115,7 +113,13 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_ControlArmyP4WinterAttacker = function()
 	-------------------------------------------------------------------------------------------------------------------
-		TickOffensiveAIController(ArmyP4WinterAttacker1)
+		if WinterAttackAttackRunning == true then
+			FrontalAttack(ArmyP4WinterAttacker1)
+			FrontalAttack(ArmyP4Attacker)
+			FrontalAttack(ArmyP4Defense1)
+		else
+			TickOffensiveAIController(ArmyP4WinterAttacker1)	
+		end
 		return false		
 	end
 -----------------------------------------------------------------------------------------------------------------------

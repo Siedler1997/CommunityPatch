@@ -29,7 +29,11 @@ SetupArmyP2WinterGather = function(_army)
 	_army.retreatStrength = 0
 	
 	_army.strength = 4
-	
+
+	if CP_Difficulty == 1 then
+		_army.strength = _army.strength + 2
+	end
+
 	_army.baseDefenseRange	= 	1
 	_army.outerDefenseRange	= 	1500
 
@@ -55,6 +59,8 @@ SetupArmyP2WinterAttack = function(_army)
 	_army.AttackPos	= GetPosition("P2_WinterAttack")
 
 	_army.AttackAllowed = true
+
+	_army.beAgressive = true
 
 end
 
@@ -82,6 +88,7 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 	_army.beAgressive		=	true
 	
 	if CP_Difficulty == 1 then
+		_army.strength = _army.strength + 2
 		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderPoleArm, 
 										UpgradeCategories.LeaderSword,
 										UpgradeCategories.LeaderHeavyCavalry,
@@ -132,9 +139,18 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_ControlArmyP2WinterAttacker = function()
 	-------------------------------------------------------------------------------------------------------------------
-		TickOffensiveAIController(ArmyP2WinterAttacker1)
-		TickOffensiveAIController(ArmyP2WinterAttacker2)
-		TickOffensiveAIController(ArmyP2WinterAttacker3)
+		if WinterAttackAttackRunning == true then
+			FrontalAttack(ArmyP2WinterAttacker1)
+			FrontalAttack(ArmyP2WinterAttacker2)
+			FrontalAttack(ArmyP2WinterAttacker3)
+			FrontalAttack(ArmyP2Defense1)
+			FrontalAttack(ArmyP2Defense2)
+			FrontalAttack(ArmyP2Attacker)
+		else
+			TickOffensiveAIController(ArmyP2WinterAttacker1)
+			TickOffensiveAIController(ArmyP2WinterAttacker2)
+			TickOffensiveAIController(ArmyP2WinterAttacker3)
+		end
 		return false		
 	end
 -----------------------------------------------------------------------------------------------------------------------

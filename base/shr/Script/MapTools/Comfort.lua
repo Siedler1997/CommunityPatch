@@ -2072,7 +2072,15 @@ function RaidersCreate(_data)
 		local eid = AI.Entity_CreateFormation(dat.player, Entities.CU_AggressiveWolf,0,0,(indpos.X),(indpos.Y),0,0,0,0);
 		table.insert(_runits, eid)
 	end
-	local _rdata = {r_player = dat.player, r_spos = dat.pos, r_rev = dat.revier, r_range = dat.range, r_sam = dat.samount, r_resam = dat.ramount, r_cpos = position}
+	local _rdata = {
+		r_player = dat.player, 
+		r_spos = dat.pos, 
+		r_rev = dat.revier, 
+		r_range = dat.range, 
+		r_sam = dat.samount, 
+		r_resam = dat.ramount, 
+		r_cpos = position
+		}
 	local raid_group = {raid_id = raid_counter, raid_units = _runits, raid_data = _rdata}
 	table.insert(raid_table, raid_group)
 	return raid_counter
@@ -2180,6 +2188,18 @@ function RaidersDelete(_id)
 			end
 			table.remove(raid_table,i)
 			return true;
+		end
+	end
+end
+
+-- Gibt true zurück, wenn Gegner in der Nähe sind
+-- by Tenji
+function AreEnemiesInArea( _player, _position, _range)
+	for i = 1,8 do
+		if Logic.GetDiplomacyState( _player, i) == Diplomacy.Hostile then
+			if AreEntitiesInArea( i, 0, _position, _range, 1) then
+				return true
+			end
 		end
 	end
 end

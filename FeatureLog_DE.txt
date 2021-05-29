@@ -269,6 +269,9 @@
 	* Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
 	* Kala hat den üblichen Helden-Selektionsring
 	* In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
+	* Countdowns 
+		+ bleiben im Hauptspiel auch nach dem Laden eines Spielstands sichtbar
+		+ bei Beginn der letzten Minute ertönt ein kleiner Sound
 	* Hilfe-Button
 		+ gibt bei jedem Helden spezifische Hilfe
 		+ gibt bei Kanonen eine eigene Hilfe
@@ -468,7 +471,10 @@
 
 
 - ToDos:
+	* Kontrollierbare Schäferhunde
+	* SuperTech als KI-Bonus
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+		+ Keine random chests
 		+ Wasteland-Dörfer: Namen im Auftragsbuch
 		+ Goldhaufen
 		+ Grange
@@ -478,8 +484,12 @@
 		+ Varg
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Testing
-	* Auftragsbuch-Highlight
-	* Kontrollierbare Schäferhunde
+	* Neue Map "Tal der Verdammten"
+		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+		+ Erec lebt
+		+ Nettes NV
+		+ Kadirs Bruder
+		+ Giftiger Schwefelnebel und Dampfmaschinen
 	* FunFacts im LoadingScreen
 		+ mehr davon
 		+ besser geschrieben
@@ -502,6 +512,7 @@
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* Neue Spielerfarben(?)
+	* Auftragsbuch-Highlight
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* neue Comforts (bei Bedarf)
