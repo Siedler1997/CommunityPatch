@@ -184,8 +184,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("pilgrim")
 		CreateChestOpener("salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -200,7 +198,14 @@ function Mission_FirstMapAction()
 
 	-- Start prelude
 	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()
+			CreateRandomChests()
+		else
+			local vcpos = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
+
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 48, 0) }
 			for i = 2, table.getn(towers1) do
 				ReplaceEntity(towers1[i], Entities.PB_Tower2)
@@ -240,6 +245,9 @@ function Mission_FirstMapAction()
 			LookAt(bossID7, "tower_spawn1")
 			local bossID8 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos7.X + 100),(bosspos7.Y - 350),0,0,3,0)
 			LookAt(bossID8, "tower_spawn1")
+
+			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 2, ramount = 10})
+			RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = 3, ramount = 8})
 		end
 		--SetPosition("dario",GetPosition("defend1"))
 
@@ -247,6 +255,7 @@ function Mission_FirstMapAction()
 		--StartSimpleHiResJob("GetDarioPos")
 		--Tools.ExploreArea(-1, -1, 900)
 end
+
 --[[
 function GetDarioPos()
 	local pos = GetPosition("dario")

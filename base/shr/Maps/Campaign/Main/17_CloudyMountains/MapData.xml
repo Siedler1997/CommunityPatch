@@ -717,7 +717,7 @@
    </Position>
    <Orientation>9.000000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>8</PlayerID>
+   <PlayerID>7</PlayerID>
    <Health>-1</Health>
    <Name>InvetorsHut</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -792,7 +792,7 @@
    </Position>
    <Orientation>2.170000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>8</PlayerID>
+   <PlayerID>7</PlayerID>
    <Health>-1</Health>
    <Name>Leonardo</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -87799,5 +87799,110 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_LargeCampFire</Type>
+		 <Position>
+			 <X>3.820000e+004</X>
+			 <Y>1.440000e+004</Y>
+		 </Position>
+		 <Orientation>1.107888e+002</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>0</PlayerID>
+		 <Health>-1</Health>
+		 <Name>camp_fire1</Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_Gold1</Type>
+		 <Position>
+			 <X>3.300000e+003</X>
+			 <Y>2.280000e+004</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>0</PlayerID>
+		 <Health>-1</Health>
+		 <Name></Name>
+		 <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,300);</ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>9.000000e-001</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_Gold1</Type>
+		 <Position>
+			 <X>4.100000e+003</X>
+			 <Y>2.750000e+004</Y>
+		 </Position>
+		 <Orientation>2.700000e+002</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>0</PlayerID>
+		 <Health>-1</Health>
+		 <Name></Name>
+		 <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,400);</ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_Gold1</Type>
+		 <Position>
+			 <X>7.300000e+003</X>
+			 <Y>9.300000e+003</Y>
+		 </Position>
+		 <Orientation>1.800000e+002</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>0</PlayerID>
+		 <Health>-1</Health>
+		 <Name></Name>
+		 <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,500);</ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.100000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_ScriptEntity</Type>
+		 <Position>
+			 <X>1.920000e+004</X>
+			 <Y>3.180000e+004</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>1</PlayerID>
+		 <Health>-1</Health>
+		 <Name>rudelpos1</Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_ScriptEntity</Type>
+		 <Position>
+			 <X>1.670000e+004</X>
+			 <Y>3.710000e+004</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>1</PlayerID>
+		 <Health>-1</Health>
+		 <Name>rudelpos1_wp1</Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_ScriptEntity</Type>
+		 <Position>
+			 <X>1.510000e+004</X>
+			 <Y>3.330000e+004</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>1</PlayerID>
+		 <Health>-1</Health>
+		 <Name>rudelpos1_wp2</Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
  </Entities>
 </root>

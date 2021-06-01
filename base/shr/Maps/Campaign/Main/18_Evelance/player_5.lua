@@ -49,7 +49,6 @@ createPlayer5 = function()
 	end
 
 	SetupPlayerAi(playerId,aiDescription)
-	
 
 	-- create armys		
 		setupArmyRaiding()

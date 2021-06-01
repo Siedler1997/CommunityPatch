@@ -18,28 +18,22 @@ createArmySupportA = function()
 		AI.Army_SetSize(armySupportA.player,armySupportA.id,1)
 
 	--	create 
-		local type = Entities.PU_LeaderBow3
-		local experience = VERYHIGH_EXPERIENCE
-		local soldiers = 8
-		if CP_Difficulty == 1 then
-			type = Entities.PU_LeaderBow2
-			experience = experience - 1
-			soldiers = soldiers - 4
-		end
 			
 		local troopDescription = {
 		
-			leaderType 			= type,
+			leaderType 			= Entities.PU_LeaderBow3,
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers	= soldiers,
-			experiencePoints 	= experience,
+			maxNumberOfSoldiers	= 8,
+			experiencePoints 	= VERYHIGH_EXPERIENCE,
 		}			
 	
 		EnlargeArmy(armySupportA,troopDescription)
 		EnlargeArmy(armySupportA,troopDescription)
 		EnlargeArmy(armySupportA,troopDescription)
-		EnlargeArmy(armySupportA,troopDescription)
-		EnlargeArmy(armySupportA,troopDescription)
+		if CP_Difficulty == 0 then
+			EnlargeArmy(armySupportA,troopDescription)
+			EnlargeArmy(armySupportA,troopDescription)
+		end
 		
 	--	start controlling job		
 		

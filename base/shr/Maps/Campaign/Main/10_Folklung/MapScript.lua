@@ -175,20 +175,14 @@ function Mission_FirstMapAction()
 	createPlayer2()
 	createPlayer4()
 	createPlayer5()
-
-	-- Create Armies
-	createArmyCutscene()
-	createArmyRobbers()
-	createArmyBesiegerA()
-	createArmyFolklungA()
-	createArmyDefendBase()
 	
 	
 	-- Include Cutscene control
 	IncludeLocals("Cutscene_Control")
 	
 	--EnableDebugging()
-	
+
+	createArmyFolklungA()
 
 	StartCutscene("Intro", start1stQuest)
 		
@@ -197,6 +191,10 @@ function Mission_FirstMapAction()
 	
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
+
+		local hqpos = GetPosition("Pl5_SpawnPos")
+		DestroyEntity("Pl5_SpawnPos")
+		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
@@ -208,6 +206,12 @@ function Mission_FirstMapAction()
 		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 4, ramount = 10})		
 		RaidersCreate({player = 5, pos = "rudelpos2", revier = 3000, range = 4000, samount = 4, ramount = 12})
 	end
+
+	-- Create Armies
+	createArmyCutscene()
+	createArmyRobbers()
+	StartCountdown(60, createArmyBesiegerA, false)
+	createArmyDefendBase()
 
 	--StartSimpleHiResJob("GetDarioPos")
 	--Tools.ExploreArea(-1, -1, 900)

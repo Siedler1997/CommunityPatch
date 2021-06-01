@@ -117,6 +117,8 @@ end2ndQuest = function()
 
 	-- Give resources to player
 	Tools.GiveResouces(gvMission.PlayerID, 1000, 1000, 1000, 1000, 1000, 1000)
+	
+	Explore.Show("ShowSnowNPCPos", "SnowNPCPos", 6000)
 
 	start3rdQuest()
 end
@@ -159,7 +161,12 @@ end3rdQuest = function()
 	ReplaceEntity("DeadTree", Entities.XD_TreeEvelance1)
 		
 	-- Player 4 joins
-	Logic.ChangeAllEntitiesPlayerID(4, 1)
+	if CP_Difficulty == 0 then
+		Logic.ChangeAllEntitiesPlayerID(4, 1)
+	else
+		Logic.SetDiplomacyState( 1, 4, Diplomacy.Friendly )
+		Logic.SetShareExplorationWithPlayerFlag(1, 4, 1)
+	end
 	
 	VillageDone()
 end
@@ -233,7 +240,18 @@ end5thQuest = function()
 	buildUpDone = true
 	
 	-- Change player
-	Logic.ChangeAllEntitiesPlayerID(6, 1)
+	if CP_Difficulty == 0 then
+		Logic.ChangeAllEntitiesPlayerID(6, 1)
+	else	
+		Logic.SetDiplomacyState( 1, 6, Diplomacy.Friendly )
+		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
+
+		local pos = GetPosition("BuildUpQuestPos")
+		local Data = { Logic.GetPlayerEntitiesInArea(1, Entities.PB_Residence3, pos.X, pos.Y, 6400, 6)};
+		for i=2, Data[1]+1 do
+			ChangePlayer(Data[i],4)
+		end
+	end
 	
 	ResolveBriefing(briefingBuildUp[2])
 	

@@ -57,7 +57,7 @@
    </Position>
    <Orientation>1.690000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -65,7 +65,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_Barracks1</Type>
+   <Type>PB_Barracks2</Type>
    <Position>
     <X>2.770000e+004</X>
     <Y>2.320000e+004</Y>
@@ -230,7 +230,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_Tower2</Type>
+   <Type>PB_Tower3</Type>
    <Position>
     <X>2.610000e+004</X>
     <Y>2.280000e+004</Y>
@@ -239,13 +239,13 @@
    <Flags>0</Flags>
    <PlayerID>2</PlayerID>
    <Health>-1</Health>
-   <Name></Name>
+   <Name>p2_hq</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_Archery1</Type>
+   <Type>PB_Archery2</Type>
    <Position>
     <X>2.520000e+004</X>
     <Y>2.560000e+004</Y>
@@ -267,7 +267,7 @@
    </Position>
    <Orientation>1.930000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -282,7 +282,7 @@
    </Position>
    <Orientation>1.870000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -1004,7 +1004,7 @@
    <Flags>0</Flags>
    <PlayerID>0</PlayerID>
    <Health>-1</Health>
-   <Name></Name>
+   <Name>vc_empty</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
@@ -1019,7 +1019,7 @@
    <Flags>0</Flags>
    <PlayerID>1</PlayerID>
    <Health>-1</Health>
-   <Name></Name>
+   <Name>vc_player</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
@@ -2060,7 +2060,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PU_SoldierSword2</Type>
+   <Type>CU_LeaderOutlaw1</Type>
    <Position>
     <X>9.983031e+003</X>
     <Y>9.699189e+003</Y>
@@ -36567,7 +36567,7 @@
    </Position>
    <Orientation>1.560000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -36582,7 +36582,7 @@
    </Position>
    <Orientation>1.880000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -36597,9 +36597,9 @@
    </Position>
    <Orientation>1.520000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
-   <Name></Name>
+   <Name>ChangeCannon3</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
@@ -36627,7 +36627,7 @@
    </Position>
    <Orientation>2.010000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -36642,7 +36642,7 @@
    </Position>
    <Orientation>2.060000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>5</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -40579,5 +40579,20 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_Gold1</Type>
+		 <Position>
+			 <X>1.800000e+003</X>
+			 <Y>1.710000e+004</Y>
+		 </Position>
+		 <Orientation>2.250000e+002</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>0</PlayerID>
+		 <Health>-1</Health>
+		 <Name></Name>
+		 <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,200);</ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>8.000000e-001</Scale>
+	 </Entity>
  </Entities>
 </root>

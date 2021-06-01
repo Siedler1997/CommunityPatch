@@ -19,6 +19,9 @@ createArmyAttack3 = function()
 		armyAttack3.player 					= 7
 		armyAttack3.id						= 3
 		armyAttack3.strength				= 3
+		if CP_Difficulty == 1 then
+			armyAttack3.strength = armyAttack3.strength * 2
+		end
 		armyAttack3.position				= GetPosition("defend1")			-- before Main castle
 		armyAttack3.rodeLength				= 2000
 		armyAttack3.control					= {}

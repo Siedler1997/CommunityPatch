@@ -21,10 +21,14 @@ createRobbers = function(_army, _index)
 	
 	if CP_Difficulty == 0 then
 		_army.strength		= 3
-		_army.spawnTypes 	= { {Entities.CU_BanditLeaderSword1, 12} }
+		_army.spawnTypes 	= { {Entities.CU_BanditLeaderSword1, 8},
+								{Entities.CU_BanditLeaderSword1, 8},
+								{Entities.CU_BanditLeaderBow1, 4}}
 	else
 		_army.strength		= 5
-		_army.spawnTypes 	= { {Entities.CU_BanditLeaderSword2, 12} }
+		_army.spawnTypes 	= { {Entities.CU_BanditLeaderSword2, 8},
+								{Entities.CU_BanditLeaderSword2, 8},
+								{Entities.CU_BanditLeaderBow2, 8} }
 	end
 
 	-- Spawn parameter

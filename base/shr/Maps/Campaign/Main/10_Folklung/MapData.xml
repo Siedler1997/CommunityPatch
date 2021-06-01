@@ -1850,12 +1850,12 @@
    <Scale>0.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>CB_RobberyTower1</Type>
+   <Type>PB_Headquarters1</Type>
    <Position>
     <X>4.100000e+003</X>
     <Y>3.480000e+004</Y>
    </Position>
-   <Orientation>0.000000e+000</Orientation>
+   <Orientation>9.000000e+001</Orientation>
    <Flags>0</Flags>
    <PlayerID>5</PlayerID>
    <Health>-1</Health>
@@ -23982,7 +23982,7 @@
    </Position>
    <Orientation>2.770000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name>Leader1</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -24860,7 +24860,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_Archery2</Type>
+   <Type>PB_Headquarters1</Type>
    <Position>
     <X>2.880000e+004</X>
     <Y>2.680000e+004</Y>
@@ -24869,7 +24869,7 @@
    <Flags>0</Flags>
    <PlayerID>2</PlayerID>
    <Health>-1</Health>
-   <Name>P2_Archery1</Name>
+   <Name>P2_HQ</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
@@ -61229,7 +61229,7 @@
    </Position>
    <Orientation>2.840000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -61244,7 +61244,7 @@
    </Position>
    <Orientation>2.840000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -61259,7 +61259,7 @@
    </Position>
    <Orientation>2.840000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>2</PlayerID>
+   <PlayerID>8</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>

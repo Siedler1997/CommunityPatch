@@ -36,5 +36,6 @@ BARBARIAN_COLOR		= 5
 
 TEST_COLOR			= 17
 
--- Free:		7,8,10,13,15,16
+PAPAL_COLOR			= 13
 
+-- Free:		15,16

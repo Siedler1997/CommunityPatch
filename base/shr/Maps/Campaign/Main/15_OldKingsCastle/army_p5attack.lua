@@ -4,7 +4,6 @@ setupArmyP5Attack = function()
 
 	ArmyP5Attack.player 			= 	5
 	ArmyP5Attack.id					= 	1
-	ArmyP5Attack.strength			= 	6
 	ArmyP5Attack.position			= 	GetPosition("AI2_ConcentratingArea")
 	ArmyP5Attack.rodeLength			= 	6000
 	                                	
@@ -15,9 +14,11 @@ setupArmyP5Attack = function()
 											UpgradeCategories.LeaderHeavyCavalry }
 
 	if CP_Difficulty == 0 then
+		ArmyP5Attack.strength		= 	6
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
 	else
+		ArmyP5Attack.strength		= 	8
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4)
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4)
 	end

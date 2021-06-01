@@ -21,6 +21,8 @@ setupArmyCenterOutpost = function()
 													{ Entities.PU_LeaderBow4, 12},
 													{ Entities.PU_LeaderPoleArm4, 12},
 													{ Entities.PU_LeaderSword4, 12},
+													{ Entities.PU_LeaderPoleArm4, 12},
+													{ Entities.PU_LeaderSword4, 12},
 													{ Entities.PV_Cannon3, 0} }
 	end
 	ArmyCenterOutpost.spawnPos			= GetPosition("KI2_SpawnPos")

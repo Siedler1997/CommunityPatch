@@ -31,7 +31,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- Garek, village
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos in northeast
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- Avala (Mountain village)
-	Display.SetPlayerColorMapping(7, NPC_COLOR)				-- NPCs
+	Display.SetPlayerColorMapping(7, ARIS_ROBBERS)			-- Aris robbers
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
 end
 
@@ -145,8 +145,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -172,14 +170,38 @@ function Mission_FirstMapAction()
 
 --	StartCutscene("MissionComplete")
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
 		local hq_ai1_pos = GetPosition("HQ_AI1")
 
-		Logic.CreateEntity(Entities.XD_RockDestroyableMedium1, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
+		Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
 
 		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
 		LookAt(bossID1, "Garek")
+		
+		local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
+		LookAt(bossID1, "camp_fire4")
+		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
+		LookAt(bossID2, "camp_fire2")
+		local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
+		LookAt(bossID3, "camp_fire3")
+		local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
+		LookAt(bossID4, "camp_fire1")
+		local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
+		LookAt(bossID5, "camp_fire2")
+		
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 12})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Pilgrim")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

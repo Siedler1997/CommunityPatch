@@ -16,7 +16,11 @@ createArmyAttack2 = function()
 	
 		armyAttack2.player 					= 7
 		armyAttack2.id						= 2
-		armyAttack2.strength				= 6
+		if CP_Difficulty == 0 then
+			armyAttack2.strength			= 6
+		else
+			armyAttack2.strength			= 8
+		end
 		armyAttack2.position				= GetPosition("army1")
 		armyAttack2.rodeLength				= 1500
 		armyAttack2.control					= {}
@@ -84,13 +88,17 @@ createArmyAttack2 = function()
 				createArmy2(size,Entities.PV_Cannon4,Entities.PV_Cannon4,Entities.PU_LeaderBow4)
 				
 			elseif armyType == 1 then
-			
-				createArmy2(size,Entities.PU_LeaderPoleArm3,Entities.PU_LeaderPoleArm3,Entities.PU_LeaderPoleArm3)
-				
+				if CP_Difficulty == 0 then
+					createArmy2(size,Entities.PU_LeaderPoleArm3,Entities.PU_LeaderPoleArm3,Entities.PU_LeaderPoleArm3)
+				else
+					createArmy2(size,Entities.PU_LeaderPoleArm4,Entities.PU_LeaderPoleArm4,Entities.PU_LeaderPoleArm4)
+				end
 			else
-			
-				createArmy2(size,Entities.PV_Cannon1,Entities.PV_Cannon1,Entities.PV_Cannon1)
-				
+				if CP_Difficulty == 0 then
+					createArmy2(size,Entities.PV_Cannon1,Entities.PV_Cannon1,Entities.PV_Cannon1)
+				else
+					createArmy2(size,Entities.PV_Cannon3,Entities.PV_Cannon3,Entities.PV_Cannon3)
+				end
 			end
 	
 	

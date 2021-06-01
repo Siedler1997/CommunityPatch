@@ -12,7 +12,8 @@
 	CP_Difficulty = 0
 
 	--	globals
-
+	
+		IncludeGlobals("MapEditorTools")
 		IncludeGlobals("MapSettings_Main")
 
 	--	locals
@@ -186,8 +187,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 
 		startQuestChestRun()
 
@@ -219,7 +218,15 @@ function Mission_FirstMapAction()
 
 		start1stCutscene()
 		
-		if CP_Difficulty == 1 then
+		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()
+			CreateRandomChests()
+		else
+			DestroyEntity("vc_empty")
+
+			ReplaceEntity("ChangeCannon3", Entities.PV_Cannon3)
+			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
+
 			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 48, 0) }
 			for i = 1, table.getn(towers1) do
 				if IsExisting(towers1[i]) then
@@ -239,6 +246,12 @@ function Mission_FirstMapAction()
 		end
 
 		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleHiResJob("GetDarioPos")
 end
 
-
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

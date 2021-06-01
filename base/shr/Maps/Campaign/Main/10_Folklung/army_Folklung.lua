@@ -1,4 +1,5 @@
 createArmyFolklungA = function()
+--[[
 	ArmyFolklungA					= {}
 
 	ArmyFolklungA.player 			= 	gvMission.PlayerIDFolklung
@@ -40,6 +41,45 @@ createArmyFolklungA = function()
 	
 	-- Control army
 	StartJob("ControlArmyFolklungA")
+	--]]
+	
+	ArmyFolklungA					= {}
+
+	ArmyFolklungA.player 			= 	gvMission.PlayerIDFolklung
+	ArmyFolklungA.id				= 	3
+	ArmyFolklungA.strength			= 	7
+	ArmyFolklungA.position			= 	GetPosition("FolklungSpawn")
+	ArmyFolklungA.rodeLength		= 	8000
+	
+	ArmyFolklungA.AllowedTypes 		= 	{	UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderPoleArm }
+
+	-- Attack parameter
+	ArmyFolklungA.retreatStrength	= 	1
+
+	ArmyFolklungA.baseDefenseRange	= 	1000
+	ArmyFolklungA.outerDefenseRange	= 	8000
+	
+	if Logic.GetWeatherState() == 1 then
+	    SetSummerFolklungA()
+	    WeatherFolklungJob = StartJob("WinterFolklung")
+	else
+	    SetWinterFolklungA()
+	    WeatherFolklungJob = StartJob("SummerFolklung")
+	end
+
+	-- Setup army
+	SetupArmy(ArmyFolklungA)
+	
+	-- Army generator
+	SetupAITroopGenerator("ArmyFolklungASpawn", ArmyFolklungA)
+	
+	StartJob("ControlArmyFolklungA")
 end
 
 ArmyFolklungASetDefensive = function()
@@ -55,7 +95,7 @@ ArmyFolklungASetDefensive = function()
 		ArmyFolklungA.baseDefenseRange	= 	1000
 		ArmyFolklungA.outerDefenseRange	= 	8000
 		ArmyFolklungA.position			= 	GetPosition("FolklungSpawn")
-		ArmyFolklungA.strength			= 	6
+		ArmyFolklungA.strength			= 	7
 		SetupArmy(ArmyFolklungA)
 		Retreat(ArmyFolklungA)
 	end

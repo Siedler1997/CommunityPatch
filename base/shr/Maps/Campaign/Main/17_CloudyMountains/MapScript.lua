@@ -27,11 +27,12 @@ function Mission_InitPlayerColorMapping()
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
 	
 	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(2,PAPAL_COLOR)
 	Display.SetPlayerColorMapping(3,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(4,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR1)
+	Display.SetPlayerColorMapping(7,NPC_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
 end
@@ -148,8 +149,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Kerberos")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 		
@@ -169,10 +168,26 @@ function Mission_FirstMapAction()
 	
 --	EnableDebugging()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
 		local bosspos1 = GetPosition("HQ_AI1")
 		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 1000),(bosspos1.Y - 1000),0,0,3,0)
-		--LookAt(bossID1, "MinerClayMine")
+
+		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,38400,14400,0,0,3,0)
+		LookAt(bossID2, "camp_fire1")
+
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 3, ramount = 10})
 	end
+
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

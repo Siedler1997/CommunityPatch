@@ -15,6 +15,9 @@ createArmyDefendDen = function()
 		armyDefendDen.player 				= 8
 		armyDefendDen.id					= 0
 		armyDefendDen.strength				= 4
+		if CP_Difficulty == 1 then
+			armyDefendDen.strength = armyDefendDen.strength * 2
+		end
 		armyDefendDen.position				= GetPosition("defend1")
 		armyDefendDen.rodeLength			= 1200
 		armyDefendDen.control				= {}
@@ -46,6 +49,9 @@ createArmyDefendDen = function()
 		armyDefendInnerCircle.player 					= 8
 		armyDefendInnerCircle.id						= 1
 		armyDefendInnerCircle.strength					= 3
+		if CP_Difficulty == 1 then
+			armyDefendInnerCircle.strength = armyDefendInnerCircle.strength * 2
+		end
 		armyDefendInnerCircle.position					= GetPosition("defend2")
 		armyDefendInnerCircle.rodeLength				= 4000
 		armyDefendInnerCircle.control					= {}
@@ -80,6 +86,9 @@ createArmyDefendDen = function()
 		armyDefend1.player 					= 8
 		armyDefend1.id						= 2
 		armyDefend1.strength				= 3
+		if CP_Difficulty == 1 then
+			armyDefend1.strength = armyDefend1.strength * 2
+		end
 		armyDefend1.position				= GetPosition("defend3")
 		armyDefend1.rodeLength				= 500
 		armyDefend1.control					= {}
@@ -107,6 +116,9 @@ createArmyDefendDen = function()
 		armyDefend2.player 					= 8
 		armyDefend2.id						= 3
 		armyDefend2.strength				= 2
+		if CP_Difficulty == 1 then
+			armyDefend2.strength = armyDefend2.strength * 2
+		end
 		armyDefend2.position				= GetPosition("defend4")
 		armyDefend2.rodeLength				= 500
 		armyDefend2.control					= {}
@@ -134,6 +146,9 @@ createArmyDefendDen = function()
 		armyDefend3.player 					= 8
 		armyDefend3.id						= 4
 		armyDefend3.strength				= 3
+		if CP_Difficulty == 1 then
+			armyDefend3.strength = armyDefend3.strength * 2
+		end
 		armyDefend3.position				= GetPosition("defend5")
 		armyDefend3.rodeLength				= 500
 		armyDefend3.control					= {}
@@ -168,7 +183,11 @@ createArmyDefendDen = function()
 	
 		armyDefendPatrol.player 			= 8
 		armyDefendPatrol.id					= 5
-		armyDefendPatrol.strength			= 6
+		if CP_Difficulty == 0 then
+			armyDefendPatrol.strength		= 6
+		else
+			armyDefendPatrol.strength		= 8
+		end
 		armyDefendPatrol.position			= GetPosition("defend1")
 		armyDefendPatrol.rodeLength			= 500
 

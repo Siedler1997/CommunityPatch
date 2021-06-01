@@ -15,6 +15,7 @@ CP_Difficulty = 0
 function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 4, 6, Diplomacy.Hostile )
 end
@@ -28,9 +29,9 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR2)
-	Display.SetPlayerColorMapping(5,BARMECIA_COLOR)
+	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(7,BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
 end
@@ -53,6 +54,7 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Foundry, 0)
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
 		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(5)
 		ResearchAllMilitaryTechs(6)
 		ResearchAllMilitaryTechs(7)
 	end
@@ -163,11 +165,13 @@ function Mission_FirstMapAction()
 	-- Start prelude
 	start1stQuest()
 
-	--StartSimpleHiResJob("GetDarioPos")
 	if CP_Difficulty == 1 then
 		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
 		Logic.CreateEntity(Entities.PB_Tower3, 44800, 10400, 0, 6);
 		Logic.CreateEntity(Entities.PB_Tower3, 41500, 10300, 0, 6);
+		
+		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,43100,11400,0,0,3,0)
+		LookAt(bossID1, "KI1_Defense")
 		
 		local towers1 = { Logic.GetPlayerEntities(6, Entities.PB_Tower2, 5, 0) }
 		for i = 1, table.getn(towers1) do
@@ -175,11 +179,15 @@ function Mission_FirstMapAction()
 				ReplaceEntity(towers1[i], Entities.PB_Tower3)
 			end
 		end
+
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 9})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = 3, ramount = 10})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
-
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
 --[[
 function GetDarioPos()
 	local pos = GetPosition("Dario")

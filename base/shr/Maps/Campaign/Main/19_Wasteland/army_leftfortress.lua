@@ -5,7 +5,7 @@ setupArmyLeftFortress = function()
 	ArmyLeftFortress.player 				= 2
 	ArmyLeftFortress.id						= 0
 	ArmyLeftFortress.strength				= 6
-	ArmyLeftFortress.retreatStrength			= 2
+	ArmyLeftFortress.retreatStrength		= 1
 	ArmyLeftFortress.position				= GetPosition("KI1_DefensePos")
 	ArmyLeftFortress.baseDefenseRange		= 6000
 	ArmyLeftFortress.outerDefenseRange		= 8000
@@ -17,6 +17,7 @@ setupArmyLeftFortress = function()
 	if CP_Difficulty == 0 then
 		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon2)
 	else
+		ArmyLeftFortress.strength = ArmyLeftFortress.strength + 2
 		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon4)
 	end
 

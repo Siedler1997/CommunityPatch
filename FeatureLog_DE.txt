@@ -330,8 +330,12 @@
 			/ Gegnerische Befestigungen sind zäher, zahlreicher und/oder höher ausgebaut 
 			/ Gegnerische Truppen sind zäher, stärker, erfahrener und zahlreicher
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
+			/ Gegner sind z.T. aggressiver
 			/ Dem Spieler stehen z.T. weniger Siedlungsplätze zur Verfügung
 			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude schlechter
+			/ Schatztruhen
+				* jene mit sehr viel Inhalt haben deutlich weniger
+				* bisherige mit zufälligem Inhalt fallen komplett weg
 			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	* Die Grafik ist allgemein etwas besser (by yoq)
@@ -471,18 +475,23 @@
 
 
 - ToDos:
-	* Kontrollierbare Schäferhunde
+	* EvilMod in Hauptspiel/AddOn1 um "neue" units ergänzen (z.B. Wölfe)
+	* MoveAndVanish soll auch Entities in Sichtweite entfernen können
+	* Kontrollierbare Schäferhunde(?)
 	* SuperTech als KI-Bonus
+	* Wasteland-Dörfer: Namen im Auftragsbuch
 	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
 		+ Keine random chests
-		+ Wasteland-Dörfer: Namen im Auftragsbuch
 		+ Goldhaufen
 		+ Grange
 		+ Schiffswracks
 		+ Wolfsrudel
 		+ Neue Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
-		+ Varg
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
+		+ Schwierigkeitsgrad "Albtraum"(?)
+			/ Noch weniger DZs
+			/ Super-Tech für KIs
+			/ KIs sehr aggressiv
 		+ Testing
 	* Neue Map "Tal der Verdammten"
 		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet

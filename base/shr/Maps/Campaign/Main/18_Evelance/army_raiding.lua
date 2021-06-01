@@ -64,15 +64,12 @@ setupArmyRaiding = function()
 
 	-- change army settings at time:
 	TimeLine.Enter("Allow bow", 			TimeLine.Seconds +  20*60, "AllowP5Bow")
-	TimeLine.Enter("Upgrade bow to 2",		TimeLine.Seconds +  26*60, "UpgradeP5Bow")
 	TimeLine.Enter("Upgrade bow to 3",		TimeLine.Seconds +  36*60, "UpgradeP5Bow")
 	TimeLine.Enter("Upgrade bow to 4",		TimeLine.Seconds +  50*60, "UpgradeP5Bow")
                                                                 
-	TimeLine.Enter("Upgrade pike to 2",		TimeLine.Seconds +  10*60, "UpgradeP5Pike")
 	TimeLine.Enter("Upgrade pike to 3",		TimeLine.Seconds +  32*60, "UpgradeP5Pike")
 	TimeLine.Enter("Upgrade pike to 4",		TimeLine.Seconds +  41*60, "UpgradeP5Pike")
                                                                 
-	TimeLine.Enter("Upgrade sword to 2",	TimeLine.Seconds +  21*60, "UpgradeP5Sword")
 	TimeLine.Enter("Upgrade sword to 3",	TimeLine.Seconds +  35*60, "UpgradeP5Sword")
 	TimeLine.Enter("Upgrade sword to 4",	TimeLine.Seconds +  45*60, "UpgradeP5Sword")
                                                                 
@@ -88,9 +85,16 @@ setupArmyRaiding = function()
 	TimeLine.Enter("Increase Size to 4/1", 	TimeLine.Seconds +  37*60, "IncreaseP5AttackSize")
 	TimeLine.Enter("Increase Size to 5/1", 	TimeLine.Seconds +  51*60, "IncreaseP5AttackSize")
 	TimeLine.Enter("Increase Size to 6/2", 	TimeLine.Seconds +  80*60, "IncreaseP5AttackSize")
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		TimeLine.Enter("Upgrade pike to 2",		TimeLine.Seconds +  10*60, "UpgradeP5Pike")
+		TimeLine.Enter("Upgrade sword to 2",	TimeLine.Seconds +  21*60, "UpgradeP5Sword")
+		TimeLine.Enter("Upgrade bow to 2",		TimeLine.Seconds +  26*60, "UpgradeP5Bow")
+	else
+		UpgradeP5Sword()
+		UpgradeP5Pike()
+		UpgradeP5Bow()
+		IncreaseP5AttackSize()
 		TimeLine.Enter("Increase Size to X1", 	TimeLine.Seconds +  30*60, "IncreaseP5AttackSize")
-		TimeLine.Enter("Increase Size to X2", 	TimeLine.Seconds +  45*60, "IncreaseP5AttackSize")
 	end
 	
 	-- Army generator

@@ -4,28 +4,19 @@ setupArmyDefenseLeftMines = function()
 
 	armyDefenseLeftMines.player 			= 7
 	armyDefenseLeftMines.id					= 1
-	armyDefenseLeftMines.strength			= 3
 	armyDefenseLeftMines.position			= GetPosition("DefenceLeftMinesPos")
 	armyDefenseLeftMines.rodeLength			= 2500
 
 	if CP_Difficulty == 0 then
-		armyDefenseLeftMines.spawnTypes 		= { { Entities.PU_LeaderPoleArm1, 4},
-													{ Entities.PU_LeaderSword1, 4},
-													{ Entities.PU_LeaderPoleArm1, 4},
-													{ Entities.PU_LeaderPoleArm1, 4},
-													{ Entities.PU_LeaderSword1, 4},
-													{ Entities.PU_LeaderHeavyCavalry1, 4},
-													{ Entities.PU_LeaderHeavyCavalry1, 4},
-													{ Entities.PU_LeaderHeavyCavalry2, 4} }
+		armyDefenseLeftMines.strength = 3
+		armyDefenseLeftMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow1, 4},
+													{ Entities.CU_BanditLeaderSword1, 4},
+													{ Entities.CU_BanditLeaderSword1, 4} }
 	else
-		armyDefenseLeftMines.spawnTypes 		= { { Entities.PU_LeaderPoleArm2, 4},
-													{ Entities.PU_LeaderSword2, 4},
-													{ Entities.PU_LeaderPoleArm2, 4},
-													{ Entities.PU_LeaderPoleArm2, 4},
-													{ Entities.PU_LeaderSword2, 4},
-													{ Entities.PU_LeaderHeavyCavalry1, 4},
-													{ Entities.PU_LeaderHeavyCavalry1, 4},
-													{ Entities.PU_LeaderHeavyCavalry2, 4} }
+		armyDefenseLeftMines.strength = 4
+		armyDefenseLeftMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow2, 8},
+													{ Entities.CU_BanditLeaderSword2, 8},
+													{ Entities.CU_BanditLeaderSword2, 8} }
 	end
 	armyDefenseLeftMines.spawnPos			= GetPosition("DefenceLeftMinesSpawn")
 	armyDefenseLeftMines.spawnGenerator		= "DefenceLeftMinesHQ"

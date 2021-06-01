@@ -8,17 +8,20 @@ createPlayer2 = function()
 	local aiDescription = {
 	
 		serfLimit				=	4,
-		--------------------------------------------------
-		resources = {
+		extracting = false
+	}
+
+	if CP_Difficulty == 0 then
+		aiDescription.resources = {
 			gold				=	1000,
 			clay				=	400,
 			iron				=	400,
 			sulfur				=	400,
 			stone				=	400,
 			wood				=	400
-		},
-		--------------------------------------------------
-		refresh = {
+		}
+
+		aiDescription.refresh = {
 			gold				=	10,
 			clay				=	10,
 			iron				=	10,
@@ -26,12 +29,17 @@ createPlayer2 = function()
 			stone				=	10,
 			wood				=	10,
 			updateTime			=	10
-		},
-		--------------------------------------------------
-		extracting = false
-	}
+		}
+	else
+		aiDescription.resources = {
+			gold				=	2000,
+			clay				=	800,
+			iron				=	800,
+			sulfur				=	800,
+			stone				=	800,
+			wood				=	800
+		}
 
-	if CP_Difficulty == 1 then
 		aiDescription.refresh = {
 			gold				=	30,
 			clay				=	20,
@@ -39,7 +47,7 @@ createPlayer2 = function()
 			sulfur				=	20,
 			stone				=	20,
 			wood				=	20,
-			updateTime			=	10
+			updateTime			=	5
 		}
 	end
 

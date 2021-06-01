@@ -1,0 +1,59 @@
+<root>	
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+		<Gold>100</Gold>
+	</ResourceCosts>
+	
+	<ExplorationModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>
+	</ExplorationModifier>
+	<SpeedModifier>
+		<Value>10</Value>
+		<Operation>+</Operation>
+	</SpeedModifier>
+	<DamageModifier>
+		<Value>4</Value>
+		<Operation>+</Operation>
+	</DamageModifier>
+	<ArmorModifier>
+		<Value>4</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+	
+	<MaxRangeModifier>
+		<Value>200</Value>
+		<Operation>+</Operation>
+	</MaxRangeModifier>
+	
+	<!--
+	<MinRangeModifier>
+		<Value>100</Value>
+		<Operation>+</Operation>
+	</MinRangeModifier>
+	
+	<HitpointModifier>
+		<Value>100</Value>
+		<Operation>+</Operation>
+	</HitpointModifier>
+	
+	<GroupLimitModifier>
+		<Value>4</Value>
+		<Operation>+</Operation>
+	</GroupLimitModifier>
+	
+	<DamageBonusModifier>
+		<Value>100</Value>
+		<Operation>+</Operation>
+	</DamageBonusModifier>
+	
+	<DodgeModifier>
+		<Value>10</Value>
+		<Operation>+</Operation>
+	</DodgeModifier>
+	-->
+	
+	<Conditions>		
+	</Conditions>
+</root>

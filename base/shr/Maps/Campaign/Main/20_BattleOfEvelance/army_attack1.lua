@@ -27,8 +27,12 @@ createArmyAttack1 = function()
 		armyAttack1.control.mode			= SETUP
 		
 		SetupArmy(armyAttack1)
-
-		createArmy(armyAttack1,4,Entities.PU_LeaderPoleArm1,Entities.PU_LeaderPoleArm1,Entities.PU_LeaderBow1)
+		
+		if CP_Difficulty == 0 then
+			createArmy(armyAttack1,4,Entities.PU_LeaderPoleArm1,Entities.PU_LeaderPoleArm1,Entities.PU_LeaderBow1)
+		else
+			createArmy(armyAttack1,4,Entities.PU_LeaderPoleArm2,Entities.PU_LeaderPoleArm2,Entities.PU_LeaderBow2)
+		end
 
 	--	job		
 
@@ -197,31 +201,47 @@ spawnArmy = function(_army, _chance)
 		local cavalry		=	Entities.PU_LeaderHeavyCavalry2
 		local cavalryBow	=	Entities.PU_LeaderCavalry2
 		
-		if _army.control.wave < 3 then
-		
-			sword		= 	Entities.PU_LeaderSword1
-			pike		=	Entities.PU_LeaderPoleArm1	
-			bow			=	Entities.PU_LeaderBow1
-			cavalry		=	Entities.PU_LeaderHeavyCavalry1
-			cavalryBow	=	Entities.PU_LeaderCavalry1
-
-		elseif _army.control.wave < 4 then
-		
-			sword		= 	Entities.PU_LeaderSword2
-			pike		=	Entities.PU_LeaderPoleArm2
-			bow			=	Entities.PU_LeaderBow2
-			cavalry		=	Entities.PU_LeaderHeavyCavalry1
-			cavalryBow	=	Entities.PU_LeaderCavalry1
-
-		elseif _army.control.wave < 6 then
-		
-			sword		= 	Entities.PU_LeaderSword3
-			pike		=	Entities.PU_LeaderPoleArm3
-			bow			=	Entities.PU_LeaderBow3
-			cavalry		=	Entities.PU_LeaderHeavyCavalry2
-			cavalryBow	=	Entities.PU_LeaderCavalry2
-
+		if CP_Difficulty == 0 then
+			if _army.control.wave < 3 then
+				sword		= 	Entities.PU_LeaderSword1
+				pike		=	Entities.PU_LeaderPoleArm1	
+				bow			=	Entities.PU_LeaderBow1
+				cavalry		=	Entities.PU_LeaderHeavyCavalry1
+				cavalryBow	=	Entities.PU_LeaderCavalry1
+			elseif _army.control.wave < 4 then
+				sword		= 	Entities.PU_LeaderSword2
+				pike		=	Entities.PU_LeaderPoleArm2
+				bow			=	Entities.PU_LeaderBow2
+				cavalry		=	Entities.PU_LeaderHeavyCavalry1
+				cavalryBow	=	Entities.PU_LeaderCavalry1
+			elseif _army.control.wave < 6 then
+				sword		= 	Entities.PU_LeaderSword3
+				pike		=	Entities.PU_LeaderPoleArm3
+				bow			=	Entities.PU_LeaderBow3
+				cavalry		=	Entities.PU_LeaderHeavyCavalry2
+				cavalryBow	=	Entities.PU_LeaderCavalry2
 			end
+		else
+			if _army.control.wave < 3 then
+				sword		= 	Entities.PU_LeaderSword2
+				pike		=	Entities.PU_LeaderPoleArm2	
+				bow			=	Entities.PU_LeaderBow2
+				cavalry		=	Entities.PU_LeaderHeavyCavalry1
+				cavalryBow	=	Entities.PU_LeaderCavalry1
+			elseif _army.control.wave < 4 then
+				sword		= 	Entities.PU_LeaderSword3
+				pike		=	Entities.PU_LeaderPoleArm3
+				bow			=	Entities.PU_LeaderBow3
+				cavalry		=	Entities.PU_LeaderHeavyCavalry1
+				cavalryBow	=	Entities.PU_LeaderCavalry1
+			elseif _army.control.wave < 6 then
+				sword		= 	Entities.PU_LeaderSword4
+				pike		=	Entities.PU_LeaderPoleArm4
+				bow			=	Entities.PU_LeaderBow4
+				cavalry		=	Entities.PU_LeaderHeavyCavalry2
+				cavalryBow	=	Entities.PU_LeaderCavalry2
+			end
+		end
 										
 		local armyType = Logic.GetRandom(3)
 		

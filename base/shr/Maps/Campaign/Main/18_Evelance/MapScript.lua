@@ -24,8 +24,9 @@ CP_Difficulty = 0
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to initialize the diplomacy states
 function Mission_InitDiplomacy()
+	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
---	Logic.SetDiplomacyState( 4, 5, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -34,9 +35,9 @@ function Mission_InitPlayerColorMapping()
 	
 	Display.SetPlayerColorMapping(3, BARMECIA_COLOR)		-- Leonardo
 	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Walls not destroyable
-	Display.SetPlayerColorMapping(4, KERBEROS_COLOR)			-- Walls destroyable
+	Display.SetPlayerColorMapping(4, KERBEROS_COLOR)		-- Walls destroyable
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' raiding army
-	Display.SetPlayerColorMapping(7, NPC_COLOR)				-- buildings on island
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)			
 	Display.SetPlayerColorMapping(8, NPC_COLOR)				-- orphaned towers
 
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR1)		-- Tendrel
@@ -60,6 +61,7 @@ function Mission_InitTechnologies()
 		ResearchAllMilitaryTechs(4)
 		ResearchAllMilitaryTechs(5)
 		ResearchAllMilitaryTechs(6)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -167,8 +169,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("pilgrim")
 		CreateChestOpener("salim")
 	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 
 		StartChestQuest()
 	
@@ -189,7 +189,14 @@ function Mission_FirstMapAction()
 -- createBriefingMeetLeonardo()
 -- start6thQuest()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+	else
+		local vcpos = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinHouse1,vcpos.X,vcpos.Y,0,0)
+
 		local bosspos1 = GetPosition("KerberosDefenseSpawnPos")
 		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 200),bosspos1.Y,0,0,3,0)
 
@@ -205,7 +212,20 @@ function Mission_FirstMapAction()
 		local bosspos4 = GetPosition("PrincessDefend")
 		local bossID4 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos4.X + 100),bosspos4.Y,0,0,3,0)
 		LookAt(bossID4, "Seer")
+		
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 8})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = 3, ramount = 10})
+		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = 2, ramount = 9})
+		RaidersCreate({player = 7, pos = "rudelpos4", revier = 2000, range = 3500, samount = 3, ramount = 8})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

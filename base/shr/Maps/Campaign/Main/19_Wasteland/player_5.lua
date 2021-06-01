@@ -7,6 +7,7 @@ createPlayer5 = function()
 	
 	if CP_Difficulty == 1 then
 		MapEditor_SetupAI(playerId, 1, 5000, 1, "KI3_HQ", 2, 0)
+		--Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
 	end
 	local aiDescription = {
 	

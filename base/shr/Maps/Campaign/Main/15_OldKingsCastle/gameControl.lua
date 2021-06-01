@@ -114,7 +114,9 @@ start3rdQuest = function()
 	--	ai
 	
 	TimeLine.Enter("Start P2VAttack", TimeLine.Seconds + 10*60, "StartArmyP2VillageAttack")
-	TimeLine.Enter("Setup Army P5 Upgrading", TimeLine.Seconds + 10*60, "SetupArmyP5Upgrading")
+	if CP_Difficulty == 0 then
+		TimeLine.Enter("Setup Army P5 Upgrading", TimeLine.Seconds + 10*60, "SetupArmyP5Upgrading")
+	end
 
 
 	--	briefing
