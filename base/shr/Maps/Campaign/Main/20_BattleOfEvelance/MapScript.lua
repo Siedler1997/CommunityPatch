@@ -201,6 +201,8 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 0 then
 			CreateRandomGoldChests()
 			CreateRandomChests()
+
+			DestroyEntity("hard_rock")
 		else
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
@@ -254,6 +256,8 @@ function Mission_FirstMapAction()
 		StartCutscene("Intro", startQuestDestroyOutpost)
 		--StartSimpleHiResJob("GetDarioPos")
 		--Tools.ExploreArea(-1, -1, 900)
+		--CP_ActivateEvilMod(1, 1, 1)
+		--ResearchTechnology( Technologies.GT_Tactics, 1 );
 end
 
 --[[

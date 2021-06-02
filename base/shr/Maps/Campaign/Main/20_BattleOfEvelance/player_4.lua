@@ -24,18 +24,20 @@ createPlayer4 = function()
 			rebuild = {
 				delay				=	5,
 				randomTime			=	5
-			},
-			--------------------------------------------------
-			resources = {
+			}
+		}
+
+		if CP_Difficulty == 0 then
+			description.resources = {
 				gold				=	2000,
 				clay				=	1000,
 				iron				=	1500,
 				sulfur				=	1000,
 				stone				=	1000,
 				wood				=	2000
-			},
-			--------------------------------------------------
-			refresh = {
+			}
+
+			description.refresh = {
 				gold				=	100,
 				clay				=	10,
 				iron				=	100,
@@ -43,8 +45,27 @@ createPlayer4 = function()
 				stone				=	10,
 				wood				=	100,
 				updateTime			=	5
-			},
-		}
+			}
+		else
+			description.resources = {
+				gold				=	3000,
+				clay				=	1000,
+				iron				=	2000,
+				sulfur				=	1500,
+				stone				=	1000,
+				wood				=	2000
+			}
+
+			description.refresh = {
+				gold				=	300,
+				clay				=	20,
+				iron				=	200,
+				sulfur				=	150,
+				stone				=	50,
+				wood				=	150,
+				updateTime			=	5
+			}
+		end
 		
 		SetupPlayerAi(player4.id,description)
 	

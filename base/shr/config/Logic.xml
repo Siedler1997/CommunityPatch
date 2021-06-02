@@ -882,6 +882,11 @@
 	</BuildingUpgrade>
 	
 	<SettlerUpgrade>
+		<Category>AggressiveWolf</Category>
+		<FirstSettler>CU_AggressiveWolf</FirstSettler>
+	</SettlerUpgrade>
+	
+	<SettlerUpgrade>
 		<Category>LeaderBanditBow</Category>
 		<FirstSettler>CU_BanditLeaderBow1</FirstSettler>
 	</SettlerUpgrade>

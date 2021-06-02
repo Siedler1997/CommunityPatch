@@ -5,13 +5,14 @@
 ARMY3_FIRST_WAVE = 3 * 60
 ARMY3_BASE_DELAY = 50
 NUMBER_OF_WAVES = 5
-if CP_Difficulty == 1 then
-	ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 30
-	ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 20
-	NUMBER_OF_WAVES = NUMBER_OF_WAVES + 10
-end
 
 createArmyAttack3 = function()
+	if CP_Difficulty == 1 then
+		ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 30
+		ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 20
+		NUMBER_OF_WAVES = NUMBER_OF_WAVES + 5
+	end
+
 	--	set up
 
 		armyAttack3							= {}

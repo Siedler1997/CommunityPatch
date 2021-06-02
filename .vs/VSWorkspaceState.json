@@ -3,14 +3,15 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Maps",
     "\\base\\shr\\Maps\\Campaign",
     "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance",
-    "\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MapTools"
+    "\\base\\shr\\Script\\MapTools",
+    "\\base\\shr\\text",
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra2",
+    "\\extra2\\shr"
   ],
-  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapData.xml",
+  "SelectedNode": "\\extra2\\shr\\text",
   "PreviewInSolutionExplorer": false
 }

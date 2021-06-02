@@ -355,6 +355,14 @@ function GameCallback_GUI_SelectionChanged()
 			elseif 	UpgradeCategory == UpgradeCategories.Stable then
 				XGUIEng.ShowWidget(gvGUI_WidgetID.Stables,1)
 				XGUIEng.ShowWidget(gvGUI_WidgetID.ToggleRecruitGroups,1)
+				
+				if CP_GetEvilModUnitState(PlayerID) > 0 then
+					XGUIEng.ShowWidget("Group_Evil_Cavalry", 1)
+					if CP_GetEvilModUnitState(PlayerID) == 1 or CP_GetEvilModUnitState(PlayerID) == 3 then
+						XGUIEng.ShowWidget("Buy_AggressiveWolf", 1)
+					end
+				end
+
 				ButtonStem =  "Upgrade_Stables"			
 			
 			--Is EntityType the University?

@@ -3,6 +3,7 @@
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>ED::CDisplayBuilding</Class>
 		<Model>XD_DarkWallCorner</Model>
+		<RenderInFoW>true</RenderInFoW>
 	</Display>
 	<Logic classname="GGL::CGLBuildingProps">
         <Class>GGL::CBuilding</Class>

@@ -1007,6 +1007,11 @@
 		<FirstBuilding>CB_DestroyAbleRuinHouse1</FirstBuilding>
 	</BuildingUpgrade>
 	
+	<SettlerUpgrade>
+		<Category>AggressiveWolf</Category>
+		<FirstSettler>CU_AggressiveWolf</FirstSettler>
+	</SettlerUpgrade>
+	
   <AlarmRechargeTime>180000</AlarmRechargeTime>
 
   <OvertimeRechargeTimeInMs>240000</OvertimeRechargeTimeInMs>

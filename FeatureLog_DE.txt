@@ -427,6 +427,7 @@
 	* Bei aktiviertem DebugScript gibt es weniger 'nutzlose' Debug-Messages
 		+ Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
 		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0'
+	* Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
 	* Comforts
 		+ StartCountdown(_Limit, _Callback, _Show): Startet einen Countdown
 			/ Abbrechbar mit StopCountdown(_Id)
@@ -449,6 +450,7 @@
 			-> return table Entities
 		+ IstDrin(_wert, _table) by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
 			-> return bool true/false
+		+ Tools.RemoveEntityInFogOrDestination(_PlayerID, _EntityID, _Position): Trigger, der NPC im FOW oder am Zielort entfernt
 		+ CP_ActivateEvilMod(_playerId, _unitstate, _towerstate): Erlaub einem Spieler, in Militärgebäuden 'böse' Einheiten zu rekrutieren und mit Leibeigenen dunkle Türme zu bauen
 			/ Abfrage der Einheiten mittels 'CP_GetEvilModUnitState(_playerId)'
 			/ Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
@@ -475,12 +477,8 @@
 
 
 - ToDos:
-	* EvilMod in Hauptspiel/AddOn1 um "neue" units ergänzen (z.B. Wölfe)
-	* MoveAndVanish soll auch Entities in Sichtweite entfernen können
-	* Kontrollierbare Schäferhunde(?)
-	* SuperTech als KI-Bonus
-	* Wasteland-Dörfer: Namen im Auftragsbuch
-	* Alternativer, erhöhter Schwierigkeitsgrad für original-Kampagnen
+	* Alternativer, erhöhter Schwierigkeitsgrad für Original-Kampagnen
+		+ Explores von Briefings danach entfernen (soweit sinnvoll)
 		+ Keine random chests
 		+ Goldhaufen
 		+ Grange
@@ -489,10 +487,13 @@
 		+ Neue Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Schwierigkeitsgrad "Albtraum"(?)
-			/ Noch weniger DZs
+			/ Kürzere Countdowns
 			/ Super-Tech für KIs
 			/ KIs sehr aggressiv
+			/ dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 		+ Testing
+	* SuperTech als KI-Bonus
+	* Wasteland-Dörfer: Namen im Auftragsbuch
 	* Neue Map "Tal der Verdammten"
 		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
 		+ Erec lebt
@@ -505,7 +506,6 @@
 		+ auf Englisch übersetzen
 	* Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 	* Rand-Clipping bei Briefing-Minimap entfernen 
-	* dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
 	* Hauptmenü
 		+ MP-Window fixen
 		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
@@ -514,19 +514,18 @@
 	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
-	* Helden sollen Erfahrung sammeln können
 	* Countdowns 
 		+ sollen während Briefings pausieren
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
+	* Kontrollierbare Schäferhunde(?)
+	* Helden sollen Erfahrung sammeln können
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* Neue Spielerfarben(?)
 	* Auftragsbuch-Highlight
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
-	* neue Comforts (bei Bedarf)
 	* Kalas Tod: stack overflow(?)
-		+ bislang nur ein mal passiert
 	* Eigene Texturen für
 		+ Tech-Trader
 		+ Veteranen
@@ -538,10 +537,8 @@
 	* Umsetzung in Vanilla-DEdK
 	* AeK-Soundtrack bei Installation kopieren
 	* Organisatorisches
-		+ FeatureList 
-			/ Auflistung aller geänderten/neuen SelectionNames
-			/ auch auf Englisch
-		+ entityblacklist.xml an richtigen Ort kopieren
+		+ FeatureList auch auf Englisch
 		+ Quellenverzeichnung (also Nennung aller Autoren)
+		+ GitHub-Startseite
 		+ Indikator für CP-Installation
 		+ (De-)Installer mit Backup-funktion(?)
