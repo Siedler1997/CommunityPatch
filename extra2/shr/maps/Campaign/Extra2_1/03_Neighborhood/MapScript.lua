@@ -99,7 +99,7 @@ function FirstMapAction()
 	startChapterOne()
 	
 	-- Increase support timer
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		timeForSupport = timeForSupport + 60 * 15
 
 		local bosspos1 = GetPosition("armyOutpost")

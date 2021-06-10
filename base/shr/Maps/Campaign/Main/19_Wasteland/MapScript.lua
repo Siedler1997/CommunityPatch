@@ -22,7 +22,6 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
@@ -30,6 +29,10 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	end
 
 end
 
@@ -44,10 +47,16 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(7)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
 	end
 end
 
@@ -161,14 +170,33 @@ function Mission_FirstMapAction()
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+		
+			local towers1 = { Logic.GetPlayerEntities(5, Entities.PB_DarkTower2, 4, 0) }
+			for i = 1, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+				end
+			end
+
+			Logic.CreateEntity(Entities.XD_RockDarkEvelance7,21000,60300,0,0)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 		ReplaceEntity("KI3_HQ", Entities.PB_Headquarters2)
 		ReplaceEntity("start_1", Entities.PB_Headquarters1)
 
-		local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
-		for i = 1, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
+		local towers2 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
+		for i = 1, table.getn(towers2) do
+			if IsExisting(towers2[i]) then
+				ReplaceEntity(towers2[i], Entities.PB_DarkTower2)
 			end
 		end
 
@@ -180,16 +208,18 @@ function Mission_FirstMapAction()
 		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
 		LookAt(bossID2, "Banned_Info_NPC")
 		
-		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 8})
-		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = 2, ramount = 8})
-		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, samount = 3, ramount = 8})
-		RaidersCreate({player = 7, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 4000, samount = 2, ramount = 10})
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (10 + addWolves)})
 	end
 	--CP_ActivateEvilMod(1, 1, 1)
 --	EnableDebugging()
 
 	--StartSimpleHiResJob("GetDarioPos")
 	--Tools.ExploreArea(-1, -1, 900)
+	--ResearchTechnology(Technologies.T_SuperTechnology, 1);
+	--SetPosition ("Dario", GetPosition("RainNPC"))
 end
 
 --[[

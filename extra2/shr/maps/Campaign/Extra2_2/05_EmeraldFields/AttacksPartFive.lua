@@ -21,7 +21,7 @@ setupArmyPart5Attack = function()
 								Entities.PV_Cannon4
 								}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyPart5Attack.strength = 8
 		table.insert(ArmyPart5Attack.AllowedTypes, UpgradeCategories.LeaderPoleArm)
 		table.insert(ArmyPart5Attack.AllowedTypes, UpgradeCategories.LeaderRifle)

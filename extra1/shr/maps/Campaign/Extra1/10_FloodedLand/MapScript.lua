@@ -19,11 +19,18 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
-		ResearchAllMilitaryTechsAddOn(4)
-		ResearchAllMilitaryTechsAddOn(5)	-- Friendly Cavalry
-		ResearchAllMilitaryTechsAddOn(6)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			ForbidTechnology(Technologies.UP2_Village)
+		end
+
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)	-- Friendly Cavalry
+		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
 	end
 end
 ------------------------------------------------------------------------------
@@ -32,19 +39,30 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)	
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+	    AddPeriodicSummer(10)
+    else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
     end
+end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(3,NEPHILIM_COLOR)
-	Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
 	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 		
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
+        Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+        Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -118,17 +136,44 @@ function FirstMapAction()
 	LocalMusic.UseSet = DARKMOORMUSIC
 
 	start1stChapter()
+
+	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,25700,39500,0,0,3,0)
+	LookAt(bossID1, "LeoAssistant")
 	
+	if CP_Difficulty > 0 then
+		--local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+
+			GUI.SetTaxLevel(1)
+			
+			--addWolves = addWolves + 2
+
+			ReplaceEntity("vc_player", Entities.CB_Grange)
+		end
+
+	end
+
+	--StartSimpleHiResJob("GetDarioPos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
-	
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
+
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 
 function Mission_InitMerchants()
 	mercenaryId = Logic.GetEntityIDByName("NPC_Merchant_1")
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 3, ResourceType.Iron, 225, ResourceType.Wood, 175, ResourceType.Gold, 150)		
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderSword2, 3, ResourceType.Sulfur, 100, ResourceType.Iron, 150, ResourceType.Gold, 150)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow1, 3, ResourceType.Iron, 75, ResourceType.Wood, 150, ResourceType.Gold, 150)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow2, 3, ResourceType.Iron, 75, ResourceType.Wood, 150, ResourceType.Gold, 150)
 	if CP_Difficulty == 0 then
 		Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon4, 2, ResourceType.Sulfur, 200, ResourceType.Iron, 250, ResourceType.Gold, 250)	
 	else

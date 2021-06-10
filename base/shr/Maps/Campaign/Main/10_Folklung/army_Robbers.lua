@@ -3,7 +3,7 @@ createArmyRobbers = function()
 		Report("Setting up robbers army")
 		
 		local strength = 4
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			strength = 6
 		end
 		
@@ -22,7 +22,7 @@ createArmyRobbers = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			soldiers = soldiers + 2
 			experience = experience + 2
 		end
@@ -76,7 +76,7 @@ RefreshRobbers = function()
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
 		local etype = Entities.CU_BanditLeaderSword1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			soldiers = soldiers + 2
 			experience = experience + 2
 			etype = Entities.CU_BanditLeaderSword2

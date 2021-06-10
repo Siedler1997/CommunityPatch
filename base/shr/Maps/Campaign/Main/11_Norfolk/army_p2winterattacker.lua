@@ -30,7 +30,7 @@ SetupArmyP2WinterGather = function(_army)
 	
 	_army.strength = 4
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		_army.strength = _army.strength + 2
 	end
 
@@ -87,7 +87,7 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 	_army.rodeLength		= 	_defenseRange
 	_army.beAgressive		=	true
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		_army.strength = _army.strength + 2
 		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderPoleArm, 
 										UpgradeCategories.LeaderSword,

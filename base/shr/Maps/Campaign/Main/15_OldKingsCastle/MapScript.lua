@@ -33,6 +33,10 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- Avala (Mountain village)
 	Display.SetPlayerColorMapping(7, ARIS_ROBBERS)			-- Aris robbers
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -44,12 +48,18 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(3)
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(6)	--No enemy, but has to be useful
-		ResearchAllMilitaryTechs(8)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
 	end
 end
 
@@ -174,26 +184,38 @@ function Mission_FirstMapAction()
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
-		local hq_ai1_pos = GetPosition("HQ_AI1")
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
 
-		Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
+		local hq_ai1_pos = GetPosition("HQ_AI1")
 
 		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
 		LookAt(bossID1, "Garek")
 		
-		local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
-		LookAt(bossID1, "camp_fire4")
-		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
-		LookAt(bossID2, "camp_fire2")
-		local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
-		LookAt(bossID3, "camp_fire3")
-		local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
-		LookAt(bossID4, "camp_fire1")
-		local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
-		LookAt(bossID5, "camp_fire2")
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (12 + addWolves)})
 		
-		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 12})
+		if CP_Difficulty == 2 then
+			Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
+		end
 	end
+		
+	local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
+	LookAt(bossID1, "camp_fire4")
+	local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
+	LookAt(bossID2, "camp_fire2")
+	local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
+	LookAt(bossID3, "camp_fire3")
+	local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
+	LookAt(bossID4, "camp_fire1")
+	local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
+	LookAt(bossID5, "camp_fire2")
 
 	--Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleHiResJob("GetDarioPos")

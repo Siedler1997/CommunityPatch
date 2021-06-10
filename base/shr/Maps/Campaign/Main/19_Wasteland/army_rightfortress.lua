@@ -22,8 +22,13 @@ setupArmyRightFortress = function()
 												{ Entities.PU_LeaderPoleArm2, 4},
 												{ Entities.PU_LeaderBow2, 4},
 												{ Entities.PU_LeaderSword2, 4},
-												{ Entities.PU_LeaderBow2, 4},
-												{ Entities.PV_Cannon1, 1} }
+												{ Entities.PU_LeaderBow2, 4} }
+		
+		if CP_Difficulty == 1 then
+			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon1, 1})
+		else
+			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3, 1})
+		end
 	end
 
 	ArmyRightFortress.spawnPos			= GetPosition("KI3_SpawnPos")

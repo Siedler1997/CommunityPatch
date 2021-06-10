@@ -215,7 +215,7 @@ function Mission_FirstMapAction()
 	-- Set Music-Set
 	LocalMusic.UseSet = DARKMOORMUSIC
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then

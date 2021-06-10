@@ -29,8 +29,8 @@ function SetupSteppeWeatherGfxSet()
 end
 
 --Researchs Armor-, Attack- and other useful techs for military purposes
-function ResearchAllMilitaryTechsAddOn(_PlayerId)
-	ResearchAllMilitaryTechs(_PlayerId)
+function ResearchAllMilitaryTechsAddOn(_PlayerId, _SuperTech)
+	ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 
 	ResearchTechnology( Technologies.T_FleeceArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_FleeceLinedLeatherArmor, _PlayerId );

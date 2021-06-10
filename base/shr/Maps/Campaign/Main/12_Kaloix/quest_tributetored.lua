@@ -7,7 +7,7 @@ createQuestTributeToRed = function()
 		Job.Tribute = 010
     	
 		local value = 2000
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			value = value * 1.5
 		end
 		local text = string.format(XGUIEng.GetStringTableText("CM01_12_Kaloix/tribute_ToRed"), value)

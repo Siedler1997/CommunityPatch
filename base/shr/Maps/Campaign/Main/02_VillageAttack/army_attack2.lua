@@ -19,6 +19,9 @@ createArmyAttack2 = function()
 		armyAttack2.player 				= 2
 		armyAttack2.id					= 5
 		armyAttack2.strength			= 2
+		if CP_Difficulty == 2 then
+			armyAttack2.strength = armyAttack2.strength + 1
+		end
 		armyAttack2.position			= GetPosition("tower2")			-- camp in south
 		armyAttack2.rodeLength			= 0
 		armyAttack2.control				= {}
@@ -29,7 +32,7 @@ createArmyAttack2 = function()
 
 	--	create 
 		local experience = 0
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = HIGH_EXPERIENCE
 		end
 
@@ -54,6 +57,11 @@ createArmyAttack2 = function()
 			troopDescription.leaderType = Entities.PU_LeaderPoleArm2
 		end
 		EnlargeArmy(armyAttack2,troopDescription)
+		
+		if CP_Difficulty == 2 then
+			troopDescription.leaderType = Entities.PU_LeaderBow2
+			EnlargeArmy(armyAttack2,troopDescription)
+		end
 
 
 	--	job		
@@ -165,7 +173,7 @@ createArmyAttack2 = function()
 						
 			--	create further army
 				local experience = 0
-				if CP_Difficulty == 1 then
+				if CP_Difficulty > 0 then
 					experience = HIGH_EXPERIENCE
 				end
 
@@ -197,6 +205,11 @@ createArmyAttack2 = function()
 						troopDescription.leaderType = Entities.PU_LeaderPoleArm2
 					end
 					EnlargeArmy(armyAttack2,troopDescription)
+					
+					if CP_Difficulty == 2 then
+						troopDescription.leaderType = Entities.PU_LeaderBow2
+						EnlargeArmy(armyAttack2,troopDescription)
+					end
 
 					--	time till next attack
 				

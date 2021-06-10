@@ -25,7 +25,6 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR2)
@@ -33,6 +32,10 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(6,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	end
 
 end
 	
@@ -52,11 +55,17 @@ function Mission_InitTechnologies()
 
 	-- Forbid foundry
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Foundry, 0)
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(6)
-		ResearchAllMilitaryTechs(7)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
 	end
 
 end
@@ -141,9 +150,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Ari")
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
-	
-		CreateRandomGoldChests()
-		CreateRandomChests()
 		
 		StartChestQuest()
 
@@ -165,7 +171,30 @@ function Mission_FirstMapAction()
 	-- Start prelude
 	start1stQuest()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+		CreateRandomChests()
+		DestroyEntity("rock_gold1")
+		DestroyEntity("rock_gold2")
+	else
+		local addWolves = 0
+		if CP_Difficulty == 1 then
+			DestroyEntity("rock_gold1")
+			DestroyEntity("rock_gold2")
+		else
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+
+			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Weathermachine, 0)
+			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
+			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
+			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
 		Logic.CreateEntity(Entities.PB_Tower3, 44800, 10400, 0, 6);
 		Logic.CreateEntity(Entities.PB_Tower3, 41500, 10300, 0, 6);
@@ -180,8 +209,8 @@ function Mission_FirstMapAction()
 			end
 		end
 
-		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 9})
-		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = 3, ramount = 10})
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (10 + addWolves)})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)

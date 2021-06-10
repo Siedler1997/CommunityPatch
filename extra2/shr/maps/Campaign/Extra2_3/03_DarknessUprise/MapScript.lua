@@ -238,7 +238,7 @@ function Mission_FirstMapAction()
 	SetPlayerName(2, String.Key("_Player2Name"))	
 	--SetPlayerName(2, "Darios Truppen")
 		
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then

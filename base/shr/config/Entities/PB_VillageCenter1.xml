@@ -31,7 +31,15 @@
   <!-- Exploration-->
 		  <ModifyExploration>
         	<Technology>T_TownGuard</Technology>
-        </ModifyExploration>   
+        </ModifyExploration>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
 		 
         <BuildOn>XD_VillageCenter</BuildOn>
         <HideBase>true</HideBase>

@@ -51,11 +51,15 @@ createArmyCave1 = function()
 				maxNumberOfSoldiers = 3,
 				experiencePoints 	= LOW_EXPERIENCE,
 			}	
-			if CP_Difficulty == 1 then
+			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
+
+			if CP_Difficulty > 0 then
 				troopDescription.experiencePoints = HIGH_EXPERIENCE
+				if CP_Difficulty == 2 then
+					troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+				end
 			end
 			
-			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
 		
 			EnlargeArmy(armyCave1,troopDescription)
 			EnlargeArmy(armyCave1,troopDescription)
@@ -149,10 +153,12 @@ createTestArmy = function()
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 3,
 				experiencePoints 	= LOW_EXPERIENCE,
-			}			
-	
-			
+			}	
 			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
+			
+			if CP_Difficulty == 2 then
+				troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+			end
 		
 			EnlargeArmy(armyTest,troopDescription)
 			EnlargeArmy(armyTest,troopDescription)

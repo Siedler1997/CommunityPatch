@@ -15,7 +15,12 @@ setupArmyCenterOutpost = function()
 													{ Entities.PU_LeaderBow3, 12},
 													{ Entities.PV_Cannon3, 0} }
 	else
-		ArmyCenterOutpost.strength			= 6
+		if CP_Difficulty == 1 then
+			ArmyCenterOutpost.strength			= 6
+		else
+			ArmyCenterOutpost.strength			= 8
+		end
+
 		ArmyCenterOutpost.spawnTypes 		= { { Entities.PU_LeaderCavalry2, 3},
 													{ Entities.PU_LeaderHeavyCavalry2, 3},
 													{ Entities.PU_LeaderBow4, 12},

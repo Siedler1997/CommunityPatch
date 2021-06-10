@@ -77,7 +77,7 @@ Action_cityRevolt3 = function()
 	for d2 = 1,4,1 do
 		ChangePlayer("cannon"..d2,2)
 	end
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		for d2_2 = 15,18,1 do
 			ChangePlayer("cannon"..d2_2,2)
 		end
@@ -95,7 +95,7 @@ Action_cityRevolt4 = function()
 	for d3 = 5,7,1 do
 		ChangePlayer("cannon"..d3,2)
 	end
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		for d3_2 = 8,14,1 do
 			ChangePlayer("cannon"..d3_2,2)
 		end

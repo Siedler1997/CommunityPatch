@@ -23,6 +23,20 @@
 			  <Iron/>
 			  <Wood/>
         </Cost>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyDamage>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
         
         <Category>Military</Category>
         <Category>Leader</Category>

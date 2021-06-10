@@ -15,25 +15,22 @@ function createDefenderArmies()
 		table.insert(troopsDefender, Entities.PU_LeaderSword3)
 		table.insert(troopsDefender, Entities.PU_LeaderPoleArm2)
 		table.insert(troopsDefender, Entities.PV_Cannon2)
-
-        createArmy(2,1,armyDefender1,3,"army1",MEDIUM_EXPERIENCE,troopsDefender)
-        createArmy(2,2,armyDefender2,4,"army2",MEDIUM_EXPERIENCE,troopsDefender)
-        createArmy(2,3,armyDefender3,4,"army3",LOW_EXPERIENCE,troopsDefender)
-        createArmy(2,4,armyDefender4,7,"army4",LOW_EXPERIENCE,troopsDefender)
-        createArmy(2,5,armyDefender5,5,"army5",LOW_EXPERIENCE,troopsDefender)
-        createArmy(2,6,armyDefender6,4,"army6",LOW_EXPERIENCE,troopsDefender)
+    elseif CP_Difficulty == 1 then
+		table.insert(troopsDefender, Entities.PU_LeaderSword3)
+		table.insert(troopsDefender, Entities.PU_LeaderPoleArm3)
+		table.insert(troopsDefender, Entities.PV_Cannon3)
     else
 		table.insert(troopsDefender, Entities.PU_LeaderSword4)
 		table.insert(troopsDefender, Entities.PU_LeaderPoleArm4)
 		table.insert(troopsDefender, Entities.PV_Cannon3)
-
-        createArmy(2,1,armyDefender1,3,"army1",VERYHIGH_EXPERIENCE,troopsDefender)
-        createArmy(2,2,armyDefender2,4,"army2",VERYHIGH_EXPERIENCE,troopsDefender)
-        createArmy(2,3,armyDefender3,4,"army3",HIGH_EXPERIENCE,troopsDefender)
-        createArmy(2,4,armyDefender4,7,"army4",HIGH_EXPERIENCE,troopsDefender)
-        createArmy(2,5,armyDefender5,5,"army5",HIGH_EXPERIENCE,troopsDefender)
-        createArmy(2,6,armyDefender6,4,"army6",HIGH_EXPERIENCE,troopsDefender)
     end
+
+    createArmy(2,1,armyDefender1,3,"army1",(MEDIUM_EXPERIENCE + CP_Difficulty),troopsDefender)
+    createArmy(2,2,armyDefender2,4,"army2",(MEDIUM_EXPERIENCE + CP_Difficulty),troopsDefender)
+    createArmy(2,3,armyDefender3,4,"army3",(LOW_EXPERIENCE + CP_Difficulty),troopsDefender)
+    createArmy(2,4,armyDefender4,7,"army4",(LOW_EXPERIENCE + CP_Difficulty),troopsDefender)
+    createArmy(2,5,armyDefender5,5,"army5",(LOW_EXPERIENCE + CP_Difficulty),troopsDefender)
+    createArmy(2,6,armyDefender6,4,"army6",(LOW_EXPERIENCE + CP_Difficulty),troopsDefender)
 
     armyDefender4.rodeLength = 1000
     armyDefender5.rodeLength = 1000
@@ -69,7 +66,7 @@ function controlArmy()
 			position                    = GetPosition("spawny1")
 		}
         local randomnum = GetRandom(1, 100)
-	    if CP_Difficulty == 1 then
+	    if CP_Difficulty > 0 then
             troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
 			if randomnum <= 20 then
                 troopDescription.leaderType = Entities.PV_Cannon3

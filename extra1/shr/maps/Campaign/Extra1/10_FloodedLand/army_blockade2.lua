@@ -5,10 +5,14 @@ function CreateArmyBlockade2()
 	ArmyBlockade2.player 				=	3
 	ArmyBlockade2.id					=	3
 	ArmyBlockade2.strength				=	2
-	if CP_Difficulty == 1 then
-		ArmyBlockade2.strength = ArmyBlockade2.strength * 3
-		ArmyBlockade2.toggleAttackTime	=	60
-		ArmyBlockade2.respawnTime		=	60
+	if CP_Difficulty > 0 then
+		if CP_Difficulty == 1 then
+			ArmyBlockade2.strength = ArmyBlockade2.strength + 2
+		else
+			ArmyBlockade2.strength = ArmyBlockade2.strength * 3
+		end
+		ArmyBlockade2.toggleAttackTime	=	3 * 60
+		ArmyBlockade2.respawnTime		=	3 * 60
 	else
 		ArmyBlockade2.toggleAttackTime	=	5*60
 		ArmyBlockade2.respawnTime		=	5*60

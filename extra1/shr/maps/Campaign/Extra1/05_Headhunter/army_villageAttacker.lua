@@ -5,7 +5,7 @@ ONEMINUTE = 60
 function createArmyVillageAttackers()
     local time1 = 15
     local time2 = 20
-    if CP_Difficulty == 1 then
+    if CP_Difficulty > 0 then
         time1 = time1 - 5
         time2 = time2 - 5
     end

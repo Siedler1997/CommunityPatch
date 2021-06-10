@@ -129,7 +129,7 @@ start3rdQuest = function()
 
 	createQuestLeonardo()
 
-	createQuestDestroyRuins()
+	--createQuestDestroyRuins()
 	createQuestRebuildCastle()
 
 	-- give player a HQ

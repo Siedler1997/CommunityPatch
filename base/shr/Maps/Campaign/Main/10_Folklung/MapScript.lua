@@ -49,10 +49,16 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Headquarter,0)	
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(4)
-		ResearchAllMilitaryTechs(5)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
 	end
 end
 
@@ -100,6 +106,10 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
+		
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		end
 		
 end
 
@@ -196,15 +206,43 @@ function Mission_FirstMapAction()
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
+		local addWolves = 0
+		if CP_Difficulty == 1 then
+			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower2, 5200, 35700, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower2, 5700, 26300, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower2, 15900, 24500, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower2, 9700, 29800, 0, 5);
+		else
+			Logic.CreateEntity(Entities.PB_Tower3, 11200, 23900, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower3, 5200, 35700, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower3, 5700, 26300, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower3, 15900, 24500, 0, 5);
+			Logic.CreateEntity(Entities.PB_Tower3, 9700, 29800, 0, 5);
+
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			DestroyEntity("TheRock")
+			createArmyAttackPlayerA()
+			StartCountdown(15 * 60, MakeArmyAttackPlayerAggressive, false)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
 
-		ReplaceEntity("TheRock2", Entities.XD_Rock7)
-		ReplaceEntity("TheRock3", Entities.XD_Rock7)
-
-		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 4, ramount = 10})		
-		RaidersCreate({player = 5, pos = "rudelpos2", revier = 3000, range = 4000, samount = 4, ramount = 12})
+		RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (4 + addWolves), ramount = (10 + addWolves)})		
+		RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, samount = (4 + addWolves), ramount = (12 + addWolves)})
+		
+		if CP_Difficulty == 2 then
+			ReplaceEntity("TheRock2", Entities.XD_Rock7)
+			ReplaceEntity("TheRock3", Entities.XD_Rock7)
+		end
 	end
 
 	-- Create Armies

@@ -30,7 +30,7 @@ end
 		StartJob("TimeToSavePrincess")
 
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = experience + 2
 		end
 		
@@ -225,7 +225,7 @@ QUESTBombs_COUNTER 		=	QUESTBombs_DELAY
 		DestroyEntity("Druid9")
 		
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = experience + 2
 		end
 		for i = 1, 9 do

@@ -12,6 +12,7 @@ function Cutscene_MISSIONCOMPLETE_Start()
   	Display.SetRenderFog (1)
 	Display.SetFarClipPlaneMinAndMax(0, 16000) 
   
+	StartSummer(600)
   
   	SetFriendly(1,2)
   	SetFriendly(2,3)

@@ -15,7 +15,7 @@ createArmyDefendDen = function()
 		armyDefendDen.player 				= 8
 		armyDefendDen.id					= 0
 		armyDefendDen.strength				= 4
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefendDen.strength = armyDefendDen.strength + 1
 		end
 		armyDefendDen.position				= GetPosition("defend1")
@@ -49,7 +49,7 @@ createArmyDefendDen = function()
 		armyDefendInnerCircle.player 					= 8
 		armyDefendInnerCircle.id						= 1
 		armyDefendInnerCircle.strength					= 3
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefendInnerCircle.strength = armyDefendInnerCircle.strength + 1
 		end
 		armyDefendInnerCircle.position					= GetPosition("defend2")
@@ -86,7 +86,7 @@ createArmyDefendDen = function()
 		armyDefend1.player 					= 8
 		armyDefend1.id						= 2
 		armyDefend1.strength				= 3
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefend1.strength = armyDefend1.strength + 1
 		end
 		armyDefend1.position				= GetPosition("defend3")
@@ -116,7 +116,7 @@ createArmyDefendDen = function()
 		armyDefend2.player 					= 8
 		armyDefend2.id						= 3
 		armyDefend2.strength				= 2
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefend2.strength = armyDefend2.strength + 1
 		end
 		armyDefend2.position				= GetPosition("defend4")
@@ -146,7 +146,7 @@ createArmyDefendDen = function()
 		armyDefend3.player 					= 8
 		armyDefend3.id						= 4
 		armyDefend3.strength				= 3
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefend3.strength = armyDefend3.strength + 1
 		end
 		armyDefend3.position				= GetPosition("defend5")
@@ -184,7 +184,7 @@ createArmyDefendDen = function()
 		armyDefendPatrol.player 			= 8
 		armyDefendPatrol.id					= 5
 		armyDefendPatrol.strength			= 6
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefendPatrol.strength		= armyDefendPatrol.strength + 1
 		end
 		armyDefendPatrol.position			= GetPosition("defend1")

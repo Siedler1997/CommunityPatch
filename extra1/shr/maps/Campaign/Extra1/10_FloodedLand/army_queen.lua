@@ -9,7 +9,7 @@ function CreateArmyQueen()
 		ArmyQueen[i].player 				=	4
 		ArmyQueen[i].id						=	1+i
 		ArmyQueen[i].strength				=	6
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			ArmyQueen[i].strength = ArmyQueen[i].strength + 2
 		end
 		ArmyQueen[i].position				=	GetPosition("Queen")
@@ -27,7 +27,7 @@ function CreateArmyQueen()
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= HIGH_EXPERIENCE,
 		}	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 			EnlargeArmy(ArmyQueen[i],troopDescription)

@@ -26,6 +26,7 @@ CreateArmiesBanditsDefense = function()
 														}
 			ArmyBanditsDefense[i].respawnTime		= 	60
 			ArmyBanditsDefense[i].maxSpawnAmount	= 	1
+			ArmyBanditsDefense[i].endless			= 	false
 		else
 			ArmyBanditsDefense[i].strength			= 8
 			ArmyBanditsDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderSword3, 8},
@@ -39,9 +40,9 @@ CreateArmiesBanditsDefense = function()
 														}
 			ArmyBanditsDefense[i].respawnTime		= 	45
 			ArmyBanditsDefense[i].maxSpawnAmount	= 	2
+			ArmyBanditsDefense[i].endless			= 	true
 		end
 
-		ArmyBanditsDefense[i].endless			= 	true
 		ArmyBanditsDefense[i].spawnPos			= 	GetPosition("P2_SpawnPoint_"..i)
 		ArmyBanditsDefense[i].spawnGenerator	= 	"P2_RobberyTower_"..i
 	                                              	

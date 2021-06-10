@@ -312,7 +312,7 @@ end
 function cavalryAttack(_target)
 	local cavalrytype = Entities.PU_LeaderHeavyCavalry1
 	local bowtype = Entities.PU_LeaderBow3
-	if CP_Difficulty == 1 then	
+	if CP_Difficulty > 0 then	
 		cavalrytype = Entities.PU_LeaderHeavyCavalry2
 		bowtype = Entities.PU_LeaderBow4
 	end
@@ -462,7 +462,7 @@ function createArmyPilgrim()
 			experiencePoints 			= experience,
 		}
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription1.leaderType = Entities.PU_LeaderSword3
 			troopDescription2.leaderType = Entities.PU_LeaderPoleArm3
 			troopDescription3.leaderType = Entities.PU_LeaderBow3

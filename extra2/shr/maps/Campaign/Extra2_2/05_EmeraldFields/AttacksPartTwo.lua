@@ -20,7 +20,7 @@ setupArmyPart2Attack = function()
 								UpgradeCategories.LeaderBow
 								}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyPart2Attack.strength = ArmyPart2Attack.strength * 2
 		table.insert(ArmyPart2Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
 	end

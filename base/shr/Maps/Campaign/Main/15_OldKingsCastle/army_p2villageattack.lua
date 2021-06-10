@@ -58,15 +58,12 @@ StartArmyP2VillageAttack = function()
 	TimeLine.Enter("Increase Size P2VA to 7/2", TimeLine.Seconds + 40*60, "IncreaseArmyP2VillageAttackSize")
 	TimeLine.Enter("Increase Size P2VA to 8/2", TimeLine.Seconds + 80*60, "IncreaseArmyP2VillageAttackSize")
 
-	TimeLine.Enter("Upgrade P2pole to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2PoleArm")
 	TimeLine.Enter("Upgrade P2pole to lvl 3", TimeLine.Seconds + 45*60, "UpgradeP2PoleArm")
 	TimeLine.Enter("Upgrade P2pole to lvl 4", TimeLine.Seconds + 65*60, "UpgradeP2PoleArm")
 	
-	TimeLine.Enter("Upgrade P2sword to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Sword")
 	TimeLine.Enter("Upgrade P2sword to lvl 3", TimeLine.Seconds + 45*60, "UpgradeP2Sword")
 	TimeLine.Enter("Upgrade P2sword to lvl 4", TimeLine.Seconds + 65*60, "UpgradeP2Sword")
 
-	TimeLine.Enter("Upgrade P2bow to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Bow")
 	TimeLine.Enter("Upgrade P2bow to lvl 3", TimeLine.Seconds + 45*60, "UpgradeP2Bow")
 	TimeLine.Enter("Upgrade P2bow to lvl 4", TimeLine.Seconds + 65*60, "UpgradeP2Bow")
 
@@ -77,6 +74,16 @@ StartArmyP2VillageAttack = function()
 	for i=2,10 do
 		TimeLine.Enter("P2 Attack Wave"..i, TimeLine.Seconds + i*10*60, "GiveP2ArmyResources")
 	end
+
+	if CP_Difficulty == 0 then
+		TimeLine.Enter("Upgrade P2pole to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2PoleArm")
+		TimeLine.Enter("Upgrade P2sword to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Sword")
+		TimeLine.Enter("Upgrade P2bow to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Bow")
+	else
+		UpgradeP2PoleArm()
+		UpgradeP2Sword()
+		UpgradeP2Bow()
+	else
 end
 
 AllowArmyP2VillageAttackCannons = function()

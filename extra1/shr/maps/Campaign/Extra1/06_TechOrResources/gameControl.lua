@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterOne()
 
-    CreateRandomGoldChests()
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")
     CreateChestOpener("Ari")
@@ -21,8 +20,11 @@ function beginChapterOne()
     createQuestStones()
     createQuestPriest()
 
-    StartCountdown(15 * 60, createPlayer2, false)
-
+    if CP_Difficulty == 0 then
+        CreateRandomGoldChests()
+    else
+        StartCountdown(15 * 60, createPlayer2, false)
+    end
 end
 ------------------------------------------------------------------------------------------------------------------------------------
 function endChapterOne()

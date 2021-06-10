@@ -42,6 +42,17 @@
 		<ModifyExploration>
 			<Technology>T_Tracking</Technology>
 		</ModifyExploration>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">

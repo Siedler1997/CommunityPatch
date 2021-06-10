@@ -29,6 +29,14 @@
 			<Technology>T_TownGuard</Technology>
 		</ModifyExploration>
 
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
+
 		<Upgrade>
 			<Category>DestroyAbleRuin</Category>
 		</Upgrade>

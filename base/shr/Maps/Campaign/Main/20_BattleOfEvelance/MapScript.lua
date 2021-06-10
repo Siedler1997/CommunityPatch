@@ -90,12 +90,18 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(3)
-		ResearchAllMilitaryTechs(4)
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(7)
-		ResearchAllMilitaryTechs(8)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
 	end
 end
 
@@ -110,10 +116,13 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, KERBEROS_COLOR)		-- Kerberos walls
 		Display.SetPlayerColorMapping(4, KERBEROS_COLOR)		-- Kerberos Outpost
 		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos inner Castle
-		Display.SetPlayerColorMapping(6, PLAYER_COLOR)			-- Player's walls
 		Display.SetPlayerColorMapping(7, KERBEROS_COLOR)		-- Kerberos Dummy 1
 		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		-- Kerberos Dummy 2
 
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
+		end
 end
 
 
@@ -204,6 +213,21 @@ function Mission_FirstMapAction()
 
 			DestroyEntity("hard_rock")
 		else
+			local addWolves = 0
+			if CP_Difficulty == 2 then
+				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+				Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
+				GUI.SetTaxLevel(1)
+
+				addWolves = addWolves + 2
+
+				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+			end
+
+			if CP_Difficulty == 1 then
+				DestroyEntity("hard_rock")
+			end
+
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
@@ -248,8 +272,8 @@ function Mission_FirstMapAction()
 			local bossID8 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos7.X + 100),(bosspos7.Y - 350),0,0,3,0)
 			LookAt(bossID8, "tower_spawn1")
 
-			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 2, ramount = 10})
-			RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = 3, ramount = 8})
+			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (10 + addWolves})
+			RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
 		end
 		--SetPosition("dario",GetPosition("defend1"))
 

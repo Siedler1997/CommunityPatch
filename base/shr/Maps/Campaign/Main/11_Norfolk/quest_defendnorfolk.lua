@@ -11,7 +11,7 @@ createQuestDefendNorfolk = function()
 	setupDestroyAttackArmy(ArmyP4Attacker)
 	setupDestroyAttackArmy(ArmyP4Defense1)
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		setupDestroyAttackBoss("P2_Boss")
 		setupDestroyAttackBoss("P4_Boss")
 	end
@@ -46,7 +46,7 @@ NorfolkAttackerDied = function()
 	DiedCount = DiedCount + 1
 	
 	local necDies = 9
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		necDies = necDies + 2
 	end
 

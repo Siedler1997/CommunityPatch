@@ -5,7 +5,7 @@
 
 startTimer_2 = function()
 	local time = 20
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		time = time - 5
 	end
 	StartCountdown(time * 60, ThiefTimer_2, true)

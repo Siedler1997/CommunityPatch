@@ -75,7 +75,7 @@ end
 
 BriefingPrelude1Finished = function()
 	local time = 30
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		time = time - 5
 	end
 	StartCountdown(time * 60, ThiefTimer, true)

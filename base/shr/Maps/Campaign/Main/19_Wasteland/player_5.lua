@@ -5,7 +5,7 @@ createPlayer5 = function()
 
 	--	set up  player ai
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		MapEditor_SetupAI(playerId, 1, 5000, 1, "KI3_HQ", 2, 0)
 		--Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
 	end
@@ -35,7 +35,7 @@ createPlayer5 = function()
 		extracting = false
 	}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		aiDescription.refresh = {
 			gold				=	30,
 			clay				=	20,

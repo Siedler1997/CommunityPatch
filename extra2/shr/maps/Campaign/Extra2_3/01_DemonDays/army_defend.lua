@@ -106,7 +106,7 @@ createArmyDefend = function()
 
 	end
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 3)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 3)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 3)

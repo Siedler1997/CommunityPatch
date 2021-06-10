@@ -14,7 +14,7 @@ function CreateArmyNephilimsHQ()
 		else
 			ArmyNephilimsHQ[i].strength				=	4
 		end
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			ArmyTribalCamps[i].strength = ArmyTribalCamps[i].strength * 2
 		end
 					

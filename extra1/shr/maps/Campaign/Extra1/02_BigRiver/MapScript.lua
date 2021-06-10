@@ -20,6 +20,7 @@ IncludeLocals("briefing_scout")
 IncludeLocals("briefing_bandits")
 IncludeLocals("briefing_smallGateOpens")
 IncludeLocals("gameControl")
+IncludeLocals("player1")
 IncludeLocals("player2")
 IncludeLocals("player6")
 
@@ -44,7 +45,7 @@ function InitDiplomacy()
     SetNeutral(2,4)
     SetHostile(1,5)
     SetNeutral(1,6)
-
+    SetHostile(1,8)
 	end
 ------------------------------------------------------------------------------
 function InitResources()
@@ -58,14 +59,20 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	ForbidTechnology(Technologies.GT_Matchlock)
-	ForbidTechnology(Technologies.GT_PulledBarrel)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
 
-	ResearchAllMilitaryTechsAddOn(5)
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
-		ResearchAllMilitaryTechsAddOn(6)
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(8, _ResearchSuperTech)
 	end
+
+    createPlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -73,19 +80,29 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+	    AddPeriodicSummer(10)
+    else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
+    end
 end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
-    Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-    Display.SetPlayerColorMapping(3,PLAYER_COLOR)
     Display.SetPlayerColorMapping(2,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(4,NPC_COLOR)
-    Display.SetPlayerColorMapping(5,ENEMY_COLOR1)
+    --Display.SetPlayerColorMapping(5,ENEMY_COLOR1)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
-
+    Display.SetPlayerColorMapping(8,KERBEROS_COLOR)
+	
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+		Display.SetPlayerColorMapping(3,PLAYER_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+	end
 end
 ------------------------------------------------------------------------------
 function FirstMapAction()
@@ -100,8 +117,7 @@ function FirstMapAction()
 
 	-- String
 	String.Init("CM02_02_BigRiver")
-
-
+	
     createPlayer2()
     createPlayer6()
 
@@ -111,7 +127,18 @@ function FirstMapAction()
 
 	LocalMusic.UseSet = HIGHLANDMUSIC
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 3, 0) }
 		for i = 2, table.getn(towers1) do
 			ReplaceEntity(towers1[i], Entities.PB_Tower2)
@@ -133,12 +160,21 @@ function FirstMapAction()
 		DestroyEntity("control1")
 		SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
 		Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
-	end
 
-	--Tools.ExploreArea(-1, -1, 900)
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (9 + addWolves)})
+	end
+	
+    --Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
 
-
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
 ------------------------------------------------------------------------------
 function SpecialManualGoldChest()
 	

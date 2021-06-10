@@ -5,6 +5,8 @@ function start1stChapter()
 
 	Logic.SetShareExplorationWithPlayerFlag(1,8,1)
 
+    Logic.SetPlayerPaysLeaderFlag(1,0)
+
 	CreateChestOpener("Ari")
 	CreateChestOpener("Headhunter")
 	CreateChestOpener("Dario")
@@ -37,13 +39,14 @@ function start1stChapter()
 	
 	-- Difficulty stuff
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		CreatePlayer7()
 		CreateArmyRobbers()
 	end
 
 end
 function end1stChapter()
+    Logic.SetPlayerPaysLeaderFlag(1,1)
 	
 	ResolveBriefing(briefingPreludeShowHQ1)
 	ResolveBriefing(briefingPreludeShowHQ2)

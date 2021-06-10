@@ -1,6 +1,6 @@
 function CreateFinalAttacks()
 	local experience = LOW_EXPERIENCE	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 	end
 

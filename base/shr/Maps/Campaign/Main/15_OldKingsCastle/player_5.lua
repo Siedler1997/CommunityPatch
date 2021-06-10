@@ -33,7 +33,7 @@ createPlayer5 = function()
 	}
 	SetupPlayerAi(playerId,aiDescription)
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		for i = 1, 3 do
 			UpgradeP5PoleArm()
 			UpgradeP5Sword()

@@ -29,7 +29,7 @@ end
 
 -------------------------------------
 function end1stQuest() 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		for i = 1, 2 do
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 4)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 4)

@@ -18,7 +18,11 @@ createArmyTower1 = function()
 			armyTower1.control.delay		= 5 * 60
 		else
 			armyTower1.strength = armyTower1.strength + 2
-			armyTower1.control.delay		= 3 * 60
+			if CP_Difficulty == 1 then
+				armyTower1.control.delay		= 3 * 60
+			else
+				armyTower1.control.delay		= 60
+			end
 		end
 		
 		
@@ -64,8 +68,10 @@ createArmyTower1 = function()
 			if HasFullStrength(armyTower1) then
 				if CP_Difficulty == 0 then
 					armyTower1.control.delay = 5 * 60 + Logic.GetRandom(120)
-				else
+				elseif CP_Difficulty == 1 then
 					armyTower1.control.delay = 3 * 60 + Logic.GetRandom(120)
+				else
+					armyTower1.control.delay = 60 + Logic.GetRandom(120)
 				end
 			
 				StartJob("ControlArmyTower1")
@@ -95,7 +101,11 @@ createArmyTower1 = function()
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 				EnlargeArmy(armyTower1, troopDescription)
 				EnlargeArmy(armyTower1, troopDescription)
-				troopDescription.leaderType = Entities.PU_LeaderBow2
+				if CP_Difficulty == 1 then
+					troopDescription.leaderType = Entities.PU_LeaderBow2
+				else
+					troopDescription.leaderType = Entities.PU_LeaderBow3
+				end
 				EnlargeArmy(armyTower1, troopDescription)
 				EnlargeArmy(armyTower1, troopDescription)
 			end

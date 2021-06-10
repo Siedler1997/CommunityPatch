@@ -1,4 +1,5 @@
 Script.Load( "Data\\Script\\MapTools\\Main.lua" )
+IncludeLocals("player_1")
 
 CP_Difficulty = 0
 ------------------------------------------------------------------------------
@@ -10,9 +11,11 @@ function InitDiplomacy()
 	SetHostile(3,5)
 	SetHostile(7,2)
 	SetHostile(7,5)
+
 	SetFriendly(1,3)
 	SetFriendly(1,4)
 	SetFriendly(1,7)
+	SetHostile(1,8)
 
 	end
 ------------------------------------------------------------------------------
@@ -27,27 +30,20 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	
-	-- Forbid market
-	ForbidTechnology(Technologies.UP1_Market)
-	ResearchTechnology(Technologies.GT_Mercenaries)
-	ResearchTechnology(Technologies.GT_Construction)
-	ResearchTechnology(Technologies.GT_Alchemy)
-	ResearchTechnology(Technologies.GT_Literacy)
-	ResearchTechnology(Technologies.GT_Mathematics)
-	ResearchTechnology(Technologies.GT_Binocular)
-	ResearchTechnology(Technologies.T_ThiefSabotage)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
-		ResearchAllMilitaryTechsAddOn(3)
-		ResearchAllMilitaryTechsAddOn(5)
-	else
-		ResearchTechnology(Technologies.GT_StandingArmy)	
-		ResearchTechnology(Technologies.GT_GearWheel)
-		ResearchTechnology(Technologies.GT_Matchlock)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(3, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(8, _ResearchSuperTech)
 	end
-		
+	CreatePlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -55,25 +51,32 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
+
 	AddPeriodicSummer(120)
 	AddPeriodicRain(30)
 	AddPeriodicSummer(240)
 	AddPeriodicRain(60)
-    end
 
-
+end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(2,NEPHILIM_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(5,NEPHILIM_COLOR)
 	Display.SetPlayerColorMapping(6,NPC_COLOR)
-	Display.SetPlayerColorMapping(7,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(8,NPC_COLOR)
+	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 		
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
+		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
+        Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
+        Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(5, ENEMY_COLOR1)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -103,7 +106,7 @@ function FirstMapAction()
 	IncludeLocals("npc_johannes")
 	IncludeLocals("npc_ruins")
 	IncludeLocals("npc_firesignal3")
-
+	
 	IncludeLocals("player_2")
 	IncludeLocals("player_3")
 	IncludeLocals("player_5")
@@ -142,10 +145,45 @@ function FirstMapAction()
 	
 	-- start
 	StartCutscene(Cutscenes[INTROCUTSCENE],start1stChapter)
+	
+	if CP_Difficulty > 0 then
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(5, ENEMY_COLOR1)
 
-	--Tools.ExploreArea(-1, -1, 900)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+		end
+		
+        local vcpos1 = GetPosition("vc_empty1")
+        DestroyEntity("vc_empty1")
+        Logic.CreateEntity(Entities.XD_RuinHouse2,vcpos1.X,vcpos1.Y,0,0)
+
+        local vcpos2 = GetPosition("vc_empty2")
+        DestroyEntity("vc_empty2")
+        Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos2.X,vcpos2.Y,0,0)
+
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1", "rudelpos4_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
+	--StartSimpleHiResJob("GetDarioPos")
+	--Tools.ExploreArea(-1, -1, 900)
+end
+
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 

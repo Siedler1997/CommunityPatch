@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayBuilding</Class>
+		<Model>XD_RuinMonastery1</Model>
+	</Display>
+	<Logic classname="GGL::CGLBuildingProps">
+		<Class>GGL::CBuilding</Class>
+		<AccessCategory>AccessCategoryBuilding</AccessCategory>
+
+		<Category>Wall</Category>
+        <NeedsPlayer>false</NeedsPlayer>
+        <ForceNoPlayer>false</ForceNoPlayer>
+		<ArmorClass>ArmorClassFortification</ArmorClass> 
+		<MaxHealth>500</MaxHealth>
+	    <ArmorAmount>100</ArmorAmount>
+		<Exploration>30</Exploration>
+
+		<!-- Armor -->
+		<ModifyArmor>
+			<Technology>T_LightBricks</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_Masonry</Technology>
+		</ModifyArmor>
+
+		<!-- Exploration -->
+		<ModifyExploration>
+			<Technology>T_TownGuard</Technology>
+		</ModifyExploration>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
+
+		<Upgrade>
+			<Category>DestroyAbleRuin</Category>
+		</Upgrade>
+
+		<ConstructionInfo>
+			<Time>140</Time>
+			<Cost>
+				<Clay />
+				<Wood />
+				<Stone />
+				<Gold>100</Gold>
+				<Iron />
+				<Sulfur />
+			</Cost>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>-600</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>-400</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>-0</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-700</X>
+					<Y>200</Y>
+				</Position>
+				<Orientation>0</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-600</X>
+					<Y>800</Y>
+				</Position>
+				<Orientation>290</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-400</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>-100</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<BuilderSlot>
+				<Position>
+					<X>200</X>
+					<Y>-900</Y>
+				</Position>
+				<Orientation>90</Orientation>
+			</BuilderSlot>
+			<ConstructionSite>ZB_ConstructionSiteResidence1</ConstructionSite>
+		</ConstructionInfo>
+		
+        <ApproachPos>
+            <X>-700</X>
+            <Y>-500</Y>
+        </ApproachPos>
+		<ApproachR>0</ApproachR>
+        <DoorPos>
+            <X>-700</X>
+            <Y>-500</Y>			
+        </DoorPos>
+       <Blocked1>
+            <X>-600</X>
+            <Y>400</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>600</X>
+            <Y>-400</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-700</X>
+            <Y>500</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>700</X>
+            <Y>-500</Y>
+        </TerrainPos2>
+	</Logic>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>EGL::GLEBehaviorMultiSubAnims</Class>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorBuildingAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBuildingBehavior</Class>
+		</Logic>
+		<Display classname="GD::CBuildingBehaviorProps">
+			<Class>GD::CBuildingBehavior</Class>
+			<Banner>DefaultBend</Banner>
+		  <NumDamageEffects>4</NumDamageEffects>
+		  <NumDestroyEffects>5</NumDestroyEffects>
+		</Display>
+
+	</Behavior>
+</root>
+
+

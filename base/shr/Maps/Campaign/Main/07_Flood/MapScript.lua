@@ -85,6 +85,10 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 		Display.SetPlayerColorMapping(7,NPC_COLOR)
 		Display.SetPlayerColorMapping(8,CLEYCOURT_COLOR)
+		
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		end
 
 end
 	
@@ -103,11 +107,17 @@ function Mission_InitResources()
 function Mission_InitTechnologies()
 
 -- -> Player_1.lua
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive the enemy attacks without help
-		ResearchAllMilitaryTechs(4)
-		ResearchAllMilitaryTechs(6)
-		ResearchAllMilitaryTechs(8)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(3, _ResearchSuperTech)	--No enemy, but has to survive the enemy attacks without help
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
 	end
 end
 
@@ -206,6 +216,16 @@ function Mission_FirstMapAction()
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 
@@ -219,12 +239,12 @@ function Mission_FirstMapAction()
 		DestroyEntity("vc_empty3")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
 		
-			RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = 2, ramount = 6})
-			RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2", "rudelpos2_wp3"}, range = 4000, samount = 4, ramount = 12})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2", "rudelpos2_wp3"}, range = 4000, samount = (4 + addWolves), ramount = (12 + addWolves)})
 	end
 
 	--StartSimpleHiResJob("GetDarioPos")
-	Tools.ExploreArea(-1, -1, 900)
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 --[[

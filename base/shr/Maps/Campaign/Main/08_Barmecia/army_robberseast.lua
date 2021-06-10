@@ -14,6 +14,8 @@ createArmyRobbersEast = function()
 		local strength = 4
 		if CP_Difficulty == 1 then
 			strength = 6
+		elseif CP_Difficulty == 2 then
+			strength = 8
 		end
 
 		ArmyRobbersEast								= {}
@@ -33,7 +35,7 @@ createArmyRobbersEast = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			soldiers = soldiers + 2
 			experience = experience + 2
 		end
@@ -180,7 +182,7 @@ end
 			local experience = LOW_EXPERIENCE
 			local strength = 4
 			local etype = Entities.CU_BanditLeaderSword1
-			if CP_Difficulty == 1 then
+			if CP_Difficulty > 0 then
 				strength = 6
 				soldiers = soldiers + 2
 				experience = experience + 2

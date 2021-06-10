@@ -39,7 +39,7 @@ createPlayer7 = function()
 		
 		SetupPlayerAi(player7.id,description)
 	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 7)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 7)
 		end

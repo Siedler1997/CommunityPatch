@@ -423,7 +423,7 @@ end
 
 function EnemyFirstArmy()
 	local experience = MEDIUM_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
 
@@ -591,7 +591,7 @@ function YukiArmy()
 	local etype1 = Entities.PU_LeaderBow3
 	local etype2 = Entities.PU_LeaderSword3
 	local etype3 = Entities.PU_LeaderPoleArm3
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience - 1
 		etype1 = Entities.PU_LeaderBow2
 		etype2 = Entities.PU_LeaderSword2

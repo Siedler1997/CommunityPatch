@@ -37,7 +37,7 @@ createPlayer4 = function()
 	
 	}
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		aiDescription.refresh = {
 			gold				=	60,
 			clay				=	20,
@@ -47,6 +47,9 @@ createPlayer4 = function()
 			wood				=	20,
 			updateTime			=	10
 		}
+		if CP_Difficulty == 2 then
+			aiDescription.refresh.updateTime = 5
+		end
 	end
 
 	SetupPlayerAi(playerId, aiDescription)
@@ -68,7 +71,7 @@ createPlayer4 = function()
 
 	FeedAiWithConstructionPlanFile(playerId, iron)	
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, 4)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, 4)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 4)

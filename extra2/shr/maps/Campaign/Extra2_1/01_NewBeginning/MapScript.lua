@@ -106,7 +106,7 @@ function FirstMapAction()
 	createPlayer5()
 	startChapterOne()
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 48, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then

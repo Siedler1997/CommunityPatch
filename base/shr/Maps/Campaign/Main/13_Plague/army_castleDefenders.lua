@@ -141,7 +141,7 @@ createArmyCastleDefenders = function()
 			experiencePoints 	= HIGH_EXPERIENCE,
 		}			
 	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
 		end
 	

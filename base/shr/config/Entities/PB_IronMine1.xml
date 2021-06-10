@@ -28,7 +28,15 @@
 		<!-- Exploration-->
 		<ModifyExploration>
         	<Technology>T_TownGuard</Technology>
-        </ModifyExploration>   
+        </ModifyExploration>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
 		
           <Category>IronSupplier</Category>
         <BuildOn>XD_IronPit1</BuildOn>

@@ -34,14 +34,20 @@ createArmyAttackPlayerA = function()
 	-- Attack parameter
 	ArmyAttackPlayerA.retreatStrength	= 	1
 
-	ArmyAttackPlayerA.baseDefenseRange	= 	1000
-	ArmyAttackPlayerA.outerDefenseRange	= 	1000
+	ArmyAttackPlayerA.baseDefenseRange	= 	2000
+	ArmyAttackPlayerA.outerDefenseRange	= 	2000
                                       	
-	ArmyAttackPlayerA.Attack			= 	true
 	ArmyAttackPlayerA.AttackPos			=	GetPosition("ArmyAttackPlayerAttackPoint")
 
     ArmyAttackPlayerA.refresh           = false
-    ArmyAttackPlayerA.AttackAllowed		= true
+
+	if CP_Difficulty == 2 then
+		ArmyAttackPlayerA.Attack			= false
+		ArmyAttackPlayerA.AttackAllowed		= false
+	else
+		ArmyAttackPlayerA.Attack			= true
+		ArmyAttackPlayerA.AttackAllowed		= true
+	end
     
     ArmyAttackPlayerA.endless = true
 
@@ -61,6 +67,10 @@ createArmyAttackPlayerA = function()
 	SetupDestroy(QuestBastilleDestroyed)
 end
 
+function MakeArmyAttackPlayerAggressive()
+	ArmyAttackPlayerA.Attack = true
+	ArmyAttackPlayerA.AttackAllowed = true
+end
 
 ArmyPlayerAttackDestroyed = function()
 	if ArmyAttackPlayerA ~= nil then

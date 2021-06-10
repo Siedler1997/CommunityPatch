@@ -18,7 +18,7 @@
 	* Mauern 
 		+ sind deutlich solider
 		+ können repariert werden
-		+ profitieren von der Technologie 'Maurerhandwerk'
+		+ profitieren von Gebäude-Technologien (z.B. 'Maurerhandwerk')
 		+ Dunkle Mauern sind, wie normale Mauern auch, im 'Nebel des Krieges' sichtbar
 	* Außenposten
 		+ werden von Arbeitern und Leibeigenen an der Innentür betreten/verlassen, nicht schon am Haupttor
@@ -223,6 +223,7 @@
 		+ Bei 'Meisterschütze' steht der korrekte Effekt (Erhöhung der Bewegungsgeschwindigkeit & Schaden)
 		+ Bei 'Kimme und Korn' steht der korrekte Effekt (Erhöhung der Reichweite)
 		+ Formations-Buttons haben DisabledTooltips, wenn 'Stehendes Heer' noch nicht erforscht wurde
+		+ Der Leibeigenen-Kaufbutton hat einen DisabledTooltip, da dieser in manchen Fällen gesperrt sein kann
 		+ In den Tooltips der Find-Buttons von Soldaten wird die Anzahl der Hauptmänner dieser Art angezeigt
 		+ Alle Kundschafter- und Diebesfähigkeiten haben den richtigen Tooltip in Abhängigkeit der jeweiligen Technologie
 		+ Wird gerade eine Technologie erforscht, wird in ihrem Tooltip darauf hingewiesen, wenn ein anderes, identisches Gebäude selektiert ist
@@ -315,28 +316,40 @@
 			/ wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
 			/ wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
 	* Kampagnen-Maps modifiziert
-		+ Nutzloser Netzwerk-Button im Hauptmenü durch Tipps-Button ersetzt
+		+ Tipps-Button im Hauptmenü 
+			/ Ersetzt nutzlosen Netzwerk-Button
+			/ Tipps sprachlich und inhaltlich korrigiert
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
 		+ Drakes Gewehrschüsse in Cutscenes sind vertont
 		+ in manchen Missionen können gegnerische Truppen respawnen
 			/ z.T. abhängig vom Schwierigkeitsgrad
-		+ 'Old Kings Castle'
-			/ Gegen einen Tribut von 2.000 Talern werden alle Ruinen am Schloss und in der Siedlung entfernt
 		+ 'Schlacht um Evelance' ist ein würdigeres Finale
 			/ Gegner sind zahlreicher
 			/ Gegner bilden auch Truppen in Militärgebäuden aus
 			/ Gegnerische Türme sind höher ausgebaut
-		+ Auf Schwierigkeitsgrad Schwer allgemein
+		+ Schwierigkeitsgrad 'Schwer'
 			/ Gegnerische Befestigungen sind zäher, zahlreicher und/oder höher ausgebaut 
 			/ Gegnerische Truppen sind zäher, stärker, erfahrener und zahlreicher
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
 			/ Gegner sind z.T. aggressiver
+			/ Wölfe streifen durch die Gegend
 			/ Dem Spieler stehen z.T. weniger Siedlungsplätze zur Verfügung
 			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude schlechter
 			/ Schatztruhen
 				* jene mit sehr viel Inhalt haben deutlich weniger
 				* bisherige mit zufälligem Inhalt fallen komplett weg
 			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
+		+ Schwierigkeitsgrad 'Albtraum'
+			/ enthält die gleichen Features wie auf 'Schwer'
+			/ KI-Truppen und Gebäude sind noch stärker bzw. zahlreicher
+			/ Die Steuern sind auf 'Halbe Steuern' festgesetzt
+				* Änderungen im Haupthaus sind NICHT möglich
+				* Eure Beliebtheit steigt deshalb mit jedem Zahltag
+			/ Die eine oder andere nützliche Technologie ist gesperrt
+			/ In Missionen mit sonst dauerhaftem Sommer regnet es ab und an
+			/ Der AddOn-BattleTrack ertönt auch im Hauptspiel
+			/ Ihr habt Rot als Spielerfarbe statt Blau
+			/ diverse Gemeinheiten;)
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	* Die Grafik ist allgemein etwas besser (by yoq)
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
@@ -382,12 +395,22 @@
 		+ MultiSelection-Button (Textur by Zedeg)
 		+ AudioFeedback stammt von den Kundschaftern
 	* Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
+	* Die Technologie 'KI-Bonus' 
+		+ ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
+		+ ist bei allen Spieler-Entities hinterlegt
+		+ erhöht je nach Entity-Typ verschiedene Stats
+			/ Schaden (PU/CU)
+			/ Geschwindigkeit (PU/CU)
+			/ Reichweite (PU-/CU-Fernkämpfer)
+			/ Verteidigung (Alle)
+			/ Sichtweite (Alle)
+		+ ist vom Spieler regulär nicht erforschbar
 	* Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
 		+ Versionen mit 1er-Endung haben Soldatenmaximum von 4
 		+ Versionen mit 2er-Endung haben Soldatenmaximum von 8 und kosten etwas mehr Taler
 		+ Stats sind identisch
 		+ Über ihre UpgradeCategories können die höheren Stufen zugänglich gemacht werden (auch der KI)
-		+ Banditen (CU_BanditLeaderSword) sind dahingehend unverändert
+		+ Banditen (CU_BanditLeaderSwordX) sind dahingehend unverändert
 	* TaskLists
 		+ Schwertführende Einheiten nutzen neue TaskList 'TL_BATTLE_SWORD'
 		+ manche Einheiten nutzen andere TaskLists als zuvor
@@ -400,7 +423,7 @@
 		+ Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
 			-> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
 	* Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
-		+ Andere sind in den AddOns vorhanden, aber anders definiert
+		+ Andere sind in den AddOns vorhanden, aber bereits anders definiert
 	* Darios Fähigkeit 'Schild des Königs'
 		+ ist intern die gleiche Fähigkeit wie 'Falkensicht' (Abilities.AbilitySendHawk)
 		+ existiert auch schon im Hauptspiel, ist mangels Falken-Ersatz (Kundschafter-Fernrohr) aber absichtlich nicht verfügbar
@@ -472,13 +495,13 @@
 		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
-	* NPCs belegen Plätze in Wohnhäuser/Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
-		+ Grund: in der Hinsicht zählen sie scheinbar als Arbeiter
+	* Kontrollierbare NPCs 
+		+ belegen Plätze in Wohnhäuser/Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
+		+ können zum Holzfällen geschickt werden und sehen dabei aus wie Leibeigene
 
 
 - ToDos:
 	* Alternativer, erhöhter Schwierigkeitsgrad für Original-Kampagnen
-		+ Explores von Briefings danach entfernen (soweit sinnvoll)
 		+ Keine random chests
 		+ Goldhaufen
 		+ Grange
@@ -487,12 +510,22 @@
 		+ Neue Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
 		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
 		+ Schwierigkeitsgrad "Albtraum"(?)
-			/ Kürzere Countdowns
 			/ Super-Tech für KIs
+			/ halbe Steuern
+			/ andere Spielerfarbe
+			/ Schlechtes Wetter
+			/ 2 Wölfe mehr pro Rudel
+			/ SetEvilBattle als Combat-Playlist
+			/ Blockaden
 			/ KIs sehr aggressiv
-			/ dynamischere KIs (Truppen in Abhängigkeit vom Spieler)
+			/ Weniger Handels-Optionen
+			/ Explores von Briefings danach entfernen (soweit sinnvoll)
+			/ Kürzere Countdowns
 		+ Testing
-	* SuperTech als KI-Bonus
+	* Kampagnen-Tipps korrigieren (Legenden)
+	* Vertonte Animationen (per TaskLists)
+		+ Leader-Walk
+		+ Leader-Train
 	* Wasteland-Dörfer: Namen im Auftragsbuch
 	* Neue Map "Tal der Verdammten"
 		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet

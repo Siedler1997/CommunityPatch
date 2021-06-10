@@ -8,6 +8,8 @@ createArmyKidnapper = function()
 		local strength = 4
 		if CP_Difficulty == 1 then
 			strength = 6
+		elseif CP_Difficulty == 2 then
+			strength = 8
 		end
 		
 		ArmyKidnapper								= {}
@@ -24,7 +26,7 @@ createArmyKidnapper = function()
 	--	create
 		local soldiers = 6
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			soldiers = soldiers + 2
 			experience = experience + 2
 		end

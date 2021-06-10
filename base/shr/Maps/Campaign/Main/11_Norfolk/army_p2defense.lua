@@ -18,7 +18,7 @@ initArmyP2Defense = function(_army, _name, _index, _pos, _defenseRange)
 	_army.position			= 	GetPosition(_pos)
 	_army.rodeLength		= 	_defenseRange
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		_army.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 										UpgradeCategories.LeaderSword,
 										UpgradeCategories.LeaderHeavyCavalry,

@@ -15,10 +15,17 @@ function start1stChapter()
 	CreateChestOpener("Pilgrim")
 	CreateChestOpener("Yuki")
 	StartChestQuest()
-	CreateRandomGoldChests()	
+	
+	if CP_Difficulty < 2 then
+		CreateRandomGoldChests()	
+	else	
+		local keychest = Logic.CreateEntity(Entities.XD_ChestClose,40700,2600,45,0)
+		SetEntityName(keychest, "Gate_KeyChest")
+		StartSimpleJob("HeroNearP4TradeLord2Chest")
+	end
 	
     -- set up and activate player 2
-
+	
     CreatePlayer2()
     SetPlayerName(3, String.MainKey.."_Player3Name")
     --SetPlayerName(3, "Haendler")
@@ -47,6 +54,37 @@ function start1stChapter()
 	start1stSubChapter()
 	
 end
+
+function HeroNearP4TradeLord2Chest()
+	for i = 1, table.getn(chestOpener), 1 do
+		if IsNear(chestOpener[i], "Gate_KeyChest", 250) then
+			ReplaceEntity("Gate_KeyChest", Entities.XD_ChestOpen)
+			SpokenMessage("CM01_15_OldKingsCastle_Txt/Message_KeyFound")
+			StartSimpleJob("HeroNearP4TradeLord2Gate")
+			return true
+		end
+	end
+end
+
+function HeroNearP4TradeLord2Gate()
+	local isNearGate = false
+	for i = 1, table.getn(chestOpener), 1 do
+		for j = 1, 3 do
+			if IsNear(chestOpener[i], "P4_TradeLord2_Gate"..j, 500) then
+				isNearGate = true
+			end
+		end
+	end
+
+	if isNearGate == true then
+		for i = 1, 3 do
+			ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate)
+		end
+		SpokenMessage("CM01_15_OldKingsCastle_Txt/Message_GateOpened")
+		return true
+	end
+end
+
 function end1stChapter()
 	
 	ResolveBriefing(PreludeBriefingQuestTradeRoute) 

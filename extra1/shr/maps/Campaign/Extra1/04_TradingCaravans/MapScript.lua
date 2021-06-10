@@ -1,12 +1,16 @@
 Script.Load( "Data\\Script\\MapTools\\Main.lua" )
+IncludeLocals("player1")
 
 CP_Difficulty = 0
 ------------------------------------------------------------------------------
 function InitDiplomacy()
     -- diplomacy
-    SetHostile(1,2)
+    --SetHostile(1,2)
     SetHostile(7,2)
     SetFriendly(1,7)
+	
+    SetHostile(1,8)
+    SetHostile(7,8)
 end
 ------------------------------------------------------------------------------
 function InitResources()
@@ -22,9 +26,17 @@ function InitResources()
 end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(8, _ResearchSuperTech)
 	end
+    createPlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -36,13 +48,11 @@ function InitWeather()
 end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
+	Display.SetPlayerColorMapping(2,NPC_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
-	Display.SetPlayerColorMapping(6,NPC_COLOR)
+	Display.SetPlayerColorMapping(6,CLEYCOURT_COLOR)
 	
 	-- Caravan color
 	if BriefingCaravan2ShowStart == nil then
@@ -51,8 +61,13 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(7,ENEMY_COLOR2)
 	end
 	
-	Display.SetPlayerColorMapping(8,KERBEROS_COLOR)
-		
+	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
+	
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	end
 end
 ------------------------------------------------------------------------------
 function FirstMapAction()
@@ -75,7 +90,7 @@ function FirstMapAction()
 	IncludeLocals("npc_tradelord3")
 	IncludeLocals("npc_riflemen")
 	IncludeLocals("npc_motte")
-
+	
 	IncludeLocals("player_2")
 
 	IncludeLocals("quest_caravan1")
@@ -107,8 +122,55 @@ function FirstMapAction()
 	-- start
 	start1stChapter()	
 
+	local bosspos1 = GetPosition("P2_SpawnPoint_1")
+	local boss1 = AI.Entity_CreateFormation(2,Entities.CU_LeaderOutlaw1,0,0,bosspos1.X,bosspos1.Y,0,0,3,0)
+	LookAt(boss1, "Headquarter")
+	local boss2 = AI.Entity_CreateFormation(2,Entities.CU_LeaderOutlaw1,0,0,53400,33900,0,0,3,0)
+	LookAt(boss2, "Dario")
+	local boss3 = AI.Entity_CreateFormation(2,Entities.CU_LeaderOutlaw1,0,0,40300,36200,0,0,3,0)
+	LookAt(boss3, boss2)
+	
+	if CP_Difficulty > 0 then
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			--Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
+			
+			Logic.CreateEntity(Entities.PV_Cannon3,40100,38900,70,2)
+			Logic.CreateEntity(Entities.PV_Cannon3,39200,39100,110,2)
+
+			ReplaceEntity("vc_player", Entities.CB_Grange)
+
+			for i = 1, 3 do
+				ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
+			end
+		end
+
+		local vcpos = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,0,0)
+		
+		Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
+
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
+	end
+
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 

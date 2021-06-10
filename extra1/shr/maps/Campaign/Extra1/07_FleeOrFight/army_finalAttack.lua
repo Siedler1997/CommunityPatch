@@ -16,7 +16,7 @@ function CreateArmyFinalAttackByIndex(_index)
 		ArmyFinalAttack[_index].player 		=	5
 		ArmyFinalAttack[_index].id			=	5+_index
 		ArmyFinalAttack[_index].strength	=	4
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			ArmyFinalAttack[_index].strength = ArmyFinalAttack[_index].strength * 2
 		end
 		ArmyFinalAttack[_index].beAgressive	=	true
@@ -43,7 +43,7 @@ function CreateArmyFinalAttackByIndex(_index)
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= HIGH_EXPERIENCE,
 		}
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 		end
 		for k = 1, (CP_Difficulty+1) do

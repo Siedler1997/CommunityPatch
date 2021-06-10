@@ -23,7 +23,7 @@ end
 		--Quest.AreaSize = 2000
 
 		local entitytype = Entities.PB_Barracks1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			entitytype = Entities.PB_Barracks2
 		end
 
@@ -59,7 +59,7 @@ end
 		--Quest.AreaSize = 2000
 
 		local entitytype = Entities.PB_Archery1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			entitytype = Entities.PB_Archery2
 		end
 
@@ -92,7 +92,7 @@ end
 		--Quest.AreaSize = 2000
 
 		local entitytype = Entities.PB_Stable1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			entitytype = Entities.PB_Stable2
 		end
 
@@ -126,7 +126,7 @@ end
 	Quest.AreaSize = 5000
 
 	local entitytype = Entities.PB_Tower2
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		entitytype = Entities.PB_Tower3
 	end
 

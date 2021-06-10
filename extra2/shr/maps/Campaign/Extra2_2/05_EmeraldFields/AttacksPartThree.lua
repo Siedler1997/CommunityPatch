@@ -21,7 +21,7 @@ setupArmyPart3Attack = function()
 								UpgradeCategories.LeaderHeavyCavalry
 								}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyPart3Attack.strength = ArmyPart3Attack.strength * 2
 		table.insert(ArmyPart3Attack.AllowedTypes, UpgradeCategories.LeaderPoleArm)
 		table.insert(ArmyPart3Attack.AllowedTypes, UpgradeCategories.LeaderCavalry)

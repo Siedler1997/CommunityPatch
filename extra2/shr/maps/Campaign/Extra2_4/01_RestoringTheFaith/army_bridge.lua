@@ -4,7 +4,7 @@ setupTrolls = function ()
     local soldiers = 6
     local experience = 0
 
-    if CP_Difficulty == 1 then
+    if CP_Difficulty > 0 then
         soldiers = soldiers + 2
         experience = experience + 3
     end

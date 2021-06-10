@@ -36,7 +36,15 @@ createPlayer5 = function()
 					updateTime			=	5
 				},
 			}
-		
+
+		if CP_Difficulty == 2 then
+			description.serfLimit = 4
+			description.rebuild	=	{
+				delay				=	30,
+				randomTime			=	30
+			}
+		end
+
 		SetupPlayerAi(player5.id, description)	  
 	
 end

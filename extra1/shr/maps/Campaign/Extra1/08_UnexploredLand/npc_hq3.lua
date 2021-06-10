@@ -86,7 +86,7 @@ function NPCHQ3BriefingFinished()
 		
 		local pos = GetPosition("3_RiflemanSpawn")
 		local type = Entities.PU_LeaderRifle2
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			type = Entities.PU_LeaderRifle1
 		end
 

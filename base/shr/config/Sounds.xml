@@ -1223,6 +1223,14 @@
 	<ID>Misc\so_buildingonfire_loop_1</ID>
 	<ID>Misc\so_buildingonfire_loop_2</ID>
 	<ID>Misc\so_buildingonfire_loop_3</ID>
+	<ID>Military\so_stepsoldier_rnd_1</ID>
+	<ID>Military\so_stepsoldier_rnd_2</ID>
+	<ID>Military\so_stepsoldier_rnd_3</ID>
+	<ID>Military\so_stepsoldier_rnd_4</ID>
+	<ID>Military\so_stephorse_rnd_1</ID>
+	<ID>Military\so_stephorse_rnd_2</ID>
+	<ID>Military\so_stephorse_rnd_3</ID>
+	<ID>Military\so_stephorse_rnd_4</ID>
 
 	<ID>AmbientSounds\Wolf_rnd_1</ID>
 	<ID>AmbientSounds\Wolf_rnd_2</ID>

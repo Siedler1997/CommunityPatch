@@ -38,7 +38,7 @@ createPlayer2 = function()
 		}
 	}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		aiDescription.refresh = {
 			gold				=	60,
 			clay				=	20,
@@ -48,6 +48,9 @@ createPlayer2 = function()
 			wood				=	20,
 			updateTime			=	10
 		}
+		if CP_Difficulty == 2 then
+			aiDescription.refresh.updateTime = 5
+		end
 	end
 
 	SetupPlayerAi(playerId, aiDescription)
@@ -75,7 +78,7 @@ createPlayer2 = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)

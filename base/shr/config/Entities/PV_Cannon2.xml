@@ -46,6 +46,24 @@
 		<ModifySpeed>
 			<Technology>T_BetterChassis</Technology>
 		</ModifySpeed>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyDamage>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
+
+		<ModifyMaxRange>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyMaxRange>
     	  	
 	</Logic>
 	<Behavior>

@@ -1,6 +1,6 @@
 function P1StartArmy()
 	local etype1 = Entities.PU_LeaderBow3
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		etype1 = Entities.PU_LeaderBow2
 	end
 

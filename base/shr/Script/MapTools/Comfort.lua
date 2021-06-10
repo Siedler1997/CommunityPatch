@@ -1832,7 +1832,7 @@ function SetAIUnitsToBuild( _aiID, ... )
 end
 
 --Researchs Armor-, Attack- and other useful techs for military purposes
-function ResearchAllMilitaryTechs(_PlayerId)
+function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_LeatherMailArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_ChainMailArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_PlateMailArmor, _PlayerId );
@@ -1864,6 +1864,11 @@ function ResearchAllMilitaryTechs(_PlayerId)
 	ResearchTechnology( Technologies.T_BetterTrainingBarracks, _PlayerId );
 	ResearchTechnology( Technologies.T_Shoeing, _PlayerId );
 	ResearchTechnology( Technologies.T_BetterChassis, _PlayerId );
+
+	if _SuperTech == true then
+		ResearchTechnology( Technologies.T_SuperTechnology, _PlayerId );
+	end
+
 end
 
 -- (von Peermanent? oder JugarTeam?) geändert bei Kingsia
@@ -2015,7 +2020,32 @@ function CountdownIsVisisble()
     return false
 end
 
-
+-- CreateEffect
+function CreateEffect( _player, _type, _position )
+	assert(type(_player) == "number" and _player >= 1 and _player <= 8 and type(_type) == "number", "fatal error: wrong input: _player or _type (function CreateEffect())");
+	assert((type(_position) == "table" and type(_position.X) == "number" and type(_position.Y) == "number") or type(_position) == "number" or type(_position) == "string", "fatal error: wrong input: _position (function CreateEffect())");
+ 
+	if type(_position) == "table" then
+		assert(_position.X >= 0 and _position.Y >= 0 and _position.X < Logic.WorldGetSize() and _position.Y < Logic.WorldGetSize(), "error: wrong position-statement (function CreateEffect())" );
+		local effect = Logic.CreateEffect(_type, _position.X, _position.Y, _player);
+		return effect;
+	elseif type(_position) == "string" then
+		local id = GetEntityId(_position);
+		assert(IsExisting(id), "error: entity is dead or not existing (function CreateEffect())");
+		local position = GetPosition(id);
+		local effect = Logic.CreateEffect(_type, position.X, position.Y, _player);
+		return effect;
+	else
+		assert(IsExisting(_position), "error: entity is dead or not existing (function CreateEffect())");
+		local position = GetPosition(_position);
+		local effect = Logic.CreateEffect(_type, position.X, position.Y, _player);
+		return effect;
+	end
+end
+function DestroyEffect( _effect )
+	assert(type(_effect) == "number", "fatal error: wrong input: _effect (function DestroyEffect()");
+	Logic.DestroyEffect( _effect );
+end
 --------------------------------------------------------------------------------
 --[[
 	Allows creation of evil units and buildings by a specific player
@@ -2129,7 +2159,7 @@ function RaidersControl()
 					end
 				end
 			end
-			if math.mod(raid_ccount, 90) == 0 then	--Positionswechsel (Radius/Waypoints)
+			if math.mod(raid_ccount, 120) == 0 then	--Positionswechsel (Radius/Waypoints)
 				if type(rtable.raid_data.r_rev) == "table" then
 					local newpos_zahl = GetRandom(1, table.getn(rtable.raid_data.r_rev))
 					local newpos_anchor = GetPosition(rtable.raid_data.r_rev[newpos_zahl])
@@ -2158,7 +2188,7 @@ function RaidersControl()
 		end
 	end
 	
-	if raid_ccount == 180 then	--Setzt den Counter zurück, damit er keine utopischen Werte annimmt
+	if raid_ccount == 120 then	--Setzt den Counter zurück, damit er keine utopischen Werte annimmt
 		raid_ccount = 0
 	end
 end

@@ -880,6 +880,11 @@
 		<Category>Grange</Category>
 		<FirstBuilding>CB_Grange</FirstBuilding>
 	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>DestroyAbleRuin</Category>
+		<FirstBuilding>CB_DestroyAbleRuinMonastery1</FirstBuilding>
+	</BuildingUpgrade>
 	
 	<SettlerUpgrade>
 		<Category>AggressiveWolf</Category>

@@ -4,7 +4,7 @@ ARMY1_DELAY 		= (5 * 60) + 20
 ARMY1_TROOP2_TYPE1	= Entities.CU_BlackKnight_LeaderMace1
 ARMY1_TROOP2_TYPE2	= Entities.CU_BanditLeaderSword1
 
-if CP_Difficulty == 1 then
+if CP_Difficulty > 0 then
 	ARMY1_TROOP2_TYPE1 = Entities.CU_BlackKnight_LeaderMace2
 	
 	ARMY1_TROOP2_TYPE2 = Entities.CU_BanditLeaderSword2
@@ -37,7 +37,7 @@ createArmyAttack1 = function()
 		local soldiers = 4
 		local experience = 0
 		local etype = Entities.CU_BlackKnight_LeaderMace1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			soldiers = 8
 			experience = HIGH_EXPERIENCE
 			etype = Entities.CU_BlackKnight_LeaderMace2
@@ -204,7 +204,7 @@ createArmyAttack1 = function()
 				local soldiers = 4
 				local experience = 0
 				local etype = Entities.CU_BlackKnight_LeaderMace1
-				if CP_Difficulty == 1 then
+				if CP_Difficulty > 0 then
 					soldiers = 8
 					experience = HIGH_EXPERIENCE
 					etype = Entities.CU_BlackKnight_LeaderMace2

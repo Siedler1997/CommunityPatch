@@ -6,10 +6,10 @@ function createPlayer2()
 	player2 	= {}
 	player2.id 	= 2
 	
-		if CP_Difficulty == 0 then
-			MapEditor_SetupAI(player2.id, 1, 3000, 3, "p2_hq", 1, 0)
+		if CP_Difficulty == 1 then
+			MapEditor_SetupAI(player2.id, 2, 3000, 3, "p2_hq", 1, 0)
 		else
-			MapEditor_SetupAI(player2.id, 3, 5000, 3, "p2_hq", 2, 0)
+			MapEditor_SetupAI(player2.id, 3, 5000, 3, "p2_hq", 3, 0)
 		end
 
 		local description = {

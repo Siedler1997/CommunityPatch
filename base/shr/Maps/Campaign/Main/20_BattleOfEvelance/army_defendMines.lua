@@ -13,7 +13,7 @@ createArmyDefendMines = function()
 
 	--	create 
 		local experience = 0
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyDefendMines.strength = 3
 			experience = experience + 3
 		else
@@ -30,7 +30,7 @@ createArmyDefendMines = function()
 		troopDescription.leaderType = Entities.PU_LeaderBow2
 		EnlargeArmy(armyDefendMines,troopDescription)
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.leaderType = Entities.PU_LeaderSword2
 			EnlargeArmy(armyDefendMines,troopDescription)
 			troopDescription.leaderType = Entities.PU_LeaderPoleArm2

@@ -33,7 +33,7 @@ end
 	Action_PilgrimCloseBorder = function()
 	-------------------------------------------------------------------------------------------------------------------
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = experience + 2
 		end
 
@@ -81,7 +81,7 @@ function PilgrimsLife()
 		SetEntityName(Pilgrim, "Pilgrim")
 
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = experience + 2
 		end
 		for i = 1, 8 do

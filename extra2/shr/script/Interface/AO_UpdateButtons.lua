@@ -43,11 +43,11 @@ function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut)
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 	end
 	if Logic.GetTechnologyState(pid, _tech) == 0 then
-		XGUIEng.GetStringTableText("MenuGeneric/TechnologyNotAvailable")
+		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/TechnologyNotAvailable")
 	elseif Logic.GetTechnologyState(pid, _tech) < 4 then
-		TextToolTip =  XGUIEng.GetStringTableText(_tooltip .. "_disabled")
+		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
 	else
-		TextToolTip =  XGUIEng.GetStringTableText(_tooltip .. "_normal")
+		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
 	end
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut,ShortCutToolTip)

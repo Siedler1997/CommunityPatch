@@ -16,10 +16,14 @@ createArmyTower2 = function()
 		armyTower2.control.timer		= 0
 		armyTower2.control.delay		= ATTACK_DELAY_TOWER2
 		if CP_Difficulty == 0 then
-			armyTower2.control.delay		= 3 * 60
+			armyTower2.control.delay		= 5 * 60
 		else
 			armyTower2.strength = armyTower2.strength + 2
-			armyTower2.control.delay		= 2 * 60
+			if CP_Difficulty == 1 then
+				armyTower2.control.delay		= 3 * 60
+			else
+				armyTower2.control.delay		= 60
+			end
 		end
 		
 		SetupArmy(armyTower2)
@@ -65,11 +69,12 @@ createArmyTower2 = function()
 		--	set up completed?
 
 			if HasFullStrength(armyTower2) then
-	
 				if CP_Difficulty == 0 then
+					armyTower2.control.delay = 5 * 60 + Logic.GetRandom(180)
+				elseif CP_Difficulty == 1 then
 					armyTower2.control.delay = 3 * 60 + Logic.GetRandom(180)
 				else
-					armyTower2.control.delay = 2 * 60 + Logic.GetRandom(180)
+					armyTower2.control.delay = 60 + Logic.GetRandom(120)
 				end
 			
 				StartJob("ControlArmyTower2")
@@ -97,7 +102,11 @@ createArmyTower2 = function()
 				EnlargeArmy(armyTower2,troopDescription)
 			else
 				troopDescription.experiencePoints = HIGH_EXPERIENCE
-				troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+				if CP_Difficulty == 1 then
+					troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+				else
+					troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+				end
 				EnlargeArmy(armyTower2, troopDescription)
 				EnlargeArmy(armyTower2, troopDescription)
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2

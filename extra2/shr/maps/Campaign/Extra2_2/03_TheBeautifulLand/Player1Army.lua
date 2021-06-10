@@ -1,7 +1,7 @@
 function CreatePlayer1Army()
 	local etype1 = Entities.PU_LeaderBow4
 	local etype2 = Entities.PU_LeaderRifle2
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		etype1 = Entities.PU_LeaderBow3
 		etype2 = Entities.PU_LeaderRifle1
 	end

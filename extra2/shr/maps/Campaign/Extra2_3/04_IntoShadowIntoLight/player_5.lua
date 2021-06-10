@@ -37,7 +37,7 @@ createPlayer5 = function()
 			},
 		}
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			description.refresh = {
 				gold				=	15,
 				clay				=	10,
@@ -51,7 +51,7 @@ createPlayer5 = function()
 		
 		SetupPlayerAi(Player5.id,description)
 		
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			for i = 1, 2 do
 				Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 5)
 				Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 5)

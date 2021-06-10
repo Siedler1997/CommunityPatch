@@ -72,7 +72,7 @@ Report("SetupWinterArmy")
 	setupArmyP2WinterAttacker()
 	setupArmyP4WinterAttacker()
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		StartSimpleJob("SetupBossesWinterGather")
 	end
 end
@@ -86,7 +86,7 @@ Report("StartWinterAttack!!!")
 	Tools.GiveResouces(2, 5000, 5000, 5000, 5000, 5000, 0)
 	Tools.GiveResouces(4, 5000, 5000, 5000, 5000, 5000, 0)
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		StartSimpleJob("ControlBossesWinterAttack")
 	end
 	

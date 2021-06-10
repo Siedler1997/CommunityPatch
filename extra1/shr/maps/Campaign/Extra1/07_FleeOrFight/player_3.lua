@@ -31,7 +31,7 @@ function CreatePlayer3()
 				sulfur				=	10,
 				stone				=	10,
 				wood				=	10,
-				updateTime			=	10
+				updateTime			=	5
 			},
 --			rebuild = {
 	--			delay				=	10,

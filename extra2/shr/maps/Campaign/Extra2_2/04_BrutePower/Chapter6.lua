@@ -125,7 +125,7 @@ function BarbarianArmy()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BlackKnight_LeaderMace1
 	local etype2 = Entities.PU_LeaderBow2
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_BlackKnight_LeaderMace2
 		etype2 = Entities.PU_LeaderBow3
@@ -204,7 +204,7 @@ function BarbarianArmy1()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BlackKnight_LeaderMace1
 	local etype2 = Entities.PU_LeaderPoleArm2
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_BlackKnight_LeaderMace2
 		etype2 = Entities.PU_LeaderPoleArm3
@@ -289,7 +289,7 @@ function BarbarianArmy2()
 	local etype1 = Entities.CU_BanditLeaderBow1
 	local etype2 = Entities.CU_BanditLeaderSword1
 	local etype3 = Entities.CU_BlackKnight_LeaderMace1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.PU_LeaderBow3
 		etype2 = Entities.PU_LeaderPoleArm3

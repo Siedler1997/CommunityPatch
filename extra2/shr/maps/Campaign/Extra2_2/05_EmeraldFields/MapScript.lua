@@ -267,7 +267,7 @@ function Mission_FirstMapAction()
 	--	EnableDebugging()
    	--	Game.GameTimeReset()
 		    	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			local vc1pos = GetPosition("vc_empty1") 	
 			local vc2pos = GetPosition("vc_empty2") 	
 

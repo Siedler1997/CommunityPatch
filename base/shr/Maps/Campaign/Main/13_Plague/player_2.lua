@@ -13,7 +13,7 @@ createPlayer2 = function()
 
 	--	set up default information
 	
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			MapEditor_SetupAI(player2.id, 1, 2000, 2, "p2_hq", 1, 0)
 		end
 

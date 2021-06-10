@@ -1,5 +1,5 @@
 MAIN_FORCE_RESPAWN_TIME = 5 * 60
-if CP_Difficulty == 1 then
+if CP_Difficulty > 0 then
 	MAIN_FORCE_RESPAWN_TIME = MAIN_FORCE_RESPAWN_TIME - 60
 end
 

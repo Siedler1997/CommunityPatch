@@ -5,7 +5,12 @@ function beginChapterOne()
 
     Logic.SetPlayerPaysLeaderFlag(1,0)
 
-    CreateRandomGoldChests()
+	if CP_Difficulty < 2 then
+        CreateRandomGoldChests()
+    else
+	    CreateRandomGoldChest(GetPosition("GoldChest1"))
+    end
+
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")
     CreateChestOpener("Ari")

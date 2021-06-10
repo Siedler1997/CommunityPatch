@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- this task list makes the leader walk to a position and then go back to idling -->
+
+<CTasksList>
+    <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType>
+        <Category>Walk</Category>
+        <PlayBackwards>false</PlayBackwards>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsSound" classid="0x2cfedfcd">
+		<TaskType>TASK_PLAY_SOUND</TaskType>
+		<SoundID>Military\SO_SoldierSword_rnd_1</SoundID>
+		<Volume>100</Volume>
+		<IsLooped>true</IsLooped>
+	</Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_WALK</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_TURN_TO_TARGET_ORIENTATION</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgs" classid="7ce66308">
+        <TaskType>TASK_SET_DEFAULT_REACTION_TYPE</TaskType>
+    </Task>
+    <Task classname="EGL::CGLETaskArgsTaskListID" classid="6385ea0d">
+        <TaskType>TASK_SET_TASK_LIST</TaskType>
+        <TaskList>TL_MILITARY_IDLE</TaskList>
+    </Task>
+</CTasksList>

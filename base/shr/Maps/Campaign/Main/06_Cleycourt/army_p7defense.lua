@@ -10,13 +10,13 @@ setupArmyP7Defense = function()
 	ArmyP7Defense.rodeLength		= 	2000
 	
 	-- Spawn parameter
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyP7Defense.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace2, 8},
 												{Entities.PU_LeaderPoleArm2, 4},
 												{Entities.PU_LeaderBow2, 4} }
 		ArmyP7Defense.maxSpawnAmount	= 	2
 	else
-		ArmyP7Defense.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace1, 4},
+		ArmyP7Defense.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace2, 6},
 												{Entities.PU_LeaderPoleArm1, 4},
 												{Entities.PU_LeaderBow1, 4} }
 		ArmyP7Defense.maxSpawnAmount	= 	1

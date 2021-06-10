@@ -16,7 +16,7 @@ function QuestBuildUpCity()
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower2)
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower3)
 	local minutes = 20
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if CP_Difficulty == 2 then
 		minutes = minutes - 5
 	end
 	if Counter.Tick2("QuestBuildUpCity", minutes * 60) or currentTowerCount > BuildUpQuestTowerCount + 6	then

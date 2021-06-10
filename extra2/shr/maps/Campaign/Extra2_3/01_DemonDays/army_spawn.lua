@@ -213,7 +213,7 @@ SpawnArchery = function()
 		Redeploy(ArmyVillage,GetPosition("p3_def5"),3000)
 	
 		local etype = Entities.PU_LeaderBow1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			etype = Entities.PU_LeaderBow2
 		end
 
@@ -326,7 +326,7 @@ function ControlArmyBarrack()
 		local etype = Entities.PU_LeaderSword3
 		local soldiers = 4
 		local experience = MEDIUM_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			etype = Entities.PU_LeaderSword4
 			soldiers = soldiers * 2
 			experience = experience + 2
@@ -367,7 +367,7 @@ function createLightCavalry(_spawnPos,_entityDescription)
 	LightCavalry.AttackAllowed			= true
 	
 		local experience = LOW_EXPERIENCE
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			experience = experience + 3
 		end
 	
@@ -410,7 +410,7 @@ createArmySpawn = function()
 				Entities.CU_Evil_LeaderSkirmisher1 }
 
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 		table.insert(troops1, Entities.PU_LeaderBow3)
 		

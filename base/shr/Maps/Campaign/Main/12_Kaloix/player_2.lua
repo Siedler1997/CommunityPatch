@@ -34,7 +34,7 @@ createPlayer2 = function()
 	}
 	SetupPlayerAi(playerId,aiDescription)
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 2)

@@ -8,7 +8,7 @@ function CreateArmyCaravanAttack()
 	ArmyCaravanAttack.player 		= 2
 	ArmyCaravanAttack.id			= 5
 	ArmyCaravanAttack.strength		= 2
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyCaravanAttack.strength = ArmyCaravanAttack.strength * 3
 	end
 	ArmyCaravanAttack.position		= GetPosition("Caravan_WP1")
@@ -58,7 +58,7 @@ end
 function ArmyCaravanAttackRandomSpawn()
 	local minutes = 7
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		minutes = minutes - 4
 		experience = experience + 2
 	end
@@ -81,7 +81,7 @@ function ArmyCaravanAttackRandomSpawn()
 			EnlargeArmy(ArmyCaravanAttack,troopDescription)
 			EnlargeArmy(ArmyCaravanAttack,troopDescription)
 
-			if CP_Difficulty == 1 then
+			if CP_Difficulty > 0 then
 				EnlargeArmy(ArmyCaravanAttack,troopDescription)
 				EnlargeArmy(ArmyCaravanAttack,troopDescription)
 				troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2

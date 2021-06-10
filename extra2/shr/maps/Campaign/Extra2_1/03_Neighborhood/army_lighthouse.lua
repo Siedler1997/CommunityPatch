@@ -8,7 +8,7 @@ function createArmyLighthouse()
     	}
         
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
     createArmy(2,1,armyLighthouse,2,"armyLighthouse",experience,troopsArmyLighthouse)

@@ -596,7 +596,7 @@ end
 function CreateAttackCaravans()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_BanditLeaderSword2
 	end

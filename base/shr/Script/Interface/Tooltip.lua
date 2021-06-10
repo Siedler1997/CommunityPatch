@@ -140,20 +140,23 @@ end
 -- Display the Costs and the Text for the Buy Serf Button
 --------------------------------------------------------------------------------
 
-function
-GUITooltip_BuySerf()
+function GUITooltip_BuySerf()
+	local TechState = Logic.GetTechnologyState(GUI.GetPlayerID(), Technologies.MU_Serf)	
+	local CostString = ""
+	local TooltipText = ""
+	local ShortCutToolTip = ""
 
-	Logic.FillSerfCostsTable(InterfaceGlobals.CostTable)
-	local CostString = InterfaceTool_CreateCostString( InterfaceGlobals.CostTable )
-	
-	local ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText("KeyBindings/BuyUnits1") .. "]"
-	
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
-	--AnSu: CHANGE THIS! No Text in Script!
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText,"MenuHeadquarter/BuySerf")
-	
+	if TechState == 0 then
+		TooltipText = XGUIEng.GetStringTableText("MenuGeneric/UnitNotAvailable")
+	else
+		Logic.FillSerfCostsTable(InterfaceGlobals.CostTable)
+		CostString = InterfaceTool_CreateCostString( InterfaceGlobals.CostTable )
+		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText("KeyBindings/BuyUnits1") .. "]"
+		TooltipText = XGUIEng.GetStringTableText("MenuHeadquarter/BuySerf")
+	end
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
-	
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
 end
 
 --------------------------------------------------------------------------------

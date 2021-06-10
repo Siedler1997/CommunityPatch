@@ -2,7 +2,7 @@ function CreateTentsArmy()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderSword2

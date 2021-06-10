@@ -33,7 +33,7 @@ function CreateArmyAttackersByIndex(_index)
 	
 	local soldiers = 12
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		soldiers = soldiers + 4
 		experience = experience + 2
 	end

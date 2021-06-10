@@ -97,9 +97,14 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Oberkirch
 		Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
 
-		Display.SetPlayerColorMapping(7, 1)						-- VC in palyer's village
+		Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
 
 		Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
+
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
+		end
 		
 end
 
@@ -112,10 +117,16 @@ function Mission_InitResources()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(3)
-		ResearchAllMilitaryTechs(4)	--No enemy, but has to survive the cave-attack without help
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)	--No enemy, but has to survive the cave-attack without help
 	end
 end
 
@@ -200,6 +211,17 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 0 then
 			CreateRandomGoldChests()
 		else
+			local addWolves = 0
+			if CP_Difficulty == 2 then
+				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+				Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
+				GUI.SetTaxLevel(1)
+			
+				addWolves = addWolves + 2
+
+				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+			end
+
 			local bosspos1 = GetPosition("guard1")
 			local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 500),(bosspos1.Y - 450),0,0,3,0)
 			LookAt(bossID1, "MinerClayMine")
@@ -208,9 +230,9 @@ function Mission_FirstMapAction()
 			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 			LookAt(bossID2, "defendRoute")
 
-			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, samount = 2, ramount = 10})
-			RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, samount = 2, ramount = 6})
-			RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, samount = 3, ramount = 8})
+			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, samount = (2 + addWolves), ramount = (10 + addWolves)})
+			RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
+			RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, samount = (3 + addWolves), ramount = (8 + addWolves)})
 		end
 
 		--Tools.ExploreArea(-1, -1, 900)

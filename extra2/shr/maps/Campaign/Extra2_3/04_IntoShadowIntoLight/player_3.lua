@@ -43,7 +43,7 @@ createPlayer3 = function()
 				},		
 		}
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			description.refresh = {
 				gold				=	15,
 				clay				=	10,

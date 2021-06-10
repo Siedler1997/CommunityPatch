@@ -1,7 +1,7 @@
 createArmyDefend = function()
 	local strength = 4
 	local cannontype = Entities.PV_Cannon1
-	if CP_Difficulty == 1 then	
+	if CP_Difficulty > 0 then	
 		strength = strength + 2
 		cannontype = Entities.PV_Cannon3
 	end
@@ -136,7 +136,7 @@ createArmyDefend = function()
 --	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)
 --	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 2)
 
-	if CP_Difficulty == 1 then	
+	if CP_Difficulty > 0 then	
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)

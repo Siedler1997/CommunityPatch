@@ -41,6 +41,10 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(8, NPC_COLOR)				-- orphaned towers
 
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR1)		-- Tendrel
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	end
 
 end
 
@@ -56,12 +60,18 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(4)
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(6)	--No enemy, but has to be useful
-		ResearchAllMilitaryTechs(7)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
 	end
 end
 
@@ -193,6 +203,16 @@ function Mission_FirstMapAction()
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinHouse1,vcpos.X,vcpos.Y,0,0)
@@ -213,10 +233,10 @@ function Mission_FirstMapAction()
 		local bossID4 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos4.X + 100),bosspos4.Y,0,0,3,0)
 		LookAt(bossID4, "Seer")
 		
-		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = 2, ramount = 8})
-		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = 3, ramount = 10})
-		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = 2, ramount = 9})
-		RaidersCreate({player = 7, pos = "rudelpos4", revier = 2000, range = 3500, samount = 3, ramount = 8})
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (10 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 7, pos = "rudelpos4", revier = 2000, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)

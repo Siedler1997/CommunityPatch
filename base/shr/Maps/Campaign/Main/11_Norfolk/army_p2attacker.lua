@@ -9,7 +9,7 @@ setupArmyP2Attacker = function()
 	ArmyP2Attacker.rodeLength			= 	4000
 	ArmyP2Attacker.beAgressive			=	true
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyP2Attacker.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderSword,
 													Entities.PV_Cannon2,

@@ -96,6 +96,14 @@ LocalMusic.SetBattle=  					{
 										{ "05_CombatEvelance1.mp3", 117 }
 										}
 
+LocalMusic.SetEvilBattle= 				{
+										{ "03_CombatEurope1.mp3", 117 },
+										{ "04_CombatMediterranean1.mp3", 113 },
+										{ "05_CombatEvelance1.mp3", 117 },
+										{ "43_Extra1_DarkMoor_Combat.mp3", 120 },	
+										{ "43_Extra1_DarkMoor_Combat.mp3", 120 }
+										}
+
 LocalMusic.SetMainTheme=				{
 										{ "01_MainTheme1.mp3", 152 },
 										{ "02_MainTheme2.mp3", 127 }

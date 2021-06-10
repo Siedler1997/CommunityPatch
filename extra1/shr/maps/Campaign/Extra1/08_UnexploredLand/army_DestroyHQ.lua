@@ -14,8 +14,10 @@ function CreateArmyDestroyHQ(_index)
 	ArmyDestroyHQ[_index].id				= 	6+_index
 	if CP_Difficulty == 0 then
 		ArmyDestroyHQ[_index].strength			=	2+GetRandom(2)
-	else
+	elseif CP_Difficulty == 1 then
 		ArmyDestroyHQ[_index].strength			=	4
+	else
+		ArmyDestroyHQ[_index].strength			=	6
 	end
 	ArmyDestroyHQ[_index].position			=	GetPosition("HQ".._index.."EnemyPos")
 	ArmyDestroyHQ[_index].rodeLength		=	4000
@@ -33,11 +35,8 @@ function CreateArmyDestroyHQ(_index)
 		
 		maxNumberOfSoldiers	= 16,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 	}	
-	if CP_Difficulty == 1 then	
-		troopDescription.experiencePoints = troopDescription.experiencePoints + 1
-	end
 
 	for i=1,ArmyDestroyHQ[_index].strength do
 

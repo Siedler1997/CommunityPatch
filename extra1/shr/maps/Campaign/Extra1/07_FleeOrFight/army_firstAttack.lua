@@ -13,7 +13,7 @@ function CreateArmyFirstAttack()
 		-- id 1 - 4 used
 		armyFirstAttack[i].id					= 	i
 		armyFirstAttack[i].strength				=	3
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyFirstAttack[i].strength = armyFirstAttack[i].strength * 2
 		end
 
@@ -45,7 +45,7 @@ function CreateArmyFirstAttack()
 			experiencePoints 	= LOW_EXPERIENCE,
 		}			
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 		end	
 		for k = 1, (CP_Difficulty+1) do

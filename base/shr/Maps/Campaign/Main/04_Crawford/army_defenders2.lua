@@ -7,7 +7,7 @@ createArmyDefenders2 = function()
 		local strength = 3
 		local experience = 0
 		local etype = Entities.CU_BlackKnight_LeaderMace1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			strength = 4
 			experience = HIGH_EXPERIENCE
 			etype = Entities.CU_BlackKnight_LeaderMace2
@@ -40,13 +40,17 @@ createArmyDefenders2 = function()
 		
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderBow1
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderBow2
-		end
+		else
+			troopDescription.leaderType = Entities.PU_LeaderBow3
+		end		
 		EnlargeArmy(armyDefenders2,troopDescription)
-
+		
 		if CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PV_Cannon1
+		elseif CP_Difficulty == 2 then
+			troopDescription.leaderType = Entities.PV_Cannon2
 		end
 		EnlargeArmy(armyDefenders2,troopDescription)
 	

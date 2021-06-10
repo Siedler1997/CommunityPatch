@@ -102,7 +102,7 @@ function FirstMapAction()
 	createPlayer5()
 	startChapterOne()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		TIMER_WINTER = TIMER_WINTER - 60 * 2
         local vcpos = GetPosition("vc_empty")
         DestroyEntity("vc_empty")

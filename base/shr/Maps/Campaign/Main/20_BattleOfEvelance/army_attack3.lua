@@ -7,7 +7,7 @@ ARMY3_BASE_DELAY = 50
 NUMBER_OF_WAVES = 5
 
 createArmyAttack3 = function()
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 30
 		ARMY3_FIRST_WAVE = ARMY3_FIRST_WAVE - 20
 		NUMBER_OF_WAVES = NUMBER_OF_WAVES + 5
@@ -20,7 +20,7 @@ createArmyAttack3 = function()
 		armyAttack3.player 					= 7
 		armyAttack3.id						= 3
 		armyAttack3.strength				= 3
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			armyAttack3.strength = armyAttack3.strength * 2
 		end
 		armyAttack3.position				= GetPosition("defend1")			-- before Main castle

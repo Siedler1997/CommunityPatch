@@ -36,7 +36,11 @@ createArmyResources1 = function()
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 		else
 			troopDescription.experiencePoints = HIGH_EXPERIENCE
-			troopDescription.leaderType = Entities.PU_LeaderBow2
+			if CP_Difficulty == 1 then
+				troopDescription.leaderType = Entities.PU_LeaderBow2
+			else
+				troopDescription.leaderType = Entities.PU_LeaderBow3
+			end
 			EnlargeArmy(armyResources1,troopDescription)
 
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
@@ -87,7 +91,7 @@ createArmyResources1 = function()
 				experiencePoints 	= LOW_EXPERIENCE,
 			}				
 			
-			if CP_Difficulty == 1 then
+			if CP_Difficulty > 0 then
 				troopDescription.experiencePoints = HIGH_EXPERIENCE
 			end
 
@@ -103,8 +107,10 @@ createArmyResources1 = function()
 
 				if CP_Difficulty == 0 then
 					troopDescription.leaderType = Entities.PU_LeaderBow1
-				else
+				elseif CP_Difficulty == 1 then
 					troopDescription.leaderType = Entities.PU_LeaderBow2
+				else
+					troopDescription.leaderType = Entities.PU_LeaderBow3
 				end				 
 
 			end
@@ -119,8 +125,10 @@ createArmyResources1 = function()
 			
 			if CP_Difficulty == 0 then
 				armyResources1.control.timer = 5 * 60
-			else
+			elseif CP_Difficulty == 1 then
 				armyResources1.control.timer = 3 * 60
+			else
+				armyResources1.control.timer = 60
 			end
 			
 		else

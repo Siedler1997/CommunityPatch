@@ -64,4 +64,11 @@ function BossUseHeroAbility()
 			GUI.SettlerAffectUnitsInArea(HeroID)
 		end
 	end
+	if IsExisting("P2_Boss") then
+		if AreEnemiesInArea(GetPlayer("P2_Boss"), GetPosition("P2_Boss"), 2000) then
+			if GetRandom(100) > 90 then
+				CreateEntity(2,Entities.XD_Bomb1,GetPosition("P2_Boss"))
+			end
+		end
+	end
 end

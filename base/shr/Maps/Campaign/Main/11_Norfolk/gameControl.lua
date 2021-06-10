@@ -54,10 +54,20 @@ start1stQuest = function()
 
 	StartCutscene("Intro", createBriefingPrelude)
 	--	StartCutscene("Intro")
+
+	if CP_Difficulty == 2 then
+		StartSimpleJob("IntrudersDead")
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------------
-	
+function IntrudersDead()
+	if IsDead(ArmyP4Intruder[1]) then
+		setupArmyP4Attacker2()
+		return true
+	end
+end
+
 end1stQuest = function()
 
 	Report("end 1st quest")

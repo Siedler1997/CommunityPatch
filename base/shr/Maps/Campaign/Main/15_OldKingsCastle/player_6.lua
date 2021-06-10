@@ -32,7 +32,7 @@ createPlayer6 = function()
 		extracting = false
 	}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local towers1 = { Logic.GetPlayerEntities(6, Entities.PB_Tower2, 5, 0) }
 		for i = 1, table.getn(towers1) do
 			if IsExisting(towers1[i]) then

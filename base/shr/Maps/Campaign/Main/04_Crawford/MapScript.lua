@@ -102,6 +102,10 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- Leonardo
 		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
 		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
+
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		end
 		
 end
 
@@ -139,9 +143,15 @@ function Mission_InitResources()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(6)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
 	end
 end
 
@@ -270,6 +280,16 @@ function Mission_FirstMapAction()
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		local vcpos1 = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos1.X,vcpos1.Y,0,0)
@@ -286,9 +306,7 @@ function Mission_FirstMapAction()
 		for i = 1, 3 do
 			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
 		end
-		for i = 1, 5 do
-			ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
-		end
+
 		DestroyEntity("p5_vc1")
 		DestroyEntity("p5_vc2")
 		
@@ -304,12 +322,18 @@ function Mission_FirstMapAction()
 		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
 		LookAt(bossID3, "Helias")
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, samount = 2, ramount = 10})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = 2, ramount = 6})
-		RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = 3, ramount = 8})
-		RaidersCreate({player = 6, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 3500, samount = 2, ramount = 7})
-		RaidersCreate({player = 6, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 3500, samount = 2, ramount = 8})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (10 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (7 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
 		--SetPosition("Dario", GetPosition(bossID3))
+		
+		if CP_Difficulty == 2 then
+			for i = 1, 5 do
+				ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
+			end
+		end
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)

@@ -17,6 +17,7 @@ IncludeLocals("briefing_priest")
 IncludeLocals("briefing_hiddenPath")
 IncludeLocals("briefing_farmer")
 IncludeLocals("gameControl")
+IncludeLocals("player1")
 IncludeLocals("player2")
 IncludeLocals("player3")
 IncludeLocals("player7")
@@ -29,6 +30,8 @@ function InitDiplomacy()
         SetHostile(1,2)
         SetFriendly(1,3)
         SetHostile(2,3)
+        SetHostile(1,8)
+        SetHostile(3,8)
 
         SetHostile(1,7)
         SetHostile(3,7)
@@ -48,24 +51,26 @@ function InitDiplomacy()
 function InitResources()
     AddStone(500)
     AddClay(500)
-    AddGold(0)
+    AddGold(500)
     AddSulfur(500)
     AddIron(500)
     AddWood(500)
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	ForbidTechnology(Technologies.GT_PulledBarrel)
-	
-	ResearchTechnology(Technologies.GT_Construction)
-	
-	ResearchTechnology(Technologies.T_ThiefSabotage)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
-		ResearchAllMilitaryTechsAddOn(3)	--No enemy, but has to be useful
-		ResearchAllMilitaryTechsAddOn(7)
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(3, _ResearchSuperTech)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechsAddOn(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(8, _ResearchSuperTech)
 	end
+    createPlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -73,18 +78,29 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+	    AddPeriodicSummer(10)
+    else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
     end
+end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
-  	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
     Display.SetPlayerColorMapping(2,EVIL_GOVERNOR_COLOR)
-    Display.SetPlayerColorMapping(3,FRIENDLY_COLOR2)
     Display.SetPlayerColorMapping(4,NPC_COLOR)
     Display.SetPlayerColorMapping(5,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(6,NPC_COLOR)
     Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
+    Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
+
+	if CP_Difficulty < 2 then
+  		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
+		Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+	end
 end
 ------------------------------------------------------------------------------
 
@@ -105,7 +121,6 @@ function FirstMapAction()
 
     Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
 
-    --createPlayer2()
     createPlayer3()
     createPlayer7()
 
@@ -118,7 +133,39 @@ function FirstMapAction()
     
     beginChapterOne()
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+			
+			ReplaceEntity("player1", Entities.PB_Headquarters1)
+
+			local towers = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 5, 0) }
+			for i = 1, table.getn(towers) do
+				if IsExisting(towers[i]) then
+					ReplaceEntity(towers[i], Entities.PB_Tower2)
+				end
+			end
+			
+			local bossID1 = AI.Entity_CreateFormation(7,Entities.PV_Cannon4,0,0,18500,56000,0,0,3,0)
+			local bossID2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderRifle2,0,0,18300,56300,0,0,3,0)
+			local bossID3 = AI.Entity_CreateFormation(7,Entities.PU_LeaderRifle2,0,0,18400,55600,0,0,3,0)
+			SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 15500, 55000, 0, 8), "block2_lookpos")
+			LookAt(bossID1, "block2_lookpos")
+			LookAt(bossID2, "block2_lookpos")
+			LookAt(bossID3, "block2_lookpos")
+
+			local bossID4 = AI.Entity_CreateFormation(7,Entities.PV_Cannon3,0,0,13100,52700,0,0,3,0)
+			local bossID5 = AI.Entity_CreateFormation(7,Entities.PU_LeaderRifle2,0,0,13000,52900,0,0,3,0)
+			SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 10100, 52000, 0, 8), "block1_lookpos")
+			LookAt(bossID4, "block1_lookpos")
+			LookAt(bossID5, "block1_lookpos")
+		end
+
 		local cannons1 = { Logic.GetPlayerEntities(7, Entities.PV_Cannon1, 5, 0) }
 		for i = 1, table.getn(cannons1) do
             if IsExisting(cannons1[i]) then
@@ -131,8 +178,19 @@ function FirstMapAction()
 			    ReplaceEntity(cannons2[i], Entities.PV_Cannon3)
             end
 		end
+		
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		--RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (7 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 4000, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
+	--StartSimpleHiResJob("GetDarioPos")
     --Tools.ExploreArea(-1, -1, 900)
 end
 
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

@@ -6,13 +6,17 @@ function CreateArmyBlockade1()
 	ArmyBlockade1.player 				=	3
 	ArmyBlockade1.id					=	2
 	ArmyBlockade1.strength				=	2
-	if CP_Difficulty == 1 then
-		ArmyBlockade1.strength = ArmyBlockade1.strength * 3
-		ArmyBlockade1.toggleAttackTime	=	60
-		ArmyBlockade1.respawnTime		=	60
+	if CP_Difficulty > 0 then
+		if CP_Difficulty == 1 then
+			ArmyBlockade1.strength = ArmyBlockade1.strength + 2
+		else
+			ArmyBlockade1.strength = ArmyBlockade1.strength * 3
+		end
+		ArmyBlockade1.toggleAttackTime	=	3 * 60
+		ArmyBlockade1.respawnTime		=	3 * 60
 	else
-		ArmyBlockade1.toggleAttackTime	=	5*60
-		ArmyBlockade1.respawnTime		=	5*60
+		ArmyBlockade1.toggleAttackTime	=	5 * 60
+		ArmyBlockade1.respawnTime		=	5 * 60
 	end
 	ArmyBlockade1.position				=	GetPosition("ArmyBlockade1")
 	ArmyBlockade1.rodeLength			=	2000

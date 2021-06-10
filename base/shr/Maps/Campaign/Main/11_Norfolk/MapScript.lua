@@ -32,7 +32,6 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-    Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,BARBARIAN_COLOR)
@@ -40,6 +39,9 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	end
 
 end
 
@@ -61,11 +63,17 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive attacks without help
-		ResearchAllMilitaryTechs(4)
-		ResearchAllMilitaryTechs(6)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3, _ResearchSuperTech)	--No enemy, but has to survive attacks without help
+		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
 	end
 end
 
@@ -109,6 +117,7 @@ function Mission_FirstMapAction()
 	IncludeLocals("army_p2winterattacker")
 	IncludeLocals("army_p3defense")
 	IncludeLocals("army_p4attacker")
+	IncludeLocals("army_p4attacker2")
 	IncludeLocals("army_p4defense")
 	IncludeLocals("army_p4intruders")
 	IncludeLocals("army_p4winterattacker")
@@ -174,6 +183,16 @@ function Mission_FirstMapAction()
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		SetPosition ("Ingredient", GetPosition("GoldChest1"))
 
 		local bosspos1 = GetPosition("P2Defense2")
@@ -184,8 +203,8 @@ function Mission_FirstMapAction()
 		local bossID2 = AI.Entity_CreateFormation(6,Entities.CU_Barbarian_Hero,0,0,(bosspos2.X + 300),(bosspos2.Y + 1700),0,0,0,0)
 		SetEntityName(bossID2, "P4_Boss")
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, samount = 2, ramount = 6})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = 3, ramount = 8})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = (3 + addWolves), ramount = (8 + addWolves)})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)

@@ -1008,7 +1008,7 @@
 
 	<BuildingUpgrade>
 		<Category>DestroyAbleRuin</Category>
-		<FirstBuilding>CB_DestroyAbleRuinHouse1</FirstBuilding>
+		<FirstBuilding>CB_DestroyAbleRuinMonastery1</FirstBuilding>
 	</BuildingUpgrade>
 
 	<BuildingUpgrade>

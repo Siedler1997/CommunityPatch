@@ -5,7 +5,7 @@ function CreateArmyPatrol()
 	ArmyPatrol.player 				=	3
 	ArmyPatrol.id					=	1
 	ArmyPatrol.strength				=	6
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyPatrol.strength = ArmyPatrol.strength + 2
 	end
 	ArmyPatrol.position				=	GetPosition("ArmyPatrolling")
@@ -29,7 +29,7 @@ function CreateArmyPatrol()
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= LOW_EXPERIENCE,
 	}	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		troopDescription.experiencePoints = troopDescription.experiencePoints + 2
 		troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 		EnlargeArmy(ArmyPatrol,troopDescription)

@@ -32,7 +32,7 @@ createPlayer6 = function()
 		extracting = false
 	}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		aiDescription.refresh = {
 			gold				=	30,
 			clay				=	20,

@@ -73,7 +73,7 @@ createArmySpawn = function()
 
 	local experience = LOW_EXPERIENCE
 	local soldiers = 4
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 		soldiers = soldiers * 2
 		table.insert(Troops_5, Entities.PU_LeaderBow4)
@@ -360,7 +360,7 @@ function createDarioArmy(_troopsnum)
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	
@@ -439,7 +439,7 @@ function createDarioArmy1(_troopsnum)
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	
@@ -521,7 +521,7 @@ function createDarioArmy2(_troopsnum)
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	

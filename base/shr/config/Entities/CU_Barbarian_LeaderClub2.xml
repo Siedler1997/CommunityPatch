@@ -57,6 +57,20 @@
 		<ModifySpeed>
 			<Technology>T_BetterTrainingBarracks</Technology>
 		</ModifySpeed>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyDamage>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
 		
         <Upgrade>                       
     	   <Category>LeaderBarbarian</Category>    	    

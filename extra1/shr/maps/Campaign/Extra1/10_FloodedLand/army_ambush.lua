@@ -11,6 +11,8 @@ function CreateArmyAmbush()
 		ArmyAmbush[i].strength				=	3
 		if CP_Difficulty == 1 then
 			ArmyAmbush[i].strength = ArmyAmbush[i].strength + 2
+		elseif CP_Difficulty == 2 then
+			ArmyAmbush[i].strength = ArmyAmbush[i].strength * 2
 		end
 		ArmyAmbush[i].position				=	GetPosition("ArmyAmbush"..i)
 		ArmyAmbush[i].rodeLength			=	500
@@ -30,7 +32,7 @@ function CreateArmyAmbush()
 			experiencePoints 	= LOW_EXPERIENCE,
 		}	
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 			EnlargeArmy(ArmyAmbush[i],troopDescription)

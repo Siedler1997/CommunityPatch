@@ -4,7 +4,7 @@ function createBanditArmies()
 	armyBandit1 = {}
 	local troopsBandit = {
         Entities.CU_BanditLeaderSword2,
-        Entities.CU_BanditLeaderBow1,
+        Entities.CU_BanditLeaderBow2,
         Entities.CU_BanditLeaderSword2
     	}    
 

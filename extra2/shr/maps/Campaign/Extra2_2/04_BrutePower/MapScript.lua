@@ -221,7 +221,7 @@ function Mission_FirstMapAction()
 
 	start1stChapter()
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local towers1 = { Logic.GetPlayerEntities(3, Entities.PB_Tower1, 5, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then

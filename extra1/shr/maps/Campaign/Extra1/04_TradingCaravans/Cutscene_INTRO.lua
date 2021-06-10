@@ -7,8 +7,8 @@
 function Cutscene_INTRO_Start()
 	Interface_SetCinematicMode(1)
 	
-	CreateEntity(1, Entities.CU_Hero10, GetPosition("CUTSCENE_QUINTOS"), "QUINTOS" )
-    CreateEntity(1, Entities.PU_Travelling_Salesman, GetPosition("CUTSCENE_TRADER"), "TRADER" )
+	CreateEntity(6, Entities.CU_Hero10, GetPosition("CUTSCENE_QUINTOS"), "QUINTOS" )
+    CreateEntity(5, Entities.PU_Travelling_Salesman, GetPosition("CUTSCENE_TRADER"), "TRADER" )
     
     Display.SetFogStartAndEnd (5000, 15000)
   	Display.SetRenderFog (1)

@@ -189,7 +189,7 @@ function Mission_FirstMapAction()
 		--EnableDebugging()
     		--Game.GameTimeReset()
 		    
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 10, 0) }
 			for i = 2, table.getn(towers1) do
 				if IsExisting(towers1[i]) then

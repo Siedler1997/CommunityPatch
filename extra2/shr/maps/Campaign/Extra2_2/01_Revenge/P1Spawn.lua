@@ -2,7 +2,7 @@ Player1Spawn=function()
 
 ----------------------------------Player 1 Spawn Archers---------------------
 	local etype = Entities.PU_LeaderBow3
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		etype = Entities.PU_LeaderBow2
 	end
 

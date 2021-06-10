@@ -52,7 +52,11 @@ createArmyResources2 = function()
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 		else
 			troopDescription.experiencePoints = HIGH_EXPERIENCE
-			troopDescription.leaderType = Entities.PU_LeaderBow2
+			if CP_Difficulty == 1 then
+				troopDescription.leaderType = Entities.PU_LeaderBow2
+			else
+				troopDescription.leaderType = Entities.PU_LeaderBow3
+			end
 			EnlargeArmy(armyResources2,troopDescription)
 
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
@@ -103,25 +107,25 @@ createArmyResources2 = function()
 				minNumberOfSoldiers	= 0,
 				experiencePoints 	= LOW_EXPERIENCE,
 			}				
-
-			if Logic.GetRandom() > 50 then
 			
+			if CP_Difficulty > 0 then
+				troopDescription.experiencePoints = HIGH_EXPERIENCE
+			end
+
+			if Logic.GetRandom() > 30 then
 				if CP_Difficulty == 0 then
 					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 				else
-					troopDescription.experiencePoints = HIGH_EXPERIENCE
 					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 				end
-				
 			else
-
 				if CP_Difficulty == 0 then
-					troopDescription.leaderType = Entities.PU_LeaderSword1
+					troopDescription.leaderType = Entities.PU_LeaderBow1
+				elseif CP_Difficulty == 1 then
+					troopDescription.leaderType = Entities.PU_LeaderBow2
 				else
-					troopDescription.experiencePoints = HIGH_EXPERIENCE
-					troopDescription.leaderType = Entities.PU_LeaderSword2
-				end				 
-
+					troopDescription.leaderType = Entities.PU_LeaderBow3
+				end	
 			end
 			
 			armyResources2.position = GetPosition("spawn2")
@@ -134,8 +138,10 @@ createArmyResources2 = function()
 			
 			if CP_Difficulty == 0 then
 				armyResources2.control.timer = 5 * 60
-			else
+			elseif CP_Difficulty == 1 then
 				armyResources2.control.timer = 3 * 60
+			else
+				armyResources2.control.timer = 60
 			end
 			
 		else

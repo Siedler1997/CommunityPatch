@@ -42,7 +42,7 @@ createPlayer2 = function()
 			--	},		
 		}
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			description.refresh = {
 				gold				=	30,
 				clay				=	20,
@@ -68,7 +68,7 @@ createPlayer2 = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, 2) ]]
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			for i = 1, 3 do
 				Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 2)
 				Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)

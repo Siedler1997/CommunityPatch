@@ -753,7 +753,8 @@
 	<Entity>CU_BanditLeaderBow2</Entity>
 	<Entity>CU_BanditSoldierBow1</Entity>
 	<Entity>CU_BanditSoldierBow2</Entity>
-	
+
+	<Entity>CB_DestroyAbleRuinMonastery1</Entity>
 	<Entity>CU_VeteranCaptain</Entity>
 	<Entity>CU_VeteranLieutenant</Entity>
 	<Entity>CU_VeteranMajor</Entity>

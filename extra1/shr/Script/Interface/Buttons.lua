@@ -82,6 +82,10 @@ function GUIAction_ToggleMenu( _Menu, _Status )
 		end
 	end
 	
+	if _Menu == gvGUI_WidgetID.GameEndScreenWindowHint and _Status == 0 and XGUIEng.IsWidgetShown("GameEndScreen_Window") == 0 then
+		XGUIEng.ShowWidget("MainMenuWindow",1)
+	end
+	
 	-- Done?
 	if DoneFlag == 1 then		
 		return

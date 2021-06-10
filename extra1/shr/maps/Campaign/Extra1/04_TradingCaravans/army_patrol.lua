@@ -12,7 +12,7 @@ function CreateArmyPatrol()
 	ArmyPatrol.rodeLength	= 	2000
 	ArmyPatrol.delay		=	2
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyPatrol.strength = ArmyPatrol.strength + 3
 	end
 
@@ -31,7 +31,7 @@ function CreateArmyPatrolTroops()
 	ArmyPatrol.position		= GetPosition("P2_RandomSpawn_"..RandomPos)
 	
 	local experience = MEDIUM_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	local troopDescription = {
@@ -50,7 +50,7 @@ function CreateArmyPatrolTroops()
 	troopDescription.leaderType = Entities.PU_LeaderRifle1
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		troopDescription.leaderType = Entities.PU_LeaderSword2
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		troopDescription.leaderType = Entities.PU_LeaderBow2
@@ -66,13 +66,13 @@ function CreateArmyPatrolTroops()
 	troopDescription.leaderType = Entities.PU_LeaderCavalry2
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	EnlargeArmy(ArmyPatrol,troopDescription)
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyPatrol,troopDescription)
 	end
 	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
 	EnlargeArmy(ArmyPatrol,troopDescription)
 	EnlargeArmy(ArmyPatrol,troopDescription)
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		EnlargeArmy(ArmyPatrol,troopDescription)
@@ -88,11 +88,7 @@ end
 ---------------------------------------------------------------------------------------------
 -- Job Random Attacks
 function RandomAttacks()
-	local minutes = 30
-	if CP_Difficulty == 1 then
-		minutes = minutes - 5
-	end
-	if Counter.Tick2("RandomAttacks", 60 * minutes) then
+	if Counter.Tick2("RandomAttacks", 60 * 30) then
 
 		CreateArmyPatrolTroops()
 		

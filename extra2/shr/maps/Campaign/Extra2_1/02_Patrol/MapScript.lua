@@ -92,7 +92,7 @@ function FirstMapAction()
 	createPlayer7()
 	beginChapterOne()
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		local bosspos1 = GetPosition("armyDefender")
 		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
 		LookAt(bossID1, "vc_empty")

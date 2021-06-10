@@ -73,7 +73,7 @@ DefenseBase1 = function()
 					Entities.PU_LeaderSword3
 					}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
 
@@ -153,7 +153,7 @@ DefenseBase2 = function()
 					Entities.PU_LeaderSword3
 					}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
 
@@ -233,7 +233,7 @@ DefenseBase3 = function()
 					Entities.PU_LeaderSword3
 					}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
 
@@ -313,7 +313,7 @@ DefenseBase4 = function()
 					Entities.PU_LeaderSword3
 					}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 2
 	end
 

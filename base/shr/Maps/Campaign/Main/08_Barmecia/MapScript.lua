@@ -45,10 +45,16 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechs(5)
-		ResearchAllMilitaryTechs(6)
-		ResearchAllMilitaryTechs(8)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
 	end
 end
 
@@ -82,6 +88,9 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
 		
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		end
 		
 end
 
@@ -177,12 +186,22 @@ function Mission_FirstMapAction()
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
 	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+
+			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		end
+
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = 2, ramount = 6})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = 3, ramount = 9})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = (3 + addWolves), ramount = (9 + addWolves)})
 	end
 	local bossID1 = SetEntityName(AI.Entity_CreateFormation(5,Entities.CU_LeaderOutlaw1,0,0,4300,19600,0,0,3,0), "kidnapper_boss")
 	local bossID2 = SetEntityName(AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,47900,18800,0,0,3,0), "robber_boss")

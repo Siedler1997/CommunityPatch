@@ -1,4 +1,5 @@
 Script.Load( "Data\\Script\\MapTools\\Main.lua" )
+IncludeLocals("player1")
 
 CP_Difficulty = 0
 ------------------------------------------------------------------------------
@@ -9,6 +10,7 @@ function InitDiplomacy()
 	SetHostile(4,1)
 	SetHostile(4,2)
 	SetHostile(4,5)
+	SetHostile(1,6)
 
 	end
 ------------------------------------------------------------------------------
@@ -23,27 +25,20 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	ForbidTechnology(Technologies.GT_Matchlock)
-	ForbidTechnology(Technologies.GT_PulledBarrel)
-	
-	ResearchTechnology(Technologies.GT_Mercenaries)
-	ResearchTechnology(Technologies.GT_StandingArmy)
-	ResearchTechnology(Technologies.GT_Tactics)
-	
-	ResearchTechnology(Technologies.GT_Construction)
-	
-	ResearchTechnology(Technologies.GT_Alchemy)
-	
-	ResearchTechnology(Technologies.GT_Literacy)
-	
-	ResearchTechnology(Technologies.GT_Mathematics)
-	ResearchTechnology(Technologies.GT_Binocular)
-	
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(4)
-		ForbidTechnology(Technologies.UP2_Tower)
-		ForbidTechnology(Technologies.GT_Chemistry)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+		
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(4, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
 	end
+
+    createPlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -56,20 +51,38 @@ end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
+	Display.SetPlayerColorMapping(2,15)
+	Display.SetPlayerColorMapping(5,16)
+    Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(2,FRIENDLY_COLOR1)
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	
-	if CitywallsPlayercolor ~= true then
-		Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-	else
-		Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-	end
+		if CitywallsPlayercolor ~= true then
+			Display.SetPlayerColorMapping(3,15)
+		else
+			Display.SetPlayerColorMapping(3,PLAYER_COLOR)
+		end
 	
-	if Player4IsNephilim ~= true then
-		Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+		if Player4IsNephilim ~= true then
+			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+		else
+			Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
+		end
 	else
-		Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
+	
+		if CitywallsPlayercolor ~= true then
+			Display.SetPlayerColorMapping(3,15)
+		else
+			Display.SetPlayerColorMapping(3,NEPHILIM_COLOR)
+		end
+	
+		if Player4IsNephilim ~= true then
+			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+		else
+			Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+		end
 	end
 	
 end
@@ -95,7 +108,7 @@ function FirstMapAction()
 	IncludeLocals("briefing_riflemen")
 
 	IncludeLocals("gameControl")
-
+	
 	IncludeLocals("player_2")
 	IncludeLocals("player_4")
 	IncludeLocals("player_5")
@@ -136,4 +149,28 @@ function FirstMapAction()
 --	StartCutscene("Intro",start1stChapter)
 	start1stChapter();
 
+	if CP_Difficulty > 0 then
+		local addWolves = 0
+		if CP_Difficulty == 2 then		
+			Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3,15)
+			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+		end
+
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+	end
+
+    --Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleHiResJob("GetDarioPos")
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

@@ -12,7 +12,7 @@ function CreateArmyTribalCamps()
 
 		ArmyTribalCamps[i].strength				=	4
 		ArmyTribalCamps[i].respawnTime			=	5*60
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			ArmyTribalCamps[i].strength = ArmyTribalCamps[i].strength * 2
 			ArmyTribalCamps[i].respawnTime = ArmyTribalCamps[i].respawnTime - 2*60
 		end

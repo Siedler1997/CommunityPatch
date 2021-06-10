@@ -4,7 +4,7 @@ setupArmyP4Attacker = function()
 
 	ArmyP4Attacker.player 				= 	4
 	ArmyP4Attacker.id					= 	3
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyP4Attacker.strength				= 	6
 	else
 		ArmyP4Attacker.strength				= 	4

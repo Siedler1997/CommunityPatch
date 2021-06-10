@@ -24,7 +24,7 @@ function CreateArmyAttackersEx(_Index,_Pos)
 	ArmyAttackers[_Index].respawnCount	=	0
 	ArmyAttackers[_Index].beAgressive	=	true
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		ArmyAttackers[_Index].strength = ArmyAttackers[_Index].strength * 1.5
 	end
 	
@@ -59,21 +59,21 @@ function SpawnArmyAttackers(_index)
 		experiencePoints 	= LOW_EXPERIENCE,
 	}
 
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 	end	
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	end
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	end
 					

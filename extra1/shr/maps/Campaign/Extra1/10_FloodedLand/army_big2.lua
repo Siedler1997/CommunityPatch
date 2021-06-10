@@ -9,7 +9,7 @@ function CreateArmyBig2()
 		ArmyBig2[i].player 				=	3
 		ArmyBig2[i].id					=	7+i
 		ArmyBig2[i].strength			=	6
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			ArmyBig2[i].strength = ArmyBig2[i].strength + 2
 		end
 		ArmyBig2[i].position			=	GetPosition("ArmyBig2")
@@ -28,7 +28,7 @@ function CreateArmyBig2()
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= LOW_EXPERIENCE,
 		}		
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 2
 			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 			EnlargeArmy(ArmyBig2[i],troopDescription)

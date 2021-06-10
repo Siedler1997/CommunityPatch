@@ -8,7 +8,7 @@ createPlayer2 = function()
 	--	describe the player structure
 			local description = {
 		
-				serfLimit				=	10,
+				serfLimit				=	8,
 				--------------------------------------------------
 				extracting				=	false,
 				--------------------------------------------------
@@ -36,6 +36,18 @@ createPlayer2 = function()
 					updateTime			=	5
 				},
 			}
+
+		if CP_Difficulty > 0 then
+			description.refresh = {
+				gold				=	500,
+				clay				=	30,
+				iron				=	300,
+				sulfur				=	50,
+				stone				=	40,
+				wood				=	200,
+				updateTime			=	5
+			}
+		end
 		
 		Tools.GiveResouces(player2.id, 3000, 3000, 3000, 3000,3000, 3000)
 

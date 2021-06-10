@@ -34,7 +34,7 @@ function controlCreateDefendingArmies()
 
     
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 

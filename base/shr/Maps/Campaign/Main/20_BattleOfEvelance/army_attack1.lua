@@ -132,7 +132,7 @@ createArmyAttack1 = function()
 createArmy = function(_army,_size,_type1,_type2,_type3)
 -------------------------------------------------------------------------------------------------------------------	
 	local newsize = 4
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		newsize = newsize * 2
 	end
 

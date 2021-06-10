@@ -44,7 +44,7 @@ function CreateArmyEastVillageAttackByIndex(_index)
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= LOW_EXPERIENCE,
 	}
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 	end	
 

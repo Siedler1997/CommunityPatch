@@ -9,7 +9,10 @@ setupArmyP4WinterAttacker = function()
 	SetupArmyP4WinterGather(ArmyP4WinterAttacker1)
 	SetupArmyP4WinterGather(ArmyP4Attacker)
 	SetupArmyP4WinterGather(ArmyP4Defense1)
-	
+	if CP_Difficulty == 2 then
+		SetupArmyP4WinterGather(ArmyP4Attacke2)
+	end
+
 	P4WinterAttackGathered = true
 
 	TimeLine.Enter("Start P4 WinterAttack", TimeLine.Seconds + 600, "StartArmyP4WinterAttacker")
@@ -23,7 +26,7 @@ SetupArmyP4WinterGather = function(_army)
 	
 	_army.strength = 4
 	
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		_army.strength = _army.strength + 2
 	end
 
@@ -62,6 +65,9 @@ StartArmyP4WinterAttacker = function()
 	SetupArmyP2WinterAttack(ArmyP4WinterAttacker1)
 	SetupArmyP2WinterAttack(ArmyP4Attacker)
 	SetupArmyP2WinterAttack(ArmyP4Defense1)
+	if CP_Difficulty == 2 then
+		SetupArmyP2WinterAttack(ArmyP4Attacke2)
+	end
 	
 
 	-- Begin attack
@@ -117,6 +123,9 @@ end
 			FrontalAttack(ArmyP4WinterAttacker1)
 			FrontalAttack(ArmyP4Attacker)
 			FrontalAttack(ArmyP4Defense1)
+			if CP_Difficulty == 2 then
+				SetupArmyP2WinterAttack(FrontalAttack)
+			end
 		else
 			TickOffensiveAIController(ArmyP4WinterAttacker1)	
 		end

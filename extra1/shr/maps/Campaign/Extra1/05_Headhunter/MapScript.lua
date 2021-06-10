@@ -26,6 +26,7 @@ IncludeLocals("quest_defeat")
 IncludeLocals("quest_helias")
 IncludeLocals("quest_rescueGateKeeper")
 IncludeLocals("army_wayDefenders")
+IncludeLocals("player1")
 IncludeLocals("player2")
 
 
@@ -38,8 +39,8 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 ------------------------------------------------------------------------------
 function InitDiplomacy()
     SetHostile(1,2)
-
-	end
+    SetHostile(1,5)
+end
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
@@ -52,23 +53,17 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	ForbidTechnology(Technologies.GT_Matchlock)
-	ForbidTechnology(Technologies.GT_PulledBarrel)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
 
-	ResearchTechnology(Technologies.GT_Construction)
-
-	ResearchTechnology(Technologies.GT_Literacy)
-
-	ResearchTechnology(Technologies.GT_Mathematics)
-	ResearchTechnology(Technologies.GT_Binocular)
-
-	ResearchTechnology(Technologies.GT_Mercenaries)
-	ResearchTechnology(Technologies.GT_Alchemy)
-
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
-	    ForbidTechnology(Technologies.GT_Chemistry)
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)
 	end
+    createPlayer1()
 end
 ------------------------------------------------------------------------------
 function InitWeatherGfxSets()
@@ -76,18 +71,27 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+	    AddPeriodicSummer(10)
+    else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
     end
+end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
-    Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-    Display.SetPlayerColorMapping(2,NEPHILIM_COLOR)
     Display.SetPlayerColorMapping(3,NPC_COLOR)
     Display.SetPlayerColorMapping(4,NPC_COLOR)
-    Display.SetPlayerColorMapping(5,NPC_COLOR)
-    Display.SetPlayerColorMapping(6,FRIENDLY_COLOR1)
-
+    Display.SetPlayerColorMapping(5,ROBBERS_COLOR)
+    Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
+    
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
+        Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+        Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+	end
 end
 ------------------------------------------------------------------------------
 function FirstMapAction()
@@ -98,7 +102,6 @@ function FirstMapAction()
 
 	String.Init("CM02_05_Headhunter")
 
-    CreateRandomGoldChests()
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")
     CreateChestOpener("Ari")
@@ -106,7 +109,7 @@ function FirstMapAction()
     CreateChestOpener("Salim")
     CreateChestOpener("Yuki")
     StartChestQuest()
-
+	
     createPlayer2()
 
 	SetPlayerName(6, String.Key("_Player6Name"))
@@ -115,5 +118,42 @@ function FirstMapAction()
 		LocalMusic.UseSet = EVELANCEMUSIC
 
     beginChapterOne()
+    
+	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
+	else
+		local addWolves = 0
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+			GUI.SetTaxLevel(1)
+			
+			addWolves = addWolves + 2
+			
+			ReplaceEntity("player1", Entities.PB_Headquarters1)
+			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
+			ReplaceEntity("b1", Entities.CB_Grange)
+		end
 
+		local vcpos = GetPosition("vc_empty")
+		DestroyEntity("vc_empty")
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,0,0)
+
+		for i = 1, 5 do
+			ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
+		end
+
+		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+	end
+
+	--StartSimpleHiResJob("GetDarioPos")
+	--Tools.ExploreArea(-1, -1, 900)
+    --ReplaceEntity("bridge",Entities.PB_DrawBridgeClosed1)
 end
+
+--[[
+function GetDarioPos()
+	local pos = GetPosition("Dario")
+	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+end
+--]]

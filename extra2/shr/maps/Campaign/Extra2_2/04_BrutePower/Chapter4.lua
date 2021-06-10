@@ -12,7 +12,7 @@ function StartChapter4()
 	StartJob("Open2ndHalf")
 	NPCLeader1()
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	local pos = GetPosition("Relocation")
@@ -27,7 +27,7 @@ end
 
 function ContinueChapter4()
 	local experience = LOW_EXPERIENCE
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 1
 	end
 	for i = 1, 12 do
@@ -183,7 +183,7 @@ EnemyMMArmy = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderSword2
@@ -265,7 +265,7 @@ QUESTEnemyMMAttacks1_COUNTER 		=	QUESTEnemyMMAttacks1_DELAY
 EnemyMMArmy1 = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_BanditLeaderSword2
 	end
@@ -348,7 +348,7 @@ QUESTEnemyMMAttacks2_COUNTER 		=	QUESTEnemyMMAttacks2_DELAY
 EnemyMMArmy2 = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 	end

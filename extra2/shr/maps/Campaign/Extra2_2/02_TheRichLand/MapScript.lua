@@ -160,7 +160,7 @@ function Mission_FirstMapAction()
 		
 	--	EnableDebugging()
 
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			local vcpos = GetPosition("vc_empty") 		
 
 			DestroyEntity("vc_empty")

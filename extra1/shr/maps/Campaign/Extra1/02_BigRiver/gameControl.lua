@@ -1,8 +1,11 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterOne()
 
-    CreateRandomGoldChests()
-    CreateRandomChests()
+	if CP_Difficulty == 0 then
+        CreateRandomGoldChests()
+        CreateRandomChests()
+    end
+
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")
     CreateChestOpener("Ari")

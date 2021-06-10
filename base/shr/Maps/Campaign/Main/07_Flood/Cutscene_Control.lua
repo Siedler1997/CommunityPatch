@@ -243,7 +243,7 @@ function Cutscene_Cutscene1_Start()
 	
        	CreateEntity(7, Entities.CU_BanditLeaderSword1, GetPosition("CutsceneCutscene1Outlaw3"), "CutsceneOutlaw3" )  
        	CreateEntity(7, Entities.CU_BanditLeaderSword1, GetPosition("CutsceneCutscene1Outlaw2"), "CutsceneOutlaw2" )
-       	CreateEntity(7, Entities.CU_BanditLeaderSword1, GetPosition("CutsceneCutscene1Outlaw1"), "CutsceneOutlaw1" )		
+       	CreateEntity(7, Entities.CU_BanditLeaderBow1, GetPosition("CutsceneCutscene1Outlaw1"), "CutsceneOutlaw1" )		
           			
 --     		local ID = GetID("CutsceneCutscene1Ari")
 --			Logic.RotateEntity(ID, 270)

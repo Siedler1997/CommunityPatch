@@ -20,32 +20,57 @@
 		<Anim>PU_SoldierSword3_Hit</Anim>
 
 	</Display>
+
 	<Logic classname="GGL::CGLSettlerProps">
 		<Class>GGL::CSettler</Class>
 		<AccessCategory>AccessCategorySettler</AccessCategory>
-		<MaxHealth>150</MaxHealth>
-		<ArmorClass>ArmorClassLeather</ArmorClass>
-		<ArmorAmount>5</ArmorAmount>
-		<DodgeChance>0</DodgeChance>
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<Hat/>
-		<Cost>
-			<Money>100</Money>
-		</Cost>
-		<Category>Military</Category>
-		<Category>Melee</Category>
+
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<MaxHealth>200</MaxHealth>
 		<Exploration>20</Exploration>
-		<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-		<ExperiencePoints>15</ExperiencePoints>
-		<Upgrade>
-			<Category>BlackKnightSoldier</Category>
-		</Upgrade>
+		<ArmorClass>ArmorClassLeather</ArmorClass>
+		<ArmorAmount>3</ArmorAmount>
+		<DodgeChance>0</DodgeChance>
+		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
+		<Convertible>false</Convertible>
+		<Fearless>true</Fearless>
+		<Category>Serf</Category>
+
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_LeatherMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_ChainMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PlateMailArmor</Technology>
+		</ModifyArmor>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
 	</Logic>
 	<Behavior>
 		<Logic classname="GGL::CGLAnimationBehaviorExProps">
 			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<SuspensionAnimation>PU_SoldierSword3_Idle1</SuspensionAnimation>
 			<AnimSet>SET_BLACKKNIGHT_SOLDIERSWORD3</AnimSet>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
@@ -54,10 +79,11 @@
 	</Behavior>
 	<Behavior>
 		<Logic classname="EGL::CMovementBehaviorProps">
-			<Class>GGL::CSettlerMovement</Class>
+			<Class>GGL::CLeaderMovement</Class>
 			<Speed>360</Speed>
 			<RotationSpeed>30</RotationSpeed>
-			<MoveTaskList>TL_MILITARY_WALK</MoveTaskList>
+			<MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			<MoveIdleAnim>PU_SoldierSword3_Idle1</MoveIdleAnim>
 		</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorMovement</Class>
@@ -65,49 +91,48 @@
 	</Behavior>
 	<Behavior>
 		<Logic classname="EGL::CGLEBehaviorProps">
-
 			<Class>GGL::CBehaviorWalkCommand</Class>
 		</Logic>
 	</Behavior>
-	<Behavior>
-		<Logic classname="GGL::CSoldierBehaviorProps">
-			<Class>GGL::CSoldierBehavior</Class>
 
-			<BattleTaskList>TL_BATTLE</BattleTaskList>
-			<NormalAttackAnim1>PU_SoldierSword3_Attack1</NormalAttackAnim1>
-			<NormalAttackAnim2>PU_SoldierSword3_Attack2</NormalAttackAnim2>
-			<CounterAttackAnim>PU_SoldierSword3_Attack1</CounterAttackAnim>
-			<FinishingMoveAnim>PU_SoldierSword3_Finish</FinishingMoveAnim>
-			<MissAttackAnim>PU_SoldierSword3_IdleAttack1</MissAttackAnim>
-			<BattleIdleAnim>PU_SoldierSword3_IdleAttack1</BattleIdleAnim>
-			<BattleWalkAnim>PU_SoldierSword3_Run1</BattleWalkAnim>
-			<HitAnim>PU_SoldierSword3_Hit</HitAnim>
 
-			<DamageClass>DC_Strike</DamageClass>
-			<DamageAmount>12</DamageAmount>
-			<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
-
-			<BattleWaitUntil>2000</BattleWaitUntil>
-
-			<AutoAttackRange>1500</AutoAttackRange>
-
-			<MaxRange>200.0f</MaxRange>
-			<MinRange>0.0f</MinRange>
-		</Logic>
-	</Behavior>
-	<Behavior>
-		<Logic classname="GGL::CFormationBehaviorProperties">
-			<Class>GGL::CFormationBehavior</Class>
-			<IdleAnim>
-				<AnimID>PU_SoldierSword3_Idle1</AnimID>
-				<Frequency>1</Frequency>
-			</IdleAnim>
-		</Logic>
-	</Behavior>
 	<Behavior>
 		<Logic classname="GGL::CGLBehaviorPropsDying">
 			<Class>GGL::CGLBehaviorDying</Class>
 			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBehaviorProps">
+			<Class>GGL::CSerfBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CSerfBattleBehaviorProps">
+			<Class>GGL::CSerfBattleBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CWorkerEvadeBehavior</Class>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
+			<Class>GGL::CEvadeExecutionBehavior</Class>
+			<BasePriority>200</BasePriority>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CCamperBehaviorProperties">
+			<Class>GGL::CCamperBehavior</Class>
+			<Range>5000</Range>
 		</Logic>
 	</Behavior>
 

@@ -94,7 +94,7 @@ EnemyMMArmy2221 = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderSword2
@@ -173,7 +173,7 @@ QUESTEnemyMMAttacks2222_COUNTER 		=	QUESTEnemyMMAttacks2222_DELAY
 EnemyMMArmy2222 = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_BanditLeaderSword2
 	end
@@ -251,7 +251,7 @@ QUESTEnemyMMAttacks2223_COUNTER 		=	QUESTEnemyMMAttacks2223_DELAY
 EnemyMMArmy2223 = function()
 	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
-	if CP_Difficulty == 1 then
+	if CP_Difficulty > 0 then
 		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 	end

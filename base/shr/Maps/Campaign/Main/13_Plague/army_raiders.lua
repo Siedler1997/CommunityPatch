@@ -17,7 +17,7 @@ createArmyRaiders = function()
 
 	--	create 
 		local etype = Entities.CU_BlackKnight_LeaderMace1
-		if CP_Difficulty == 1 then
+		if CP_Difficulty > 0 then
 			etype = Entities.CU_BlackKnight_LeaderMace2
 		end
 
