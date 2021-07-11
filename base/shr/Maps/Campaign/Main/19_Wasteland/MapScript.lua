@@ -218,7 +218,7 @@ function Mission_FirstMapAction()
 
 	--StartSimpleHiResJob("GetDarioPos")
 	--Tools.ExploreArea(-1, -1, 900)
-	--ResearchTechnology(Technologies.T_SuperTechnology, 1);
+	--ResearchAllMilitaryTechs(1, true)
 	--SetPosition ("Dario", GetPosition("RainNPC"))
 end
 

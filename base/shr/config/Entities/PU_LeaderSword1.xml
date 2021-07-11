@@ -32,12 +32,8 @@
 			  <Iron>50</Iron>
 			  <Wood/>
         </Cost>
-		
-        
 
-    
 
-    
 
     <!--Armor modifier-->
         <ModifyArmor>
@@ -106,7 +102,8 @@
             <Type>PU_LeaderSword2</Type> 
             <Category>LeaderSword</Category>
         </Upgrade>
-	</Logic>
+	
+</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>

@@ -54,6 +54,12 @@ function Interface_SetCinematicMode( _CinematicStatus )
 		end
 		
 	else
+		-- Sets the "Silver Border"-Color to the player color
+		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(GUI.GetPlayerID())
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicBar00"),0, ColorR,ColorG,ColorB,205)
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicBar01"),0, ColorR,ColorG,ColorB,205)
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrame"),0, ColorR,ColorG,ColorB,205)
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrameBG"),0, ColorR,ColorG,ColorB,205)
 	
 		-- Start cinematic mode
 		Camera.SetControlMode( _CinematicStatus )

@@ -3,6 +3,7 @@ createQuestRescueDaughter = function()
 	-- Destroy quest
 	RescueDaughterQuest = {}
 	
+	--"Sorry Dario but the princess is in another castle:P"
 	if CP_Difficulty == 2 then
 		RescueDaughterQuest.Target 		= "P5DefenseGenerator1"
 		RescueDaughterQuest.SpawnPos 	= GetPosition("P5DefenseSpawnPos1")

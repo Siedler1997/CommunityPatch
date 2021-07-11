@@ -10,6 +10,7 @@ VERYHIGH_EXPERIENCE 	= 3
 UPGRADE     = 0
 TECHNOLOGY  = 1
 
+CP_Installed = true
 CP_EvilMod = {}	
 for i = 1, 8 do
 	CP_EvilMod[i] = {}
@@ -2133,7 +2134,8 @@ function RaidersControl()
 				local enemy = GetNearestEnemyInArea(rtable.raid_data.r_player, rtable.raid_data.r_cpos, rtable.raid_data.r_range)
 				if enemy ~= false then
 					for k = 1, table.getn(rtable.raid_units) do
-						if not string.find(Logic.GetCurrentTaskList(rtable.raid_units[k]), "TL_BATTLE_CLAW") then
+						local task = Logic.GetCurrentTaskList(rtable.raid_units[k])
+						if string.sub(task, 1, 9) ~= "TL_BATTLE" and task ~= "TL_START_BATTLE" then
 							Attack(rtable.raid_units[k], GetPosition(enemy))
 						end
 					end

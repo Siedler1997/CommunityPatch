@@ -220,6 +220,8 @@
 		+ 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
 		+ 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
 		+ 'Fährtenlesen' hat einen Erforscht-Tooltip
+		+ Ziergebäude sind richtig und einheitlich benannt (z.B. Dariosstatue -> Darios-Statue)
+		+ Wird eine Sub-Technologie (z.B. "Mittleres Wohnhaus") vom Spiel gegeben, steht im Erforscht-Fähnchen nun die Bezeichnung statt der spielinterne Name
 		+ Bei 'Meisterschütze' steht der korrekte Effekt (Erhöhung der Bewegungsgeschwindigkeit & Schaden)
 		+ Bei 'Kimme und Korn' steht der korrekte Effekt (Erhöhung der Reichweite)
 		+ Formations-Buttons haben DisabledTooltips, wenn 'Stehendes Heer' noch nicht erforscht wurde
@@ -288,6 +290,7 @@
 		+ Es gibt keine Lücke mehr am linken Bildschirmrand
 		+ Der obere Balken ist etwas kleiner
 		+ Der schwarze Hintergrund beider Balken ist leicht transparent
+		+ Die "silbernen Streifen" sowie der Minimap-Ring sind in der Spielerfarbe eingefärbt
 		+ Multiple-Choice-Seiten
 			/ Headline hat die gleiche Farbe wie bei normalen Seiten
 			/ Buttons sind so weit unten wie möglich
@@ -321,6 +324,7 @@
 			/ Tipps sprachlich und inhaltlich korrigiert
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
 		+ Drakes Gewehrschüsse in Cutscenes sind vertont
+		+ Alternative Schwierigkeitsgrade sind im Hauptmenü wählbar
 		+ in manchen Missionen können gegnerische Truppen respawnen
 			/ z.T. abhängig vom Schwierigkeitsgrad
 		+ 'Schlacht um Evelance' ist ein würdigeres Finale
@@ -328,13 +332,13 @@
 			/ Gegner bilden auch Truppen in Militärgebäuden aus
 			/ Gegnerische Türme sind höher ausgebaut
 		+ Schwierigkeitsgrad 'Schwer'
-			/ Gegnerische Befestigungen sind zäher, zahlreicher und/oder höher ausgebaut 
-			/ Gegnerische Truppen sind zäher, stärker, erfahrener und zahlreicher
+			/ Gegnerische Befestigungen sind zäher, etwas zahlreicher und/oder höher ausgebaut 
+			/ Gegnerische Truppen sind besser ausgerüstet, erfahrener und etwas zahlreicher
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
 			/ Gegner sind z.T. aggressiver
 			/ Wölfe streifen durch die Gegend
 			/ Dem Spieler stehen z.T. weniger Siedlungsplätze zur Verfügung
-			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude schlechter
+			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude etwas schlechter
 			/ Schatztruhen
 				* jene mit sehr viel Inhalt haben deutlich weniger
 				* bisherige mit zufälligem Inhalt fallen komplett weg
@@ -347,10 +351,12 @@
 				* Eure Beliebtheit steigt deshalb mit jedem Zahltag
 			/ Die eine oder andere nützliche Technologie ist gesperrt
 			/ In Missionen mit sonst dauerhaftem Sommer regnet es ab und an
+			/ Wege könnten blockiert oder freigelegt sein
 			/ Der AddOn-BattleTrack ertönt auch im Hauptspiel
 			/ Ihr habt Rot als Spielerfarbe statt Blau
 			/ diverse Gemeinheiten;)
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
+		+ Aktuell nur Hauptspiel und Nebelreich (Legenden angefangen)
 	* Die Grafik ist allgemein etwas besser (by yoq)
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	* Steuer-Predigt-Exploit entschärft
@@ -452,29 +458,31 @@
 		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0'
 	* Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
 	* Comforts
-		+ StartCountdown(_Limit, _Callback, _Show): Startet einen Countdown
+		+ Variable 'CP_Installed' (bool):
+		+ 'StartCountdown(_Limit, _Callback, _Show)': Startet einen Countdown
 			/ Abbrechbar mit StopCountdown(_Id)
-		+ SetAIUnitsToBuild( _aiID, ... ): Bestimmt, welche Einheitenarten die KI ausbilden kann
-		+ InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory): Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
+		+ 'SetAIUnitsToBuild( _aiID, ... )': Bestimmt, welche Einheitenarten die KI ausbilden kann
+		+ 'InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory)': Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
 			-> return: int Segnungskosten
-		+ CreateCostString(_costs) by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
+		+ 'CreateCostString(_costs)' by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
 			-> return: string CostString
-		+ HasPlayerEnoughResources(_costs): Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
+		+ 'HasPlayerEnoughResources(_costs)': Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
 			-> return int reicht (1) oder reicht nicht (0)
-		+ GetRandom(_min, _max) by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
+		+ 'RaidersCreate(_data)': Erstellt ein aggressives Wolfsrudel mit einem Revier, in dem es sich bewegt
+		+ 'GetRandom(_min, _max)' by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
 			-> return int Zufallszahl
-		+ GetClockTimeString(_sec): Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
+		+ 'GetClockTimeString(_sec)': Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
 			-> return string Zeit
-		+ ResearchAllMilitaryTechs(_PlayerId): Gibt der angegebenen PlayerId alle militärischen Techs des Hauptspiels (also ohne AddOn)
-		+ ResearchAllMilitaryTechsAddOn(_PlayerId): Wie 'ResearchAllMilitaryTechs', aber zusätzlich mit AddOn-Technologien
-		+ UserTool_GetPlayerNameWithTitle(_PlayerID): Gibt den Namen des Spielers inkl. dem vom Geschlecht abhängigen Titel zurück
+		+ 'ResearchAllMilitaryTechs(_PlayerId, _SuperTech)': Gibt der angegebenen PlayerId alle militärischen Techs des Hauptspiels (also ohne AddOn) und ggf auch die Super-Technologie
+		+ 'ResearchAllMilitaryTechsAddOn(_PlayerId, _SuperTech)': Wie 'ResearchAllMilitaryTechs', aber zusätzlich mit AddOn-Technologien
+		+ 'UserTool_GetPlayerNameWithTitle(_PlayerID)': Gibt den Namen des Spielers inkl. dem vom Geschlecht abhängigen Titel zurück
 			-> return string Spielername
-		+ SucheAufDerWelt(_player, _entity, _groesse, _punkthier) by Peermanent? / JugarTeam? / Kingsia?: Sucht Entities und gibt sie per Table zurück
+		+ 'SucheAufDerWelt(_player, _entity, _groesse, _punkthier)' by Peermanent? / JugarTeam? / Kingsia?: Sucht Entities und gibt sie per Table zurück
 			-> return table Entities
-		+ IstDrin(_wert, _table) by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
+		+ 'IstDrin(_wert, _table)' by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
 			-> return bool true/false
-		+ Tools.RemoveEntityInFogOrDestination(_PlayerID, _EntityID, _Position): Trigger, der NPC im FOW oder am Zielort entfernt
-		+ CP_ActivateEvilMod(_playerId, _unitstate, _towerstate): Erlaub einem Spieler, in Militärgebäuden 'böse' Einheiten zu rekrutieren und mit Leibeigenen dunkle Türme zu bauen
+		+ 'Tools.RemoveEntityInFogOrDestination(_PlayerID, _EntityID, _Position)': Trigger, der NPC im FOW oder am Zielort entfernt
+		+ 'CP_ActivateEvilMod(_playerId, _unitstate, _towerstate)': Erlaub einem Spieler, in Militärgebäuden 'böse' Einheiten zu rekrutieren und mit Leibeigenen dunkle Türme zu bauen
 			/ Abfrage der Einheiten mittels 'CP_GetEvilModUnitState(_playerId)'
 			/ Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
 			/ Verwendung: siehe Kommentar in 'Comforts.lua'
@@ -513,7 +521,7 @@
 			/ Super-Tech für KIs
 			/ halbe Steuern
 			/ andere Spielerfarbe
-			/ Schlechtes Wetter
+			/ Schlechteres Wetter
 			/ 2 Wölfe mehr pro Rudel
 			/ SetEvilBattle als Combat-Playlist
 			/ Blockaden
@@ -568,7 +576,7 @@
 		+ Leonardos Assistent
 		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
-	* AeK-Soundtrack bei Installation kopieren
+	* AeK-Content bei Installation kopieren
 	* Organisatorisches
 		+ FeatureList auch auf Englisch
 		+ Quellenverzeichnung (also Nennung aller Autoren)

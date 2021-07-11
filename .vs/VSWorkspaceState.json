@@ -3,12 +3,18 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
+    "\\base\\shr\\text",
+    "\\base\\shr\\text\\en",
+    "\\base\\shr\\text\\en\\InGame",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Campaign",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1"
+    "\\extra1\\shr\\text",
+    "\\extra1\\shr\\text\\en",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\text",
+    "\\extra2\\shr\\text\\en"
   ],
+  "SelectedNode": "\\extra2\\shr\\text\\en\\InGame\\Names.xml",
   "PreviewInSolutionExplorer": false
 }

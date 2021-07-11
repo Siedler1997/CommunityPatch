@@ -32,16 +32,16 @@
 		<Value>100</Value>
 		<Operation>+</Operation>
 	</MinRangeModifier>
-	
+
 	<HitpointModifier>
 		<Value>100</Value>
 		<Operation>+</Operation>
 	</HitpointModifier>
-	
 	<GroupLimitModifier>
 		<Value>4</Value>
 		<Operation>+</Operation>
-	</GroupLimitModifier>
+	</GroupLimitModifier>	
+	
 	
 	<DamageBonusModifier>
 		<Value>100</Value>
