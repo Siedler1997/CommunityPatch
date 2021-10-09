@@ -142,7 +142,7 @@
 	        <DamageClass>DC_Strike</DamageClass>
 	        <DamageAmount>14</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
-	        <BattleWaitUntil>1500</BattleWaitUntil>
+	        <BattleWaitUntil>2000</BattleWaitUntil>
 	        <MaxRange>200</MaxRange>
 	        <MinRange>0.0f</MinRange>
 		</Logic>

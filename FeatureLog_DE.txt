@@ -48,9 +48,7 @@
 	* Formationen
 		+ bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
 		+ werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
-	* Alle Fernkämpfer (außer Helden und Kanonen) 
-		+ verursachen etwas weniger Schaden (idR. -2 Punkte)
-		+ bekommen durch 'Meisterschütze' einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
+	* 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
 	* NPCs (Zivilisten)
 		+ können wirklich sterben
 			/ dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -61,6 +59,7 @@
 		+ haben bessere Stats
 			/ mehr Lebenspunkte (idR. 100)
 			/ höhere Sichtweite
+	* Alle Einheiten richten weniger Schaden an Gegner an, gegen die ihre Waffen nicht effektiv sind
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
@@ -74,11 +73,13 @@
 			/ haben die gleiche DamageClass wie schwere Kavallerie
 		+ Bogenschützen-Banditen
 			/ haben 150 Lebenspunkte (vorher: 120)
+			/ Hauptmänner und Soldaten haben die gleiche Nachladedauer
 			/ sind auch als Variante mit bis zu 8 Soldaten erhältlich
-		+ Nebelkriegern 
+		+ Nebelkriegern
 			/ Schaden an ihnen wird korrekt berechnet (fällt aber kaum auf)
 			/ haben mehr Lebenspunkte (Hauptmänner: 150, Soldaten: 100)
 			/ haben einen Rüstungspunkt weniger (=1)
+			/ Bärenmenschen greifen etwas schneller an
 		+ Barbaren 
 			/ haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			/ haben einen Rüstungspunkt weniger (=1)
@@ -106,6 +107,7 @@
 			/ Veteranen
 			/ Wilde Wölfe
 	* Militärische Einheiten
+		+ Bogen- und Scharfschützen (außer Berittene) brauchen länger zum Nachladen
 		+ Leibeigene/Milizen
 			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
 			/ Leibeigene 
@@ -119,19 +121,30 @@
 		+ Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			/ Berittene Bogenschützen (Stufe 1) kosten Holz
 			/ Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		+ Schwertkämpfer
+			/ haben einen eigenen Kampf-Sound
+			/ Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
 		+ Kanonen
 			/ werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
 			/ bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
 			/ nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+			/ Bombarden
+				* Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
+				* Schaden auf 35 erhöht (vorher: 30)
+			/ Eisenkanonen
+				* Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
+				* Schaden auf 70 erhöht (vorher: 65)
 		+ Scharfschützen
 			/ sind nicht mehr ganz so effektiv gegen Gebäude
 			/ Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
-			/ Schwere Scharfschützen zielen erheblich besser
+			/ Schwere Scharfschützen 
+				* zielen erheblich besser
+				* haben einen Schadenspunkt weniger (=18)
 		+ Diebe und Kundschafter 
 			/ geben ihre persönlichen FunnyComments zum Besten
 			/ profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
-		+ Schwertkämpfer haben einen eigenen Kampf-Sound
 	* Helden
+		+ Fernkampf-Helden brauchen länger zum NAchladen
 		+ haben (je nach Waffe) anderen Kampf-Sound
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
 		+ profitieren von der neuen Technologie 'Aegis'
@@ -159,7 +172,7 @@
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
 		+ Drake 
 			/ hat einen Rüstungspunkt weniger (=3)
-			/ hat 4 Schadenpunkte weniger (=24)
+			/ hat 2 Schadenpunkte weniger (=26)
 			/ seine Fähigkeit 'Feuerkraft' betrifft auch
 				- Ari 
 				- Kanonen
@@ -186,6 +199,7 @@
 			/ haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
 			/ wechseln nicht mehr dauernd in die Walk-Animation
 			/ haben einen Rüstungspunkt weniger (=3)
+			/ haben eine leicht reduzierte Angriffsgeschwindigkeit
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
 			/ geben Audio-Feedback
 			/ sind nicht von Helias konvertierbar
@@ -199,11 +213,23 @@
 				- benötigt weniger Zeit
 				- kann auf etwas größerer Distanz gestartet werden
 				- kann über etwas größere Distanz gehalten werden
-		+ Yukis 'Feuerwerk der Furcht'
-			/ Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
-			/ ist identisch mit den Versionen von Dario und Kerberos
+		+ Yukis 
+			/ 'Feuerwerk der Furcht'
+				- Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
+				- Reichweite auf 15 SM erhöht (vorher: 10 SM)
+				- ist identisch mit den Versionen von Dario und Kerberos
+			/ Shuriken: 
+				- Anzahl verdoppelt (4 -> 8)
+				- haben die gleiche DamageClass wie normale Angriff sowie Kala's 'Giftpfeile'
 		+ Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
-		+ Kala hat einen Rüstungspunkt weniger (=4)
+		+ Kala 
+			/ hat einen Rüstungspunkt weniger (=4)
+			/ 'Giftnebel'
+				- hat eine Reichweite von 14 SM (vorher: 12 SM)
+				- Schaden erhöht auf 35 (vorher: 25)
+			/ 'Giftpfeile'
+				- Schaden auf 30 erhöht (vorher: 20)
+				- Cooldown um 50% verlängert (= 0:30 -> 0:45)
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -220,7 +246,7 @@
 		+ 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
 		+ 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
 		+ 'Fährtenlesen' hat einen Erforscht-Tooltip
-		+ Ziergebäude sind richtig und einheitlich benannt (z.B. Dariosstatue -> Darios-Statue)
+		+ Ziergebäude sind richtig und einheitlich benannt (z.B. Dariostatue -> Dario-Statue)
 		+ Wird eine Sub-Technologie (z.B. "Mittleres Wohnhaus") vom Spiel gegeben, steht im Erforscht-Fähnchen nun die Bezeichnung statt der spielinterne Name
 		+ Bei 'Meisterschütze' steht der korrekte Effekt (Erhöhung der Bewegungsgeschwindigkeit & Schaden)
 		+ Bei 'Kimme und Korn' steht der korrekte Effekt (Erhöhung der Reichweite)
@@ -235,18 +261,19 @@
 			/ Ist ein Wetterturm vorhanden, stehen hier zusätzliche Infos zu dem Thema
 				- Das aktuelle Wetter wird nochmal als Text angegeben
 				- Das nächste Wetter sowie die Zeit bis zum Wechsel wird angezeigt (bei weniger als einer Stunde bis zum Eintreten)
-	* Söldnerquartier:Button-Texturen weisen genauer auf die angebotene Einheit hin
+		+ Marktplatz: Tooltip für 'einzukaufende Holzmenge' analog zu den anderen positioniert
+	* Söldnerquartier: Button-Texturen weisen genauer auf die angebotene Einheit hin
 	* Selektionsringe einiger Gebäude und Einheiten gefixt
 		+ Alle Gebäude haben den Gebäude-Selektionsring
 			/ gilt auch für Pilgrims Kanone und Salims Falle
 		+ Alle Helden haben den Helden-Selektionsring
 		+ Alle Militäreinheiten haben den gleichen Einheiten-Selektionsring
-		+ AddOn-Zivilisten haben alle den ridhtigen Zivilisten-Selektionsring
+		+ AddOn-Zivilisten haben alle den richtigen Zivilisten-Selektionsring
 	* Formations-Buttons
 		+ stehen auch bei selektierter Kavallerie zur Verfügung
 		+ verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
 	* Ergänzte und korrigierte SelectionNames und OverheadNames
-		+ Außenposten -> 'Außenposten'
+		+ Außenposten
 		+ CU_BlackKnight_SoldierSword3 -> Raubritter
 		+ Veteranen
 			/ CU_VeteranLieutenant -> 'Berserker'
@@ -270,7 +297,6 @@
 		+ wird bei 0/x Soldaten nicht mehr fehlerhaft angezeigt
 	* Der Button zum Kauf von Soldaten wird ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
 	* Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
-	* Kala hat den üblichen Helden-Selektionsring
 	* In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
 	* Countdowns 
 		+ bleiben im Hauptspiel auch nach dem Laden eines Spielstands sichtbar
@@ -287,7 +313,7 @@
 		+ erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
 	* Die Einstellung des Geschlechts (siehe 'Hauptmenü') schlägt sich in diversen Tooltips und anderen Texten nieder
 	* Briefing-Window verschönert
-		+ Es gibt keine Lücke mehr am linken Bildschirmrand
+		+ Es gibt keine Lücke mehr am linken Bildschirmrand (meistens...)
 		+ Der obere Balken ist etwas kleiner
 		+ Der schwarze Hintergrund beider Balken ist leicht transparent
 		+ Die "silbernen Streifen" sowie der Minimap-Ring sind in der Spielerfarbe eingefärbt
@@ -296,7 +322,7 @@
 			/ Buttons sind so weit unten wie möglich
 				-> mehr Platz für Beschreibungstext
 			/ Button-Highlights werden nach dem Klick auf einen Button wieder entfernt
-	* Einige Widgets schließen richtig am Bildschirmrand bzw. anderen Widgets ab
+	* Einige Widgets schließen besser am Bildschirmrand bzw. anderen Widgets ab
 		+ Titelleiste
 		+ Bodenleiste
 		+ Minimap
@@ -324,7 +350,7 @@
 			/ Tipps sprachlich und inhaltlich korrigiert
 		+ fehlerhafte/unpassende Spielerzugehörigkeit mancher Einheiten/Gebäude gefixt
 		+ Drakes Gewehrschüsse in Cutscenes sind vertont
-		+ Alternative Schwierigkeitsgrade sind im Hauptmenü wählbar
+		+ Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
 		+ in manchen Missionen können gegnerische Truppen respawnen
 			/ z.T. abhängig vom Schwierigkeitsgrad
 		+ 'Schlacht um Evelance' ist ein würdigeres Finale
@@ -420,7 +446,7 @@
 	* TaskLists
 		+ Schwertführende Einheiten nutzen neue TaskList 'TL_BATTLE_SWORD'
 		+ manche Einheiten nutzen andere TaskLists als zuvor
-	* Neue Effekte
+	* Neue Effekte mit eigenem Sound
 		+ FXExplosionBallista: Effekt, der beim Aufprall eines Ballistaturm-Geschosses erscheint
 		+ FXExplosionCannon: Effekt, der beim Aufprall eines Kaonenturm-Geschosses erscheint
 	* In den Files vorhandene Sounds sind per Script verfügbar (siehe Datei 'Sounds.xml')
@@ -509,7 +535,17 @@
 
 
 - ToDos:
+	* Reduzierte Selbstheilung von Militäreinheiten
+	* Einstellung der Spielgeschwindigkeit
+		+ Einstellbar in Optionen -> 'Grafik'
+		+ SP-only
+	* Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
+	* Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+	* Light-Version der Kampgane (nur Fixes) als Standard; Mod-Version als optionales Modul
+	* Thalgrund: Erster Angriff mit Cutscene-Einheiten)
+		+ ggf. mehr Spielertruppen als Hilfe
 	* Alternativer, erhöhter Schwierigkeitsgrad für Original-Kampagnen
+		+ Handel ohne Deflation (siehe "Testscript")
 		+ Keine random chests
 		+ Goldhaufen
 		+ Grange
@@ -552,7 +588,6 @@
 		+ MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
 	* Random(?) Crashs
 		+ erste 2 Verstärkungen in '03_Neighborhood'
-	* Einstellung der Spielgeschwindigkeit (SP only)
 	* Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 	* Korrekte Kostenanzeige für den Kauf von Soldaten
 	* Countdowns 
@@ -576,7 +611,7 @@
 		+ Leonardos Assistent
 		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
-	* AeK-Content bei Installation kopieren
+	* AeK-Content bei Installation kopieren(?)
 	* Organisatorisches
 		+ FeatureList auch auf Englisch
 		+ Quellenverzeichnung (also Nennung aller Autoren)

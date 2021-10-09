@@ -3,18 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\en",
-    "\\base\\shr\\text\\en\\InGame",
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Entities",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\text",
-    "\\extra1\\shr\\text\\en",
+    "\\extra1\\shr\\config",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\text",
-    "\\extra2\\shr\\text\\en"
+    "\\extra2\\shr\\config"
   ],
-  "SelectedNode": "\\extra2\\shr\\text\\en\\InGame\\Names.xml",
   "PreviewInSolutionExplorer": false
 }

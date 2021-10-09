@@ -153,7 +153,7 @@
 	        <HitAnim>PU_SoldierCavalry1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>6</DamageAmount>
+	        <DamageAmount>8</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2500</BattleWaitUntil>

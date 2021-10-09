@@ -155,10 +155,10 @@
 	        <HitAnim>PU_SoldierBow1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>6</DamageAmount>
+	        <DamageAmount>8</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
-	        <BattleWaitUntil>3000</BattleWaitUntil>
+	        <BattleWaitUntil>3500</BattleWaitUntil>
 	        
 	        <MissChance>6</MissChance>
 	        

@@ -37,6 +37,7 @@ function GUIAction_ToggleMenu( _Menu, _Status )
 
 	
 	-- Should toggle AND is shown right now? 
+	local doShow = 1
 	local DoneFlag = 0
 	if _Status == -1 then
 		if XGUIEng.IsWidgetShown( _Menu ) == 1 then						
@@ -85,13 +86,23 @@ function GUIAction_ToggleMenu( _Menu, _Status )
 	if _Menu == gvGUI_WidgetID.GameEndScreenWindowHint and _Status == 0 and XGUIEng.IsWidgetShown("GameEndScreen_Window") == 0 then
 		XGUIEng.ShowWidget("MainMenuWindow",1)
 	end
+
+	--Spiel gewonnen/verloren? Keine Navigation!
+	if (_Menu == gvGUI_WidgetID.MainMenuWindow or _Menu == gvGUI_WidgetID.DiplomacyWindow or _Menu == gvGUI_WidgetID.TradeWindow or _Menu == gvGUI_WidgetID.QuestWindow or _Menu == gvGUI_WidgetID.StatisticsWindow) then
+		local gameState = Logic.PlayerGetGameState(GUI.GetPlayerID())
+		if gameState == 2 or gameState == 3 then
+			doShow = 0
+		end
+	end
 	
 	-- Done?
 	if DoneFlag == 1 then		
 		return
 	end
 	
-	XGUIEng.ShowWidget( _Menu, _Status )
+	if doShow == 1 then
+		XGUIEng.ShowWidget( _Menu, _Status )
+	end
 	
 	
 	
@@ -325,7 +336,7 @@ function GUIAction_HeroGenericExplore()
 		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
 			local _pos = GetPosition(heroId)
 			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
-			GUI.CreateMinimapMarker(_pos.X, _pos.Y, 2)
+			GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
 			Explore.Show("cp_p"..PlayerID.."explorer", _pos, 2000)
 		end
 	end
@@ -1152,6 +1163,20 @@ function GUIAction_OnlineHelp()
 		--display text
 		GUI.ClearNotes()
 		GUI.AddNote(Text)
+	end
+end
+
+function GUIAction_AdjustGameSpeed()
+	if Game.GameTimeGetFactor() ~= 0 then
+		if (IsBriefingActive == nil or IsBriefingActive() == false) and (IsCutsceneActive == nil or IsCutsceneActive() == false) then
+			if Game.GameTimeGetFactor() < 9 then
+				Game.GameTimeSetFactor(Game.GameTimeGetFactor() + 1)
+			else
+				Game.GameTimeReset()
+			end
+			XGUIEng.SetText("GameSpeedButton", "@center x" .. Game.GameTimeGetFactor())
+			--GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GameSpeedChanged") .. " x" .. Game.GameTimeGetFactor())
+		end
 	end
 end
 

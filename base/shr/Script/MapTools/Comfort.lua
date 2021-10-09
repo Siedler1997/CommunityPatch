@@ -11,6 +11,7 @@ UPGRADE     = 0
 TECHNOLOGY  = 1
 
 CP_Installed = true
+CP_HeroMarkColor = 2
 CP_EvilMod = {}	
 for i = 1, 8 do
 	CP_EvilMod[i] = {}
@@ -2078,9 +2079,15 @@ end
 function CP_GetEvilModUnitState(_playerId)
 	return CP_EvilMod[_playerId].UnitState
 end
+function CP_GetEvilModUnitState(_playerId, _state)
+	CP_EvilMod[_playerId].UnitState = _state
+end
 
 function CP_GetEvilModTowerState(_playerId)
 	return CP_EvilMod[_playerId].TowerState
+end
+function CP_SetEvilModTowerState(_playerId, _state)
+	CP_EvilMod[_playerId].TowerState = _state
 end
 
 --------------------------------------------------------------------------------

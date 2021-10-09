@@ -147,8 +147,8 @@
 -->      <RechargeTimeSeconds>120</RechargeTimeSeconds>
       <TaskList>TL_FIREWORKS_SPECIAL</TaskList>
       <Animation>PU_Hero11_PlaceRocket</Animation>
-      <Range>1000.0</Range>
-      <FlightDistance>3000.0</FlightDistance>
+      <Range>1500.0</Range>
+      <FlightDistance>2000.0</FlightDistance>
       <FlightDuration>20</FlightDuration>
       <Effect>FXYukiFireworksFear</Effect>
     </Logic>
@@ -178,14 +178,14 @@
 	        <Animation>PU_Hero11_Attack3</Animation> 
 	        <Range>3000.0</Range>
 	        <MaxArcDegree>90</MaxArcDegree>
-	        <NumberShuriken>4</NumberShuriken>
+	        <NumberShuriken>8</NumberShuriken>
 	        <ProjectileType>FXYukiShuriken</ProjectileType> 
 	        <ProjectileOffsetHeight>120.0</ProjectileOffsetHeight> 
 	        <!--
 	        <ProjectileOffsetFront/>
 	        <ProjectileOffsetRight/>
 	        -->
-	        <DamageClass>DC_Chaos</DamageClass>
+	        <DamageClass>DC_Hero</DamageClass>
 	        <DamageAmount>38</DamageAmount>
 	    </Logic>
 	</Behavior>

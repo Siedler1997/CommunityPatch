@@ -147,7 +147,7 @@
 	    <Logic classname="GGL::CShurikenAbilityProps">
 	        <Class>GGL::CShurikenAbility</Class>
 <!--	        <RechargeTimeSeconds>30</RechargeTimeSeconds>
--->	        <RechargeTimeSeconds>30</RechargeTimeSeconds>
+-->	        <RechargeTimeSeconds>45</RechargeTimeSeconds>
 	        <TaskList>TL_SHURIKEN_SPECIAL</TaskList>
 	        <Animation>CU_Evil_Queen_PoisonDart</Animation> 
 	        <Range>3000.0</Range>
@@ -160,7 +160,7 @@
 	        <ProjectileOffsetRight/>
 	        -->
 	        <DamageClass>DC_Hero</DamageClass>
-	        <DamageAmount>20</DamageAmount>
+	        <DamageAmount>30</DamageAmount>
 	    </Logic>
 	</Behavior>
 
@@ -173,8 +173,8 @@
 	        <TaskList>TL_BATTLE_SPECIAL</TaskList>
 	        <Animation>CU_Evil_Queen_PoisonAttack</Animation>
 	        <DamageClass>DC_Hero</DamageClass>
-	        <DamageAmount>25</DamageAmount>
-	        <Range>1200.0</Range>
+	        <DamageAmount>35</DamageAmount>
+	        <Range>1400.0</Range>
       		<Effect>FXKalaPoison</Effect>
 	    </Logic>
 	</Behavior>

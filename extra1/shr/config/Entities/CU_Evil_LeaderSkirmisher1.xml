@@ -141,7 +141,7 @@
 	        <HitAnim>CU_Evil_LeaderSkirmisher1_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Evil</DamageClass>
-	        <DamageAmount>12</DamageAmount>
+	        <DamageAmount>13</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>3000</BattleWaitUntil>

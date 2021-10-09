@@ -87,28 +87,36 @@ end
 -- Update Building Buttons
 --------------------------------------------------------------------------------
 
-function
-GUIUpdate_BuildingButtons(_Button, _Technology)
+function GUIUpdate_BuildingButtons(_Button, _Technology)
+	if _Button == "OnlineHelpButton" or _Button == "GameSpeedButton" then
+		if GDB.GetValue("Game\\GameSpeedAdjust") == 1 then
+			XGUIEng.ShowWidget("GameSpeedButton", 1)
+			XGUIEng.ShowWidget("OnlineHelpButton", 0)
+			XGUIEng.DisableButton("GameSpeedButton",0)	
+		else
+			XGUIEng.ShowWidget("GameSpeedButton", 0)
+			XGUIEng.ShowWidget("OnlineHelpButton", 1)
+			GUIUpdate_UpgradeButtons("OnlineHelpButton", Technologies.T_OnlineHelp)
+		end
+	else
+		local PlayerID = GUI.GetPlayerID()
+		local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
 	
-	local PlayerID = GUI.GetPlayerID()
-	local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
-	
-	--Building is interdicted
-	if TechState == 0 then	
-		XGUIEng.DisableButton(_Button,1)
-	
-	--Building is not available yet or Technology is to far in the futur
-	elseif TechState == 1 or TechState == 5 then
-		XGUIEng.DisableButton(_Button,1)
 		XGUIEng.ShowWidget(_Button,1)
-		
-	--Building is enabled and visible	
-	elseif TechState == 2 or TechState == 3 or TechState == 4 then
-		XGUIEng.ShowWidget(_Button,1)
-		XGUIEng.DisableButton(_Button,0)	
-	
-	end
 
+		--Building is interdicted
+		if TechState == 0 then	
+			XGUIEng.DisableButton(_Button,1)
+	
+		--Building is not available yet or Technology is to far in the futur
+		elseif TechState == 1 or TechState == 5 then
+			XGUIEng.DisableButton(_Button,1)
+		
+		--Building is enabled and visible	
+		elseif TechState == 2 or TechState == 3 or TechState == 4 then
+			XGUIEng.DisableButton(_Button,0)	
+		end
+	end
 end
 
 --------------------------------------------------------------------------------

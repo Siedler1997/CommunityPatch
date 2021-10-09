@@ -165,10 +165,10 @@
 	        <HitAnim>PU_LeaderBow3_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>10</DamageAmount>
+	        <DamageAmount>12</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
-	        <BattleWaitUntil>3000</BattleWaitUntil>
+	        <BattleWaitUntil>3500</BattleWaitUntil>
 	        
 	        <MissChance>6</MissChance>
 	        
