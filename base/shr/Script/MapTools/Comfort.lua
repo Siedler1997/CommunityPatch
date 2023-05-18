@@ -2079,7 +2079,7 @@ end
 function CP_GetEvilModUnitState(_playerId)
 	return CP_EvilMod[_playerId].UnitState
 end
-function CP_GetEvilModUnitState(_playerId, _state)
+function CP_SetEvilModUnitState(_playerId, _state)
 	CP_EvilMod[_playerId].UnitState = _state
 end
 
