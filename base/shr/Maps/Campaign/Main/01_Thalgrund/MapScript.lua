@@ -111,14 +111,12 @@ function Mission_InitTechnologies()
 
 	DisableExpanding(GetHumanPlayer())
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(7)
 	end
 end
 

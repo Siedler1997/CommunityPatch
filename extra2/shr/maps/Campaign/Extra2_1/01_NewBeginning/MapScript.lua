@@ -62,8 +62,14 @@ function InitResources()
 end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
-		ResearchAllMilitaryTechsAddOn(2)
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		_ResearchSuperTech = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			_ResearchSuperTech = true
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+		end
+
+		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
 	end
 end
 ------------------------------------------------------------------------------
@@ -77,7 +83,14 @@ function InitWeather()
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
+	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR1)
+
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
+	else
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -107,6 +120,12 @@ function FirstMapAction()
 	startChapterOne()
 	
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+
+			GUI.SetTaxLevel(1)
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 48, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then
@@ -115,10 +134,11 @@ function FirstMapAction()
 		end
 		DestroyEntity("p4_extratower")
         local towerpos = GetPosition("p4_watchtower")
-        local vcpos = GetPosition("vc_empty")
+        --local vcpos = GetPosition("vc_empty")
 		DestroyEntity("p4_watchtower")
-        DestroyEntity("vc_empty")
-        Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
+
+        --DestroyEntity("vc_empty")
+        --Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
         Logic.CreateEntity(Entities.XD_RuinSmallTower2,towerpos.X,towerpos.Y,0,0)
         
 		local bosspos1 = GetPosition("armySpawn")

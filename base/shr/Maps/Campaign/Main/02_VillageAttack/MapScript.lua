@@ -118,15 +118,13 @@ function Mission_InitResources()
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)	--No enemy, but has to survive the cave-attack without help
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)	--No enemy, but has to survive the cave-attack without help
 	end
 end
 

@@ -60,7 +60,6 @@
 		+ haben bessere Stats
 			/ mehr Lebenspunkte (idR. 100)
 			/ höhere Sichtweite
-	* Alle Einheiten richten weniger Schaden an Gegner an, gegen die ihre Waffen nicht effektiv sind
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
@@ -146,7 +145,7 @@
 			/ profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			/ regenerieren ihre HP langsamer
 	* Helden
-		+ Fernkampf-Helden brauchen länger zum NAchladen
+		+ Fernkampf-Helden brauchen länger zum Nachladen
 		+ haben (je nach Waffe) anderen Kampf-Sound
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
 		+ profitieren von der neuen Technologie 'Aegis'
