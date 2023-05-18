@@ -216,7 +216,7 @@ function Mission_FirstMapAction()
 
 				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 			end
-
+			--[[
 			local vcpos1 = GetPosition("vc_empty1")
 			DestroyEntity("vc_empty1")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos1.X,vcpos1.Y,90,0)
@@ -224,7 +224,7 @@ function Mission_FirstMapAction()
 			local vcpos2 = GetPosition("vc_empty2")
 			DestroyEntity("vc_empty2")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos2.X,vcpos2.Y,0,0)
-	
+			--]]
 			local bosspos1 = GetPosition("Jail")
 			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
 			LookAt(bossID1, "gate")

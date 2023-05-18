@@ -239,7 +239,7 @@ function Mission_FirstMapAction()
 				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 			end
 
-			DestroyEntity("vc_empty")
+			--DestroyEntity("vc_empty")
 
 			ReplaceEntity("ChangeCannon3", Entities.PV_Cannon3)
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)

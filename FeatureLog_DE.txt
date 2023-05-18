@@ -60,6 +60,7 @@
 		+ haben bessere Stats
 			/ mehr Lebenspunkte (idR. 100)
 			/ höhere Sichtweite
+	* Alle Einheiten richten weniger Schaden an Gegner an, gegen die ihre Waffen nicht effektiv sind
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
@@ -365,7 +366,6 @@
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
 			/ Gegner sind z.T. aggressiver
 			/ Wölfe streifen durch die Gegend
-			/ Dem Spieler stehen z.T. weniger Siedlungsplätze zur Verfügung
 			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude etwas schlechter
 			/ Schatztruhen
 				* jene mit sehr viel Inhalt haben deutlich weniger

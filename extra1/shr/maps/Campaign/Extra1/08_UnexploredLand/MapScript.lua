@@ -27,7 +27,7 @@ function InitTechnologies()
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
-			ForbidTechnology(Technologies.UP2_Village)
+			--ForbidTechnology(Technologies.UP2_Village)
 		end
 
 		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)

@@ -289,7 +289,7 @@ function Mission_FirstMapAction()
 
 			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
-
+		--[[
 		local vcpos1 = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos1.X,vcpos1.Y,0,0)
@@ -301,14 +301,14 @@ function Mission_FirstMapAction()
 		local vcpos3 = GetPosition("p5_vc1_empty2")
 		DestroyEntity("p5_vc1_empty2")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
-
+		--]]
 
 		for i = 1, 3 do
 			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
 		end
 
-		DestroyEntity("p5_vc1")
-		DestroyEntity("p5_vc2")
+		--DestroyEntity("p5_vc1")
+		--DestroyEntity("p5_vc2")
 		
 		local bosspos1 = GetPosition("spawn1")
 		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)

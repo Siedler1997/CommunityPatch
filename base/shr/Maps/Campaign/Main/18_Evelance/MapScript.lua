@@ -212,11 +212,11 @@ function Mission_FirstMapAction()
 
 			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinHouse1,vcpos.X,vcpos.Y,0,0)
-
+		--]]
 		local bosspos1 = GetPosition("KerberosDefenseSpawnPos")
 		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 200),bosspos1.Y,0,0,3,0)
 

@@ -227,11 +227,11 @@ function Mission_FirstMapAction()
 			if CP_Difficulty == 1 then
 				DestroyEntity("hard_rock")
 			end
-
+			--[[
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
-
+			--]]
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 48, 0) }
 			for i = 2, table.getn(towers1) do
 				ReplaceEntity(towers1[i], Entities.PB_Tower2)

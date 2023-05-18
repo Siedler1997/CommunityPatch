@@ -149,11 +149,11 @@ function FirstMapAction()
 				ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
 			end
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,0,0)
-		
+		--]]
 		Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
 
 		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})

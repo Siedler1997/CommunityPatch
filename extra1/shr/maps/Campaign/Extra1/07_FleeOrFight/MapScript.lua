@@ -158,7 +158,7 @@ function FirstMapAction()
 			
 			addWolves = addWolves + 2
 		end
-		
+		--[[
         local vcpos1 = GetPosition("vc_empty1")
         DestroyEntity("vc_empty1")
         Logic.CreateEntity(Entities.XD_RuinHouse2,vcpos1.X,vcpos1.Y,0,0)
@@ -166,7 +166,7 @@ function FirstMapAction()
         local vcpos2 = GetPosition("vc_empty2")
         DestroyEntity("vc_empty2")
         Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos2.X,vcpos2.Y,0,0)
-
+		--]]
 		RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
 		RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
 		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})

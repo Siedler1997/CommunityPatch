@@ -231,11 +231,11 @@ function Mission_FirstMapAction()
 
 			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
-
+		--]]
 		RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (4 + addWolves), ramount = (10 + addWolves)})		
 		RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, samount = (4 + addWolves), ramount = (12 + addWolves)})
 		

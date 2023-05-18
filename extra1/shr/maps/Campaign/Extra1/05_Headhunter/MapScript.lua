@@ -134,11 +134,11 @@ function FirstMapAction()
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 			ReplaceEntity("b1", Entities.CB_Grange)
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,0,0)
-
+		--]]
 		for i = 1, 5 do
 			ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
 		end
