@@ -138,7 +138,7 @@
 	        <AutoAttackRange>0</AutoAttackRange>
 	        
 			  <HealingPoints>3</HealingPoints>
-	        <HealingSeconds>2</HealingSeconds>
+	        <HealingSeconds>5</HealingSeconds>
 		  </Logic>
 	</Behavior>
 	

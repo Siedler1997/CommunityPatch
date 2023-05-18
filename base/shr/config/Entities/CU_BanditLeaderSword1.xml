@@ -141,8 +141,8 @@
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>
 	        
-	        <HealingPoints>5</HealingPoints>
-	        <HealingSeconds>3</HealingSeconds>
+	        <HealingPoints>3</HealingPoints>
+	        <HealingSeconds>5</HealingSeconds>
 
 			<UpkeepCost>20</UpkeepCost>
 		</Logic>

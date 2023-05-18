@@ -138,8 +138,8 @@
 	        
 	        <MissChance>5</MissChance>
 
-	        <HealingPoints>8</HealingPoints>
-	        <HealingSeconds>2</HealingSeconds>
+	        <HealingPoints>5</HealingPoints>
+	        <HealingSeconds>3</HealingSeconds>
 		</Logic>
 	</Behavior>
 

@@ -43,6 +43,7 @@
 		+ haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
 	* Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
 - Einheiten
+	* Selbstheilung ist für alle Einheiten reduziert
 	* Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
 	* Wird beim Drücken auf den Entlassen-Button gleichzeitig [Strg] gedrückt, werden alle selektierten Einheiten (außer Helden) sofort entlassen
 	* Formationen
@@ -59,7 +60,6 @@
 		+ haben bessere Stats
 			/ mehr Lebenspunkte (idR. 100)
 			/ höhere Sichtweite
-	* Alle Einheiten richten weniger Schaden an Gegner an, gegen die ihre Waffen nicht effektiv sind
 	* NPCs (Militär)
 		+ verlangen ebenfalls Sold
 		+ 'Veteranen' 
@@ -109,7 +109,7 @@
 	* Militärische Einheiten
 		+ Bogen- und Scharfschützen (außer Berittene) brauchen länger zum Nachladen
 		+ Leibeigene/Milizen
-			/ regenerieren langsam ihre HP (1 HP / 10 Sek.)
+			/ regenerieren langsam ihre HP (1 HP / 5 Sek.)
 			/ Leibeigene 
 				- haben einen Rüstungspunkt mehr (=1)
 				- haben 50 Lebenspunkte weniger (=150)
@@ -143,6 +143,7 @@
 		+ Diebe und Kundschafter 
 			/ geben ihre persönlichen FunnyComments zum Besten
 			/ profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
+			/ regenerieren ihre HP langsamer
 	* Helden
 		+ Fernkampf-Helden brauchen länger zum NAchladen
 		+ haben (je nach Waffe) anderen Kampf-Sound
@@ -199,6 +200,7 @@
 			/ haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
 			/ wechseln nicht mehr dauernd in die Walk-Animation
 			/ haben einen Rüstungspunkt weniger (=3)
+			/ haben eine Selbstheilung
 			/ haben eine leicht reduzierte Angriffsgeschwindigkeit
 			/ profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
 			/ geben Audio-Feedback
@@ -481,8 +483,9 @@
 		+ Der Button 'DummyButton07' enthält die originale Textur zum Kauf von Bogen-Hauptmännern
 	* Bei aktiviertem DebugScript gibt es weniger 'nutzlose' Debug-Messages
 		+ Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
-		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0'
+		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0' (by Play4FuN)
 	* Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
+	* Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
 	* Comforts
 		+ Variable 'CP_Installed' (bool):
 		+ 'StartCountdown(_Limit, _Callback, _Show)': Startet einen Countdown
@@ -535,14 +538,17 @@
 
 
 - ToDos:
-	* Reduzierte Selbstheilung von Militäreinheiten
+	* Misc-Items
+		+ Rifles
+		+ Evil stuff
+	* Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 	* Einstellung der Spielgeschwindigkeit
-		+ Einstellbar in Optionen -> 'Grafik'
+		+ Einstellbar in Optionen -> Neues Menü
 		+ SP-only
 	* Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 	* Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-	* Light-Version der Kampgane (nur Fixes) als Standard; Mod-Version als optionales Modul
-	* Thalgrund: Erster Angriff mit Cutscene-Einheiten)
+	* Light-Version der Kampagne (nur Fixes) als Standard; Mod-Version als optionales Modul
+	* Thalgrund: Erster Angriff mit Cutscene-Einheiten
 		+ ggf. mehr Spielertruppen als Hilfe
 	* Alternativer, erhöhter Schwierigkeitsgrad für Original-Kampagnen
 		+ Handel ohne Deflation (siehe "Testscript")
@@ -594,7 +600,6 @@
 		+ sollen während Briefings pausieren
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
 	* Kontrollierbare Schäferhunde(?)
-	* Helden sollen Erfahrung sammeln können
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* Neue Spielerfarben(?)
@@ -612,6 +617,8 @@
 		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
 	* AeK-Content bei Installation kopieren(?)
+		+ OST
+		+ Models/Texturen zwecks Varianz
 	* Organisatorisches
 		+ FeatureList auch auf Englisch
 		+ Quellenverzeichnung (also Nennung aller Autoren)

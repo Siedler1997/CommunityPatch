@@ -153,8 +153,8 @@
 	        <MinRange>0.0f</MinRange>	        
 	        <AutoAttackRange>2000</AutoAttackRange>
 	        
-			  <HealingPoints>2</HealingPoints>
-	        <HealingSeconds>10</HealingSeconds>
+			  <HealingPoints>3</HealingPoints>
+	        <HealingSeconds>5</HealingSeconds>
 	        
 	        <UpkeepCost>20</UpkeepCost>
 	        

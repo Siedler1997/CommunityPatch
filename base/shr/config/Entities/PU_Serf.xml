@@ -192,12 +192,12 @@
 				<DamageClass>DC_Strike</DamageClass>
 				<DamageAmount>5</DamageAmount>
 				<MaxRandomDamageBonus>2</MaxRandomDamageBonus>
-				<BattleWaitUntil>2400</BattleWaitUntil>
+				<BattleWaitUntil>2500</BattleWaitUntil>
 				<MaxRange>250.0f</MaxRange>
 				<MinRange>0.0f</MinRange>
 
 				<HealingPoints>1</HealingPoints>
-				<HealingSeconds>10</HealingSeconds>
+				<HealingSeconds>5</HealingSeconds>
 		  </Logic>
 	</Behavior>
 	<Behavior>

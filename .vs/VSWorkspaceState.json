@@ -3,14 +3,15 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\Interface",
     "\\extra1",
     "\\extra1\\shr",
     "\\extra1\\shr\\config",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\config"
+    "\\extra2\\shr\\script"
   ],
+  "SelectedNode": "\\base\\shr\\Script\\Interface\\CinematicMode.lua",
   "PreviewInSolutionExplorer": false
 }

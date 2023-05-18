@@ -140,7 +140,7 @@
 	        <AutoAttackRange>2000</AutoAttackRange>
 	        
 			  <HealingPoints>5</HealingPoints>
-	        <HealingSeconds>2</HealingSeconds>
+	        <HealingSeconds>3</HealingSeconds>
 
 			  <UpkeepCost>20</UpkeepCost>
 		  </Logic>

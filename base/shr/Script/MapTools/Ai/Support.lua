@@ -1648,6 +1648,12 @@ AITroopSpawnGenerator_Action = function(_Name, _Index)
 		if DataTable[_Index].refresh ~= nil and not DataTable[_Index].refresh then
 				minNumber = 0
 		end
+			
+		-- Leader experience
+		local leaderExperience = 0
+		if DataTable[_Index].experiencePoints ~= nil and DataTable[_Index].experiencePoints > 0 and DataTable[_Index].experiencePoints <= 3 then
+			leaderExperience = DataTable[_Index].experiencePoints
+		end
 
 		Report	("Spawn Generator ".._Name..
 				" spawns "..DataTable[_Index].spawnTypes[DataTable[_Index].spawnIndex][2]..
@@ -1662,7 +1668,7 @@ AITroopSpawnGenerator_Action = function(_Name, _Index)
 									DataTable[_Index].spawnTypes[DataTable[_Index].spawnIndex][2],
 									DataTable[_Index].spawnPos.X,DataTable[_Index].spawnPos.Y,
 									0,0,
-									0,
+									leaderExperience,
 									minNumber
 								), DataTable[_Index].id )
 
