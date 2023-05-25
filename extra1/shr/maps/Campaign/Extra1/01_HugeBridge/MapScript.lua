@@ -54,14 +54,12 @@ function InitResources()
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(6)
 	end
 	createPlayer1()
 end

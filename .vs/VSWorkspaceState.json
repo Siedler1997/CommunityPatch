@@ -3,15 +3,15 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\01_Thalgrund",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\script"
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\MapTools"
   ],
-  "SelectedNode": "\\base\\shr\\Script\\Interface\\CinematicMode.lua",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\01_Thalgrund\\player_1.lua",
   "PreviewInSolutionExplorer": false
 }

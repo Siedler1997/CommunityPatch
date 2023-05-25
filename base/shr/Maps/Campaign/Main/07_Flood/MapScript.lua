@@ -108,16 +108,14 @@ function Mission_InitTechnologies()
 
 -- -> Player_1.lua
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)	--No enemy, but has to survive the enemy attacks without help
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive the enemy attacks without help
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -212,8 +210,8 @@ function Mission_FirstMapAction()
 		
 --		EnableDebugging()
 
+	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
-		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		local addWolves = 0

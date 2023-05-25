@@ -64,16 +64,14 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)	--No enemy, but has to survive attacks without help
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive attacks without help
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(6)
 	end
 end
 
@@ -179,8 +177,8 @@ function Mission_FirstMapAction()
 	-- Start cutscene and prelude after
 	start1stQuest()
 
+	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
-		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		local addWolves = 0

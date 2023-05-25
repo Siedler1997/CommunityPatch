@@ -200,10 +200,11 @@ function Mission_FirstMapAction()
 	-- Start Quests
 
 		start1stQuest()		
-		start2ndSubQuest()				
+		start2ndSubQuest()	
 		
+		CreateRandomGoldChests()
 		if CP_Difficulty == 0 then
-			CreateRandomGoldChests()
+			
 		else
 			local addWolves = 0
 			if CP_Difficulty == 2 then

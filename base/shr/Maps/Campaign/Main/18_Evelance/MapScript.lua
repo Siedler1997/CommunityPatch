@@ -61,17 +61,15 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)	--No enemy, but has to be useful
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -199,8 +197,8 @@ function Mission_FirstMapAction()
 -- createBriefingMeetLeonardo()
 -- start6thQuest()
 
+	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
-		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		local addWolves = 0

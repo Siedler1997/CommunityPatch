@@ -136,6 +136,10 @@ function endChapterFour()
     end
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterFive()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(6, true)
+	end
 
     Report("begin chapter five")
 

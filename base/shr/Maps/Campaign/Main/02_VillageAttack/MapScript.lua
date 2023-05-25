@@ -205,9 +205,10 @@ function Mission_FirstMapAction()
 	--	entry point
 
 		startQuestMoveToCastle()
-	
+
+		CreateRandomGoldChests()
 		if CP_Difficulty == 0 then
-			CreateRandomGoldChests()
+			
 		else
 			local addWolves = 0
 			if CP_Difficulty == 2 then

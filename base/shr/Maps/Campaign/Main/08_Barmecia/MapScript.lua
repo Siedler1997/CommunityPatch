@@ -46,15 +46,13 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -183,8 +181,9 @@ function Mission_FirstMapAction()
 
 	StartCutscene("Intro", start1stQuest)
 
+	CreateRandomChests()
 	if CP_Difficulty == 0 then
-		CreateRandomChests()
+
 	else
 		local addWolves = 0
 		if CP_Difficulty == 2 then

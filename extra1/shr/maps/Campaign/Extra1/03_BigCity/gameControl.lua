@@ -159,6 +159,12 @@ end
 -- Destroy Nephilim
 ------------------------------------------------------------------------------
 function start6thChapter()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(4, true)
+		ResearchAllMilitaryTechsAddOn(5, true)
+		ResearchAllMilitaryTechsAddOn(6, true)
+	end
 
 	StartRain(60 * 1000)
 

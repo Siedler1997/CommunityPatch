@@ -51,14 +51,12 @@ end
 -- see Player_1.lua !!!
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -159,8 +157,8 @@ function Mission_FirstMapAction()
 	TimeLine.Start()
 
 --	EnableDebugging()
+	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
-		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		local addWolves = 0

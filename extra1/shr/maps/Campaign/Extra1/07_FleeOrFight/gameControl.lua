@@ -97,6 +97,12 @@ end
 -- final attack
 ------------------------------------------------------------------------------
 function start4thChapter()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(3, true)
+		ResearchAllMilitaryTechsAddOn(5, true)
+		ResearchAllMilitaryTechsAddOn(8, true)
+	end
 
 	CreateArmyFinalAttack()
 	

@@ -91,17 +91,15 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(7)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -206,9 +204,9 @@ function Mission_FirstMapAction()
 		Logic.SetDiplomacyState( 1, 5, Diplomacy.Friendly )
 
 	-- Start prelude
-	
+
+		CreateRandomGoldChests()	
 		if CP_Difficulty == 0 then
-			CreateRandomGoldChests()
 			CreateRandomChests()
 
 			DestroyEntity("hard_rock")

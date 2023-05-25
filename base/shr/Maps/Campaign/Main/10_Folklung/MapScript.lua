@@ -50,15 +50,13 @@ end
 function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Headquarter,0)	
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 		end
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(5)
 	end
 end
 
@@ -198,10 +196,9 @@ function Mission_FirstMapAction()
 		
 	--BurningHouse
 	Logic.HurtEntity(GetID("BurningHouse"),400)
-	
-	if CP_Difficulty == 0 then
-		CreateRandomChests()
 
+	CreateRandomChests()	
+	if CP_Difficulty == 0 then
 		local hqpos = GetPosition("Pl5_SpawnPos")
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")

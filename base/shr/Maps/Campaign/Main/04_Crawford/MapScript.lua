@@ -276,9 +276,10 @@ function Mission_FirstMapAction()
 	--
 	--
 	--	startQuestDestroyKerberos()
-	
+
+	CreateRandomChests()
 	if CP_Difficulty == 0 then
-		CreateRandomChests()
+		
 	else
 		local addWolves = 0
 		if CP_Difficulty == 2 then
