@@ -2,19 +2,19 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>A_NE_PolarBear</Model>
-			<Anim>A_ME_Bear_Run</Anim>
-			<Anim>A_ME_Bear_Idle1</Anim>
-			<Anim>A_ME_Bear_Attack1</Anim>
-			<Anim>A_ME_Bear_Attack2</Anim>
-			<Anim>A_ME_Bear_Die</Anim>
-			<Anim>A_ME_Bear_Idle2</Anim>
-			<Anim>A_ME_Bear_Walk</Anim>
+		  <Model>A_X_Wolf_Brown</Model>
+			<Anim>A_ME_Wolf_Run</Anim>
+			<Anim>A_ME_Wolf_Idle1</Anim>
+			<Anim>A_ME_Wolf_Attack1</Anim>
+			<Anim>A_ME_Wolf_Attack2</Anim>
+			<Anim>A_ME_Wolf_Die</Anim>
+			<Anim>A_ME_Wolf_Idle2</Anim>
+			<Anim>A_ME_Wolf_Walk</Anim>
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>		
-		  <MaxHealth>600</MaxHealth>
+		  <MaxHealth>200</MaxHealth>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <Convertible>false</Convertible>
@@ -45,8 +45,8 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
-		  <ArmorClass>ArmorClassHero</ArmorClass>
-		  <ArmorAmount>5</ArmorAmount> 
+		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>10</ExperiencePoints>
@@ -55,8 +55,8 @@
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>
-			  <SuspensionAnimation>A_ME_Bear_Idle1</SuspensionAnimation>
-			  <AnimSet>SET_CU_AGGRESSIVE_BEAR</AnimSet>
+			  <SuspensionAnimation>A_ME_Wolf_Idle1</SuspensionAnimation>
+			  <AnimSet>SET_CU_AGGRESSIVE_WOLF2</AnimSet>
 		  </Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorAnimation</Class>
@@ -65,10 +65,10 @@
 	<Behavior>
 		  <Logic classname="EGL::CMovementBehaviorProps">
 			  <Class>GGL::CLeaderMovement</Class>
-			  <Speed>400</Speed>
+			  <Speed>500</Speed>
 			  <RotationSpeed>40</RotationSpeed>
 			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
-			  <MoveIdleAnim>A_ME_Bear_Idle1</MoveIdleAnim>
+			  <MoveIdleAnim>A_ME_Wolf_Idle1</MoveIdleAnim>
 		</Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorMovement</Class>
@@ -89,17 +89,17 @@
 			
 	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
 	        
-	        <NormalAttackAnim1>A_ME_Bear_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>A_ME_Bear_Attack2</NormalAttackAnim2>
-	        <CounterAttackAnim>A_ME_Bear_Attack1</CounterAttackAnim>
-	        <FinishingMoveAnim>A_ME_Bear_Attack1</FinishingMoveAnim>
-	        <MissAttackAnim>A_ME_Bear_Attack1</MissAttackAnim>
-	        <BattleIdleAnim>A_ME_Bear_Idle2</BattleIdleAnim>
-	        <BattleWalkAnim>A_ME_Bear_Walk</BattleWalkAnim>
-	        <HitAnim>A_ME_Bear_Idle1</HitAnim>
+	        <NormalAttackAnim1>A_ME_Wolf_Attack1</NormalAttackAnim1>
+	        <NormalAttackAnim2>A_ME_Wolf_Attack2</NormalAttackAnim2>
+	        <CounterAttackAnim>A_ME_Wolf_Attack1</CounterAttackAnim>
+	        <FinishingMoveAnim>A_ME_Wolf_Attack1</FinishingMoveAnim>
+	        <MissAttackAnim>A_ME_Wolf_Attack1</MissAttackAnim>
+	        <BattleIdleAnim>A_ME_Wolf_Idle2</BattleIdleAnim>
+	        <BattleWalkAnim>A_ME_Wolf_Walk</BattleWalkAnim>
+	        <HitAnim>A_ME_Wolf_Idle1</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>40</DamageAmount>
+	        <DamageAmount>14</DamageAmount>
 	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>1500</BattleWaitUntil>

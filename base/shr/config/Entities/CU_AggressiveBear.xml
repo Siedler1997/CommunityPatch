@@ -56,7 +56,7 @@
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>
 			  <SuspensionAnimation>A_ME_Bear_Idle1</SuspensionAnimation>
-			  <AnimSet>SET_CU_AGGRESSIVE_Bear</AnimSet>
+			  <AnimSet>SET_CU_AGGRESSIVE_BEAR</AnimSet>
 		  </Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorAnimation</Class>

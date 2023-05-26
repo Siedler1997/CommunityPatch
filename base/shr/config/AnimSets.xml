@@ -128,6 +128,7 @@
 	<AnimSet>SET_CU_SERF</AnimSet>
 	<AnimSet>SET_DRAGON</AnimSet>
 	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
+	<AnimSet>SET_CU_AGGRESSIVE_WOLF2</AnimSet>
 	<AnimSet>SET_CU_AGGRESSIVE_Bear</AnimSet>
 	<AnimSet>SET_SHEEP</AnimSet>
 	<AnimSet>SET_SHEEP2</AnimSet>

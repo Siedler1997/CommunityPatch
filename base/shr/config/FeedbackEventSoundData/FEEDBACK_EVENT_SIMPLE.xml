@@ -270,6 +270,22 @@
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranLieutenant</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
@@ -630,6 +646,22 @@
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranLieutenant</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
 			</ValueSound>
@@ -936,6 +968,22 @@
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
