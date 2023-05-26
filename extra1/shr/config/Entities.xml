@@ -969,4 +969,7 @@
 	<Entity>CU_Sheep2</Entity>
 	<Entity>CU_Sheep3</Entity>
 	<Entity>CU_AggressiveWolf</Entity>
+	<Entity>CU_AggressiveBear</Entity>
+	<Entity>CU_AggressiveBlackBear</Entity>
+	<Entity>CU_AggressivePolarBear</Entity>
 </root>

@@ -1468,6 +1468,9 @@
 	<ID>Misc\so_buildingonfire_loop_1</ID>
 	<ID>Misc\so_buildingonfire_loop_2</ID>
 	<ID>Misc\so_buildingonfire_loop_3</ID>
+	<ID>AmbientSounds\bear_idle01</ID>
+	<ID>AmbientSounds\bear_idle02</ID>
+	<ID>AmbientSounds\bear_idle03</ID>
 </root>
 
 

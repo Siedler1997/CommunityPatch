@@ -1234,6 +1234,9 @@
 
 	<ID>AmbientSounds\Wolf_rnd_1</ID>
 	<ID>AmbientSounds\Wolf_rnd_2</ID>
+	<ID>AmbientSounds\bear_idle01</ID>
+	<ID>AmbientSounds\bear_idle02</ID>
+	<ID>AmbientSounds\bear_idle03</ID>
 	<ID>AmbientSounds\Sheep_rnd_1</ID>
 	<ID>AmbientSounds\Sheep_rnd_2</ID>
 	<ID>AmbientSounds\Sheep_rnd_3</ID>

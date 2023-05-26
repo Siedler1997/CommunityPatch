@@ -3803,4 +3803,13 @@
 		<Effect>SettlerPlayerColorSpecular</Effect>
 		<OcclusionReceiver>True</OcclusionReceiver>
 	</Model>
+	<Model id="A_ME_Bear">
+		<Effect>SkinnedObject</Effect>
+	</Model>
+	<Model id="A_ME_Bear_black">
+		<Effect>SkinnedObject</Effect>
+	</Model>
+	<Model id="A_NE_PolarBear">
+		<Effect>SkinnedObject</Effect>
+	</Model>
 </root>

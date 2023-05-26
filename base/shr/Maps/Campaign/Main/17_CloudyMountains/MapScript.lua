@@ -192,6 +192,11 @@ function Mission_FirstMapAction()
 		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 1000),(bosspos1.Y - 1000),0,0,3,0)
 
 		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (10 + addWolves)})
+		
+		local bearPos = GetPosition("Kerberos")
+		AI.Entity_CreateFormation(1,Entities.CU_AggressiveBear,0,0,(bearPos.X - 500),(bearPos.Y - 500),0,0,3,0)
+		AI.Entity_CreateFormation(1,Entities.CU_AggressiveBlackBear,0,0,(bearPos.X + 500),(bearPos.Y + 500),0,0,3,0)
+		AI.Entity_CreateFormation(1,Entities.CU_AggressivePolarBear,0,0,(bearPos.X + 500),(bearPos.Y - 500),0,0,3,0)
 	end
 
 	local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,38400,14400,0,0,3,0)
