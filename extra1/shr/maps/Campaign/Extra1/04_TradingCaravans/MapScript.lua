@@ -130,11 +130,14 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+			
+			wolfSet = RaidersDefaultSets.Mediterranean
 
 			--Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
 			
@@ -154,22 +157,15 @@ function FirstMapAction()
 		--]]
 		Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
 
-		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (9 + addWolves)})
 	end
 
 	--Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
-	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 
 function

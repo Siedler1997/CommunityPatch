@@ -127,12 +127,14 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+			wolfSet = RaidersDefaultSets.Highland
 
 			Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
 		end
@@ -159,20 +161,14 @@ function FirstMapAction()
 		SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
 		Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
 
-		RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 4000, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = wolfSet, samount = (3 + addWolves), ramount = (9 + addWolves)})
 	end
 	
     --Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
 ------------------------------------------------------------------------------
 function SpecialManualGoldChest()
 	

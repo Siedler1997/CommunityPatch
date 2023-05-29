@@ -35,6 +35,7 @@ setupArmyRightFortress = function()
 	ArmyRightFortress.spawnGenerator	= "KI3_HQ"
 	ArmyRightFortress.respawnTime		= 60
 	ArmyRightFortress.endless			= true
+	ArmyRightFortress.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyRightFortress)

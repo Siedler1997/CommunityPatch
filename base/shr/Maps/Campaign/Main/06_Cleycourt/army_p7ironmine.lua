@@ -38,6 +38,7 @@ setupArmyP7IronMine = function()
 	ArmyP7IronMine.outerDefenseRange	= 	2000
 	ArmyP7IronMine.Attack				= 	false
 	ArmyP7IronMine.AttackAllowed		= 	false
+	ArmyP7IronMine.experiencePoints		=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyP7IronMine)

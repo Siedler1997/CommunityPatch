@@ -155,7 +155,8 @@
 	<AnimSet>SET_Dragon</AnimSet>
 	<AnimSet>SET_CU_HERO10</AnimSet>
 	<AnimSet>SET_CU_AGGRESSIVE_WOLF</AnimSet>
-	<AnimSet>SET_CU_AGGRESSIVE_Bear</AnimSet>
+	<AnimSet>SET_CU_AGGRESSIVE_WOLF2</AnimSet>
+	<AnimSet>SET_CU_AGGRESSIVE_BEAR</AnimSet>
 	<AnimSet>SET_SHEEP</AnimSet>
 	<AnimSet>SET_SHEEP2</AnimSet>
 	<AnimSet>SET_SHEEP3</AnimSet>

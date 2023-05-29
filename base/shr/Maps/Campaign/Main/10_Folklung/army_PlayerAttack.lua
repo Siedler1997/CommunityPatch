@@ -50,6 +50,7 @@ createArmyAttackPlayerA = function()
 	end
     
     ArmyAttackPlayerA.endless = true
+	ArmyAttackPlayerA.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyAttackPlayerA)

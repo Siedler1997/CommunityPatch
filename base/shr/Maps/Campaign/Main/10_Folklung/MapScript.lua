@@ -50,9 +50,14 @@ end
 function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Headquarter,0)	
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
 
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(4)
@@ -203,7 +208,6 @@ function Mission_FirstMapAction()
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
-		local addWolves = 0
 		if CP_Difficulty == 1 then
 			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5200, 35700, 0, 5);
@@ -223,41 +227,28 @@ function Mission_FirstMapAction()
 			DestroyEntity("TheRock")
 			createArmyAttackPlayerA()
 			StartCountdown(15 * 60, MakeArmyAttackPlayerAggressive, false)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
 		--]]
-		RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (4 + addWolves), ramount = (10 + addWolves)})		
-		RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, samount = (4 + addWolves), ramount = (12 + addWolves)})
-		
-		if CP_Difficulty == 2 then
-			ReplaceEntity("TheRock2", Entities.XD_Rock7)
-			ReplaceEntity("TheRock3", Entities.XD_Rock7)
-		end
 	end
 
+	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})		
+	RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+
+	RaidersCreate({player = 4, pos = "bearpos1", revier = 500, range = 4000, types = { Entities.CU_AggressivePolarBear }, samount = 1, ramount = 1})
+	
 	-- Create Armies
 	createArmyCutscene()
 	createArmyRobbers()
 	StartCountdown(60, createArmyBesiegerA, false)
 	createArmyDefendBase()
 
-	--StartSimpleHiResJob("GetDarioPos")
-	--Tools.ExploreArea(-1, -1, 900)
+	StartSimpleJob("GetMousePos")
+	Tools.ExploreArea(-1, -1, 900)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
 
 function StartOldCutscene()
 	--Briefing	

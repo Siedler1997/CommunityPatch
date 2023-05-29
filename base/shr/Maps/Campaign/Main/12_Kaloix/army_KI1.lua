@@ -39,8 +39,8 @@ setupArmyKI1 = function()
 --	TimeLine.Enter("AttackArmy RetreatSize 8", TimeLine.Seconds + 2810, "IncreaseArmyRetreatSize" )
 -- 50min
 	TimeLine.Enter("AttackAllow Cannon2", TimeLine.Seconds + 3000, "AllowCannon2" )
--- 60min
-	TimeLine.Enter("AttackAllow SuperTech", TimeLine.Seconds + 3600, "AllowSuperTech" )
+-- 70min
+	TimeLine.Enter("AttackAllow SuperTech", TimeLine.Seconds + 4200, "AllowSuperTech" )
 
 
 	-- Start attack after 10 minutes

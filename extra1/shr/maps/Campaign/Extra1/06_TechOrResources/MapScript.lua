@@ -133,12 +133,14 @@ function FirstMapAction()
 
 	if CP_Difficulty > 0 then
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+			wolfSet = RaidersDefaultSets.Europe
 			
 			ReplaceEntity("player1", Entities.PB_Headquarters1)
 
@@ -177,18 +179,11 @@ function FirstMapAction()
             end
 		end
 		
-		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		--RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, samount = (2 + addWolves), ramount = (7 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 4000, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (6 + addWolves)})
+		--RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (7 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 4000, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
     --Tools.ExploreArea(-1, -1, 900)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

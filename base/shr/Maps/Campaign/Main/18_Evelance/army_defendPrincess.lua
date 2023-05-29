@@ -42,6 +42,7 @@ setupArmyDefendPrincess = function()
 	armyDefendPrincess.outerDefenseRange= 	2000
 	armyDefendPrincess.Attack			= 	false
 	armyDefendPrincess.AttackAllowed	= 	false
+	armyDefendPrincess.experiencePoints	=	CP_Difficulty
 	
 	
 	-- Setup army

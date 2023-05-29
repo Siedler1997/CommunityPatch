@@ -56,9 +56,15 @@ function Mission_InitTechnologies()
 	-- Forbid foundry
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Foundry, 0)
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
 
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(5)
@@ -169,17 +175,14 @@ function Mission_FirstMapAction()
 	-- Start prelude
 	start1stQuest()
 
+	DestroyEntity("rock_gold1")
+	DestroyEntity("rock_gold2")
+
 	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
-		DestroyEntity("rock_gold1")
-		DestroyEntity("rock_gold2")
 	else
-		local addWolves = 0
-		if CP_Difficulty == 1 then
-			DestroyEntity("rock_gold1")
-			DestroyEntity("rock_gold2")
-		else
+		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 
@@ -187,10 +190,6 @@ function Mission_FirstMapAction()
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
 
 		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
@@ -207,17 +206,13 @@ function Mission_FirstMapAction()
 			end
 		end
 
-		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (9 + addWolves)})
-		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (10 + addWolves)})
 	end
 
-	--Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
-end
+	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+	
+	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end
---]]

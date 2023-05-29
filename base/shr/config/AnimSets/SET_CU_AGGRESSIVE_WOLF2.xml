@@ -1,7 +1,7 @@
 <AnimSet>
 	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
 		<Name>Walk</Name>
-		<Animation>A_ME_Wolf_Run</Animation>
+		<Animation>A_ME_Wolf_Walk</Animation>
     </Category>
     
     <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">

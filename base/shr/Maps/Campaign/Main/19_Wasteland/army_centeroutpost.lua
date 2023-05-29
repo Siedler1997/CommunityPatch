@@ -44,6 +44,7 @@ setupArmyCenterOutpost = function()
 	ArmyCenterOutpost.Attack				= false
 	ArmyCenterOutpost.AttackPos			= GetPosition("KI2_SpawnPos")
 	ArmyCenterOutpost.AttackAllowed		= false
+	ArmyCenterOutpost.experiencePoints	=	CP_Difficulty
 
 
 	-- Setup army

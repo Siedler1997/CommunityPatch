@@ -49,9 +49,16 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(3)
@@ -163,7 +170,7 @@ function Mission_FirstMapAction()
 
 	-- Set Music-Set
 
-		LocalMusic.UseSet = MEDITERANEANMUSIC
+		LocalMusic.UseSet = EUROPEMUSIC
 
 	-- Start time line
 
@@ -182,14 +189,9 @@ function Mission_FirstMapAction()
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
 	else
-		local addWolves = 0
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
 
 		local hq_ai1_pos = GetPosition("HQ_AI1")
@@ -197,31 +199,27 @@ function Mission_FirstMapAction()
 		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
 		LookAt(bossID1, "Garek")
 		
-		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, samount = (2 + addWolves), ramount = (12 + addWolves)})
-		
 		if CP_Difficulty == 2 then
 			Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
 		end
+
+		local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
+		LookAt(bossID1, "camp_fire4")
+		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
+		LookAt(bossID2, "camp_fire2")
+		local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
+		LookAt(bossID3, "camp_fire3")
+		local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
+		LookAt(bossID4, "camp_fire1")
+		local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
+		LookAt(bossID5, "camp_fire2")
 	end
+
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+	RaidersCreate({player = 3, pos = "rudelpos2", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
+	RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
 		
-	local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
-	LookAt(bossID1, "camp_fire4")
-	local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
-	LookAt(bossID2, "camp_fire2")
-	local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
-	LookAt(bossID3, "camp_fire3")
-	local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
-	LookAt(bossID4, "camp_fire1")
-	local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
-	LookAt(bossID5, "camp_fire2")
-
 	--Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Pilgrim")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

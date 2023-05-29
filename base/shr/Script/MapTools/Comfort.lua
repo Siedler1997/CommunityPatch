@@ -1833,7 +1833,7 @@ function SetAIUnitsToBuild( _aiID, ... )
     end
 end
 
---Researchs Armor-, Attack- and other useful techs for military purposes
+--Researchs Armor-, Attack- and other useful techs for military purposes (except animal techs)
 function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_LeatherMailArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_ChainMailArmor, _PlayerId );
@@ -1871,6 +1871,14 @@ function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 		ResearchTechnology( Technologies.T_SuperTechnology, _PlayerId );
 	end
 
+end
+
+function ResearchAnimalTechs(_PlayerId, _AnimalTech2)
+	ResearchTechnology( Technologies.T_AnimalTechnology1, _PlayerId );
+	
+	if _AnimalTech2 == true then
+		ResearchTechnology( Technologies.T_AnimalTechnology2, _PlayerId );
+	end
 end
 
 -- (von Peermanent? oder JugarTeam?) geändert bei Kingsia
@@ -2048,6 +2056,14 @@ function DestroyEffect( _effect )
 	assert(type(_effect) == "number", "fatal error: wrong input: _effect (function DestroyEffect()");
 	Logic.DestroyEffect( _effect );
 end
+
+-- Prints the current mouse position as a message
+function GetMousePos()
+	local position = {}
+	position.X,position.Y = GUI.Debug_GetMapPositionUnderMouse()
+
+	Message("X: " .. position.X .. "   Y: " .. position.Y)
+end
 --------------------------------------------------------------------------------
 --[[
 	Allows creation of evil units and buildings by a specific player
@@ -2091,10 +2107,55 @@ function CP_SetEvilModTowerState(_playerId, _state)
 end
 
 --------------------------------------------------------------------------------
--- Erstellt ein Rudel Wölfe, dass sich aktiv in seinem Revier bewegt
+-- Erstellt ein Rudel Tiere, dass sich aktiv in seinem Revier bewegt
 -- by Siedler1997
+
+-- Some default sets
+RaidersDefaultSets = {}
+RaidersDefaultSets.Vanilla = {
+	Entities.CU_AggressiveWolf
+}
+RaidersDefaultSets.Europe = {
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Highland = {
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Mediterranean = {
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Evelance = {
+	Entities.CU_AggressiveWolf_Black
+}
+
 function RaidersCreate(_data)
 	local dat = _data
+	if dat.types == nil or table.getn(dat.types) == 0 then
+		dat.types = { Entities.CU_AggressiveWolf }
+	end
 	if raid_table == nil then
 		raid_counter = 1
 		raid_ccount = 0
@@ -2107,7 +2168,7 @@ function RaidersCreate(_data)
 	local position = GetPosition(dat.pos)
 	for k = 1, dat.samount do 
 		local indpos = Zufall_Kreis(position, 500, true)
-		local eid = AI.Entity_CreateFormation(dat.player, Entities.CU_AggressiveWolf,0,0,(indpos.X),(indpos.Y),0,0,0,0);
+		local eid = AI.Entity_CreateFormation(dat.player, dat.types[GetRandom(1, table.getn(dat.types))],0,0,(indpos.X),(indpos.Y),0,0,0,0);
 		table.insert(_runits, eid)
 	end
 	local _rdata = {
@@ -2117,6 +2178,7 @@ function RaidersCreate(_data)
 		r_range = dat.range, 
 		r_sam = dat.samount, 
 		r_resam = dat.ramount, 
+		r_types = dat.types, 
 		r_cpos = position
 		}
 	local raid_group = {raid_id = raid_counter, raid_units = _runits, raid_data = _rdata}
@@ -2163,7 +2225,7 @@ function RaidersControl()
 					end
 					for k = 1, nachw_zahl do
 						local adultp = GetPosition(rtable.raid_units[k])
-						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, Entities.CU_AggressiveWolf,0,0,(adultp.X),(adultp.Y),0,0,0,0);
+						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, rtable.raid_data.r_types[GetRandom(1, table.getn(rtable.raid_data.r_types))],0,0,(adultp.X),(adultp.Y),0,0,0,0);
 						table.insert(rtable.raid_units, eid)
 					end
 				end

@@ -42,6 +42,7 @@ createArmyBesiegerA = function()
                                       	
 	ArmyBesiegerA.Attack			= 	false
 	ArmyBesiegerA.AttackPos			=	GetPosition("AttackPointA")
+	ArmyBesiegerA.experiencePoints	=	CP_Difficulty
 	
 	
 	if Logic.GetWeatherState() == 1 then

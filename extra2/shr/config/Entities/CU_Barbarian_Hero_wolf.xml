@@ -43,7 +43,7 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
-		  <ArmorClass>ArmorClassFur</ArmorClass>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
 		  <ArmorAmount>0</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

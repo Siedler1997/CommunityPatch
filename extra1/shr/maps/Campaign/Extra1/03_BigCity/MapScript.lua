@@ -149,6 +149,7 @@ function FirstMapAction()
 
 	if CP_Difficulty > 0 then
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then		
 			Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3,15)
@@ -156,19 +157,14 @@ function FirstMapAction()
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+			
+			wolfSet = RaidersDefaultSets.Mediterranean
 		end
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
     --Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

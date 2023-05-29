@@ -68,6 +68,7 @@ Action_WeatherChange = function()
 		ResearchAllMilitaryTechs(3, true)	--No enemy, but has to survive attacks without help
 		ResearchAllMilitaryTechs(4, true)
 		ResearchAllMilitaryTechs(6, true)
+		ResearchAllMilitaryTechs(7, true)
 	end
 
 	return true

@@ -122,12 +122,15 @@ function FirstMapAction()
 
 	else
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+			
+			wolfSet = RaidersDefaultSets.Evelance
 			
 			ReplaceEntity("player1", Entities.PB_Headquarters1)
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
@@ -142,17 +145,10 @@ function FirstMapAction()
 			ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
 		end
 
-		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
     --ReplaceEntity("bridge",Entities.PB_DrawBridgeClosed1)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

@@ -269,7 +269,7 @@ LocalMusic_UpdateMusic()
         LocalMusic.BattlesOnTheMap = 0
     end
 	
-	--GUI.AddNote(SetToUse[Random][1] .. " is currently playing")
+	--GUI.AddNote(SetToUse[Random][1] .. " is currently playing: " .. SetToUse[Random][2])
 	
 
 end

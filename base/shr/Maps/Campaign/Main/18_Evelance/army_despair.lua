@@ -46,6 +46,7 @@ setupArmyDespair = function()
 	ArmyDespair.outerDefenseRange	=	7000	--2500
 	ArmyDespair.Attack				=	false
 	ArmyDespair.AttackAllowed		=	false
+	ArmyDespair.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyDespair)

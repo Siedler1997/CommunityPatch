@@ -39,6 +39,7 @@ setupArmyAI2 = function()
 	ArmyAI2.outerDefenseRange		= 4200
 	ArmyAI2.Attack					= false
 	ArmyAI2.AttackAllowed			= false
+	ArmyAI2.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyAI2)

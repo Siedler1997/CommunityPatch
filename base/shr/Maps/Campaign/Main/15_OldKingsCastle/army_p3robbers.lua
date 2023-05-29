@@ -45,6 +45,7 @@ createRobbers = function(_army, _index)
 	_army.outerDefenseRange	= 500
 	_army.Attack			= false
 	_army.AttackAllowed		= false
+	_army.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(_army)

@@ -117,6 +117,7 @@ function FirstMapAction()
     LocalMusic.UseSet = EUROPEMUSIC
 	if CP_Difficulty > 0 then
 		local addWolves = 0
+		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
@@ -126,6 +127,8 @@ function FirstMapAction()
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2
+
+			wolfSet = RaidersDefaultSets.Europe
 		end
 		--[[
         local vcpos = GetPosition("vc_empty")
@@ -136,17 +139,10 @@ function FirstMapAction()
 		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + 900),(bosspos1.Y + 50),0,0,3,0)
 		--LookAt(bossID1, "dario")
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2500, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (9 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2500, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = wolfSet, samount = (3 + addWolves), ramount = (9 + addWolves)})
     end
 
     --Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

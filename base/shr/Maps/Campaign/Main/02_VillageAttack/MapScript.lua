@@ -120,6 +120,9 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			ResearchAnimalTechs(2)
+			ResearchAnimalTechs(3)
+			ResearchAnimalTechs(4)
 		end
 
 		ResearchAllMilitaryTechs(2)
@@ -207,18 +210,12 @@ function Mission_FirstMapAction()
 		startQuestMoveToCastle()
 
 		CreateRandomGoldChests()
-		if CP_Difficulty == 0 then
-			
-		else
-			local addWolves = 0
+		if CP_Difficulty > 0 then
+			local wolfSet = RaidersDefaultSets.Vanilla
 			if CP_Difficulty == 2 then
 				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
-			
-				addWolves = addWolves + 2
-
-				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 			end
 
 			local bosspos1 = GetPosition("guard1")
@@ -228,19 +225,14 @@ function Mission_FirstMapAction()
 			local bosspos2 = GetPosition("tower2")
 			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 			LookAt(bossID2, "defendRoute")
-
-			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, samount = (2 + addWolves), ramount = (10 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, samount = (3 + addWolves), ramount = (8 + addWolves)})
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
-		--StartSimpleHiResJob("GetDarioPos")
-	end
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
+		--RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, types = wolfSet, samount = (2 + addWolves), ramount = (10 + addWolves)})
+		RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+		RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
+		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
+	end

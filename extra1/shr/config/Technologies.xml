@@ -1,0 +1,352 @@
+<root>
+		
+	<!--Global-->
+		<!--Militray-->
+		<Technology>GT_Mercenaries</Technology>	
+		<Technology>GT_StandingArmy</Technology>
+		<Technology>GT_Tactics</Technology>
+		<Technology>GT_Strategies</Technology>
+		
+		<!--Construction-->
+		<Technology>GT_Construction</Technology>	
+		<Technology>GT_ChainBlock</Technology>
+		<Technology>GT_GearWheel</Technology>
+		<Technology>GT_Architecture</Technology>
+		
+		<!--Resources-->
+		<Technology>GT_Alchemy</Technology>	
+		<Technology>GT_Alloying</Technology>
+		<Technology>GT_Metallurgy</Technology>
+		<Technology>GT_Chemistry</Technology>
+		
+		<!--Administration-->
+		<Technology>GT_Literacy</Technology>	
+		<Technology>GT_Trading</Technology>
+		<Technology>GT_Printing</Technology>
+		<Technology>GT_Library</Technology>
+		
+		<!--Trading NOTE: THIS IS NOT USED ANYMORE!!-->
+		<Technology>GT_Taxation</Technology>	
+		<Technology>GT_Laws</Technology>
+		<Technology>GT_Banking</Technology>
+		<Technology>GT_Gilds</Technology>
+		
+		
+		<!--Technology to enable / disable the Beautification Menu-->
+		<Technology>GT_Beautification</Technology>
+	
+		
+	<!--Buildings and their upgrades-->
+
+	<!--Startbuildings-->
+		<Technology>B_Headquarter</Technology>	
+			<Technology>UP1_Headquarter</Technology>
+			<Technology>UP2_Headquarter</Technology>
+		
+		
+		<Technology>B_Residence</Technology>	
+			<Technology>UP1_Residence</Technology>
+			<Technology>UP2_Residence</Technology>
+			
+		<Technology>B_Farm</Technology>	
+			<Technology>UP1_Farm</Technology>
+			<Technology>UP2_Farm</Technology>
+		
+		<Technology>B_Ironmine</Technology>	
+			<Technology>UP1_Ironmine</Technology>
+			<Technology>UP2_Ironmine</Technology>
+			
+		<Technology>B_Stonemine</Technology>	
+			<Technology>UP1_Stonemine</Technology>
+			<Technology>UP2_Stonemine</Technology>
+			
+		<Technology>B_Sulfurmine</Technology>	
+			<Technology>UP1_Sulfurmine</Technology>
+			<Technology>UP2_Sulfurmine</Technology>
+		
+		<Technology>B_Claymine</Technology>	
+			<Technology>UP1_Claymine</Technology>
+			<Technology>UP2_Claymine</Technology>
+					
+		<Technology>B_University</Technology>	
+			<Technology>UP1_University</Technology>
+		
+		<Technology>B_Village</Technology>	
+			<Technology>UP1_Village</Technology>
+			<Technology>UP2_Village</Technology>
+	
+	<!-- Refiners -->	
+		<Technology>B_StoneMason</Technology>	
+			<Technology>UP1_StoneMason</Technology>
+		
+		<Technology>B_Alchemist</Technology>	
+			<Technology>UP1_Alchemist</Technology>
+			
+		<Technology>B_Blacksmith</Technology>		
+			<Technology>UP1_Blacksmith</Technology>
+			<Technology>UP2_Blacksmith</Technology>
+	
+		<Technology>B_Brickworks</Technology>	
+			<Technology>UP1_Brickworks</Technology>
+	
+		<Technology>B_Sawmill</Technology>	
+			<Technology>UP1_Sawmill</Technology>
+	
+	
+	<!--Special Buildings -->		
+		<Technology>B_Market</Technology>	
+			<Technology>UP1_Market</Technology>
+			
+		<Technology>B_Bank</Technology>	
+			<Technology>UP1_Bank</Technology>
+			
+		<Technology>B_Monastery</Technology>	
+			<Technology>UP1_Monastery</Technology>
+			<Technology>UP2_Monastery</Technology>
+		
+		
+		<Technology>B_Outpost</Technology>	
+		<Technology>B_Weathermachine</Technology>	
+		<Technology>B_PowerPlant</Technology>	
+		
+	<!--Military Buildings -->	
+		<Technology>B_Barracks</Technology>	
+			<Technology>UP1_Barracks</Technology>
+			
+		<Technology>B_Stables</Technology>	
+			<Technology>UP1_Stables</Technology>
+			
+		<Technology>B_Archery</Technology>	
+			<Technology>UP1_Archery</Technology>	
+			
+		<Technology>B_Foundry</Technology>	
+			<Technology>UP1_Foundry</Technology>	
+	
+		<Technology>B_Tower</Technology>	
+			<Technology>UP1_Tower</Technology>	
+			<Technology>UP2_Tower</Technology>	
+		
+		<!--Beautifications -->	
+		<Technology>B_Beautification01</Technology>
+		<Technology>B_Beautification02</Technology>
+		<Technology>B_Beautification03</Technology>
+		<Technology>B_Beautification04</Technology>
+		<Technology>B_Beautification05</Technology>
+		<Technology>B_Beautification06</Technology>
+		<Technology>B_Beautification07</Technology>
+		<Technology>B_Beautification08</Technology>
+		<Technology>B_Beautification09</Technology>
+		<Technology>B_Beautification10</Technology>
+		<Technology>B_Beautification11</Technology>
+		<Technology>B_Beautification12</Technology>
+		
+	
+	<!--Feature Technologies -->				
+	
+	<Technology>T_AdjustTaxes</Technology>	
+	<Technology>T_EnableMilitia</Technology>	
+	<Technology>T_BlessSettlers1</Technology>	
+	<Technology>T_BlessSettlers2</Technology>	
+	<Technology>T_BlessSettlers3</Technology>	
+	<Technology>T_BlessSettlers4</Technology>	
+	<Technology>T_BlessSettlers5</Technology>
+	
+	<Technology>T_MinimapResouceView</Technology>
+	<Technology>T_MinimapTacticView</Technology>
+	<Technology>T_MinimapNormalView</Technology>
+	
+	<!--For toggleing help (used in Tutorial) -->			
+	<Technology>T_OnlineHelp</Technology>	
+	
+	<!--Blacksmith Technologies -->			
+		<!--Armor: For Sword and Heavy cavalry-->						
+		<Technology>T_LeatherMailArmor</Technology>		
+		<Technology>T_ChainMailArmor</Technology>	
+		<Technology>T_PlateMailArmor</Technology>	
+		
+		<!--Armor: Bowmen, light cavalry and spear-->						
+		<Technology>T_SoftArcherArmor</Technology>			
+		<Technology>T_PaddedArcherArmor</Technology>	
+		<Technology>T_LeatherArcherArmor</Technology>	
+		
+		<!--Damage: sword and heavy cavalry-->						
+		<Technology>T_MasterOfSmithery</Technology> 
+		<Technology>T_IronCasting</Technology>
+	
+	<!--Sawmill Technologies -->			
+		<!--Damage: Bowmen and light cavalry-->						
+		<Technology>T_Fletching</Technology>	
+		<Technology>T_BodkinArrow</Technology>	
+		
+		<!--Damage: Spearmen-->						
+		<Technology>T_WoodAging</Technology>	
+		<Technology>T_Turnery</Technology>	
+	
+	<!--Alchemist Technologies -->			
+		<!--Damage: Cannons-->						
+		<Technology>T_EnhancedGunPowder</Technology> 
+		<Technology>T_BlisteringCannonballs</Technology> 
+		
+		<!--Weather-->						
+		<Technology>T_WeatherForecast</Technology> 
+		<Technology>T_ChangeWeather</Technology> 
+		<!--<Technology>T_MoreWeather</Technology> Has to be implemented later-->
+	
+	<!--Stone Mason Technologies -->			
+		<!--Armor: Buildings-->		
+		<Technology>T_Masonry</Technology> 
+	
+	<!--Brickworks Technologies -->				
+			<!--Speed: Serfs build-->		
+			<Technology>T_LightBricks</Technology> 
+	
+	<!--Bank Technologies -->				
+			<!--Payday: Refine more and change Payday frequenze-->	
+			<Technology>T_Debenture</Technology> 
+			<Technology>T_BookKeeping</Technology> 
+			
+			<!--Market: Better exchange-->	
+			<Technology>T_Scale</Technology> 
+			<Technology>T_Coinage</Technology> 
+			
+	<!--Village Center Technologies -->				
+			<!--Exploration: Buildings-->	
+			<Technology>T_TownGuard</Technology> 
+			<!--Armor: Workers and Serfs-->	
+			<Technology>T_Loom</Technology> 
+			
+			<!--Speed: Workers and Serfs-->	
+			<Technology>T_Shoes</Technology> 
+	
+	<!--Barracks Technologies -->				
+		<!--Speed: Spearmen and Sowrdmen-->	
+		<Technology>T_BetterTrainingBarracks</Technology> 
+
+	<!--Archery Technologies -->				
+		<!--Speed: Bowmen-->	
+		<Technology>T_BetterTrainingArchery</Technology> 
+		
+	<!--Stables Technologies -->				
+		<!--Speed: light and heavy cavalry-->	
+		<Technology>T_Shoeing</Technology> 
+		
+	<!--Foundry Technologies -->				
+		<!--Speed: cannons-->	
+		<Technology>T_BetterChassis</Technology> 
+		
+	<!--WeatherTower -->				
+		<Technology>T_MakeSnow</Technology> 
+		<Technology>T_MakeSummer</Technology> 
+		<Technology>T_MakeRain</Technology> 
+	
+	<!--Market -->				
+		<Technology>T_MarketGold</Technology> 
+		<Technology>T_MarketClay</Technology> 
+		<Technology>T_MarketWood</Technology> 
+		<Technology>T_MarketIron</Technology> 
+		<Technology>T_MarketStone</Technology> 
+		<Technology>T_MarketSulfur</Technology> 
+		
+	<!-- Units -->
+	<Technology>MU_LeaderSword</Technology>
+	<Technology>MU_LeaderSword2</Technology>
+	<Technology>MU_LeaderSword3</Technology>
+	<Technology>MU_LeaderSword4</Technology>
+		<Technology>T_UpgradeSword1</Technology>	
+		<Technology>T_UpgradeSword2</Technology>	
+		<Technology>T_UpgradeSword3</Technology>	
+
+	<Technology>MU_LeaderSpear</Technology>	
+	<Technology>MU_LeaderSpear2</Technology>	
+	<Technology>MU_LeaderSpear3</Technology>	
+	<Technology>MU_LeaderSpear4</Technology>	
+		<Technology>T_UpgradeSpear1</Technology>	
+		<Technology>T_UpgradeSpear2</Technology>	
+		<Technology>T_UpgradeSpear3</Technology>	
+
+	<Technology>MU_LeaderBow</Technology>
+	<Technology>MU_LeaderBow3</Technology>
+		<Technology>T_UpgradeBow1</Technology>	
+		<Technology>T_UpgradeBow2</Technology>	
+		<Technology>T_UpgradeBow3</Technology>	
+	
+	<Technology>MU_LeaderLightCavalry</Technology>
+		<Technology>T_UpgradeLightCavalry1</Technology>	
+	
+	<Technology>MU_LeaderHeavyCavalry</Technology>		
+		<Technology>T_UpgradeHeavyCavalry1</Technology>	
+	
+	<Technology>MU_Cannon1</Technology>
+	<Technology>MU_Cannon2</Technology>
+	<Technology>MU_Cannon3</Technology>
+	<Technology>MU_Cannon4</Technology>
+	
+	<Technology>MU_Serf</Technology>
+	
+	
+	<!--AddOn 1-->
+	
+	<!--Technology>GT_AddOn</Technology-->
+		
+	
+	<!--Inventions-->
+		<Technology>GT_Mathematics</Technology>	
+		<Technology>GT_Binocular</Technology>
+		<Technology>GT_Matchlock</Technology>
+		<Technology>GT_PulledBarrel</Technology>	
+		
+	<!--Technologies for Rifleman (in Building Gunsmith)-->	
+		<Technology>MU_LeaderRifle</Technology>
+			<Technology>T_UpgradeRifle1</Technology>	
+	
+	
+		<Technology>T_FleeceArmor</Technology>	
+		<Technology>T_FleeceLinedLeatherArmor</Technology>	
+		
+		<Technology>T_LeadShot</Technology>	
+		<Technology>T_Sights</Technology>	
+		
+	<!--Technologies for Thief-->
+		<Technology>MU_Thief</Technology>
+		
+		<Technology>T_ThiefSabotage</Technology>
+	
+	<!--Technologies for Scout-->	
+		<Technology>MU_Scout</Technology>
+		
+		<Technology>T_ScoutFindResources</Technology>
+		<Technology>T_ScoutTorches</Technology>
+		
+	<!--Technologies for Tavern-->	
+		<Technology>B_Tavern</Technology>
+			<Technology>UP1_Tavern</Technology>
+	
+	<!--Technologies for GunsmithWorkshop-->	
+		<Technology>B_GunsmithWorkshop</Technology>
+			<Technology>UP1_GunsmithWorkshop</Technology>
+	
+	<!--Technologies for Bridges-->	
+		<Technology>B_MasterBuilderWorkshop</Technology>
+		<Technology>B_Bridge</Technology>
+	
+	
+	
+	<!-- Technology Test -->	
+	<Technology>T_SuperTechnology</Technology>
+	
+	
+	<!-- NOT USED FOR THE MOMENT: -->
+	<Technology>T_Tracking</Technology>			
+	<Technology>T_CropCycle</Technology>	
+	<Technology>T_PickAxe</Technology>	
+	<Technology>T_SpinningWheel</Technology>	
+	<Technology>T_CityGuard</Technology>		
+	<Technology>T_ChainBardingArmor</Technology>		
+	<Technology>T_PlateBardingArmor</Technology>	
+	<Technology>T_PaddedBardingArmor</Technology>	
+	<Technology>T_LeatherBaringArmor</Technology>
+
+	<Technology>T_AnimalTechnology1</Technology>
+	<Technology>T_AnimalTechnology2</Technology>
+	
+</root>

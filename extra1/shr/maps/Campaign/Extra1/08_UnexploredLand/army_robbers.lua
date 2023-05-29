@@ -32,6 +32,7 @@ function CreateArmyRobbers()
 		ArmyRobbers[i].spawnGenerator		=	"RobberyTower"..i
 		ArmyRobbers[i].spawnPos				=	GetPosition("RobbersSpawnPos"..i)
 		ArmyRobbers[i].endless				=	true
+		ArmyRobbers[i].experiencePoints		=	CP_Difficulty
 	
 		-- Spawn generator
 		SetupAITroopSpawnGenerator("ArmyRobbers"..i, ArmyRobbers[i])

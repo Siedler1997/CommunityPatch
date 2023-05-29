@@ -969,6 +969,10 @@
 	<Entity>CU_Sheep2</Entity>
 	<Entity>CU_Sheep3</Entity>
 	<Entity>CU_AggressiveWolf</Entity>
+	<Entity>CU_AggressiveWolf_Grey</Entity>
+	<Entity>CU_AggressiveWolf_White</Entity>
+	<Entity>CU_AggressiveWolf_Brown</Entity>
+	<Entity>CU_AggressiveWolf_Black</Entity>
 	<Entity>CU_AggressiveBear</Entity>
 	<Entity>CU_AggressiveBlackBear</Entity>
 	<Entity>CU_AggressivePolarBear</Entity>

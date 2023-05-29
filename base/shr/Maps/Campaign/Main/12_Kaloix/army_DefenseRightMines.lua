@@ -26,6 +26,7 @@ setupArmyDefenseRightMines = function()
 	armyDefenseRightMines.noEnemy 		= true
 	armyDefenseRightMines.noEnemyDistance 	= 2000
 	armyDefenseRightMines.maxSpawnAmount = 1
+	armyDefenseRightMines.experiencePoints	=	CP_Difficulty
 
 
 	-- Setup army

@@ -1,0 +1,19 @@
+<root>	
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+		<Gold>100</Gold>
+	</ResourceCosts>
+	
+	<DamageModifier>
+		<Value>6</Value>
+		<Operation>+</Operation>
+	</DamageModifier>
+	<ArmorModifier>
+		<Value>6</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+
+	<Conditions>		
+	</Conditions>
+</root>

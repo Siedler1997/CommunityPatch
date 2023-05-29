@@ -21,7 +21,7 @@
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>
-		  <MaxHealth>100</MaxHealth>
+		  <MaxHealth>50</MaxHealth>
 		  <ArmorClass>ArmorClassFur</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 

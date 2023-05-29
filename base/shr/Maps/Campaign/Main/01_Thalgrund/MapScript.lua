@@ -113,6 +113,10 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			ResearchAnimalTechs(2)
+			ResearchAnimalTechs(3)
+			ResearchAnimalTechs(4)
+			ResearchAnimalTechs(5)
 		end
 
 		ResearchAllMilitaryTechs(3)
@@ -203,17 +207,11 @@ function Mission_FirstMapAction()
 		start2ndSubQuest()	
 		
 		CreateRandomGoldChests()
-		if CP_Difficulty == 0 then
-			
-		else
-			local addWolves = 0
+
+		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
 				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
-			
-				addWolves = addWolves + 2
-
-				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 			end
 			--[[
 			local vcpos1 = GetPosition("vc_empty1")
@@ -227,19 +225,15 @@ function Mission_FirstMapAction()
 			local bosspos1 = GetPosition("Jail")
 			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
 			LookAt(bossID1, "gate")
-			
-			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos2", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos3", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
-		--StartSimpleHiResJob("GetDarioPos")
-	end
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		RaidersCreate({player = 3, pos = "rudelpos2", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		RaidersCreate({player = 3, pos = "rudelpos3", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 
---[[	
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
+		RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
+		RaidersCreate({player = 3, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
+
+		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
+	end

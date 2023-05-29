@@ -139,6 +139,11 @@ endQuestTower3 = function()
 startQuestDestroyKerberos = function()
 
 	Report("start quest: destroy kerberos")
+
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(5, true)
+		ResearchAllMilitaryTechs(6, true)
+	end
 	
 	Logic.SetShareExplorationWithPlayerFlag(1, 2, 1)
 
