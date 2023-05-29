@@ -5,7 +5,7 @@ CP_Difficulty = 0
 ------------------------------------------------------------------------------
 function InitDiplomacy()
     -- diplomacy
-    --SetHostile(1,2)
+    SetHostile(1,2)
     SetHostile(7,2)
     SetFriendly(1,7)
 	
@@ -27,9 +27,13 @@ end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(8)
@@ -129,15 +133,9 @@ function FirstMapAction()
 	LookAt(boss3, boss2)
 	
 	if CP_Difficulty > 0 then
-		local addWolves = 0
-		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-			
-			wolfSet = RaidersDefaultSets.Mediterranean
 
 			--Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
 			
@@ -156,11 +154,16 @@ function FirstMapAction()
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,0,0)
 		--]]
 		Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
-
-		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (9 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (9 + addWolves)})
 	end
+
+	RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 8, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1", "rudelpos4_wp2", "rudelpos4_wp3"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
+	RaidersCreate({player = 8, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 8, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 8, pos = "bearpos3", revier = 1500, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
 	--Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleJob("GetMousePos")

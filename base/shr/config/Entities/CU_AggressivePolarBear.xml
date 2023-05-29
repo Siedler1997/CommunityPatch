@@ -54,12 +54,12 @@
         
         <Category>Military</Category>
         <Category>Leader</Category>
-        <Category>CavalryLight</Category>
+        <Category>CavalryHeavy</Category>
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
 		  <ArmorClass>ArmorClassHero</ArmorClass>
-		  <ArmorAmount>5</ArmorAmount> 
+		  <ArmorAmount>6</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>10</ExperiencePoints>
@@ -112,7 +112,7 @@
 	        <HitAnim>A_ME_Bear_Idle1</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>40</DamageAmount>
+	        <DamageAmount>50</DamageAmount>
 	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>1500</BattleWaitUntil>

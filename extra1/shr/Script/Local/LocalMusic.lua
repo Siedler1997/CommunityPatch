@@ -196,10 +196,6 @@ LocalMusic.SetBattle=  					{
 										{ "05_CombatEvelance1.mp3", 117 }
 										}
 LocalMusic.SetEvilBattle= 				{
-										{ "03_CombatEurope1.mp3", 117 },
-										{ "04_CombatMediterranean1.mp3", 113 },
-										{ "05_CombatEvelance1.mp3", 117 },
-										{ "43_Extra1_DarkMoor_Combat.mp3", 120 },	
 										{ "43_Extra1_DarkMoor_Combat.mp3", 120 }
 										}
 
@@ -289,6 +285,8 @@ LocalMusic_UpdateMusic()
 	
 	if LocalMusic.BattlesOnTheMap == 1 then
 		SetToUse = LocalMusic.UseSet["battle"]
+	elseif LocalMusic.BattlesOnTheMap == 2 then
+		SetToUse = LocalMusic.SetEvilBattle
 	else
 		SetToUse = LocalMusic.UseSet[Weather]
 	end

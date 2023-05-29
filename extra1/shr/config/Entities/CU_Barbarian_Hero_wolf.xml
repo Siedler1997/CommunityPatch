@@ -23,6 +23,19 @@
 			  <Wood/>
         </Cost>
 
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyArmor>
+
 		<!-- Bonus -->
 		<ModifyExploration>
 			<Technology>T_SuperTechnology</Technology>
@@ -43,7 +56,7 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
-		  <ArmorClass>ArmorClassFur</ArmorClass>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
 		  <ArmorAmount>0</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

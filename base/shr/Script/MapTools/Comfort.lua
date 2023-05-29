@@ -2156,6 +2156,9 @@ function RaidersCreate(_data)
 	if dat.types == nil or table.getn(dat.types) == 0 then
 		dat.types = { Entities.CU_AggressiveWolf }
 	end
+	if dat.experience == nil then
+		dat.experience = 0
+	end
 	if raid_table == nil then
 		raid_counter = 1
 		raid_ccount = 0
@@ -2168,7 +2171,7 @@ function RaidersCreate(_data)
 	local position = GetPosition(dat.pos)
 	for k = 1, dat.samount do 
 		local indpos = Zufall_Kreis(position, 500, true)
-		local eid = AI.Entity_CreateFormation(dat.player, dat.types[GetRandom(1, table.getn(dat.types))],0,0,(indpos.X),(indpos.Y),0,0,0,0);
+		local eid = AI.Entity_CreateFormation(dat.player, dat.types[GetRandom(1, table.getn(dat.types))],0,0,(indpos.X),(indpos.Y),0,0,dat.experience,0);
 		table.insert(_runits, eid)
 	end
 	local _rdata = {
@@ -2179,7 +2182,8 @@ function RaidersCreate(_data)
 		r_sam = dat.samount, 
 		r_resam = dat.ramount, 
 		r_types = dat.types, 
-		r_cpos = position
+		r_cpos = position,
+		r_exp = dat.experience 
 		}
 	local raid_group = {raid_id = raid_counter, raid_units = _runits, raid_data = _rdata}
 	table.insert(raid_table, raid_group)
@@ -2225,7 +2229,7 @@ function RaidersControl()
 					end
 					for k = 1, nachw_zahl do
 						local adultp = GetPosition(rtable.raid_units[k])
-						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, rtable.raid_data.r_types[GetRandom(1, table.getn(rtable.raid_data.r_types))],0,0,(adultp.X),(adultp.Y),0,0,0,0);
+						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, rtable.raid_data.r_types[GetRandom(1, table.getn(rtable.raid_data.r_types))],0,0,(adultp.X),(adultp.Y),0,0,rtable.raid_data.r_exp,0);
 						table.insert(rtable.raid_units, eid)
 					end
 				end

@@ -238,7 +238,7 @@ function Mission_FirstMapAction()
 	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})		
 	RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
 
-	RaidersCreate({player = 4, pos = "bearpos1", revier = 500, range = 4000, types = { Entities.CU_AggressivePolarBear }, samount = 1, ramount = 1})
+	RaidersCreate({player = 4, pos = "bearpos1", revier = 500, range = 4000, types = { Entities.CU_AggressivePolarBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 	
 	-- Create Armies
 	createArmyCutscene()

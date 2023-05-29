@@ -54,9 +54,13 @@ function InitResources()
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(6)
@@ -138,10 +142,13 @@ function FirstMapAction()
 		local bosspos1 = GetPosition("army5")
 		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + 900),(bosspos1.Y + 50),0,0,3,0)
 		--LookAt(bossID1, "dario")
-
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2500, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = wolfSet, samount = (3 + addWolves), ramount = (9 + addWolves)})
     end
+
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = 2500, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+	
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
     --Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleJob("GetMousePos")

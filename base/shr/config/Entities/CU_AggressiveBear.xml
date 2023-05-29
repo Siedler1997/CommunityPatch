@@ -54,7 +54,7 @@
         
         <Category>Military</Category>
         <Category>Leader</Category>
-        <Category>CavalryLight</Category>
+        <Category>CavalryHeavy</Category>
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
@@ -112,7 +112,7 @@
 	        <HitAnim>A_ME_Bear_Idle1</HitAnim>
 
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>40</DamageAmount>
+	        <DamageAmount>50</DamageAmount>
 	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>1500</BattleWaitUntil>

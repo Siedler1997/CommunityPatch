@@ -59,9 +59,15 @@ function InitResources()
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)	--No enemy, but has to be useful
@@ -179,9 +185,12 @@ function FirstMapAction()
             end
 		end
 		
-		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		--RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (7 + addWolves)})
-		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 4000, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		--RaidersCreate({player = 8, pos = "rudelpos2", revier = 2000, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+		
+		RaidersCreate({player = 8, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+		RaidersCreate({player = 8, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 	end
 
 	--StartSimpleJob("GetMousePos")

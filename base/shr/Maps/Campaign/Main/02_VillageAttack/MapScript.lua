@@ -227,7 +227,7 @@ function Mission_FirstMapAction()
 			LookAt(bossID2, "defendRoute")
 		end
 
-		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1})
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
 		--RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, types = wolfSet, samount = (2 + addWolves), ramount = (10 + addWolves)})
 		RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

@@ -54,9 +54,13 @@ function InitResources()
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(5)
@@ -116,21 +120,16 @@ function FirstMapAction()
 		LocalMusic.UseSet = EVELANCEMUSIC
 
     beginChapterOne()
+
+	--Deactivated because workers create lots of internal camp fires
+	--CreateSettlersForKarratas()
     
 	CreateRandomGoldChests()
-	if CP_Difficulty == 0 then
-
-	else
-		local addWolves = 0
-		local wolfSet = RaidersDefaultSets.Vanilla
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-			
-			wolfSet = RaidersDefaultSets.Evelance
 			
 			ReplaceEntity("player1", Entities.PB_Headquarters1)
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
@@ -144,11 +143,23 @@ function FirstMapAction()
 		for i = 1, 5 do
 			ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
 		end
-
-		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = wolfSet, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
+
+	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	
+	RaidersCreate({player = 5, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
     --ReplaceEntity("bridge",Entities.PB_DrawBridgeClosed1)
+end
+
+function CreateSettlersForKarratas()
+	local settlersPos = GetPosition("CUTSCENE_HELIAS_EXTRO")
+	for i = 1, 6 do
+		Logic.CreateEntity(Entities.PU_Farmer,settlersPos.X,settlersPos.Y,0,6)
+	end
+	for i = 1, 10 do
+		Logic.CreateEntity(Entities.PU_Priest,settlersPos.X,settlersPos.Y,0,6)
+	end
 end

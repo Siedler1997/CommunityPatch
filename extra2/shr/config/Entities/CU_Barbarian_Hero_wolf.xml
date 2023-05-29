@@ -23,6 +23,19 @@
 			  <Wood/>
         </Cost>
 
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyArmor>
+
 		<!-- Bonus -->
 		<ModifyExploration>
 			<Technology>T_SuperTechnology</Technology>
