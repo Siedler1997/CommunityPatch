@@ -25,6 +25,11 @@ function startChapterOne()
 	-- create briefings
 	StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingPrelude)
 	createBriefingCoward()
+
+	--Trigger reachLighthouseQuest action directly if player tries to reach the enemy tower at that point
+    if CP_Difficulty == 2 then
+        lighthouseCountdown = StartCountdown(5 * 60, cancelLighthouseReached, false)
+    end
 end
 
 ------------------------------------------------------------------------------------------------------------------------------------

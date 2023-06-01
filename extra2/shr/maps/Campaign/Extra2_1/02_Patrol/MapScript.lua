@@ -37,21 +37,38 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 ------------------------------------------------------------------------------
 function InitDiplomacy()
 	SetHostile(1,2)
+	SetHostile(1,5)
 	SetFriendly(1,7)
 	end
 ------------------------------------------------------------------------------
 function InitResources()
-    -- set some resources
-    AddStone(1000)
-    AddClay(1000)
-    AddGold(1000)
-    AddSulfur(1000)
-    AddIron(1000)
-    AddWood(1000)
-    end
+	if CP_Difficulty == 0 then
+		-- set some resources
+		AddStone(1000)
+		AddClay(1000)
+		AddGold(1000)
+		AddSulfur(1000)
+		AddIron(1000)
+		AddWood(1000)
+	else
+		-- set some resources
+		AddStone(500)
+		AddClay(500)
+		AddGold(500)
+		AddSulfur(500)
+		AddIron(500)
+		AddWood(500)
+	end
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
 		ResearchAllMilitaryTechsAddOn(2)
 	end
 end
@@ -71,8 +88,16 @@ function InitWeather()
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
+	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-	Display.SetPlayerColorMapping(7,FRIENDLY_COLOR1)
+	Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(5,ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(7,ARIS_ROBBERS)
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -86,6 +111,7 @@ function FirstMapAction()
 	-- Text Tool String
 	String.Init("CM03_02_Patrol")
 
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 	LocalMusic.UseSet = EUROPEMUSIC
 
 	createPlayer2()
@@ -93,6 +119,13 @@ function FirstMapAction()
 	beginChapterOne()
 	
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+
+			GUI.SetTaxLevel(1)
+		end
+
 		local bosspos1 = GetPosition("armyDefender")
 		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
 		LookAt(bossID1, "vc_empty")
@@ -111,10 +144,14 @@ function FirstMapAction()
 				ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
 			end
 		end
-        DestroyEntity("vc_empty")
+        --DestroyEntity("vc_empty")
 	end
 
+	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 5, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end
 
 ------------------------------------------------------------------------------

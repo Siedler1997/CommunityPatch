@@ -19,6 +19,7 @@ function createBarbarianAttack()
 		ArmyBarbarianAttack[i].rodeLength	=	500
 		ArmyBarbarianAttack[i].spawnCount	=	0
 		ArmyBarbarianAttack[i].delay		=	(i*3)+2*60 + GetRandom(1*60)
+		ArmyBarbarianAttack[i].experiencePoints	=	CP_Difficulty
 	
 		SetupArmy(ArmyBarbarianAttack[i])
 	
@@ -66,17 +67,12 @@ function ControlBarbarianAttack()
 					-- set random army position
 					local RandomPos = GetRandom(1, 2)
 					ArmyBarbarianAttack[i].position	= GetPosition("armySpawn"..RandomPos)
-				
-					local experience = MEDIUM_EXPERIENCE
-					if CP_Difficulty > 0 then
-						experience = experience + 2
-					end
 
 					local troopDescription = {
 				
 						maxNumberOfSoldiers	= 9,
 						minNumberOfSoldiers	= 0,
-						experiencePoints 	= experience,
+						experiencePoints 	= CP_Difficulty,
 					}
 				
 					if CP_Difficulty == 0 then
@@ -111,7 +107,11 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+					else
+						troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -125,8 +125,10 @@ function ControlBarbarianAttack()
 					
 					if CP_Difficulty == 0 then
 						troopDescription.leaderType = Entities.PV_Cannon1
-					else
+					elseif CP_Difficulty == 1 then
 						troopDescription.leaderType = Entities.PV_Cannon2
+					else
+						troopDescription.leaderType = Entities.PV_Cannon3
 					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
@@ -141,8 +143,10 @@ function ControlBarbarianAttack()
 					
 					if CP_Difficulty == 0 then
 						troopDescription.leaderType = Entities.PV_Cannon2
-					else
+					elseif CP_Difficulty == 1 then
 						troopDescription.leaderType = Entities.PV_Cannon3
+					else
+						troopDescription.leaderType = Entities.PV_Cannon4
 					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	

@@ -209,6 +209,10 @@ LocalMusic.SetBriefing=					{
 										{ "40_Extra1_BridgeBuild.mp3", 129 }
 										}
 
+LocalMusic.SetBriefingOld=				{										
+										{ "Win.mp3", 33 }
+										}
+
 LocalMusic.SetEurope["battle"] = 		{
 										{ "03_CombatEurope1.mp3", 117 },
 										{ "S6_28_combat_middle_europe_big.mp3", 110 },						

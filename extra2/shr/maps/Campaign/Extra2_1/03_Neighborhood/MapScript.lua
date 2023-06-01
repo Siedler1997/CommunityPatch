@@ -38,6 +38,7 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 ------------------------------------------------------------------------------
 function InitDiplomacy()
 	SetHostile(1,2)
+	SetHostile(1,3)
 	SetHostile(2,4)
 	SetHostile(2,5)
 	SetHostile(2,6)
@@ -59,8 +60,17 @@ function InitResources()
     end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
 		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(3)
 	end
 end
 ------------------------------------------------------------------------------
@@ -69,11 +79,24 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)	
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+	    AddPeriodicSummer(10)
+    else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
     end
+end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()		
+	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(7,ARIS_ROBBERS)
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -88,7 +111,8 @@ function FirstMapAction()
 	
 	-- Text Tool String
 	String.Init("CM03_03_Neighborhood")
-
+	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 	LocalMusic.UseSet = DARKMOORMUSIC
 	
 	createPlayer2()
@@ -100,12 +124,20 @@ function FirstMapAction()
 	
 	-- Increase support timer
 	if CP_Difficulty > 0 then
-		timeForSupport = timeForSupport + 60 * 15
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+
+			GUI.SetTaxLevel(1)
+			timeForSupport = timeForSupport + 60 * 15
+		end
 
 		local bosspos1 = GetPosition("armyOutpost")
 		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
 		LookAt(bossID1, "supportNogersund")
 	end
+	
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (8 + CP_Difficulty * 2)})
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end

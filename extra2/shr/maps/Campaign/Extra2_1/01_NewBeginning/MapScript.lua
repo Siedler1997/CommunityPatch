@@ -7,6 +7,7 @@ IncludeLocals("player2")
 IncludeLocals("player3")
 IncludeLocals("player4")
 IncludeLocals("player5")
+IncludeLocals("player6")
 IncludeLocals("army_tools")
 IncludeLocals("army_blockade")
 IncludeLocals("army_outpost")
@@ -36,7 +37,11 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 ------------------------------------------------------------------------------
 function InitDiplomacy()
 	SetHostile(1,2)
+	SetHostile(1,6)
+	SetHostile(1,7)
 	SetHostile(2,3)
+	SetHostile(3,6)
+	SetHostile(3,7)
 	SetFriendly(1,3)
 	SetFriendly(1,4)
 	SetFriendly(1,5)
@@ -62,14 +67,19 @@ function InitResources()
 end
 ------------------------------------------------------------------------------
 function InitTechnologies()
-	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
-		_ResearchSuperTech = false
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
-
-		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
+		
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(6)
+		ResearchAllMilitaryTechsAddOn(7)
 	end
 end
 ------------------------------------------------------------------------------
@@ -84,7 +94,11 @@ function InitWeather()
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR1)
+	--Display.SetPlayerColorMapping(3,ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(5,EVIL_GOVERNOR_COLOR)
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 
 	if CP_Difficulty < 2 then
 		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
@@ -110,13 +124,15 @@ function FirstMapAction()
 	
 	-- Text Tool String
 	String.Init("CM03_01_NewBeginning")
-
+	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 	LocalMusic.UseSet = EUROPEMUSIC
 
 	createPlayer2()
 	createPlayer3()
 	createPlayer4()
 	createPlayer5()
+	createPlayer6()
 	startChapterOne()
 	
 	if CP_Difficulty > 0 then
@@ -149,5 +165,10 @@ function FirstMapAction()
 		--LookAt(bossID2, "Drake")
 	end
 
+	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 7, pos = "bearpos3", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end

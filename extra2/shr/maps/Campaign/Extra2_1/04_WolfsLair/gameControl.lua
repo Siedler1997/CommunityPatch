@@ -105,6 +105,8 @@ end
 function startChapterFour()
 
 	SetHostile(1,2)
+
+	StartSimpleJob("controlVarg")
 	
 	-- create AI armies
 	createArmyWolves()
@@ -154,4 +156,20 @@ function controlBriefingFarmer()
 	FarmerQuest.Distance		=	3000
 	FarmerQuest.Callback		=	createBriefingFarmer
 	SetupExpedition(FarmerQuest)
+end
+
+---------------------------------------------------------------------------------------------
+function controlVarg()
+	if IsAlive("Varg") then
+		if AreEnemiesInArea(GetPlayer("Varg"), GetPosition("Varg"), 2000) then
+			local HeroID = GetEntityId("Varg")
+			if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+				GUI.SettlerSummon(HeroID)
+			end
+
+			GUI.SettlerAffectUnitsInArea(HeroID)
+		end
+	else
+		return true
+	end
 end

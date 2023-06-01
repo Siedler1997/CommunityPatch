@@ -14,7 +14,7 @@ function createWolvesAttack()
 	for iw=1,ARMY_WOLVES_COUNT do
 		
 		ArmyWolvesAttack[iw]				=	{}
-		ArmyWolvesAttack[iw].player 		=	2
+		ArmyWolvesAttack[iw].player 		=	7
 		ArmyWolvesAttack[iw].id				=	2+iw
 		ArmyWolvesAttack[iw].strength		=	8
 		ArmyWolvesAttack[iw].position		=	GetPosition("armyWolves1")
@@ -78,19 +78,14 @@ function ControlWolvesAttack()
 					local RandomPos 			= GetRandom(2)+1
 					ArmyWolvesAttack[iw].position	= GetPosition("armyWolves"..RandomPos)
 				
-					local experience = MEDIUM_EXPERIENCE
-					if CP_Difficulty > 0 then
-						experience = experience + 2
-					end
-
 					local troopDescription = {
 				
 						maxNumberOfSoldiers	= 9,
 						minNumberOfSoldiers	= 0,
-						experiencePoints 	= experience,
+						experiencePoints 	= CP_Difficulty,
 					}
 				
-					troopDescription.leaderType = Entities.CU_AggressiveWolf
+					troopDescription.leaderType = Entities.CU_AggressiveWolf_Grey
 
 					for k=1,ArmyWolvesAttack[iw].spawnCount do
 						
