@@ -57,18 +57,21 @@ end
 ---------------------------------------------------------------------------------------------------------------------------
 
 SpawnArmyBase1 = function()
-	local experience = LOW_EXPERIENCE	
-	mainArmy1	= {	Entities.PU_LeaderBow3,
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PV_Cannon3,
-				Entities.PU_LeaderPoleArm3,
-				Entities.PU_LeaderSword3
-				}
-
-	if CP_Difficulty > 0 then
-		experience = experience + 2
+	mainArmy1	= {	Entities.PV_Cannon3 }
+	
+	if CP_Difficulty < 2 then
+		table.insert(mainArmy1, Entities.PU_LeaderBow3)
+		table.insert(mainArmy1, Entities.PU_LeaderHeavyCavalry1)
+		table.insert(mainArmy1, Entities.PU_LeaderPoleArm3)
+		table.insert(mainArmy1, Entities.PU_LeaderSword3)
+		table.insert(mainArmy1, Entities.PU_LeaderRifle1)
+	else
+		table.insert(mainArmy1, Entities.PU_LeaderBow4)
+		table.insert(mainArmy1, Entities.PU_LeaderHeavyCavalry2)
+		table.insert(mainArmy1, Entities.PU_LeaderPoleArm4)
+		table.insert(mainArmy1, Entities.PU_LeaderSword4)
+		table.insert(mainArmy1, Entities.PU_LeaderRifle2)
 	end
-
 
 	AttackPoints1	= {	"AttackTarget1",
 				"AttackTarget2",
@@ -84,7 +87,7 @@ SpawnArmyBase1 = function()
 
 
 		local pos = GetPosition("MainBaseSpawn1")
-		MainAttack1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		MainAttack1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(MainAttack1, "BaseAttack1")
 		LookAt(MainAttack1, "lookpos")
 

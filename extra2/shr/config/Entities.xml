@@ -1041,6 +1041,9 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>CU_SmithIdle</Entity>
+	<Entity>CU_StonecutterIdle</Entity>
+	<Entity>CU_BrickMakerIdle</Entity>
 	<Entity>CB_Grange</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>

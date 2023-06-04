@@ -53,9 +53,15 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(7, BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+	Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,15 +74,24 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutTorches      	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutFindResources	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutTorches      	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutFindResources	,0 )
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(7)
@@ -139,7 +154,8 @@ function Mission_FirstMapAction()
 
 
 	-- Set Music-Set
-
+	
+		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	Variables
@@ -190,6 +206,12 @@ function Mission_FirstMapAction()
     		--Game.GameTimeReset()
 		    
 		if CP_Difficulty > 0 then
+			if CP_Difficulty == 2 then
+				Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+
+				GUI.SetTaxLevel(1)
+			end
+
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 10, 0) }
 			for i = 2, table.getn(towers1) do
 				if IsExisting(towers1[i]) then
@@ -203,6 +225,14 @@ function Mission_FirstMapAction()
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen1"))
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen2"))	
 		end
-		--Tools.ExploreArea(-1, -1, 900) 
-	end
+
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (12 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 3, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
+	--Tools.ExploreArea(-1, -1, 900) 
+	--StartSimpleJob("GetMousePos")
+end
 

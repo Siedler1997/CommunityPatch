@@ -88,8 +88,13 @@ function InitWeatherGfxSets()
     end
 ------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)	
-    end
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+		AddPeriodicSummer(10)	
+	else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
+	end
+end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()

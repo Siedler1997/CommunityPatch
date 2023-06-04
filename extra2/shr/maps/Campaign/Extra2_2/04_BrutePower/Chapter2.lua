@@ -392,42 +392,42 @@ QUESTChapter3_COUNTER 		=	QUESTChapter3_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 function CreateRobbers()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
 	local etype2 = Entities.CU_Barbarian_LeaderClub1
+	local etype3 = Entities.CU_BanditLeaderBow1
 	if CP_Difficulty > 0 then
-		experience = experience + 2
 		etype1 = Entities.CU_BanditLeaderSword2
 		etype2 = Entities.CU_Barbarian_LeaderClub2
+		etype3 = Entities.CU_BanditLeaderBow2
 	end
 	local pos = GetPosition("SpawnCaravanAttack")
 	for i = 1, 6 do
-		local Robber = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+		local Robber = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 		SetEntityName(Robber, "Robber"..i)
 	end
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Robber7 	= AI.Entity_CreateFormation(5,etype1,0,8,pos.X,pos.Y,0,0,experience,0)
+	Robber7 	= AI.Entity_CreateFormation(5,etype1,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(Robber7, "Robber7")
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Robber8 	= AI.Entity_CreateFormation(5,etype2,0,8,pos.X,pos.Y,0,0,experience,0)
+	Robber8 	= AI.Entity_CreateFormation(5,etype2,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(Robber8, "Robber8")
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Robber9 	= AI.Entity_CreateFormation(5,Entities.CU_BanditLeaderBow1,0,4,pos.X,pos.Y,0,0,experience,0)
+	Robber9 	= AI.Entity_CreateFormation(5,etype3,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(Robber9, "Robber9")
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Robber10 	= AI.Entity_CreateFormation(5,Entities.CU_BanditLeaderBow1,0,4,pos.X,pos.Y,0,0,experience,0)
+	Robber10 	= AI.Entity_CreateFormation(5,etype3,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(Robber10, "Robber10")
 
 	local pos = GetPosition("SpawnCaravanAttack")
-	local Attacker1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+	local Attacker1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience+1,0)
 	SetEntityName(Attacker1, "Attacker1")
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Attacker2 	= AI.Entity_CreateFormation(5,etype1,0,8,pos.X,pos.Y,0,0,experience,0)
+	Attacker2 	= AI.Entity_CreateFormation(5,etype1,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(Attacker2, "Attacker2")
 
 	Move("Robber1","GatherCaravanAttack")
@@ -448,36 +448,36 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 
 function MonasteryDefense()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
+	local etype2 = Entities.CU_BanditLeaderBow1
 	if CP_Difficulty > 0 then
-		experience = experience + 2
 		etype1 = Entities.CU_BanditLeaderSword2
+		etype2 = Entities.CU_BanditLeaderBow2
 	end
 	for i = 1, 5 do
 		local pos = GetPosition("MonDefense"..i)
-		local Defender = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+		local Defender = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 		SetEntityName(Defender, "Defender"..i)
 	end
 
 	local pos 	= GetPosition("MonDefense5")
-	Defender6 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Defender6 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Defender6, "Defender6")
 
 	local pos 	= GetPosition("MonDefense1")
-	Defender7 	= AI.Entity_CreateFormation(5, Entities.CU_BanditLeaderBow1, 0, 4, pos.X, pos.Y, 0, 0, experience, 0)
+	Defender7 	= AI.Entity_CreateFormation(5, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Defender7, "Defender7")
 
 	local pos 	= GetPosition("MonDefense2")
-	Defender8 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Defender8 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Defender8, "Defender8")
 
 	local pos 	= GetPosition("MonDefense3")
-	Defender9 	= AI.Entity_CreateFormation(5, Entities.CU_BanditLeaderBow1, 0, 4, pos.X, pos.Y, 0, 0, experience, 0)
+	Defender9 	= AI.Entity_CreateFormation(5, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Defender9, "Defender9")
 
 	local pos 	= GetPosition("MonDefense4")
-	Defender10 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Defender10 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Defender10, "Defender10")
 
 end

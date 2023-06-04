@@ -77,8 +77,14 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	end
 end
 
 
@@ -97,7 +103,17 @@ function Mission_InitTechnologies()
 	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
 	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 ) 
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
@@ -145,12 +161,21 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
+	if CP_Difficulty == 0 then
 		AddGold(1300)
 		AddWood(3400)
 		AddClay(2500)
 		AddStone(4500)
 		AddIron(900)
 		AddSulfur(150)
+	else
+		AddGold(800)
+		AddWood(1200)
+		AddClay(1000)
+		AddStone(1000)
+		AddIron(300)
+		AddSulfur(0)
+	end
 
 	--	Variables
 
@@ -210,8 +235,9 @@ function Mission_FirstMapAction()
 		SetPlayerName(5, String.Key("_Player5Name"))
 
 	-- Set Music-Set
-
-		LocalMusic.UseSet = HIGHLANDMUSIC
+	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+	LocalMusic.UseSet = HIGHLANDMUSIC
 	
 	--	start quest
 
@@ -222,6 +248,19 @@ function Mission_FirstMapAction()
 	start1stChapter()
 	
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+
+			GUI.SetTaxLevel(1)
+			
+			ReplaceEntity("P1Village", Entities.CB_Grange)
+
+			local posvc = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			local ruinVC = Logic.CreateEntity(Entities.CB_DestroyAbleRuinResidence1,posvc.X,posvc.Y,0,5)
+			Logic.SetModelAndAnimSet(ruinVC, Models.XD_RuinResidence2)
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(3, Entities.PB_Tower1, 5, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then
@@ -234,16 +273,11 @@ function Mission_FirstMapAction()
 				ReplaceEntity(towers2[j], Entities.PB_Tower2)
 			end
 		end
-
-		local posvc = GetPosition("vc_empty")
-		local posrg = GetPosition("RobbersGenerator")
-		CreateEntity(0, Entities.XD_RockDestroyableMedium1, posvc)
-		DestroyEntity("vc_empty")
-		CreateEntity(0, Entities.XD_VillageCenter, posrg, "vc_empty")
-		DestroyEntity("RobbersGenerator")
-		CreateEntity(5, Entities.PB_VillageCenter1, posrg, "RobbersGenerator")
 	end
 
+	RaidersCreate({player = 5, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressivePolarBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
 	--Tools.ExploreArea(-1, -1, 900) 
+	--StartSimpleJob("GetMousePos")
 end
 

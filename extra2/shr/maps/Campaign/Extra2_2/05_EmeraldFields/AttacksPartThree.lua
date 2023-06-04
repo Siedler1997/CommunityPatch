@@ -30,6 +30,7 @@ setupArmyPart3Attack = function()
 
 	ArmyPart3Attack.Attack				= false
 	ArmyPart3Attack.AttackAllowed			= false
+	ArmyPart3Attack.experiencePoints		=	CP_Difficulty
 
 
 	-- Setup army

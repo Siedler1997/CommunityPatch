@@ -103,18 +103,16 @@ end
 ---------------------------------------------------------------------------------------------------------------------------
 
 GenerateArmy2 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	local troops	= 	{	
-				Entities.CU_BanditLeaderBow1
-				}
+	local troops	= 	{ }
 
 	if CP_Difficulty == 0 then
 		table.insert(troops, Entities.CU_BanditLeaderSword1)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub1)
+		table.insert(troops, Entities.CU_BanditLeaderBow1)
 	else
-		experience = experience + 2
 		table.insert(troops, Entities.CU_BanditLeaderSword2)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(troops, Entities.CU_BanditLeaderBow2)
 	end
 
 	AttackPoints	= {	"AttackTarget1",
@@ -132,7 +130,7 @@ GenerateArmy2 = function()
 
 
 		local pos = GetPosition("CampSpawn1")
-		RaidAttack3 = AI.Entity_CreateFormation(2, RandomUnit, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		RaidAttack3 = AI.Entity_CreateFormation(2, RandomUnit, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(RaidAttack3, "RandAttack3")
 
 
@@ -143,18 +141,16 @@ end
 ---------------------------------------------------------------------------------------------------------------------------
 
 GenerateArmy3 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	local troops	= 	{	
-				Entities.CU_BanditLeaderBow1
-				}
+	local troops	= 	{ }
 
 	if CP_Difficulty == 0 then
 		table.insert(troops, Entities.CU_BanditLeaderSword1)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub1)
+		table.insert(troops, Entities.CU_BanditLeaderBow1)
 	else
-		experience = experience + 2
 		table.insert(troops, Entities.CU_BanditLeaderSword2)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(troops, Entities.CU_BanditLeaderBow2)
 	end
 
 
@@ -172,7 +168,7 @@ GenerateArmy3 = function()
 
 
 		local pos = GetPosition("CampSpawn3")
-		RaidAttack4 = AI.Entity_CreateFormation(2, RandomUnit, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		RaidAttack4 = AI.Entity_CreateFormation(2, RandomUnit, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(RaidAttack4, "RandAttack4")
 
 

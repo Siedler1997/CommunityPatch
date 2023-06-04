@@ -50,11 +50,11 @@ function SpawnMoreHelp1()
 
 
 	local pos = GetPosition("ErecSpawn2")
-	ErecHelp1 = AI.Entity_CreateFormation(3,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,2,0)
+	ErecHelp1 = AI.Entity_CreateFormation(3,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(ErecHelp1, "ErecHelp1")
 
 	local pos = GetPosition("ErecSpawn2")
-	ErecHelp1 = AI.Entity_CreateFormation(3,Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,2,0)
+	ErecHelp1 = AI.Entity_CreateFormation(3,Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(ErecHelp2, "ErecHelp2")
 
 	StartJob("TimeControler111")

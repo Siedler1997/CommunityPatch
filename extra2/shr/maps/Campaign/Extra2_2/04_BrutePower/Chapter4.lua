@@ -11,12 +11,9 @@ function StartChapter4()
 
 	StartJob("Open2ndHalf")
 	NPCLeader1()
-	local experience = LOW_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 1
-	end
+
 	local pos = GetPosition("Relocation")
-	local MountainMenLeader = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,(experience+1),0)
+	local MountainMenLeader = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 	SetEntityName(MountainMenLeader, "MountainMenLeader")
 
 	createBriefingInfo()
@@ -26,17 +23,13 @@ end
 ------------------------------------------------------------------------------------------------
 
 function ContinueChapter4()
-	local experience = LOW_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 1
-	end
 	for i = 1, 12 do
 		local pos = GetPosition("TorukSup"..i)
-		local TorukSup = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+		local TorukSup = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 		SetEntityName(TorukSup, "TorukSup"..i)
 	end
 	local pos = GetPosition("Toruk")
-	local Toruk = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,(experience+1),0)
+	local Toruk = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 	SetEntityName(Toruk, "Toruk")
 
 	MakeVulnerable("Rock1")
@@ -180,21 +173,19 @@ QUESTEnemyMMAttacks_COUNTER 		=	QUESTEnemyMMAttacks_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 EnemyMMArmy = function()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderSword1
 	if CP_Difficulty > 0 then
-		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderSword2
 	end
 
 	local pos = GetPosition("MMAttack1")
-	RaidAttack1 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack1 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty+1, 0)
 	SetEntityName(RaidAttack1, "Rand1Attack1")
 
 	local pos = GetPosition("MMAttack2")
-	RaidAttack2 = AI.Entity_CreateFormation(3, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack2 = AI.Entity_CreateFormation(3, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty+1, 0)
 	SetEntityName(RaidAttack2, "Rand1Attack2")
 
 	Attack("Rand1Attack1","CaravanTarget")
@@ -263,19 +254,19 @@ QUESTEnemyMMAttacks1_COUNTER 		=	QUESTEnemyMMAttacks1_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 EnemyMMArmy1 = function()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
+	local etype2 = Entities.CU_BanditLeaderBow1
 	if CP_Difficulty > 0 then
-		experience = experience + 3
 		etype1 = Entities.CU_BanditLeaderSword2
+		etype2 = Entities.CU_BanditLeaderBow2
 	end
 
 	local pos = GetPosition("MMAttack4")
-	RaidAttack3 = AI.Entity_CreateFormation(3, Entities.CU_BanditLeaderBow1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack3 = AI.Entity_CreateFormation(3, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack3, "Rand1Attack3")
 
 	local pos = GetPosition("MMAttack2")
-	RaidAttack4 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack4 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack4, "Rand1Attack4")
 
 
@@ -346,19 +337,19 @@ QUESTEnemyMMAttacks2_COUNTER 		=	QUESTEnemyMMAttacks2_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 EnemyMMArmy2 = function()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
+	local etype2 = Entities.CU_BanditLeaderBow1
 	if CP_Difficulty > 0 then
-		experience = experience + 3
 		etype1 = Entities.CU_Barbarian_LeaderClub2
+		etype2 = Entities.CU_BanditLeaderBow2
 	end
 
 	local pos = GetPosition("MMAttack2")
-	RaidAttack5 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack5 = AI.Entity_CreateFormation(3, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack5, "Rand1Attack5")
 
 	local pos = GetPosition("MMAttack4")
-	RaidAttack6 = AI.Entity_CreateFormation(3, Entities.CU_BanditLeaderBow1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack6 = AI.Entity_CreateFormation(3, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack6, "Rand1Attack6")
 
 

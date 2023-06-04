@@ -745,6 +745,9 @@
 	<Entity>CB_Grange</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_EngineerIdle</Entity>
+	<Entity>CU_SmithIdle</Entity>
+	<Entity>CU_StonecutterIdle</Entity>
+	<Entity>CU_BrickMakerIdle</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>
 	<Entity>XD_Gold1</Entity>
 	<Entity>XD_WreckedBoat01</Entity>

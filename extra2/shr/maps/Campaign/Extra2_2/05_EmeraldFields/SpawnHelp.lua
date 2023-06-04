@@ -49,11 +49,11 @@ CampArmy_COUNTER 	        =	CampArmy_DELAY
 function SpawnMoreHelp()
 
 	local pos = GetPosition("AriSpawn1")
-	AriHelp1 = AI.Entity_CreateFormation(5,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,2,0)
+	AriHelp1 = AI.Entity_CreateFormation(5,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(AriHelp1, "AriHelp1")
 
 	local pos = GetPosition("AriSpawn1")
-	AriHelp2 = AI.Entity_CreateFormation(5,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,2,0)
+	AriHelp2 = AI.Entity_CreateFormation(5,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(AriHelp2, "AriHelp2")
 
 

@@ -110,14 +110,18 @@ end
 function Mission_InitPlayerColorMapping()
 	-- Set Colors
 
-		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
-		Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
-		Display.SetPlayerColorMapping(6, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(7, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(8, NPC_COLOR)		
+	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
+	Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
+	Display.SetPlayerColorMapping(6, ENEMY_COLOR2)	
+	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)	
+	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -133,7 +137,19 @@ function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ThiefSabotage     	,3 )
 	
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
@@ -190,12 +206,21 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(1000)
-		AddWood(1000)
-		AddClay(1500)
-		AddStone(1000)
-		AddIron(1000)
-		AddSulfur(1000)
+		if CP_Difficulty == 0 then
+			AddGold(1000)
+			AddWood(1000)
+			AddClay(1500)
+			AddStone(1000)
+			AddIron(1000)
+			AddSulfur(1000)
+		else
+			AddGold(500)
+			AddWood(500)
+			AddClay(800)
+			AddStone(500)
+			AddIron(500)
+			AddSulfur(500)
+		end
 
 	--	Variables
 
@@ -254,8 +279,9 @@ function Mission_FirstMapAction()
 		--SetPlayerName(7, String.Key("_Player7Name"))
 
 	-- Set Music-Set
-
-		LocalMusic.UseSet = EUROPEMUSIC
+	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+	LocalMusic.UseSet = EUROPEMUSIC
 	
 	-- Start quest
 
@@ -268,15 +294,28 @@ function Mission_FirstMapAction()
    	--	Game.GameTimeReset()
 		    	
 		if CP_Difficulty > 0 then
-			local vc1pos = GetPosition("vc_empty1") 	
-			local vc2pos = GetPosition("vc_empty2") 	
+			if CP_Difficulty == 2 then
+				Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+				Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 
-			DestroyEntity("vc_empty1")
-			DestroyEntity("vc_empty2")
+				GUI.SetTaxLevel(1)
+				
+				ReplaceEntity("p1vc", Entities.PB_VillageCenter1)
+			end
+			
+			local vc1pos = GetPosition("vc_empty1") 
+			DestroyEntity("vc_empty1")	
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc1pos.X,vc1pos.Y,0,0)
+
+			--[[
+			local vc2pos = GetPosition("vc_empty2") 	
+			DestroyEntity("vc_empty2")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,0,0)
+			--]]
 		end
 		--IncludeGlobals("MapEditorTools")
 		--StartCountdown(15, EnemyFirstArmy, false)
 		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
 	end
 
