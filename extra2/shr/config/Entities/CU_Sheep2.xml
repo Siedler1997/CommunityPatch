@@ -68,13 +68,6 @@
 			<Class>GGL::CBehaviorWalkCommand</Class>
 		</Logic>
 	</Behavior>
-
-	<Behavior>
-		<Logic classname="GGL::CEvadeExecutionBehaviorProps">
-			<Class>GGL::CEvadeExecutionBehavior</Class>
-			<BasePriority>100</BasePriority>
-		</Logic>
-	</Behavior>
 	
 	<Behavior>
 		<Logic classname="GGL::CGLBehaviorPropsDying">
