@@ -217,23 +217,24 @@ function Mission_FirstMapAction()
 			local vcpos1 = GetPosition("vc_empty1")
 			DestroyEntity("vc_empty1")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos1.X,vcpos1.Y,90,0)
+			--]]
 				
 			local vcpos2 = GetPosition("vc_empty2")
 			DestroyEntity("vc_empty2")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos2.X,vcpos2.Y,0,0)
-			--]]
+
 			local bosspos1 = GetPosition("Jail")
 			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 800),(bosspos1.Y - 1000),0,0,3,0)
 			LookAt(bossID1, "gate")
 		end
-
+		
 		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 		RaidersCreate({player = 3, pos = "rudelpos2", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 		RaidersCreate({player = 3, pos = "rudelpos3", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 
 		RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 		RaidersCreate({player = 3, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
-
+		
 		--Tools.ExploreArea(-1, -1, 900)
 		--StartSimpleJob("GetMousePos")
 	end
