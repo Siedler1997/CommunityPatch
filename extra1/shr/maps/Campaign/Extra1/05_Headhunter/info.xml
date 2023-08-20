@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>AOMapDescription/CM02_05_Headhunter_name</NameKey>
+ <DescKey>AOMapDescription/CM02_05_Headhunter_desc</DescKey>
+ <Name></Name>
+ <Desc></Desc>
+ <SizeX>545</SizeX>
+ <SizeY>545</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\Textures\GUI\MapPics\externalmap</MiniMapTextureName>
+ <Key>1</Key>
+ <GUID>
+  <Data>e949b733-963c-4aa6-b183-2687e64ba138</Data>
+ </GUID>
+</root>
