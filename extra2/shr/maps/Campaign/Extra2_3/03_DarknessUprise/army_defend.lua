@@ -1,8 +1,7 @@
 createArmyDefend = function()
-	local strength = 4
+	local strength = 4 + CP_Difficulty*2
 	local cannontype = Entities.PV_Cannon1
 	if CP_Difficulty > 0 then	
-		strength = strength + 2
 		cannontype = Entities.PV_Cannon3
 	end
 	armyDef1					= {}

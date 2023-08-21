@@ -57,13 +57,21 @@ BLUE = 1
 RED = 2
 
 
-		Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
-		Display.SetPlayerColorMapping(2,BLUE)		
-		Display.SetPlayerColorMapping(3, BLUE)
+	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
+	Display.SetPlayerColorMapping(6, NPC_COLOR)
+	Display.SetPlayerColorMapping(8, NPC_COLOR)
+		
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(2, PLAYER_COLOR)
+		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 		Display.SetPlayerColorMapping(5, 15)
-		Display.SetPlayerColorMapping(7, BLUE)
-		Display.SetPlayerColorMapping(6, NPC_COLOR)
-		Display.SetPlayerColorMapping(8, NPC_COLOR)
+		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(5, 16)
+		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
+	end
 		
 	
 end
@@ -81,16 +89,25 @@ function Mission_InitTechnologies()
 --	Logic.SetTechnologyState(HumanPlayer,Technologies.GT_StandingArmy,1)
 --	Logic.SetTechnologyState(HumanPlayer,Technologies.GT_Metallurgy,1)
 	
-	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Beautification01, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_University, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Farm, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Residence, 0)
+	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Beautification01, 0)
+	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_University, 0)
+	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Farm, 0)
+	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Residence, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Barracks,3)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Archery,3)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Blacksmith,3)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Sawmill,3)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(7)
@@ -141,10 +158,10 @@ function Mission_InitWeather()
 function Mission_InitMerchants()
 	
 	local mercenaryId = Logic.GetEntityIDByName("merchant")
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BlackKnight_LeaderMace1, 3, ResourceType.Iron, 300)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub1, 3, ResourceType.Iron, 300)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BlackKnight_LeaderMace2, 3, ResourceType.Iron, 300)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 3, ResourceType.Iron, 300)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Scout, 5, ResourceType.Gold, 150)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow1, 3, ResourceType.Gold, 250)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow2, 3, ResourceType.Gold, 250)
 	
 	
 end
@@ -258,6 +275,10 @@ function Mission_FirstMapAction()
 	SetPlayerName(2, String.Key("_Player2Name"))
 	
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			GUI.SetTaxLevel(1)
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then
@@ -265,7 +286,19 @@ function Mission_FirstMapAction()
 			end
 		end
 	end
-
+	if CP_Difficulty < 2 then
+		Display.SetPlayerColorMapping(2, PLAYER_COLOR)
+		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+		Display.SetPlayerColorMapping(5, 15)
+		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(5, 16)
+		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
+	end
+	
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
 

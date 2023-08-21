@@ -4,11 +4,7 @@
 --***********************[starts the timer for the second part of the road]******************************************
 
 startTimer_2 = function()
-	local time = 20
-	if CP_Difficulty > 0 then
-		time = time - 5
-	end
-	StartCountdown(time * 60, ThiefTimer_2, true)
+	StartCountdown(20 * 60, ThiefTimer_2, true)
 
 	AddGold(3000)
 	AddIron(300)

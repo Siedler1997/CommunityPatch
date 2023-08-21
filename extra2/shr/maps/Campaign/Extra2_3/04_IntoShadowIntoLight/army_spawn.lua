@@ -329,13 +329,13 @@ Action_ControlCavalryArmies = function()
 
 ----------------------------------
 
-function createDarioArmy(_troopsnum)
+function createDarioArmy()
 
 	-- Init army
 	ArmyPatrol						= 	{}
 	ArmyPatrol.player 				=	6
-	ArmyPatrol.id					=	3
-	ArmyPatrol.strength				=	20
+	ArmyPatrol.id					=	0
+	ArmyPatrol.strength				=	8
 	ArmyPatrol.position				=	GetPosition("ArmyDario")
 	ArmyPatrol.rodeLength			=	10000
 	ArmyPatrol.beAgressive			=	true
@@ -360,7 +360,7 @@ function createDarioArmy(_troopsnum)
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		experience = experience + 1
 	end
 	
@@ -373,7 +373,7 @@ function createDarioArmy(_troopsnum)
 	
 	local RandomUnit={}
 
-	for h=1,math.floor(_troopsnum / 2) + 10 ,1 do
+	for h=1,8 ,1 do
 
 	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
 
@@ -408,13 +408,13 @@ end
 
 ----------------------------
 
-function createDarioArmy1(_troopsnum)
+function createDarioArmy1()
 
 	-- Init army
 	ArmyPatrol1						= 	{}
 	ArmyPatrol1.player 				=	6
-	ArmyPatrol1.id					=	2
-	ArmyPatrol1.strength				=	20
+	ArmyPatrol1.id					=	4
+	ArmyPatrol1.strength				=	8
 	ArmyPatrol1.position				=	GetPosition("ArmyDario1")
 	ArmyPatrol1.rodeLength			=	10000
 	ArmyPatrol1.beAgressive			=	true
@@ -439,7 +439,7 @@ function createDarioArmy1(_troopsnum)
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		experience = experience + 1
 	end
 	
@@ -453,7 +453,7 @@ function createDarioArmy1(_troopsnum)
 	
 	local RandomUnit={}
 
-	for h=1,math.floor(_troopsnum / 2) + 10 ,1 do
+	for h=1,8 ,1 do
 
 	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
 
@@ -487,16 +487,14 @@ function ControlArmyDario1()
 	end
 end
 
-----------------------------
-
-function createDarioArmy2(_troopsnum)
+function createDarioArmy2()
 
 	-- Init army
 	ArmyPatrol2						= 	{}
-	ArmyPatrol2.player 				=	3
-	ArmyPatrol2.id					=	0
-	ArmyPatrol2.strength				=	20
-	ArmyPatrol2.position				=	GetPosition("traderoute3_1")
+	ArmyPatrol2.player 				=	6
+	ArmyPatrol2.id					=	5
+	ArmyPatrol2.strength				=	8
+	ArmyPatrol2.position				=	GetPosition("ArmyDario1")
 	ArmyPatrol2.rodeLength			=	10000
 	ArmyPatrol2.beAgressive			=	true
 	
@@ -510,18 +508,17 @@ function createDarioArmy2(_troopsnum)
 	
 	SetupArmy(ArmyPatrol2)
 
-	local troops = { 		
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PU_LeaderHeavyCavalry2,
-				Entities.PU_LeaderCavalry2,
-				Entities.PU_LeaderCavalry2
+	local troops = { 		Entities.PV_Cannon4,
+				Entities.PU_LeaderBow4,
+				Entities.PU_LeaderPoleArm4,
+				Entities.PU_LeaderSword4,
+				Entities.PU_LeaderSword4,
+				Entities.PU_LeaderBow4,
+				Entities.PU_LeaderRifle2
 				}
 	
 	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		experience = experience + 1
 	end
 	
@@ -535,7 +532,7 @@ function createDarioArmy2(_troopsnum)
 	
 	local RandomUnit={}
 
-	for h=1,math.floor(_troopsnum / 2) + 10 ,1 do
+	for h=1,8 ,1 do
 
 	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
 
@@ -565,6 +562,327 @@ function ControlArmyDario2()
 		Redeploy(ArmyPatrol2, ArmyPatrol2.position)
 			
 		TickOffensiveAIController(ArmyPatrol2)
+	
+	end
+end
+
+function createDarioArmy3()
+
+	-- Init army
+	ArmyPatrol3						= 	{}
+	ArmyPatrol3.player 				=	6
+	ArmyPatrol3.id					=	6
+	ArmyPatrol3.strength				=	8
+	ArmyPatrol3.position				=	GetPosition("ArmyDario1")
+	ArmyPatrol3.rodeLength			=	10000
+	ArmyPatrol3.beAgressive			=	true
+	
+	ArmyPatrol3.retreatStrength		=	0
+	ArmyPatrol3.baseDefenseRange		=	10000
+	ArmyPatrol3.outerDefenseRange	=	10000
+	ArmyPatrol3.AttackAllowed		=	true
+	ArmyPatrol3.pulse				=	false
+	
+--	ArmyPatrol3.patrolPointTime		=	3*60
+	
+	SetupArmy(ArmyPatrol3)
+
+	local troops = { 		Entities.PV_Cannon4,
+				Entities.PU_LeaderBow4,
+				Entities.PU_LeaderPoleArm4,
+				Entities.PU_LeaderSword4,
+				Entities.PU_LeaderSword4,
+				Entities.PU_LeaderBow4,
+				Entities.PU_LeaderRifle2
+				}
+	
+	local experience = HIGH_EXPERIENCE
+	if CP_Difficulty == 2 then
+		experience = experience + 1
+	end
+	
+				
+	local troopDescription = {
+	
+		maxNumberOfSoldiers	= 8,
+		minNumberOfSoldiers	= 0,
+		experiencePoints 	= experience,
+	}			
+	
+	local RandomUnit={}
+
+	for h=1,8 ,1 do
+
+	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
+
+	troopDescription.leaderType = RandomUnit[h]
+	EnlargeArmy(ArmyPatrol3,troopDescription)
+
+	end
+
+	Redeploy(ArmyPatrol3, ArmyPatrol3.position)
+
+	StartSimpleJob("ControlArmyDario3")
+
+end
+
+
+function ControlArmyDario3()
+
+	if Counter.Tick2("ControlArmyDario3", 10) then
+
+		if IsDead(ArmyPatrol3) then
+		
+		return true
+		end
+	
+		ArmyPatrol3.position	=	GetPosition("my_castle")
+			
+		Redeploy(ArmyPatrol3, ArmyPatrol3.position)
+			
+		TickOffensiveAIController(ArmyPatrol3)
+	
+	end
+end
+
+----------------------------
+
+function createDarioArmyCavalry1()
+
+	-- Init army
+	ArmyPatrolCavalry1						= 	{}
+	ArmyPatrolCavalry1.player 				=	3
+	ArmyPatrolCavalry1.id					=	7
+	ArmyPatrolCavalry1.strength				=	8
+	ArmyPatrolCavalry1.position				=	GetPosition("traderoute3_1")
+	ArmyPatrolCavalry1.rodeLength			=	10000
+	ArmyPatrolCavalry1.beAgressive			=	true
+	
+	ArmyPatrolCavalry1.retreatStrength		=	0
+	ArmyPatrolCavalry1.baseDefenseRange		=	10000
+	ArmyPatrolCavalry1.outerDefenseRange	=	10000
+	ArmyPatrolCavalry1.AttackAllowed		=	true
+	ArmyPatrolCavalry1.pulse				=	false
+	
+--	ArmyPatrolCavalry1.patrolPointTime		=	3*60
+	
+	SetupArmy(ArmyPatrolCavalry1)
+
+	local troops = { 		
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderCavalry2,
+				Entities.PU_LeaderCavalry2
+				}
+	
+	local experience = HIGH_EXPERIENCE
+	if CP_Difficulty == 2 then
+		experience = experience + 1
+	end
+	
+				
+	local troopDescription = {
+	
+		maxNumberOfSoldiers	= 8,
+		minNumberOfSoldiers	= 0,
+		experiencePoints 	= experience,
+	}			
+	
+	local RandomUnit={}
+
+	for h=1,8 ,1 do
+
+	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
+
+	troopDescription.leaderType = RandomUnit[h]
+	EnlargeArmy(ArmyPatrolCavalry1,troopDescription)
+
+	end
+
+	Redeploy(ArmyPatrolCavalry1, ArmyPatrolCavalry1.position)
+
+	StartSimpleJob("ControlDarioArmyCavalry1")
+
+end
+
+
+function ControlDarioArmyCavalry1()
+
+	if Counter.Tick2("ControlDarioArmyCavalry1", 10) then
+
+		if IsDead(ArmyPatrolCavalry1) then
+		
+		return true
+		end
+	
+		ArmyPatrolCavalry1.position	=	GetPosition("my_castle")
+			
+		Redeploy(ArmyPatrolCavalry1, ArmyPatrolCavalry1.position)
+			
+		TickOffensiveAIController(ArmyPatrolCavalry1)
+	
+	end
+end
+
+function createDarioArmyCavalry2()
+
+	-- Init army
+	ArmyPatrolCavalry2						= 	{}
+	ArmyPatrolCavalry2.player 				=	3
+	ArmyPatrolCavalry2.id					=	8
+	ArmyPatrolCavalry2.strength				=	8
+	ArmyPatrolCavalry2.position				=	GetPosition("traderoute3_1")
+	ArmyPatrolCavalry2.rodeLength			=	10000
+	ArmyPatrolCavalry2.beAgressive			=	true
+	
+	ArmyPatrolCavalry2.retreatStrength		=	0
+	ArmyPatrolCavalry2.baseDefenseRange		=	10000
+	ArmyPatrolCavalry2.outerDefenseRange	=	10000
+	ArmyPatrolCavalry2.AttackAllowed		=	true
+	ArmyPatrolCavalry2.pulse				=	false
+	
+--	ArmyPatrolCavalry2.patrolPointTime		=	3*60
+	
+	SetupArmy(ArmyPatrolCavalry2)
+
+	local troops = { 		
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderCavalry2,
+				Entities.PU_LeaderCavalry2
+				}
+	
+	local experience = HIGH_EXPERIENCE
+	if CP_Difficulty == 2 then
+		experience = experience + 1
+	end
+	
+				
+	local troopDescription = {
+	
+		maxNumberOfSoldiers	= 8,
+		minNumberOfSoldiers	= 0,
+		experiencePoints 	= experience,
+	}			
+	
+	local RandomUnit={}
+
+	for h=1,8 ,1 do
+
+	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
+
+	troopDescription.leaderType = RandomUnit[h]
+	EnlargeArmy(ArmyPatrolCavalry2,troopDescription)
+
+	end
+
+	Redeploy(ArmyPatrolCavalry2, ArmyPatrolCavalry2.position)
+
+	StartSimpleJob("ControlDarioArmyCavalry2")
+
+end
+
+
+function ControlDarioArmyCavalry2()
+
+	if Counter.Tick2("ControlDarioArmyCavalry2", 10) then
+
+		if IsDead(ArmyPatrolCavalry2) then
+		
+		return true
+		end
+	
+		ArmyPatrolCavalry2.position	=	GetPosition("my_castle")
+			
+		Redeploy(ArmyPatrolCavalry2, ArmyPatrolCavalry2.position)
+			
+		TickOffensiveAIController(ArmyPatrolCavalry2)
+	
+	end
+end
+
+function createDarioArmyCavalry3()
+
+	-- Init army
+	ArmyPatrolCavalry3						= 	{}
+	ArmyPatrolCavalry3.player 				=	3
+	ArmyPatrolCavalry3.id					=	9
+	ArmyPatrolCavalry3.strength				=	8
+	ArmyPatrolCavalry3.position				=	GetPosition("traderoute3_1")
+	ArmyPatrolCavalry3.rodeLength			=	10000
+	ArmyPatrolCavalry3.beAgressive			=	true
+	
+	ArmyPatrolCavalry3.retreatStrength		=	0
+	ArmyPatrolCavalry3.baseDefenseRange		=	10000
+	ArmyPatrolCavalry3.outerDefenseRange	=	10000
+	ArmyPatrolCavalry3.AttackAllowed		=	true
+	ArmyPatrolCavalry3.pulse				=	false
+	
+--	ArmyPatrolCavalry3.patrolPointTime		=	3*60
+	
+	SetupArmy(ArmyPatrolCavalry3)
+
+	local troops = { 		
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderHeavyCavalry2,
+				Entities.PU_LeaderCavalry2,
+				Entities.PU_LeaderCavalry2
+				}
+	
+	local experience = HIGH_EXPERIENCE
+	if CP_Difficulty == 2 then
+		experience = experience + 1
+	end
+	
+				
+	local troopDescription = {
+	
+		maxNumberOfSoldiers	= 8,
+		minNumberOfSoldiers	= 0,
+		experiencePoints 	= experience,
+	}			
+	
+	local RandomUnit={}
+
+	for h=1,8 ,1 do
+
+	RandomUnit[h] = troops[Logic.GetRandom(table.getn(troops))+1]
+
+	troopDescription.leaderType = RandomUnit[h]
+	EnlargeArmy(ArmyPatrolCavalry3,troopDescription)
+
+	end
+
+	Redeploy(ArmyPatrolCavalry3, ArmyPatrolCavalry3.position)
+
+	StartSimpleJob("ControlDarioArmyCavalry3")
+
+end
+
+
+function ControlDarioArmyCavalry3()
+
+	if Counter.Tick2("ControlDarioArmyCavalry3", 10) then
+
+		if IsDead(ArmyPatrolCavalry3) then
+		
+		return true
+		end
+	
+		ArmyPatrolCavalry3.position	=	GetPosition("my_castle")
+			
+		Redeploy(ArmyPatrolCavalry3, ArmyPatrolCavalry3.position)
+			
+		TickOffensiveAIController(ArmyPatrolCavalry3)
 	
 	end
 end

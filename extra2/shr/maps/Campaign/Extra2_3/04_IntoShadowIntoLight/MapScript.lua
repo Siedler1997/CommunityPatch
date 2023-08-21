@@ -6,6 +6,7 @@
 Script.Load( Folders.MapTools.."Main.lua" )
 
 CP_Difficulty = 0
+ErecOnTheMove = 0
 
 --Include cutscenes
 Cutscenes = {}
@@ -58,14 +59,23 @@ function Mission_InitPlayerColorMapping()
 BLUE = 1
 RED = 2
 
-		Display.SetPlayerColorMapping(1, KERBEROS_COLOR)
-		Display.SetPlayerColorMapping(2, BLUE)
-		Display.SetPlayerColorMapping(3, BLUE)
-		Display.SetPlayerColorMapping(4, BLUE)
-		Display.SetPlayerColorMapping(5, BLUE)
-		Display.SetPlayerColorMapping(6, BLUE)
-		Display.SetPlayerColorMapping(7, 15)
-		Display.SetPlayerColorMapping(8, NPC_COLOR)	
+	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)
+	Display.SetPlayerColorMapping(2, BLUE)
+	Display.SetPlayerColorMapping(3, BLUE)
+	Display.SetPlayerColorMapping(4, BLUE)
+	Display.SetPlayerColorMapping(5, BLUE)
+	Display.SetPlayerColorMapping(6, BLUE)
+	Display.SetPlayerColorMapping(7, 15)
+	Display.SetPlayerColorMapping(8, NPC_COLOR)	
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(6, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(7, 16)
+	end
 					
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -85,7 +95,19 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_MasterBuilderWorkshop, 0)
 	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.GT_Arhitecture, 0)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
@@ -134,10 +156,16 @@ function Mission_InitWeather()
 ----	Logic.AddWeatherElement(3, 90, 1, 8, 5, 10)		-- Winter with Rain and Snow
 --	Logic.AddWeatherElement(3, 60, 1, 7, 5, 10)		-- Winter with Rain
 --	Logic.AddWeatherElement(2, 90, 1, 2, 5, 10)		-- Foggy with Rain
-	Logic.AddWeatherElement(1, 300, 1, 1, 5, 10)		-- Sommer
+--	Logic.AddWeatherElement(1, 300, 1, 1, 5, 10)		-- Sommer
 --	Logic.AddWeatherElement(2, 130, 1, 2, 5, 10)	-- Foggy with Rain
 
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+		AddPeriodicSummer(10)	
+	else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
 	end
+end
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -148,13 +176,13 @@ function Mission_InitMerchants()
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BlackKnight_LeaderMace2, 3, ResourceType.Iron, 300)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 3, ResourceType.Iron, 300)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Scout, 5, ResourceType.Gold, 150)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow1, 3, ResourceType.Gold, 250)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow2, 3, ResourceType.Gold, 250)
 
 	local mercenaryId = Logic.GetEntityIDByName("merchant2")
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderSword2, 3, ResourceType.Iron, 300)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Thief, 6, ResourceType.Gold, 150)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Scout, 5, ResourceType.Gold, 150)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow1, 3, ResourceType.Gold, 250)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow2, 3, ResourceType.Gold, 250)
 	
 end
 
@@ -216,6 +244,17 @@ function Mission_FirstMapAction()
 	LocalMusic.UseSet = DARKMOORMUSIC
 
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(6, NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(7, 16)
+
+			GUI.SetTaxLevel(1)
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then
@@ -251,8 +290,13 @@ function Mission_FirstMapAction()
 		Logic.CreateEntity(Entities.PB_Tower1, 500, 500, 0, 3);
 		Logic.CreateEntity(Entities.PB_Tower1, 500, 500, 0, 6);
 	end
+	
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+	RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end
 
 

@@ -6,11 +6,11 @@
 	</ResourceCosts>
 	
 	<DamageModifier>
-		<Value>6</Value>
+		<Value>4</Value>
 		<Operation>+</Operation>
 	</DamageModifier>
 	<ArmorModifier>
-		<Value>6</Value>
+		<Value>4</Value>
 		<Operation>+</Operation>
 	</ArmorModifier>
 

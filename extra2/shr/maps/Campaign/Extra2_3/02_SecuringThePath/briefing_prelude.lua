@@ -74,11 +74,7 @@ createBriefingPrelude1 = function()
 end
 
 BriefingPrelude1Finished = function()
-	local time = 30
-	if CP_Difficulty > 0 then
-		time = time - 5
-	end
-	StartCountdown(time * 60, ThiefTimer, true)
+	StartCountdown(30 * 60, ThiefTimer, true)
 --StartSimpleJob("ThiefTimer")
 --GUIQuestTools.ToggleStopWatch(TIMER,1)
 
