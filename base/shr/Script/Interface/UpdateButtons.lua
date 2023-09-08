@@ -984,37 +984,43 @@ end
 
 function GUIUpdate_OvertimesButtons()
 	local BuildingID = GUI.GetSelectedEntity()
+	local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(BuildingID))
 	local RemainingOvertimeTimeInPercent = Logic.GetOvertimeRechargeTimeAtBuilding(BuildingID)
 	local ProgressBarWidget = XGUIEng.GetWidgetID( "OvertimesButton_Recharge" );
 	local MaxNumberOfworkers = Logic.GetCurrentMaxNumWorkersInBuilding(BuildingID)
-	
-	if MaxNumberOfworkers == 0 then
-		XGUIEng.ShowWidget("BuildingResume",1)
+
+	if UpgradeCategory == UpgradeCategories.Residence or UpgradeCategory == UpgradeCategories.Farm then
+		XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes, 0)	
+		XGUIEng.ShowWidget("BuildingResume",0)
 		XGUIEng.ShowWidget("BuildingShutDown",0)
 	else
-		XGUIEng.ShowWidget("BuildingResume",0)
-		XGUIEng.ShowWidget("BuildingShutDown",1)
-	end
-
-	if Logic.IsOvertimeActiveAtBuilding(BuildingID) == 1 then
-		XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes, 1)	
-		XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes, 0)	
-		XGUIEng.SetMaterialColor(ProgressBarWidget, 1, 0, 0, 0, 0)	
-	else
-		XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes  ,0)	
-		XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes  ,1)	
-		XGUIEng.SetMaterialColor(ProgressBarWidget,1,214,44,24,189)		
-		
-		if RemainingOvertimeTimeInPercent == 0 then
-			XGUIEng.DisableButton(gvGUI_WidgetID.ActivateOvertimes, 0)
+		if MaxNumberOfworkers == 0 then
+			XGUIEng.ShowWidget("BuildingResume",1)
+			XGUIEng.ShowWidget("BuildingShutDown",0)
 		else
-			XGUIEng.DisableButton(gvGUI_WidgetID.ActivateOvertimes, 1)
+			XGUIEng.ShowWidget("BuildingResume",0)
+			XGUIEng.ShowWidget("BuildingShutDown",1)
 		end
-				
-	end
 
-	XGUIEng.SetProgressBarValues(ProgressBarWidget, RemainingOvertimeTimeInPercent, 100)
-	
+		if Logic.IsOvertimeActiveAtBuilding(BuildingID) == 1 then
+			XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes, 1)	
+			XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes, 0)	
+			XGUIEng.SetMaterialColor(ProgressBarWidget, 1, 0, 0, 0, 0)	
+		else
+			XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes  ,0)	
+			XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes  ,1)	
+			XGUIEng.SetMaterialColor(ProgressBarWidget,1,214,44,24,189)		
+		
+			if RemainingOvertimeTimeInPercent == 0 then
+				XGUIEng.DisableButton(gvGUI_WidgetID.ActivateOvertimes, 0)
+			else
+				XGUIEng.DisableButton(gvGUI_WidgetID.ActivateOvertimes, 1)
+			end
+				
+		end
+
+		XGUIEng.SetProgressBarValues(ProgressBarWidget, RemainingOvertimeTimeInPercent, 100)
+	end
 end
 
 
