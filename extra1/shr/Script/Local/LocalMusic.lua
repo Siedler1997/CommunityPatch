@@ -322,16 +322,13 @@ end
 
 -----------------------------------------------------------------------------
 --Start battle music
-function
-LocalMusic.CallbackSettlerKilled(_HurterPlayerID, _HurtPlayerID)
-	
+function LocalMusic.CallbackSettlerKilled(_HurterPlayerID, _HurtPlayerID)
 	local PlayerID = GUI.GetPlayerID()
 	
-	if _HurterPlayerID ~= _HurtPlayerID 
-	and PlayerID == _HurtPlayerID  then		
-		if LocalMusic.LastBattleMusicStarted < Logic.GetTime() then		
+	if _HurterPlayerID ~= _HurtPlayerID and PlayerID == _HurtPlayerID  then		
+		if LocalMusic.LastBattleMusicStarted < XGUIEng.GetSystemTime() then		
 			LocalMusic.BattlesOnTheMap = 1
-			LocalMusic.LastBattleMusicStarted = Logic.GetTime() + 127
+			LocalMusic.LastBattleMusicStarted = XGUIEng.GetSystemTime() + 127
 			LocalMusic.SongLength = 0
 		end
 	end
