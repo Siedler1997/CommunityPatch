@@ -206,8 +206,8 @@ function Mission_FirstMapAction()
 	--BurningHouse
 	Logic.HurtEntity(GetID("BurningHouse"),400)
 
-	CreateRandomChests()	
 	if CP_Difficulty == 0 then
+		CreateRandomChests()	
 		local hqpos = GetPosition("Pl5_SpawnPos")
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")

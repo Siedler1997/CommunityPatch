@@ -189,8 +189,8 @@ function Mission_FirstMapAction()
 
 --	StartCutscene("MissionComplete")
 
-	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		if CP_Difficulty == 2 then

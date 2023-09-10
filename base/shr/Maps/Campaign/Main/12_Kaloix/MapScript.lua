@@ -183,8 +183,8 @@ function Mission_FirstMapAction()
 	DestroyEntity("rock_gold1")
 	DestroyEntity("rock_gold2")
 
-	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		if CP_Difficulty == 2 then

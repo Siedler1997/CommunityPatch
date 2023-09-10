@@ -283,7 +283,6 @@ function Mission_FirstMapAction()
 	--
 	--	startQuestDestroyKerberos()
 
-	CreateRandomChests()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
@@ -327,6 +326,8 @@ function Mission_FirstMapAction()
 				ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
 			end
 		end
+	else
+		CreateRandomChests()
 	end
 
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

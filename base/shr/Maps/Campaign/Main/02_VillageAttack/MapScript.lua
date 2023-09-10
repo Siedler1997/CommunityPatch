@@ -213,7 +213,6 @@ function Mission_FirstMapAction()
 
 		startQuestMoveToCastle()
 
-		CreateRandomGoldChests()
 		if CP_Difficulty > 0 then
 			local wolfSet = RaidersDefaultSets.Vanilla
 			if CP_Difficulty == 2 then
@@ -228,6 +227,8 @@ function Mission_FirstMapAction()
 			local bosspos2 = GetPosition("tower2")
 			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 			LookAt(bossID2, "defendRoute")
+		else
+			CreateRandomGoldChests()
 		end
 
 		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})

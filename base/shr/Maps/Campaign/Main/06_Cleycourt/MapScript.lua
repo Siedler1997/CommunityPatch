@@ -165,7 +165,6 @@ function Mission_FirstMapAction()
 	TimeLine.Start()
 
 --	EnableDebugging()
-	CreateRandomGoldChests()
 	if CP_Difficulty == 0 then
 		CreateRandomChests()
 	else
@@ -189,6 +188,8 @@ function Mission_FirstMapAction()
 		local bosspos = GetPosition("KerberosCamp")
 		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
 		LookAt(bossID, "Dario")
+	else
+		CreateRandomGoldChests()
 	end
 
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

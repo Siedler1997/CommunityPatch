@@ -212,8 +212,8 @@ function Mission_FirstMapAction()
 
 	-- Start prelude
 
-		CreateRandomGoldChests()	
 		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()	
 			CreateRandomChests()
 
 			DestroyEntity("hard_rock")

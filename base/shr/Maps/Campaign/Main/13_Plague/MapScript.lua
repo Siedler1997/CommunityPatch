@@ -237,8 +237,8 @@ function Mission_FirstMapAction()
 
 		start1stCutscene()
 		
-		CreateRandomGoldChests()
 		if CP_Difficulty == 0 then
+			CreateRandomGoldChests()
 			CreateRandomChests()
 		else
 			if CP_Difficulty == 2 then

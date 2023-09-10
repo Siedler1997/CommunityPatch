@@ -193,6 +193,7 @@ function Mission_FirstMapAction()
 	start1stQuest()
 
 	if CP_Difficulty == 0 then
+		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
 		if CP_Difficulty == 2 then
@@ -216,7 +217,6 @@ function Mission_FirstMapAction()
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
 	RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 
-	CreateRandomGoldChests()
 
 	--Tools.ExploreArea(-1, -1, 900)
 	--ResearchAllMilitaryTechs(1)
