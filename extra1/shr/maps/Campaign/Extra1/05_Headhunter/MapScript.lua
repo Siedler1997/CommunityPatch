@@ -44,13 +44,8 @@ end
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(500)
-    AddClay(500)
-    AddGold(1000)
-    AddSulfur(500)
-    AddIron(200)
-    AddWood(1000)
-    end
+	GlobalMissionScripting.GiveResouces(1, 1000, 500, 1000, 500, 200, 500)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
@@ -118,16 +113,18 @@ function FirstMapAction()
 	-- SetPlayerName(6, "Freundliche Stadt")
 
 		LocalMusic.UseSet = EVELANCEMUSIC
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
     beginChapterOne()
 
 	--Deactivated because workers create lots of internal camp fires
 	--CreateSettlersForKarratas()
     
-	CreateRandomGoldChests()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
@@ -143,6 +140,8 @@ function FirstMapAction()
 		for i = 1, 5 do
 			ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
 		end
+	else
+		CreateRandomGoldChests()
 	end
 
 	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

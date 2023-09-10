@@ -196,6 +196,10 @@ function Mission_FirstMapAction()
 	--EnableDebugging()
 
 	createArmyFolklungA()
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	StartCutscene("Intro", start1stQuest)
 		
@@ -221,7 +225,6 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_Tower3, 15900, 24500, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 9700, 29800, 0, 5);
 
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			DestroyEntity("TheRock")

@@ -230,6 +230,10 @@ function Mission_FirstMapAction()
 		createPlayer8()
 
 	--	entry point
+	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
 
 		start1stCutscene()
 		
@@ -238,7 +242,6 @@ function Mission_FirstMapAction()
 			CreateRandomChests()
 		else
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
 			end
 

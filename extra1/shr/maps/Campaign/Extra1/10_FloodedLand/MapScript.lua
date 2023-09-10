@@ -10,13 +10,8 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(1000)
-    AddClay(1000)
-    AddGold(1000)
-    AddSulfur(1000)
-    AddIron(1000)
-    AddWood(1000)
-    end
+	GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 1000, 1000, 1000)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
@@ -139,6 +134,10 @@ function FirstMapAction()
 
 
 	LocalMusic.UseSet = DARKMOORMUSIC
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	start1stChapter()
 
@@ -147,7 +146,6 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
 			Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
 

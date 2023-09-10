@@ -21,13 +21,8 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(1000)
-    AddClay(500)
-    AddGold(500)
-    AddSulfur(0)
-    AddIron(500)
-    AddWood(1000)
-    end
+	GlobalMissionScripting.GiveResouces(1, 500, 500, 1000, 1000, 500, 0)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 
@@ -147,12 +142,15 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])	
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
+	
 	-- start
 	StartCutscene(Cutscenes[INTROCUTSCENE],start1stChapter)
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			Display.SetPlayerColorMapping(5, ENEMY_COLOR1)

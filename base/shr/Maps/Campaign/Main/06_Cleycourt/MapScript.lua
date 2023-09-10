@@ -155,6 +155,10 @@ function Mission_FirstMapAction()
 
 
 	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
+	
 	-- Start prelude
 	start1stQuest()
 	-- Start time line
@@ -168,7 +172,6 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 1 then
 			Logic.CreateEntity(Entities.PB_Tower2,8100,15000,0,7)
 		else
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			Logic.CreateEntity(Entities.PB_Tower3,8100,15000,0,7)

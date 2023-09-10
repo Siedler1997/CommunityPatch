@@ -206,6 +206,10 @@ function Mission_FirstMapAction()
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	entry point
+	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
 
 		startQuestMoveToCastle()
 
@@ -213,7 +217,6 @@ function Mission_FirstMapAction()
 		if CP_Difficulty > 0 then
 			local wolfSet = RaidersDefaultSets.Vanilla
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
 			end

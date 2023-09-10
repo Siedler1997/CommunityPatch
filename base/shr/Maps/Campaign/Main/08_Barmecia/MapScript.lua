@@ -183,13 +183,16 @@ function Mission_FirstMapAction()
 	--EnableDebugging()
 	--Start prelude1
 	LocalMusic.UseSet = EUROPEMUSIC
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	StartCutscene("Intro", start1stQuest)
 
 	CreateRandomChests()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 		end
 		--[[

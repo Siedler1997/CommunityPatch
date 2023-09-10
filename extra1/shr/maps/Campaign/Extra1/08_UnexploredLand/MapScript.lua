@@ -127,13 +127,16 @@ function FirstMapAction()
 
     
     LocalMusic.UseSet = DARKMOORMUSIC
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	-- start
 	StartCutscene(Cutscenes[INTROCUTSCENE],start1stChapter)
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(2,ENEMY_COLOR1)
 			Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
 

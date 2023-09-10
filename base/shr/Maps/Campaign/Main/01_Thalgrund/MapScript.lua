@@ -198,6 +198,10 @@ function Mission_FirstMapAction()
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	entry point
+	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
 
 		StartBinkVideo("Intro") 
 
@@ -210,7 +214,6 @@ function Mission_FirstMapAction()
 
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
 			end
 			--[[

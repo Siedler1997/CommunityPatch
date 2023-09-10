@@ -49,13 +49,8 @@ function InitDiplomacy()
 	end
 ------------------------------------------------------------------------------
 function InitResources()
-    AddStone(500)
-    AddClay(500)
-    AddGold(500)
-    AddSulfur(500)
-    AddIron(500)
-    AddWood(500)
-    end
+	GlobalMissionScripting.GiveResouces(1, 500, 500, 500, 500, 500, 500)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
@@ -134,6 +129,10 @@ function FirstMapAction()
 
     --EnableDebugging()
     --Game.GameTimeReset()
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
     
     beginChapterOne()
 
@@ -141,7 +140,6 @@ function FirstMapAction()
 		local addWolves = 0
 		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 			GUI.SetTaxLevel(1)
 			

@@ -177,6 +177,10 @@ function Mission_FirstMapAction()
 		TimeLine.Start()
 	
 	-- Start prelude
+	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
 
 		StartCutscene("Intro", start1stQuest)
 -- DEBUGG
@@ -190,7 +194,6 @@ function Mission_FirstMapAction()
 		CreateRandomChests()
 	else
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 		end
 

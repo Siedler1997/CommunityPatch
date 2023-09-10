@@ -15,14 +15,7 @@ end
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-
-    AddGold(500)
-    AddStone(1200)
-    AddSulfur(300)
-    AddIron(300)
-    AddWood(1600)
-    AddClay(1600)
-
+	GlobalMissionScripting.GiveResouces(1, 500, 1600, 1600, 1200, 300, 300)
 end
 ------------------------------------------------------------------------------
 function InitTechnologies()
@@ -120,6 +113,10 @@ function FirstMapAction()
 
 	-- enable String text keys
 	String.Init("CM02_04_TradingCaravans")
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	-- start
 	start1stChapter()	
@@ -134,7 +131,6 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			GUI.SetTaxLevel(1)
 
 			--Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)

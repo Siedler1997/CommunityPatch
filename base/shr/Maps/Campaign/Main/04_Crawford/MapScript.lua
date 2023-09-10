@@ -246,6 +246,10 @@ function Mission_FirstMapAction()
 
 
 	-- Intro / Start quests
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	StartBinkVideo("Crawford")				-- start fresko bink
 
@@ -282,7 +286,6 @@ function Mission_FirstMapAction()
 	CreateRandomChests()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 		end
 		--[[

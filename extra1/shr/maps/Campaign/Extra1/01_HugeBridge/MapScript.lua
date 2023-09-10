@@ -115,6 +115,10 @@ function FirstMapAction()
 
     --Logic.SetShareExplorationWithPlayerFlag(1, 4, 1)
     Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
     StartCutscene("PREINTRO",beginChapterOne)
 
@@ -123,7 +127,6 @@ function FirstMapAction()
 		local addWolves = 0
 		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
 			Display.SetPlayerColorMapping(8, NEPHILIM_COLOR)
