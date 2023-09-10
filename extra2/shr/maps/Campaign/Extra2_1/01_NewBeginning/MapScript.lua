@@ -50,19 +50,9 @@ function InitDiplomacy()
 function InitResources()
     -- set some resources
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 0 then
-		AddStone(1000)
-		AddClay(1000)
-		AddGold(1000)
-		AddSulfur(1000)
-		AddIron(1000)
-		AddWood(1000)
+		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 1000, 1000, 1000)
 	else
-		AddStone(500)
-		AddClay(500)
-		AddGold(500)
-		AddSulfur(500)
-		AddIron(500)
-		AddWood(500)
+		GlobalMissionScripting.GiveResouces(1, 500, 500, 500, 500, 500, 500)
 	end
 end
 ------------------------------------------------------------------------------
@@ -138,12 +128,15 @@ function FirstMapAction()
 	createPlayer4()
 	createPlayer5()
 	createPlayer6()
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
+
 	startChapterOne()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-
 			GUI.SetTaxLevel(1)
 		end
 

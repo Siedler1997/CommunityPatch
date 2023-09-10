@@ -120,13 +120,16 @@ function FirstMapAction()
 	createPlayer5()
 	createPlayer6()
 	createPlayer7()
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
+
 	startChapterOne()
 	
 	-- Increase support timer
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-
 			GUI.SetTaxLevel(1)
 			timeForSupport = timeForSupport + 60 * 15
 		end

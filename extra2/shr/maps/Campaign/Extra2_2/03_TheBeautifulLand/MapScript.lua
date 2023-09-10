@@ -149,7 +149,6 @@ function Mission_FirstMapAction()
 
 		CreateChestOpener("Pilgrim")
 
-		CreateRandomChests()
 		StartChestQuest()
 
 
@@ -188,6 +187,10 @@ function Mission_FirstMapAction()
 		Prost2Dead		=0
 		Prost3Dead		=0
 	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
+	
 	--	start quest
 
 		StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingScoutDies)
@@ -207,8 +210,6 @@ function Mission_FirstMapAction()
 		    
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-
 				GUI.SetTaxLevel(1)
 			end
 
@@ -224,6 +225,8 @@ function Mission_FirstMapAction()
 			end
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen1"))
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen2"))	
+		else
+			CreateRandomChests()
 		end
 
 	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})

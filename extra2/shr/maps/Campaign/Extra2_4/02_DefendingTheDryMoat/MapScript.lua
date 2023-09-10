@@ -17,20 +17,21 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 function Mission_InitDiplomacy()
 
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
-	Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 2, 8, Diplomacy.Hostile )
 	--Logic.SetDiplomacyState( 2, 7, Diplomacy.Neutral )
 	--Logic.SetDiplomacyState( 3, 7, Diplomacy.Hostile )
 	--Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	--Logic.SetDiplomacyState( 2, 3, Diplomacy.Neutral )
-	Logic.SetDiplomacyState( 1, 6, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 2, 6, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 3, 6, Diplomacy.Neutral )
 	--Logic.SetDiplomacyState( 7, 6, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 8, 6, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 2, 5, Diplomacy.Hostile )
 
-
+	
+	Logic.SetDiplomacyState( 2, 4, Diplomacy.Hostile )
 	
 end
 
@@ -45,17 +46,32 @@ end
 function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Weathermachine, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP1_Tavern, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_MasterBuilderWorkshop, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Tower, 0 )
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
-		--ResearchAllMilitaryTechsAddOn(3)
+		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
-		--ResearchAllMilitaryTechsAddOn(5)
+		ResearchAllMilitaryTechsAddOn(5)
 		ResearchAllMilitaryTechsAddOn(6)
 		ResearchAllMilitaryTechsAddOn(7)
 		ResearchAllMilitaryTechsAddOn(8)
@@ -107,10 +123,27 @@ function Mission_InitWeather()
 	--Logic.AddWeatherElement(2, 130, 1, 2, 5, 10)	-- Foggy with Rain
 
 end
+
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function Mission_InitPlayerColorMapping()
+	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
+	Display.SetPlayerColorMapping(8, 15)
+	
+	Display.SetPlayerColorMapping(4, 3)
+	--Display.SetPlayerColorMapping(7, 6)
+	--4,7
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(8, 16)
+	end
+end
 	
 -- First Map Action
 
-	function Mission_FirstMapAction()
+function Mission_FirstMapAction()
 
 	CP_Difficulty = GDB.GetValue("Game\\Campaign_Difficulty")
 
@@ -121,74 +154,97 @@ end
 
 	--	locals
 
-		IncludeLocals("gameControl")
+	IncludeLocals("gameControl")
 		
 		
 
 		
-		IncludeLocals("npc_mayor")
-		IncludeLocals("npc_templar")
-		IncludeLocals("npc_drake")
+	IncludeLocals("npc_mayor")
+	IncludeLocals("npc_templar")
+	IncludeLocals("npc_drake")
 
 		
-		IncludeLocals("quest_ChapterI")
-		IncludeLocals("quest_ChapterII")
-		IncludeLocals("quest_ChapterIII")
-		IncludeLocals("quest_ChapterIV")
+	IncludeLocals("quest_ChapterI")
+	IncludeLocals("quest_ChapterII")
+	IncludeLocals("quest_ChapterIII")
+	IncludeLocals("quest_ChapterIV")
 		
 		
-		IncludeLocals("briefing_intro")
-		IncludeLocals("briefing_mayor")
-		IncludeLocals("briefing_templar")
-		IncludeLocals("briefing_drake")
-		IncludeLocals("briefing_dario")
+	IncludeLocals("briefing_intro")
+	IncludeLocals("briefing_mayor")
+	IncludeLocals("briefing_templar")
+	IncludeLocals("briefing_drake")
+	IncludeLocals("briefing_dario")
 
 
-		IncludeLocals("army_player")
-		IncludeLocals("army_battle")
-		IncludeLocals("army_control")
+	IncludeLocals("army_player")
+	IncludeLocals("army_battle")
+	IncludeLocals("army_control")
 		
 
-		timer = 960
-	 	capture = 0
-
-	--	resources
-	
-		AddGold(1500)
-		AddWood(5000)
-		AddClay(2000)
-		AddStone(3000)
-		AddIron(3000)
-		AddSulfur(500)
+	timer = 960
+	capture = 0
 	
 	-- 	Set Music-Set
-
-		LocalMusic.UseSet = EVELANCEMUSIC
+	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+	LocalMusic.UseSet = EVELANCEMUSIC
 	--	Chests
-		--CreateChestOpener("Dario")
-		--CreateRandomChests()
-		--StartChestQuest()
+	--CreateChestOpener("Dario")
+	--CreateRandomChests()
+	--StartChestQuest()
+	
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	--	Start Control
 
-		Start1stChapter()
+	Start1stChapter()
 		
 	--	Players
 	
-		--IncludeLocals("player_1")
-		--IncludeLocals("player_2")
-		--IncludeLocals("player_3")
-		--IncludeLocals("player_4")
+	--IncludeLocals("player_1")
+	--IncludeLocals("player_2")
+	--IncludeLocals("player_3")
+	--IncludeLocals("player_4")
 						    	
-		-- debugging stuff
-		--EnableDebugging()
-		--Game.GameTimeReset()
+	-- debugging stuff
+	--EnableDebugging()
+	--Game.GameTimeReset()
 
 
-		--SetPlayerName(5, "Naerbor Landarbeiter")
-		SetPlayerName(5, String.Key("_Player5Name"))
-		--SetPlayerName(2, "Eindringende Barbaren")
-		SetPlayerName(2, String.Key("_Player2Name"))
+	--SetPlayerName(5, "Naerbor Landarbeiter")
+	SetPlayerName(5, String.Key("_Player5Name"))
+	--SetPlayerName(2, "Eindringende Barbaren")
+	SetPlayerName(2, String.Key("_Player2Name"))
+	SetPlayerName(4, String.Key("_Player4Name"))
+	SetPlayerName(8, String.Key("_Player8Name"))
+	
+	MakeInvulnerable("guardone")
+	MakeInvulnerable("p2_hq")
 		
-		Tools.ExploreArea(-1, -1, 900)
+	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+			Display.SetPlayerColorMapping(8, 16)
+
+			GUI.SetTaxLevel(1)
+			
+			ReplaceEntity("keep", Entities.PB_Headquarters1)
+		else
+			Display.SetPlayerColorMapping(8, 15)
+		end
+		
+		ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)
+		ReplaceEntity("p1_smith", Entities.PB_Blacksmith1)
+		
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 2000, 2000, 1000, 150)
+	else
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 5000, 3000, 3000, 500)
+	end
+
+	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end

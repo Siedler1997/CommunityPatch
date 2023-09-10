@@ -117,8 +117,8 @@ BriefingFightFinished = function()
 			if CP_Difficulty > 0 then
 				createDarioArmy3()
 				createDarioArmyCavalry1()
+				createDarioArmyCavalry2()
 				if CP_Difficulty == 2 then
-					createDarioArmyCavalry2()
 					createDarioArmyCavalry3()
 				end
 			end

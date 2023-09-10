@@ -137,7 +137,7 @@ HeroicResistance = function()
 				return true
 			else
 				if CP_Difficulty == 1 then
-					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead("helias") then
+					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead(ArmyPatrolCavalry2) and IsDead("helias") then
 						end3rdQuest()
 						return true
 					end

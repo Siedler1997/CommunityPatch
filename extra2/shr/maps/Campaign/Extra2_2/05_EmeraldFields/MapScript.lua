@@ -207,19 +207,9 @@ function Mission_FirstMapAction()
 	--	resources
 	
 		if CP_Difficulty == 0 then
-			AddGold(1000)
-			AddWood(1000)
-			AddClay(1500)
-			AddStone(1000)
-			AddIron(1000)
-			AddSulfur(1000)
+			GlobalMissionScripting.GiveResouces(1, 1000, 1500, 1000, 1000, 1000, 1000)
 		else
-			AddGold(500)
-			AddWood(500)
-			AddClay(800)
-			AddStone(500)
-			AddIron(500)
-			AddSulfur(500)
+			GlobalMissionScripting.GiveResouces(1, 500, 800, 500, 500, 500, 500)
 		end
 
 	--	Variables
@@ -282,6 +272,10 @@ function Mission_FirstMapAction()
 	
 	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 	LocalMusic.UseSet = EUROPEMUSIC
+
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 	
 	-- Start quest
 
@@ -295,7 +289,6 @@ function Mission_FirstMapAction()
 		    	
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
 				Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 
 				GUI.SetTaxLevel(1)

@@ -51,7 +51,11 @@ setupSpawnRaid1 = function()
 			local i=1+GetRandom(3)
 				
             local pos = GetPosition("raidsp1")
-            RaidAttack1 = Tools.CreateGroup(2, Entities.CU_BanditLeaderSword1, 8, pos.X, pos.Y, 180)
+			if CP_Difficulty == 0 then
+				RaidAttack1 = AI.Entity_CreateFormation(2,Entities.CU_BanditLeaderSword1,0,8,pos.X,pos.Y,0,0,0,0)
+			else
+				RaidAttack1 = AI.Entity_CreateFormation(2,Entities.CU_BanditLeaderSword2,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
+			end
             SetEntityName(RaidAttack1, "Bulangii1")
 
 			Attack("Bulangii1","attack"..i)

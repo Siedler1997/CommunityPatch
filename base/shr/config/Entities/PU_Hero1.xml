@@ -137,6 +137,20 @@
 	</Behavior>
 	
 	<Behavior>
+		<Logic classname="GGL::CRangedEffectAbilityProps">
+			<Class>GGL::CRangedEffectAbility</Class>
+			<AffectsOwn>true</AffectsOwn>
+			<AffectsFriends>true</AffectsFriends>
+			<AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+			<RechargeTimeSeconds>180</RechargeTimeSeconds>
+			<Range>1500.0</Range>
+			<DurationInSeconds>60</DurationInSeconds>
+			<DamageFactor>1.5</DamageFactor>
+			<ArmorFactor>1.5</ArmorFactor>
+		</Logic>
+	</Behavior>
+	
+	<Behavior>
 		  <Logic classname="GGL::CGLBehaviorPropsDying">
 			  <Class>GGL::CGLBehaviorDying</Class>
 			  <DyingTaskList>TL_DIE_HERO</DyingTaskList>

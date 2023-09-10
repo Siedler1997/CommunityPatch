@@ -162,19 +162,9 @@ function Mission_FirstMapAction()
 	--	resources
 	
 	if CP_Difficulty == 0 then
-		AddGold(1300)
-		AddWood(3400)
-		AddClay(2500)
-		AddStone(4500)
-		AddIron(900)
-		AddSulfur(150)
+		GlobalMissionScripting.GiveResouces(1, 1300, 2500, 3400, 4500, 900, 150)
 	else
-		AddGold(800)
-		AddWood(1200)
-		AddClay(1000)
-		AddStone(1000)
-		AddIron(300)
-		AddSulfur(0)
+		GlobalMissionScripting.GiveResouces(1, 800, 1200, 1000, 1000, 300, 0)
 	end
 
 	--	Variables
@@ -244,13 +234,15 @@ function Mission_FirstMapAction()
 	MakeInvulnerable("Rock1")
 	MakeInvulnerable("Rock2")
 	--EnableDebugging()
+	
+	if CP_Difficulty == 2 then
+		Display.SetPlayerColorMapping(1, 2)
+	end	
 
 	start1stChapter()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-
 			GUI.SetTaxLevel(1)
 			
 			ReplaceEntity("P1Village", Entities.CB_Grange)

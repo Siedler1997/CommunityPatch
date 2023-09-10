@@ -147,16 +147,10 @@ function Mission_FirstMapAction()
 	--	resources
 	
 		if CP_Difficulty == 0 then
-			AddGold(2000)
+			GlobalMissionScripting.GiveResouces(1, 2000, 500, 500, 500, 500, 500)
 		else
-			AddGold(1000)
+			GlobalMissionScripting.GiveResouces(1, 1000, 500, 500, 500, 500, 500)
 		end
-		AddWood(500)
-		AddClay(500)
-		AddStone(500)
-		AddIron(500)
-		AddSulfur(500)
-
 
 		CreateChestOpener("Dario")
 		CreateChestOpener("Erec")
@@ -165,7 +159,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
 	
-		CreateRandomChests()
 		StartChestQuest()
 
 		--SetPlayerName(2, "Barbaren")
@@ -178,6 +171,10 @@ function Mission_FirstMapAction()
 		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
+	
+		if CP_Difficulty == 2 then
+			Display.SetPlayerColorMapping(1, 2)
+		end	
 	
 	--	start quest
 		
@@ -208,8 +205,6 @@ function Mission_FirstMapAction()
 		   
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-
 				GUI.SetTaxLevel(1)
 				
 				Logic.CreateEntity(Entities.PB_DarkTower3, 8800, 28640, 0, 2);
@@ -224,6 +219,8 @@ function Mission_FirstMapAction()
 			RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 			--RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 			RaidersCreate({player = 7, pos = "bearpos3", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+		else
+			CreateRandomChests()
 		end
 
 		--Tools.ExploreArea(-1, -1, 900)
