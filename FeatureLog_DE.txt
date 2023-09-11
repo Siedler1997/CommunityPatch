@@ -582,7 +582,7 @@
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
 	* Kontrollierbare Schäferhunde(?)
 	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
-	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
+	* BattleMusic bei vom Spieler besiegten Einheiten(?)
 	* Neue Spielerfarben(?)
 	* Auftragsbuch-Highlight fixen
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
@@ -593,7 +593,6 @@
 		+ Veteranen
 		+ Varg
 		+ Bogen-Banditen-Hauptmänner
-		+ Nebelkrieger-Hauptmänner
 		+ Leonardos Assistent
 		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
