@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\base\\shr\\Maps",
+    "\\base\\shr",
     "\\base\\shr\\Maps\\Campaign",
     "\\base\\shr\\Maps\\Campaign\\Main",
     "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Campaign",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_4"
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\Campaign",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1\\04_TradingCaravans"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\04_TaintedLight\\MapData.xml",
+  "SelectedNode": "\\extra1\\shr\\maps\\Campaign\\Extra1\\04_TradingCaravans\\gameControl.lua",
   "PreviewInSolutionExplorer": false
 }

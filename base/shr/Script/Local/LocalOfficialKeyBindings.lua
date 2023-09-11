@@ -186,6 +186,7 @@ function KeyBindings_TogglePause()
         Stream.Pause(true)
         Sound.Pause3D(true)
     end
+	XGUIEng.SetText("GameSpeedButton", "@center x" .. Game.GameTimeGetFactor())
 end
 
 -- Callback that is executed when speed is changing
