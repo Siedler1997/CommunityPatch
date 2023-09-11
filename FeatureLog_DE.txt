@@ -98,9 +98,15 @@
 			/ Bärenmenschen: Technologien der Speerkämpfer
 			/ Veteranen: Je nach Typ wie Barbaren/Schwarze Ritter
 		+ profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
-		+ Wilde Wölfe 
-			/ haben die gleichen Stats wie die von Varg beschworenen Exemplare
-			/ sind nicht von Helias konvertierbar
+		+ Wilde Tiere
+			/ Wölfe 
+				- haben die gleichen Stats wie die von Varg beschworenen Exemplare
+				- sind nicht von Helias konvertierbar
+				- Varianten aus AeK zwecks Varianz: Grau, Weiß, Schwarz und Braun
+			/ Neu: Bären
+				- Aus AeK importiert
+				- 3 Arten: Braun-, Eis- und Schwarzbär
+				- Deutlich stärker und zäher als Wölfe
 		+ AddOn-Einheiten sind schon früher (also im Hauptspiel bzw. Nebelreich) zu finden
 			/ Bogen-Banditen
 			/ Schafe
@@ -329,12 +335,16 @@
 		+ Bodenleiste
 		+ Minimap
 		+ VideoPreview
-	* Viele kleine Detail-Anpassungen (Verschobene Buttons, gößere Tooltip-Boxen, etc.)
+	* Viele kleine Detail-Anpassungen (Verschobene Buttons, größere Tooltip-Boxen, etc.)
 	* Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
 		+ u.a. werden Spielstände (dank Zedeg)
 			/ auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
 			/ unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
 - Diverses
+	* Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
+		+ Button dafür ersetzt den Hilfe-Button
+			/ Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
+		+ Kann auch über den Shortcut * ausgelöst werden
 	* Hauptmenü
 		+ Der Reiter 'Spieler' ist reaktiviert
 			/ Spielername kann geändert werden
@@ -346,6 +356,7 @@
 		+ Wenn eine Karte lädt
 			/ wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
 			/ wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
+		+ Blaue Hintergründe sind nun rot
 	* Kampagnen-Maps modifiziert
 		+ Tipps-Button im Hauptmenü 
 			/ Ersetzt nutzlosen Netzwerk-Button
@@ -364,11 +375,8 @@
 			/ Gegnerische Truppen sind besser ausgerüstet, erfahrener und etwas zahlreicher
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
 			/ Gegner sind z.T. aggressiver
-			/ Wölfe streifen durch die Gegend
 			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude etwas schlechter
-			/ Schatztruhen
-				* jene mit sehr viel Inhalt haben deutlich weniger
-				* bisherige mit zufälligem Inhalt fallen komplett weg
+			/ Schatztruhen sind größtenteils weg
 			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		+ Schwierigkeitsgrad 'Albtraum'
 			/ enthält die gleichen Features wie auf 'Schwer'
@@ -379,11 +387,10 @@
 			/ Die eine oder andere nützliche Technologie ist gesperrt
 			/ In Missionen mit sonst dauerhaftem Sommer regnet es ab und an
 			/ Wege könnten blockiert oder freigelegt sein
-			/ Der AddOn-BattleTrack ertönt auch im Hauptspiel
 			/ Ihr habt Rot als Spielerfarbe statt Blau
 			/ diverse Gemeinheiten;)
+		+ Wilde Tiere (Wölfe und Bären) streifen durch die Gegend
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
-		+ Aktuell nur Hauptspiel und Nebelreich (Legenden angefangen)
 	* Die Grafik ist allgemein etwas besser (by yoq)
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	* Steuer-Predigt-Exploit entschärft
@@ -392,8 +399,9 @@
 	* Musik
 		+ Winter/Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		+ In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
-		+ In den AddOns werden wieder alle Kampf-Tracks abgespielt statt nur zwei davon
 		+ Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
+		+ Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
+		+ Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
 	* Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
 	* Wetter-Effekte sind etwas gemischter
 		+ Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
@@ -484,6 +492,7 @@
 		+ Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
 		+ 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0' (by Play4FuN)
 	* Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
+		+ Könnten aber noch zwischendurch "hängen bleiben", wodurch sie hren Zielort nie erreichen
 	* Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
 	* Comforts
 		+ Variable 'CP_Installed' (bool):
@@ -541,37 +550,10 @@
 		+ Rifles
 		+ Evil stuff
 	* Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
-	* Einstellung der Spielgeschwindigkeit
-		+ Einstellbar in Optionen -> Neues Menü
-		+ SP-only
 	* Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 	* Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-	* Light-Version der Kampagne (nur Fixes) als Standard; Mod-Version als optionales Modul
 	* Thalgrund: Erster Angriff mit Cutscene-Einheiten
 		+ ggf. mehr Spielertruppen als Hilfe
-	* Alternativer, erhöhter Schwierigkeitsgrad für Original-Kampagnen
-		+ Handel ohne Deflation (siehe "Testscript")
-		+ Keine random chests
-		+ Goldhaufen
-		+ Grange
-		+ Schiffswracks
-		+ Wolfsrudel
-		+ Neue Units (Bogen-Bandits, Veteranen, Outlaws, Schafe, Wölfe, Ingenieur)
-		+ Kleine Belohnung bei Komplettierung (Hauptmenü-Video, Farbschema, ...)?
-		+ Schwierigkeitsgrad "Albtraum"(?)
-			/ Super-Tech für KIs
-			/ halbe Steuern
-			/ andere Spielerfarbe
-			/ Schlechteres Wetter
-			/ 2 Wölfe mehr pro Rudel
-			/ SetEvilBattle als Combat-Playlist
-			/ Blockaden
-			/ KIs sehr aggressiv
-			/ Weniger Handels-Optionen
-			/ Explores von Briefings danach entfernen (soweit sinnvoll)
-			/ Kürzere Countdowns
-		+ Testing
-	* Kampagnen-Tipps korrigieren (Legenden)
 	* Vertonte Animationen (per TaskLists)
 		+ Leader-Walk
 		+ Leader-Train
@@ -599,10 +581,10 @@
 		+ sollen während Briefings pausieren
 		+ Sollen ein eigenes Hintergrund-Image bekommen(?)
 	* Kontrollierbare Schäferhunde(?)
-	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames fixen
+	* Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
 	* BattleMusic bei vom Spieler besiegtnen Einheiten(?)
 	* Neue Spielerfarben(?)
-	* Auftragsbuch-Highlight
+	* Auftragsbuch-Highlight fixen
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* Kalas Tod: stack overflow(?)
@@ -615,12 +597,9 @@
 		+ Leonardos Assistent
 		+ Hauptmann, Ordensritter und Wächter
 	* Umsetzung in Vanilla-DEdK
-	* AeK-Content bei Installation kopieren(?)
-		+ OST
-		+ Models/Texturen zwecks Varianz
 	* Organisatorisches
 		+ FeatureList auch auf Englisch
 		+ Quellenverzeichnung (also Nennung aller Autoren)
 		+ GitHub-Startseite
 		+ Indikator für CP-Installation
-		+ (De-)Installer mit Backup-funktion(?)
+		+ (De-)Installer mit Backup-Funktion(?)
