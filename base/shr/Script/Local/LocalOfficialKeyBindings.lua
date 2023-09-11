@@ -22,6 +22,7 @@ function OfficialKeyBindings_Init()
 	Input.KeyBindDown(Keys.Tab, 		"KeyBindings_ToggleOnScreenInformation()",2)	
 	Input.KeyBindDown(Keys.ModifierAlt + Keys.F4, 		"KeyBindings_AltFFour()",2)
 	Input.KeyBindDown(Keys.Multiply, "GUIAction_AdjustGameSpeed()", 2)
+	Input.KeyBindDown(Keys.F10,     "GUIAction_OnlineHelp()", 2 )
 	
 	
 	
