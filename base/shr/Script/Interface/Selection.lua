@@ -740,7 +740,7 @@ function GameCallback_OnBuildingConstructionComplete(_BuildingID, _PlayerID)
 	end
 	
 	if _player == GUI.GetPlayerID() then
-		Sound.PlayGUISound(Sounds.Misc_Chat,100)
+		Sound.PlayGUISound(Sounds.Misc_Chat,75)
 	end
 end
 

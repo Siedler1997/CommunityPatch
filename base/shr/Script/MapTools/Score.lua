@@ -104,7 +104,7 @@ function GameCallback_BuildingDestroyed( _HurterPlayerID, _HurtPlayerID )
 	Score.Player[_HurterPlayerID]["battle"] = Score.Player[_HurterPlayerID]["battle"] + Score.BattleBuildingPoints
 	Score.Player[_HurterPlayerID]["all"] 	= Score.Player[_HurterPlayerID]["all"] + Score.BattleBuildingPoints
 	
-	Sound.PlayGUISound(Sounds.Military_SO_Cannon_rnd_1,50)
+	Sound.PlayGUISound(Sounds.Military_SO_Cannon_rnd_1,25)
 end
 
 --------------------------------------------------------------------------------
