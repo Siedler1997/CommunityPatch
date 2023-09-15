@@ -550,6 +550,11 @@
 		+ Old Kings Castle: Berg mit unerreichbaren Schatztruhen fixen
 		+ SP-Maps: Bevorzugte Spielerfarbe respektieren
 		+ SP-Maps: Fixes und wilde Tiere, aber ohne Schwierigkeitsgrad
+		+ SP-Maps: Spielernamen im Diplomatiemenü
+		+ SP-Maps: Verdelbare Start-Rohstoffe
+		+ SP-Maps: KIs alle regulären Techs geben?
+		+ Bündnis der Feinde: Dovbar als Held?
+		+ Scout Forester?
 		+ FeatureLog aktualisieren
 	* Misc-Items
 		+ Rifles
@@ -606,4 +611,6 @@
 		+ Quellenverzeichnung (also Nennung aller Autoren)
 		+ GitHub-Startseite
 		+ Indikator für CP-Installation
-		+ (De-)Installer mit Backup-Funktion(?)
+		+ (De-)Installer
+			/ Backup-Funktion(?)
+			/ Test-Maps und Thalbach (extra1) entfernen
