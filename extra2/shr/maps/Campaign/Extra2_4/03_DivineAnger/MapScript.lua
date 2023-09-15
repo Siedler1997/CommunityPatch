@@ -120,14 +120,18 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(4, EVIL_GOVERNOR_COLOR)
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7, FRIENDLY_COLOR3)
-	Display.SetPlayerColorMapping(8, 3)
+	--Display.SetPlayerColorMapping(8, 3)
 	
 	--Display.SetPlayerColorMapping(4, 3)
 	--Display.SetPlayerColorMapping(7, 6)
 	--4,7
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		--Display.SetPlayerColorMapping(8, 16)
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(8, 3)
+	else
+		Display.SetPlayerColorMapping(8, PAPAL_COLOR)
 	end
 end
 	
@@ -163,11 +167,6 @@ function Mission_FirstMapAction()
 
 	StartCutscene(Cutscenes[INTROCUTSCENE],Start1stChapter)
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
-	
 	-- SetPlayerName(2, "Vargs Barbaren")
 	SetPlayerName(2, String.Key("_Player2Name"))
 	-- SetPlayerName(8, "Ordens Truppen")
@@ -178,6 +177,8 @@ function Mission_FirstMapAction()
 			GUI.SetTaxLevel(1)
 			
 			--ReplaceEntity("keep", Entities.PB_Headquarters1)
+		else
+			CreateRandomChests()
 		end
 
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 10, 0) }

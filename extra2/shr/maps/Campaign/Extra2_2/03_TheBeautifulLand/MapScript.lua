@@ -56,12 +56,10 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
-	Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -187,10 +185,6 @@ function Mission_FirstMapAction()
 		Prost2Dead		=0
 		Prost3Dead		=0
 	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
-	
 	--	start quest
 
 		StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingScoutDies)
@@ -211,6 +205,8 @@ function Mission_FirstMapAction()
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
+			else
+				CreateRandomChests()
 			end
 
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 10, 0) }

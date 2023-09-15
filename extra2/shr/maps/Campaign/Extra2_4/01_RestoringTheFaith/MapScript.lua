@@ -108,12 +108,8 @@ end
 
 ----------------------------------------------------------------------------
 function InitPlayerColorMapping()
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
-	
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+
     Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
     Display.SetPlayerColorMapping(3, MORTFICHET_COLOR)
     Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
@@ -191,10 +187,6 @@ function Mission_FirstMapAction()
 	CreateChestOpener("Dario")
 	StartChestQuest()
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 --	Start Control
 
 	Start1stChapter()
@@ -221,6 +213,8 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_DarkTower3, 20000, 47300, 0, 2);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 46700, 0, 2);
 		else
+			CreateRandomChests()
+
 			Logic.CreateEntity(Entities.PB_DarkTower2, 20000, 47300, 0, 2);
 			Logic.CreateEntity(Entities.PB_DarkTower2, 25200, 46700, 0, 2);
 		end

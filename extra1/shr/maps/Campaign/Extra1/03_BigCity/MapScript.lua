@@ -53,34 +53,23 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,15)
 	Display.SetPlayerColorMapping(5,16)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
+	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1,p1color)
 
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-	
-		if CitywallsPlayercolor ~= true then
-			Display.SetPlayerColorMapping(3,15)
-		else
-			Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-		end
-	
-		if Player4IsNephilim ~= true then
-			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
-		else
-			Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
-		end
+	if CitywallsPlayercolor ~= true then
+		Display.SetPlayerColorMapping(3,15)
 	else
-		Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(3,p1color)
+	end
 	
-		if CitywallsPlayercolor ~= true then
-			Display.SetPlayerColorMapping(3,15)
+	if Player4IsNephilim ~= true then
+		Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+	else
+		if p1color ~= 2 then
+			Display.SetPlayerColorMapping(4,2)
 		else
-			Display.SetPlayerColorMapping(3,NEPHILIM_COLOR)
-		end
-	
-		if Player4IsNephilim ~= true then
-			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
-		else
-			Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(4,6)
 		end
 	end
 	
@@ -155,8 +144,6 @@ function FirstMapAction()
 
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then		
-			Display.SetPlayerColorMapping(3,15)
-			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
 			GUI.SetTaxLevel(1)
 		end
 	end

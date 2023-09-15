@@ -33,7 +33,7 @@ end
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
 	
-	Display.SetPlayerColorMapping(3, BARMECIA_COLOR)		-- Leonardo
+	--Display.SetPlayerColorMapping(3, BARMECIA_COLOR)		-- Leonardo
 	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Walls not destroyable
 	Display.SetPlayerColorMapping(4, KERBEROS_COLOR)		-- Walls destroyable
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' raiding army
@@ -42,8 +42,12 @@ function Mission_InitPlayerColorMapping()
 
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR1)		-- Tendrel
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(3, 3)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
 	end
 
 end
@@ -191,10 +195,6 @@ function Mission_FirstMapAction()
 		TimeLine.Start()
 	
 	-- Start prelude
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
 
 		StartCutscene("Intro", start1stQuest)
 
@@ -214,6 +214,9 @@ function Mission_FirstMapAction()
 	else
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty")

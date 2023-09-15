@@ -83,17 +83,19 @@ function InitWeatherGfxSets()
 ------------------------------------------------------------------------------
 function InitWeather()
 	AddPeriodicSummer(10)
-    end
+end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(4,15)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(5,6)
 	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,15)
+
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 ------------------------------------------------------------------------------
@@ -115,10 +117,6 @@ function FirstMapAction()
 	createPlayer5()
 	createPlayer7()
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	startChapterOne()
 
 	if CP_Difficulty > 0 then

@@ -131,7 +131,8 @@ Mission_InitMission()
 	gvMission.WoodCurrentAmount = 0
 	
 	-- Init player colors
-	Display.SetPlayerColorMapping(2, BARMECIA_COLOR)
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(2, PLAYER_FRIEND_COLOR)
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
 
@@ -173,8 +174,10 @@ Mission_OnSaveGameLoaded()
 	Mission_InitWeather()
 	
 	-- Init player colors
-	Display.SetPlayerColorMapping(2, BARMECIA_COLOR)
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(2, PLAYER_FRIEND_COLOR)
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
 end
 
 function

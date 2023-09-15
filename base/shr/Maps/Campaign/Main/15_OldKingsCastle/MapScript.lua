@@ -34,9 +34,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7, ARIS_ROBBERS)			-- Aris robbers
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -177,10 +175,6 @@ function Mission_FirstMapAction()
 		TimeLine.Start()
 	
 	-- Start prelude
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
 
 		StartCutscene("Intro", start1stQuest)
 -- DEBUGG
@@ -195,6 +189,9 @@ function Mission_FirstMapAction()
 	else
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 
 		local hq_ai1_pos = GetPosition("HQ_AI1")

@@ -57,24 +57,23 @@ function Mission_InitPlayerColorMapping()
 BLUE = 1
 RED = 2
 
-		Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
-		if CP_Difficulty < 2 then
-			Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)		
-			Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-			Display.SetPlayerColorMapping(4, PLAYER_COLOR)
-			Display.SetPlayerColorMapping(7, 15)
-		else
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(7, 16)
-		end
+	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
+	Display.SetPlayerColorMapping(5, NPC_COLOR)
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(8, BARBARIAN_COLOR)
 
-		Display.SetPlayerColorMapping(5, NPC_COLOR)
-		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
-		Display.SetPlayerColorMapping(8, BARBARIAN_COLOR)
-		
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(4, p1color)
 	
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)	
+		Display.SetPlayerColorMapping(7, 15)
+	else
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR1)	
+		Display.SetPlayerColorMapping(7, 16)
+	end
+
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
@@ -250,6 +249,8 @@ function Mission_FirstMapAction()
 			GUI.SetTaxLevel(1)
 			
 			ReplaceEntity("p7_7", Entities.PB_Blacksmith1)
+		else
+			CreateRandomChests()
 		end
 
 		local towers1 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 48, 0) }
@@ -261,17 +262,7 @@ function Mission_FirstMapAction()
 	else
 		CreateRandomChests()
 	end
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)		
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(4, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(7, 15)
-	else
-		Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(7, 16)
-	end
+
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 4)})
 	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 	RaidersCreate({player = 6, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})

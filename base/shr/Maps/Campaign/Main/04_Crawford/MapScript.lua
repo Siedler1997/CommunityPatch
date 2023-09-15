@@ -103,9 +103,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
 		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-		end
+		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 		
 end
 
@@ -246,10 +244,6 @@ function Mission_FirstMapAction()
 
 
 	-- Intro / Start quests
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	StartBinkVideo("Crawford")				-- start fresko bink
 
@@ -286,6 +280,8 @@ function Mission_FirstMapAction()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomChests()
 		end
 		--[[
 		local vcpos1 = GetPosition("vc_empty")

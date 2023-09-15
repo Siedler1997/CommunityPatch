@@ -81,13 +81,13 @@ function InitPlayerColorMapping()
     Display.SetPlayerColorMapping(4,NPC_COLOR)
     Display.SetPlayerColorMapping(5,ROBBERS_COLOR)
     Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
-    
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-        Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, 2)		
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-        Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(2, 6)		
 	end
 end
 ------------------------------------------------------------------------------
@@ -113,10 +113,6 @@ function FirstMapAction()
 	-- SetPlayerName(6, "Freundliche Stadt")
 
 		LocalMusic.UseSet = EVELANCEMUSIC
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
     beginChapterOne()
 
@@ -125,12 +121,13 @@ function FirstMapAction()
     
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			ReplaceEntity("player1", Entities.PB_Headquarters1)
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 			ReplaceEntity("b1", Entities.CB_Grange)
+		else
+			CreateRandomGoldChests()
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty")

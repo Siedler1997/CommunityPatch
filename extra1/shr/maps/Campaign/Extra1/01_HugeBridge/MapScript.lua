@@ -82,18 +82,16 @@ function InitPlayerColorMapping()
     --Display.SetPlayerColorMapping(5,NPC_COLOR)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(5, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(8, PLAYER_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(5, p1color)
+	Display.SetPlayerColorMapping(8, p1color)
+
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, 2)
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(8, NEPHILIM_COLOR)
-        Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
+        Display.SetPlayerColorMapping(2, 6)
 	end
 end
 ------------------------------------------------------------------------------
@@ -115,10 +113,6 @@ function FirstMapAction()
 
     --Logic.SetShareExplorationWithPlayerFlag(1, 4, 1)
     Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
     StartCutscene("PREINTRO",beginChapterOne)
 
@@ -127,10 +121,6 @@ function FirstMapAction()
 		local addWolves = 0
 		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(8, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2

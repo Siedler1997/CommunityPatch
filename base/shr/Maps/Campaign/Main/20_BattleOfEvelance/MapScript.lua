@@ -116,7 +116,7 @@ end
 function Mission_InitPlayerColorMapping()
 
 		Display.SetPlayerColorMapping(2, NPC_COLOR)				-- NPCs
-		Display.SetPlayerColorMapping(6, PLAYER_COLOR)			-- Player's walls
+		--Display.SetPlayerColorMapping(6, PLAYER_COLOR)			-- Player's walls
 
 		Display.SetPlayerColorMapping(3, KERBEROS_COLOR)		-- Kerberos walls
 		Display.SetPlayerColorMapping(4, KERBEROS_COLOR)		-- Kerberos Outpost
@@ -124,10 +124,8 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(7, KERBEROS_COLOR)		-- Kerberos Dummy 1
 		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		-- Kerberos Dummy 2
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
-		end
+		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+		Display.SetPlayerColorMapping(6, GetPlayerPreferredColor())
 end
 
 
@@ -219,12 +217,13 @@ function Mission_FirstMapAction()
 			DestroyEntity("hard_rock")
 		else
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-				Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
 			end
 
 			if CP_Difficulty == 1 then
+				CreateRandomGoldChests()	
+				CreateRandomChests()
+
 				DestroyEntity("hard_rock")
 			end
 			--[[

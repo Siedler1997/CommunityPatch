@@ -22,6 +22,9 @@ function beginChapterOne()
 
     if CP_Difficulty == 0 then
         CreateRandomGoldChests()
+    elseif CP_Difficulty == 1 then
+        CreateRandomGoldChests()
+        StartCountdown(20 * 60, createPlayer2, false)
     else
         StartCountdown(15 * 60, createPlayer2, false)
     end

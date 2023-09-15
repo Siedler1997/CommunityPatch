@@ -97,14 +97,12 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Oberkirch
 		Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
 
-		Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
+		--Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
 
 		Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
-		end
+		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+		Display.SetPlayerColorMapping(7, GetPlayerPreferredColor())
 		
 end
 
@@ -206,18 +204,15 @@ function Mission_FirstMapAction()
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	entry point
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
 
 		startQuestMoveToCastle()
 
 		if CP_Difficulty > 0 then
 			local wolfSet = RaidersDefaultSets.Vanilla
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
+			else
+				CreateRandomGoldChests()
 			end
 
 			local bosspos1 = GetPosition("guard1")

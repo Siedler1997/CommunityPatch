@@ -30,9 +30,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 
 end
 
@@ -166,10 +164,6 @@ function Mission_FirstMapAction()
 
 	InitMapNPCs()      
 	-- Start prelude
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	start1stQuest()
 
@@ -189,6 +183,9 @@ function Mission_FirstMapAction()
 			end
 
 			Logic.CreateEntity(Entities.XD_RockDarkEvelance7,21000,60300,0,0)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)

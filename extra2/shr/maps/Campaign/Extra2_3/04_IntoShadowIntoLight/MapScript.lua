@@ -60,20 +60,17 @@ BLUE = 1
 RED = 2
 
 	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(2, BLUE)
-	Display.SetPlayerColorMapping(3, BLUE)
-	Display.SetPlayerColorMapping(4, BLUE)
-	Display.SetPlayerColorMapping(5, BLUE)
-	Display.SetPlayerColorMapping(6, BLUE)
-	Display.SetPlayerColorMapping(7, 15)
 	Display.SetPlayerColorMapping(8, NPC_COLOR)	
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(6, NEPHILIM_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(2, p1color)
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(4, p1color)
+	Display.SetPlayerColorMapping(5, p1color)
+	Display.SetPlayerColorMapping(6, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(7, 15)
+	else
 		Display.SetPlayerColorMapping(7, 16)
 	end
 					
@@ -245,13 +242,6 @@ function Mission_FirstMapAction()
 
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(6, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(7, 16)
-
 			GUI.SetTaxLevel(1)
 		end
 

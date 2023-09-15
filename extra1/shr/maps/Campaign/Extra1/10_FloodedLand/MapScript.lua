@@ -52,15 +52,16 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
 	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
-		
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-        Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-        Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
+	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(3, 2)		
+		Display.SetPlayerColorMapping(4, 2)	
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
-		Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(3, 6)		
+		Display.SetPlayerColorMapping(4, 6)	
 	end
 end
 
@@ -135,10 +136,6 @@ function FirstMapAction()
 
 	LocalMusic.UseSet = DARKMOORMUSIC
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	start1stChapter()
 
 	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,25700,39500,0,0,3,0)
@@ -146,9 +143,6 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
-
 			GUI.SetTaxLevel(1)
 
 			ReplaceEntity("vc_player", Entities.CB_Grange)

@@ -111,16 +111,24 @@ function Mission_InitPlayerColorMapping()
 	-- Set Colors
 
 	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
-	Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
+	--Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)
+	--Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
 	Display.SetPlayerColorMapping(6, ENEMY_COLOR2)	
 	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)	
 	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color == 1 then
+		Display.SetPlayerColorMapping(3, 2)		
+		Display.SetPlayerColorMapping(4, 3)	
+	elseif p1color == 2 then
+		Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)	
+	else
+		Display.SetPlayerColorMapping(3, 2)		
+		Display.SetPlayerColorMapping(4, 1)	
 	end
 end
 
@@ -273,10 +281,6 @@ function Mission_FirstMapAction()
 	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 	LocalMusic.UseSet = EUROPEMUSIC
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-	
 	-- Start quest
 
 		StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingPrelude)
@@ -289,8 +293,6 @@ function Mission_FirstMapAction()
 		    	
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-
 				GUI.SetTaxLevel(1)
 				
 				ReplaceEntity("p1vc", Entities.PB_VillageCenter1)

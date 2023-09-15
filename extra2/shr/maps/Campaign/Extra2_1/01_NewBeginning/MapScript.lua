@@ -89,17 +89,13 @@ end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
-	--Display.SetPlayerColorMapping(3,ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
 	Display.SetPlayerColorMapping(5,EVIL_GOVERNOR_COLOR)
 	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 ------------------------------------------------------------------------------
@@ -128,10 +124,6 @@ function FirstMapAction()
 	createPlayer4()
 	createPlayer5()
 	createPlayer6()
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	startChapterOne()
 	

@@ -46,7 +46,7 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
 	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+	--Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(6,CLEYCOURT_COLOR)
 	
 	-- Caravan color
@@ -58,10 +58,12 @@ function InitPlayerColorMapping()
 	
 	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 	
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(5, 3)		
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+		Display.SetPlayerColorMapping(5, 1)		
 	end
 end
 ------------------------------------------------------------------------------
@@ -113,10 +115,6 @@ function FirstMapAction()
 
 	-- enable String text keys
 	String.Init("CM02_04_TradingCaravans")
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	-- start
 	start1stChapter()	

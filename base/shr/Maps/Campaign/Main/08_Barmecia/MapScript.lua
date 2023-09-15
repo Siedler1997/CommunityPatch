@@ -82,19 +82,22 @@ end
 function Mission_InitPlayerColorMapping()
  	-- set player colors
 	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR2)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, BARMECIA_COLOR)		
+		--Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, PLAYER_FRIEND_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers1, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
 		
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		local p1color = GetPlayerPreferredColor()
+		Display.SetPlayerColorMapping(1, p1color)
+		if p1color ~= 3 then
+			Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 3)		
+			Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 3)	
+		else
+			Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 1)		
+			Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 1)	
 		end
-		
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -172,6 +175,9 @@ function Mission_FirstMapAction()
 	createPlayer5()
 	createPlayer6()
 	
+	Logic.SetPlayerName(gvMission.PlayerIDBarmecia, String.MainKey.."_Player3Name")
+	Logic.SetPlayerName(gvMission.PlayerIDCleycourt, String.MainKey.."_Player4Name")
+	
 	-- Create Armies
 	createArmyKidnapper()
 	createArmyRobbersEast()
@@ -183,16 +189,14 @@ function Mission_FirstMapAction()
 	--EnableDebugging()
 	--Start prelude1
 	LocalMusic.UseSet = EUROPEMUSIC
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	StartCutscene("Intro", start1stQuest)
 
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomChests()
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty1")

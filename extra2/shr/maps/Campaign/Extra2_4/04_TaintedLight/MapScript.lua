@@ -83,14 +83,18 @@ function InitWeather()
 function InitPlayerColorMapping()	
 	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
+	--Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(5, 15)
 	Display.SetPlayerColorMapping(7, 16)
 	Display.SetPlayerColorMapping(8, ROBBERS_COLOR)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(4, PAPAL_COLOR)
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -109,10 +113,6 @@ function FirstMapAction()
 
 	createPlayer4()
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	StartCutscene(Cutscenes[INTROCUTSCENE],Start1stChapter)
 
 	--createBriefingPrelude()
@@ -137,6 +137,8 @@ function FirstMapAction()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomChests()
 		end
 
 		local towers3 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 5, 0) }

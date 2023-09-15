@@ -92,14 +92,9 @@ function InitPlayerColorMapping()
     Display.SetPlayerColorMapping(6,NPC_COLOR)
     Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
-
-	if CP_Difficulty < 2 then
-  		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)
-	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-	end
+	
+  	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(3, PAPAL_COLOR)
 end
 ------------------------------------------------------------------------------
 
@@ -129,10 +124,6 @@ function FirstMapAction()
 
     --EnableDebugging()
     --Game.GameTimeReset()
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
     
     beginChapterOne()
 
@@ -140,7 +131,6 @@ function FirstMapAction()
 		local addWolves = 0
 		local wolfSet = RaidersDefaultSets.Vanilla
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(3, PLAYER_COLOR)
 			GUI.SetTaxLevel(1)
 			
 			addWolves = addWolves + 2

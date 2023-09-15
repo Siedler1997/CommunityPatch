@@ -64,16 +64,12 @@ function Mission_InitPlayerColorMapping()
 	-- Set Colors
 	
 	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)	
+	Display.SetPlayerColorMapping(4, 16)	
 	Display.SetPlayerColorMapping(5, NPC_COLOR)	
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		
 	
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 
@@ -172,10 +168,6 @@ function Mission_FirstMapAction()
 		LocalMusic.UseSet = EUROPEMUSIC
 		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
 	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
-	
 	--	start quest
 		
 	--	EnableDebugging()
@@ -210,6 +202,7 @@ function Mission_FirstMapAction()
 				Logic.CreateEntity(Entities.PB_DarkTower3, 8800, 28640, 0, 2);
 			else
 				Logic.CreateEntity(Entities.PB_DarkTower2, 8800, 28640, 0, 2);
+				CreateRandomChests()
 			end
 			
 			local vc2pos = GetPosition("vc_empty2") 	

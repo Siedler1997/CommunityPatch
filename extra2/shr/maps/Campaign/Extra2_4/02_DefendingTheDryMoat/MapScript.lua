@@ -130,14 +130,22 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
 	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
-	Display.SetPlayerColorMapping(8, 15)
 	
 	Display.SetPlayerColorMapping(4, 3)
 	--Display.SetPlayerColorMapping(7, 6)
-	--4,7
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color == 2 then
+		Display.SetPlayerColorMapping(4, 3)
 		Display.SetPlayerColorMapping(8, 16)
+	else
+		Display.SetPlayerColorMapping(8, 15)
+		if p1color == 1 then
+			Display.SetPlayerColorMapping(4, 3)
+		else
+			Display.SetPlayerColorMapping(4, 13)
+		end
 	end
 end
 	
@@ -194,11 +202,6 @@ function Mission_FirstMapAction()
 	--CreateRandomChests()
 	--StartChestQuest()
 	
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	--	Start Control
 
 	Start1stChapter()
@@ -227,14 +230,9 @@ function Mission_FirstMapAction()
 		
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-			Display.SetPlayerColorMapping(8, 16)
-
 			GUI.SetTaxLevel(1)
 			
 			ReplaceEntity("keep", Entities.PB_Headquarters1)
-		else
-			Display.SetPlayerColorMapping(8, 15)
 		end
 		
 		ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)

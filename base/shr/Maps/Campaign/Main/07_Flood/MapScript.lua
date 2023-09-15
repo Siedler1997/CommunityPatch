@@ -77,17 +77,21 @@ function Mission_InitDiplomacy()
 function Mission_InitPlayerColorMapping()
 
 	--  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+		--Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 		Display.SetPlayerColorMapping(2,NPC_COLOR)
-		Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
+		--Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
 		Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
 		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
 		Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 		Display.SetPlayerColorMapping(7,NPC_COLOR)
 		Display.SetPlayerColorMapping(8,CLEYCOURT_COLOR)
 		
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+		local p1color = GetPlayerPreferredColor()
+		Display.SetPlayerColorMapping(1, p1color)
+		if p1color ~= 3 then
+			Display.SetPlayerColorMapping(3, 3)		
+		else
+			Display.SetPlayerColorMapping(3, 1)		
 		end
 
 end
@@ -208,10 +212,6 @@ function Mission_FirstMapAction()
 
 
 	--	entry point
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	startQuestMoveToLeo()
 
@@ -226,6 +226,9 @@ function Mission_FirstMapAction()
 	else
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty1")

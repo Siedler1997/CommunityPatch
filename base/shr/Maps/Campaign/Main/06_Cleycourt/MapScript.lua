@@ -23,16 +23,20 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	--Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
+	--Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
 	Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
-	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(3, 3)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
 	end
 
 end
@@ -153,22 +157,16 @@ function Mission_FirstMapAction()
 		
 		StartChestQuest()
 
-
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-	
 	-- Start prelude
 	start1stQuest()
 	-- Start time line
 	TimeLine.Start()
 
 --	EnableDebugging()
-	if CP_Difficulty == 0 then
-		CreateRandomChests()
-	else
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 1 then
+			CreateRandomChests()
+			CreateRandomGoldChests()
 			Logic.CreateEntity(Entities.PB_Tower2,8100,15000,0,7)
 		else
 			GUI.SetTaxLevel(1)
@@ -189,6 +187,7 @@ function Mission_FirstMapAction()
 		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
 		LookAt(bossID, "Dario")
 	else
+		CreateRandomChests()
 		CreateRandomGoldChests()
 	end
 

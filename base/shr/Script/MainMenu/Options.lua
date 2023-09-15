@@ -182,7 +182,38 @@ OptionsMenu.S10_UpdateSex( _Sex )
 	XGUIEng.HighLightButton( XGUIEng.GetCurrentWidgetID(), HighLightFlag )
 
 end
+----------------------------------------------------------------------------------------------------
+-- Get user's prefered color
 
+function OptionsMenu.S10_Tool_GetPrefColor()
+	local color = 1
+	
+	if GDB.IsKeyValid( "Config\\User\\PrefColor" ) then
+		color = GDB.GetValue("Config\\User\\PrefColor")
+	end
+
+	return color
+end
+
+----------------------------------------------------------------------------------------------------
+-- Set user's prefered color
+
+function OptionsMenu.S10_SetPrefColor(_Color)
+	GDB.SetValue("Config\\User\\PrefColor", _Color)
+end
+
+----------------------------------------------------------------------------------------------------
+-- Update user's prefered color
+
+function OptionsMenu.S10_UpdatePrefColor(_Color)
+	local HighLightFlag = 0
+	
+	if OptionsMenu.S10_Tool_GetPrefColor() == _Color then
+		HighLightFlag = 1
+	end
+	
+	XGUIEng.HighLightButton(XGUIEng.GetCurrentWidgetID(), HighLightFlag)
+end
 
 ----------------------------------------------------------------------------------------------------
 -- Screen 20

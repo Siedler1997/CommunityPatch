@@ -91,9 +91,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- NPCs; yellow
 	Display.SetPlayerColorMapping(7, KERBEROS_COLOR)		-- Kerberos' units
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 
@@ -198,10 +196,6 @@ function Mission_FirstMapAction()
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	entry point
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
 
 		StartBinkVideo("Intro") 
 
@@ -213,6 +207,8 @@ function Mission_FirstMapAction()
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
+			else
+				CreateRandomGoldChests()
 			end
 			--[[
 			local vcpos1 = GetPosition("vc_empty1")

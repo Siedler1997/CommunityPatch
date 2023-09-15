@@ -93,9 +93,13 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(7,ARIS_ROBBERS)
-
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
+	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(5, 3)		
+	else
+		Display.SetPlayerColorMapping(5, 1)		
 	end
 end
 
@@ -120,10 +124,6 @@ function FirstMapAction()
 	createPlayer5()
 	createPlayer6()
 	createPlayer7()
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	startChapterOne()
 	

@@ -64,17 +64,16 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(6,NPC_COLOR)
 	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
-		
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
-        Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(5, NEPHILIM_COLOR)
+	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	Display.SetPlayerColorMapping(7, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, 2)		
+		Display.SetPlayerColorMapping(5, 2)	
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
-        Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
-		Display.SetPlayerColorMapping(5, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(2, 6)		
+		Display.SetPlayerColorMapping(5, 6)	
 	end
 end
 
@@ -142,19 +141,11 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])	
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-	
 	-- start
 	StartCutscene(Cutscenes[INTROCUTSCENE],start1stChapter)
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(5, ENEMY_COLOR1)
-
 			GUI.SetTaxLevel(1)
 		end
 		--[[

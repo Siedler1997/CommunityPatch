@@ -33,9 +33,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 
 end
 	
@@ -173,10 +171,6 @@ function Mission_FirstMapAction()
 	LocalMusic.UseSet = MEDITERANEANMUSIC
 	
 	-- Start prelude
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	start1stQuest()
 
@@ -194,6 +188,9 @@ function Mission_FirstMapAction()
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 
 		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)

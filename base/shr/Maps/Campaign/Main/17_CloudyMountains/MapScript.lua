@@ -33,9 +33,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7,NPC_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 
 end
 
@@ -179,10 +177,6 @@ function Mission_FirstMapAction()
 	Camera.ScrollSetLookAt(pos.X, pos.Y)
 	
 	LocalMusic.UseSet = HIGHLANDMUSIC
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	start1stQuest()
 	
@@ -194,6 +188,9 @@ function Mission_FirstMapAction()
 	else
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 
 		local bosspos1 = GetPosition("HQ_AI1")

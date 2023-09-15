@@ -78,13 +78,13 @@ function Mission_InitDiplomacy()
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(3, CLEYCOURT_COLOR)
 	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(7, GetPlayerPreferredColor())
 end
 
 
@@ -235,10 +235,6 @@ function Mission_FirstMapAction()
 	MakeInvulnerable("Rock2")
 	--EnableDebugging()
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	start1stChapter()
 	
 	if CP_Difficulty > 0 then

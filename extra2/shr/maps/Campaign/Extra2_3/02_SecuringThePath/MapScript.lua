@@ -56,24 +56,21 @@ function Mission_InitPlayerColorMapping()
 BLUE = 1
 RED = 2
 
-
 	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
 	Display.SetPlayerColorMapping(6, NPC_COLOR)
 	Display.SetPlayerColorMapping(8, NPC_COLOR)
 		
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(2, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(2, p1color)
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(7, p1color)
+
+	if p1color ~= 2 then
 		Display.SetPlayerColorMapping(5, 15)
-		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
 	else
-		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
 		Display.SetPlayerColorMapping(5, 16)
-		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
 	end
 		
-	
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
@@ -243,17 +240,19 @@ function Mission_FirstMapAction()
 
 
 	
-	for i = 1,5,1 do
-	local pos = GetPosition("RandomChest"..i)
-	CreateChest(pos,chestCallbackG)
-	end
-	for i = 6,8,1 do
-	local pos = GetPosition("RandomChest"..i)
-	CreateChest(pos,chestCallbackI)
-	end
-	for i = 9,11,1 do
-	local pos = GetPosition("RandomChest"..i)
-	CreateChest(pos,chestCallbackG)
+	if CP_Difficulty < 2 then
+		for i = 1,5,1 do
+			local pos = GetPosition("RandomChest"..i)
+			CreateChest(pos,chestCallbackG)
+		end
+		for i = 6,8,1 do
+			local pos = GetPosition("RandomChest"..i)
+			CreateChest(pos,chestCallbackI)
+		end
+		for i = 9,11,1 do
+			local pos = GetPosition("RandomChest"..i)
+			CreateChest(pos,chestCallbackG)
+		end
 	end
 
 	
@@ -285,17 +284,6 @@ function Mission_FirstMapAction()
 				ReplaceEntity(towers1[i], Entities.PB_Tower3)
 			end
 		end
-	end
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(2, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(3, PLAYER_COLOR)
-		Display.SetPlayerColorMapping(5, 15)
-		Display.SetPlayerColorMapping(7, PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(5, 16)
-		Display.SetPlayerColorMapping(7, NEPHILIM_COLOR)
 	end
 	
 	--StartSimpleJob("GetMousePos")

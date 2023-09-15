@@ -57,15 +57,15 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(8,FRIENDLY_COLOR1)
 	Display.SetPlayerColorMapping(3,NPC_COLOR)
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
-	
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-		Display.SetPlayerColorMapping(2,NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, 2)		
+		Display.SetPlayerColorMapping(4, 2)	
 	else
-		Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(2,ENEMY_COLOR1)
-		Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(2, 6)		
+		Display.SetPlayerColorMapping(4, 6)	
 	end
 end
 
@@ -128,18 +128,11 @@ function FirstMapAction()
     
     LocalMusic.UseSet = DARKMOORMUSIC
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	-- start
 	StartCutscene(Cutscenes[INTROCUTSCENE],start1stChapter)
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(2,ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
-
 			GUI.SetTaxLevel(1)
 		end
 

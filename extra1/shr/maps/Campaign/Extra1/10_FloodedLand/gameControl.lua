@@ -10,7 +10,7 @@ function start1stChapter()
 	CreateChestOpener("Helias")
 	CreateChestOpener("Quintos")
 	CreateChestOpener("Mirai")
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		CreateRandomGoldChests()
 	end
 	StartChestQuest()

@@ -97,9 +97,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)			-- Pirates
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR2)		-- infected village
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 
 end
 
@@ -230,10 +228,6 @@ function Mission_FirstMapAction()
 		createPlayer8()
 
 	--	entry point
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
 
 		start1stCutscene()
 		
@@ -243,6 +237,9 @@ function Mission_FirstMapAction()
 		else
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
+			else
+				CreateRandomGoldChests()
+				CreateRandomChests()
 			end
 
 			--DestroyEntity("vc_empty")

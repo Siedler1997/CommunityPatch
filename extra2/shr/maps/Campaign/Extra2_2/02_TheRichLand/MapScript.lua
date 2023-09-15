@@ -71,9 +71,7 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(5, NPC_COLOR)
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)
 	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -160,11 +158,6 @@ function Mission_FirstMapAction()
 		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 		
-	
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, 2)
-		end	
-	
 	--	start quest
 
 		start1stChapter()

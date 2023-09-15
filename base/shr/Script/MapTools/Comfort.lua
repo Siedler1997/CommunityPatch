@@ -1796,6 +1796,17 @@ function CreateMilitaryGroup(_player,_entity,_soldiers,_position,_name,_lookAt)
 
 end
 
+-- Gibt die bevorzugte Spielerfarbe des Spielers zurück
+function GetPlayerPreferredColor()
+	local color = 1
+	
+	if GDB.IsKeyValid( "Config\\User\\PrefColor" ) then
+		color = GDB.GetValue("Config\\User\\PrefColor")
+	end
+
+	return color
+end
+
 --- GetRandom   mcb  1.0    (Original ???)  
 -- Gibt eine Pseudozufallszahl zwischen _min und _max zurück.  
 -- Ist _max nicht gesetzt, zwischen 1 und _min.  

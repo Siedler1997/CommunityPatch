@@ -72,12 +72,9 @@ function end2ndChapter()
 	SetPlayerName(2,nil)
 	SetPlayerName(4,nil)
 
-	-- change color of walls
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(3,NEPHILIM_COLOR)
-	end
+
+	Display.SetPlayerColorMapping(3,GetPlayerPreferredColor())
+
 	ResolveBriefing(briefingPreludeRescueCityQuest)
 	ResolveBriefing(briefingPreludeShowIronMine)
 

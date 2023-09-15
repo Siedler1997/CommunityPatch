@@ -546,6 +546,11 @@
 
 
 - ToDos:
+	* High priority!
+		+ Old Kings Castle: Berg mit unerreichbaren Schatztruhen fixen
+		+ SP-Maps: Bevorzugte Spielerfarbe respektieren
+		+ SP-Maps: Fixes und wilde Tiere, aber ohne Schwierigkeitsgrad
+		+ FeatureLog aktualisieren
 	* Misc-Items
 		+ Rifles
 		+ Evil stuff

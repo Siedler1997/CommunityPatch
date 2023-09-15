@@ -95,13 +95,8 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 	
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-		Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-	end
+	Display.SetPlayerColorMapping(1,GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(3,GetPlayerPreferredColor())
 end
 ------------------------------------------------------------------------------
 function FirstMapAction()
@@ -121,10 +116,6 @@ function FirstMapAction()
     createPlayer6()
 
     createQuestDefeat()
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
     beginChapterOne()
 
@@ -132,7 +123,6 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
 			GUI.SetTaxLevel(1)
 
 			Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)

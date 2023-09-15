@@ -108,11 +108,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, BARBARIAN_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
-		
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-		end
+		Display.SetPlayerColorMapping(gvMission.PlayerID, GetPlayerPreferredColor())	
 		
 end
 
@@ -196,10 +192,6 @@ function Mission_FirstMapAction()
 	--EnableDebugging()
 
 	createArmyFolklungA()
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
 
 	StartCutscene("Intro", start1stQuest)
 		
@@ -213,6 +205,7 @@ function Mission_FirstMapAction()
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
 		if CP_Difficulty == 1 then
+			CreateRandomChests()	
 			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5200, 35700, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5700, 26300, 0, 5);
@@ -249,8 +242,8 @@ function Mission_FirstMapAction()
 	StartCountdown(60, createArmyBesiegerA, false)
 	createArmyDefendBase()
 
-	StartSimpleJob("GetMousePos")
-	Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 function StartOldCutscene()
