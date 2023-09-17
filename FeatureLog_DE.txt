@@ -548,13 +548,11 @@
 - ToDos:
 	* High priority!
 		+ Old Kings Castle: Berg mit unerreichbaren Schatztruhen fixen
-		+ SP-Maps: Bevorzugte Spielerfarbe respektieren
-		+ SP-Maps: Fixes und wilde Tiere, aber ohne Schwierigkeitsgrad
-		+ SP-Maps: Spielernamen im Diplomatiemenü
-		+ SP-Maps: Verdelbare Start-Rohstoffe
-		+ SP-Maps: KIs alle regulären Techs geben?
-		+ Bündnis der Feinde: Dovbar als Held?
-		+ Scout Forester?
+		+ SP-Maps: 
+			/ Wilde Tiere
+			/ Spielernamen im Diplomatiemenü
+			/ Verdelbare Start-Rohstoffe
+			/ KIs alle regulären Techs geben?
 		+ FeatureLog aktualisieren
 	* Misc-Items
 		+ Rifles
@@ -598,6 +596,7 @@
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* Kalas Tod: stack overflow(?)
+	* Scout Forester?
 	* Eigene Texturen für
 		+ Tech-Trader
 		+ Veteranen

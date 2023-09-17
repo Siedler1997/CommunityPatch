@@ -2400,3 +2400,11 @@ function IsPositionInMap(_pos, _correction)
 		return newpos
 	end
 end
+
+function SetAIUnitsToBuild( _aiID, _types )
+    for i = table.getn(DataTable), 1, -1 do
+        if DataTable[i].player == _aiID and DataTable[i].AllowedTypes then
+            DataTable[i].AllowedTypes = _types;
+        end
+    end
+end
