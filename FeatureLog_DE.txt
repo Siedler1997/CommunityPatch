@@ -547,11 +547,10 @@
 
 - ToDos:
 	* High priority!
-		+ Old Kings Castle: Berg mit unerreichbaren Schatztruhen fixen
 		+ SP-Maps: 
 			/ Wilde Tiere
 			/ Spielernamen im Diplomatiemenü
-			/ Verdelbare Start-Rohstoffe
+			/ Veredelbare Start-Rohstoffe
 			/ KIs alle regulären Techs geben?
 		+ FeatureLog aktualisieren
 	* Misc-Items
