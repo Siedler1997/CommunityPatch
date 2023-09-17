@@ -1002,16 +1002,19 @@ function GUIUpdate_AlarmButton()
 	XGUIEng.SetProgressBarValues("OP_ActivateAlarm_Recharge", RemainingAlarmTimeInPercent, 100)
 end
 
-function
-GUIUpdate_TaxesButtons()
-	
+function GUIUpdate_TaxesButtons()
 	local PlayerID = GUI.GetPlayerID()
 	local TaxLevel = Logic.GetTaxLevel(PlayerID)
+	local BuildingID = GUI.GetSelectedEntity()
+	local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(BuildingID))
 	
-	
-	XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-	XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
-	
+	if UpgradeCategory == UpgradeCategories.Outpost then
+		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+		XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+	else
+		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+		XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+	end
 end
 
 function GUIUpdate_OvertimesButtons()
