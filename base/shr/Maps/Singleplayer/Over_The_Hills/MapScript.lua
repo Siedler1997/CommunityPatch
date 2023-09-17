@@ -40,12 +40,12 @@ function Mission_InitPlayerColorMapping()
 		if p1color ~= 2 then
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		-- Landsberg
 		else
-			Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)		-- Landsberg
+			Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		-- Landsberg
 		end
 
 		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		-- Landsberg
-		Display.SetPlayerColorMapping(3, ENEMY_COLOR2)		-- Meuselwitz
-		Display.SetPlayerColorMapping(4, MORTFICHET_COLOR)	-- Hohenturm
+		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)		-- Meuselwitz
+		--Display.SetPlayerColorMapping(4, MORTFICHET_COLOR)	-- Hohenturm
 		Display.SetPlayerColorMapping(5, NPC_COLOR)			-- Händler
 		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)	-- Walls
 		
@@ -60,6 +60,9 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(4)
 end
 
 
@@ -113,12 +116,7 @@ function Mission_FirstMapAction()
 		StartChestQuest()
 	
 	--	resources
-	
-		AddGold(800)
-		AddWood(400)
-		AddClay(500)
-		AddStone(400)
-		AddSulfur(350)
+		GlobalMissionScripting.GiveResouces(1, 800, 500, 400, 400, 350, 350)
 	
 	--	create players
 	
@@ -134,4 +132,5 @@ function Mission_FirstMapAction()
 	--	start quest
 		create1stQuest()
 		    	
+		--Tools.ExploreArea(-1, -1, 900)
 	end

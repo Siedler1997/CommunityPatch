@@ -9,6 +9,7 @@ Script.Load( "Data\\Script\\MapTools\\Main.lua" )
 	IncludeLocals("player_2")
 	IncludeLocals("player_3")
 	IncludeLocals("player_5")
+	IncludeLocals("player_8")
 	
 	IncludeLocals("briefing_prelude")
 	IncludeLocals("briefing_merchant1")
@@ -31,8 +32,10 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )		-- robbers on small island
 
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Neutral )
-
-	end
+	
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Hostile )
+end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
@@ -42,15 +45,16 @@ function Mission_InitPlayerColorMapping()
 		local p1color = GetPlayerPreferredColor()
 		Display.SetPlayerColorMapping(1, p1color)
 		if p1color ~= 2 then
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-			Display.SetPlayerColorMapping(3, ENEMY_COLOR2)	
+			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)	
+			Display.SetPlayerColorMapping(6, ENEMY_COLOR1)	
 			Display.SetPlayerColorMapping(8, ENEMY_COLOR1)		
 		else
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
-			Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)	
+			Display.SetPlayerColorMapping(6, ENEMY_COLOR2)		
 			Display.SetPlayerColorMapping(8, ENEMY_COLOR2)		
 		end
 
+		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)	
 		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
 		--Display.SetPlayerColorMapping(3, ENEMY_COLOR2)		
 		Display.SetPlayerColorMapping(4, NPC_COLOR)		
@@ -70,6 +74,14 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(5)
+	ResearchAllMilitaryTechs(6)
+	ResearchAllMilitaryTechs(7)
+	ResearchAllMilitaryTechs(8)
+
+	--ResearchAnimalTechs(7)
 end
 
 
@@ -135,6 +147,7 @@ function Mission_FirstMapAction()
 		createPlayer2()
 		createPlayer3()
 		createPlayer5()
+		createPlayer8()
 
 	
 	-- set player names

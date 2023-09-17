@@ -30,18 +30,18 @@ function Mission_InitPlayerColorMapping()
 		
 		if p1color == 1 then
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-			Display.SetPlayerColorMapping(3, BARMECIA_COLOR)	
+			Display.SetPlayerColorMapping(4, BARMECIA_COLOR)	
 		elseif p1color == 2 then
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		
-			Display.SetPlayerColorMapping(3, BARMECIA_COLOR)	
+			Display.SetPlayerColorMapping(4, BARMECIA_COLOR)	
 		else
 			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-			Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)	
+			Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	
 		end
 
 		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
 		--Display.SetPlayerColorMapping(3, BARMECIA_COLOR)		
-		Display.SetPlayerColorMapping(4, NPC_COLOR)		
+		Display.SetPlayerColorMapping(3, NPC_COLOR)		
 	
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -52,7 +52,9 @@ function Mission_InitResources()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	end
+	ResearchAllMilitaryTechs(2, true)
+	ResearchAllMilitaryTechs(4, true)
+end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start to initialize ai for all ai players
@@ -119,7 +121,7 @@ function Mission_FirstMapAction()
 
 	-- Set Music-Set
 
-		LocalMusic.UseSet = MEDITERANEANMUSIC
+		LocalMusic.UseSet = EUROPEMUSIC
 
 	-- Start time line
 
@@ -138,4 +140,6 @@ function Mission_FirstMapAction()
 	
 		start1stQuest()	
 
-	end
+		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
+end

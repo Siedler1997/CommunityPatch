@@ -61,7 +61,13 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(4)
+	ResearchAllMilitaryTechs(5)
+	ResearchAllMilitaryTechs(6)
+	ResearchAllMilitaryTechs(7)
+	ResearchAllMilitaryTechs(8)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -106,6 +112,7 @@ function Mission_FirstMapAction()
 	IncludeLocals("army_p2attack")
 	IncludeLocals("army_p2cavalryattack")
 	IncludeLocals("army_p2defense")
+	IncludeLocals("army_p3defense")
 	IncludeLocals("army_p4defense")
 	IncludeLocals("army_p6defense")
 
@@ -118,6 +125,7 @@ function Mission_FirstMapAction()
 
 	IncludeLocals("player_1")
 	IncludeLocals("player_2")
+	IncludeLocals("player_3")
 	IncludeLocals("player_4")
 	IncludeLocals("player_6")
 

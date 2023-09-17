@@ -50,7 +50,9 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(5, true)
+	ResearchAllMilitaryTechs(7)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -113,7 +115,7 @@ function Mission_FirstMapAction()
 
 	-- Set Music-Set
 
-		LocalMusic.UseSet = MEDITERANEANMUSIC
+		LocalMusic.UseSet = EUROPEMUSIC
 
 	-- Start time line
 
@@ -147,5 +149,7 @@ function Mission_FirstMapAction()
 	-- Start prelude
 
 	start1stQuest()
+
+	--Tools.ExploreArea(-1, -1, 900)
 
 end

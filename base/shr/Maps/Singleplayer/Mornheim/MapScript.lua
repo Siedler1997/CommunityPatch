@@ -47,15 +47,14 @@ function Mission_InitDiplomacy()
 function Mission_InitPlayerColorMapping()
 		local p1color = GetPlayerPreferredColor()
 		Display.SetPlayerColorMapping(1, p1color)
-		if p1color ~= 2 then
-			Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		-- 
-		else
+		if p1color == 2 then
+			Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	-- 
+		elseif p1color == 3 then
 			Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		-- 
 		end
 
-		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	-- 
 		--Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		-- 
-		Display.SetPlayerColorMapping(4, ENEMY_COLOR2)		-- 
+		--Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)		-- 
 		Display.SetPlayerColorMapping(5, CLEYCOURT_COLOR)	-- 
 		
 end
@@ -69,7 +68,14 @@ function Mission_InitResources()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-	end
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(4)
+	ResearchAllMilitaryTechs(5)
+	ResearchAllMilitaryTechs(6)
+	ResearchAllMilitaryTechs(7)
+	ResearchAllMilitaryTechs(8)
+end
 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -187,6 +193,8 @@ function Mission_FirstMapAction()
 		setupPlayer3()
 		setupPlayer4()
 
+		
+		Logic.SetPlayerName(5, String.MainKey.."_Player5Name")
 
 		--Input.KeyBindDown(Keys.S, "Logic.SetTechnologyState(1,Technologies.T_SuperTechnology,3)")
 
@@ -228,5 +236,6 @@ function Mission_FirstMapAction()
 		
 			StartChestQuest()
 
+			--Tools.ExploreArea(-1, -1, 900)
 	end
 

@@ -39,6 +39,8 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(5)
 end
 
 
@@ -126,11 +128,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(800)
-		AddWood(400)
-		AddClay(350)
-		AddStone(400)
-		AddSulfur(350)
+		GlobalMissionScripting.GiveResouces(1, 800, 350, 400, 400, 350, 350)
 	
 	--	create players
 	
@@ -144,5 +142,6 @@ function Mission_FirstMapAction()
 	--	start quest
 	
 		create1stQuest()
-		    	
+		    
+		--Tools.ExploreArea(-1, -1, 900)
 	end

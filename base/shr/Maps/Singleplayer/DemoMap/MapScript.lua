@@ -46,6 +46,13 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Headquarter,0)	
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(4)
+	ResearchAllMilitaryTechs(5)
+	ResearchAllMilitaryTechs(6)
+	ResearchAllMilitaryTechs(7)
+	ResearchAllMilitaryTechs(8)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -93,7 +100,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(gvMission.PlayerID, GetPlayerPreferredColor())	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDFortress, MORTFICHET_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBarbarian, BARBARIAN_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDCoastBandits, ENEMY_COLOR2)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDCoastBandits, ROBBERS_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDClerics, PLAYER_FRIEND_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDRuinRobbers, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR1)	
@@ -201,6 +208,7 @@ function Mission_FirstMapAction()
 	
 	--start1stQuest()
 	
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 

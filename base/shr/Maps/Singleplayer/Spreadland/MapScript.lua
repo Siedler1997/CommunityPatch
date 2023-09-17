@@ -8,6 +8,7 @@ IncludeLocals("player_2")
 IncludeLocals("player_3")
 IncludeLocals("player_4")
 IncludeLocals("player_5")
+IncludeLocals("player_7")
 
 IncludeLocals("briefing_bigBattle")
 IncludeLocals("briefing_destroyTowers")
@@ -55,6 +56,8 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 2,	4, Diplomacy.Friendly)
 	Logic.SetDiplomacyState( 3, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 5, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Hostile )
 
 	end
 
@@ -83,6 +86,9 @@ function Mission_InitPlayerColorMapping()
 	--Display.SetPlayerColorMapping(4, ENEMY_COLOR1)		-- Dartmoor
 	--Display.SetPlayerColorMapping(5, ENEMY_COLOR1)		-- Dartmoor Serfs
 		
+	Display.SetPlayerColorMapping(6, NPC_COLOR)
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(8, ROBBERS_COLOR)
 end
 
 
@@ -95,6 +101,14 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
+	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
+	ResearchAllMilitaryTechs(4)
+	ResearchAllMilitaryTechs(5)
+	ResearchAllMilitaryTechs(7)
+	ResearchAllMilitaryTechs(8)
+
+	ResearchAnimalTechs(8)
 end
 
 
@@ -177,11 +191,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(8000)
-		AddWood(1000)
-		AddClay(1500)
-		AddStone(1000)
-		AddSulfur(1500)
+		GlobalMissionScripting.GiveResouces(1, 8000, 1500, 1000, 1000, 500, 500)
 	
 	--	create players
 	
@@ -189,9 +199,11 @@ function Mission_FirstMapAction()
 		createPlayer3()
 		createPlayer4()
 		createPlayer5()
+		createPlayer7()
 	
 	--	start quest
 	
 		create1stQuest()
-		    	
+		   
+		--Tools.ExploreArea(-1, -1, 900)
 	end
