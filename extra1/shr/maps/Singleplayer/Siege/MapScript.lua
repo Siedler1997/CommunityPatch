@@ -72,9 +72,10 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-
-
-
+	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(3)
+	ResearchAllMilitaryTechsAddOn(4)
+	ResearchAllMilitaryTechsAddOn(6)
 end
 
 
@@ -129,18 +130,17 @@ function Mission_InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
 	Display.SetPlayerColorMapping(6, 10)
+	Display.SetPlayerColorMapping(7, 15)
 	if p1color == 1 then
 		Display.SetPlayerColorMapping(2, 2)
 		Display.SetPlayerColorMapping(3, 3)
-		Display.SetPlayerColorMapping(7, 15)
 	elseif p1color == 2 then
 		Display.SetPlayerColorMapping(2, 6)
 		Display.SetPlayerColorMapping(3, 3)
-		Display.SetPlayerColorMapping(7, 16)
 	else
 		Display.SetPlayerColorMapping(2, 2)
 		Display.SetPlayerColorMapping(3, 8)
-		Display.SetPlayerColorMapping(7, 11)
+		Display.SetPlayerColorMapping(8, 11)
 	end
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -169,12 +169,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(1500)
-		AddWood(1500)
-		AddClay(1500)
-		AddStone(1500)
-		AddIron(1000)
-		AddSulfur(1000)
+		GlobalMissionScripting.GiveResouces(1, 1500, 1000, 1000, 1000, 800, 600)
 	
 	--	create players
 	
@@ -211,5 +206,9 @@ function Mission_FirstMapAction()
 		create1stQuest()
 		    	
 		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
+
+		--local pos = GetPosition("Pl4tg1")
+		--Logic.CreateEntity(Entities.PU_Hero1, pos.X, pos.Y,0,1)
 	end
 

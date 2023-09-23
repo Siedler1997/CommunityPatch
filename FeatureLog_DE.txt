@@ -552,6 +552,7 @@
 			/ Spielernamen im Diplomatiemenü
 			/ Veredelbare Start-Rohstoffe
 			/ KIs alle regulären Techs geben?
+		+ Fähigkeiten für Dovbar
 		+ FeatureLog aktualisieren
 	* Misc-Items
 		+ Rifles

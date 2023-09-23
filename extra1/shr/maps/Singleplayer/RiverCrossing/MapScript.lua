@@ -45,8 +45,10 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Weathermachine, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
-
 	
+	ResearchAllMilitaryTechsAddOn(3)
+	ResearchAllMilitaryTechsAddOn(5)
+	ResearchAllMilitaryTechsAddOn(7)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -154,4 +156,5 @@ function Mission_FirstMapAction()
 	
 		start1stQuest()	
 
-	end
+		--Tools.ExploreArea(-1, -1, 900)
+end

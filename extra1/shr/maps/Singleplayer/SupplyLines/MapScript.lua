@@ -53,9 +53,9 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-
-
-
+	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(5)
+	ResearchAllMilitaryTechsAddOn(6)
 end
 
 
@@ -147,18 +147,13 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(1500)
-		AddWood(1500)
-		AddClay(2000)
-		AddStone(2000)
-		AddIron(1500)
-		AddSulfur(1000)
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 1500, 2000, 1500, 1000)
 	
 	--	create players
 	
 		createPlayer2()
-                createPlayer3()
-                createPlayer4()
+        createPlayer3()
+        createPlayer4()
 		createPlayer5()
 		createPlayer6()
 
@@ -187,7 +182,7 @@ function Mission_FirstMapAction()
 	
 		create1stQuest()
 		   
-		Tools.ExploreArea(-1, -1, 900)
+		--Tools.ExploreArea(-1, -1, 900)
 	end
 
 
@@ -213,10 +208,10 @@ function CreateArmyOne()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 
 
 	EnlargeArmy(armyOne,troopDescription)
@@ -249,10 +244,10 @@ function CreateArmyTwo()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 
 	EnlargeArmy(armyTwo,troopDescription)
 	EnlargeArmy(armyTwo,troopDescription)
@@ -282,7 +277,7 @@ function CreatebackOne()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	troopDescription.leaderType = Entities.PU_LeaderBow3
@@ -385,10 +380,10 @@ function CreateBandit1()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 
 	EnlargeArmy(Bandit1,troopDescription)
 	EnlargeArmy(Bandit1,troopDescription)
@@ -420,10 +415,10 @@ function CreateBandit2()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderSword4
+	troopDescription.leaderType = Entities.PU_LeaderSword3
 
 	EnlargeArmy(Bandit2,troopDescription)
 	EnlargeArmy(Bandit2,troopDescription)
@@ -527,13 +522,15 @@ function CreateMainDef1()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	troopDescription.leaderType = Entities.PU_LeaderBow4
 
 	EnlargeArmy(MainDef1,troopDescription)
 	EnlargeArmy(MainDef1,troopDescription)
+	EnlargeArmy(MainDef1,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderRifle2
 	EnlargeArmy(MainDef1,troopDescription)
 	EnlargeArmy(MainDef1,troopDescription)
 
@@ -562,7 +559,7 @@ function CreateMainDef2()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
@@ -597,13 +594,15 @@ function CreateMainDef3()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	troopDescription.leaderType = Entities.PU_LeaderSword4
 
 	EnlargeArmy(MainDef3,troopDescription)
 	EnlargeArmy(MainDef3,troopDescription)
+	EnlargeArmy(MainDef3,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
 	EnlargeArmy(MainDef3,troopDescription)
 	EnlargeArmy(MainDef3,troopDescription)
 
@@ -632,13 +631,15 @@ function CreateMainDef4()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	troopDescription.leaderType = Entities.PU_LeaderSword4
 
 	EnlargeArmy(MainDef4,troopDescription)
 	EnlargeArmy(MainDef4,troopDescription)
+	EnlargeArmy(MainDef4,troopDescription)
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
 	EnlargeArmy(MainDef4,troopDescription)
 	EnlargeArmy(MainDef4,troopDescription)
 
@@ -666,10 +667,10 @@ function CreateFirstCon()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 
 	EnlargeArmy(FirstCon,troopDescription)
 	EnlargeArmy(FirstCon,troopDescription)
@@ -701,10 +702,10 @@ function CreateSecCon()
 
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 
 	EnlargeArmy(SecCon,troopDescription)
 	EnlargeArmy(SecCon,troopDescription)

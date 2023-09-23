@@ -21,6 +21,7 @@ TMR_ArmyPL4Assault	= 0
 
 -- INCLUDE global tool script functions
 Script.Load( Folders.MapTools.."Main.lua" )
+IncludeGlobals("MapEditorTools")
 -- Script.Load("Data\\Script\\MapTools\\GlobalMissionScripts.lua") -- Nicht nötig, da Main.LUA schon alles hat.
 -- Script.Load("Data\\Script\\MapTools\\WeatherSets.lua")
 
@@ -41,14 +42,7 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------------------
 -- Set RESOURCES for Human Player 1 ------------------------------------------------------
 function InitResources()
-
-   AddGold(900)
-   AddClay(1200)
-   AddWood(1200)
-   AddStone(1200)
-   AddIron(600)
-   AddSulfur(350)
-
+	GlobalMissionScripting.GiveResouces(1, 900, 1200, 1200, 1200, 600, 350)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -59,17 +53,21 @@ function InitTechnologies()
 	ResearchTechnology(Technologies.GT_Tactics)
 	ResearchTechnology(Technologies.GT_Construction)
 	ResearchTechnology(Technologies.GT_GearWheel)
-
+	
+	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(3)
+	ResearchAllMilitaryTechsAddOn(4)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 function InitWeatherGfxSets()
-	SetupNormalWeatherGfxSet()
+	SetupMediterraneanWeatherGfxSet()
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)
+	Logic.AddWeatherElement(1, 600, 1, 1, 5, 10)
+	Logic.AddWeatherElement(2,  90, 1, 2, 5, 10)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -88,6 +86,8 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(2, 2)		
 		Display.SetPlayerColorMapping(3, 4)	
 	end
+	Display.SetPlayerColorMapping(5, 6)
+	Display.SetPlayerColorMapping(7, 15)
 end
 ---------------------------------------------------------------------------------------------
 --###########################################################################################
@@ -139,6 +139,7 @@ String.Init("SP_Antrium")
 	StartSimpleJob("ControlDefeat")
 	StartSimpleJob("WinterStartJob")
 
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 --#################################################################################################
@@ -193,12 +194,15 @@ function CreatePlayer2()
 	player2.id 	= 2
 
 	--	set up default information
+	
+		SetPlayerName(2, String.Key("_Player2Name"))
+		MapEditor_SetupAI(player2.id, 1, 6000, 1, "HQ_PL2", 0, 0)
 
 		local description = {
 
-			serfLimit				=	15,
+			serfLimit				=	8,
 			--------------------------------------------------
-			extracting			=	true,
+			extracting			=	false,
 			--------------------------------------------------
 			rebuild = {
 				delay				=	25,
@@ -215,7 +219,7 @@ function CreatePlayer2()
 			},
 			--------------------------------------------------
 			refresh = {
-				gold				=	3,
+				gold				=	10,
 				clay				=	3,
 				wood				=	3,
 				stone				=	3,
@@ -239,10 +243,13 @@ function CreatePlayer3()
 	player3.id 	= 3
 
 	--	set up default information
+	
+		SetPlayerName(3, String.Key("_Player3Name"))
+		MapEditor_SetupAI(player3.id, 2, 6000, 3, "HQ_PL3", 2, 0)
 
 		local description = {
 
-			serfLimit				=	4,
+			serfLimit				=	12,
 			--------------------------------------------------
 			extracting			=	false,
 			--------------------------------------------------
@@ -252,22 +259,22 @@ function CreatePlayer3()
 			},
 			--------------------------------------------------
 			resources = {
-				gold				=	200,
-				clay				=	200,
-				wood				=	200,
-				stone				=	200,
-				iron				=	200,
-				sulfur			=	200
+				gold				=	700,
+				clay				=	500,
+				wood				=	500,
+				stone				=	500,
+				iron				=	500,
+				sulfur			=	500
 			},
 			--------------------------------------------------
 			refresh = {
-				gold				=	3,
-				clay				=	3,
-				wood				=	3,
-				stone				=	3,
-				iron				=	3,
-				sulfur			=	3,
-				updateTime	=	2
+				gold				=	30,
+				clay				=	15,
+				wood				=	15,
+				stone				=	15,
+				iron				=	15,
+				sulfur			=	15,
+				updateTime	=	5
 			},
 		}
 
@@ -285,6 +292,7 @@ function CreatePlayer4()
 	player4.id 	= 4
 
 	--	set up default information
+		SetPlayerName(4, String.Key("_Player4Name"))
 
 		local description = {
 
@@ -335,7 +343,7 @@ function CreateGuardTroopsPL1()
 			leaderType 					= Entities.PU_LeaderSword1,
 			maxNumberOfSoldiers	= 4,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= MEDIUM_EXPERIENCE,
 		}
 
 		local troopDescription_2 = {
@@ -387,7 +395,7 @@ function CreateArmyPL2Assault()
 	ArmyPL2Assault							= {}
 
 	ArmyPL2Assault.player 			= 2
-	ArmyPL2Assault.id						= 1
+	ArmyPL2Assault.id						= 0
 	ArmyPL2Assault.strength			= 8
 	ArmyPL2Assault.position			= GetPosition("SP_ArmyPL2DefHQ") -- "SP_ArmyPL2Assault"
 	ArmyPL2Assault.rodeLength		= 4000
@@ -405,10 +413,10 @@ function CreateArmyPL2Assault()
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.PU_LeaderBow3,
-		maxNumberOfSoldiers	= 8,
+		leaderType 					= Entities.PU_LeaderBow2,
+		maxNumberOfSoldiers	= 4,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL2Assault,troopDescription_1)
@@ -474,7 +482,7 @@ function CreateArmyPL2DefNord()
 	ArmyPL2DefNord							= {}
 
 	ArmyPL2DefNord.player 			= 2
-	ArmyPL2DefNord.id						= 2
+	ArmyPL2DefNord.id						= 9
 	ArmyPL2DefNord.strength			= 3
 	ArmyPL2DefNord.position			= GetPosition("SP_ArmyPL2DefNord")
 	ArmyPL2DefNord.rodeLength		= 2000
@@ -486,7 +494,7 @@ function CreateArmyPL2DefNord()
 		leaderType 					= Entities.PU_LeaderSword3,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 
@@ -495,15 +503,15 @@ function CreateArmyPL2DefNord()
 		leaderType 					= Entities.PU_LeaderBow3,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 	local troopDescription_3 = {
 
-		leaderType 					= Entities.PV_Cannon1,
+		leaderType 					= Entities.PV_Cannon3,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL2DefNord,troopDescription_1)
@@ -542,7 +550,7 @@ function CreateArmyPL2DefTown()
 	ArmyPL2DefTown							= {}
 
 	ArmyPL2DefTown.player 			= 2
-	ArmyPL2DefTown.id						= 3
+	ArmyPL2DefTown.id						= 8
 	ArmyPL2DefTown.strength			= 4
 	ArmyPL2DefTown.position			= GetPosition("SP_ArmyPL2DefTown")
 	ArmyPL2DefTown.rodeLength		= 3000
@@ -563,15 +571,15 @@ function CreateArmyPL2DefTown()
 		leaderType 					= Entities.PU_LeaderBow3,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 	local troopDescription_3 = {
 
-		leaderType 					= Entities.PV_Cannon2,
+		leaderType 					= Entities.PV_Cannon3,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= MEDIUM_EXPERIENCE,
+		experiencePoints 		= HIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL2DefTown,troopDescription_1)
@@ -611,7 +619,7 @@ function CreateArmyPL2DefHQ()
 	ArmyPL2DefHQ							= {}
 
 	ArmyPL2DefHQ.player 			= 2
-	ArmyPL2DefHQ.id						= 4
+	ArmyPL2DefHQ.id						= 7
 	ArmyPL2DefHQ.strength			= 4
 	ArmyPL2DefHQ.position			= GetPosition("SP_ArmyPL2DefHQ")
 	ArmyPL2DefHQ.rodeLength		= 3000
@@ -637,7 +645,7 @@ function CreateArmyPL2DefHQ()
 
 	local troopDescription_3 = {
 
-		leaderType 					= Entities.PV_Cannon2,
+		leaderType 					= Entities.PV_Cannon3,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= HIGH_EXPERIENCE,
@@ -692,7 +700,7 @@ function CreateArmyPL4Assault()
 	local troopDescription_1 = {
 
 		leaderType 					= Entities.CU_Barbarian_LeaderClub2,
-		maxNumberOfSoldiers	= 4,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 		= MEDIUM_EXPERIENCE,
 	}
@@ -700,12 +708,13 @@ function CreateArmyPL4Assault()
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.CU_BanditLeaderBow1,
-		maxNumberOfSoldiers	= 4,
+		leaderType 					= Entities.PU_LeaderPoleArm4,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= VERYHIGH_EXPERIENCE,
 	}
 
+	EnlargeArmy(ArmyPL4Assault,troopDescription_1)
 	EnlargeArmy(ArmyPL4Assault,troopDescription_1)
 	EnlargeArmy(ArmyPL4Assault,troopDescription_1)
 	EnlargeArmy(ArmyPL2Assault,troopDescription_2)
@@ -771,16 +780,16 @@ function CreateArmyPL4DefHQ()
 	local troopDescription_1 = {
 
 		leaderType 					= Entities.CU_Barbarian_LeaderClub2,
-		maxNumberOfSoldiers	= 4,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= MEDIUM_EXPERIENCE,
 	}
 
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.CU_BanditLeaderBow1,
-		maxNumberOfSoldiers	= 4,
+		leaderType 					= Entities.CU_BanditLeaderBow2,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 		= MEDIUM_EXPERIENCE,
 	}
@@ -829,7 +838,7 @@ function CreateArmyPL3DefHQ()
 	ArmyPL3DefHQ							= {}
 
 	ArmyPL3DefHQ.player 			= 3
-	ArmyPL3DefHQ.id						= 1
+	ArmyPL3DefHQ.id						= 0
 	ArmyPL3DefHQ.strength			= 4
 	ArmyPL3DefHQ.position			= GetPosition("SP_ArmyPL3DefHQ")
 	ArmyPL3DefHQ.rodeLength		= 2500
@@ -841,16 +850,16 @@ function CreateArmyPL3DefHQ()
 		leaderType 					= Entities.PU_LeaderHeavyCavalry2,
 		maxNumberOfSoldiers	= 3,
 		minNumberOfSoldiers	= 1,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= VERYHIGH_EXPERIENCE,
 	}
 
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.PU_LeaderBow3,
+		leaderType 					= Entities.PU_LeaderBow4,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= VERYHIGH_EXPERIENCE,
 	}
 
 	local troopDescription_3 = {
@@ -858,7 +867,7 @@ function CreateArmyPL3DefHQ()
 		leaderType 					= Entities.PV_Cannon3,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= VERYHIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL3DefHQ,troopDescription_1)
@@ -898,7 +907,7 @@ function CreateArmyPL3Assault1()
 	ArmyPL3Assault1							= {}
 
 	ArmyPL3Assault1.player 				= 3
-	ArmyPL3Assault1.id						= 2
+	ArmyPL3Assault1.id						= 9
 	ArmyPL3Assault1.strength			= 8
 	ArmyPL3Assault1.position			= GetPosition("SP_ArmyPL3Assault1")
 	ArmyPL3Assault1.rodeLength		= 4000
@@ -910,7 +919,7 @@ function CreateArmyPL3Assault1()
 		leaderType 					= Entities.PU_LeaderHeavyCavalry2,
 		maxNumberOfSoldiers	= 4,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 
@@ -919,7 +928,7 @@ function CreateArmyPL3Assault1()
 		leaderType 					= Entities.PU_LeaderCavalry2,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL3Assault1,troopDescription_1)
@@ -963,7 +972,7 @@ function CreateArmyPL3Assault2()
 	ArmyPL3Assault2							= {}
 
 	ArmyPL3Assault2.player 				= 3
-	ArmyPL3Assault2.id						= 3
+	ArmyPL3Assault2.id						= 8
 	ArmyPL3Assault2.strength			= 8
 	ArmyPL3Assault2.position			= GetPosition("SP_ArmyPL3Assault2")
 	ArmyPL3Assault2.rodeLength		= 4000
@@ -975,7 +984,7 @@ function CreateArmyPL3Assault2()
 		leaderType 					= Entities.PU_LeaderPoleArm4,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 
@@ -984,7 +993,7 @@ function CreateArmyPL3Assault2()
 		leaderType 					= Entities.PV_Cannon3,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 	local troopDescription_3 = {
@@ -992,7 +1001,7 @@ function CreateArmyPL3Assault2()
 		leaderType 					= Entities.PV_Cannon4,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 		= HIGH_EXPERIENCE,
+		experiencePoints 		= VERYHIGH_EXPERIENCE,
 	}
 
 	EnlargeArmy(ArmyPL3Assault2,troopDescription_1)
@@ -1036,7 +1045,7 @@ function CreateArmyPL3Assault3()
 	ArmyPL3Assault3							= {}
 
 	ArmyPL3Assault3.player 				= 3
-	ArmyPL3Assault3.id						= 4
+	ArmyPL3Assault3.id						= 7
 	ArmyPL3Assault3.strength			= 8
 	ArmyPL3Assault3.position			= GetPosition("SP_ArmyPL3Assault2")
 	ArmyPL3Assault3.rodeLength		= 4000
@@ -1048,7 +1057,7 @@ function CreateArmyPL3Assault3()
 		leaderType 					= Entities.PU_LeaderCavalry2,
 		maxNumberOfSoldiers	= 4,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
 
@@ -1124,7 +1133,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].title			= String.Key("uebersicht.title")
 		PreludeBriefing[page].text			=	String.Key("PreludeBriefing[1].text")
 		PreludeBriefing[page].position 	= GetPosition("CameraSpot_1")
-		PreludeBriefing[page].explore		=	BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore		=	2500
 
 		PreludeBriefingShowArmy 				=	PreludeBriefing[page]
 
@@ -1136,8 +1145,8 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].title			= String.Key("uebersicht.title")
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[2].text")
 
-		PreludeBriefing[page].position 	= GetPosition("SP_ArmyPL2DefHQ")
-		PreludeBriefing[page].explore		=	BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].position 	= GetPosition("HQ_PL2")
+		PreludeBriefing[page].explore		=	2500
 
 		PreludeBriefingShowArmy 				=	PreludeBriefing[page]
 
@@ -1150,7 +1159,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[3].text")
 
 		PreludeBriefing[page].position 	= GetPosition("CameraSpot_3")
-		PreludeBriefing[page].explore		=	BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore		=	2500
 
 		PreludeBriefingShowArmy 				=	PreludeBriefing[page]
 
@@ -1162,8 +1171,8 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].title				= String.Key("PreludeBriefing[4].title")
 		PreludeBriefing[page].text				= String.Key("PreludeBriefing[4].text")
 
-		PreludeBriefing[page].position 		= GetPosition("CameraSpot_4")
-		PreludeBriefing[page].explore			=	BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].position 		= GetPosition("HQ_PL3")
+		PreludeBriefing[page].explore			=	2500
 		PreludeBriefing[page].marker			=	ANIMATED_MARKER
 
 		PreludeBriefing[page].quest				=	{}
@@ -1201,5 +1210,3 @@ function PreludeBriefingFinished()
 --	ResolveBriefing(PreludeBriefingDestroyHQ) -- NEU !!!
 
 end
-
-

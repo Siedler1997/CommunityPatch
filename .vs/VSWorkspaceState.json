@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\base",
-    "\\base\\shr",
-    "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\User"
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\Singleplayer",
+    "\\extra1\\shr\\maps\\Singleplayer\\SupplyLines",
+    "\\extra1\\shr\\text"
   ],
-  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\player_7.lua",
+  "SelectedNode": "\\extra1\\shr\\text\\de\\InGame\\SP_SupplyLines.xml",
   "PreviewInSolutionExplorer": false
 }

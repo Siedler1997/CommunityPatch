@@ -11,7 +11,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
-        Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
+    Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 2, 7, Diplomacy.Hostile )
 	end
@@ -23,9 +23,12 @@ function Mission_InitPlayerColorMapping()
 	-- Set Colors
 		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 		Display.SetPlayerColorMapping(2, ROBBERS_COLOR)		
-		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		
-		Display.SetPlayerColorMapping(4, ENEMY_COLOR2)
---		Display.SetPlayerColorMapping(6, black)			
+		Display.SetPlayerColorMapping(3, ROBBERS_COLOR)		
+		Display.SetPlayerColorMapping(4, ROBBERS_COLOR)
+		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)
+--		Display.SetPlayerColorMapping(6, black)		
+		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)	
+		Display.SetPlayerColorMapping(7, 4)	
 		Display.SetPlayerColorMapping(8, NPC_COLOR)		
 	
 end
@@ -38,11 +41,15 @@ function Mission_InitResources()
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 
+	--ResearchTechnology(Technologies.T_LeatherMailArmor)
+	--ResearchTechnology(Technologies.T_SoftArcherArmor)
+
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Weathermachine, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
-        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Foundry, 0)
+    Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Foundry, 0)
 	
+	ResearchAllMilitaryTechsAddOn(5)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -171,4 +178,5 @@ function Mission_FirstMapAction()
 	
 	start1stQuest()	
 
+	--Tools.ExploreArea(-1, -1, 900)
 end

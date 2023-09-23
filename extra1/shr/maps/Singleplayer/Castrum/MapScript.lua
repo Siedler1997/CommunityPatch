@@ -5,8 +5,18 @@ TMR_ArmyPL2Assault3	= 0
 TMR_ArmyPL2Assault4	= 0
 TMR_ArmyPL2Assault5	= 0
 TMR_ArmyPL2Assault6	= 0
+TMR_ArmyPL2Assault7	= 0
 TMR_ArmyPL2Killer		= 0
 FirstSpawn 					= 1
+
+EnemySwordType = Entities.PU_LeaderSword3
+EnemySpearType = Entities.PU_LeaderPoleArm3
+EnemyBowType = Entities.PU_LeaderBow3
+EnemyHeavyCavalryType = Entities.PU_LeaderHeavyCavalry1
+EnemyCannon1Type = Entities.PV_Cannon1
+EnemyCannon2Type = Entities.PV_Cannon2
+EnemyRifleType = Entities.PU_LeaderRifle1
+EnemyExperience = 1
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -48,27 +58,33 @@ end
 -- Set RESOURCES for Human Player 1 ------------------------------------------------------
 function InitResources()
 
-   AddGold(3500)
-   AddClay(2000)
-   AddWood(2000)
-   AddStone(1600)
-   AddIron(2000)
-   AddSulfur(500)
+	GlobalMissionScripting.GiveResouces(1, 3500, 2000, 2000, 1600, 2000, 500)
 
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 function InitTechnologies()
+--[[
+	ResearchTechnology(Technologies.GT_Literacy)
+	ResearchTechnology(Technologies.GT_Mercenaries)
+	ResearchTechnology(Technologies.GT_Alchemy)
+	ResearchTechnology(Technologies.GT_Construction)
+--]]
+
+	ResearchTechnology(Technologies.T_UpgradeSword1)
+	ResearchTechnology(Technologies.T_UpgradeSpear1)
+	ResearchTechnology(Technologies.T_UpgradeBow1)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 function InitWeatherGfxSets()
-	SetupNormalWeatherGfxSet()
+	SetupMediterraneanWeatherGfxSet()
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 function InitWeather()
-	AddPeriodicSummer(10)
+	Logic.AddWeatherElement(1, 600, 1, 1, 5, 10)
+	Logic.AddWeatherElement(2,  90, 1, 2, 5, 10)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -80,6 +96,7 @@ function InitPlayerColorMapping()
 	else
 		Display.SetPlayerColorMapping(1, FRIENDLY_COLOR1)		
 	end
+	Display.SetPlayerColorMapping(3, 15)
 end
 ---------------------------------------------------------------------------------------------
 --###########################################################################################
@@ -107,6 +124,7 @@ String.Init("SP_Castrum")
 	CreateArmyPL2Assault4()
 	CreateArmyPL2Assault5()
 	CreateArmyPL2Assault6()
+	CreateArmyPL2Assault7()
 --	CreateArmyPL2Killer() -- diese Army wird später bei TimeLimitStartJob kreiert
 
 	---- show Mission Briefing
@@ -124,9 +142,32 @@ String.Init("SP_Castrum")
 	StartSimpleJob("TimeLimitStartJob")
 	
 	GUIQuestTools.ToggleStopWatch(4200, 1)
+    StartCountdown(30 * 60, UpgradeEnemies, false)
 
 	--Tools.ExploreArea(-1, -1, 900)
 end
+
+function UpgradeEnemies()
+	EnemySwordType = Entities.PU_LeaderSword4
+	EnemySpearType = Entities.PU_LeaderPoleArm4
+	EnemyBowType = Entities.PU_LeaderBow4
+	EnemyHeavyCavalryType = Entities.PU_LeaderHeavyCavalry2
+	EnemyCannon1Type = Entities.PV_Cannon3
+	EnemyCannon2Type = Entities.PV_Cannon4
+	EnemyRifleType = Entities.PU_LeaderRifle2
+
+	EnemyExperience = 2
+
+	ResearchAllMilitaryTechsAddOn(2)
+
+    StartCountdown(30 * 60, EnrageEnemies, false)
+end
+
+function EnrageEnemies()
+	EnemyExperience = 3
+	ResearchTechnology(Technologies.T_SuperTechnology, 2);
+end
+
 
 --#################################################################################################
 
@@ -180,7 +221,7 @@ function CreatePlayer2()
 
 --	local playerId = 2
 --	Logic.SetPlayerName(2, "Der rote Baron")
-	--Logic.SetPlayerName(2, String.MainKey.."_Player2")
+	Logic.SetPlayerName(2, String.MainKey.."_Player2Name")
 
 	player2 		= {}
 	player2.id 	= 2
@@ -262,19 +303,19 @@ function ArmyPL2AssaultJob1()
 		
 	local troopDescription_1 = {
 
-		leaderType 							= Entities.PU_LeaderPoleArm3,
+		leaderType 							= EnemySpearType,
 		maxNumberOfSoldiers			= 8, -- 4
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 
 	local troopDescription_2 	= {
 
-		leaderType 							= Entities.PU_LeaderSword3,
+		leaderType 							= EnemySwordType,
 		maxNumberOfSoldiers			= 8,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault1,troopDescription_1)
@@ -313,7 +354,7 @@ function CreateArmyPL2Assault2()
 
 	ArmyPL2Assault2.player 				= 2
 	ArmyPL2Assault2.id						= 2
-	ArmyPL2Assault2.strength			= 4
+	ArmyPL2Assault2.strength			= 6
 	ArmyPL2Assault2.position			= GetPosition("SP_ArmyPL2Assault2")
 	ArmyPL2Assault2.rodeLength		= 6000
 
@@ -338,22 +379,25 @@ function ArmyPL2AssaultJob2()
 			
 	local troopDescription_1 = {
 
-		leaderType 							= Entities.PU_LeaderBow3,
+		leaderType 							= EnemyBowType,
 		maxNumberOfSoldiers			= 8,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= MEDIUM_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	local troopDescription_2 = {
 
-		leaderType 							= Entities.PV_Cannon3,
-		maxNumberOfSoldiers			= 1,
+		leaderType 							= EnemyCannon1Type,
+		maxNumberOfSoldiers			= 8,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= MEDIUM_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
 	EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
+	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+	troopDescription_2.leaderType = EnemyRifleType
 	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
 	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
 
@@ -411,19 +455,19 @@ function ArmyPL2AssaultJob3()
 			
 	local troopDescription_1 	= {
 
-		leaderType 							= Entities.PU_LeaderSword3,
+		leaderType 							= EnemySwordType,
 		maxNumberOfSoldiers			= 8, -- 4
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 
 	local troopDescription_2 	= {
 
-		leaderType 							= Entities.PV_Cannon2,
+		leaderType 							= EnemyCannon2Type,
 		maxNumberOfSoldiers			= 1,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
@@ -485,10 +529,10 @@ function ArmyPL2AssaultJob4()
 			
 	local troopDescription_1 = {
 
-		leaderType 							= Entities.PU_LeaderHeavyCavalry1,
+		leaderType 							= EnemyHeavyCavalryType,
 		maxNumberOfSoldiers			= 3,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= MEDIUM_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 
@@ -497,7 +541,7 @@ function ArmyPL2AssaultJob4()
 		leaderType 							= Entities.PU_LeaderCavalry2,
 		maxNumberOfSoldiers			= 3,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault4,troopDescription_1)
@@ -560,19 +604,19 @@ function ArmyPL2AssaultJob5()
 			
 	local troopDescription_1 = {
 
-		leaderType 							= Entities.PV_Cannon1,
+		leaderType 							= EnemyCannon1Type,
 		maxNumberOfSoldiers			= 1,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= LOW_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 
 	local troopDescription_2	= {
 
-		leaderType 							= Entities.PV_Cannon3,
+		leaderType 							= EnemyCannon2Type,
 		maxNumberOfSoldiers			= 1,
 		minNumberOfSoldiers			= 0,
-		experiencePoints 				= MEDIUM_EXPERIENCE,
+		experiencePoints 				= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault5,troopDescription_1)
@@ -609,7 +653,7 @@ function CreateArmyPL2Assault6()
 
 	ArmyPL2Assault6.player 				= 2
 	ArmyPL2Assault6.id						= 6
-	ArmyPL2Assault6.strength			= 7
+	ArmyPL2Assault6.strength			= 8
 	ArmyPL2Assault6.position			= GetPosition("SP_ArmyPL2Assault6")
 	ArmyPL2Assault6.rodeLength		= 7000
 
@@ -634,27 +678,27 @@ function ArmyPL2AssaultJob6()
 			
 	local troopDescription_1 		= {
 
-		leaderType 								= Entities.PU_LeaderBow3,
+		leaderType 								= EnemyBowType,
 		maxNumberOfSoldiers				= 8,
 		minNumberOfSoldiers				= 0,
-		experiencePoints 					= MEDIUM_EXPERIENCE,
+		experiencePoints 					= EnemyExperience,
 	}
 
 
 	local troopDescription_2		= {
 
-		leaderType 								= Entities.PU_LeaderSword4,
+		leaderType 								= EnemySwordType,
 		maxNumberOfSoldiers				= 8,
 		minNumberOfSoldiers				= 0,
-		experiencePoints 					= LOW_EXPERIENCE,
+		experiencePoints 					= EnemyExperience,
 	}
 
 	local troopDescription_3 		= {
 
-		leaderType 								= Entities.PU_LeaderPoleArm3,
+		leaderType 								= EnemySpearType,
 		maxNumberOfSoldiers				= 8,
 		minNumberOfSoldiers				= 0,
-		experiencePoints 					= LOW_EXPERIENCE,
+		experiencePoints 					= EnemyExperience,
 	}
 
 	EnlargeArmy(ArmyPL2Assault6,troopDescription_1)
@@ -663,6 +707,8 @@ function ArmyPL2AssaultJob6()
 	EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
 	EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
 	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
+	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
+	troopDescription_3.leaderType = EnemyRifleType
 	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
 
 	end
@@ -717,7 +763,7 @@ function ArmyPL2KillerControl()
 			leaderType 							= Entities.PU_LeaderHeavyCavalry2,
 			maxNumberOfSoldiers			= 3,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 				= LOW_EXPERIENCE,
+			experiencePoints 				= VERYHIGH_EXPERIENCE,
 		}
 	
 		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
@@ -740,6 +786,74 @@ function ArmyPL2KillerControl()
 	else
 
 		Advance(ArmyPL2Killer)
+
+	end
+	
+end
+
+---------------------------------------------------------------------------------------------
+-- CREATE ARMY "ArmyPL2Assault7" to defend the VC
+---------------------------------------------------------------------------------------------
+function CreateArmyPL2Assault7()
+
+	ArmyPL2Assault7								= {}
+
+	ArmyPL2Assault7.player 				= 2
+	ArmyPL2Assault7.id					= 8
+	ArmyPL2Assault7.strength			= 8
+	ArmyPL2Assault7.position			= GetPosition("SP_ArmyPL2Assault7")
+	ArmyPL2Assault7.rodeLength		= 7000
+
+	SetupArmy(ArmyPL2Assault7)
+
+  StartSimpleJob("ArmyPL2Assault7Control")
+
+end
+
+--------------------------------------------------------------------------------
+--	JOB: Attack after 10 minutes
+---------------------------------------------------------------------------------------------
+
+function ArmyPL2Assault7Control()
+
+	if IsDead(ArmyPL2Assault7) and IsExisting("p2_vc") then
+		Redeploy(ArmyPL2Assault7,GetPosition("SP_ArmyPL2Assault7"),7000)
+		TMR_ArmyPL2Assault7 = 0
+			
+		local troopDescription = {
+
+			leaderType 					= EnemySwordType,
+			maxNumberOfSoldiers	= 8,
+			minNumberOfSoldiers	= 0,
+			experiencePoints 		= EnemyExperience,
+		}
+
+		EnlargeArmy(ArmyPL2Assault7,troopDescription)
+		EnlargeArmy(ArmyPL2Assault7,troopDescription)
+
+		troopDescription.leaderType = EnemySpearType
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+	
+		troopDescription.leaderType = EnemyBowType
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+	
+		troopDescription.leaderType = EnemyRifleType
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+
+	end
+
+	TMR_ArmyPL2Assault7 = TMR_ArmyPL2Assault7 + 1
+
+	if TMR_ArmyPL2Assault7 < 600 then 	-- Richtiger Wert: 300 (5 Min)
+
+		Defend(ArmyPL2Assault7)
+
+	else
+
+		Advance(ArmyPL2Assault7)
 
 	end
 	
@@ -788,7 +902,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].title			= String.Key("ubersicht")
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[1].text")
 		PreludeBriefing[page].position 			= GetPosition("SP_ArmyPL2Assault3")
-		PreludeBriefing[page].explore			= BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore			= 3000
 
 		PreludeBriefingShowArmy 			= PreludeBriefing[page]
 
@@ -801,7 +915,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[2].text")
 
 		PreludeBriefing[page].position 			= GetPosition("SP_ArmyPL2Assault4")
-		PreludeBriefing[page].explore			= BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore			= 3000
 
 		PreludeBriefingShowArmy 			= PreludeBriefing[page]
 
@@ -814,7 +928,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[3].text")
 
 		PreludeBriefing[page].position 			= GetPosition("RD_ArmyPL2Assault4")
-		PreludeBriefing[page].explore			= BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore			= 3000
 
 		PreludeBriefingShowArmy 			= PreludeBriefing[page]
 
@@ -827,7 +941,7 @@ function CreatePreludeBriefing()
 		PreludeBriefing[page].text			= String.Key("PreludeBriefing[4].text")
 
 		PreludeBriefing[page].position 			= GetPosition("CameraSpot_1")
-		PreludeBriefing[page].explore			= BRIEFING_EXPLORATION_RANGE
+		PreludeBriefing[page].explore			= 3000
 		PreludeBriefing[page].marker			= ANIMATED_MARKER
 
 		PreludeBriefing[page].quest			= {}
