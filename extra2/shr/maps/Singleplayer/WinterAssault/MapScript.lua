@@ -40,12 +40,6 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Tactics		, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Strategies		, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.UP2_Headquarter	, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Binocular		, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Mathematics	, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Bridge		, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_GunsmithWorkshop	, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_MasterBuilderWorkshop, 0)
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern		, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_PulledBarrel	, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.UP1_Tower		, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.UP2_Tower		, 0)
@@ -61,8 +55,19 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Construction	, 3)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Alchemy 		, 3)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Literacy		, 3)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_GearWheel	, 3)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_ChainBlock		, 3)
+	
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_UpgradeRifle1		, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Outpost		, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Barracks		, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Archery		, 0)
 
+	ResearchTechnology(Technologies.T_UpgradeSword1)
+	ResearchTechnology(Technologies.T_UpgradeSpear1)
+	ResearchTechnology(Technologies.T_UpgradeBow1)
+
+	ResearchAllMilitaryTechsAddOn(2)
 end
 
 
@@ -142,13 +147,7 @@ function Mission_FirstMapAction()
 	--	Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
 
 	--	resources
-	
-		AddGold(5000)
-		AddWood(1500)
-		AddClay(2000)
-		AddStone(2000)
-		AddIron(5000)
-		AddSulfur(1500)
+		GlobalMissionScripting.GiveResouces(1, 5000, 2000, 1500, 2000, 5000, 1500)
 	
 	--	Variables
 	

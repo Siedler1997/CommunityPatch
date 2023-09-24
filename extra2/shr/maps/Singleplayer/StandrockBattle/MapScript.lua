@@ -32,7 +32,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Friendly )
-	Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 5, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 2, 3, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 2, 4, Diplomacy.Friendly )
@@ -72,14 +72,21 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_GunsmithWorkshop	, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_MasterBuilderWorkshop, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern		, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Matchlock	, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_PulledBarrel	, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.UP2_Headquarter	, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.UP2_Headquarter	, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Architecture	, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Chemistry	, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Library	, 0)
 
 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_EnhancedGunPowder	, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_BlisteringCannonballs, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast	, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather	, 0)
-
+	
+	ResearchAllMilitaryTechsAddOn(7)
 end
 
 
@@ -119,7 +126,7 @@ function Mission_InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
 	
-	Display.SetPlayerColorMapping(2, 4)
+	Display.SetPlayerColorMapping(2, 8)
 	if p1color == 3 then
 		Display.SetPlayerColorMapping(3, 1)
 	end
@@ -152,13 +159,7 @@ function Mission_FirstMapAction()
 	--	Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
 
 	--	resources
-	
-		AddGold(1500)
-		AddWood(1500)
-		AddClay(2000)
-		AddStone(2000)
-		AddIron(1500)
-		AddSulfur(1000)
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 1500, 2000, 1500, 1000)
 	
 	--	Variables
 	
@@ -180,6 +181,9 @@ function Mission_FirstMapAction()
 		--LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = DARKMOORMUSIC
 		--SetPlayerName(7, "Eindringende Armeen")
+		SetPlayerName(3, String.Key("_Player3Name"))
+		SetPlayerName(4, String.Key("_Player4Name"))
+		SetPlayerName(5, String.Key("_Player5Name"))
 		SetPlayerName(7, String.Key("_Player7Name"))
 	
 	--	start quest
@@ -191,6 +195,6 @@ function Mission_FirstMapAction()
 	--	EnableDebugging()
    	--	Game.GameTimeReset()
 		   
-	Tools.ExploreArea(-1, -1, 900)
+	--Tools.ExploreArea(-1, -1, 900)
 end
 

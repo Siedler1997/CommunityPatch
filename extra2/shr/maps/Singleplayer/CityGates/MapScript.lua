@@ -22,13 +22,14 @@ function Mission_InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
 
-	Display.SetPlayerColorMapping(2, ROBBERS_COLOR)	
 	Display.SetPlayerColorMapping(7, NPC_COLOR)
 	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 	if p1color ~= 2 then	
+		Display.SetPlayerColorMapping(2, 2)	
 		Display.SetPlayerColorMapping(3, 2)
 		Display.SetPlayerColorMapping(4, 2)
 	else
+		Display.SetPlayerColorMapping(2, 5)	
 		Display.SetPlayerColorMapping(3, 5)
 		Display.SetPlayerColorMapping(4, 5)
 	end
@@ -44,8 +45,15 @@ function Mission_InitResources()
 function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Tavern, 0)
-
 	
+	ResearchTechnology(Technologies.T_UpgradeSword1)
+	ResearchTechnology(Technologies.T_UpgradeSpear1)
+	ResearchTechnology(Technologies.T_UpgradeBow1)
+	ResearchTechnology(Technologies.T_ThiefSabotage)
+	
+	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(3)
+	ResearchAllMilitaryTechsAddOn(4)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

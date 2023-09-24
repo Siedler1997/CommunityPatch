@@ -56,13 +56,11 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
-
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ThiefSabotage      	,0 ) 
-
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ThiefSabotage      	,0 ) 
 end
 
 
@@ -116,13 +114,8 @@ function Mission_FirstMapAction()
 	      String.Init("SP_Lightridge")
 
 	--	resources
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 1500, 2000, 1500, 1000)
 	
-		AddGold(1500)
-		AddWood(1500)
-		AddClay(2000)
-		AddStone(2000)
-		AddIron(1500)
-		AddSulfur(1000)
 		Logic.SetShareExplorationWithPlayerFlag(1, 4, 1)
 		Logic.SetEntityInvulnerabilityFlag(GetEntityId("OpenSesame"),1)
 		MakeInvulnerable("OpenSesame")

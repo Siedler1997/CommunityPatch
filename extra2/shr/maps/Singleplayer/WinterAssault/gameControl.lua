@@ -62,59 +62,59 @@ function start2ndChapter()
 	StartJob("DeadBastilia9")
 
 	local pos = GetPosition("HelpSpawn1")
-	Help1 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+ 	Help1 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help1, "Help1")
 
 	local pos = GetPosition("HelpSpawn2")
-	Help2 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help2 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help2, "Help2")
 
 	local pos = GetPosition("HelpSpawn3")
-	Help3 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help3 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help3, "Help3")
 
 	local pos = GetPosition("HelpSpawn4")
-	Help4 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help4 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help4, "Help4")
 
 	local pos = GetPosition("HelpSpawn5")
-	Help5 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help5 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help5, "Help5")
 
 	local pos = GetPosition("HelpSpawn6")
-	Help6 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help6 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help6, "Help6")
 
 	local pos = GetPosition("HelpSpawn7")
-	Help7 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help7 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help7, "Help7")
 
 	local pos = GetPosition("HelpSpawn8")
-	Help8 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help8 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help8, "Help8")
 
 	local pos = GetPosition("HelpSpawn9")
-	Help9 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help9 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help9, "Help9")
 
 	local pos = GetPosition("HelpSpawn10")
-	Help10 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help10 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help10, "Help10")
 
 	local pos = GetPosition("HelpSpawn11")
-	Help11 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help11 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help11, "Help11")
 
 	local pos = GetPosition("HelpSpawn12")
-	Help12 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help12 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help12, "Help12")
 
 	local pos = GetPosition("HelpSpawn13")
-	Help13 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help13 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help13, "Help13")
 
 	local pos = GetPosition("HelpSpawn14")
-	Help14 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 270)
+	Help14 = AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry2,0,3,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Help14, "Help14")
 
 	createBriefingDestroy()

@@ -70,7 +70,7 @@ end
 WolfCave1 = function()
 
 for j = 1,5,1 do
-wolf = CreateEntity(7,Entities.CU_AggressiveWolf,GetPosition("spawn1"),"wolf1_"..j)
+wolf = CreateEntity(7,Entities.CU_AggressiveWolf_Grey,GetPosition("spawn1"),"wolf1_"..j)
 SetEntityName(wolf, "wolf1_"..j)
 Move("wolf1_"..j,"cave1")
 end
@@ -99,7 +99,7 @@ end
 WolfCave2 = function()
 
 for j = 1,6,1 do
-wolf = CreateEntity(7,Entities.CU_AggressiveWolf,GetPosition("spawn2"),"wolf2_"..j)
+wolf = CreateEntity(7,Entities.CU_AggressiveWolf_Grey,GetPosition("spawn2"),"wolf2_"..j)
 SetEntityName(wolf, "wolf2_"..j)
 Move("wolf2_"..j,"cave2")
 end
@@ -128,7 +128,7 @@ end
 WolfCave3 = function()
 
 for j = 1,5,1 do
-wolf = CreateEntity(7,Entities.CU_AggressiveWolf,GetPosition("spawn3"),"wolf3_"..j)
+wolf = CreateEntity(7,Entities.CU_AggressiveWolf_Grey,GetPosition("spawn3"),"wolf3_"..j)
 SetEntityName(wolf, "wolf3_"..j)
 Move("wolf3_"..j,"cave3")
 end
@@ -157,7 +157,7 @@ end
 WolfCave4 = function()
 
 for j = 1,6,1 do
-wolf = CreateEntity(7,Entities.CU_AggressiveWolf,GetPosition("spawn4"),"wolf4_"..j)
+wolf = CreateEntity(7,Entities.CU_AggressiveWolf_Grey,GetPosition("spawn4"),"wolf4_"..j)
 SetEntityName(wolf, "wolf4_"..j)
 Move("wolf4_"..j,"cave4")
 end

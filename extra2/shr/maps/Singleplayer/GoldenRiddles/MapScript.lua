@@ -68,7 +68,8 @@ function Mission_InitTechnologies()
 
 Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_MasterBuilderWorkshop, 0)
 
-	
+	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(7)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -158,6 +159,7 @@ function Mission_FirstMapAction()
 	SetHealth("r_1",10)
 	SetHealth("r_2",30)
 	SetHealth("r_3",20)
+	SetHealth("r_4",20)
  
 	
 --	CreateChestOpener("dario")
