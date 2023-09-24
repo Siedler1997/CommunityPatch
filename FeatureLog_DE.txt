@@ -352,8 +352,11 @@
 	* Hauptmenü
 		+ Der Reiter 'Spieler' ist reaktiviert
 			/ Spielername kann geändert werden
-			/ Das Geschlecht kann angegeben werden
-				- Die Wahl beeinflusst nur Texte wie "Spieler xy hat seine/ihre Burg zu einer abc ausgebaut"
+			/ Eine vevorzugte Spielerfarbe kann eingestellt werden
+				- Wahl zwischen Blau (Standard), Gelb und Rot
+				- Nahezu alle Vanilla-SP-Maps respektieren diese Einstellung
+				- Ggf. haben KIs dadurch auch andere Spielerfarben
+				- Gilt NICHT für den MP
 		+ Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		+ In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		+ In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
@@ -380,9 +383,9 @@
 			/ Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
 			/ Gegner sind z.T. aggressiver
 			/ Startbedingungen des Spielers sind bzgl. Rohstoffe/Truppen/Gebäude etwas schlechter
-			/ Schatztruhen sind größtenteils weg
 			/ Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		+ Schwierigkeitsgrad 'Albtraum'
+			/ Schatztruhen entfallen größtenteils
 			/ enthält die gleichen Features wie auf 'Schwer'
 			/ KI-Truppen und Gebäude sind noch stärker bzw. zahlreicher
 			/ Die Steuern sind auf 'Halbe Steuern' festgesetzt
@@ -391,10 +394,15 @@
 			/ Die eine oder andere nützliche Technologie ist gesperrt
 			/ In Missionen mit sonst dauerhaftem Sommer regnet es ab und an
 			/ Wege könnten blockiert oder freigelegt sein
-			/ Ihr habt Rot als Spielerfarbe statt Blau
 			/ diverse Gemeinheiten;)
 		+ Wilde Tiere (Wölfe und Bären) streifen durch die Gegend
+		+ Start-Rohstoffe sind immer veredelbar
 		+ Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
+	* SP-Maps modifiziert
+		+ Ähnliche Features wie bei den Kampagnen-Maps. Ausnahmen:
+			/ Keine Schwierigkeitsgrade und damit einhergehende Anpassungen
+			/ Keine Tipps im Hauptmenü
+		+ Größtenteils Fixes und kleinere Optimierungen
 	* Die Grafik ist allgemein etwas besser (by yoq)
 	* Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	* Steuer-Predigt-Exploit entschärft
@@ -556,7 +564,6 @@
 	* Misc-Items
 		+ Rifles
 		+ Evil stuff
-	* Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 	* Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 	* Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 	* Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -565,12 +572,6 @@
 		+ Leader-Walk
 		+ Leader-Train
 	* Wasteland-Dörfer: Namen im Auftragsbuch
-	* Neue Map "Tal der Verdammten"
-		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
-		+ Erec lebt
-		+ Nettes NV
-		+ Kadirs Bruder
-		+ Giftiger Schwefelnebel und Dampfmaschinen
 	* FunFacts im LoadingScreen
 		+ mehr davon
 		+ besser geschrieben
@@ -595,6 +596,7 @@
 	* Auch normale Arbeiter sollen automatisch HP regenerieren
 		+ scheint leider nicht möglich zu sein
 	* Kalas Tod: stack overflow(?)
+	* Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 	* Scout Forester?
 	* Eigene Texturen für
 		+ Tech-Trader
@@ -603,6 +605,12 @@
 		+ Bogen-Banditen-Hauptmänner
 		+ Leonardos Assistent
 		+ Hauptmann, Ordensritter und Wächter
+	* Neue Map "Tal der Verdammten"
+		+ Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+		+ Erec lebt
+		+ Nettes NV
+		+ Kadirs Bruder
+		+ Giftiger Schwefelnebel und Dampfmaschinen
 	* Umsetzung in Vanilla-DEdK
 	* Organisatorisches
 		+ FeatureList auch auf Englisch
