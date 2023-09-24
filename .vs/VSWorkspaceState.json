@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base",
+    "\\base\\shr",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MapTools",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra2",
+    "\\extra1\\shr\\menu",
+    "\\extra1\\shr\\menu\\Projects",
     "\\extra2\\shr",
-    "\\extra2\\shr\\config",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Singleplayer",
-    "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault",
-    "\\extra2\\shr\\text\\en",
-    "\\extra2\\shr\\text\\en\\InGame"
+    "\\extra2\\shr\\menu",
+    "\\extra2\\shr\\menu\\Projects"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

@@ -168,6 +168,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			- regenerieren ihre HP langsamer
+			- Kundschafter: Fackeln verbessert
+				- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
+				- Sichtweite leicht erhöht (10 SM -> 15 SM)
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -577,11 +580,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- High priority!
-	- SP-Maps: 
-		- Wilde Tiere
-		- Goldhaufen
-	- FeatureLog aktualisieren
+- Scout Forester
+	- Hermit statt Kundschafter
+	- Rekrutierbar in Wirtshaus
+	- Je nach Map ggf. verboten
+- SP-Maps: 
+	- Wilde Tiere
+	- Goldhaufen
 - Misc-Items
 	- Rifles
 	- Evil stuff
@@ -618,7 +623,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- scheint leider nicht möglich zu sein
 - Kalas Tod: stack overflow(?)
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
-- Scout Forester?
 - Eigene Texturen für
 	- Tech-Trader
 	- Veteranen
