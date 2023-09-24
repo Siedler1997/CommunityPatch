@@ -1041,6 +1041,7 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>PU_Hero1_Guard</Entity>
 	<Entity>CU_SmithIdle</Entity>
 	<Entity>CU_StonecutterIdle</Entity>
 	<Entity>CU_BrickMakerIdle</Entity>

@@ -46,6 +46,9 @@ function HeroWidgetUpdate_ShowHeroWidget(EntityId)
 	elseif EntityType == Entities.CU_Barbarian_Hero then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionHero9,1)	
 	
+	elseif EntityType == Entities.PU_Hero1 then
+		XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionDovbar,1)	
+	
 	end
 	
 	--Update Multiselection Container

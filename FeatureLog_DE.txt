@@ -238,6 +238,10 @@
 			/ 'Giftpfeile'
 				- Schaden auf 30 erhöht (vorher: 20)
 				- Cooldown um 50% verlängert (= 0:30 -> 0:45)
+		+ Dovbar steht als Held zur Verfügung
+			/ Besitzt ähnliche Kampfeigenschaften wie Erec, aber mit anderen Fähigkeiten
+				- Disziplin: Erhöht Angriff und Verteidigung naher Verbündeter um jeweils 50%
+				- Wachen rufen: Beschwört 3 Wachen, die für kurze Zeit an seiner Seite kämpfen
 - GUI
 	* Kamera
 		+ Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
@@ -536,8 +540,6 @@
 		+ gibt leider keine genauen VideoPreviews für diese Entities, sieht aber mMn. besser aus als Blackscreen
 	* Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
 		+ Grund: Sie haben einfach keine
-	* Dovbar hat keine Helden-Fähigkeiten
-		+ Das ist nun mal ein Patch, keine Mod. Mapper, denkt euch selbst was aus!
 	* Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		+ Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 	* Kontrollierbare NPCs 
@@ -549,10 +551,7 @@
 	* High priority!
 		+ SP-Maps: 
 			/ Wilde Tiere
-			/ Spielernamen im Diplomatiemenü
-			/ Veredelbare Start-Rohstoffe
-			/ KIs alle regulären Techs geben?
-		+ Fähigkeiten für Dovbar
+			/ Goldhaufen
 		+ FeatureLog aktualisieren
 	* Misc-Items
 		+ Rifles

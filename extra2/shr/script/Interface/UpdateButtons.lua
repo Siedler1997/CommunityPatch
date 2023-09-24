@@ -1200,7 +1200,8 @@ GUIUpdate_SelectionGeneric()
 		
 		
 		if 	Logic.GetEntityType(EntityID) ~= Entities.CU_Barbarian_Hero_wolf 
-		and	Logic.GetEntityType(EntityID) ~= Entities.PU_Hero5_Outlaw then
+		and	Logic.GetEntityType(EntityID) ~= Entities.PU_Hero5_Outlaw
+		and	Logic.GetEntityType(EntityID) ~= Entities.PU_Hero1_Guard then
 			local Experience = Logic.GetLeaderExperienceLevel( EntityID )
 			if Experience ~= nil then
 				XGUIEng.ShowWidget( gvGUI_WidgetID.Experience,1 )	

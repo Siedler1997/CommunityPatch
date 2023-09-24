@@ -31,6 +31,7 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.SelectionHero7 = 		XGUIEng.GetWidgetID( "Selection_Hero7" ) 	
 	gvGUI_WidgetID.SelectionHero8 = 		XGUIEng.GetWidgetID( "Selection_Hero8" ) 	
 	gvGUI_WidgetID.SelectionHero9 = 		XGUIEng.GetWidgetID( "Selection_Hero9" ) 	
+	gvGUI_WidgetID.SelectionDovbar = 		XGUIEng.GetWidgetID( "Selection_Dovbar" ) 	
 	gvGUI_WidgetID.SelectionLeader = 		XGUIEng.GetWidgetID( "Selection_Leader" )	
 	
 	gvGUI_WidgetID.BackgroundContainer= 	XGUIEng.GetWidgetID( "BackGroundBottomContainer" )
@@ -300,6 +301,8 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.Hero8_MoraleDamage= 		XGUIEng.GetWidgetID( "Hero8_MoraleDamage" )	
 	gvGUI_WidgetID.Hero9_Berserk= 			XGUIEng.GetWidgetID( "Hero9_Berserk" )	
 	gvGUI_WidgetID.Hero9_CallWolfs= 		XGUIEng.GetWidgetID( "Hero9_CallWolfs" )	
+	gvGUI_WidgetID.Dovbar_Discipline= 		XGUIEng.GetWidgetID( "Dovbar_Discipline" )	
+	gvGUI_WidgetID.Dovbar_Summon= 			XGUIEng.GetWidgetID( "Dovbar_Summon" )	
 	
 	
 	--Others	
