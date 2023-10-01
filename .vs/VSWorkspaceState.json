@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MapTools",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\menu",
-    "\\extra1\\shr\\menu\\Projects",
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\MapTools",
+    "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\menu",
-    "\\extra2\\shr\\menu\\Projects"
+    "\\extra2\\shr\\script",
+    "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

@@ -346,6 +346,7 @@
 	<Technology>T_PaddedBardingArmor</Technology>	
 	<Technology>T_LeatherBaringArmor</Technology>
 
+	<Technology>T_ScoutForester</Technology>
 	<Technology>T_AnimalTechnology1</Technology>
 	<Technology>T_AnimalTechnology2</Technology>
 	

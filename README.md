@@ -36,7 +36,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- profitieren von Gebäude-Technologien (z.B. 'Maurerhandwerk')
 		- Dunkle Mauern sind, wie normale Mauern auch, im 'Nebel des Krieges' sichtbar
 	- Außenposten
-		- werden von Arbeitern und Leibeigenen an der Innentür betreten-verlassen, nicht schon am Haupttor
+		- werden von Arbeitern und Leibeigenen an der Innentür betreten und verlassen, nicht schon am Haupttor
 		- sind baubar (nur die erste Stufe, nach Erforschung von 'Architektur')
 		- verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
 		- können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
@@ -114,7 +114,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Bogen-Banditen: Technologien der Bogenschützen
 			- Speerwerfer: Technologien der Bogenschützen
 			- Bärenmenschen: Technologien der Speerkämpfer
-			- Veteranen: Je nach Typ wie Barbaren-Schwarze Ritter
+			- Veteranen: Je nach Typ wie Barbaren oder Schwarze Ritter
 		- profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
 		- Wilde Tiere
 			- Wölfe 
@@ -153,10 +153,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
 			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
 			- Bombarden
-				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1-2 Sek.)
+				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
 				- Schaden auf 35 erhöht (vorher: 30)
 			- Eisenkanonen
-				- Nachladedauer auf 3 Sek. erhöht (vorher: 1-2 Sek.)
+				- Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
 				- Schaden auf 70 erhöht (vorher: 65)
 		- Scharfschützen
 			- sind nicht mehr ganz so effektiv gegen Gebäude
@@ -168,9 +168,18 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			- regenerieren ihre HP langsamer
-			- Kundschafter: Fackeln verbessert
-				- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
-				- Sichtweite leicht erhöht (10 SM -> 15 SM)
+			- Kundschafter Fähigkeiten angepasst
+				- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
+				- 'Fackeln' verbessert
+					- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
+					- Sichtweite leicht erhöht (10 SM -> 15 SM)
+					- Schon in der Taverne erforschbar
+				- Neue Fähigkeit 'Aufforsten'
+				    - Basiert auf Noigis ScoutForester Script
+					- Kann im Wirthaus erforscht werden, sobald 'Fackeln' erforscht wurde
+					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
+					- Kostet 50 Taler pro Verwendung
+					- Wachstum hängt vom Wetter ab
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -273,7 +282,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Mit dem shortcut '[Alt] - [I]' kann man (außerhalb von Briefings) das Interface ein- und ausblenden
 		- Entfernungsnebel bei schlechtem Wetter (Regen, Schnee) beeinflusst nicht mehr so sehr die Sicht
 			- Nebeneffekt: Einige Settings wirken etwas heller
-			- Im Gegenzug ist speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
+			- Im Gegenzug sind speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
 	- Tooltips gefixt bzw. ergänzt
 		- Ausbau-Button Festung -> Zitadelle: 'ermöglicht'-Teil ergänzt
 		- 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
@@ -310,7 +319,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- CU_BlackKnight_SoldierSword3 -> Raubritter
 		- Veteranen
 			- CU_VeteranLieutenant -> 'Berserker'
-			- CU_VeteranCaptain -> 'Schwarzer Eliteritter'
+			- CU_VeteranCaptain -> 'Raubritter'
 			- CU_VeteranMajor -> 'Todesritter'
 	- VideoPreviews (VPs)
 		- NPC-Einheiten, die erst mit den AddOns VPs bekommen haben (z.B. Barbaren), haben diese auch schon im Hauptspiel
@@ -327,7 +336,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Gruppenstärke
 		- rechnet bei Nebelkriegern in 2er-Schritten (1 Helm = 2 Krieger)
 		- wird bei Einheiten, die keine Soldaten rekrutieren können, komplett ausgeblendet
-		- wird bei 0-x Soldaten nicht mehr fehlerhaft angezeigt
+		- wird bei 0/x Soldaten nicht mehr fehlerhaft angezeigt
 	- Der Button zum Kauf von Soldaten wird ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
 	- Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
 	- In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
@@ -344,7 +353,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
 		- unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
 		- erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
-	- Die Einstellung des Geschlechts (siehe 'Hauptmenü') schlägt sich in diversen Tooltips und anderen Texten nieder
 	- Briefing-Window verschönert
 		- Es gibt keine Lücke mehr am linken Bildschirmrand (meistens...)
 		- Der obere Balken ist etwas kleiner
@@ -369,11 +377,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
 		- Button dafür ersetzt den Hilfe-Button
 			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
-		- Kann auch über den Shortcut - ausgelöst werden
+		- Kann auch über den Shortcut '-' ausgelöst werden
 	- Hauptmenü
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
-			- Eine vevorzugte Spielerfarbe kann eingestellt werden
+			- Eine bevorzugte Spielerfarbe kann eingestellt werden
 				- Wahl zwischen Blau (Standard), Gelb und Rot
 				- Nahezu alle Vanilla-SP-Maps respektieren diese Einstellung
 				- Ggf. haben KIs dadurch auch andere Spielerfarben
@@ -529,6 +537,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
 		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie hren Zielort nie erreichen
 	- Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
+	- ScoutForester
+		- Default Tree-Set ist Fir (ScoutFoerster_SET_Fir)
+		- Kann folgendermaßen in der FMA geändert werden
+			- ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(treeset)
+			- ScoutFoerster_gvScoutFoerster.treeSet = treeset
+			- Gilt analog auch für andere Properties, z.B. Preis pro Aufforstung
 	- Comforts
 		- Variable 'CP_Installed' (bool):
 		- 'StartCountdown(_Limit, _Callback, _Show)': Startet einen Countdown
@@ -580,10 +594,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Scout Forester
-	- Hermit statt Kundschafter
-	- Rekrutierbar in Wirtshaus
-	- Je nach Map ggf. verboten
+- ScoutForester: TreeSet für alle Vanilla-Maps prüfen und ggf. anpassen
+- Meuchel-Ability für Diebe
 - SP-Maps: 
 	- Wilde Tiere
 	- Goldhaufen
