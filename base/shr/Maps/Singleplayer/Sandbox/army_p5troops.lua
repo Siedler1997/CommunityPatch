@@ -25,7 +25,7 @@ createTroops = function(_army, _index)
 		{Entities.CU_BlackKnight_LeaderMace2, 12}, 
 		{Entities.CU_BlackKnight_LeaderMace2, 12}, 
 		{Entities.CU_BlackKnight_LeaderMace2, 12}, 
-		{Entities.PU_LeaderBow3, 12} 
+		{Entities.PU_LeaderBow4, 12} 
 	}
 										
 	_army.spawnPos			= 	GetPosition("ArmySpawnPos".._index)

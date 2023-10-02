@@ -388,6 +388,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Gilt NICHT für den MP
 		- Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		- In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
+		- Mapauswahl im SP-Menü verändert
+			- MP-Maps sind nicht mehr enthalten -> Bessere Übersicht
+			- Basegame-Maps sind im Nebelreich-AddOn ebenfalls auswählbar
+				- Nahezu alle AddOn-Features sind dort nutzbar
+				- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
 		- In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
 		- Wenn eine Karte lädt
 			- wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt

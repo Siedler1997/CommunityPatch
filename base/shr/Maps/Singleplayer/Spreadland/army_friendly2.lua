@@ -15,7 +15,7 @@ createArmyFriendly2 = function()
 	armyFriendly2.control.defendPosition	= GetPosition("friendlyArmy2")
 	armyFriendly2.control.delay				= 20
 	armyFriendly2.control.spawnPosition		= GetPosition("friendlySupport")
-	armyFriendly2.control.troops			= { Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderCavalry1,Entities.PV_Cannon3 }
+	armyFriendly2.control.troops			= { Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderCavalry2,Entities.PV_Cannon3 }
 	armyFriendly2.control.isDead			= false
 	armyFriendly2.control.spawnIsActive		= true
 	
@@ -34,7 +34,7 @@ createArmyFriendly2 = function()
 	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
 
-	troopDescription.leaderType = Entities.PU_LeaderCavalry1
+	troopDescription.leaderType = Entities.PU_LeaderCavalry2
 	
 	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
