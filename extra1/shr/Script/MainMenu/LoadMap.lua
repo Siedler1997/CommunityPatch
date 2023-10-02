@@ -65,8 +65,8 @@ function LoadMap.Init()
 		local MPTable = {}
 		MapListHandler_Init(MPTable)
 		
-		MapListHandler_AddMaps( MPTable, 3, nil, true )-- Add external maps MP Maps
-		MapListHandler_AddMaps( MPTable, 2, nil, true)-- Add multi player maps    
+		--MapListHandler_AddMaps( MPTable, 3, nil, true )-- Add external maps MP Maps
+		--MapListHandler_AddMaps( MPTable, 2, nil, true)-- Add multi player maps    
 	
 		table.sort(MPTable.MapArray, LoadMap.Sort)
 	
