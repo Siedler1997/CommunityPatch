@@ -177,6 +177,10 @@ function Mission_FirstMapAction()
 
 		LocalMusic.UseSet = EUROPEMUSIC
 	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
+	
+	
 	--	start quest
 	
 		create1stQuest()

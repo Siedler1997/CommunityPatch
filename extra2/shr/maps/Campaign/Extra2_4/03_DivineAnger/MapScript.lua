@@ -163,6 +163,9 @@ function Mission_FirstMapAction()
 		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
+	
 	--	start quest
 
 	StartCutscene(Cutscenes[INTROCUTSCENE],Start1stChapter)

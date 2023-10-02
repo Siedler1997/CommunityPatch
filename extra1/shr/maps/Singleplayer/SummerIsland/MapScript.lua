@@ -170,6 +170,9 @@ function Mission_FirstMapAction()
 		TimeLine.Start()
 	
 	-- Start prelude
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 
 --LuaDebugger.Break()
 

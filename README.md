@@ -599,7 +599,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- ScoutForester: TreeSet für alle Vanilla-Maps prüfen und ggf. anpassen
 - Meuchel-Ability für Diebe
 - SP-Maps: 
 	- Wilde Tiere

@@ -115,8 +115,12 @@ function FirstMapAction()
     Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
 
     StartCutscene("PREINTRO",beginChapterOne)
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
     LocalMusic.UseSet = EUROPEMUSIC
+
 	if CP_Difficulty > 0 then
 		local addWolves = 0
 		local wolfSet = RaidersDefaultSets.Vanilla

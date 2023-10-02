@@ -126,7 +126,7 @@ function Mission_FirstMapAction()
 		createPlayer5()
 
 	-- music set
-		LocalMusic.UseSet = HIGHLANDMUSIC
+		LocalMusic.UseSet = EUROPEMUSIC
 
 	
 	--	start quest

@@ -118,6 +118,9 @@ function FirstMapAction()
 
 	--Deactivated because workers create lots of internal camp fires
 	--CreateSettlersForKarratas()
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Evelance)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Evelance
     
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then

@@ -151,7 +151,9 @@ function Mission_FirstMapAction()
 	IncludeLocals("quest_1")
 	IncludeLocals("quest_2")
 	IncludeLocals("q_defeat")
-
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
 	createPlayer1()
 	createPlayer2()

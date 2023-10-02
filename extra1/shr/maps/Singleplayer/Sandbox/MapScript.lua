@@ -120,8 +120,10 @@ function Mission_FirstMapAction()
 	-- Start time line
 
 	TimeLine.Start()
-
-
+	
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 	
 	-- set player names
 	

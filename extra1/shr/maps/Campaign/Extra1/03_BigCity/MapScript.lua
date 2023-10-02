@@ -7,10 +7,10 @@ function InitDiplomacy()
 	SetFriendly(1,2)
 	SetFriendly(1,5)
 		
-	--SetHostile(4,1)
-	--SetHostile(4,2)
-	--SetHostile(4,5)
-	--SetHostile(1,6)
+	SetHostile(4,1)
+	SetHostile(4,2)
+	SetHostile(4,5)
+	SetHostile(1,6)
 
 	end
 ------------------------------------------------------------------------------
@@ -132,6 +132,8 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])	
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 	
 	-- cutscene
 --	StartCutscene("Intro",start1stChapter)

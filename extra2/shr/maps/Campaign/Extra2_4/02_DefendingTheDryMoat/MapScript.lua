@@ -193,6 +193,9 @@ function Mission_FirstMapAction()
 	timer = 960
 	capture = 0
 	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
+	
 	-- 	Set Music-Set
 	
 	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld

@@ -194,6 +194,9 @@ function Mission_FirstMapAction()
 		createDefenseArmy5()
 		createDefenseArmy6()
 		startQuestDefeat()
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 		   
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then

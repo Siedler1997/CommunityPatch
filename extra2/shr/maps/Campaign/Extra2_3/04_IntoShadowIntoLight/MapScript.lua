@@ -216,6 +216,9 @@ function Mission_FirstMapAction()
 	IncludeLocals("briefing_prelude")
 	IncludeLocals("briefing_q2")
 
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
+
 	createPlayer1()
 	createPlayer2()
 	createPlayer3()
@@ -223,7 +226,6 @@ function Mission_FirstMapAction()
 	createPlayer5()
 	createPlayer6()
 	
-
 
 	-- debugging stuff
 	--EnableDebugging()

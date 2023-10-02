@@ -157,6 +157,9 @@ function Mission_FirstMapAction()
 	-- set player names
 	
 		Logic.SetPlayerName(1, String.MainKey.."_Player1Name")
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 
 	-- Set Music-Set
 

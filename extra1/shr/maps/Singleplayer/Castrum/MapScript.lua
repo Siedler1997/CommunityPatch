@@ -130,6 +130,9 @@ String.Init("SP_Castrum")
 	---- show Mission Briefing
 
 	CreatePreludeBriefing()
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 
 	-- play music :
 		LocalMusic.UseSet = MEDITERANEANMUSIC

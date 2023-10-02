@@ -132,7 +132,9 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLDONECUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])	
-
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Moor)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Moor
 
 	LocalMusic.UseSet = DARKMOORMUSIC
 	

@@ -103,6 +103,9 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[INTROCUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLDONECUTSCENE])
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 
 	--Init NPC Merchant Offers
 	Mission_InitMerchants()

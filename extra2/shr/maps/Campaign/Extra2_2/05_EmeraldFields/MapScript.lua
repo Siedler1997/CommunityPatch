@@ -236,6 +236,10 @@ function Mission_FirstMapAction()
 
 		ChapterCount		=0
 		ChapterCount1 = ChapterCount
+		
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
 	--	Invulnerables
 

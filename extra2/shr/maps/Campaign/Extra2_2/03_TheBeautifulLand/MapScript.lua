@@ -195,7 +195,10 @@ function Mission_FirstMapAction()
 
 		SetPlayerName(2, String.Key("_Player2Name"))
 		--SetPlayerName(3, String.Key("_Player3Name"))
-
+		
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
 	-- debugging stuff
 

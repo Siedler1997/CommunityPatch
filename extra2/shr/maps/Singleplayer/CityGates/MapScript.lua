@@ -118,6 +118,9 @@ function Mission_FirstMapAction()
 	IncludeLocals("quest_victory")
 	IncludeLocals("army_spawn")
         IncludeLocals("army_attack")
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 
 
 	createPlayer1()

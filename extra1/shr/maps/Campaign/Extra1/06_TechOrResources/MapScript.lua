@@ -31,7 +31,7 @@ function InitDiplomacy()
         SetFriendly(1,3)
         SetHostile(2,3)
         SetHostile(1,8)
-        SetHostile(3,8)
+        --SetHostile(3,8)
 
         SetHostile(1,7)
         SetHostile(3,7)
@@ -117,8 +117,11 @@ function FirstMapAction()
 
     createPlayer3()
     createPlayer7()
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
-		LocalMusic.UseSet = EUROPEMUSIC
+	LocalMusic.UseSet = EUROPEMUSIC
 
     createQuestDefeat()
 
