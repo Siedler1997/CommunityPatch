@@ -2,16 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\base\\shr",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
+    "\\base\\shr\\config",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\MapTools",
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\Campaign",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2\\shr\\script"
   ],
+  "SelectedNode": "\\extra2\\shr\\script\\Interface\\ScoutForester.lua",
   "PreviewInSolutionExplorer": false
 }

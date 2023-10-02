@@ -40,6 +40,7 @@ function ScoutFoerster_Action()
 				if paid then
 					local successful = ScoutFoerster_PlantTrees(GetPosition(scout));
 					if successful then
+						Sound.PlayQueuedFeedbackSound(Sounds.AOVoicesScout_Scout_Forester_rnd_01, 127)
 						PayResources( ScoutFoerster_gvScoutFoerster.ABILITY_COSTS );
 						ScoutFoerster_StartCooldown(scout);
 					else
