@@ -17,15 +17,15 @@ IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 -- This function is called from main script to initialize the diplomacy states
 function Mission_InitDiplomacy()
 
-		Logic.SetDiplomacyState( 1, 4, Diplomacy.Neutral )
-		Logic.SetDiplomacyState( 2, 3, Diplomacy.Hostile )
-		Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
-		Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
-		Logic.SetDiplomacyState( 1, 6, Diplomacy.Neutral )
-		Logic.SetDiplomacyState( 4, 6, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 4, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 2, 3, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 4, 6, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 
-
-	end
+end
 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -65,9 +65,9 @@ RED = 2
 	Display.SetPlayerColorMapping(2, 9)
 	Display.SetPlayerColorMapping(3, 4)
 	Display.SetPlayerColorMapping(4, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(6, 8)
 	Display.SetPlayerColorMapping(8, NPC_COLOR)	
-					
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
@@ -81,7 +81,11 @@ function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_MasterBuilderWorkshop, 0)
 	--Logic.SetTechnologyState(gvMission.PlayerID,Technologies.GT_Arhitecture, 0)
+			
+	ResearchAllMilitaryTechsAddOn(4)
+	ResearchAllMilitaryTechsAddOn(5)
 
+	ResearchAnimalTechs(5)
 	
 end
 
@@ -197,7 +201,11 @@ function Mission_FirstMapAction()
 	SetPlayerName(2, String.Key("_Player2Name"))
 	--SetPlayerName(3, "Dovbar")
 	SetPlayerName(3, String.Key("_Player3Name"))
+	
+	RaidersCreate({player = 5, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+	RaidersCreate({player = 5, pos = "bearpos2", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
 

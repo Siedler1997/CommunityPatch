@@ -52,17 +52,17 @@ SpawnDefense = function()
 
 
                         local pos 	= GetPosition("SpawnThiefWest")
-                        ArchersAttack1 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm3, 6, pos.X, pos.Y, 180)
+                        ArchersAttack1 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm2, 6, pos.X, pos.Y, 180)
                         SetEntityName(ArchersAttack1, "AttackOnArchers1")
 
 
                      	local pos 	= GetPosition("SpawnThiefEast")
-                        ArchersAttack2 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm3, 6, pos.X, pos.Y, 180)
+                        ArchersAttack2 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm2, 6, pos.X, pos.Y, 180)
                         SetEntityName(ArchersAttack2, "AttackOnArchers2")
 
 
                         local pos 	= GetPosition("SpawnThiefSouth")
-                        ArchersAttack3 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm3, 6, pos.X, pos.Y, 180)
+                        ArchersAttack3 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm2, 6, pos.X, pos.Y, 180)
                         SetEntityName(ArchersAttack3, "AttackOnArchers3")
 
 

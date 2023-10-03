@@ -11,8 +11,9 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
-	end
+end
 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -33,6 +34,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, 5)
 		Display.SetPlayerColorMapping(4, 5)
 	end
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)		
 	
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -54,6 +56,9 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(2)
 	ResearchAllMilitaryTechsAddOn(3)
 	ResearchAllMilitaryTechsAddOn(4)
+	ResearchAllMilitaryTechsAddOn(6)
+
+	ResearchAnimalTechs(6)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -158,6 +163,9 @@ function Mission_FirstMapAction()
 	-- SetPlayerName(3, "Barbaren")
 	SetPlayerName(3, String.Key("_Player3Name"))
 
-	--Tools.ExploreArea(-1, -1, 900)
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = 2, ramount = 10})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = 2, ramount = 10})
 
+	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end

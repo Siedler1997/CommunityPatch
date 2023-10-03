@@ -600,7 +600,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## ToDos:
 - SP-Maps: 
-	- Umlaute prüfen (nur Legenden)
 	- Wilde Tiere
 	- Goldhaufen
 - Misc-Items

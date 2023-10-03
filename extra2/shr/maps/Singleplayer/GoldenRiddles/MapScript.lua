@@ -68,8 +68,10 @@ function Mission_InitTechnologies()
 
 Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_MasterBuilderWorkshop, 0)
 
-	ResearchAllMilitaryTechsAddOn(2)
+	ResearchAllMilitaryTechsAddOn(2, true)
 	ResearchAllMilitaryTechsAddOn(7)
+	
+	ResearchAnimalTechs(7)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -195,7 +197,12 @@ function Mission_FirstMapAction()
 	SetPlayerName(2, String.Key("_Player2Name"))
 	--SetPlayerName(8, "Dorfbewohner")
 	SetPlayerName(8, String.Key("_Player8Name"))
+	
+	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+	RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
 

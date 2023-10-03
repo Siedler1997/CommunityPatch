@@ -43,6 +43,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 2, 3, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 2, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 4, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 
 	end
 
@@ -61,6 +62,13 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 ) 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ThiefSabotage      	,0 ) 
+
+	ResearchTechnology(Technologies.T_UpgradeBow1)
+
+	ResearchAllMilitaryTechsAddOn(4)
+	ResearchAllMilitaryTechsAddOn(7)
+
+	ResearchAnimalTechs(7)
 end
 
 
@@ -102,10 +110,13 @@ function Mission_InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(1, p1color)
 	if p1color == 2 then
 		Display.SetPlayerColorMapping(2, 9)		
-	elseif p1color == 3 then
-		Display.SetPlayerColorMapping(3, 5)		
+		Display.SetPlayerColorMapping(3, 9)		
+	else
+		Display.SetPlayerColorMapping(2, 2)		
+		Display.SetPlayerColorMapping(3, 2)	
 	end
 	Display.SetPlayerColorMapping(5, 6)		
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)		
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start after all initialization is done
@@ -147,7 +158,12 @@ function Mission_FirstMapAction()
 		SetPlayerName(2, String.Key("_Player2Name"))
 
 		--EnableDebugging()
+
+		RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+		RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+		RaidersCreate({player = 7, pos = "bearpos3", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 		    	
+		--StartSimpleJob("GetMousePos")
 		--Tools.ExploreArea(-1, -1, 900)
 end
 
