@@ -1,18 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\base\\shr",
+    "\\base",
     "\\base\\shr\\config",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Campaign",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver",
+    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\config\\Technologies",
     "\\extra2",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script"
+    "\\extra2\\shr\\maps",
+    "\\extra2\\shr\\maps\\Singleplayer",
+    "\\extra2\\shr\\maps\\User"
   ],
-  "SelectedNode": "\\extra2\\shr\\script\\Interface\\ScoutForester.lua",
+  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault",
   "PreviewInSolutionExplorer": false
 }

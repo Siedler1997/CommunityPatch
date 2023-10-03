@@ -593,14 +593,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
 		- Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
 	- Kontrollierbare NPCs 
-		- belegen Plätze in Wohnhäuser-Bauernhöfen und werden zahlenmäßig in der Hungernden--Obdachlosenanzeige erfasst
+		- belegen Plätze in Wohnhäuser-Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
 		- können zum Holzfällen geschickt werden und sehen dabei aus wie Leibeigene
 
 
 
 ## ToDos:
-- Meuchel-Ability für Diebe
 - SP-Maps: 
+	- Umlaute prüfen (nur Legenden)
 	- Wilde Tiere
 	- Goldhaufen
 - Misc-Items
@@ -608,6 +608,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Evil stuff
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+- Meuchel-Ability für Diebe(?)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
 	- ggf. mehr Spielertruppen als Hilfe
 - Vertonte Animationen (per TaskLists)
