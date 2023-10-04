@@ -29,11 +29,24 @@ function SetupSteppeWeatherGfxSet()
 end
 
 --Researchs Armor-, Attack- and other useful techs for military purposes
-function ResearchAllMilitaryTechsAddOn(_PlayerId)
-	ResearchAllMilitaryTechs(_PlayerId)
+function ResearchAllMilitaryTechsAddOn(_PlayerId, _SuperTech)
+	ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 
 	ResearchTechnology( Technologies.T_FleeceArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_FleeceLinedLeatherArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_LeadShot, _PlayerId );
 	ResearchTechnology( Technologies.T_Sights, _PlayerId );
+end
+
+
+GetRifle = function(_strength)
+	if _strength <= 0 then
+		return Entities.PU_LeaderRifle1
+	elseif _strength <= 1 then
+		return Entities.PU_LeaderRifle1
+	elseif _strength <= 2 then
+		return Entities.PU_LeaderRifle2
+	else
+		return Entities.PU_LeaderRifle2
+	end
 end
