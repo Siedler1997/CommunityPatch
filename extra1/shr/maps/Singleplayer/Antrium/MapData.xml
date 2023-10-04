@@ -21877,8 +21877,8 @@
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>PU_Serf</Type>
    <Position>
-    <X>3.418525e+004</X>
-    <Y>3.376466e+004</Y>
+    <X>4.177525e+004</X>
+    <Y>3.293466e+004</Y>
    </Position>
    <Orientation>1.737887e+002</Orientation>
    <Flags>0</Flags>
@@ -92059,5 +92059,155 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>9.104160e-001</Scale>
   </Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_Gold1</Type>
+		<Position>
+			<X>1.736000e+004</X>
+			<Y>3.118000e+004</Y>
+		</Position>
+		<Orientation>3.450000e+002</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>0</PlayerID>
+		<Health>-1</Health>
+		<Name></Name>
+		<ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,400);</ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_Gold1</Type>
+		<Position>
+			<X>9.710000e+003</X>
+			<Y>1.055000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>0</PlayerID>
+		<Health>-1</Health>
+		<Name></Name>
+		<ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,400);</ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>1.799000e+004</X>
+			<Y>1.094000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos1</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>2.297000e+004</X>
+			<Y>1.074000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos1_wp1</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>2.312000e+004</X>
+			<Y>6.590000e+003</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos1_wp2</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>3.864000e+004</X>
+			<Y>2.561000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos2</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>4.453000e+004</X>
+			<Y>2.139000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos2_wp1</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>4.900000e+004</X>
+			<Y>5.556000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos3</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>4.161000e+004</X>
+			<Y>6.102000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>rudelpos3_wp1</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>XD_ScriptEntity</Type>
+		<Position>
+			<X>3.448000e+004</X>
+			<Y>3.351000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>bearpos1</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
  </Entities>
 </root>

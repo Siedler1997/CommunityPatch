@@ -181,5 +181,6 @@ function Mission_FirstMapAction()
 	
 	start1stQuest()	
 
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end

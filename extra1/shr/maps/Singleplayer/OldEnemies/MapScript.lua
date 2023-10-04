@@ -34,6 +34,7 @@ function Mission_InitDiplomacy()
     Logic.SetDiplomacyState( 3, 4, Diplomacy.Neutral )
     Logic.SetDiplomacyState( 3, 5, Diplomacy.Neutral )
     Logic.SetDiplomacyState( 4, 5, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 
 end
 
@@ -56,6 +57,9 @@ function Mission_InitTechnologies()
 	--ResearchAllMilitaryTechsAddOn(3)
 	ResearchAllMilitaryTechsAddOn(4)
 	ResearchAllMilitaryTechsAddOn(5)
+	ResearchAllMilitaryTechsAddOn(7)
+	
+	ResearchAnimalTechs(7, true)
 end
 
 
@@ -113,6 +117,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, 8)		
 	end	
 	Display.SetPlayerColorMapping(5, 6)		
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 	Display.SetPlayerColorMapping(8, 11)		
 
 end
@@ -184,7 +189,12 @@ function Mission_FirstMapAction()
 	--	start quest
 	
 		create1stQuest()
+		
+	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 4, ramount = 10})
+	RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = 4, ramount = 12})
+	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
+		--StartSimpleJob("GetMousePos")
 		--Tools.ExploreArea(-1, -1, 900)
 		    	
 end

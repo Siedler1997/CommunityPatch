@@ -18,7 +18,7 @@ createPlayer5 = function()
 		
 			serfLimit				=	7,
 			--------------------------------------------------
-			extracting				=	true,
+			extracting				=	false,
 			--------------------------------------------------
 			rebuild = {
 				delay				=	25,
@@ -41,7 +41,7 @@ createPlayer5 = function()
 				sulfur				=	3,
 				stone				=	3,
 				wood				=	3,
-				updateTime			=	5
+				updateTime			=	2
 			},
 		}
 		

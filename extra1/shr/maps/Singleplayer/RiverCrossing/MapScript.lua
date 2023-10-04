@@ -46,9 +46,12 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 	
+	ResearchAllMilitaryTechsAddOn(2)
 	ResearchAllMilitaryTechsAddOn(3)
 	ResearchAllMilitaryTechsAddOn(5)
 	ResearchAllMilitaryTechsAddOn(7)
+	
+	ResearchAnimalTechs(2)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -155,6 +158,10 @@ function Mission_FirstMapAction()
 		--AddGold(10000)
 	
 		start1stQuest()	
+		
+		RaidersCreate({player = 2, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 4, ramount = 10})
+		RaidersCreate({player = 2, pos = "bearpos1", revier = 2000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 3})
 
+		--StartSimpleJob("GetMousePos")
 		--Tools.ExploreArea(-1, -1, 900)
 end

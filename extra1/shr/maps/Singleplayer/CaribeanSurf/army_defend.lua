@@ -127,6 +127,7 @@ createArmyDefend = function()
 										--UpgradeCategories.LeaderSword,
 										--UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon3,
+										UpgradeCategories.LeaderRifle,
 																					
 										}
 

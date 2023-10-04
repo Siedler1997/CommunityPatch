@@ -31,6 +31,7 @@ function InitDiplomacy()
     SetHostile(1,2)
     SetHostile(1,3)
     SetHostile(1,4)
+    SetHostile(1,6)
 --  SetNeutral(2,3)	-- Neutral ist Default.
 --  SetNeutral(2,4)
 --  SetNeutral(3,4)
@@ -57,6 +58,9 @@ function InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(2)
 	ResearchAllMilitaryTechsAddOn(3)
 	ResearchAllMilitaryTechsAddOn(4)
+	ResearchAllMilitaryTechsAddOn(6)
+	
+	ResearchAnimalTechs(6)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -87,6 +91,7 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, 4)	
 	end
 	Display.SetPlayerColorMapping(5, 6)
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7, 15)
 end
 ---------------------------------------------------------------------------------------------
@@ -140,7 +145,13 @@ String.Init("SP_Antrium")
 	StartSimpleJob("VictoryJob")
 	StartSimpleJob("ControlDefeat")
 	StartSimpleJob("WinterStartJob")
+	
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 12})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
 

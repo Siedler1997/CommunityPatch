@@ -622,7 +622,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Rand-Clipping bei Briefing-Minimap entfernen 
 - Hauptmenü
 	- MP-Window fixen
-	- MP-Fix (https:--dedk.de-wiki-doku.php?id=multiplayer:help:historyedition)?
+	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
 - Random(?) Crashs
 	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
