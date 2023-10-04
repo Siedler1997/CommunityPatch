@@ -2320,7 +2320,7 @@ function AreEnemiesInArea( _player, _position, _range)
 	end
 end
 
--- Gibt den nächstgelegenen Gegner in der Nähe zurück
+-- Gibt den nächstgelegenen (lebenden) Gegner in der Nähe zurück
 -- by Siedler1997
 function GetNearestEnemyInArea(_player, _pos, _range)
 	local minrange = _range/4
@@ -2332,14 +2332,16 @@ function GetNearestEnemyInArea(_player, _pos, _range)
 		if Logic.GetDiplomacyState(_player, i) == Diplomacy.Hostile then
 			local enemies = SucheAufDerWelt(i, 0, _range, _pos)
 			for k = 1, table.getn(enemies) do
-				if GetDistance(enemies[k], _pos) < minrange then
-					table.insert(enemytable, enemies[k])
-				elseif GetDistance(enemies[k], _pos) < minrange*2 then
-					table.insert(etable2, enemies[k])
-				elseif GetDistance(enemies[k], _pos) < minrange*3 then
-					table.insert(etable3, enemies[k])
-				else
-					table.insert(etable4, enemies[k])
+				if IsAlive(enemies[k]) then
+					if GetDistance(enemies[k], _pos) < minrange then
+						table.insert(enemytable, enemies[k])
+					elseif GetDistance(enemies[k], _pos) < minrange*2 then
+						table.insert(etable2, enemies[k])
+					elseif GetDistance(enemies[k], _pos) < minrange*3 then
+						table.insert(etable3, enemies[k])
+					else
+						table.insert(etable4, enemies[k])
+					end
 				end
 			end
 		end
