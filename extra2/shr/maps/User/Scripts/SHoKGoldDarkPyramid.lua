@@ -179,10 +179,53 @@ function FirstMapAction()
   Logic.AddMercenaryOffer(mercTent, Entities.PU_LeaderRifle2, 10, ResourceType.Stone, 1000);
   Logic.AddMercenaryOffer(mercTent, Entities.PU_LeaderRifle2, 10, ResourceType.Wood, 750);
   Logic.AddMercenaryOffer(mercTent, Entities.PU_LeaderHeavyCavalry2, 10, ResourceType.Wood, 750);
+  
+	StartSimpleJob("ControlEnemyHeroes")
 
   --Tools.ExploreArea(-1, -1, 900)
 end
 
+
+function ControlEnemyHeroes()
+	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+		--Varg
+		--Deactivated for Varg because I'm too lazy to prevent him from drowning after usage
+		if IsAlive("varg") then
+			if AreEnemiesInArea(GetPlayer("varg"), GetPosition("varg"), 2000) then
+				local HeroID = GetEntityId("varg")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerSummon(HeroID)
+				end
+
+				GUI.SettlerAffectUnitsInArea(HeroID)
+			end
+		end
+		--Mary
+		if IsAlive("mary") then
+			if AreEnemiesInArea(GetPlayer("mary"), GetPosition("mary"), 1000) then
+				local HeroID = GetEntityId("mary")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerCircularAttack(HeroID)
+				end
+			end
+		end
+		--Kerberos
+		if IsAlive("kerberos") then
+			if AreEnemiesInArea(GetPlayer("kerberos"), GetPosition("kerberos"), 1000) then
+				local HeroID = GetEntityId("kerberos")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerInflictFear(HeroID)
+				end
+			end
+		end
+	end
+end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function CreatePreludeBriefing()
 

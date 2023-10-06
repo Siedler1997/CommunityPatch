@@ -119,10 +119,52 @@ function FirstMapAction()
   
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 8})
 	RaidersCreate({player = 7, pos = "bearpos1", revier = {"bearpos1", "bearpos1_wp1"}, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+    
+	StartSimpleJob("ControlEnemyHeroes")
 
   --Tools.ExploreArea(-1, -1, 900)
 end
 
+
+function ControlEnemyHeroes()
+	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+		--Varg
+		--[[
+		--Deactivated for Varg because I'm too lazy to prevent him from drowning after usage
+		if IsAlive("viking") then
+			if AreEnemiesInArea(GetPlayer("viking"), GetPosition("viking"), 2000) then
+				local HeroID = GetEntityId("viking")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerSummon(HeroID)
+				end
+
+				GUI.SettlerAffectUnitsInArea(HeroID)
+			end
+		end
+		--]]
+		--Mary
+		if IsAlive("mary") then
+			if AreEnemiesInArea(GetPlayer("mary"), GetPosition("mary"), 2000) then
+				local HeroID = GetEntityId("mary")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerCircularAttack(HeroID)
+				end
+			end
+		end
+		--Kala
+		if IsAlive("Kala") then
+			if AreEnemiesInArea(GetPlayer("Kala"), GetPosition("Kala"), 1000) then
+				local HeroID = GetEntityId("Kala")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerCircularAttack(HeroID)
+				end
+			end
+		end
+	end
+end
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Definieren der ersten Armee des Nebelvolkes
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

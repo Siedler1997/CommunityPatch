@@ -119,7 +119,27 @@ function FirstMapAction()
 	StartSimpleJob("VictoryJob")
 	createChest()
 	
+	StartSimpleJob("ControlEnemyHeroes")
+	
     --Tools.ExploreArea(-1, -1, 900)
+end
+
+
+function ControlEnemyHeroes()
+	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+		--Kerberos
+		if IsAlive("kerberos") then
+			if AreEnemiesInArea(GetPlayer("kerberos"), GetPosition("kerberos"), 1000) then
+				local HeroID = GetEntityId("kerberos")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerInflictFear(HeroID)
+				end
+			end
+		end
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
