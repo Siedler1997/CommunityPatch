@@ -187,7 +187,7 @@ end
 
 
 function ControlEnemyHeroes()
-	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+	if Counter.Tick2("ControlEnemyHeroes", 5) then
 		--Varg
 		--Deactivated for Varg because I'm too lazy to prevent him from drowning after usage
 		if IsAlive("varg") then

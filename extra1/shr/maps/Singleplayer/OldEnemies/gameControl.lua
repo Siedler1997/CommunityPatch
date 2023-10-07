@@ -251,7 +251,7 @@ TributePaid2 = function()
 
 
 function ControlEnemyHeroes()
-	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+	if Counter.Tick2("ControlEnemyHeroes", 5) then
 		--Varg
 		if IsAlive("varg") then
 			if AreEnemiesInArea(GetPlayer("varg"), GetPosition("varg"), 2000) then

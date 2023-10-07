@@ -53,6 +53,8 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechs(3)
 	ResearchAllMilitaryTechs(5, true)
 	ResearchAllMilitaryTechs(7)
+	
+	ResearchAnimalTechs(7)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -149,6 +151,10 @@ function Mission_FirstMapAction()
 	-- Start prelude
 
 	start1stQuest()
+	
+	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
 	--Tools.ExploreArea(-1, -1, 900)
 

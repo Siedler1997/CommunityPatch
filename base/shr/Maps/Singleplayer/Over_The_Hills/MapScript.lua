@@ -29,8 +29,9 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )	
 
-	end
+end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
@@ -47,6 +48,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)		-- Meuselwitz
 		--Display.SetPlayerColorMapping(4, MORTFICHET_COLOR)	-- Hohenturm
 		Display.SetPlayerColorMapping(5, NPC_COLOR)			-- Händler
+		Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)	-- Walls
 		
 end
@@ -63,6 +65,9 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechs(2)
 	ResearchAllMilitaryTechs(3)
 	ResearchAllMilitaryTechs(4)
+	ResearchAllMilitaryTechs(7)
+	
+	ResearchAnimalTechs(7)
 end
 
 
@@ -131,6 +136,12 @@ function Mission_FirstMapAction()
 	
 	--	start quest
 		create1stQuest()
+		
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2", "rudelpos1_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+		RaidersCreate({player = 7, pos = "bearpos2", revier = {"bearpos2", "bearpos2_wp1"}, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 		    	
 		--Tools.ExploreArea(-1, -1, 900)
 	end

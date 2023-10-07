@@ -18,6 +18,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 2, 4, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Hostile )
 	end
 
 
@@ -42,7 +43,7 @@ function Mission_InitPlayerColorMapping()
 		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
 		--Display.SetPlayerColorMapping(3, BARMECIA_COLOR)		
 		Display.SetPlayerColorMapping(3, NPC_COLOR)		
-	
+		Display.SetPlayerColorMapping(8, ROBBERS_COLOR)	
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
@@ -54,6 +55,9 @@ function Mission_InitResources()
 function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(2, true)
 	ResearchAllMilitaryTechsAddOn(4, true)
+	ResearchAllMilitaryTechs(8)
+	
+	ResearchAnimalTechs(8)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -139,6 +143,13 @@ function Mission_FirstMapAction()
 		--EnableDebugging()
 	
 		start1stQuest()	
+		
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2", "rudelpos1_wp3", "rudelpos1_wp4"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 12})
+		RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2", "rudelpos2_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 8, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1", "rudelpos4_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 8})
+		RaidersCreate({player = 8, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+		RaidersCreate({player = 8, pos = "bearpos2", revier = 3000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
 		--Tools.ExploreArea(-1, -1, 900)
 		--StartSimpleJob("GetMousePos")

@@ -599,9 +599,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- SP-Maps: 
-	- Wilde Tiere
-	- Goldhaufen
+- Weitere Spielerfarben (Grüün, Orange, Lila)
 - Misc-Items
 	- Rifles
 	- Evil stuff

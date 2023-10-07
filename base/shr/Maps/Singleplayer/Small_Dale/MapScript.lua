@@ -25,6 +25,7 @@ IncludeLocals("quest_rewards")
 function Mission_InitDiplomacy()
 
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 
 	end
@@ -40,7 +41,10 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	ResearchAllMilitaryTechs(2)
+	ResearchAllMilitaryTechs(3)
 	ResearchAllMilitaryTechs(5)
+	
+	ResearchAnimalTechs(3)
 end
 
 
@@ -79,6 +83,7 @@ function Mission_InitPlayerColorMapping()
 	else
 		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		
 	end
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)		
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -142,6 +147,10 @@ function Mission_FirstMapAction()
 	--	start quest
 	
 		create1stQuest()
+		
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 		    
 		--Tools.ExploreArea(-1, -1, 900)
 	end

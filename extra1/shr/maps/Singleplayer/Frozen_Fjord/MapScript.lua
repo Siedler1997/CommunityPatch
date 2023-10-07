@@ -76,12 +76,12 @@ end
 function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(2)
 	ResearchAllMilitaryTechsAddOn(3)
-	ResearchAllMilitaryTechsAddOn(5)
-	ResearchAllMilitaryTechsAddOn(6)
+	ResearchAllMilitaryTechsAddOn(5, true)
+	ResearchAllMilitaryTechsAddOn(6, true)
 	ResearchAllMilitaryTechsAddOn(7)
 	ResearchAllMilitaryTechsAddOn(8)
 
-	--ResearchAnimalTechs(7)
+	--ResearchAnimalTechs(5)
 end
 
 
@@ -182,6 +182,9 @@ function Mission_FirstMapAction()
 		--	Logic.SetShareExplorationWithPlayerFlag(1, 3, 1)
 	
 	--	start quest
+	
+		RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Highland, samount = 2, ramount = 10})
+		RaidersCreate({player = 5, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Highland, samount = 2, ramount = 10})
 	
 		create1stQuest()
 

@@ -108,7 +108,7 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(7)
 	ResearchAllMilitaryTechsAddOn(8)
 
-	--ResearchAnimalTechs(8)
+	ResearchAnimalTechs(8)
 end
 
 
@@ -207,6 +207,13 @@ function Mission_FirstMapAction()
 	--	start quest
 	
 		create1stQuest()
+		
+		RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2", "rudelpos1_wp3", "rudelpos1_wp4"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 12})
+		--RaidersCreate({player = 8, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2", "rudelpos2_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 8, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2", "rudelpos3_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+		RaidersCreate({player = 8, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1", "rudelpos4_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 8})
+		RaidersCreate({player = 8, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+		--RaidersCreate({player = 8, pos = "bearpos2", revier = 3000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 		   
 		--Tools.ExploreArea(-1, -1, 900)
 	end

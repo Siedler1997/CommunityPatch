@@ -126,7 +126,7 @@ end
 
 
 function ControlEnemyHeroes()
-	if Counter.Tick2("ControlBossesWinterAttack", 5) then
+	if Counter.Tick2("ControlEnemyHeroes", 5) then
 		--Kerberos
 		if IsAlive("kerberos") then
 			if AreEnemiesInArea(GetPlayer("kerberos"), GetPosition("kerberos"), 1000) then

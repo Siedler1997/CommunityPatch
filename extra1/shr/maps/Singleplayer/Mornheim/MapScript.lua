@@ -34,6 +34,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile 	)	
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile 	)
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile  	)	
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile  	)	
 	
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral	)	
 	Logic.SetDiplomacyState( 2, 5, Diplomacy.Neutral	)	
@@ -45,18 +46,18 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
-		local p1color = GetPlayerPreferredColor()
-		Display.SetPlayerColorMapping(1, p1color)
-		if p1color == 2 then
-			Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	-- 
-		elseif p1color == 3 then
-			Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		-- 
-		end
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color == 2 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	-- 
+	elseif p1color == 3 then
+		Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		-- 
+	end
 
-		--Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		-- 
-		--Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)		-- 
-		Display.SetPlayerColorMapping(5, CLEYCOURT_COLOR)	-- 
-		
+	--Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		-- 
+	--Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)		-- 
+	Display.SetPlayerColorMapping(5, CLEYCOURT_COLOR)	-- 
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -75,6 +76,8 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(6)
 	ResearchAllMilitaryTechsAddOn(7)
 	ResearchAllMilitaryTechsAddOn(8)
+	
+	ResearchAnimalTechs(7)
 end
 
 
@@ -174,7 +177,7 @@ function Mission_FirstMapAction()
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Ironmine         	,3 )
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Market           	,3 )
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Monastery        	,3 )
-	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Outpost          	,3 )
+	--Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Outpost          	,3 )
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Residence        	,3 )
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Sawmill          	,2 )
 	Logic.SetTechnologyState(GetHumanPlayer(),Technologies.B_Stables          	,2 )
@@ -238,6 +241,10 @@ function Mission_FirstMapAction()
 		--	go!
 		
 			StartChestQuest()
+			
+			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+			RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
+			RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
 			--Tools.ExploreArea(-1, -1, 900)
 	end

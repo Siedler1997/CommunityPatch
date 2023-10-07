@@ -53,6 +53,8 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(6)
 	ResearchAllMilitaryTechsAddOn(7)
 	ResearchAllMilitaryTechsAddOn(8)
+	
+	ResearchAnimalTechs(4)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -98,7 +100,7 @@ function Mission_InitPlayerColorMapping()
 	-- set player colors
 	
 		Display.SetPlayerColorMapping(gvMission.PlayerID, GetPlayerPreferredColor())	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDFortress, MORTFICHET_COLOR)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDFortress, ENEMY_COLOR1)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBarbarian, BARBARIAN_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDCoastBandits, ROBBERS_COLOR)		
 		Display.SetPlayerColorMapping(gvMission.PlayerIDClerics, PLAYER_FRIEND_COLOR)	
@@ -203,14 +205,59 @@ function Mission_FirstMapAction()
 	-- This code explores the area instantly and permanently
 	Explore.Show("NPC_SulfurExploration", "NPCSulphur", 1000)
 	
+	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2", "rudelpos1_wp3"}, range = 3500, types = RaidersDefaultSets.Europe, samount = 2, ramount = 10})
+	RaidersCreate({player = 4, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = 2})
 
 	StartCutscene("Intro", start1stQuest)
 	
 	--start1stQuest()
 	
+	StartSimpleJob("ControlEnemyHeroes")
+	
 	--Tools.ExploreArea(-1, -1, 900)
 end
 
+
+function ControlEnemyHeroes()
+	if Counter.Tick2("ControlEnemyHeroes", 5) then
+		--Varg
+		--Deactivated for Varg because I'm too lazy to prevent him from drowning after usage
+		if IsAlive("varg") then
+			if AreEnemiesInArea(GetPlayer("varg"), GetPosition("varg"), 2000) then
+				local HeroID = GetEntityId("varg")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerSummon(HeroID)
+				end
+
+				GUI.SettlerAffectUnitsInArea(HeroID)
+			end
+		end
+		--Mary
+		if IsAlive("Mary") then
+			if AreEnemiesInArea(GetPlayer("Mary"), GetPosition("Mary"), 1000) then
+				local HeroID = GetEntityId("Mary")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerCircularAttack(HeroID)
+				end
+			end
+		end
+		--Kerberos
+		if IsAlive("kerberos") then
+			if AreEnemiesInArea(GetPlayer("kerberos"), GetPosition("kerberos"), 1000) then
+				local HeroID = GetEntityId("kerberos")
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
+					GUI.SettlerAffectUnitsInArea(HeroID)
+				end
+				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.8) then
+					GUI.SettlerInflictFear(HeroID)
+				end
+			end
+		end
+	end
+end
 
 function CreateDummyBriefing(_Callback, _Position)
 
