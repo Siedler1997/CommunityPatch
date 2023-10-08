@@ -55,9 +55,16 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-	Display.SetPlayerColorMapping(2, 5)
-	Display.SetPlayerColorMapping(3, 9)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, 5)
+	else
+		Display.SetPlayerColorMapping(2, 6)
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(3, 9)
+	end
 	Display.SetPlayerColorMapping(4, 8)
 end
 	

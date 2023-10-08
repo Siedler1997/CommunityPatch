@@ -87,15 +87,24 @@ end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2,BARBARIAN_COLOR)
+		if p1color ~= 6 then
+			Display.SetPlayerColorMapping(5,6)
+		else
+			Display.SetPlayerColorMapping(5,2)
+		end
+	else
+		Display.SetPlayerColorMapping(2,6)
+		Display.SetPlayerColorMapping(5,2)
+	end
 	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
 	Display.SetPlayerColorMapping(4,15)
-	Display.SetPlayerColorMapping(5,6)
 	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,15)
-
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 ------------------------------------------------------------------------------

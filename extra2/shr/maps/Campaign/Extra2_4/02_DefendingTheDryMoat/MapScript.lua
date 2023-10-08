@@ -127,26 +127,24 @@ end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
-	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
-	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
-	
-	Display.SetPlayerColorMapping(4, 3)
-	--Display.SetPlayerColorMapping(7, 6)
-
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-	if p1color == 2 then
-		Display.SetPlayerColorMapping(4, 3)
-		Display.SetPlayerColorMapping(8, 16)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
 	else
-		Display.SetPlayerColorMapping(8, 15)
-		if p1color == 1 then
-			Display.SetPlayerColorMapping(4, 3)
-		else
-			Display.SetPlayerColorMapping(4, 13)
-		end
+		Display.SetPlayerColorMapping(2, 6)
 	end
+	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
+	if p1color ~= 13 then
+		Display.SetPlayerColorMapping(4, 13)
+	else
+		Display.SetPlayerColorMapping(4, 3)
+	end
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
+	Display.SetPlayerColorMapping(6, 7)
+	Display.SetPlayerColorMapping(8, 15)
+	
+	--Display.SetPlayerColorMapping(7, 6)
 end
 	
 -- First Map Action
@@ -246,6 +244,6 @@ function Mission_FirstMapAction()
 		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 5000, 3000, 3000, 500)
 	end
 
-	--Tools.ExploreArea(-1, -1, 900)
+	Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleJob("GetMousePos")
 end

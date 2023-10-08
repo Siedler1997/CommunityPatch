@@ -73,9 +73,14 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-    Display.SetPlayerColorMapping(2, 6)
-    Display.SetPlayerColorMapping(3, 5)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+    Display.SetPlayerColorMapping(2, MORTFICHET_COLOR)
+	if p1color ~= 5 then
+        Display.SetPlayerColorMapping(3, 5)
+    else
+        Display.SetPlayerColorMapping(3, 6)
+    end
     Display.SetPlayerColorMapping(4, KERBEROS_COLOR)
     Display.SetPlayerColorMapping(5, NPC_COLOR)
 	--Display.SetPlayerColorMapping(8, NPC_COLOR)
@@ -241,6 +246,7 @@ function CreatePreludeBriefing()
   PreludeBriefing[page].text = "@color:17,207,255 Willkommen, edler Held! Ich bin Hiob."
   PreludeBriefing[page].npc = {}
   PreludeBriefing[page].npc.id = GetEntityId("Kermit")
+  Explore.Show("ShowKermit", "Kermit", 1000)
   CreateEffect(2, GGL_Effects.FXBuildingSmokeLarge, "Kermit");
   CreateEffect(2, GGL_Effects.FXBuildingSmokeLarge, "Kermit");
   CreateEffect(2, GGL_Effects.FXBuildingSmokeLarge, "Kermit");
@@ -343,7 +349,7 @@ end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function PreludeBriefingFinished()
-
+  Explore.Hide("ShowKermit")
   ResolveBriefing(PreludeBriefingShowKermit)
   ResolveBriefing(BriefingMonkMarker)
   ResolveBriefing(BriefingMonk1Marker)

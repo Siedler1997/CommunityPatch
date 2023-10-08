@@ -109,27 +109,29 @@ end
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
 	-- Set Colors
-
-	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
-	--Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)
-	--Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
-	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
-	Display.SetPlayerColorMapping(6, ENEMY_COLOR2)	
-	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)	
-	Display.SetPlayerColorMapping(8, NPC_COLOR)		
-	
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-	if p1color == 1 then
-		Display.SetPlayerColorMapping(3, 2)		
-		Display.SetPlayerColorMapping(4, 3)	
-	elseif p1color == 2 then
-		Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		
-		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)	
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)	
+		Display.SetPlayerColorMapping(7, ENEMY_COLOR2)	
 	else
-		Display.SetPlayerColorMapping(3, 2)		
-		Display.SetPlayerColorMapping(4, 1)	
+		Display.SetPlayerColorMapping(2, 3)	
+		Display.SetPlayerColorMapping(6, 3)	
+		Display.SetPlayerColorMapping(7, 3)	
 	end
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(3, 2)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
+	end
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		
+	else
+		Display.SetPlayerColorMapping(4, 6)		
+	end
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
+	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -382,7 +382,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
 			- Eine bevorzugte Spielerfarbe kann eingestellt werden
-				- Wahl zwischen Blau (Standard), Gelb und Rot
+				- Wahl zwischen insgesamt 8 Farben
+					- Blau (Standard)
+					- Rot
+					- Gelb
+					- Türkis
+					- Orange
+					- Violett
+					- Grün
+					- Weiß
 				- Nahezu alle Vanilla-SP-Maps respektieren diese Einstellung
 				- Ggf. haben KIs dadurch auch andere Spielerfarben
 				- Gilt NICHT für den MP
@@ -599,7 +607,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- "Bevorzugte Spielerfarbe" erweitern: Dunkelgrün, Orange, Lila, Türkis, Weiß)
 - Misc-Items
 	- Rifles
 	- Evil stuff

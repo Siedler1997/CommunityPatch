@@ -81,20 +81,26 @@ function InitWeather()
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()	
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, 6)
+	end
 	Display.SetPlayerColorMapping(3, ARIS_ROBBERS)
-	--Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
+	if p1color ~= 13 then
+		Display.SetPlayerColorMapping(4, PAPAL_COLOR)
+	else
+		Display.SetPlayerColorMapping(4, 3)
+	end
 	Display.SetPlayerColorMapping(5, 15)
+	if p1color == 6 then
+		Display.SetPlayerColorMapping(6, 1)
+	end
 	Display.SetPlayerColorMapping(7, 16)
 	Display.SetPlayerColorMapping(8, ROBBERS_COLOR)
 
-	local p1color = GetPlayerPreferredColor()
-	Display.SetPlayerColorMapping(1, p1color)
-	if p1color ~= 3 then
-		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
-	else
-		Display.SetPlayerColorMapping(4, PAPAL_COLOR)
-	end
 end
 
 ------------------------------------------------------------------------------

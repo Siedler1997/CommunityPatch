@@ -108,12 +108,21 @@ end
 
 ----------------------------------------------------------------------------
 function InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-
-    Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, 6)
+	end
     Display.SetPlayerColorMapping(3, MORTFICHET_COLOR)
     Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
-    Display.SetPlayerColorMapping(6, ENEMY_COLOR2)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(6, 1)
+	end
     Display.SetPlayerColorMapping(7, ARIS_ROBBERS)
 end
 	
@@ -205,7 +214,8 @@ function Mission_FirstMapAction()
 
 	--SetPlayerName(2, "Barbar Raiders")
 	SetPlayerName(2, String.Key("_Player2Name"))
-
+	
+	Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
 	
 	if CP_Difficulty > 0 then
 		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 500, 1500, 1000, 150)

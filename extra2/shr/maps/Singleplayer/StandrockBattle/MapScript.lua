@@ -126,13 +126,19 @@ function Mission_InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
 	
-	Display.SetPlayerColorMapping(2, 8)
+	Display.SetPlayerColorMapping(2, 15)
 	if p1color == 3 then
-		Display.SetPlayerColorMapping(3, 1)
+		Display.SetPlayerColorMapping(3, 8)
 	end
-	Display.SetPlayerColorMapping(4, 5)
-	Display.SetPlayerColorMapping(5, 9)
-
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(4, 5)
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(5, 9)
+	else
+		Display.SetPlayerColorMapping(5, 1)
+	end
+	Display.SetPlayerColorMapping(8, NPC_COLOR)
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start after all initialization is done

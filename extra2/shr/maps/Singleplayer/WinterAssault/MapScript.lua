@@ -120,6 +120,9 @@ function Mission_InitPlayerColorMapping()
 	if p1color == 2 then
 		Display.SetPlayerColorMapping(2, 6)		
 	end
+	if p1color == 4 then
+		Display.SetPlayerColorMapping(4, 3)		
+	end
 end
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

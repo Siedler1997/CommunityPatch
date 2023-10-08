@@ -53,13 +53,22 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+		Display.SetPlayerColorMapping(7, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(2, 3)
+		Display.SetPlayerColorMapping(7, 3)
+	end
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+	if p1color ~= 6 then
+		Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+	else
+		Display.SetPlayerColorMapping(4, 5)
+	end
 	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
-	Display.SetPlayerColorMapping(7, ENEMY_COLOR2)
-	
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -228,9 +237,9 @@ function Mission_FirstMapAction()
 			CreateRandomChests()
 		end
 
-	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
-	RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (12 + CP_Difficulty * 4)})
-	RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (10 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (12 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
 	RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 	RaidersCreate({player = 3, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 

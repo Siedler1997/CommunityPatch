@@ -57,23 +57,23 @@ function Mission_InitPlayerColorMapping()
 BLUE = 1
 RED = 2
 
-	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
-	Display.SetPlayerColorMapping(5, NPC_COLOR)
-	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(8, BARBARIAN_COLOR)
-
 	local p1color = GetPlayerPreferredColor()
-	Display.SetPlayerColorMapping(3, p1color)
-	Display.SetPlayerColorMapping(4, p1color)
-	
+	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)	
 	if p1color ~= 2 then
 		Display.SetPlayerColorMapping(2, NEPHILIM_COLOR)	
-		Display.SetPlayerColorMapping(7, 15)
 	else
 		Display.SetPlayerColorMapping(2, ENEMY_COLOR1)	
-		Display.SetPlayerColorMapping(7, 16)
 	end
-
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(4, p1color)
+	Display.SetPlayerColorMapping(5, NPC_COLOR)
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(7, 15)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(8, BARBARIAN_COLOR)	
+	else
+		Display.SetPlayerColorMapping(8, 3)	
+	end
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)

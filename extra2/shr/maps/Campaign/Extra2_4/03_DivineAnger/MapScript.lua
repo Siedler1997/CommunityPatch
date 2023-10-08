@@ -115,23 +115,33 @@ end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
-	Display.SetPlayerColorMapping(3, EVIL_GOVERNOR_COLOR)
-	Display.SetPlayerColorMapping(4, EVIL_GOVERNOR_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, 6)
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(3, EVIL_GOVERNOR_COLOR)
+		Display.SetPlayerColorMapping(4, EVIL_GOVERNOR_COLOR)
+	else
+		Display.SetPlayerColorMapping(3, 4)
+		Display.SetPlayerColorMapping(4, 4)
+	end
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(7, FRIENDLY_COLOR3)
+	Display.SetPlayerColorMapping(6, 7)
+	Display.SetPlayerColorMapping(7, KERBEROS_COLOR)
 	--Display.SetPlayerColorMapping(8, 3)
 	
 	--Display.SetPlayerColorMapping(4, 3)
 	--Display.SetPlayerColorMapping(7, 6)
 	--4,7
 
-	local p1color = GetPlayerPreferredColor()
-	Display.SetPlayerColorMapping(1, p1color)
-	if p1color ~= 3 then
-		Display.SetPlayerColorMapping(8, 3)
-	else
+	if p1color ~= 13 then
 		Display.SetPlayerColorMapping(8, PAPAL_COLOR)
+	else
+		Display.SetPlayerColorMapping(8, 3)
 	end
 end
 	

@@ -77,14 +77,22 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(2, 3)
+	end
 	Display.SetPlayerColorMapping(3, CLEYCOURT_COLOR)
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)
+	else
+		Display.SetPlayerColorMapping(4, 6)
+	end
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)
-
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-	Display.SetPlayerColorMapping(7, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(7, p1color)
 end
 
 

@@ -59,11 +59,14 @@ RED = 2
 
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-	if p1color == 2 then
+	if p1color ~= 3 then
 		Display.SetPlayerColorMapping(2, 3)			
 	end
-	Display.SetPlayerColorMapping(2, 9)
-	Display.SetPlayerColorMapping(3, 4)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(3, 4)			
+	else
+		Display.SetPlayerColorMapping(3, 9)			
+	end
 	Display.SetPlayerColorMapping(4, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(6, 8)

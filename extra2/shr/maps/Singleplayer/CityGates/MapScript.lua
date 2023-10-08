@@ -22,9 +22,6 @@ function Mission_InitPlayerColorMapping()
 	-- Set Colors
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-
-	Display.SetPlayerColorMapping(7, NPC_COLOR)
-	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 	if p1color ~= 2 then	
 		Display.SetPlayerColorMapping(2, 2)	
 		Display.SetPlayerColorMapping(3, 2)
@@ -35,7 +32,8 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(4, 5)
 	end
 	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)		
-	
+	Display.SetPlayerColorMapping(7, NPC_COLOR)
+	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
