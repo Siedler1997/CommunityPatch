@@ -961,6 +961,10 @@
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>
 	<Entity>XD_Gold1</Entity>
+	<Entity>XD_MiscRifle1</Entity>
+	<Entity>XD_MiscRifle2</Entity>
+	<Entity>XD_Misc_EvilSkirmisher</Entity>
+	<Entity>XD_Misc_EvilBearman</Entity>
 	<Entity>XD_WreckedBoat01</Entity>
 	<Entity>XD_WreckedBoat02</Entity>
 	<Entity>CU_BanditLeaderBow2</Entity>

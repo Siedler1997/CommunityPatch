@@ -477,6 +477,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
 		- Der Soldat 'CU_LeaderOutlaw1' (Räuber) mit dem Aussehen von Aris Räuber
 		- 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
+		- Misc-Items für Gewehre und NV-Drops ohne begrenzte Lebensdauer hinzugefügt
+			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
@@ -607,9 +609,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Misc-Items
-	- Rifles
-	- Evil stuff
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Meuchel-Ability für Diebe(?)
