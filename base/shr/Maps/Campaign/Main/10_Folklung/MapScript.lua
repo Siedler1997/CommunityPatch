@@ -101,18 +101,29 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
- 	
 	-- set player colors
-	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, PLAYER_FRIEND_COLOR)		
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, 2)	
+	end
+	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, BARBARIAN_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, GetPlayerPreferredColor())	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, 6)		
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, PLAYER_FRIEND_COLOR)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, 1)	
+		Display.SetPlayerColorMapping(8, 15)	
+	end
+	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
 		
 end
-
- 
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start after all initialization is done

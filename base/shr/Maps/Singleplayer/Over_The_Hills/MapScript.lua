@@ -36,21 +36,23 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
-		local p1color = GetPlayerPreferredColor()
-		Display.SetPlayerColorMapping(1, p1color)
-		if p1color ~= 2 then
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		-- Landsberg
-		else
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		-- Landsberg
-		end
-
-		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		-- Landsberg
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		-- Landsberg
+	else
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		-- Landsberg
+	end
+	
+	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)		-- Meuselwitz
-		--Display.SetPlayerColorMapping(4, MORTFICHET_COLOR)	-- Hohenturm
-		Display.SetPlayerColorMapping(5, NPC_COLOR)			-- Händler
-		Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)	-- Walls
-		
+	end
+	if p1color == 4 then
+		Display.SetPlayerColorMapping(4, MORTFICHET_COLOR)		-- Hohenturm
+	end
+	Display.SetPlayerColorMapping(5, NPC_COLOR)			-- Händler
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)	-- Walls
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -599,7 +599,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Weitere Spielerfarben (Grüün, Orange, Lila)
+- "Bevorzugte Spielerfarbe" erweitern: Dunkelgrün, Orange, Lila, Türkis, Weiß)
 - Misc-Items
 	- Rifles
 	- Evil stuff

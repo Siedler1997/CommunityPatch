@@ -25,16 +25,20 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Kerberos in Southwest
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Robbers at Mountain path
-	Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- Garek, village
+
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- Garek, village
+	else
+		Display.SetPlayerColorMapping(4, 1)	-- Garek, village
+	end
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos in northeast
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- Avala (Mountain village)
 	Display.SetPlayerColorMapping(7, ARIS_ROBBERS)			-- Aris robbers
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)
-	
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

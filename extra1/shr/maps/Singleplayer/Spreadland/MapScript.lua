@@ -68,7 +68,7 @@ function Mission_InitPlayerColorMapping()
 	if p1color ~= 3 then
 		Display.SetPlayerColorMapping(1, p1color)
 	else
-		Display.SetPlayerColorMapping(1, PLAYER_FRIEND_COLOR)
+		Display.SetPlayerColorMapping(1, 8)
 	end
 
 	if p1color == 2 then

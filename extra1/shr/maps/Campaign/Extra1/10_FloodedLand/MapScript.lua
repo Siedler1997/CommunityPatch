@@ -48,14 +48,9 @@ end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
-	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
-	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
-	
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-
+	Display.SetPlayerColorMapping(2,NPC_COLOR)
 	if p1color ~= 2 then
 		Display.SetPlayerColorMapping(3, 2)		
 		Display.SetPlayerColorMapping(4, 2)	
@@ -63,6 +58,12 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, 6)		
 		Display.SetPlayerColorMapping(4, 6)	
 	end
+	if p1color ~= 13 then
+		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
+	else
+		Display.SetPlayerColorMapping(5,3)
+	end
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 end
 
 ------------------------------------------------------------------------------

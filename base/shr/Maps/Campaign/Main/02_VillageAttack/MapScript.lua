@@ -89,20 +89,25 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	
-		Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Robbers
-		Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Attackers from Cave
-
+	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Robbers
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Attackers from Cave
+	
+	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Oberkirch
-		Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
+	else
+		Display.SetPlayerColorMapping(4, 8)		-- Oberkirch
+	end
 
-		--Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
+	Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
 
-		Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
+	--Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
 
-		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-		Display.SetPlayerColorMapping(7, GetPlayerPreferredColor())
+	Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
+
+	Display.SetPlayerColorMapping(7, p1color)
 		
 end
 

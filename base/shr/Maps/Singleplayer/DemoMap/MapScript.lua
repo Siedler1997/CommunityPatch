@@ -96,22 +96,33 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
- 	
 	-- set player colors
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(gvMission.PlayerID, p1color)
+	Display.SetPlayerColorMapping(gvMission.PlayerIDFortress, MORTFICHET_COLOR)		
 	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, GetPlayerPreferredColor())	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDFortress, ENEMY_COLOR2)		
+	if p1color ~= 2 then
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBarbarian, BARBARIAN_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDCoastBandits, ROBBERS_COLOR)		
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBarbarian, 6)		
+	end
+	Display.SetPlayerColorMapping(gvMission.PlayerIDCoastBandits, ROBBERS_COLOR)	
+	
+	if p1color ~= 9 then
 		Display.SetPlayerColorMapping(gvMission.PlayerIDClerics, PLAYER_FRIEND_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRuinRobbers, ROBBERS_COLOR)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDClerics, 1)	
+	end
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRuinRobbers, ROBBERS_COLOR)	
+	
+	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR1)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDWalls, FRIENDLY_COLOR2)	
-		
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 3)	
+	end
+	Display.SetPlayerColorMapping(gvMission.PlayerIDWalls, FRIENDLY_COLOR2)	
 end
 
- 
-	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start after all initialization is done
 function Mission_FirstMapAction()

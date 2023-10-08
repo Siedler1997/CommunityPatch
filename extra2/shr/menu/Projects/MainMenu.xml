@@ -26486,7 +26486,7 @@
                     <W>180</W>
                     <H>47</H>
                   </Rectangle>
-                  <IsShown>True</IsShown>
+                  <IsShown>False</IsShown>
                   <ZPriority>5</ZPriority>
                   <MotherID>OptionsMenu10</MotherID>
                   <Group></Group>
@@ -26619,7 +26619,7 @@
                     <W>180</W>
                     <H>47</H>
                   </Rectangle>
-                  <IsShown>True</IsShown>
+                  <IsShown>False</IsShown>
                   <ZPriority>5</ZPriority>
                   <MotherID>OptionsMenu10</MotherID>
                   <Group></Group>
@@ -26752,7 +26752,7 @@
                     <W>180</W>
                     <H>47</H>
                   </Rectangle>
-                  <IsShown>True</IsShown>
+                  <IsShown>False</IsShown>
                   <ZPriority>5</ZPriority>
                   <MotherID>OptionsMenu10</MotherID>
                   <Group></Group>
@@ -26876,6 +26876,138 @@
                       <Alpha>255</Alpha>
                     </Color>
                   </StringHelper>
+                </WidgetList>
+                <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                  <Name>OptionsMenu10_PrefColor_Picker</Name>
+                  <Rectangle>
+                    <X>200</X>
+                    <Y>320</Y>
+                    <W>18</W>
+                    <H>18</H>
+                  </Rectangle>
+                  <IsShown>True</IsShown>
+                  <ZPriority>10</ZPriority>
+                  <MotherID>OptionsMenu10</MotherID>
+                  <Group></Group>
+                  <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                  <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                  <ButtonHelper>
+                    <DisabledFlag>False</DisabledFlag>
+                    <HighLightedFlag>False</HighLightedFlag>
+                    <ActionFunction>
+                      <LuaCommand>OptionsMenu.S10_SetPrefColor()</LuaCommand>
+                    </ActionFunction>
+                    <ShortCutString>
+                      <StringTableKey></StringTableKey>
+                      <RawString></RawString>
+                    </ShortCutString>
+                  </ButtonHelper>
+                  <Materials>
+                    <Texture>graphics\textures\gui\b_select_empty.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>15</Red>
+                      <Green>64</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </Materials>
+                  <Materials>
+                    <Texture>graphics\textures\gui\b_select_empty.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </Materials>
+                  <Materials>
+                    <Texture>graphics\textures\gui\b_select_empty.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </Materials>
+                  <Materials>
+                    <Texture>graphics\textures\gui\b_select_empty.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </Materials>
+                  <Materials>
+                    <Texture>graphics\textures\gui\b_select_empty.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </Materials>
+                  <ToolTipHelper>
+                    <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                    <ToolTipString>
+                      <StringTableKey></StringTableKey>
+                      <RawString></RawString>
+                    </ToolTipString>
+                    <TargetWidget></TargetWidget>
+                    <ControlTargetWidgetDisplayState>False</ControlTargetWidgetDisplayState>
+                    <UpdateFunction>
+                      <LuaCommand></LuaCommand>
+                    </UpdateFunction>
+                  </ToolTipHelper>
+                  <UpdateFunction>
+                    <LuaCommand>OptionsMenu.S10_UpdatePrefColorPicker()</LuaCommand>
+                  </UpdateFunction>
+                  <UpdateManualFlag>False</UpdateManualFlag>
+                  <IconMaterial>
+                    <Texture></Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>0</Alpha>
+                    </Color>
+                  </IconMaterial>
                 </WidgetList>
                 <WidgetList classname="EGUIX::CTextButtonWidget" classid="0x5dd085a6">
                   <Name>OptionsMenu10_UserName_Ok</Name>
@@ -27763,7 +27895,7 @@
                   <Rectangle>
                     <X>40</X>
                     <Y>320</Y>
-                    <W>600</W>
+                    <W>150</W>
                     <H>21</H>
                   </Rectangle>
                   <IsShown>True</IsShown>

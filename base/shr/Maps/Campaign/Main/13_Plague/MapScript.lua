@@ -86,35 +86,32 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	
 	Display.SetPlayerColorMapping(2, MORTFICHET_COLOR)		-- Mortfichets army
 	Display.SetPlayerColorMapping(3, MORTFICHET_COLOR)		-- Defenders of Morfichets Castle
 	Display.SetPlayerColorMapping(5, MORTFICHET_COLOR)		-- Other tropps of Mortfichet
 	
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Village with Pilgrim (Verino)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Village with Pilgrim (Verino)
+	else
+		Display.SetPlayerColorMapping(4, 3)		-- Village with Pilgrim (Verino)
+	end
+
 	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)			-- Aris leader merchant and support troops that follow heroes
 
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)			-- Pirates
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR2)		-- infected village
-	
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
 function Mission_InitResources()
-
 	--	resources
-
-		AddGold(400)
-		AddIron(200)
-		AddWood(500)
-		AddClay(1000)
-		AddStone(500)
-		AddSulfur(0)
-
-	end
+	Tools.GiveResouces(1, 400, 1000, 500, 500, 200, 0)
+end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start

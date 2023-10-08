@@ -76,23 +76,23 @@ function Mission_InitDiplomacy()
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
 
-	--  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-		--Display.SetPlayerColorMapping(1,PLAYER_COLOR)
-		Display.SetPlayerColorMapping(2,NPC_COLOR)
-		--Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
-		Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
-		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
-		Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
-		Display.SetPlayerColorMapping(7,NPC_COLOR)
-		Display.SetPlayerColorMapping(8,CLEYCOURT_COLOR)
+--  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
+	--Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	Display.SetPlayerColorMapping(2,NPC_COLOR)
+	--Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
+	Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
+	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(7,NPC_COLOR)
+	Display.SetPlayerColorMapping(8,CLEYCOURT_COLOR)
 		
-		local p1color = GetPlayerPreferredColor()
-		Display.SetPlayerColorMapping(1, p1color)
-		if p1color ~= 3 then
-			Display.SetPlayerColorMapping(3, 3)		
-		else
-			Display.SetPlayerColorMapping(3, 1)		
-		end
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(3, 3)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
+	end
 
 end
 	

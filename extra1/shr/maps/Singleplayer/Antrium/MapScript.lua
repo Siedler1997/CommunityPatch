@@ -78,19 +78,15 @@ end
 function InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
+	if p1color == 2 then
+		Display.SetPlayerColorMapping(2, 6)		
+	end
+	if p1color == 3 then
+		Display.SetPlayerColorMapping(3, 4)		
+	end
 	Display.SetPlayerColorMapping(4, BARBARIAN_COLOR)
 
-	if p1color == 1 then
-		Display.SetPlayerColorMapping(2, 2)		
-		Display.SetPlayerColorMapping(3, 3)	
-	elseif p1color == 2 then
-		Display.SetPlayerColorMapping(2, 6)		
-		Display.SetPlayerColorMapping(3, 3)	
-	else
-		Display.SetPlayerColorMapping(2, 2)		
-		Display.SetPlayerColorMapping(3, 4)	
-	end
-	Display.SetPlayerColorMapping(5, 6)
+	Display.SetPlayerColorMapping(5, 16)
 	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7, 15)
 end

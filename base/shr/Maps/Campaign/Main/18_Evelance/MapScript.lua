@@ -49,6 +49,11 @@ function Mission_InitPlayerColorMapping()
 	else
 		Display.SetPlayerColorMapping(3, 1)		
 	end
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(6, FRIENDLY_COLOR1)		-- Tendrel
+	else
+		Display.SetPlayerColorMapping(6, 9)		-- Tendrel
+	end
 
 end
 

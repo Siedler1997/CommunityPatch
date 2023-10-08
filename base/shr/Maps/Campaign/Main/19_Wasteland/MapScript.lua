@@ -20,18 +20,24 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-	Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	
+	if p1color ~= 6 then
+		Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
+	end
 	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
-	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
+	else
+		Display.SetPlayerColorMapping(4,9)
+	end
 	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR2)
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
-	
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

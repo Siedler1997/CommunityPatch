@@ -77,17 +77,18 @@ function InitWeather()
 end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color == 2 then
+		Display.SetPlayerColorMapping(2, 6)		
+	end
     Display.SetPlayerColorMapping(3,NPC_COLOR)
     Display.SetPlayerColorMapping(4,NPC_COLOR)
     Display.SetPlayerColorMapping(5,ROBBERS_COLOR)
-    Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
-
-	local p1color = GetPlayerPreferredColor()
-	Display.SetPlayerColorMapping(1, p1color)
-	if p1color ~= 2 then
-		Display.SetPlayerColorMapping(2, 2)		
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(6,ENEMY_COLOR2)	
 	else
-		Display.SetPlayerColorMapping(2, 6)		
+		Display.SetPlayerColorMapping(6,16)	
 	end
 end
 ------------------------------------------------------------------------------

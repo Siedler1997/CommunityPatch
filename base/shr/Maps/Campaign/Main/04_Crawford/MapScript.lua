@@ -94,17 +94,23 @@
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	
+	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- Crawford
-		Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)		-- Outposts
-		Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- South village
 		Display.SetPlayerColorMapping(7, FRIENDLY_COLOR1)		-- Bishop
 		Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- Leonardo
-		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
-		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
+	else
+		Display.SetPlayerColorMapping(2, 9)		-- Crawford
+		Display.SetPlayerColorMapping(7, 9)		-- Bishop
+		Display.SetPlayerColorMapping(8, 9)		-- Leonardo
+	end
 
-		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-		
+	Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)		-- Outposts
+	Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- South village
+	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
 end
 
 

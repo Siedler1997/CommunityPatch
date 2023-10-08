@@ -82,22 +82,26 @@ end
 function Mission_InitPlayerColorMapping()
  	-- set player colors
 	
-		--Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, PLAYER_FRIEND_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers1, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
+	--Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)		
+	Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers1, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
 		
-		local p1color = GetPlayerPreferredColor()
-		Display.SetPlayerColorMapping(1, p1color)
-		if p1color ~= 3 then
-			Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 3)		
-			Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 3)	
-		else
-			Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 1)		
-			Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 1)	
-		end
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 3)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 3)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 1)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 1)	
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, 9)		
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, 4)		
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

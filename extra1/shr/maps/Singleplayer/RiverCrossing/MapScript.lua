@@ -22,16 +22,26 @@ function Mission_InitDiplomacy()
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
 	-- Set Colors
-	
-		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-		Display.SetPlayerColorMapping(2, ROBBERS_COLOR)		
-		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		
-		Display.SetPlayerColorMapping(4, ENEMY_COLOR2)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	Display.SetPlayerColorMapping(2, ROBBERS_COLOR)	
+	if p1color ~= 6 then	
+		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)	
 		Display.SetPlayerColorMapping(5, ENEMY_COLOR1)
-		Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(7, ENEMY_COLOR1)	
+	else
+		Display.SetPlayerColorMapping(3, 2)	
+		Display.SetPlayerColorMapping(5, 2)
+		Display.SetPlayerColorMapping(7, 2)	
+	end
+	if p1color ~= 4 then	
+		Display.SetPlayerColorMapping(4, ENEMY_COLOR2)
 		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)			
-		Display.SetPlayerColorMapping(8, NPC_COLOR)		
-	
+	else
+		Display.SetPlayerColorMapping(4, 3)
+		Display.SetPlayerColorMapping(6, 3)		
+	end
+	Display.SetPlayerColorMapping(8, NPC_COLOR)	
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)

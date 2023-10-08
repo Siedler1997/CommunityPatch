@@ -43,28 +43,40 @@ function InitWeather()
 end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(4,ENEMY_COLOR2)
-	--Display.SetPlayerColorMapping(5,FRIENDLY_COLOR2)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)	
+	else
+		Display.SetPlayerColorMapping(3,6)
+	end
+	if p1color == 4 then
+		Display.SetPlayerColorMapping(4,1)
+	end
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(5, 3)		
+	else
+		Display.SetPlayerColorMapping(5, 8)		
+	end
 	Display.SetPlayerColorMapping(6,CLEYCOURT_COLOR)
 	
 	-- Caravan color
 	if BriefingCaravan2ShowStart == nil then
-		Display.SetPlayerColorMapping(7,FRIENDLY_COLOR1)
+		if p1color ~= 5 then
+			Display.SetPlayerColorMapping(7,FRIENDLY_COLOR1)	
+		else
+			Display.SetPlayerColorMapping(7,6)
+		end
 	else
-		Display.SetPlayerColorMapping(7,ENEMY_COLOR2)
+		if p1color ~= 4 then
+			Display.SetPlayerColorMapping(7,ENEMY_COLOR2)	
+		else
+			Display.SetPlayerColorMapping(7,1)
+		end
 	end
 	
 	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
-	
-	local p1color = GetPlayerPreferredColor()
-	Display.SetPlayerColorMapping(1, p1color)
-	if p1color ~= 3 then
-		Display.SetPlayerColorMapping(5, 3)		
-	else
-		Display.SetPlayerColorMapping(5, 1)		
-	end
 end
 ------------------------------------------------------------------------------
 function FirstMapAction()

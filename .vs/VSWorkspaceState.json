@@ -3,15 +3,17 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config\\Entities",
-    "\\extra1",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\13_Plague",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MainMenu",
     "\\extra1\\shr",
     "\\extra1\\shr\\maps",
     "\\extra1\\shr\\maps\\Singleplayer",
-    "\\extra1\\shr\\maps\\Singleplayer\\Sandbox",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\config"
+    "\\extra1\\shr\\maps\\Singleplayer\\Frozen_Fjord"
   ],
-  "SelectedNode": "\\extra1\\shr\\maps\\Singleplayer\\Sandbox\\MapScript.lua",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\12_Kaloix",
   "PreviewInSolutionExplorer": false
 }

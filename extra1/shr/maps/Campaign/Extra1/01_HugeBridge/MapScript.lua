@@ -88,9 +88,7 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(5, p1color)
 	Display.SetPlayerColorMapping(8, p1color)
 
-	if p1color ~= 2 then
-		Display.SetPlayerColorMapping(2, 2)
-	else
+	if p1color == 2 then
         Display.SetPlayerColorMapping(2, 6)
 	end
 end

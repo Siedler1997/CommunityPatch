@@ -112,11 +112,18 @@ function Mission_InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
  	-- set player colors
 	Display.SetPlayerColorMapping(1, p1color)
-	Display.SetPlayerColorMapping(2, 5)	
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, 5)		
+	else
+		Display.SetPlayerColorMapping(2, 6)		
+	end	
 	if p1color == 3 then
 		Display.SetPlayerColorMapping(3, 8)		
 	end	
-	Display.SetPlayerColorMapping(5, 6)		
+	if p1color == 4 then
+		Display.SetPlayerColorMapping(4, 3)		
+	end	
+	Display.SetPlayerColorMapping(5, MORTFICHET_COLOR)		
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 	Display.SetPlayerColorMapping(8, 11)		
 

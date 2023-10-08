@@ -40,29 +40,28 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
-
 	-- Set Colors
-		local p1color = GetPlayerPreferredColor()
-		Display.SetPlayerColorMapping(1, p1color)
-		if p1color ~= 2 then
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR1)	
-			Display.SetPlayerColorMapping(6, ENEMY_COLOR1)	
-			Display.SetPlayerColorMapping(8, ENEMY_COLOR1)		
-		else
-			Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
-			Display.SetPlayerColorMapping(6, ENEMY_COLOR2)		
-			Display.SetPlayerColorMapping(8, ENEMY_COLOR2)		
-		end
-
-		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)	
-		--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
-		--Display.SetPlayerColorMapping(3, ENEMY_COLOR2)		
-		Display.SetPlayerColorMapping(4, NPC_COLOR)		
-		Display.SetPlayerColorMapping(5, ROBBERS_COLOR)		
-
-		--Display.SetPlayerColorMapping(8, ENEMY_COLOR1)		
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR1)	
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR1)	
+		Display.SetPlayerColorMapping(8, ENEMY_COLOR1)		
+	else
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)		
+		Display.SetPlayerColorMapping(8, ENEMY_COLOR2)		
+	end
 	
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)	
+	end
+	--Display.SetPlayerColorMapping(2, ENEMY_COLOR1)		
+	--Display.SetPlayerColorMapping(3, ENEMY_COLOR2)		
+	Display.SetPlayerColorMapping(4, NPC_COLOR)		
+	Display.SetPlayerColorMapping(5, ROBBERS_COLOR)		
+
+	--Display.SetPlayerColorMapping(8, ENEMY_COLOR1)	
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -152,7 +151,7 @@ function Mission_FirstMapAction()
 	
 	-- set player names
 	
-		Logic.SetPlayerName(GetHumanPlayer(), String.MainKey.."_Player1Name")
+		--Logic.SetPlayerName(GetHumanPlayer(), String.MainKey.."_Player1Name")
 		Logic.SetPlayerName(2, String.MainKey.."_Player2Name")
 		Logic.SetPlayerName(3, String.MainKey.."_Player3Name")
 		--Logic.SetPlayerName(4, String.MainKey.."_Player4Name")

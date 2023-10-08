@@ -86,15 +86,25 @@ function InitWeather()
 end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-    Display.SetPlayerColorMapping(2,EVIL_GOVERNOR_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(2,EVIL_GOVERNOR_COLOR)
+		Display.SetPlayerColorMapping(5,EVIL_GOVERNOR_COLOR)
+		Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
+	else
+		Display.SetPlayerColorMapping(2,1)
+		Display.SetPlayerColorMapping(5,1)
+		Display.SetPlayerColorMapping(7,1)
+	end
+	if p1color ~= 13 then
+		Display.SetPlayerColorMapping(3, PAPAL_COLOR)
+	end
+
     Display.SetPlayerColorMapping(4,NPC_COLOR)
-    Display.SetPlayerColorMapping(5,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(6,NPC_COLOR)
-    Display.SetPlayerColorMapping(7,EVIL_GOVERNOR_COLOR)
     Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 	
-  	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
-	Display.SetPlayerColorMapping(3, PAPAL_COLOR)
 end
 ------------------------------------------------------------------------------
 

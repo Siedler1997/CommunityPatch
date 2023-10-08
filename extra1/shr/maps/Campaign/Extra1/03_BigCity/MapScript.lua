@@ -64,7 +64,11 @@ function InitPlayerColorMapping()
 	end
 	
 	if Player4IsNephilim ~= true then
-		Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+		if p1color ~= 9 then
+			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
+		else
+			Display.SetPlayerColorMapping(4,1)
+		end
 	else
 		if p1color ~= 2 then
 			Display.SetPlayerColorMapping(4,2)
@@ -137,11 +141,6 @@ function FirstMapAction()
 	
 	-- cutscene
 --	StartCutscene("Intro",start1stChapter)
-
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, 2)
-	end	
-
 	start1stChapter();
 
 	if CP_Difficulty > 0 then

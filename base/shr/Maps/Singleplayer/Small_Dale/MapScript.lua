@@ -84,6 +84,9 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)		
 	end
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)		
+	if p1color == 5 then
+		Display.SetPlayerColorMapping(5, 8)		
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

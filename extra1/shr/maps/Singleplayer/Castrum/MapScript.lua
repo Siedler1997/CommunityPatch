@@ -94,7 +94,7 @@ function InitPlayerColorMapping()
 	if p1color ~= 2 then
 		Display.SetPlayerColorMapping(1, p1color)		
 	else
-		Display.SetPlayerColorMapping(1, FRIENDLY_COLOR1)		
+		Display.SetPlayerColorMapping(1, 7)		
 	end
 	Display.SetPlayerColorMapping(3, 15)
 end

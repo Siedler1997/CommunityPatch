@@ -12,6 +12,7 @@ start1stQuest = function()
 	
 	createPlayer4()
 	createPlayer2()
+	createPlayer3()
 	createPlayer7()
 	
 	EnableNpcMarker("wiseguy")

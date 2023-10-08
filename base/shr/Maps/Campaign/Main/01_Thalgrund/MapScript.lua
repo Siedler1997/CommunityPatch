@@ -82,16 +82,22 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- East village
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- NPCs; yellow
+		Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- NPCs; yellow
+	else
+		Display.SetPlayerColorMapping(2, 8)		-- East village
+		Display.SetPlayerColorMapping(4, 8)		-- NPCs; yellow
+		Display.SetPlayerColorMapping(8, 8)		-- NPCs; yellow
+	end
 	
-	Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- East village
 	Display.SetPlayerColorMapping(6, FRIENDLY_COLOR2)		-- West village
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Wolves
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- NPCs; yellow
 	Display.SetPlayerColorMapping(5, NPC_COLOR)				-- Gate
-	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- NPCs; yellow
 	Display.SetPlayerColorMapping(7, KERBEROS_COLOR)		-- Kerberos' units
-
-	Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
 end
 
 
