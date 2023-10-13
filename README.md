@@ -611,7 +611,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 ## ToDos:
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-- Meuchel-Ability für Diebe(?)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
 	- ggf. mehr Spielertruppen als Hilfe
 - Vertonte Animationen (per TaskLists)
@@ -622,27 +621,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- mehr davon
 	- besser geschrieben
 	- auf Englisch übersetzen
-- Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
-- Rand-Clipping bei Briefing-Minimap entfernen 
-- Hauptmenü
-	- MP-Window fixen
-	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
 - Random(?) Crashs
 	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Korrekte Kostenanzeige für den Kauf von Soldaten
-- Countdowns 
-	- sollen während Briefings pausieren
-	- Sollen ein eigenes Hintergrund-Image bekommen(?)
 - Kontrollierbare Schäferhunde(?)
-- Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
-- BattleMusic bei vom Spieler besiegten Einheiten(?)
-- Neue Spielerfarben(?)
-- Auftragsbuch-Highlight fixen
-- Auch normale Arbeiter sollen automatisch HP regenerieren
-	- scheint leider nicht möglich zu sein
 - Kalas Tod: stack overflow(?)
-- Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 - Eigene Texturen für
 	- Tech-Trader
 	- Veteranen
@@ -650,12 +634,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Bogen-Banditen-Hauptmänner
 	- Leonardos Assistent
 	- Hauptmann, Ordensritter und Wächter
-- Neue Map "Tal der Verdammten"
-	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
-	- Erec lebt
-	- Nettes NV
-	- Kadirs Bruder
-	- Giftiger Schwefelnebel und Dampfmaschinen
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
 	- FeatureList auch auf Englisch
@@ -665,3 +643,26 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- (De-)Installer
 		- Backup-Funktion(?)
 		- Test-Maps und Thalbach (extra1) entfernen
+
+
+
+## Weitere Ideen:
+- Meuchel-Ability für Diebe(?)
+- BattleMusic bei vom Spieler besiegten Einheiten(?)
+- Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
+- Auch normale Arbeiter sollen automatisch HP regenerieren
+	- scheint leider nicht möglich zu sein
+- Rand-Clipping bei Briefing-Minimap entfernen 
+- Hauptmenü
+	- MP-Window fixen
+	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)
+- Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
+- Neue Spielerfarben
+- Auftragsbuch-Highlight fixen
+- Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
+- Neue Map "Tal der Verdammten"
+	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+	- Erec lebt
+	- Nettes NV
+	- Kadirs Bruder
+	- Giftiger Schwefelnebel und Dampfmaschinen
