@@ -13,7 +13,7 @@
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>
 		  <AccessCategory>AccessCategorySettler</AccessCategory>		
-		  <MaxHealth>200</MaxHealth>
+		  <MaxHealth>300</MaxHealth>
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <Convertible>false</Convertible>
@@ -23,6 +23,19 @@
 			  <Iron/>
 			  <Wood/>
         </Cost>
+
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology1</Technology>
+		</ModifyArmor>
+		<ModifyArmor>
+			<Technology>T_AnimalTechnology2</Technology>
+		</ModifyArmor>
 
 		<!-- Bonus -->
 		<ModifyExploration>
@@ -44,7 +57,7 @@
         <Category>Melee</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>30</Exploration>
-		  <ArmorClass>ArmorClassNone</ArmorClass>
+		  <ArmorClass>ArmorClassHero</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>

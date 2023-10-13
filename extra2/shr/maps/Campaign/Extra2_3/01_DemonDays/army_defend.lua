@@ -23,6 +23,7 @@ createArmyDefend = function()
 
 	armyDef1.control			= {}
 	armyDef1.control.delay			= 10 * 15
+	armyDef1.experiencePoints	=	CP_Difficulty
 
 	SetupArmy(armyDef1)
 
@@ -55,6 +56,7 @@ createArmyDefend = function()
 
 	armyDef2.control			= {}
 	armyDef2.control.delay			= 10 * 15
+	armyDef2.experiencePoints	=	CP_Difficulty
 
 	SetupArmy(armyDef2)
 
@@ -87,6 +89,7 @@ createArmyDefend = function()
 
 	armyDef3.control			= {}
 	armyDef3.control.delay			= 10 * 15
+	armyDef3.experiencePoints	=	CP_Difficulty
 
 	SetupArmy(armyDef3)
 
@@ -106,7 +109,7 @@ createArmyDefend = function()
 
 	end
 
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 3)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 3)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 3)

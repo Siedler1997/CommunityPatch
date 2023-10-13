@@ -83,7 +83,7 @@ StartArmyP2VillageAttack = function()
 		UpgradeP2PoleArm()
 		UpgradeP2Sword()
 		UpgradeP2Bow()
-	else
+	end
 end
 
 AllowArmyP2VillageAttackCannons = function()

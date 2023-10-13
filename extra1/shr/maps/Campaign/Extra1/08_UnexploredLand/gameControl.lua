@@ -97,6 +97,11 @@ end
 -- clean up ruins
 ------------------------------------------------------------------------------
 function start3rdChapter()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(7, true)
+		ResearchAllMilitaryTechsAddOn(8, true)
+	end
 
 	CreateArmyNephilimsHQ()
 

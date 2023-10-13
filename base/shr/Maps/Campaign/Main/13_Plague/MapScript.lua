@@ -78,6 +78,7 @@ function Mission_InitDiplomacy()
 --	Logic.SetDiplomacyState( 6, 5, Diplomacy.Hostile 	)
 
 	Logic.SetDiplomacyState( 1, 6, Diplomacy.Friendly 	)
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile 	)
 	Logic.SetDiplomacyState( 1,	8, Diplomacy.Friendly 	)
 
 	end
@@ -85,52 +86,51 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	
 	Display.SetPlayerColorMapping(2, MORTFICHET_COLOR)		-- Mortfichets army
 	Display.SetPlayerColorMapping(3, MORTFICHET_COLOR)		-- Defenders of Morfichets Castle
 	Display.SetPlayerColorMapping(5, MORTFICHET_COLOR)		-- Other tropps of Mortfichet
 	
-	Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Village with Pilgrim (Verino)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Village with Pilgrim (Verino)
+	else
+		Display.SetPlayerColorMapping(4, 3)		-- Village with Pilgrim (Verino)
+	end
+
 	Display.SetPlayerColorMapping(6, ARIS_ROBBERS)			-- Aris leader merchant and support troops that follow heroes
 
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)			-- Pirates
 	Display.SetPlayerColorMapping(8, FRIENDLY_COLOR2)		-- infected village
-	
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
 
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to init all resources for player(s)
 function Mission_InitResources()
-
 	--	resources
-
-		AddGold(400)
-		AddIron(200)
-		AddWood(500)
-		AddClay(1000)
-		AddStone(500)
-		AddSulfur(0)
-
-	end
+	Tools.GiveResouces(1, 400, 1000, 500, 500, 200, 0)
+end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)	--No enemy, but has to be an useful help troop
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)	--No enemy, but has to be an useful help troop
 	end
 end
 
@@ -233,13 +233,13 @@ function Mission_FirstMapAction()
 			CreateRandomChests()
 		else
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
-
-				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+			else
+				CreateRandomGoldChests()
+				CreateRandomChests()
 			end
 
-			DestroyEntity("vc_empty")
+			--DestroyEntity("vc_empty")
 
 			ReplaceEntity("ChangeCannon3", Entities.PV_Cannon3)
 			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
@@ -262,13 +262,9 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_Tower3, 44900, 24000, 0, 2);
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
-		--StartSimpleHiResJob("GetDarioPos")
-end
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
 end
---]]

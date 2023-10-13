@@ -48,6 +48,7 @@ setupArmyKerberosDefense = function()
 		ArmyKerberosDefense[i].outerDefenseRange= 	2000
 		ArmyKerberosDefense[i].Attack			= 	false
 		ArmyKerberosDefense[i].AttackAllowed	= 	false
+		ArmyKerberosDefense[i].experiencePoints	=	CP_Difficulty
 	
 	
 		-- Setup army

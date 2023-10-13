@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>MapDescription/Frozen_Fjord_name</NameKey>
+ <DescKey>MapDescription/Frozen_Fjord_desc</DescKey>
+ <SizeX>0</SizeX>
+ <SizeY>0</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\textures\gui\mappics\SP_ForzenFjord</MiniMapTextureName>
+ <Key>1</Key>
+</root>

@@ -109,15 +109,29 @@ end
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
 	-- Set Colors
-
-		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR2)
-		Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
-		Display.SetPlayerColorMapping(6, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(7, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(8, NPC_COLOR)		
-	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)	
+		Display.SetPlayerColorMapping(7, ENEMY_COLOR2)	
+	else
+		Display.SetPlayerColorMapping(2, 3)	
+		Display.SetPlayerColorMapping(6, 3)	
+		Display.SetPlayerColorMapping(7, 3)	
+	end
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(3, 2)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
+	end
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		
+	else
+		Display.SetPlayerColorMapping(4, 6)		
+	end
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)		
+	Display.SetPlayerColorMapping(8, NPC_COLOR)		
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -133,7 +147,19 @@ function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ThiefSabotage     	,3 )
 	
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
@@ -190,12 +216,11 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(1000)
-		AddWood(1000)
-		AddClay(1500)
-		AddStone(1000)
-		AddIron(1000)
-		AddSulfur(1000)
+		if CP_Difficulty == 0 then
+			GlobalMissionScripting.GiveResouces(1, 1000, 1500, 1000, 1000, 1000, 1000)
+		else
+			GlobalMissionScripting.GiveResouces(1, 500, 800, 500, 500, 500, 500)
+		end
 
 	--	Variables
 
@@ -213,6 +238,10 @@ function Mission_FirstMapAction()
 
 		ChapterCount		=0
 		ChapterCount1 = ChapterCount
+		
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
 	--	Invulnerables
 
@@ -254,9 +283,10 @@ function Mission_FirstMapAction()
 		--SetPlayerName(7, String.Key("_Player7Name"))
 
 	-- Set Music-Set
-
-		LocalMusic.UseSet = EUROPEMUSIC
 	
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+	LocalMusic.UseSet = EUROPEMUSIC
+
 	-- Start quest
 
 		StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingPrelude)
@@ -268,15 +298,25 @@ function Mission_FirstMapAction()
    	--	Game.GameTimeReset()
 		    	
 		if CP_Difficulty > 0 then
-			local vc1pos = GetPosition("vc_empty1") 	
-			local vc2pos = GetPosition("vc_empty2") 	
-
-			DestroyEntity("vc_empty1")
-			DestroyEntity("vc_empty2")
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+				
+				ReplaceEntity("p1vc", Entities.PB_VillageCenter1)
+			end
+			
+			local vc1pos = GetPosition("vc_empty1") 
+			DestroyEntity("vc_empty1")	
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc1pos.X,vc1pos.Y,0,0)
+
+			--[[
+			local vc2pos = GetPosition("vc_empty2") 	
+			DestroyEntity("vc_empty2")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,0,0)
+			--]]
 		end
 		--IncludeGlobals("MapEditorTools")
 		--StartCountdown(15, EnemyFirstArmy, false)
 		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
 	end
 

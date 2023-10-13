@@ -53,9 +53,22 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+		Display.SetPlayerColorMapping(7, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(2, 3)
+		Display.SetPlayerColorMapping(7, 3)
+	end
 	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(7, BARBARIAN_COLOR)
+	if p1color ~= 6 then
+		Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+	else
+		Display.SetPlayerColorMapping(4, 5)
+	end
+	Display.SetPlayerColorMapping(5, ARIS_ROBBERS)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,15 +81,24 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern      	,0 )
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutTorches      	,0 ) 
-	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutFindResources	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Weathermachine     	,0 )	
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_PowerPlant      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast    	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.B_Tavern      	,0 )
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutTorches      	,0 ) 
+	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ScoutFindResources	,0 )
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(7)
@@ -134,12 +156,12 @@ function Mission_FirstMapAction()
 
 		CreateChestOpener("Pilgrim")
 
-		CreateRandomChests()
 		StartChestQuest()
 
 
 	-- Set Music-Set
-
+	
+		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 
 	--	Variables
@@ -182,7 +204,10 @@ function Mission_FirstMapAction()
 
 		SetPlayerName(2, String.Key("_Player2Name"))
 		--SetPlayerName(3, String.Key("_Player3Name"))
-
+		
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 
 	-- debugging stuff
 
@@ -190,6 +215,12 @@ function Mission_FirstMapAction()
     		--Game.GameTimeReset()
 		    
 		if CP_Difficulty > 0 then
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+			else
+				CreateRandomChests()
+			end
+
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 10, 0) }
 			for i = 2, table.getn(towers1) do
 				if IsExisting(towers1[i]) then
@@ -202,7 +233,17 @@ function Mission_FirstMapAction()
 			end
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen1"))
 			GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen2"))	
+		else
+			CreateRandomChests()
 		end
-		--Tools.ExploreArea(-1, -1, 900) 
-	end
+
+	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (12 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4500, types = RaidersDefaultSets.Europe, samount = (4 + CP_Difficulty), ramount = (10 + CP_Difficulty * 4)})
+	RaidersCreate({player = 3, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 3, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
+	--Tools.ExploreArea(-1, -1, 900) 
+	--StartSimpleJob("GetMousePos")
+end
 

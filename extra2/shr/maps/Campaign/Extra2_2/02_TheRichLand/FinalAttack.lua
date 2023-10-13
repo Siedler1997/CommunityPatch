@@ -1,59 +1,60 @@
 function CreateFinalAttacks()
-	local experience = LOW_EXPERIENCE	
-	if CP_Difficulty > 0 then
-		experience = experience + 3
+	local experience = CP_Difficulty + 1	
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(7, true)
 	end
 
 	local pos = GetPosition("Attack1Spawn1")
-	Attack1Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack1Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty + 1	, 0)
 	SetEntityName(Attack1Pos1, "Attack1Army1")
 
 	local pos = GetPosition("Attack1Spawn2")
-	Attack1Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack1Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack1Pos2, "Attack1Army2")
 
 	local pos = GetPosition("Attack1Spawn3")
-	Attack1Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack1Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack1Pos3, "Attack1Army3")
 
 	local pos = GetPosition("Attack1Spawn4")
-	Attack1Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack1Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack1Pos4, "Attack1Army4")
 
 
 
 	local pos = GetPosition("Attack2Spawn1")
-	Attack2Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack2Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty + 1	, 0)
 	SetEntityName(Attack2Pos1, "Attack2Army1")
 
 	local pos = GetPosition("Attack2Spawn2")
-	Attack2Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack2Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack2Pos2, "Attack2Army2")
 
 	local pos = GetPosition("Attack2Spawn3")
-	Attack2Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack2Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack2Pos3, "Attack2Army3")
 
 	local pos = GetPosition("Attack2Spawn4")
-	Attack2Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack2Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack2Pos4, "Attack2Army4")
 
 
 
 	local pos = GetPosition("Attack3Spawn1")
-	Attack3Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack3Pos1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty + 1	, 0)
 	SetEntityName(Attack3Pos1, "Attack3Army1")
 
 	local pos = GetPosition("Attack3Spawn2")
-	Attack3Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack3Pos2 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack3Pos2, "Attack3Army2")
 
 	local pos = GetPosition("Attack3Spawn3")
-	Attack3Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack3Pos3 = AI.Entity_CreateFormation(2, Entities.CU_Barbarian_LeaderClub2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack3Pos3, "Attack3Army3")
 
 	local pos = GetPosition("Attack3Spawn4")
-	Attack3Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attack3Pos4 = AI.Entity_CreateFormation(2, Entities.CU_BanditLeaderSword2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attack3Pos4, "Attack3Army4")
 
 	StartJob("TimerEnsurance")

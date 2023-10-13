@@ -198,7 +198,7 @@ createPlayer1 = function()
 	
 	 --Brickworks Technologies -->				
 			 --Speed: Serfs build-->		
-		Logic.SetTechnologyState(PlayerID,Technologies.T_LightBricks      	,2 ) 
+		--Logic.SetTechnologyState(PlayerID,Technologies.T_LightBricks      	,2 ) 
 	
 	 --Bank Technologies -->				
 			 --Payday: Refine more and change Payday frequenze-->	

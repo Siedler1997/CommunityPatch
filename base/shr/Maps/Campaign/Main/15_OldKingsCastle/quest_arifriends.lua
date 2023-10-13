@@ -6,6 +6,9 @@ createQuestAriFriends = function()
 		if i == 2 then
 			type = Entities.CU_BanditLeaderBow2
 		end
+		if i == 3 then
+			type = Entities.CU_LeaderOutlaw1
+		end
 
 		local pos = GetPosition("AriFriends"..i)
 		

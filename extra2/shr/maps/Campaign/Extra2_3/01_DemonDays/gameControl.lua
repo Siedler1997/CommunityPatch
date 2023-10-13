@@ -122,7 +122,7 @@ DestroyNPC(NPCvarg)
 	CreateNPC(NPCvarg1)
 
 
-CreateEntity(6, Entities.CU_AggressiveWolf, GetPosition("wolf_run0"), "wolf")
+CreateEntity(6, Entities.CU_AggressiveWolf_White, GetPosition("wolf_run0"), "wolf")
 
 --CreateEntity(3, Entities.CU_Barbarian_Hero_wolf, GetPosition("wolf_run0"), "wolf")
 StartSimpleJob("lup") 

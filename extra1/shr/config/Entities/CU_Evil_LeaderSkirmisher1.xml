@@ -2,7 +2,7 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>GD::CDisplaySettler</Class>
-		  <Model>CU_Evil_LeaderSkirmisher1</Model> 
+		  <Model>CU_Evil_LeaderSkirmisher2</Model> 
 		  <DrawPlayerColor>True</DrawPlayerColor>
 		  <Anim>CU_Evil_LeaderSkirmisher1_Walk</Anim>
 		  <Anim>CU_Evil_LeaderSkirmisher1_Run1</Anim>

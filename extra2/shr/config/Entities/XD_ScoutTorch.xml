@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_Torch</Model>
+	</Display>
+	<Logic classname="EGL::CGLEEntityProps">
+		<Class>EGL::CGLEEntity</Class>
+		<AccessCategory>AccessCategoryStatic</AccessCategory>
+		<Exploration>15</Exploration>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+	</Logic>
+	
+	<Behavior>
+		<Logic classname="GGL::CTorchBehaviorProperties">
+			<Class>GGL::CTorchBehavior</Class>
+            <Duration>120.0</Duration>   <!-- In seconds -->
+		</Logic>
+	</Behavior>
+	
+</root>

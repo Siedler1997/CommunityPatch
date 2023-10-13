@@ -532,35 +532,33 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_CaravanAttack = function()
 	-------------------------------------------------------------------------------------------------------------------
-		local experience = LOW_EXPERIENCE	
 		local etype1 = Entities.PU_LeaderBow2
 		local etype2 = Entities.PU_LeaderSword2
 		local etype3 = Entities.PU_LeaderPoleArm2
 		if CP_Difficulty > 0 then
-			experience = experience + 2
 			etype1 = Entities.PU_LeaderBow3
 			etype2 = Entities.PU_LeaderSword3
 			etype3 = Entities.PU_LeaderPoleArm3
 		end
 
 		local pos 	= GetPosition("CaravanAttackSpawn")
-		CaravanAttackAS = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		CaravanAttackAS = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(CaravanAttackAS, "CaravanAttack1")
 
 		local pos 	= GetPosition("CaravanAttackSpawn")
-		CaravanAttackAS = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		CaravanAttackAS = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(CaravanAttackAS, "CaravanAttack2")
 
 		local pos 	= GetPosition("CaravanAttackSpawn")
-		CaravanAttackAS = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		CaravanAttackAS = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(CaravanAttackAS, "CaravanAttack3")
 
 		local pos 	= GetPosition("CaravanAttackSpawn")
-		CaravanAttackAS = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		CaravanAttackAS = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(CaravanAttackAS, "CaravanAttack4")
 
 		local pos 	= GetPosition("CaravanAttackSpawn")
-		CaravanAttackAS = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		CaravanAttackAS = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(CaravanAttackAS, "CaravanAttack5")
 
 		StartJob("DeadCaravans")
@@ -1018,25 +1016,23 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_MonitorMess3Way = function()
 	-------------------------------------------------------------------------------------------------------------------
-		local experience = LOW_EXPERIENCE	
 		local etype1 = Entities.CU_Barbarian_LeaderClub1
 		local etype2 = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty > 0 then
-			experience = experience + 2
 			etype1 = Entities.CU_Barbarian_LeaderClub2
 			etype2 = Entities.CU_BanditLeaderSword2
 		end
 
 		local pos = GetPosition("SurpriseSpawn1")
-		SurpriseAttack1 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		SurpriseAttack1 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(SurpriseAttack1, "SurpriseAttack1")
 
 		local pos = GetPosition("SurpriseSpawn1")
-		SurpriseAttack2 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		SurpriseAttack2 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(SurpriseAttack2, "SurpriseAttack2")
 
 		local pos = GetPosition("SurpriseSpawn1")
-		SurpriseAttack3 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		SurpriseAttack3 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(SurpriseAttack3, "SurpriseAttack3")
 
 		Attack("SurpriseAttack1","MessAriTarget5")
@@ -1056,13 +1052,11 @@ function Player2HQLife()
 	local HQ2CheckLife = Logic.GetEntityIDByName("Player2HQ")
 
 	if Logic.GetEntityHealth(HQ2CheckLife) < (Logic.GetEntityMaxHealth(HQ2CheckLife) * 0.3) then
-		local experience = MEDIUM_EXPERIENCE	
 		local etype1 = Entities.PU_LeaderPoleArm3
 		local etype2 = Entities.PU_LeaderBow3
 		local etype3 = Entities.PU_LeaderHeavyCavalry1
 		local etype4 = Entities.PU_LeaderCavalry1
 		if CP_Difficulty > 0 then
-			experience = experience + 2
 			etype1 = Entities.PU_LeaderPoleArm4
 			etype2 = Entities.PU_LeaderBow4
 			etype3 = Entities.PU_LeaderHeavyCavalry2
@@ -1070,23 +1064,23 @@ function Player2HQLife()
 		end
 
 		local pos = GetPosition("SpawnHQAttack1")
-		HQAttack1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 0, pos.X, pos.Y, 0, 0, experience, 0)
+		HQAttack1 = AI.Entity_CreateFormation(2, Entities.CU_VeteranCaptain, 0, 0, pos.X, pos.Y, 0, 0, CP_Difficulty + 1, 0)
 		SetEntityName(HQAttack1, "HQAttack1")
 
 		local pos = GetPosition("SpawnHQAttack2")
-		HQAttack2 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		HQAttack2 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(HQAttack2, "HQAttack2")
 
 		local pos = GetPosition("SpawnHQAttack3")
-		HQAttack3 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		HQAttack3 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(HQAttack3, "HQAttack3")
 
 		local pos = GetPosition("SpawnHQAttack3")
-		HQAttack4 = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		HQAttack4 = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(HQAttack4, "HQAttack4")
 
 		local pos = GetPosition("SpawnHQAttack1")
-		HQAttack5 = AI.Entity_CreateFormation(2, etype4, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		HQAttack5 = AI.Entity_CreateFormation(2, etype4, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(HQAttack5, "HQAttack5")
 
 		Attack("HQAttack1","Player2HQ")

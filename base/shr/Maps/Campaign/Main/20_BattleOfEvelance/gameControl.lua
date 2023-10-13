@@ -73,6 +73,13 @@ endQuestDestroyOutpost = function()
 -------------------------------------------------------------------------------------------------------------------------
 
 startQuestDestroyLionsDen = function()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(3, true)
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(5, true)
+		ResearchAllMilitaryTechs(7, true)
+		ResearchAllMilitaryTechs(8, true)
+	end
 
 	Report("start quest: destroy lions den")
 

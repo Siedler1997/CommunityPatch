@@ -27,6 +27,7 @@ setupArmyAI1Attack = function()
 
 	ArmyAI1Attack.Attack				= false
 	ArmyAI1Attack.AttackAllowed			= false
+	ArmyAI1Attack.experiencePoints		=	CP_Difficulty
 
 
 	-- Setup army

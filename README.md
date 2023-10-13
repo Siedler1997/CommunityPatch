@@ -1,2 +1,667 @@
 # CommunityPatch
-CommunityPatch for The Settlers - Heritage of Kings
+Dieser inoffizielle Patch behebt diverse Bugs der History Edition vom Spiel 'Die Siedler - Das Erbe der Könige' und fügt neue Features hinzu.
+
+
+
+## Installation
+Mit folgenden Schritten lässt sich der Patch installieren:
+1. Sicherungskopie vom DEdK-Ordner anlegen und z.B. "thesettlers5_Orig" nennen
+2. Projekt über Code -> Download ZIP herunterladen
+3. Projektordner in den Ornder OHNE "_Orig-Zusatz" entpacken und die Frage nach Überschreiben von X Dateien bestätigen
+3. Zocken
+
+
+
+## Features
+- Gebäude
+	- richten im Alarm-Modus etwas mehr Schaden an
+	- können stillgelegt werden (per Button im Siedler-Menü)
+	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	- profitieren von der neuen Technologie 'Leichte Ziegel'
+		- wirkt analog zu 'Maurerhandwerk'
+		- erhöht die Verteidigung von Gebäuden um 2 Punkte
+		- erforschbar in der Ziegelbrennerei
+	- Non-Player-Buildings (Allgemein)
+		- sind abreißbar und geben dabei symbolische 50 Taler
+		- sind reparierbar
+		- profitieren (fast) alle von den Technologien 'Stadtwache' und 'Maurerhandwerk'
+		- haben fast alle die ArmorClass regulärer Gebäude - inkl. deren Stärken-Schwächen
+	- Dombaustellen
+		- Arbeiter-Icons im Siedler-Menü zeigen Leibeigenen-Icons
+		- Overhead-Arbeiter-Icons zeigen Minenarbeiter
+		- 'Normale' Leibeigne bauen sie nun an passenderen Position mit besserer Blickrichtung
+	- Mauern 
+		- sind deutlich solider
+		- können repariert werden
+		- profitieren von Gebäude-Technologien (z.B. 'Maurerhandwerk')
+		- Dunkle Mauern sind, wie normale Mauern auch, im 'Nebel des Krieges' sichtbar
+	- Außenposten
+		- werden von Arbeitern und Leibeigenen an der Innentür betreten und verlassen, nicht schon am Haupttor
+		- sind baubar (nur die erste Stufe, nach Erforschung von 'Architektur')
+		- verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
+		- können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
+		- profitieren von Maurerhandwerk und Stadtwache
+	- Ziergebäude
+		- haben 100 Lebenspunkte weniger (=200)
+		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
+	- Türme
+		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
+		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
+		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
+		- Ausbau dauert doppelt so lange (=30 Sek.)
+		- Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
+		- dunkle Türme sind ausbaubar
+	- Wohstätten
+		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
+		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
+		- geben beim Abriss 150 Holz und 50 Steine
+		- haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
+	- Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
+- Einheiten
+	- Selbstheilung ist für alle Einheiten reduziert
+	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
+	- Wird beim Drücken auf den Entlassen-Button gleichzeitig [Strg] gedrückt, werden alle selektierten Einheiten (außer Helden) sofort entlassen
+	- Formationen
+		- bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
+		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
+	- NPCs (Zivilisten)
+		- können wirklich sterben
+			- dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
+			- verschwinden wirklich nach ihrem Ableben
+		- Zeigen im Siedler-Menü von Gebäuden kein weißes Quadrat mehr, sondern ein Fragezeichen
+		- Statthalter Kadir mit eigenem Design
+		- haben einen Lebensbalken
+		- haben bessere Stats
+			- mehr Lebenspunkte (idR. 100)
+			- höhere Sichtweite
+	- NPCs (Militär)
+		- verlangen ebenfalls Sold
+		- 'Veteranen' 
+			- können keine Gefolgsleute mehr haben
+			- regenerieren ihre Lebenspunkte etwas schneller
+			- haben etwas weniger Lebenspunkte
+		- Banditen
+			- zählen als Schwertkämpfer
+			- können Soldaten an Kasernen nachfüllen
+			- haben Rekrutierungskosten (Hauptmänner und Soldaten)
+			- haben die gleiche DamageClass wie schwere Kavallerie
+		- Bogenschützen-Banditen
+			- haben 150 Lebenspunkte (vorher: 120)
+			- Hauptmänner und Soldaten haben die gleiche Nachladedauer
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- Nebelkrieger
+			- Schaden an ihnen wird korrekt berechnet (fällt aber kaum auf)
+			- haben mehr Lebenspunkte (Hauptmänner: 150, Soldaten: 100)
+			- haben einen Rüstungspunkt weniger (=1)
+			- Bärenmenschen greifen etwas schneller an
+			- sind resistenter gegen alle Schadensarten außer ihre eigene
+				- ggü. Scharfschützen sind sie dafür noch etwas anfälliger geworden
+			- Hauptmänner sind leicht umtexturiert
+		- Barbaren 
+			- haben die gleiche ArmorClass wie Speerkämpfer und Schützen
+			- haben einen Rüstungspunkt weniger (=1)
+			- haben zwei Schadenpunkte mehr (=14)
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- Schwarze Ritter 
+			- haben einen Rüstungspunkt mehr (=3)
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- haben Audio-Feedback
+		- profitieren von verschiedenen Waffen- und Rüstungstechnologien
+			- Schwarze Ritter: Technologien der Schwertkämpfer
+			- Barbaren: Technologien der Speerkämpfer
+			- Banditen: Technologien der Schwertkämpfer
+			- Bogen-Banditen: Technologien der Bogenschützen
+			- Speerwerfer: Technologien der Bogenschützen
+			- Bärenmenschen: Technologien der Speerkämpfer
+			- Veteranen: Je nach Typ wie Barbaren oder Schwarze Ritter
+		- profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
+		- Wilde Tiere
+			- Wölfe 
+				- haben die gleichen Stats wie die von Varg beschworenen Exemplare
+				- sind nicht von Helias konvertierbar
+				- Varianten aus AeK zwecks Varianz: Grau, Weiß, Schwarz und Braun
+			- Neu: Bären
+				- Aus AeK importiert
+				- 3 Arten: Braun-, Eis- und Schwarzbär
+				- Deutlich stärker und zäher als Wölfe
+		- AddOn-Einheiten sind schon früher (also im Hauptspiel bzw. Nebelreich) zu finden
+			- Bogen-Banditen
+			- Schafe
+			- Veteranen
+			- Wilde Wölfe
+	- Militärische Einheiten
+		- Bogen- und Scharfschützen (außer Berittene) brauchen länger zum Nachladen
+		- Leibeigene-Milizen
+			- regenerieren langsam ihre HP (1 HP - 5 Sek.)
+			- Leibeigene 
+				- haben einen Rüstungspunkt mehr (=1)
+				- haben 50 Lebenspunkte weniger (=150)
+				- bewegen sich etwas langsamer
+			- Milizen 
+				- haben einen Rüstungspunkt mehr (=2)
+				- profitieren von jenen Technologien, die auch Leibeigene betreffen
+				- haben das AudioFeedback von Leibeigenen
+		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
+			- Berittene Bogenschützen (Stufe 1) kosten Holz
+			- Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		- Schwertkämpfer
+			- haben einen eigenen Kampf-Sound
+			- Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
+		- Kanonen
+			- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
+			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
+			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+			- Bombarden
+				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
+				- Schaden auf 35 erhöht (vorher: 30)
+			- Eisenkanonen
+				- Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
+				- Schaden auf 70 erhöht (vorher: 65)
+		- Scharfschützen
+			- sind nicht mehr ganz so effektiv gegen Gebäude
+			- Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
+			- Schwere Scharfschützen 
+				- zielen erheblich besser
+				- haben einen Schadenspunkt weniger (=18)
+		- Diebe und Kundschafter 
+			- geben ihre persönlichen FunnyComments zum Besten
+			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
+			- regenerieren ihre HP langsamer
+			- Kundschafter Fähigkeiten angepasst
+				- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
+				- 'Fackeln' verbessert
+					- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
+					- Sichtweite leicht erhöht (10 SM -> 15 SM)
+					- Schon in der Taverne erforschbar
+				- Neue Fähigkeit 'Aufforsten'
+				    - Basiert auf Noigis ScoutForester Script
+					- Kann im Wirthaus erforscht werden, sobald 'Fackeln' erforscht wurde
+					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
+					- Kostet 50 Taler pro Verwendung
+					- Wachstum hängt vom Wetter ab
+	- Helden
+		- Fernkampf-Helden brauchen länger zum Nachladen
+		- haben (je nach Waffe) anderen Kampf-Sound
+		- profitieren von den Technologien 'Marschieren' (Nahkämpfer) und 'Meisterschütze' (Fernkämpfer)
+		- profitieren von der neuen Technologie 'Aegis'
+			- erhöht die Rüstung um 4 Punkte
+			- erforschbar in der Zitadelle, wenn 'Plattenharnisch' und 'Verstärktes Leder' erforscht sind
+			- in den AddOns wird zusätzlich die Technologie 'Vliesverstärkte Lederrüstung' benötigt
+		- profitieren von diversen Waffentechnologien
+			- Ari: 'Befiederung', 'Bodkin Pfeile'
+			- Helias, Varg, Kala: 'Holz härten', 'Drechseln'
+			- Dario, Pilgrim, Salim, Erec, Kerberos, Mary, Yuki, Dovbar: 'Meisterschmied', 'Eisengießen'
+			- Drake: 'Bleikugel', 'Kimme und Korn'
+		- können eine Markierung setzen, die den Bereich dauerhaft aufdeckt
+			- die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
+			- das Setzen einer neuen Markierung entfernt zugleich die Alte
+			- wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
+		- Dario
+			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
+			- Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
+				- PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
+				- PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
+			- Bei Verwendung von 'Falkensicht' gibt Dario ein Audio-Feedback zurück
+			- In den AddOns wird bei seiner Königs-Version (PU_Hero1c) die Fähigkeit 'Falkenauge' durch 'Schild des Königs' ersetzt
+				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
+				- reduziert zugleich Angriff jener Einheiten auf 50%
+				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
+		- Drake 
+			- hat einen Rüstungspunkt weniger (=3)
+			- hat 2 Schadenpunkte weniger (=26)
+			- seine Fähigkeit 'Feuerkraft' betrifft auch
+				- Ari 
+				- Kanonen
+				- Bogen-Banditen
+				- Speerwerfer
+		- Varg 
+			- hat einen Rüstungspunkt weniger (=3)
+			- seine Wölfe
+				- haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
+				- werden zu 3. beschworen (vorher: 2)
+				- verlangen keinen Sold
+				- sind ähnlich schnell und haben ähnlich hohe Sichtweite wie wilde Wölfe
+				- geben Audio-Feedback
+				- sind nicht von Helias konvertierbar
+			- seine Fähigkeit 'Berserkerwut'
+				- hält für 1:00 Min (vorher: 40 Sek.)
+				- betrifft auch Verbündete
+				- Cooldown beträgt 3:00 Min. (vorher: 5:00 Min.)
+				- wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
+				- bewirkt keine einmalige HP-Regeneration mehr
+				- erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
+		- Aris Banditen
+			- werden zu 5. beschworen (vorher: 3)
+			- haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
+			- wechseln nicht mehr dauernd in die Walk-Animation
+			- haben einen Rüstungspunkt weniger (=3)
+			- haben eine Selbstheilung
+			- haben eine leicht reduzierte Angriffsgeschwindigkeit
+			- profitieren von Technologien der Schwertkämpfer sowie 'Marschieren'
+			- geben Audio-Feedback
+			- sind nicht von Helias konvertierbar
+		- Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
+		- Helias
+			- seine Fähigkeit 'Segnung' 
+				- erhöht die Rüstung Betroffener auf 200% (vorher: 40%)
+				- heilt Betroffene um 25% ihrer maximalen HP
+			- Helias Bekehrung
+				- Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
+				- benötigt weniger Zeit
+				- kann auf etwas größerer Distanz gestartet werden
+				- kann über etwas größere Distanz gehalten werden
+		- Yukis 
+			- 'Feuerwerk der Furcht'
+				- Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)
+				- Reichweite auf 15 SM erhöht (vorher: 10 SM)
+				- ist identisch mit den Versionen von Dario und Kerberos
+			- Shuriken: 
+				- Anzahl verdoppelt (4 -> 8)
+				- haben die gleiche DamageClass wie normale Angriff sowie Kala's 'Giftpfeile'
+		- Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
+		- Kala 
+			- hat einen Rüstungspunkt weniger (=4)
+			- 'Giftnebel'
+				- hat eine Reichweite von 14 SM (vorher: 12 SM)
+				- Schaden erhöht auf 35 (vorher: 25)
+			- 'Giftpfeile'
+				- Schaden auf 30 erhöht (vorher: 20)
+				- Cooldown um 50% verlängert (= 0:30 -> 0:45)
+		- Dovbar steht als Held zur Verfügung
+			- Besitzt ähnliche Kampfeigenschaften wie Erec, aber mit anderen Fähigkeiten
+				- Disziplin: Erhöht Angriff und Verteidigung naher Verbündeter um jeweils 50%
+				- Wachen rufen: Beschwört 3 Wachen, die für kurze Zeit an seiner Seite kämpfen
+- GUI
+	- Kamera
+		- Maximaler Zoom ist auf Faktor 1,4 festgesetzt, um den Bug der 'verschwindenden Texturen' bei hoher Distanz zu entschärfen	
+		- Bei Rotation
+			- kann die Kamera endlos gedreht werden, ohne an eine Grenze zu stoßen
+			- springt sie nicht mehr automatisch in die Ausgangslage zurück
+			- kann sie mit dem Shortcut '[Strg] - [Leertaste]' in die Ausgangslage zurückgesetzt werden 
+		- Mit dem shortcut '[Alt] - [I]' kann man (außerhalb von Briefings) das Interface ein- und ausblenden
+		- Entfernungsnebel bei schlechtem Wetter (Regen, Schnee) beeinflusst nicht mehr so sehr die Sicht
+			- Nebeneffekt: Einige Settings wirken etwas heller
+			- Im Gegenzug sind speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
+	- Tooltips gefixt bzw. ergänzt
+		- Ausbau-Button Festung -> Zitadelle: 'ermöglicht'-Teil ergänzt
+		- 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
+		- 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
+		- 'Fährtenlesen' hat einen Erforscht-Tooltip
+		- Ziergebäude sind richtig und einheitlich benannt (z.B. Dariostatue -> Dario-Statue)
+		- Wird eine Sub-Technologie (z.B. "Mittleres Wohnhaus") vom Spiel gegeben, steht im Erforscht-Fähnchen nun die Bezeichnung statt der spielinterne Name
+		- Bei 'Meisterschütze' steht der korrekte Effekt (Erhöhung der Bewegungsgeschwindigkeit & Schaden)
+		- Bei 'Kimme und Korn' steht der korrekte Effekt (Erhöhung der Reichweite)
+		- Formations-Buttons haben DisabledTooltips, wenn 'Stehendes Heer' noch nicht erforscht wurde
+		- Der Leibeigenen-Kaufbutton hat einen DisabledTooltip, da dieser in manchen Fällen gesperrt sein kann
+		- In den Tooltips der Find-Buttons von Soldaten wird die Anzahl der Hauptmänner dieser Art angezeigt
+		- Alle Kundschafter- und Diebesfähigkeiten haben den richtigen Tooltip in Abhängigkeit der jeweiligen Technologie
+		- Wird gerade eine Technologie erforscht, wird in ihrem Tooltip darauf hingewiesen, wenn ein anderes, identisches Gebäude selektiert ist
+		- Söldnerquartier-Angebote zeigen bei Entities ohne definierten Entity-Namen (vor allem XDs und XAs) '???' als Einheitenart an
+		- Zahltag
+			- Der Countdown wird nicht mehr in Sekunden, sondern im Format "Min:Sek" angegeben
+			- Ist ein Wetterturm vorhanden, stehen hier zusätzliche Infos zu dem Thema
+				- Das aktuelle Wetter wird nochmal als Text angegeben
+				- Das nächste Wetter sowie die Zeit bis zum Wechsel wird angezeigt (bei weniger als einer Stunde bis zum Eintreten)
+		- Marktplatz: Tooltip für 'einzukaufende Holzmenge' analog zu den anderen positioniert
+	- Söldnerquartier: Button-Texturen weisen genauer auf die angebotene Einheit hin
+	- Selektionsringe einiger Gebäude und Einheiten gefixt
+		- Alle Gebäude haben den Gebäude-Selektionsring
+			- gilt auch für Pilgrims Kanone und Salims Falle
+		- Alle Helden haben den Helden-Selektionsring
+		- Alle Militäreinheiten haben den gleichen Einheiten-Selektionsring
+		- AddOn-Zivilisten haben alle den richtigen Zivilisten-Selektionsring
+	- Formations-Buttons
+		- stehen auch bei selektierter Kavallerie zur Verfügung
+		- verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
+	- Ergänzte und korrigierte SelectionNames und OverheadNames
+		- Außenposten
+		- CU_BlackKnight_SoldierSword3 -> Raubritter
+		- Veteranen
+			- CU_VeteranLieutenant -> 'Berserker'
+			- CU_VeteranCaptain -> 'Raubritter'
+			- CU_VeteranMajor -> 'Todesritter'
+	- VideoPreviews (VPs)
+		- NPC-Einheiten, die erst mit den AddOns VPs bekommen haben (z.B. Barbaren), haben diese auch schon im Hauptspiel
+		- Dunkle Türme haben die VPs der normalen Türme
+		- Außenposten haben die VPs ihrer Hauptquartier-Counterparts
+		- Veteranen (CU_VeteranXXX) nutzen die VPs von Barbaren und schwarzen Rittern
+		- Dombaustellen verwenden die VP der Kathedrale
+		- CU_Serfs (Arbeiter der Dombaustelle) haben die VP von Leibeigenen
+	- Fortschrittsanzeige in Kanonengießereien beim Kanonenbau gefixt-verschönert
+		- Icon, dass die zu bauende Kanonenart anzeigt (analog zur Technologie-Erforschung)
+		- Anzeige erscheint auch dann schon, wenn der Kanonengießer gerade nicht im Gebäude ist
+	- Der Button zum Kauf von Bogen-Hauptmännern hat im Hauptspiel die gleiche Textur wie in den AddOns
+	- Fähigkeiten-Buttons von Dieben und Kundschaftern werden disabled, wenn der jeweilige Cooldown aktiv ist
+	- Gruppenstärke
+		- rechnet bei Nebelkriegern in 2er-Schritten (1 Helm = 2 Krieger)
+		- wird bei Einheiten, die keine Soldaten rekrutieren können, komplett ausgeblendet
+		- wird bei 0/x Soldaten nicht mehr fehlerhaft angezeigt
+	- Der Button zum Kauf von Soldaten wird ausgeblendet, wenn eine Einheit selektiert wird, die keine Soldaten haben kann (z.B. Helden)
+	- Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
+	- In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
+	- Countdowns 
+		- bleiben im Hauptspiel auch nach dem Laden eines Spielstands sichtbar
+		- bei Beginn der letzten Minute ertönt ein kleiner Sound
+	- Hilfe-Button
+		- gibt bei jedem Helden spezifische Hilfe
+		- gibt bei Kanonen eine eigene Hilfe
+		- gibt bei Türmen Hilfe in Abhängigkeit ihrer Ausbaustufe
+	- Find-Buttons
+		- werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
+		- Darios Button leuchtet in der Spielerfarbe statt nur blau
+			- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+		- unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
+		- erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
+	- Briefing-Window verschönert
+		- Es gibt keine Lücke mehr am linken Bildschirmrand (meistens...)
+		- Der obere Balken ist etwas kleiner
+		- Der schwarze Hintergrund beider Balken ist leicht transparent
+		- Die "silbernen Streifen" sowie der Minimap-Ring sind in der Spielerfarbe eingefärbt
+		- Multiple-Choice-Seiten
+			- Headline hat die gleiche Farbe wie bei normalen Seiten
+			- Buttons sind so weit unten wie möglich
+				-> mehr Platz für Beschreibungstext
+			- Button-Highlights werden nach dem Klick auf einen Button wieder entfernt
+	- Einige Widgets schließen besser am Bildschirmrand bzw. anderen Widgets ab
+		- Titelleiste
+		- Bodenleiste
+		- Minimap
+		- VideoPreview
+	- Viele kleine Detail-Anpassungen (Verschobene Buttons, größere Tooltip-Boxen, etc.)
+	- Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
+		- u.a. werden Spielstände (dank Zedeg)
+			- auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
+			- unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
+- Diverses
+	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
+		- Button dafür ersetzt den Hilfe-Button
+			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
+		- Kann auch über den Shortcut '-' ausgelöst werden
+	- Hauptmenü
+		- Der Reiter 'Spieler' ist reaktiviert
+			- Spielername kann geändert werden
+			- Eine bevorzugte Spielerfarbe kann eingestellt werden
+				- Wahl zwischen insgesamt 8 Farben
+					- Blau (Standard)
+					- Rot
+					- Gelb
+					- Türkis
+					- Orange
+					- Violett
+					- Grün
+					- Weiß
+				- Nahezu alle Vanilla-SP-Maps respektieren diese Einstellung
+				- Ggf. haben KIs dadurch auch andere Spielerfarben
+				- Gilt NICHT für den MP
+		- Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
+		- In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
+		- Mapauswahl im SP-Menü verändert
+			- MP-Maps sind nicht mehr enthalten -> Bessere Übersicht
+			- Basegame-Maps sind im Nebelreich-AddOn ebenfalls auswählbar
+				- Nahezu alle AddOn-Features sind dort nutzbar
+				- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
+		- In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
+		- Wenn eine Karte lädt
+			- wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
+			- wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
+		- Blaue Hintergründe sind nun rot
+	- Kampagnen-Maps modifiziert
+		- Tipps-Button im Hauptmenü 
+			- Ersetzt nutzlosen Netzwerk-Button
+			- Tipps sprachlich und inhaltlich korrigiert
+		- fehlerhafte-unpassende Spielerzugehörigkeit mancher Einheiten-Gebäude gefixt
+		- Drakes Gewehrschüsse in Cutscenes sind vertont
+		- Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
+		- in manchen Missionen können gegnerische Truppen respawnen
+			- z.T. abhängig vom Schwierigkeitsgrad
+		- 'Schlacht um Evelance' ist ein würdigeres Finale
+			- Gegner sind zahlreicher
+			- Gegner bilden auch Truppen in Militärgebäuden aus
+			- Gegnerische Türme sind höher ausgebaut
+		- Schwierigkeitsgrad 'Schwer'
+			- Gegnerische Befestigungen sind zäher, etwas zahlreicher und-oder höher ausgebaut 
+			- Gegnerische Truppen sind besser ausgerüstet, erfahrener und etwas zahlreicher
+			- Gegner nutzen häufiger ihre Militärgebäude zur Ausbildung von Truppen
+			- Gegner sind z.T. aggressiver
+			- Startbedingungen des Spielers sind bzgl. Rohstoffe-Truppen-Gebäude etwas schlechter
+			- Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
+		- Schwierigkeitsgrad 'Albtraum'
+			- Schatztruhen entfallen größtenteils
+			- enthält die gleichen Features wie auf 'Schwer'
+			- KI-Truppen und Gebäude sind noch stärker bzw. zahlreicher
+			- Die Steuern sind auf 'Halbe Steuern' festgesetzt
+				- Änderungen im Haupthaus sind NICHT möglich
+				- Eure Beliebtheit steigt deshalb mit jedem Zahltag
+			- Die eine oder andere nützliche Technologie ist gesperrt
+			- In Missionen mit sonst dauerhaftem Sommer regnet es ab und an
+			- Wege könnten blockiert oder freigelegt sein
+			- diverse Gemeinheiten;)
+		- Wilde Tiere (Wölfe und Bären) streifen durch die Gegend
+		- Start-Rohstoffe sind immer veredelbar
+		- Diverse Optimierungen-Anpassungen-Fixes in einigen Missionen
+	- SP-Maps modifiziert
+		- Ähnliche Features wie bei den Kampagnen-Maps. Ausnahmen:
+			- Keine Schwierigkeitsgrade und damit einhergehende Anpassungen
+			- Keine Tipps im Hauptmenü
+		- Größtenteils Fixes und kleinere Optimierungen
+	- Die Grafik ist allgemein etwas besser (by yoq)
+	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
+	- Steuer-Predigt-Exploit entschärft
+		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
+		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
+	- Musik
+		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
+		- In Evelance- und Moorsettings spielt auch bei Regen-Winter die düstere Sommer-Musik
+		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
+		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
+		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
+	- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+	- Wetter-Effekte sind etwas gemischter
+		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
+		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+	- Geröllhaufen werden, wie Steinhaufen auch, mit dem Abbau kleiner
+	- ein paar EasterEggs;)
+- Für Mapper
+	- Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
+	- Einige Entities sind regulär im Editor verfügbar - auch ohne Group-Werkzeug
+	- Neue, aber eigentlich in den Files vorhandene Entities sind verfügbar
+		- Der NPC 'CU_NPC_EvilGovernor' (Statthalter Kadir)
+		- Held 'CU_Hero10'
+			- eine Variante von Drake mit Kapuze (wie auf dem Nebelreich-Cover)
+			- hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
+		- Deko-Objekte 'XD_WreckedBoat01' und 'XD_WreckedBoat02' (Bootsfracks)
+		- Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+		- Der Drache ist theoretisch als 'CU_Dragon' nutzbar (aber leider unsichtbar)
+		- Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
+		- Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
+		- Der Soldat 'CU_LeaderOutlaw1' (Räuber) mit dem Aussehen von Aris Räuber
+		- 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
+		- Misc-Items für Gewehre und NV-Drops ohne begrenzte Lebensdauer hinzugefügt
+			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
+	- NPCs können vom Spieler normal kontrolliert werden
+		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
+		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
+			- können nicht kämpfen
+			- reagieren nicht auf Angriffe
+		- Der Selektionsring ist der gleiche wie bei normalen Arbeitern, nur ggf. etwas größer
+		- sie werden, je nach Typ, von zivilen oder militärischen Technologien beeinflusst
+	- Söldnerquartiere und Tech-Trader erlauben bis zu 6 Angebote
+	- Der Held 'PU_Hero1' sieht aus wie Dovbar
+		- inkl. Find-Button
+		- MultiSelection-Button (Textur by Zedeg)
+		- AudioFeedback stammt von den Kundschaftern
+	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
+	- Die Technologie 'KI-Bonus' 
+		- ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
+		- ist bei allen Spieler-Entities hinterlegt
+		- erhöht je nach Entity-Typ verschiedene Stats
+			- Schaden
+			- Geschwindigkeit
+			- Reichweite (Fernkämpfer)
+			- Verteidigung
+			- Sichtweite
+		- ist vom Spieler regulär nicht erforschbar
+	- Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
+		- Versionen mit 1er-Endung haben Soldatenmaximum von 4
+		- Versionen mit 2er-Endung haben Soldatenmaximum von 8 und kosten etwas mehr Taler
+		- Stats sind identisch
+		- Über ihre UpgradeCategories können die höheren Stufen zugänglich gemacht werden (auch der KI)
+		- Banditen (CU_BanditLeaderSwordX) sind dahingehend unverändert
+	- TaskLists
+		- Schwertführende Einheiten nutzen neue TaskList 'TL_BATTLE_SWORD'
+		- manche Einheiten nutzen andere TaskLists als zuvor
+	- Neue Effekte mit eigenem Sound
+		- FXExplosionBallista: Effekt, der beim Aufprall eines Ballistaturm-Geschosses erscheint
+		- FXExplosionCannon: Effekt, der beim Aufprall eines Kaonenturm-Geschosses erscheint
+	- In den Files vorhandene Sounds sind per Script verfügbar (siehe Datei 'Sounds.xml')
+	- Die 'MapEditorTools' 
+		- stehen auch im Hauptspiels zur Verfügung
+		- Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
+			-> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+	- Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
+		- Andere sind in den AddOns vorhanden, aber bereits anders definiert
+	- Darios Fähigkeit 'Schild des Königs'
+		- ist intern die gleiche Fähigkeit wie 'Falkensicht' (Abilities.AbilitySendHawk)
+		- existiert auch schon im Hauptspiel, ist mangels Falken-Ersatz (Kundschafter-Fernrohr) aber absichtlich nicht verfügbar
+	- Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
+		- Ari (PU_Hero5)
+		- Kanonen (alle Arten)
+		- Bogen-Banditen (CU_BanditLeaderBow1-2)
+		- Speerwerfer (CU_Evil_LeaderSkirmisher1)
+	- Kanonen haben als SoldierType 'PV_Cannon1', was bei max. 0 Soldaten aber eig. irrelevant ist
+	- Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
+		- Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
+	- Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
+	- LevyTaxes ist nun funktionsfähig
+		- Button wird denoch ausgeblendet, da das Feature schwer zu balancen ist
+		- kann mit Aufruf folgender Funktionen in der IPCM aktiviert werden
+			- 'XGUIEng.ShowWidget("Levy_Duties",1)' im Hauptquartier
+			- 'XGUIEng.ShowWidget("OP_Levy_Duties",1)' in Außenpopsten
+	- Der Aufruf von 'GDB.GetValue("Game\\Campaign_Difficulty")' gibt den Kampagnen-Schwierigkeitsgrad zurück
+		-> return: int Normal (0) oder Schwer (1)
+	- Der Aufruf von 'GetPlayerPreferredColor()' gibt die Id der bevorzugten Spielerfarbe des Spielers zurück
+		-> return: int Blau (1), Rot (2) oder Gelb (3)
+	- 6 unbenutzte Button-Texturen:
+		- Sind über 6 Dummy-Buttons (DummyButton0X) erreichbar (-> 'TransferMaterials')
+		- Die Zählung beginnt ab 'DummyButton02' -> 'DummyButton01' existiert nicht!
+		- Der Button 'DummyButton07' enthält die originale Textur zum Kauf von Bogen-Hauptmännern
+	- Bei aktiviertem DebugScript gibt es weniger 'nutzlose' Debug-Messages
+		- Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
+		- 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0' (by Play4FuN)
+	- Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
+		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie hren Zielort nie erreichen
+	- Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
+	- ScoutForester
+		- Default Tree-Set ist Fir (ScoutFoerster_SET_Fir)
+		- Kann folgendermaßen in der FMA geändert werden
+			- ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(treeset)
+			- ScoutFoerster_gvScoutFoerster.treeSet = treeset
+			- Gilt analog auch für andere Properties, z.B. Preis pro Aufforstung
+	- Comforts
+		- Variable 'CP_Installed' (bool):
+		- 'StartCountdown(_Limit, _Callback, _Show)': Startet einen Countdown
+			- Abbrechbar mit StopCountdown(_Id)
+		- 'SetAIUnitsToBuild( _aiID, ... )': Bestimmt, welche Einheitenarten die KI ausbilden kann
+		- 'InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory)': Gibt die Segnungskosten für eine bestimmte Segnungs-Kategorie (ID) zurück
+			-> return: int Segnungskosten
+		- 'CreateCostString(_costs)' by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
+			-> return: string CostString
+		- 'HasPlayerEnoughResources(_costs)': Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
+			-> return int reicht (1) oder reicht nicht (0)
+		- 'RaidersCreate(_data)': Erstellt ein aggressives Wolfsrudel mit einem Revier, in dem es sich bewegt
+		- 'GetRandom(_min, _max)' by mcb: Gibt eine Pseudozufallszahl zwischen _min und _max zurück
+			-> return int Zufallszahl
+		- 'GetClockTimeString(_sec)': Gibt einen Zeit-String im Uhr- (Std:Min:Sek) oder Datums-Format (T. Std.) zurück
+			-> return string Zeit
+		- 'ResearchAllMilitaryTechs(_PlayerId, _SuperTech)': Gibt der angegebenen PlayerId alle militärischen Techs des Hauptspiels (also ohne AddOn) und ggf auch die Super-Technologie
+		- 'ResearchAllMilitaryTechsAddOn(_PlayerId, _SuperTech)': Wie 'ResearchAllMilitaryTechs', aber zusätzlich mit AddOn-Technologien
+		- 'UserTool_GetPlayerNameWithTitle(_PlayerID)': Gibt den Namen des Spielers inkl. dem vom Geschlecht abhängigen Titel zurück
+			-> return string Spielername
+		- 'SucheAufDerWelt(_player, _entity, _groesse, _punkthier)' by Peermanent? - JugarTeam? - Kingsia?: Sucht Entities und gibt sie per Table zurück
+			-> return table Entities
+		- 'IstDrin(_wert, _table)' by ?: Ergänzung zu SucheAufDerWelt, um Dopplungen zu vermeiden
+			-> return bool true-false
+		- 'Tools.RemoveEntityInFogOrDestination(_PlayerID, _EntityID, _Position)': Trigger, der NPC im FOW oder am Zielort entfernt
+		- 'CP_ActivateEvilMod(_playerId, _unitstate, _towerstate)': Erlaub einem Spieler, in Militärgebäuden 'böse' Einheiten zu rekrutieren und mit Leibeigenen dunkle Türme zu bauen
+			- Abfrage der Einheiten mittels 'CP_GetEvilModUnitState(_playerId)'
+			- Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
+			- Verwendung: siehe Kommentar in 'Comforts.lua'
+- Bekannte Bugs & Einschränkungen
+	- Der Drache ist unsichtbar
+		- Grund: zu viele Bones im Modell und dadurch nicht vom Spiel darstellbar
+		- Mögliche Lösung: Bones entfernen, aber dann nicht mehr animierbar
+	- Kala's Tod verursacht selten stack overflow
+		- nur ein mal bislang
+		- konnte ich noch nicht reproduzieren
+	- Bei der Dombaustelle werden unter ihrem Overhead-Namen Minenarbeiter statt Leibeigene angezeigt
+		- gibt halt keine für Leibeigene, aber immer noch besser als Bankiers - immerhin stimmt der Bart!
+	- VideoPreviews z.T. nicht ganz passend
+		- gibt leider keine genauen VideoPreviews für diese Entities, sieht aber mMn. besser aus als Blackscreen
+	- Sterbende NPCs despawnen z.T. einfach ohne Sterbeanimation
+		- Grund: Sie haben einfach keine
+	- Mauern sind nicht reparierbar bzw. Leibeigene stehen dabei an komischen Positionen
+		- Grund: je nach Gelände, umliegenden Objekten und Ausrichtung sind die Reparaturpositionen blockiert oder verschoben
+	- Kontrollierbare NPCs 
+		- belegen Plätze in Wohnhäuser-Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
+		- können zum Holzfällen geschickt werden und sehen dabei aus wie Leibeigene
+
+
+
+## ToDos:
+- Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
+- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+- Meuchel-Ability für Diebe(?)
+- Thalgrund: Erster Angriff mit Cutscene-Einheiten
+	- ggf. mehr Spielertruppen als Hilfe
+- Vertonte Animationen (per TaskLists)
+	- Leader-Walk
+	- Leader-Train
+- Wasteland-Dörfer: Namen im Auftragsbuch
+- FunFacts im LoadingScreen
+	- mehr davon
+	- besser geschrieben
+	- auf Englisch übersetzen
+- Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
+- Rand-Clipping bei Briefing-Minimap entfernen 
+- Hauptmenü
+	- MP-Window fixen
+	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)?
+- Random(?) Crashs
+	- erste 2 Verstärkungen in '03_Neighborhood'
+- Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
+- Korrekte Kostenanzeige für den Kauf von Soldaten
+- Countdowns 
+	- sollen während Briefings pausieren
+	- Sollen ein eigenes Hintergrund-Image bekommen(?)
+- Kontrollierbare Schäferhunde(?)
+- Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
+- BattleMusic bei vom Spieler besiegten Einheiten(?)
+- Neue Spielerfarben(?)
+- Auftragsbuch-Highlight fixen
+- Auch normale Arbeiter sollen automatisch HP regenerieren
+	- scheint leider nicht möglich zu sein
+- Kalas Tod: stack overflow(?)
+- Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
+- Eigene Texturen für
+	- Tech-Trader
+	- Veteranen
+	- Varg
+	- Bogen-Banditen-Hauptmänner
+	- Leonardos Assistent
+	- Hauptmann, Ordensritter und Wächter
+- Neue Map "Tal der Verdammten"
+	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+	- Erec lebt
+	- Nettes NV
+	- Kadirs Bruder
+	- Giftiger Schwefelnebel und Dampfmaschinen
+- Umsetzung in Vanilla-DEdK
+- Organisatorisches
+	- FeatureList auch auf Englisch
+	- Quellenverzeichnung (also Nennung aller Autoren)
+	- GitHub-Startseite
+	- Indikator für CP-Installation
+	- (De-)Installer
+		- Backup-Funktion(?)
+		- Test-Maps und Thalbach (extra1) entfernen

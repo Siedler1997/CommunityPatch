@@ -23,6 +23,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
+	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 1, 8, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 3, 5, Diplomacy.Hostile )
@@ -59,11 +60,13 @@ function Mission_InitPlayerColorMapping()
 	BLUE = 1
 	RED = 2
 
+	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(2, BLUE)
-	Display.SetPlayerColorMapping(3, BLUE)
-	Display.SetPlayerColorMapping(4, BLUE)
+	Display.SetPlayerColorMapping(2, p1color)
+	Display.SetPlayerColorMapping(3, p1color)
+	Display.SetPlayerColorMapping(4, p1color)
 	Display.SetPlayerColorMapping(5, 15)
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7, KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8, NPC_COLOR)	
 end
@@ -80,11 +83,24 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Beautification01, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ThiefSabotage,3)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(4)
 		ResearchAllMilitaryTechsAddOn(5)
+		ResearchAllMilitaryTechsAddOn(6)
 		ResearchAllMilitaryTechsAddOn(7)
 	end
 	
@@ -151,7 +167,7 @@ function Mission_InitMerchants()
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BlackKnight_LeaderMace2, 3, ResourceType.Iron, 300)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 3, ResourceType.Iron, 250)
 	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Scout, 5, ResourceType.Gold, 150)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow1, 3, ResourceType.Gold, 200)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BanditLeaderBow2, 3, ResourceType.Gold, 200)
 end
 
 	
@@ -221,7 +237,6 @@ function Mission_FirstMapAction()
 
 
 
-	CreateRandomChests()
 --
 	StartChestQuest()
 
@@ -239,6 +254,12 @@ function Mission_FirstMapAction()
 	--SetPlayerName(2, "Darios Truppen")
 		
 	if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
+			GUI.SetTaxLevel(1)
+		else
+			CreateRandomChests()
+		end
+
 		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
 		for i = 2, table.getn(towers1) do
 			if IsExisting(towers1[i]) then
@@ -257,6 +278,13 @@ function Mission_FirstMapAction()
 				ReplaceEntity(towers3[i], Entities.PB_Tower3)
 			end
 		end
+	else
+		CreateRandomChests()
 	end
+	
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
 	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end

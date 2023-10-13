@@ -16,6 +16,26 @@ LocalMusic.SetEurope["summer"] = 		{
 										{ "11_MiddleEurope_Summer6.mp3", 153 },
 										{ "12_MiddleEurope_Summer7.mp3", 155 },
 										{ "13_MiddleEurope_Summer8.mp3", 156 },
+										{ "14_MiddleEurope_Summer9.mp3", 138 },
+
+										{ "S6_12_village_middle_europe.mp3", 77 },										
+										{ "S6_16_city_middle_europe.mp3", 56 },
+										{ "S6_34_back_middle_europe1.mp3", 190 },
+										{ "S6_35_back_middle_europe2.mp3", 160 },
+										{ "S6_36_back_middle_europe3.mp3", 171 },
+										{ "S6_37_back_middle_europe4.mp3", 132 },
+										{ "S6_38_back_middle_europe5.mp3", 171 },
+										{ "S6_55_var_back_middle_europe2.mp3", 161 },
+										{ "S6_56_var_back_middle_europe3.mp3", 162 },
+
+										{ "06_MiddleEurope_Summer1.mp3", 149 },										
+										{ "07_MiddleEurope_Summer2.mp3", 165 },
+										{ "08_MiddleEurope_Summer3.mp3", 168 },
+										{ "09_MiddleEurope_Summer4.mp3", 160 },
+										{ "10_MiddleEurope_Summer5.mp3", 158 },
+										{ "11_MiddleEurope_Summer6.mp3", 153 },
+										{ "12_MiddleEurope_Summer7.mp3", 155 },
+										{ "13_MiddleEurope_Summer8.mp3", 156 },
 										{ "14_MiddleEurope_Summer9.mp3", 138 }
 										}
 
@@ -24,24 +44,64 @@ LocalMusic.SetMediterranean ={}
 LocalMusic.SetMediterranean["summer"] = {
 										{ "15_Mediterranean_Summer1.mp3", 165 },
 										{ "16_Mediterranean_Summer2.mp3", 142 },
-										{ "09_MiddleEurope_Summer4.mp3", 160 },
-										{ "10_MiddleEurope_Summer5.mp3", 158 },
-										{ "11_MiddleEurope_Summer6.mp3", 153 }
-										
+
+										{ "S6_13_village_south_europe.mp3", 65 },
+										{ "S6_17_city_south_europe.mp3", 67 },
+										{ "S6_57_var_back_south_europe2.mp3", 162 },
+										{ "S6_58_var_back_south_europe3.mp3", 174 },
+
+										{ "15_Mediterranean_Summer1.mp3", 165 },
+										{ "16_Mediterranean_Summer2.mp3", 142 },
+
+										{ "S6_39_back_south_europe1.mp3", 171 },
+										{ "S6_40_back_south_europe2.mp3", 175 },
+										{ "S6_41_back_south_europe3.mp3", 149 },
+										{ "S6_42_back_south_europe4.mp3", 169 },
+										{ "S6_43_back_south_europe5.mp3", 118 },
+
+										{ "15_Mediterranean_Summer1.mp3", 165 },
+										{ "16_Mediterranean_Summer2.mp3", 142 }
 										}
 
 LocalMusic.SetHighland = {}
 LocalMusic.SetHighland["summer"] = 		{
 										{ "17_Highland_Summer1.mp3", 150 },
 										{ "18_Highland_Summer2.mp3", 137 },
-										{ "12_MiddleEurope_Summer7.mp3", 155 },
-										{ "13_MiddleEurope_Summer8.mp3", 156 },
-										{ "14_MiddleEurope_Summer9.mp3", 138 }
+										
+										{ "S6_11_village_north_europe.mp3", 70 },
+										{ "S6_15_city_north_europe.mp3", 65 },
+										{ "S6_53_var_back_north_europe2.mp3", 174 },
+										{ "S6_54_var_back_north_europe3.mp3", 180 },
+
+										{ "17_Highland_Summer1.mp3", 150 },
+										{ "18_Highland_Summer2.mp3", 137 },
+										
+										{ "S6_29_back_north_europe1.mp3", 172 },
+										{ "S6_30_back_north_europe2.mp3", 153 },
+										{ "S6_31_back_north_europe3.mp3", 171 },
+										{ "S6_32_back_north_europe4.mp3", 149 },
+										{ "S6_33_back_north_europe5.mp3", 122 },
+
+										{ "17_Highland_Summer1.mp3", 150 },
+										{ "18_Highland_Summer2.mp3", 137 }
 										}
 
 
 LocalMusic.SetEvelance = {}
 LocalMusic.SetEvelance["summer"] = 		{
+										{ "19_Evelance_Summer1.mp3", 154 },
+										{ "20_Evelance_Summer2.mp3", 152 },
+										{ "21_Evelance_Summer3.mp3", 165 },
+										{ "22_Evelance_Summer4.mp3", 150 },
+										{ "23_Evelance_Summer5.mp3", 158 },
+										{ "24_Evelance_Summer6.mp3", 168 },
+
+										{ "DogeLongAmb.mp3", 160 },
+										{ "boese_weltkarte10.mp3", 94 },
+										{ "boese_weltkarte12.mp3", 239 },
+										{ "SH_EvilTheme1.mp3", 74 },
+										{ "SH_EvilTheme2.mp3", 171 },
+										
 										{ "19_Evelance_Summer1.mp3", 154 },
 										{ "20_Evelance_Summer2.mp3", 152 },
 										{ "21_Evelance_Summer3.mp3", 165 },
@@ -62,12 +122,17 @@ LocalMusic.SetEurope["snow"] = 			{
 
 
 LocalMusic.SetEvelance["snow"] =		{
-										{ "19_Evelance_Summer1.mp3", 154 }, 
-										{ "20_Evelance_Summer2.mp3", 152 }, 
+										{ "19_Evelance_Summer1.mp3", 154 },
+										{ "20_Evelance_Summer2.mp3", 152 },
 										{ "21_Evelance_Summer3.mp3", 165 },
-										{ "22_Evelance_Summer4.mp3", 150 }, 
-										{ "23_Evelance_Summer5.mp3", 158 }, 
-										{ "24_Evelance_Summer6.mp3", 168 }
+
+										{ "boese_weltkarte5.mp3", 59 },
+										{ "SH_IceTheme1.mp3", 186 },
+										{ "SH_IceTheme2.mp3", 127 },
+
+										{ "19_Evelance_Summer1.mp3", 154 },
+										{ "20_Evelance_Summer2.mp3", 152 },
+										{ "21_Evelance_Summer3.mp3", 165 }
 										}
 
 
@@ -113,6 +178,32 @@ LocalMusic.SetBriefing=					{
 										{ "Win.mp3", 33 }
 										}
 
+LocalMusic.SetEurope["battle"] = 		{
+										{ "03_CombatEurope1.mp3", 117 },
+										{ "S6_28_combat_middle_europe_big.mp3", 110 },						
+										{ "S6_63_combat_middle_europe_small.mp3", 96 }
+										}
+										
+LocalMusic.SetHighland["battle"] =		{
+										{ "03_CombatEurope1.mp3", 113 },
+										{ "S6_26_combat_north_europe_big.mp3", 136 },
+										{ "S6_62_combat_north_europe_small.mp3", 119 }
+										}
+
+LocalMusic.SetMediterranean["battle"] =	{
+										{ "04_CombatMediterranean1.mp3", 113 },
+										{ "S6_25_combat_south_europe_big.mp3", 120 },
+										{ "S6_64_combat_south_europe_small.mp3", 92 },
+										{ "trojans_fight_01.mp3", 128 }
+										}
+										
+LocalMusic.SetEvelance["battle"] =		{
+										{ "05_CombatEvelance1.mp3", 117 },
+										{ "S6_65_combat_north_africa_small.mp3", 122 },	
+										{ "43_Extra1_DarkMoor_Combat.mp3", 120 },	
+										{ "honormix_01.mp3", 144 }
+										}
+
 
 HIGHLANDMUSIC 		= LocalMusic.SetHighland
 EUROPEMUSIC 		= LocalMusic.SetEurope
@@ -144,7 +235,7 @@ LocalMusic_UpdateMusic()
 		Weather = "summer"
 	elseif Weather == 2 then
 		--rain
-		Weather = "snow"
+		Weather = "summer"
 	elseif Weather == 3 then
 		--snow
 		Weather = "snow"
@@ -153,7 +244,7 @@ LocalMusic_UpdateMusic()
 	local SetToUse
 	
 	if LocalMusic.BattlesOnTheMap == 1 then
-		SetToUse = LocalMusic.SetBattle
+		SetToUse = LocalMusic.UseSet["battle"]
 	else
 		SetToUse = LocalMusic.UseSet[Weather]
 	end
@@ -178,23 +269,20 @@ LocalMusic_UpdateMusic()
         LocalMusic.BattlesOnTheMap = 0
     end
 	
-	--GUI.AddNote(SetToUse[Random][1] .. " is currently playing")
+	--GUI.AddNote(SetToUse[Random][1] .. " is currently playing: " .. SetToUse[Random][2])
 	
 
 end
 
 -----------------------------------------------------------------------------
 --Start battle music
-function
-LocalMusic.CallbackSettlerKilled(_HurterPlayerID, _HurtPlayerID)
-	
+function LocalMusic.CallbackSettlerKilled(_HurterPlayerID, _HurtPlayerID)
 	local PlayerID = GUI.GetPlayerID()
 	
-	if _HurterPlayerID ~= _HurtPlayerID 
-	and PlayerID == _HurtPlayerID  then		
-		if LocalMusic.LastBattleMusicStarted < Logic.GetTime() then		
+	if _HurterPlayerID ~= _HurtPlayerID and PlayerID == _HurtPlayerID  then		
+		if LocalMusic.LastBattleMusicStarted < XGUIEng.GetSystemTime() then		
 			LocalMusic.BattlesOnTheMap = 1
-			LocalMusic.LastBattleMusicStarted = Logic.GetTime() + 127
+			LocalMusic.LastBattleMusicStarted = XGUIEng.GetSystemTime() + 127
 			LocalMusic.SongLength = 0
 		end
 	end

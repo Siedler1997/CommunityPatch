@@ -12,22 +12,21 @@ function spawnArmyOutpost()
 			
 				armyOutpost = {}
 		
-				troopsArmyOutpost = {
-					Entities.CU_BanditLeaderSword2,
-					Entities.CU_BanditLeaderBow1
-					}
+				troopsArmyOutpost = { }
 		
 				local strength = 3
-				local experience = HIGH_EXPERIENCE
 				if CP_Difficulty == 0 then
 					table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub1)
+					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderSword1)
+					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow1)
 				else
-					experience = experience + 1
 					strength = strength + 1
 					table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub2)
+					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderSword2)
+					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow2)
 				end
 
-				createArmy(2,3,armyOutpost,strength,"armyOutpost",experience,troopsArmyOutpost)
+				createArmy(2,3,armyOutpost,strength,"armyOutpost",CP_Difficulty,troopsArmyOutpost)
 		
 				StartSimpleJob("controlArmyOutpost")
 				

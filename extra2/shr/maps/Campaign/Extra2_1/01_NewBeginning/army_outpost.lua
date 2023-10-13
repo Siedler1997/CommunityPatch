@@ -3,19 +3,17 @@ function createArmyOutpost()
 
 	armyOutpost = {}
 
-	troopsArmyOutpost = {
-    	Entities.CU_BanditLeaderBow1
-    	}
+	troopsArmyOutpost = { }
 
-	local experience = HIGH_EXPERIENCE
 	if CP_Difficulty == 0 then
 		table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub1)
+		table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow1)
 	else
-		experience = experience + 1
 		table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow2)
 	end
 
-    createArmy(2,2,armyOutpost,7,"armyOutpost",experience,troopsArmyOutpost)
+    createArmy(2,2,armyOutpost,7,"armyOutpost",CP_Difficulty,troopsArmyOutpost)
 
     armyOutpost.rodeLength = 1000
 

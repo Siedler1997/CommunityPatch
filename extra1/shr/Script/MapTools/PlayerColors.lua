@@ -40,3 +40,21 @@ PAPAL_COLOR			= 13
 
 -- Free:		15,16
 
+--[[
+	1	->	Dunkelblau
+	2	->	Rot
+	3	->	Gelb
+	4	->	Türkis
+	5	->	Orange
+	6	->	Lila
+	7	->	Pink
+	8	->	Hellgrün
+	9	->	Dunkelgrün
+	10	->	Hellgrau
+	11	->	Beige
+	12	->	Dunkelgrau
+	13	->	Weiß
+	14	->	Schwarz
+	15	->	Hellblau
+	16	->	Rosa
+--]]

@@ -7,6 +7,14 @@ function StartChapter1()
 	StartSimpleJob("PilgrimsLife")
 	startQuestDefeat()
 	StartJob("StartQuest4")
+
+	if CP_Difficulty == 2 then
+		local posrg = GetPosition("RobbersGenerator")
+		Logic.CreateEntity(Entities.XD_VillageCenter,posrg.X,posrg.Y,0,0)
+		DestroyEntity("RobbersGenerator")
+		CreateEntity(5, Entities.CB_Grange, posrg, "RobbersGenerator")
+	end
+
 	MonasteryDefense()
 
 end
@@ -32,14 +40,10 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_PilgrimCloseBorder = function()
 	-------------------------------------------------------------------------------------------------------------------
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 2
-		end
 
 		for i = 1, 8 do
 			local pos = GetPosition("BorderSpawn"..math.ceil(i/2))
-			local BorGuard = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+			local BorGuard = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 			SetEntityName(BorGuard, "BorGuard"..i)
 		end
 
@@ -80,10 +84,6 @@ function PilgrimsLife()
 		Pilgrim 	= Tools.CreateGroup(1, Entities.PU_Hero2, 0, pos.X, pos.Y, 180)
 		SetEntityName(Pilgrim, "Pilgrim")
 
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 2
-		end
 		for i = 1, 8 do
 			local pos
 			if i < 5 then
@@ -91,7 +91,7 @@ function PilgrimsLife()
 			else
 				pos = GetPosition("Backup"..(i-4))
 			end
-			local BorGuard = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+			local BorGuard = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 			SetEntityName(BorGuard, "BorGuard"..i)
 		end
 

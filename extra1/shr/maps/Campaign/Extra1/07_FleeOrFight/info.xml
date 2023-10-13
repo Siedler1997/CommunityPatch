@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>AOMapDescription/CM02_07_FleeOrFight_name</NameKey>
+ <DescKey>AOMapDescription/CM02_07_FleeOrFight_desc</DescKey>
+ <Name></Name>
+ <Desc></Desc>
+ <SizeX>641</SizeX>
+ <SizeY>641</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\Textures\GUI\MapPics\externalmap</MiniMapTextureName>
+ <Key>1</Key>
+ <GUID>
+  <Data>801a9d06-9d75-487f-a215-f62abd24055f</Data>
+ </GUID>
+</root>

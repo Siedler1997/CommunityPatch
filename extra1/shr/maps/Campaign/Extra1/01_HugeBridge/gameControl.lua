@@ -5,11 +5,7 @@ function beginChapterOne()
 
     Logic.SetPlayerPaysLeaderFlag(1,0)
 
-	if CP_Difficulty < 2 then
-        CreateRandomGoldChests()
-    else
-	    CreateRandomGoldChest(GetPosition("GoldChest1"))
-    end
+    CreateRandomGoldChests()
 
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")
@@ -136,6 +132,10 @@ function endChapterFour()
     end
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterFive()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(6, true)
+	end
 
     Report("begin chapter five")
 

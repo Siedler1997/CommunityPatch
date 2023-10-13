@@ -1,0 +1,23 @@
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>60</TimeToResearch>
+	<ResourceCosts>
+		<Gold>300</Gold>
+		<Clay/>
+		<Wood>200</Wood>
+		<Stone/>
+		<Iron/>
+		<Sulfur/>
+	</ResourceCosts>
+
+	<Conditions>
+		<TecCondition>
+			<TecType>T_ScoutTorches</TecType>
+		</TecCondition>
+
+		<EntityCondition>
+			<EntityType>PB_Tavern2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

@@ -50,11 +50,11 @@ function SpawnMoreHelp2()
 
 
 	local pos = GetPosition("AdditionalHelp1")
-	DrakeHelp1 = AI.Entity_CreateFormation(4,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0)
+	DrakeHelp1 = AI.Entity_CreateFormation(4,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(DrakeHelp1, "DrakeHelp1")
 
 	local pos = GetPosition("AdditionalHelp1")
-	DrakeHelp2 = AI.Entity_CreateFormation(4,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0)
+	DrakeHelp2 = AI.Entity_CreateFormation(4,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 	SetEntityName(DrakeHelp2, "DrakeHelp2")
 
 	StartJob("TimeControler112")

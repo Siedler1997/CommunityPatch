@@ -3,20 +3,17 @@ function createArmyBlockade()
 
 	armyBlockade = {}
 
-	troopsArmyBlockade = {
-    	Entities.CU_BanditLeaderBow1,
-    	Entities.CU_BanditLeaderBow1
-    	}
+	troopsArmyBlockade = { }
 
-	local experience = MEDIUM_EXPERIENCE
 	if CP_Difficulty == 0 then
 		table.insert(troopsArmyBlockade, Entities.CU_Barbarian_LeaderClub1)
+		table.insert(troopsArmyBlockade, Entities.CU_BanditLeaderBow1)
     else
-		experience = experience + 2
 		table.insert(troopsArmyBlockade, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(troopsArmyBlockade, Entities.CU_BanditLeaderBow2)
 	end
 
-    createArmy(2,1,armyBlockade,7,"armyBlockade",experience,troopsArmyBlockade)
+    createArmy(2,1,armyBlockade,7,"armyBlockade",CP_Difficulty,troopsArmyBlockade)
 
     armyBlockade.rodeLength = 1000
 

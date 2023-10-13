@@ -60,7 +60,7 @@ function createSupportNogersund()
 
 		minNumberOfSoldiers	= 0,
 		maxNumberOfSoldiers = 9,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 		leaderType          = Entities.PU_LeaderSword3,
 		position            = GetPosition("supportNogersund")
 	}
@@ -69,7 +69,7 @@ function createSupportNogersund()
 
 		minNumberOfSoldiers	= 0,
 		maxNumberOfSoldiers = 9,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 		leaderType          = Entities.PU_LeaderBow3,
 		position            = GetPosition("supportNogersund")
 	}
@@ -78,7 +78,7 @@ function createSupportNogersund()
 
 		minNumberOfSoldiers	= 0,
 		maxNumberOfSoldiers = 9,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 		leaderType          = Entities.PV_Cannon3,
 		position            = GetPosition("supportNogersund")
 	}
@@ -135,6 +135,27 @@ function createArmiesAndTroops()
 		end
 	end
 	
+	-- create polearmtroops
+	if Counter.Tick2("counterSupportSword", 60*3 + GetRandom(60*1)) then
+		if IsExisting("barracks") then
+
+			local troopDescription	= {
+
+				minNumberOfSoldiers	= 0,
+				maxNumberOfSoldiers = 9,
+				experiencePoints 	= LOW_EXPERIENCE,
+				leaderType          = Entities.PU_LeaderPoleArm1,
+				position            = GetPosition("supportSpear")
+			}
+	
+    		local armySword = {}
+			CreateTroop(armySword,troopDescription)
+			
+			Sound.Play2DSound(Sounds.fanfare, 0,127)
+			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[5]"))
+		end
+	end
+	
 	-- create bowtroops
 	if Counter.Tick2("counterSupportBow", 60*2 + GetRandom(60*1)) then
 		if IsExisting("archery") then
@@ -174,6 +195,27 @@ function createArmiesAndTroops()
     		
     		Sound.Play2DSound(Sounds.fanfare, 0,127)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[3]"))
+    	end
+	end	
+
+	-- create range cavalrytroops
+	if Counter.Tick2("counterSupportCavalry", 60*3 + GetRandom(60*1)) then
+		if IsExisting("stable") then
+
+			local troopDescription	= {
+
+				minNumberOfSoldiers	= 0,
+				maxNumberOfSoldiers = 9,
+				experiencePoints 	= LOW_EXPERIENCE,
+				leaderType          = Entities.PU_LeaderCavalry1,
+				position            = GetPosition("supportCavalry2")
+			}
+	
+			local armyCavalry = {}
+    		CreateTroop(armyCavalry,troopDescription)
+    		
+    		Sound.Play2DSound(Sounds.fanfare, 0,127)
+			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[6]"))
     	end
 	end	
 

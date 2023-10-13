@@ -85,6 +85,10 @@ function endChapterThree()
     end
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterFour()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(5, true)
+	end
 
     createBriefingLab()
 

@@ -26,6 +26,7 @@ createArmyDefendBase = function()
 	ArmyDefendBase.spawnPos          =   GetPosition("BesiegerASpawn")
   ArmyDefendBase.respawnTime       =   100
   ArmyDefendBase.maxSpawnAmount    =   8
+	ArmyDefendBase.experiencePoints	=	CP_Difficulty
 
 	ArmyDefendBase.position			= 	GetPosition("P5TerritoryCenter")
 	-- Setup army

@@ -17,6 +17,7 @@ function Mission_InitDiplomacy()
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Friendly )
 	Logic.SetDiplomacyState( 1, 4, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 
 	Logic.SetDiplomacyState( 3, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 3, 4, Diplomacy.Hostile )
@@ -30,19 +31,26 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
+		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR1)
+	else
+		Display.SetPlayerColorMapping(3,9)
+		Display.SetPlayerColorMapping(5,9)
+	end
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(4,BARBARIAN_COLOR)
+	else
+		Display.SetPlayerColorMapping(4,6)
+	end
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
 	Display.SetPlayerColorMapping(2,KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(4,BARBARIAN_COLOR)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR1)
-	Display.SetPlayerColorMapping(6,ENEMY_COLOR2)
+	Display.SetPlayerColorMapping(6,15)
+	Display.SetPlayerColorMapping(7,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
-
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-	end
-
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -64,16 +72,22 @@ function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)	--No enemy, but has to survive attacks without help
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)	--No enemy, but has to survive attacks without help
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -177,23 +191,24 @@ function Mission_FirstMapAction()
 	TimeLine.Start()
 	
 	-- Start cutscene and prelude after
+
 	start1stQuest()
 
 	if CP_Difficulty == 0 then
 		CreateRandomGoldChests()
 		CreateRandomChests()
 	else
-		local addWolves = 0
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		else
+			CreateRandomGoldChests()
+			CreateRandomChests()
 		end
 
-		SetPosition ("Ingredient", GetPosition("GoldChest1"))
+		local ingredientPos = GetPosition("Ingredient")
+		local goldChest1Pos = GetPosition("GoldChest1")
+		SetPosition ("Ingredient", goldChest1Pos)
+		SetPosition ("GoldChest1", ingredientPos)
 
 		local bosspos1 = GetPosition("P2Defense2")
 		local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_VeteranCaptain,0,0,(bosspos1.X + 1500),(bosspos1.Y + 0),0,0,3,0)
@@ -202,20 +217,14 @@ function Mission_FirstMapAction()
 		local bosspos2 = GetPosition("P4DefensePos")
 		local bossID2 = AI.Entity_CreateFormation(6,Entities.CU_Barbarian_Hero,0,0,(bosspos2.X + 300),(bosspos2.Y + 1700),0,0,0,0)
 		SetEntityName(bossID2, "P4_Boss")
-
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = (3 + addWolves), ramount = (8 + addWolves)})
 	end
+
+	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
 
 	--Tools.ExploreArea(-1, -1, 900)
 	--ResearchAllMilitaryTechs(1)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 	--EnableDebugging()
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

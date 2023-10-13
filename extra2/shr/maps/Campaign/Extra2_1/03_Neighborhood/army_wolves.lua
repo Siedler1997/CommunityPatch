@@ -3,14 +3,10 @@ function createArmyWolves()
 	armyWolves = {}
 
 	troopsArmyWolves = {
-		Entities.CU_AggressiveWolf
+		Entities.CU_AggressiveWolf_White
     	}
 		
-	local experience = MEDIUM_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 2
-	end
-    createArmy(2,2,armyWolves,7,"armySpawn1",experience,troopsArmyWolves)
+    createArmy(2,2,armyWolves,7,"armySpawn1",CP_Difficulty,troopsArmyWolves)
 
 	StartSimpleJob("controlArmyWolves")
 

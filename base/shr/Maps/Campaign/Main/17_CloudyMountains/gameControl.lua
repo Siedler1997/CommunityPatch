@@ -174,6 +174,12 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 	
 end4thQuest = function()	
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(3, true)
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(5, true)
+	end
 
 	Report("end 4th quest")
 

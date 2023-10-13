@@ -16,26 +16,25 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(1000)
-    AddClay(1000)
-    AddGold(1000)
-    AddSulfur(1000)
-    AddIron(1000)
-    AddWood(1000)
-    end
+	GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 1000, 1000, 1000)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
 		
-		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(4)
+		ResearchAllMilitaryTechsAddOn(5)
+		ResearchAllMilitaryTechsAddOn(6)
 	end
 
     createPlayer1()
@@ -54,34 +53,27 @@ function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,15)
 	Display.SetPlayerColorMapping(5,16)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
+	
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1,p1color)
 
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	if CitywallsPlayercolor ~= true then
+		Display.SetPlayerColorMapping(3,15)
+	else
+		Display.SetPlayerColorMapping(3,p1color)
+	end
 	
-		if CitywallsPlayercolor ~= true then
-			Display.SetPlayerColorMapping(3,15)
-		else
-			Display.SetPlayerColorMapping(3,PLAYER_COLOR)
-		end
-	
-		if Player4IsNephilim ~= true then
+	if Player4IsNephilim ~= true then
+		if p1color ~= 9 then
 			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
 		else
-			Display.SetPlayerColorMapping(4,NEPHILIM_COLOR)
+			Display.SetPlayerColorMapping(4,1)
 		end
 	else
-		Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
-	
-		if CitywallsPlayercolor ~= true then
-			Display.SetPlayerColorMapping(3,15)
+		if p1color ~= 2 then
+			Display.SetPlayerColorMapping(4,2)
 		else
-			Display.SetPlayerColorMapping(3,NEPHILIM_COLOR)
-		end
-	
-		if Player4IsNephilim ~= true then
-			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
-		else
-			Display.SetPlayerColorMapping(4,ENEMY_COLOR1)
+			Display.SetPlayerColorMapping(4,6)
 		end
 	end
 	
@@ -144,33 +136,24 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])	
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])
 	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Pine)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Pine
 	
 	-- cutscene
 --	StartCutscene("Intro",start1stChapter)
 	start1stChapter();
 
 	if CP_Difficulty > 0 then
-		local addWolves = 0
 		if CP_Difficulty == 2 then		
-			Display.SetPlayerColorMapping(1,NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(3,15)
-			Display.SetPlayerColorMapping(4,EVIL_GOVERNOR_COLOR)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
 		end
-
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
 	end
 
-    --Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
-end
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+	
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+    --Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end
---]]

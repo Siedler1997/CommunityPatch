@@ -50,15 +50,18 @@ end
 function Mission_InitTechnologies()
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.UP2_Headquarter,0)	
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(5)
 	end
 end
 
@@ -98,22 +101,29 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
- 	
 	-- set player colors
-	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, PLAYER_FRIEND_COLOR)		
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, 2)	
+	end
+	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, BARBARIAN_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
-		
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-		end
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBesieger, 6)		
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, PLAYER_FRIEND_COLOR)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDFolklung, 1)	
+		Display.SetPlayerColorMapping(8, 15)	
+	end
+	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbersSwamp, ROBBERS_COLOR)	
 		
 end
-
- 
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start after all initialization is done
@@ -198,16 +208,15 @@ function Mission_FirstMapAction()
 		
 	--BurningHouse
 	Logic.HurtEntity(GetID("BurningHouse"),400)
-	
-	if CP_Difficulty == 0 then
-		CreateRandomChests()
 
+	if CP_Difficulty == 0 then
+		CreateRandomChests()	
 		local hqpos = GetPosition("Pl5_SpawnPos")
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
-		local addWolves = 0
 		if CP_Difficulty == 1 then
+			CreateRandomChests()	
 			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5200, 35700, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5700, 26300, 0, 5);
@@ -220,47 +229,33 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_Tower3, 15900, 24500, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 9700, 29800, 0, 5);
 
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			DestroyEntity("TheRock")
 			createArmyAttackPlayerA()
 			StartCountdown(15 * 60, MakeArmyAttackPlayerAggressive, false)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
-
-		RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (4 + addWolves), ramount = (10 + addWolves)})		
-		RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, samount = (4 + addWolves), ramount = (12 + addWolves)})
-		
-		if CP_Difficulty == 2 then
-			ReplaceEntity("TheRock2", Entities.XD_Rock7)
-			ReplaceEntity("TheRock3", Entities.XD_Rock7)
-		end
+		--]]
 	end
 
+	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})		
+	RaidersCreate({player = 4, pos = "rudelpos2", revier = 3000, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+
+	RaidersCreate({player = 4, pos = "bearpos1", revier = 500, range = 4000, types = { Entities.CU_AggressivePolarBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	
 	-- Create Armies
 	createArmyCutscene()
 	createArmyRobbers()
 	StartCountdown(60, createArmyBesiegerA, false)
 	createArmyDefendBase()
 
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
 
 function StartOldCutscene()
 	--Briefing	

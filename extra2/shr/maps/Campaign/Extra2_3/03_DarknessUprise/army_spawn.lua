@@ -58,7 +58,6 @@ createArmy = function(_playerId,_id,_army,_strength,_position,_experience,_troop
 
 -----------------------------------
 createArmySpawn = function()
-	local experience = LOW_EXPERIENCE
 	Troops_1	= {}
 	Troops_2	= { Entities.PU_LeaderBow4 }
 	Troops_3	= { Entities.PU_LeaderCavalry2 }
@@ -84,21 +83,32 @@ createArmySpawn = function()
 		
 		table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry1)
 	else
-		table.insert(Troops_1, Entities.PU_LeaderSword3)
-		table.insert(Troops_1, Entities.PU_LeaderSword3)
-		table.insert(Troops_1, Entities.PU_LeaderPoleArm3)
-		
-		table.insert(Troops_2, Entities.PU_LeaderBow3)
-		table.insert(Troops_2, Entities.PU_LeaderBow3)
-		table.insert(Troops_2, Entities.PU_LeaderPoleArm3)
-		
-		table.insert(Troops_3, Entities.PU_LeaderHeavyCavalry2)
-		
 		table.insert(Troops_5, Entities.PV_Cannon3)
-		
-		table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry2)
 
-		experience = experience + 2
+		if CP_Difficulty == 1 then	
+			table.insert(Troops_1, Entities.PU_LeaderSword3)
+			table.insert(Troops_1, Entities.PU_LeaderSword3)
+			table.insert(Troops_1, Entities.PU_LeaderPoleArm3)
+
+			table.insert(Troops_2, Entities.PU_LeaderBow3)
+			table.insert(Troops_2, Entities.PU_LeaderBow3)
+			table.insert(Troops_2, Entities.PU_LeaderPoleArm3)
+			table.insert(Troops_3, Entities.PU_LeaderHeavyCavalry1)
+			table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry1)
+		else
+			table.insert(Troops_1, Entities.PU_LeaderSword4)
+			table.insert(Troops_1, Entities.PU_LeaderSword4)
+			table.insert(Troops_1, Entities.PU_LeaderPoleArm4)
+
+			table.insert(Troops_2, Entities.PU_LeaderBow4)
+			table.insert(Troops_2, Entities.PU_LeaderBow4)
+			table.insert(Troops_2, Entities.PU_LeaderPoleArm4)
+			table.insert(Troops_3, Entities.PU_LeaderHeavyCavalry2)
+			table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry2)
+		end
+
+		
+		
 	end
 
 	------------------------------
@@ -106,40 +116,40 @@ createArmySpawn = function()
 	-- Pilgrim defend groups 
 
 		p2_def1	= {}
-		createArmy(2, 4,p2_def1,3,"def1",experience,Troops_6)
+		createArmy(2, 4,p2_def1,3,"def1",CP_Difficulty,Troops_6)
 		StartJob("Controlp2_def1")
 	
 	-- market defend groups
 	
 		p3_def1	= {}
-		createArmy(2, 5,p3_def1,3,"def3_1",experience,Troops_2)
+		createArmy(2, 5,p3_def1,3,"def3_1",CP_Difficulty,Troops_2)
 		StartJob("Controlp3_def1")
 		p3_def2	= {}
-		createArmy(2, 6,p3_def2,4,"def3_2",experience,Troops_3)
+		createArmy(2, 6,p3_def2,4,"def3_2",CP_Difficulty,Troops_3)
 		StartJob("Controlp3_def2")
 		p3_def3	= {}
-		createArmy(2, 7,p3_def3,3,"def3_3",experience,Troops_1)
+		createArmy(2, 7,p3_def3,3,"def3_3",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def3")
 		p3_def4	= {}
-		createArmy(2, 8,p3_def4,2,"def3_4",experience,Troops_1)
+		createArmy(2, 8,p3_def4,2,"def3_4",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def4")
 		p3_def5	= {}
-		createArmy(3, 0,p3_def5,1,"def3_5",experience,Troops_2)
+		createArmy(3, 0,p3_def5,1,"def3_5",CP_Difficulty,Troops_2)
 		StartJob("Controlp3_def5")
 		p3_def6	= {}
-		createArmy(3, 1,p3_def6,1,"def3_6",experience,Troops_2)
+		createArmy(3, 1,p3_def6,1,"def3_6",CP_Difficulty,Troops_2)
 		StartJob("Controlp3_def6")
 		p3_def7	= {}
-		createArmy(3, 2,p3_def7,2,"def3_7",experience,Troops_1)
+		createArmy(3, 2,p3_def7,2,"def3_7",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def7")
 		p3_def8	= {}
-		createArmy(3, 3,p3_def8,2,"def3_8",experience,Troops_1)
+		createArmy(3, 3,p3_def8,2,"def3_8",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def8")
 		p3_def9	= {}
-		createArmy(3, 4,p3_def9,1,"def3_9",experience,Troops_1)
+		createArmy(3, 4,p3_def9,1,"def3_9",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def9")
 		p3_def10	= {}
-		createArmy(3, 5,p3_def10,1,"def3_10",experience,Troops_1)
+		createArmy(3, 5,p3_def10,1,"def3_10",CP_Difficulty,Troops_1)
 		StartJob("Controlp3_def10")
 
 end
@@ -224,34 +234,34 @@ function CreateArmyKerberos()
 
 
 		local troopDescription_1 	= {
-			leaderType 				= Entities.PU_LeaderSword3, --Entities.CU_BlackKnight_LeaderMace2,
+			leaderType 				= Entities.CU_BanditLeaderSword2, --Entities.CU_BlackKnight_LeaderMace2,
 			maxNumberOfSoldiers		= 8,
 			minNumberOfSoldiers		= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= VERYHIGH_EXPERIENCE-CP_Difficulty,
 		}
 		local troopDescription_2 	= {
-			leaderType 				= Entities.PU_LeaderBow3, --Entities.CU_BanditLeaderSword2,
+			leaderType 				= Entities.CU_BanditLeaderBow2, --Entities.CU_BanditLeaderSword2,
 			maxNumberOfSoldiers		= 8,
 			minNumberOfSoldiers		= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= VERYHIGH_EXPERIENCE-CP_Difficulty,
 		}
 		local troopDescription_3 	= {
-			leaderType 				= Entities.CU_BanditLeaderSword2, --Entities.CU_Barbarian_LeaderClub2,
+			leaderType 				= Entities.CU_Barbarian_LeaderClub2, --Entities.CU_Barbarian_LeaderClub2,
 			maxNumberOfSoldiers		= 8,
 			minNumberOfSoldiers		= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= VERYHIGH_EXPERIENCE-CP_Difficulty,
 		}
 		local troopDescription_4 	= {
 			leaderType 				= Entities.CU_Barbarian_LeaderClub2,
 			maxNumberOfSoldiers		= 8,
 			minNumberOfSoldiers		= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= VERYHIGH_EXPERIENCE-CP_Difficulty,
 		}
 		local troopDescription_5 	= {
 			leaderType 				= Entities.CU_BlackKnight_LeaderMace2,
 			maxNumberOfSoldiers		= 8,
 			minNumberOfSoldiers		= 0,
-			experiencePoints 		= LOW_EXPERIENCE,
+			experiencePoints 		= VERYHIGH_EXPERIENCE-CP_Difficulty,
 		}
 
 		support1 = CreateTroop(ArmyKerberos,troopDescription_1)
@@ -363,13 +373,20 @@ function baseAttack(_target)
 		table.insert(Atroops, Entities.PU_LeaderHeavyCavalry1)
 		table.insert(Atroops, Entities.PU_LeaderSword2)
 		table.insert(Atroops, Entities.PU_LeaderBow2)
-	else
+	elseif CP_Difficulty == 1 then	
 		table.insert(Atroops, Entities.PU_LeaderSword3)
 		table.insert(Atroops, Entities.PU_LeaderBow4)
 		table.insert(Atroops, Entities.PU_LeaderPoleArm3)
 		table.insert(Atroops, Entities.PU_LeaderHeavyCavalry2)
 		table.insert(Atroops, Entities.PU_LeaderSword3)
 		table.insert(Atroops, Entities.PU_LeaderBow3)
+	else
+		table.insert(Atroops, Entities.PU_LeaderSword4)
+		table.insert(Atroops, Entities.PU_LeaderBow4)
+		table.insert(Atroops, Entities.PU_LeaderPoleArm4)
+		table.insert(Atroops, Entities.PU_LeaderHeavyCavalry2)
+		table.insert(Atroops, Entities.PU_LeaderSword4)
+		table.insert(Atroops, Entities.PU_LeaderBow4)
 	end
 
 	ReplaceEntity("bridge3",Entities.PB_DrawBridgeClosed1)
@@ -392,8 +409,7 @@ end
 
 function cityAttack(_target)
 	Citytroops	= 	{	
-				Entities.PU_LeaderRifle1,
-				Entities.PU_LeaderCavalry1
+				Entities.PU_LeaderRifle1
 				}
 				
 	if CP_Difficulty == 0 then
@@ -402,12 +418,21 @@ function cityAttack(_target)
 		table.insert(Citytroops, Entities.PU_LeaderPoleArm1)
 		table.insert(Citytroops, Entities.PU_LeaderSword1)
 		table.insert(Citytroops, Entities.PU_LeaderBow1)
+		table.insert(Citytroops, Entities.PU_LeaderCavalry1)
+	elseif CP_Difficulty == 1 then
+		table.insert(Citytroops, Entities.PU_LeaderSword2)
+		table.insert(Citytroops, Entities.PU_LeaderBow2)
+		table.insert(Citytroops, Entities.PU_LeaderPoleArm2)
+		table.insert(Citytroops, Entities.PU_LeaderSword2)
+		table.insert(Citytroops, Entities.PU_LeaderBow2)
+		table.insert(Citytroops, Entities.PU_LeaderCavalry2)
 	else
 		table.insert(Citytroops, Entities.PU_LeaderSword3)
 		table.insert(Citytroops, Entities.PU_LeaderBow3)
 		table.insert(Citytroops, Entities.PU_LeaderPoleArm3)
 		table.insert(Citytroops, Entities.PU_LeaderSword3)
 		table.insert(Citytroops, Entities.PU_LeaderBow3)
+		table.insert(Citytroops, Entities.PU_LeaderCavalry2)
 	end
 
 	local pos = GetPosition("city_attack")
@@ -435,37 +460,36 @@ function createArmyPilgrim()
 	ArmyPilgrim.rodeLength				= 3000
 	ArmyPilgrim.AttackAllowed			= true
 	
-	local experience = MEDIUM_EXPERIENCE
-	if CP_Difficulty == 0 then
-		experience = experience + 2
-	end
-	
 			local troopDescription1 	= {
 	
 			leaderType 				= Entities.PU_LeaderSword2,
 			maxNumberOfSoldiers			= 8,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 			= experience,
+			experiencePoints 			= CP_Difficulty,
 		}
 			local troopDescription2 	= {
 	
 			leaderType 				= Entities.PU_LeaderPoleArm2,
 			maxNumberOfSoldiers			= 8,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 			= experience,
+			experiencePoints 			= CP_Difficulty,
 		}
 			local troopDescription3 	= {
 	
 			leaderType 				= Entities.PU_LeaderBow2,
 			maxNumberOfSoldiers			= 8,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 			= experience,
+			experiencePoints 			= CP_Difficulty,
 		}
 
-		if CP_Difficulty > 0 then
+		if CP_Difficulty == 1 then
 			troopDescription1.leaderType = Entities.PU_LeaderSword3
 			troopDescription2.leaderType = Entities.PU_LeaderPoleArm3
 			troopDescription3.leaderType = Entities.PU_LeaderBow3
+		elseif CP_Difficulty == 2 then
+			troopDescription1.leaderType = Entities.PU_LeaderSword4
+			troopDescription2.leaderType = Entities.PU_LeaderPoleArm4
+			troopDescription3.leaderType = Entities.PU_LeaderBow4
 		end
 
 		group1 = CreateTroop(ArmyPilgrim,troopDescription1)

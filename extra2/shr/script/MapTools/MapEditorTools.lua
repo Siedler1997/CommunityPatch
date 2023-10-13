@@ -176,6 +176,12 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, _playerId)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, _playerId)
 		end
+		if _techlevel > 1 then
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, _playerId)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, _playerId)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBandit, _playerId)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBanditBow, _playerId)
+		end
 
 	-- army
 	if MapEditor_Armies == nil then

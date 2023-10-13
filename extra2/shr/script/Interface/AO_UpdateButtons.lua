@@ -35,21 +35,25 @@ function GUIUpdate_AbilityButtons(_Button, _Technology)
 	end
 end
 
-function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut)
+function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut,_costs)
 	local pid = GUI.GetPlayerID()
 	local ShortCutToolTip = ""
 	local TextToolTip = ""
+	local CostToolTip = ""
 	if _ShortCut ~= nil and Logic.GetTechnologyState(pid, _tech) == 4 then
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 	end
 	if Logic.GetTechnologyState(pid, _tech) == 0 then
-		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/TechnologyNotAvailable")
+		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/AbilityNotAvailable")
 	elseif Logic.GetTechnologyState(pid, _tech) < 4 then
 		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
 	else
 		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
 	end
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
+	if _costs ~= nil then
+		CostToolTip = _costs
+	end
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostToolTip)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut,ShortCutToolTip)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText,TextToolTip)
 end

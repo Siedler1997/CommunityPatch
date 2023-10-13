@@ -63,6 +63,14 @@ Action_WeatherChange = function()
 	Logic.AddToPlayersGlobalResource(4, ResourceType.GoldRaw, 5000)
 
 	--StartCountdown(WinterAttackCountdown, startNorfolkWinterAttack, true)
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(3, true)	--No enemy, but has to survive attacks without help
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(6, true)
+		ResearchAllMilitaryTechs(7, true)
+	end
+
 	return true
 end
 

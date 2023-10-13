@@ -12,7 +12,7 @@
             <ArmorClassIronFactor>0.75</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
             <ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.75</ArmorClassFurFactor>
+			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
         </Logic>
     </DamageClass>
     
@@ -24,7 +24,7 @@
             <ArmorClassIronFactor>1.5</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.1</ArmorClassFortificationFactor>
             <ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.75</ArmorClassFurFactor>
+			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
         </Logic>
     </DamageClass>
     
@@ -37,7 +37,7 @@
             <ArmorClassIronFactor>1.25</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
             <ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.75</ArmorClassFurFactor>
+			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
         </Logic>
     </DamageClass>
     
@@ -62,7 +62,7 @@
             <ArmorClassIronFactor>1.0</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
             <ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.8</ArmorClassFurFactor>
+			<ArmorClassFurFactor>0.75</ArmorClassFurFactor>
         </Logic>
     </DamageClass>
     
@@ -86,7 +86,7 @@
             <ArmorClassIronFactor>0.75</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
             <ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
+			<ArmorClassFurFactor>1.75</ArmorClassFurFactor>
         </Logic>
     </DamageClass>
 </root>

@@ -10,15 +10,15 @@
 		<Operation>+</Operation>
 	</ExplorationModifier>
 	<SpeedModifier>
-		<Value>10</Value>
+		<Value>6</Value>
 		<Operation>+</Operation>
 	</SpeedModifier>
 	<DamageModifier>
-		<Value>4</Value>
+		<Value>3</Value>
 		<Operation>+</Operation>
 	</DamageModifier>
 	<ArmorModifier>
-		<Value>4</Value>
+		<Value>3</Value>
 		<Operation>+</Operation>
 	</ArmorModifier>
 	

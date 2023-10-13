@@ -3,7 +3,7 @@ createPlayer1 = function()
 
 	-- 	start  resources 									
 		
-		GlobalMissionScripting.GiveResouces(GetHumanPlayer(),0,0,0,0,0,0)
+		GlobalMissionScripting.GiveResouces(GetHumanPlayer(),10000,10000,10000,10000,10000,0)
 
 		local PlayerID = GetHumanPlayer()
 --		Logic.SetPlayerName(GetHumanPlayer(), String.MainKey.."_Player1Name")
@@ -186,7 +186,7 @@ AllowBuildings = function()
 --	Logic.SetTechnologyState(PlayerID,Technologies.T_BodkinArrow      		,2 )	
 		
 		 --Damage: Spearmen-->						
-	Logic.SetTechnologyState(PlayerID,Technologies.T_WoodAging      		,2 )	
+	--Logic.SetTechnologyState(PlayerID,Technologies.T_WoodAging      		,2 )	
 --	Logic.SetTechnologyState(PlayerID,Technologies.T_Turnery      			,2 )	
 	
 	 --Alchemist Technologies -->			
@@ -205,7 +205,7 @@ AllowBuildings = function()
 	
 	 --Brickworks Technologies -->				
 			 --Speed: Serfs build-->		
-		Logic.SetTechnologyState(PlayerID,Technologies.T_LightBricks      	,2 ) 
+		--Logic.SetTechnologyState(PlayerID,Technologies.T_LightBricks      	,2 ) 
 	
 	 --Bank Technologies -->				
 			 --Payday: Refine more and change Payday frequenze-->	
