@@ -86,7 +86,7 @@
 			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
 			<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
 			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>1.75</ArmorClassFurFactor>
+			<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
 		</Logic>
 	</DamageClass>
 </root>
