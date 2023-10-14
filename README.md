@@ -7,7 +7,7 @@ Dieser inoffizielle Patch behebt diverse Bugs der History Edition vom Spiel 'Die
 Mit folgenden Schritten lässt sich der Patch installieren:
 1. Sicherungskopie vom DEdK-Ordner anlegen und z.B. "thesettlers5_Orig" nennen
 2. Projekt über Code -> Download ZIP herunterladen
-3. Projektordner in den Ornder OHNE "_Orig-Zusatz" entpacken und die Frage nach Überschreiben von X Dateien bestätigen
+3. Projektordner in den Ordner OHNE "_Orig-Zusatz" entpacken und die Frage nach Überschreiben von X Dateien bestätigen
 3. Zocken
 
 
@@ -50,8 +50,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
 		- Ausbau dauert doppelt so lange (=30 Sek.)
 		- Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
+		- Kanonentürme: Reichweite auf 30 SM erhöht (vorher: 28)
 		- dunkle Türme sind ausbaubar
-	- Wohstätten
+	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
 		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
 		- geben beim Abriss 150 Holz und 50 Steine
@@ -88,15 +89,16 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- haben die gleiche DamageClass wie schwere Kavallerie
 		- Bogenschützen-Banditen
 			- haben 150 Lebenspunkte (vorher: 120)
-			- Hauptmänner und Soldaten haben die gleiche Nachladedauer
+			- Hauptmänner und Soldaten haben 
+				- die gleiche Nachladedauer
+				- die gleiche Maximalreichweite
 			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		- Nebelkrieger
 			- Schaden an ihnen wird korrekt berechnet (fällt aber kaum auf)
 			- haben mehr Lebenspunkte (Hauptmänner: 150, Soldaten: 100)
 			- haben einen Rüstungspunkt weniger (=1)
 			- Bärenmenschen greifen etwas schneller an
-			- sind resistenter gegen alle Schadensarten außer ihre eigene
-				- ggü. Scharfschützen sind sie dafür noch etwas anfälliger geworden
+			- sind resistenter gegen alle Schadensarten außer ihre eigene und Scharfschützen
 			- Hauptmänner sind leicht umtexturiert
 		- Barbaren 
 			- haben die gleiche ArmorClass wie Speerkämpfer und Schützen
@@ -131,7 +133,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Veteranen
 			- Wilde Wölfe
 	- Militärische Einheiten
-		- Bogen- und Scharfschützen (außer Berittene) brauchen länger zum Nachladen
+		- Bogen- und Scharfschützen (außer Berittene) 
+			- brauchen etwas länger zum Nachladen
+			- haben eine etwas geringere Sicht- und Reichweite
+			- Effekte der Technologien "Befiederung", "Bleikugel" und "Kimme und Korn" leicht abgeschwächt
 		- Leibeigene-Milizen
 			- regenerieren langsam ihre HP (1 HP - 5 Sek.)
 			- Leibeigene 
@@ -152,11 +157,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
 			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
 			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
+			- Reichweite und Lebenspunkte etwas erhöht
 			- Bombarden
 				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
 				- Schaden auf 35 erhöht (vorher: 30)
 			- Eisenkanonen
-				- Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
+				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
 				- Schaden auf 70 erhöht (vorher: 65)
 		- Scharfschützen
 			- sind nicht mehr ganz so effektiv gegen Gebäude
@@ -452,7 +459,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
 	- Musik
 		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
-		- In Evelance- und Moorsettings spielt auch bei Regen-Winter die düstere Sommer-Musik
+		- In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
 		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
 		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
 		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
@@ -550,7 +557,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Söldnerquartiere bei Einheiten ohne definierten Entity-Namen
 		- 'Score.OnBuildingConstructionComplete' bei 'SpielerId = 0' (by Play4FuN)
 	- Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
-		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie hren Zielort nie erreichen
+		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie ihren Zielort nie erreichen
 	- Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
 	- ScoutForester
 		- Default Tree-Set ist Fir (ScoutFoerster_SET_Fir)

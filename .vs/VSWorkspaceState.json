@@ -4,13 +4,11 @@
     "\\base",
     "\\base\\shr",
     "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\01_Thalgrund",
     "\\base\\shr\\Maps\\Singleplayer",
     "\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord",
     "\\base\\shr\\Script",
     "\\base\\shr\\Script\\MainMenu"
   ],
-  "SelectedNode": "\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\MapScript.lua",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

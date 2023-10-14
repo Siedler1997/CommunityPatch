@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>15</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>100</Gold>
+		  <Clay/>
+		  <Wood>0</Wood>
+		  <Stone/>		
+		  <Iron/>
+		  <Sulfur>50</Sulfur>
+	</ResourceCosts>
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<DamageModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>
+	</DamageModifier>
+	
+	
+	<MaxRangeModifier>
+		<Value>300</Value>
+		<Operation>+</Operation>
+	</MaxRangeModifier>
+	
+	<ExplorationModifier>
+		<Value>3</Value>
+		<Operation>+</Operation>	
+	</ExplorationModifier>
+	
+	<Conditions>	
+		  
+		
+		  <!--EntityCondition>
+			  <EntityType>PB_Gunsmith2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition-->	
+	</Conditions>
+</root>

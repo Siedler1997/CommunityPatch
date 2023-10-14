@@ -85,7 +85,7 @@
         <Category>Military</Category>
         <Category>Soldier</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>25</Exploration>
+		  <Exploration>24</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>10</ExperiencePoints>
 		<Upgrade>
@@ -139,7 +139,7 @@
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        
-	        <MaxRange>2300</MaxRange>
+	        <MaxRange>2400</MaxRange>
 	        <MinRange>0.0f</MinRange>
 		</Logic>
 	</Behavior>
