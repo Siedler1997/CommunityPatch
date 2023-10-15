@@ -107,7 +107,7 @@
         <Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>150</MaxHealth>
-		  <Exploration>27</Exploration>
+		  <Exploration>26</Exploration>
 		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
 		  <ArmorAmount>2</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
@@ -174,9 +174,9 @@
 	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXCrossBowArrow</ProjectileEffectID>
-	        <MaxRange>2700</MaxRange>
+	        <MaxRange>2600</MaxRange>
 	        <MinRange>500.0f</MinRange>
-	        <AutoAttackRange>2700</AutoAttackRange>
+	        <AutoAttackRange>2600</AutoAttackRange>
 	        
 			  <HealingPoints>3</HealingPoints>
 	        <HealingSeconds>5</HealingSeconds>

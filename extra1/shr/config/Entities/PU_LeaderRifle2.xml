@@ -92,7 +92,7 @@
         <Category>SplashDamage</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>150</MaxHealth>
-		  <Exploration>30</Exploration>
+		  <Exploration>28</Exploration>
 		  <ArmorClass>ArmorClassLeather</ArmorClass> 
 		  <ArmorAmount>2</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
@@ -154,9 +154,9 @@
 	        <MissChance>2</MissChance>
 	        
 	        <ProjectileEffectID>FXBulletRifleman</ProjectileEffectID>
-	        <MaxRange>3000</MaxRange>
+	        <MaxRange>2800</MaxRange>
 	        <MinRange>0.0f</MinRange>
-	        <AutoAttackRange>3000</AutoAttackRange>
+	        <AutoAttackRange>2800</AutoAttackRange>
 	        
 			  <HealingPoints>3</HealingPoints>
 	        <HealingSeconds>5</HealingSeconds>

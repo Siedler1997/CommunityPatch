@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>30</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>200</Gold>
+		  <Clay/>
+		  <Wood></Wood>
+		  <Stone/>		
+		  <Iron>200</Iron>
+		  <Sulfur/>
+	</ResourceCosts>
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	
+	<MaxRangeModifier>
+		<Value>200</Value>
+		<Operation>+</Operation>
+	</MaxRangeModifier>
+	
+	<ExplorationModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>	
+	</ExplorationModifier>
+		
+	<Conditions>
+		  <TecCondition>
+			  <TecType>T_LeadShot</TecType>			
+		</TecCondition>	
+		
+		  <RequiredEntityConditions>1</RequiredEntityConditions>
+	 	
+		
+		  <EntityCondition>
+			  <EntityType>PB_GunsmithWorkshop2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>			
+		
+	</Conditions>
+</root>

@@ -18,14 +18,15 @@
         <Cost>
 			  <Gold>200</Gold>
 			  <Iron>50</Iron>
+			  <Wood>50</Wood>
 			  <Sulfur>120</Sulfur>
         </Cost>
         <Category>Military</Category>
         <Category>Cannon</Category>
         <Category>SplashDamage</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <MaxHealth>190</MaxHealth>
-		  <Exploration>28</Exploration>
+		  <MaxHealth>200</MaxHealth>
+		  <Exploration>29</Exploration>
 		  <ArmorClass>ArmorClassNone</ArmorClass> 
 		  <ArmorAmount>2</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
@@ -117,10 +118,10 @@
 	        <BattleWaitUntil>3500</BattleWaitUntil>
   			<ProjectileOffsetFront>90</ProjectileOffsetFront>
 	        <ProjectileEffectID>FXCannonBallShrapnel</ProjectileEffectID>
-	        <MaxRange>2800</MaxRange>
+	        <MaxRange>2900</MaxRange>
 	        <MinRange>1000.0f</MinRange>
 	        
-	        <AutoAttackRange>2800</AutoAttackRange>
+	        <AutoAttackRange>2900</AutoAttackRange>
 	        
 	        <UpkeepCost>20</UpkeepCost>
 	        

@@ -94,7 +94,7 @@
         <Category>Soldier</Category>
         <Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>28</Exploration>
+		  <Exploration>26</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>20</ExperiencePoints>
     	<Upgrade>           
@@ -142,14 +142,14 @@
 	        <DamageAmount>16</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
-	        <AutoAttackRange>2800</AutoAttackRange>
+	        <AutoAttackRange>2600</AutoAttackRange>
 	        
 	        <BattleWaitUntil>4300</BattleWaitUntil>
 
 			<MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXBulletRifleman</ProjectileEffectID>
-	        <MaxRange>2800</MaxRange>
+	        <MaxRange>2600</MaxRange>
 	        <MinRange>0.0f</MinRange>
 	        
 		</Logic>
