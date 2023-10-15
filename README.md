@@ -158,7 +158,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
 			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
 			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
-			- Reichweite und Lebenspunkte etwas erhöht
+			- Lebenspunkte etwas erhöht
+			- Reichweite von Bombarden und Bronzekanonen etwas erhöht
 			- Bombarden
 				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
 				- Schaden auf 35 erhöht (vorher: 30)
