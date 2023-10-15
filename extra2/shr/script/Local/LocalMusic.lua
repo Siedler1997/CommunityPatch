@@ -99,6 +99,7 @@ LocalMusic.SetEvelance["summer"] = 		{
 										{ "DogeLongAmb.mp3", 160 },
 										{ "boese_weltkarte10.mp3", 94 },
 										{ "boese_weltkarte12.mp3", 239 },
+										{ "darktime.mp3", 238 },
 										{ "SH_EvilTheme1.mp3", 74 },
 										{ "SH_EvilTheme2.mp3", 171 },
 										
@@ -127,6 +128,7 @@ LocalMusic.SetEvelance["snow"] =		{
 										{ "21_Evelance_Summer3.mp3", 165 },
 
 										{ "boese_weltkarte5.mp3", 59 },
+										{ "darktime.mp3", 238 },
 										{ "SH_IceTheme1.mp3", 186 },
 										{ "SH_IceTheme2.mp3", 127 },
 
@@ -166,6 +168,7 @@ LocalMusic.SetDarkMoor["summer"]=		{
 
 										{ "boese_weltkarte10.mp3", 94 },
 										{ "S6_09_exploration.mp3", 126 },
+										{ "darktime.mp3", 238 },
 										{ "SH_EvilTheme1.mp3", 74 },
 
 										{ "41_Extra1_DarkMoor_Theme1.mp3", 123 },
@@ -181,6 +184,7 @@ LocalMusic.SetDarkMoor["snow"] =		{
 										{ "42_Extra1_DarkMoor_Theme2.mp3", 120 },
 
 										{ "boese_weltkarte5.mp3", 59 },
+										{ "darktime.mp3", 238 },
 										{ "SH_IceTheme1.mp3", 186 },
 										{ "SH_IceTheme2.mp3", 127 },
 										{ "S6_09_exploration.mp3", 126 },

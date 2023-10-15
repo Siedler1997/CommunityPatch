@@ -5,15 +5,12 @@
     "\\base\\shr",
     "\\base\\shr\\config",
     "\\base\\shr\\config\\Entities",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra1\\shr\\config\\Entities",
+    "\\base\\shr\\config\\Technologies",
     "\\extra2",
     "\\extra2\\shr",
     "\\extra2\\shr\\config",
     "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\base\\shr\\config\\Entities\\PU_LeaderBow1.xml",
+  "SelectedNode": "\\base\\shr\\config\\Entities\\PU_Priest.xml",
   "PreviewInSolutionExplorer": false
 }

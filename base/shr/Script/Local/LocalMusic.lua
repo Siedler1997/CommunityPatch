@@ -95,10 +95,11 @@ LocalMusic.SetEvelance["summer"] = 		{
 										{ "22_Evelance_Summer4.mp3", 150 },
 										{ "23_Evelance_Summer5.mp3", 158 },
 										{ "24_Evelance_Summer6.mp3", 168 },
-
+										
 										{ "DogeLongAmb.mp3", 160 },
 										{ "boese_weltkarte10.mp3", 94 },
 										{ "boese_weltkarte12.mp3", 239 },
+										{ "darktime.mp3", 238 },
 										{ "SH_EvilTheme1.mp3", 74 },
 										{ "SH_EvilTheme2.mp3", 171 },
 										
@@ -125,8 +126,9 @@ LocalMusic.SetEvelance["snow"] =		{
 										{ "19_Evelance_Summer1.mp3", 154 },
 										{ "20_Evelance_Summer2.mp3", 152 },
 										{ "21_Evelance_Summer3.mp3", 165 },
-
+										
 										{ "boese_weltkarte5.mp3", 59 },
+										{ "darktime.mp3", 238 },
 										{ "SH_IceTheme1.mp3", 186 },
 										{ "SH_IceTheme2.mp3", 127 },
 
