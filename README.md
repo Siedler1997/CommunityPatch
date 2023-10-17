@@ -617,6 +617,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Raiders-Error (siehe Chat mit Timo)
+- Combat-Music startet nach Laden eines Saves nicht mehr
+	- Oder doch? Jetzt geht sie in der Test-Map wieder...
+- Victory-Screen taucht nicht auf
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -655,6 +659,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Einwohnerlimit pro Dorfzentrumsstufe um 25 erhöhen?
+	- Im Gegenzug Baukosten leicht erhöhen bzw. Lehm hinzufügen?
 - Meuchel-Ability für Diebe(?)
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
