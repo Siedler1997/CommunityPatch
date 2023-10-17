@@ -81,7 +81,7 @@
     <DamageClass id="DC_Bullet">
         <Logic classname="GGL::CDamageClassProps">
             <ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
-            <ArmorClassJerkinFactor>1.8</ArmorClassJerkinFactor>
+            <ArmorClassJerkinFactor>1.5</ArmorClassJerkinFactor>
             <ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
             <ArmorClassIronFactor>0.75</ArmorClassIronFactor>
             <ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
