@@ -47,7 +47,7 @@
 				    <Wood/>
 				    <Stone>200</Stone>
 				    <Gold/>
-				    <Iron>0</Iron>
+				    <Iron>100</Iron>
 				    <Sulfur>200</Sulfur>
             </Cost>
             <Type>PB_Tower3</Type>     			
