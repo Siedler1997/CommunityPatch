@@ -16,6 +16,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Gebäude
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
+	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
 	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
 		- wirkt analog zu 'Maurerhandwerk'
@@ -634,8 +635,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Combat-Music startet nach Laden eines Saves nicht mehr
 	- Oder doch? Jetzt geht sie in der Test-Map wieder...
 - Victory-Screen taucht nicht auf?
-- Einwohnerlimit pro Dorfzentrumsstufe um 25 erhöhen?
-	- Im Gegenzug Baukosten leicht erhöhen bzw. Lehm hinzufügen?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
