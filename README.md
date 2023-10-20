@@ -671,10 +671,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Standard-Füllmenge von Rohstoffschächten erhöhen?
-	- +50% klingt gut
-	- Auch für verschüttete
-	- Ggf. müssen dann ALLE Vanilla-Maps erneut bearbeitet werden
 - Meuchel-Ability für Diebe(?)
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein

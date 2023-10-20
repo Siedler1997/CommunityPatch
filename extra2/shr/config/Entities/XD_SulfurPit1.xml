@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_SulfurPit1</Model>
+        <RenderInFoW>true</RenderInFoW>
+	</Display>
+	<Logic classname="GGL::CResourceDoodadProperties">
+		<Class>GGL::CResourceDoodad</Class>
+        <AccessCategory>AccessCategoryResourceDoodad</AccessCategory>
+        <Category>ResourcePit</Category>
+		<DoNotExecute>True</DoNotExecute>
+		<ApproachPos>
+		    <X>0</X>
+		    <Y>-400</Y>
+		</ApproachPos>
+		<ApproachR>0</ApproachR>
+        <Blocked1>
+            <X>-300</X>
+            <Y>400</Y>
+        </Blocked1>
+        <Blocked2>
+            <X>400</X>
+            <Y>-400</Y>
+        </Blocked2>
+        <TerrainPos1>
+            <X>-500</X>
+            <Y>800</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>700</X>
+            <Y>-500</Y>
+        </TerrainPos2> 
+
+	<!-- Serf placement: Because Radius is greater than 0, serfs will arrange themselves in
+             a circle around the point "Center". If Radius is set to 0 a LineStart and LineEnd
+             must be specified (see XD_StonePit) -->
+        <Radius>550</Radius>
+        <Center>
+            <X>0</X>
+            <Y>0</Y>
+        </Center>	
+
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLResourceDoodadBehaviorProps">
+			<Class>GGL::CResourceDoodadBehavior</Class>
+			<Resource>
+				<Good>SulfurRaw</Good>
+				<Amount>12000</Amount>
+			</Resource>
+		</Logic>
+	</Behavior>
+</root>
