@@ -632,8 +632,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Combat-Music startet nach Laden eines Saves nicht mehr
-	- Oder doch? Jetzt geht sie in der Test-Map wieder...
 - Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)

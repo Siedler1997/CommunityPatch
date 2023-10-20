@@ -139,6 +139,8 @@ function Mission_OnSaveGameLoaded()
 	elseif InitPlayerColorMapping ~= nil then
 		InitPlayerColorMapping()
 	end
+
+	LocalMusic.LastBattleMusicStarted = 0
 	
 	MainWindow_LoadGame_Done()
 
