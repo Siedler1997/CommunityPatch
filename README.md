@@ -18,6 +18,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- können stillgelegt werden (per Button im Siedler-Menü)
 	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
 	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	- Minen: Abbaugeschwindigkeit leicht gesenkt
+	- Grobschmiede (Schmiede Lv. 2): Arbeiterzahl von 6 auf 4 gesenkt
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
 		- wirkt analog zu 'Maurerhandwerk'
 		- erhöht die Verteidigung von Gebäuden um 2 Punkte
