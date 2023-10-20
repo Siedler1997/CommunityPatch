@@ -2,7 +2,7 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		<Class>GD::CDisplaySettler</Class>
-		<Model>PB_Tower3_Cannon</Model>
+		<Model>PB_Tower2_Ballista</Model>
 		<RenderInFoW>false</RenderInFoW>
 	</Display>
 	<Logic classname="EGL::CGLEEntityProps">
@@ -25,16 +25,16 @@
     	    <Class>GGL::CAutoCannonBehavior</Class>
     	    <NumberOfShots>0</NumberOfShots>
     	    <RotationSpeed>7</RotationSpeed>
-    	    <CannonBallEffectType>FXCannonTowerBall</CannonBallEffectType>
+    	    <CannonBallEffectType>FXBalistaTowerArrow</CannonBallEffectType>
   			<ProjectileOffsetFront>100</ProjectileOffsetFront>
     	    <ReloadTime>4000</ReloadTime>
-    	    <MaxAttackRange>3000.0f</MaxAttackRange>
-    	    <MinRange>800.0f</MinRange>
+    	    <MaxAttackRange>2800.0f</MaxAttackRange>
+    	     <MinRange>800.0f</MinRange>
     	    <DamageClass>DC_Strike</DamageClass>
-    	    <DamageAmount>50</DamageAmount>
-    	    <DamageRange>400</DamageRange>
-    	    <BattleTaskList>TL_BATTLE_CANNONTOWER</BattleTaskList>
-    	    <AutoAttackRange>3000</AutoAttackRange>
+    	    <DamageAmount>40</DamageAmount>
+    	    <DamageRange>300</DamageRange>
+    	    <AutoAttackRange>2800</AutoAttackRange>
+    	    <BattleTaskList>TL_BATTLE_BALISTATOWER</BattleTaskList>
     	</Logic>
 		<Display classname="ED::CBehaviorProps">
 			<Class>ED::CDisplayBehaviorMovement</Class>
@@ -46,6 +46,5 @@
 			<Class>GGL::CGLBehaviorDying</Class>
 		</Logic>
 	</Behavior>
-
 
 </root>

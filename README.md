@@ -49,8 +49,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
 		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
 		- Ausbau dauert doppelt so lange (=30 Sek.)
-		- Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
-		- Kanonentürme: Reichweite auf 30 SM erhöht (vorher: 28)
+		- Ballistatürme 
+			- haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
+			- Nachladedauer auf 4 Sek. reduziert (vorher: 5 Sek.)
+			- AoE auf 3 SM reduziert (vorher: 5 SM)
+			- Schaden von 30 auf 40 erhöht
+		- Kanonentürme
+			- Maximalreichweite auf 30 SM erhöht (vorher: 28)
+			- Nachladedauer auf 4 Sek. reduziert (vorher: 5 Sek.)
+			- AoE auf 4 SM reduziert (vorher: 7 SM)
+			- Ausbau zu diesen kostet zusätzlich 100 Eisen
+			- Schaden von 40 auf 50 erhöht
 		- dunkle Türme sind ausbaubar
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
@@ -215,6 +224,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				- reduziert zugleich Angriff jener Einheiten auf 50%
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
+		- Pilgrim
+			- Bombe richtet nur noch 40 Schaden an (vorher: 50)
+			- Selbstschuss-Kanone
+				- anderer Aufprall-Effekt
+				- richtet mit 20 Schaden etwas mehr an (vorher: 15)
 		- Drake 
 			- hat einen Rüstungspunkt weniger (=3)
 			- hat 2 Schadenpunkte weniger (=26)
@@ -620,6 +634,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Combat-Music startet nach Laden eines Saves nicht mehr
 	- Oder doch? Jetzt geht sie in der Test-Map wieder...
 - Victory-Screen taucht nicht auf?
+- Einwohnerlimit pro Dorfzentrumsstufe um 25 erhöhen?
+	- Im Gegenzug Baukosten leicht erhöhen bzw. Lehm hinzufügen?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -658,8 +674,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Einwohnerlimit pro Dorfzentrumsstufe um 25 erhöhen?
-	- Im Gegenzug Baukosten leicht erhöhen bzw. Lehm hinzufügen?
+- Standard-Füllmenge von Rohstoffschächten erhöhen?
+	- +50% klingt gut
+	- Auch für verschüttete
+	- Ggf. müssen dann ALLE Vanilla-Maps erneut bearbeitet werden
 - Meuchel-Ability für Diebe(?)
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein

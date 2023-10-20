@@ -27,12 +27,12 @@
     	    <RotationSpeed>7</RotationSpeed>
     	    <CannonBallEffectType>FXCannonTowerBall</CannonBallEffectType>
   			<ProjectileOffsetFront>100</ProjectileOffsetFront>
-    	    <ReloadTime>5000</ReloadTime>
+    	    <ReloadTime>4000</ReloadTime>
     	    <MaxAttackRange>3000.0f</MaxAttackRange>
     	    <MinRange>800.0f</MinRange>
-    	    <DamageClass>DC_Chaos</DamageClass>
-    	    <DamageAmount>40</DamageAmount>
-    	    <DamageRange>700</DamageRange>
+    	    <DamageClass>DC_Strike</DamageClass>
+    	    <DamageAmount>50</DamageAmount>
+    	    <DamageRange>400</DamageRange>
     	    <BattleTaskList>TL_BATTLE_CANNONTOWER</BattleTaskList>
     	    <AutoAttackRange>3000</AutoAttackRange>
     	</Logic>
