@@ -147,12 +147,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- brauchen etwas länger zum Nachladen
 			- haben eine etwas geringere Sicht- und Reichweite
 			- Effekte der Technologien "Befiederung", "Bleikugel" und "Kimme und Korn" leicht abgeschwächt
-		- Leibeigene-Milizen
+		- Leibeigene/Milizen
 			- regenerieren langsam ihre HP (1 HP - 5 Sek.)
 			- Leibeigene 
 				- haben einen Rüstungspunkt mehr (=1)
 				- haben 50 Lebenspunkte weniger (=150)
 				- bewegen sich etwas langsamer
+				- Bauen Rohstoffe etwas langsamer ab
 			- Milizen 
 				- haben einen Rüstungspunkt mehr (=2)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
