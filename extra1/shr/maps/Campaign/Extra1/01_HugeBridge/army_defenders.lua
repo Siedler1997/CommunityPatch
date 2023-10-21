@@ -16,8 +16,8 @@ function createArmyDefender0()
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword2)
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword2)
         table.insert(troopsDefender, Entities.CU_BanditLeaderBow2)
-        createArmy(6,0,armyDefender0,1,"army0",MEDIUM_EXPERIENCE,troopsDefender,8,1000)
-        createArmy(6,8,armyDefender2,4,"army5",MEDIUM_EXPERIENCE,troopsDefender,8,3000)
+        createArmy(6,0,armyDefender0,1,"army0",MEDIUM_EXPERIENCE,troopsDefender,4+2*CP_Difficulty,1000)
+        createArmy(6,8,armyDefender2,4,"army5",MEDIUM_EXPERIENCE,troopsDefender,4+2*CP_Difficulty,3000)
     end
 
     delayTickerArmy0 = 5

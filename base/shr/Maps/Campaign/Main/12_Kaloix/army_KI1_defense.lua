@@ -65,7 +65,7 @@ DefenseAllowCannon2 = function()
 	if CP_Difficulty == 0 then
 		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon2)
 	else
-		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon3)
+		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon3a)
 	end
 end
 

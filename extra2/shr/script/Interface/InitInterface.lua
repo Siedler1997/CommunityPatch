@@ -502,6 +502,8 @@ HintTable[UpgradeCategories.Cannon1] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon2] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon3] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon4] 		= "UNIT_Cannon"
+HintTable[UpgradeCategories.Cannon3a] 		= "UNIT_Cannon"
+HintTable[UpgradeCategories.Cannon4a] 		= "UNIT_Cannon"
 
 --Addon
 HintTable[UpgradeCategories.SoldierRifle] 		= "UNIT_Rifleman"

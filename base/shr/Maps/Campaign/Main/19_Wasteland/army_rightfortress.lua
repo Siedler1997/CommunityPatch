@@ -27,7 +27,7 @@ setupArmyRightFortress = function()
 		if CP_Difficulty == 1 then
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon1, 1})
 		else
-			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3, 1})
+			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3a, 1})
 		end
 	end
 

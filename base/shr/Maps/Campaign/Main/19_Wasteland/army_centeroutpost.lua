@@ -13,7 +13,7 @@ setupArmyCenterOutpost = function()
 		ArmyCenterOutpost.spawnTypes 		= { { Entities.PU_LeaderCavalry2, 3},
 													{ Entities.PU_LeaderHeavyCavalry2, 3},
 													{ Entities.PU_LeaderBow3, 12},
-													{ Entities.PV_Cannon3, 0} }
+													{ Entities.PV_Cannon3a, 0} }
 	else
 		if CP_Difficulty == 1 then
 			ArmyCenterOutpost.strength			= 6
@@ -28,7 +28,7 @@ setupArmyCenterOutpost = function()
 													{ Entities.PU_LeaderSword4, 12},
 													{ Entities.PU_LeaderPoleArm4, 12},
 													{ Entities.PU_LeaderSword4, 12},
-													{ Entities.PV_Cannon3, 0} }
+													{ Entities.PV_Cannon3a, 0} }
 	end
 	ArmyCenterOutpost.spawnPos			= GetPosition("KI2_SpawnPos")
 	ArmyCenterOutpost.spawnGenerator	= "KI2_Outpost"

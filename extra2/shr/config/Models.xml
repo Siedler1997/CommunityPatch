@@ -3995,6 +3995,19 @@
 		<Effect>SettlerPlayerColorSpecular</Effect>
 		<OcclusionReceiver>True</OcclusionReceiver>
 	</Model>
+
+	<Model id="PV_Cannon3a">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>170</SelectionRadius>
+	</Model>
+	<Model id="PV_Cannon4a">
+		<Effect>SimpleUnitPlayerColorSpecular</Effect>
+		<SelectionTexture>Selection</SelectionTexture>
+		<OcclusionReceiver>True</OcclusionReceiver>
+		<SelectionRadius>180</SelectionRadius>
+	</Model>
 	<Model id="A_ME_Bear">
 		<Effect>SkinnedObject</Effect>
 	</Model>

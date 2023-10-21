@@ -2219,7 +2219,7 @@ function RaidersControl()
 				if enemy ~= false then
 					for k = 1, table.getn(rtable.raid_units) do
 						local task = Logic.GetCurrentTaskList(rtable.raid_units[k])
-						if string.sub(task, 1, 9) ~= "TL_BATTLE" and task ~= "TL_START_BATTLE" then
+						if task ~= nil and string.sub(task, 1, 9) ~= "TL_BATTLE" and task ~= "TL_START_BATTLE" then
 							Attack(rtable.raid_units[k], GetPosition(enemy))
 						end
 					end

@@ -16,7 +16,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Gebäude
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
+	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
 	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	- Minen: Abbaugeschwindigkeit leicht gesenkt
+	- Grobschmiede (Schmiede Lv. 2): Arbeiterzahl von 6 auf 4 gesenkt
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
 		- wirkt analog zu 'Maurerhandwerk'
 		- erhöht die Verteidigung von Gebäuden um 2 Punkte
@@ -49,8 +52,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
 		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
 		- Ausbau dauert doppelt so lange (=30 Sek.)
-		- Ballistatürme haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
-		- Kanonentürme: Reichweite auf 30 SM erhöht (vorher: 28)
+		- Ballistatürme 
+			- haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
+			- Nachladedauer auf 4 Sek. reduziert (vorher: 5 Sek.)
+			- AoE auf 3 SM reduziert (vorher: 5 SM)
+			- Schaden von 30 auf 40 erhöht
+		- Kanonentürme
+			- Maximalreichweite auf 30 SM erhöht (vorher: 28)
+			- Nachladedauer auf 4 Sek. reduziert (vorher: 5 Sek.)
+			- AoE auf 4 SM reduziert (vorher: 7 SM)
+			- Ausbau zu diesen kostet zusätzlich 100 Eisen
+			- Schaden von 40 auf 50 erhöht
 		- dunkle Türme sind ausbaubar
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
@@ -137,12 +149,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- brauchen etwas länger zum Nachladen
 			- haben eine etwas geringere Sicht- und Reichweite
 			- Effekte der Technologien "Befiederung", "Bleikugel" und "Kimme und Korn" leicht abgeschwächt
-		- Leibeigene-Milizen
+		- Leibeigene/Milizen
 			- regenerieren langsam ihre HP (1 HP - 5 Sek.)
 			- Leibeigene 
 				- haben einen Rüstungspunkt mehr (=1)
 				- haben 50 Lebenspunkte weniger (=150)
 				- bewegen sich etwas langsamer
+				- Bauen Rohstoffe etwas langsamer ab
 			- Milizen 
 				- haben einen Rüstungspunkt mehr (=2)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
@@ -166,6 +179,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Eisenkanonen
 				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
 				- Schaden auf 70 erhöht (vorher: 65)
+			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
 		- Scharfschützen
 			- sind nicht mehr ganz so effektiv gegen Gebäude
 			- Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
@@ -215,6 +229,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				- reduziert zugleich Angriff jener Einheiten auf 50%
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
+		- Pilgrim
+			- Bombe richtet nur noch 40 Schaden an (vorher: 50)
+			- Selbstschuss-Kanone
+				- anderer Aufprall-Effekt
+				- richtet mit 20 Schaden etwas mehr an (vorher: 15)
 		- Drake 
 			- hat einen Rüstungspunkt weniger (=3)
 			- hat 2 Schadenpunkte weniger (=26)
@@ -500,6 +519,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- MultiSelection-Button (Textur by Zedeg)
 		- AudioFeedback stammt von den Kundschaftern
 	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
+	- Die Reskins von Eisen- und Belagerungskanone heißen 'PV_Cannon3a' und 'PV_Cannon4a'
 	- Die Technologie 'KI-Bonus' 
 		- ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
 		- ist bei allen Spieler-Entities hinterlegt
@@ -613,10 +633,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Kontrollierbare NPCs 
 		- belegen Plätze in Wohnhäuser-Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
 		- können zum Holzfällen geschickt werden und sehen dabei aus wie Leibeigene
+	- Kanonen-Skins sind bei der Herstellung in der Kanonenmanufaktur noch nicht sichtbar
+	- Map 'Thalbach' ist schlecht gestaltet und/oder verbuggt
+		- Der CP hat hier nur Schadenbegrenzung betrieben. Die Map stammt von Ubisoft selbst...
 
 
 
 ## ToDos:
+- Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -650,12 +674,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Indikator für CP-Installation
 	- (De-)Installer
 		- Backup-Funktion(?)
-		- Test-Maps und Thalbach (extra1) entfernen
+		- Test-Maps entfernen
 
 
 
 ## Weitere Ideen:
 - Meuchel-Ability für Diebe(?)
+- extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren

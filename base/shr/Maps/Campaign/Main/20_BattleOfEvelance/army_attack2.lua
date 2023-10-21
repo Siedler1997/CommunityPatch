@@ -85,7 +85,7 @@ createArmyAttack2 = function()
 
 			if armyType == 0 then
 			
-				createArmy2(size,Entities.PV_Cannon4,Entities.PV_Cannon4,Entities.PU_LeaderBow4)
+				createArmy2(size,Entities.PV_Cannon4a,Entities.PV_Cannon4a,Entities.PU_LeaderBow4)
 				
 			elseif armyType == 1 then
 				if CP_Difficulty == 0 then

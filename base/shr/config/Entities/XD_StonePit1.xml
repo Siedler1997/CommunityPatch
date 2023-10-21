@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_StonePit1</Model>
+        <RenderInFoW>true</RenderInFoW>
+	</Display>
+	<Logic classname="GGL::CResourceDoodadProperties">
+		<Class>GGL::CResourceDoodad</Class>
+    <AccessCategory>AccessCategoryResourceDoodad</AccessCategory>
+		<DoNotExecute>True</DoNotExecute>
+		<ApproachX>0</ApproachX>
+		<ApproachY>0</ApproachY>
+		<ApproachR>500</ApproachR>
+        <TerrainPos1>
+            <X>-500</X>
+            <Y>600</Y>
+        </TerrainPos1>
+        <TerrainPos2>
+            <X>700</X>
+            <Y>-600</Y>
+        </TerrainPos2> 
+        
+        <!-- Serf placement: Radius must be set to 0 so that LineStart and LineEnd are used. If
+             Radius is greater than 0, serfs will arrange themselves in a circle. LineStart and 
+             LineEnd are the two end points of the line on which serfs will stand when extracting
+             resources from this doodad -->
+        <Radius>0</Radius>
+        <LineStart>
+            <X>-350</X>
+            <Y>300</Y>
+        </LineStart>
+        <LineEnd>
+            <X>550</X>
+            <Y>-100</Y>
+        </LineEnd>
+        
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLResourceDoodadBehaviorProps">
+			<Class>GGL::CResourceDoodadBehavior</Class>
+			<Resource>
+				<Good>StoneRaw</Good>
+				<Amount>21000</Amount>
+				<IsAccessExclusive>false</IsAccessExclusive>
+			</Resource>
+		</Logic>
+	</Behavior>
+</root>

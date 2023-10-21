@@ -16,7 +16,7 @@ setupArmyDefendPrincess = function()
 													{ Entities.CU_BlackKnight_LeaderMace2, 8},
 													{ Entities.CU_Barbarian_LeaderClub2, 8},
 													{ Entities.CU_Barbarian_LeaderClub2, 8},
-													{ Entities.PV_Cannon3, 0}
+													{ Entities.PV_Cannon3a, 0}
 												}
 	else
 		armyDefendPrincess.strength			= 8
@@ -26,8 +26,8 @@ setupArmyDefendPrincess = function()
 													{ Entities.PU_LeaderSword4, 8},
 													{ Entities.PU_LeaderPoleArm4, 8},
 													{ Entities.PU_LeaderPoleArm4, 8},
-													{ Entities.PV_Cannon3, 0},
-													{ Entities.PV_Cannon3, 0}
+													{ Entities.PV_Cannon3a, 0},
+													{ Entities.PV_Cannon3a, 0}
 												}
 	end
 														

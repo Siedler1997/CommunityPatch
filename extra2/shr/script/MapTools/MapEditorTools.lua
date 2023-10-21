@@ -101,7 +101,7 @@ end
 ---------------------------------------------------------------------------------------------------------------
 -- Setup AI 
 ---------------------------------------------------------------------------------------------------------------
-function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, _aggressiveLevel, _peaceTime)
+function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, _aggressiveLevel, _peaceTime, _evilMod)
 
 	-- Valid
 	if 	_strength == 0 or _strength > 3 or
@@ -162,8 +162,14 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 		SetupPlayerAi(_playerId,description)
 
 	-- Tech level
-	
 		local CannonEntityType = Entities["PV_Cannon"..(_techlevel+1)]
+		if _evilMod == true then
+			if CannonEntityType == Entities.PV_Cannon3 then
+				CannonEntityType = Entities.PV_Cannon3a
+			elseif CannonEntityType == Entities.PV_Cannon4 then
+				CannonEntityType = Entities.PV_Cannon4a
+			end
+		end
 
 		-- Upgrade entities..Rifle?
 		for i=1,_techlevel do
