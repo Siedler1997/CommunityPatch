@@ -15,7 +15,7 @@ setupArmyP5Defense = function()
 	if CP_Difficulty == 0 then
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
 	else
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4)
+		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
 	end
 
 	ArmyP5Defense.ignoreAttack		=	true

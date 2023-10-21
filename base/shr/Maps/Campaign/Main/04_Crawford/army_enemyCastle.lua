@@ -38,7 +38,7 @@ createArmyEnemyCastle = function()
 		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PV_Cannon2
 		else
-			troopDescription.leaderType = Entities.PV_Cannon3
+			troopDescription.leaderType = Entities.PV_Cannon3a
 		end			
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		

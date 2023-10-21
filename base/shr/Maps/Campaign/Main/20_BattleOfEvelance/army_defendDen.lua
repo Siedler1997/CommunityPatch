@@ -29,8 +29,8 @@ createArmyDefendDen = function()
 		
 			Entities.PU_LeaderSword4,
 			Entities.PU_LeaderBow4,
-			Entities.PV_Cannon4,
-			Entities.PV_Cannon4
+			Entities.PV_Cannon4a,
+			Entities.PV_Cannon4a
 		
 		}
 
@@ -100,7 +100,7 @@ createArmyDefendDen = function()
 		
 			Entities.PU_LeaderPoleArm4,
 			Entities.PU_LeaderPoleArm4,
-			Entities.PV_Cannon4
+			Entities.PV_Cannon4a
 		
 		}
 
@@ -158,8 +158,8 @@ createArmyDefendDen = function()
 
 		troops = {
 		
-			Entities.PV_Cannon4,
-			Entities.PV_Cannon4
+			Entities.PV_Cannon4a,
+			Entities.PV_Cannon4a
 		
 		}
 
@@ -192,12 +192,12 @@ createArmyDefendDen = function()
 
 		troops = {
 		
-			Entities.PU_LeaderHeavyCavalry3,
-			Entities.PU_LeaderHeavyCavalry3,
-			Entities.PU_LeaderHeavyCavalry3,
-			Entities.PU_LeaderHeavyCavalry3,
-			Entities.PU_LeaderHeavyCavalry3,
-			Entities.PU_LeaderHeavyCavalry3,
+			Entities.PU_LeaderHeavyCavalry2,
+			Entities.PU_LeaderHeavyCavalry2,
+			Entities.PU_LeaderHeavyCavalry2,
+			Entities.PU_LeaderHeavyCavalry2,
+			Entities.PU_LeaderHeavyCavalry2,
+			Entities.PU_LeaderHeavyCavalry2,
 		}
 
 		createDefender(armyDefendPatrol,troops)

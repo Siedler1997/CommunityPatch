@@ -15,8 +15,8 @@ setupArmyAI1Attack = function()
 											UpgradeCategories.LeaderSword, 
 											UpgradeCategories.LeaderBow }
 	if CP_Difficulty == 2 then
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3)
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3)
+		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3a)
+		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3a)
 	else
 		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon2)
 		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon2)

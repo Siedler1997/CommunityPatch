@@ -23,7 +23,7 @@ initArmyP2Defense = function(_army, _name, _index, _pos, _defenseRange)
 										UpgradeCategories.LeaderSword,
 										UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon2,
-										Entities.PV_Cannon3 }
+										Entities.PV_Cannon3a }
 	else
 		_army.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 										UpgradeCategories.LeaderSword,
@@ -31,7 +31,7 @@ initArmyP2Defense = function(_army, _name, _index, _pos, _defenseRange)
 										Entities.PV_Cannon1,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon2,
-										Entities.PV_Cannon3 }
+										Entities.PV_Cannon3a }
 	end
 
 	_army.ignoreAttack		=	true

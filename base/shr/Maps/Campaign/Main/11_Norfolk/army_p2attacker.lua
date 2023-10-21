@@ -13,14 +13,14 @@ setupArmyP2Attacker = function()
 		ArmyP2Attacker.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderSword,
 													Entities.PV_Cannon2,
-													Entities.PV_Cannon3 }
+													Entities.PV_Cannon3a }
 	else
 		ArmyP2Attacker.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderSword,
 													Entities.PV_Cannon1,
 													Entities.PV_Cannon2,
 													Entities.PV_Cannon2,
-													Entities.PV_Cannon3 }
+													Entities.PV_Cannon3a }
 	end
 
 	-- Attack parameter
