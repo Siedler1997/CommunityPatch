@@ -227,6 +227,14 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Hero5_Outlaw</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
@@ -688,6 +696,14 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Serf</EntityType>
 				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
 			</ValueSound>
@@ -1085,6 +1101,14 @@
 			</ValueSound>
 
 			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Hero5_Outlaw</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>

@@ -953,6 +953,8 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>PV_Cannon3a</Entity>
+	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>
 	<Entity>CU_SmithIdle</Entity>
 	<Entity>CU_StonecutterIdle</Entity>

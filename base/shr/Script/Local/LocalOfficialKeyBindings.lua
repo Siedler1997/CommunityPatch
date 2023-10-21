@@ -479,11 +479,13 @@ KeyBindings_SelectCannons()
 	CannonTable[1] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon1, 20 )}
 	CannonTable[2] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon2, 20 )}
 	CannonTable[3] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon3, 20 )}
-	CannonTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon4, 20 )}
+	CannonTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon3a, 20 )}
+	CannonTable[5] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon4, 20 )}
+	CannonTable[6] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PV_Cannon4a, 20 )}
 	
 	local AllCannons = {}
 	
-	for i=1,4,1
+	for i=1,6,1
 	do
 		for j=2,table.getn(CannonTable[i]),1
 		do

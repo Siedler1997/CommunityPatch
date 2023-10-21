@@ -179,6 +179,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Eisenkanonen
 				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
 				- Schaden auf 70 erhöht (vorher: 65)
+			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
 		- Scharfschützen
 			- sind nicht mehr ganz so effektiv gegen Gebäude
 			- Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
@@ -518,6 +519,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- MultiSelection-Button (Textur by Zedeg)
 		- AudioFeedback stammt von den Kundschaftern
 	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
+	- Die Reskins von Eisen- und Belagerungskanone heißen 'PV_Cannon3a' und 'PV_Cannon4a'
 	- Die Technologie 'KI-Bonus' 
 		- ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
 		- ist bei allen Spieler-Entities hinterlegt
@@ -631,10 +633,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Kontrollierbare NPCs 
 		- belegen Plätze in Wohnhäuser-Bauernhöfen und werden zahlenmäßig in der Hungernden-/Obdachlosenanzeige erfasst
 		- können zum Holzfällen geschickt werden und sehen dabei aus wie Leibeigene
+	- Kanonen-Skins sind bei der Herstellung in der Kanonenmanufaktur noch nicht sichtbar
+	- Map 'Thalbach' ist schlecht gestaltet und/oder verbuggt
+		- Der CP hat hier nur Schadenbegrenzung betrieben. Die Map stammt von Ubisoft selbst...
 
 
 
 ## ToDos:
+- MainMenu background auch für niedrigere Auflösungen
 - Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
@@ -669,12 +675,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Indikator für CP-Installation
 	- (De-)Installer
 		- Backup-Funktion(?)
-		- Test-Maps und Thalbach (extra1) entfernen
+		- Test-Maps entfernen
 
 
 
 ## Weitere Ideen:
 - Meuchel-Ability für Diebe(?)
+- extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren

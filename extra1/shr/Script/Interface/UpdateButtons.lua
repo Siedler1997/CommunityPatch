@@ -352,6 +352,7 @@ function GUIUpdate_FindView()
 	--cannons	
 	local CanAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon3a) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PV_Cannon4a)
 	if CanAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindCannon ,1)
 	else

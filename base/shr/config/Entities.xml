@@ -757,6 +757,8 @@
 	<Entity>CU_BanditSoldierBow1</Entity>
 	<Entity>CU_BanditSoldierBow2</Entity>
 
+	<Entity>PV_Cannon3a</Entity>
+	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>
 	<Entity>CB_DestroyAbleRuinMonastery1</Entity>
 	<Entity>CU_VeteranCaptain</Entity>

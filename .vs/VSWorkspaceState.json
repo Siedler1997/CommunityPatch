@@ -1,17 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\base",
     "\\base\\shr",
     "\\base\\shr\\config",
     "\\base\\shr\\config\\Entities",
-    "\\extra1",
     "\\extra1\\shr",
     "\\extra1\\shr\\config",
+    "\\extra1\\shr\\config\\Entities",
     "\\extra2\\shr",
     "\\extra2\\shr\\config",
     "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\extra1\\shr\\config\\DamageClasses.xml",
   "PreviewInSolutionExplorer": false
 }
