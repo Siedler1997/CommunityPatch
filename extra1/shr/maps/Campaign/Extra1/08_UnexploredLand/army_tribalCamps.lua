@@ -35,6 +35,7 @@ function CreateArmyTribalCamps()
 		ArmyTribalCamps[i].noEnemy				=	true
 		ArmyTribalCamps[i].noEnemyDistance		=	5000
 		ArmyTribalCamps[i].endless				=	true
+		ArmyTribalCamps[i].experiencePoints		=	CP_Difficulty
 		
 		
 		-- Spawn generator

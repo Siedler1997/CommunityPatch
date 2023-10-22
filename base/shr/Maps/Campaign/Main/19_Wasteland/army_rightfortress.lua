@@ -27,7 +27,7 @@ setupArmyRightFortress = function()
 		if CP_Difficulty == 1 then
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon1, 1})
 		else
-			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3, 1})
+			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3a, 1})
 		end
 	end
 
@@ -35,6 +35,7 @@ setupArmyRightFortress = function()
 	ArmyRightFortress.spawnGenerator	= "KI3_HQ"
 	ArmyRightFortress.respawnTime		= 60
 	ArmyRightFortress.endless			= true
+	ArmyRightFortress.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyRightFortress)

@@ -94,19 +94,23 @@
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	
+	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- Crawford
-		Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)		-- Outposts
-		Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- South village
 		Display.SetPlayerColorMapping(7, FRIENDLY_COLOR1)		-- Bishop
 		Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- Leonardo
-		Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
-		Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
+	else
+		Display.SetPlayerColorMapping(2, 9)		-- Crawford
+		Display.SetPlayerColorMapping(7, 9)		-- Bishop
+		Display.SetPlayerColorMapping(8, 9)		-- Leonardo
+	end
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-		end
-		
+	Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)		-- Outposts
+	Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- South village
+	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
+	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
 end
 
 
@@ -144,14 +148,16 @@ function Mission_InitResources()
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
+			animalTech2 = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			ResearchAnimalTechs(5, animalTech2)
+			ResearchAnimalTechs(6, animalTech2)
 		end
 
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)
 	end
 end
 
@@ -276,20 +282,14 @@ function Mission_FirstMapAction()
 	--
 	--
 	--	startQuestDestroyKerberos()
-	
-	if CP_Difficulty == 0 then
-		CreateRandomChests()
-	else
-		local addWolves = 0
+
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		else
+			CreateRandomChests()
 		end
-
+		--[[
 		local vcpos1 = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos1.X,vcpos1.Y,0,0)
@@ -301,14 +301,14 @@ function Mission_FirstMapAction()
 		local vcpos3 = GetPosition("p5_vc1_empty2")
 		DestroyEntity("p5_vc1_empty2")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
-
+		--]]
 
 		for i = 1, 3 do
 			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
 		end
 
-		DestroyEntity("p5_vc1")
-		DestroyEntity("p5_vc2")
+		--DestroyEntity("p5_vc1")
+		--DestroyEntity("p5_vc2")
 		
 		local bosspos1 = GetPosition("spawn1")
 		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
@@ -322,22 +322,27 @@ function Mission_FirstMapAction()
 		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
 		LookAt(bossID3, "Helias")
 
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, samount = (2 + addWolves), ramount = (10 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (7 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (8 + addWolves)})
-		--SetPosition("Dario", GetPosition(bossID3))
 		
 		if CP_Difficulty == 2 then
 			for i = 1, 5 do
 				ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
 			end
 		end
+	else
+		CreateRandomChests()
 	end
 
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1", "rudelpos3_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
 	--Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
+	--StartSimpleJob("GetMousePos")
 end
 
 
@@ -346,10 +351,3 @@ StartIntroPart2 = function()
 	StartCutscene("Cutscene1", startQuestTower1)
 
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

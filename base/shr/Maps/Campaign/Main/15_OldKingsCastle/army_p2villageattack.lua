@@ -83,7 +83,7 @@ StartArmyP2VillageAttack = function()
 		UpgradeP2PoleArm()
 		UpgradeP2Sword()
 		UpgradeP2Bow()
-	else
+	end
 end
 
 AllowArmyP2VillageAttackCannons = function()
@@ -91,8 +91,8 @@ AllowArmyP2VillageAttackCannons = function()
 		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon2)
 		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon2)
 	else
-		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3)
-		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3)
+		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3a)
+		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3a)
 	end
 end
 

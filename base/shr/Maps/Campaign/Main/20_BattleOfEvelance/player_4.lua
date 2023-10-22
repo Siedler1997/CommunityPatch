@@ -11,9 +11,9 @@ createPlayer4 = function()
 	--	set up default information
 	
 		if CP_Difficulty == 0 then
-			MapEditor_SetupAI(player4.id, 2, 3000, 3, "outpost", 1, 0)
+			MapEditor_SetupAI(player4.id, 2, 3000, 3, "outpost", 1, 0, true)
 		else
-			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 2, 0)
+			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 2, 0, true)
 		end
 		local description = {
 		

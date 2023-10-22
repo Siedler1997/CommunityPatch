@@ -44,6 +44,7 @@ function CreateArmyNephilimsHQ()
 			ArmyNephilimsHQ[i].maxSpawnAmount		=	2
 		end
 		ArmyNephilimsHQ[i].endless				=	true
+		ArmyNephilimsHQ[i].experiencePoints	=	CP_Difficulty
 		
 		-- Spawn generator
 		SetupAITroopSpawnGenerator("ArmyNephilimsHQ"..i, ArmyNephilimsHQ[i])

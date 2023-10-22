@@ -17,9 +17,9 @@ setupArmyKerberosDefense = function()
 														{ Entities.CU_Barbarian_LeaderClub2, 12},
 														{ Entities.PU_LeaderBow4, 	 8},
 														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PV_Cannon4, 0},
-														{ Entities.PV_Cannon4, 0},
-														{ Entities.PV_Cannon4, 0}, 
+														{ Entities.PV_Cannon3a, 0},
+														{ Entities.PV_Cannon3a, 0},
+														{ Entities.PV_Cannon3a, 0}, 
 													}
 	else
 		ArmyKerberosDefense.spawnTypes 			= 	{ 	{ Entities.PU_LeaderSword4, 12},
@@ -27,9 +27,9 @@ setupArmyKerberosDefense = function()
 														{ Entities.PU_LeaderPoleArm4, 12},
 														{ Entities.PU_LeaderBow4, 	 8},
 														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PV_Cannon4, 0},
-														{ Entities.PV_Cannon4, 0},
-														{ Entities.PV_Cannon4, 0}, 
+														{ Entities.PV_Cannon4a, 0},
+														{ Entities.PV_Cannon4a, 0},
+														{ Entities.PV_Cannon4a, 0}, 
 													}
 	end
 													
@@ -44,6 +44,7 @@ setupArmyKerberosDefense = function()
 	ArmyKerberosDefense.outerDefenseRange	= 	13100			--10000
 	ArmyKerberosDefense.Attack				= 	false
 	ArmyKerberosDefense.AttackAllowed		= 	false
+	ArmyKerberosDefense.experiencePoints	=	CP_Difficulty
 
 
 	-- Setup army
@@ -68,8 +69,8 @@ setupArmyKerberosDefense = function()
 			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderBow3, 8},
 															{ Entities.CU_BlackKnight_LeaderMace2, 8},
 															{ Entities.CU_Barbarian_LeaderClub2, 8},
-															{ Entities.PV_Cannon3, 0},
-															{ Entities.PV_Cannon3, 0}
+															{ Entities.PV_Cannon3a, 0},
+															{ Entities.PV_Cannon3a, 0}
 														}
 		else
 			ArmyKerberosDefense[i].strength			= 8
@@ -79,8 +80,8 @@ setupArmyKerberosDefense = function()
 															{ Entities.PU_LeaderSword4, 8},
 															{ Entities.PU_LeaderPoleArm4, 8},
 															{ Entities.PU_LeaderPoleArm4, 8},
-															{ Entities.PV_Cannon3, 0},
-															{ Entities.PV_Cannon3, 0}
+															{ Entities.PV_Cannon3a, 0},
+															{ Entities.PV_Cannon3a, 0}
 														}
 		end
 														
@@ -95,6 +96,7 @@ setupArmyKerberosDefense = function()
 		ArmyKerberosDefense[i].outerDefenseRange= 	2000
 		ArmyKerberosDefense[i].Attack			= 	false
 		ArmyKerberosDefense[i].AttackAllowed	= 	false
+		ArmyKerberosDefense[i].experiencePoints	=	CP_Difficulty
 	
 	
 		-- Setup army

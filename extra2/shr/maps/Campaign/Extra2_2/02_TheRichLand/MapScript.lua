@@ -66,7 +66,19 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-	Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(2, 3)
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)
+	else
+		Display.SetPlayerColorMapping(4, 1)
+	end
+	Display.SetPlayerColorMapping(5, NPC_COLOR)
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)
 end
 
@@ -86,8 +98,16 @@ function Mission_InitTechnologies()
 	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 )
 		Logic.SetTechnologyState(gvMission.PlayerID, Technologies.GT_Mathematics	,0 ) 
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
 		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(7)
 	end
 end
 
@@ -131,12 +151,8 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(900)
-		AddWood(1500)
-		AddClay(800)
-		AddStone(700)
-		AddIron(0)
-		AddSulfur(0)
+		GlobalMissionScripting.GiveResouces(1, 900, 800, 1500, 700, 0, 0)
+
 		SetHealth("Base1",50)
 		SetHealth("Base2",50)
 		SetHealth("Base3",50)
@@ -146,9 +162,10 @@ function Mission_FirstMapAction()
 
 
 	-- Set Music-Set
-
-		LocalMusic.UseSet = EUROPEMUSIC
 	
+		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+		LocalMusic.UseSet = EUROPEMUSIC
+		
 	--	start quest
 
 		start1stChapter()
@@ -161,15 +178,25 @@ function Mission_FirstMapAction()
 	--	EnableDebugging()
 
 		if CP_Difficulty > 0 then
-			local vcpos = GetPosition("vc_empty") 		
-
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+			end
+			--[[
+			local vcpos = GetPosition("vc_empty") 	
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.CB_Camp01,(vcpos.X - 300),(vcpos.Y + 200),90,2)
 			local enemycamp = Logic.CreateEntity(Entities.XD_Camp,(vcpos.X - 400),(vcpos.Y - 500),0,0)
 			local barbenemies = AI.Entity_CreateFormation(2, Entities.CU_VeteranLieutenant, 0, 0, (vcpos.X - 600),(vcpos.Y - 500), 0, 0, 2, 0)
 			LookAt(barbenemies, enemycamp)
+			--]]
+			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+			RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+			RaidersCreate({player = 7, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+			RaidersCreate({player = 7, pos = "rudelpos4", revier = {"rudelpos4", "rudelpos4_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+			RaidersCreate({player = 7, pos = "rudelpos5", revier = {"rudelpos5", "rudelpos5_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 		end
 
 		--Tools.ExploreArea(-1, -1, 900)   
+		--StartSimpleJob("GetMousePos")
 	end
 

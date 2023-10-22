@@ -374,31 +374,26 @@ end
 
 function PayResources_FeedbackNotEnoughRes( _resType, _nMissing )
 	local mistext = ""
-	if Fix_gLang == "de" then
-		if _resType == "Gold" then mistext = mistext .. _nMissing.." Taler fehlen im Säckel!"
-		elseif _resType == "Clay" then mistext = mistext .. _nMissing.." Lehm fehlt!"
-		elseif _resType == "Wood" then mistext = mistext .. _nMissing.." Holz muss noch geschlagen werden!"
-		elseif _resType == "Stone" then mistext = mistext .. _nMissing.." Stein muss noch beschafft werden!"
-		elseif _resType == "Iron" then mistext = mistext .. _nMissing.." Eisen fehlt!"
-		elseif _resType == "Sulfur" then mistext = mistext .. _nMissing.." Schwefel wird noch benötigt!"
-		end
-	else
-		if _resType == "Gold" then mistext = mistext .. _nMissing.." thalers are missing!"
-		elseif _resType == "Clay" then mistext = mistext .. _nMissing.." clay is missing!"
-		elseif _resType == "Wood" then mistext = mistext .. _nMissing.." wood must be felled!"
-		elseif _resType == "Stone" then mistext = mistext .. _nMissing.." stones need to be procured!"
-		elseif _resType == "Iron" then mistext = mistext .. _nMissing.." iron is missing!"
-		elseif _resType == "Sulfur" then mistext = mistext .. _nMissing.." sulphur required!"
-		end
+
+	if _resType == "Gold" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughMoney"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Gold, _nMissing)
+	elseif _resType == "Clay" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughClay"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Clay, _nMissing)
+	elseif _resType == "Wood" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughWood"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Wood, _nMissing)
+	elseif _resType == "Stone" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughStone"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Stone, _nMissing)
+	elseif _resType == "Iron" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughIron"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Iron, _nMissing)
+	elseif _resType == "Sulfur" then 
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughSulfur"), _nMissing))
+		GUI.SendNotEnoughResourcesFeedbackEvent(ResourceType.Sulfur, _nMissing)
 	end
-	if _resType == "Gold" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughGold_rnd_01);
-	elseif _resType == "Clay" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughClay_rnd_01);
-	elseif _resType == "Wood" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughWood_rnd_01);
-	elseif _resType == "Stone" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughStone_rnd_01);
-	elseif _resType == "Iron" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughIron_rnd_01);
-	elseif _resType == "Sulfur" then Sound.PlayQueuedFeedbackSound(Sounds.VoicesMentor_INFO_NotEnoughSulfur_rnd_01);
-	end
-	Message(Umlaute(mistext))
 end
 
 --------------------------------------------------------------------------------

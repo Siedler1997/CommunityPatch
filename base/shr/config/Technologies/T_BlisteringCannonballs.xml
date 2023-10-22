@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>20</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>200</Gold>
+		  <Clay/>
+		  <Wood/>
+		  <Stone/>		
+		  <Iron/>
+		  <Sulfur>400</Sulfur>
+	</ResourceCosts>
+  <AutomaticResearch>false</AutomaticResearch>	
+  <UseForStatisticsFlag>true</UseForStatisticsFlag>
+  
+  <DamageModifier>
+		<Value>5</Value>
+		<Operation>+</Operation>
+	</DamageModifier>
+  
+		<Conditions>
+		  <TecCondition>
+			  <TecType>T_EnhancedGunPowder</TecType>			
+		</TecCondition>	
+		  <RequiredEntityConditions>1</RequiredEntityConditions>
+	 	
+		
+		  <EntityCondition>
+			  <EntityType>PB_Alchemist2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

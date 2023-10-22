@@ -163,10 +163,10 @@ end
 
 AllowP5Cannon4 = function()
 
-	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4)
-	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4)
-	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4)
-	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4)
+	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4a)
+	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4a)
+	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4a)
+	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4a)
 
 
 end

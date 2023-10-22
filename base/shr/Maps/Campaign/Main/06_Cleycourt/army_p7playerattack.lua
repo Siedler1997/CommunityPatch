@@ -26,6 +26,7 @@ setupArmyP7PlayerAttack = function()
 		ArmyP7PlayerAttack.Attack				= 	true
 		ArmyP7PlayerAttack.AttackAllowed		= 	true
 		ArmyP7PlayerAttack.AttackPos			=	GetPosition("LeoCheckpoint3")
+		ArmyP7PlayerAttack.experiencePoints		=	CP_Difficulty
 
 		-- Setup army
 		SetupArmy(ArmyP7PlayerAttack)

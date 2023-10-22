@@ -102,10 +102,7 @@ function NPCHQ3BriefingFinished()
 						
 		Move("P1Rifles", "HQ3EnemyPos")
 
-		AddGold(1000)
-		AddWood(1000)
-		AddClay(500)
-		AddStone(500)
+		GlobalMissionScripting.GiveResouces(1, 1000, 500, 1000, 500, 0, 0)
 						
 		end1stChapter()
 					

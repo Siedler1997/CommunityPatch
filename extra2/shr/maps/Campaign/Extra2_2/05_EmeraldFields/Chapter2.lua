@@ -432,49 +432,49 @@ function EnemyFirstArmy()
 		if i >= 5 then
 			pos = GetPosition("EnemySpawn4")
 		end
-		local EnemyFirst = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,experience,0)
+		local EnemyFirst = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 		SetEntityName(EnemyFirst, "EnemyFirst"..i)
 	end
 
 	local pos = GetPosition("EnemySpawn2")
-	EnemyFirst11 = AI.Entity_CreateFormation(2,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst11 = AI.Entity_CreateFormation(2,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst11, "EnemyFirst11")
 
 	local pos = GetPosition("EnemySpawn2")
-	EnemyFirst12 = AI.Entity_CreateFormation(2,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst12 = AI.Entity_CreateFormation(2,Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst12, "EnemyFirst12")
 
 	local pos = GetPosition("EnemySpawn3")
-	EnemyFirst13 = AI.Entity_CreateFormation(2,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst13 = AI.Entity_CreateFormation(2,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst13, "EnemyFirst13")
 
 
 	local pos = GetPosition("EnemySpawn3")
-	EnemyFirst14 = AI.Entity_CreateFormation(2,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst14 = AI.Entity_CreateFormation(2,Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst14, "EnemyFirst14")
 
 	local pos = GetPosition("EnemySpawn5")
-	EnemyFirst15 = AI.Entity_CreateFormation(2,Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst15 = AI.Entity_CreateFormation(2,Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst15, "EnemyFirst15")
 
 	local pos = GetPosition("EnemySpawn5")
-	EnemyFirst16 = AI.Entity_CreateFormation(2,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst16 = AI.Entity_CreateFormation(2,Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst16, "EnemyFirst16")
 
 	local pos = GetPosition("EnemySpawn5")
-	EnemyFirst17 = AI.Entity_CreateFormation(2,Entities.PU_LeaderHeavyCavalry2,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst17 = AI.Entity_CreateFormation(2,Entities.PU_LeaderHeavyCavalry2,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst17, "EnemyFirst17")
 
 	local pos = GetPosition("EnemySpawn5")
-	EnemyFirst18 = AI.Entity_CreateFormation(2,Entities.PU_LeaderHeavyCavalry2,0,8,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst18 = AI.Entity_CreateFormation(2,Entities.PU_LeaderHeavyCavalry2,0,8,pos.X,pos.Y,0,0,CP_Difficulty,0)
 	SetEntityName(EnemyFirst18, "EnemyFirst18")
 
 	local pos = GetPosition("EnemySpawn4")
-	EnemyFirst19 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst19 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 	SetEntityName(EnemyFirst19, "EnemyFirst19")
 	
 	local pos = GetPosition("EnemySpawn1")
-	EnemyFirst20 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,experience,0)
+	EnemyFirst20 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 	SetEntityName(EnemyFirst20, "EnemyFirst20")
 
 	Attack("EnemyFirst1","EnemyG1")
@@ -587,31 +587,31 @@ end
 --------------------------------------------------------------------------------------------------
 
 function YukiArmy()
-	local experience = VERYHIGH_EXPERIENCE
 	local etype1 = Entities.PU_LeaderBow3
 	local etype2 = Entities.PU_LeaderSword3
 	local etype3 = Entities.PU_LeaderPoleArm3
-	if CP_Difficulty > 0 then
-		experience = experience - 1
-		etype1 = Entities.PU_LeaderBow2
-		etype2 = Entities.PU_LeaderSword2
-		etype3 = Entities.PU_LeaderPoleArm2
+	local etype4 = Entities.PU_LeaderRifle1
+	if CP_Difficulty < 2 then
+		etype1 = Entities.PU_LeaderBow4
+		etype2 = Entities.PU_LeaderSword4
+		etype3 = Entities.PU_LeaderPoleArm4
+		etype4 = Entities.PU_LeaderRifle2
 	end
 
 		local pos = GetPosition("YukiSpawn10")
-		YukiArmy1 = AI.Entity_CreateFormation(1,etype1,0,4,pos.X,pos.Y,0,0,experience,0)
+		YukiArmy1 = AI.Entity_CreateFormation(1,etype1,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 		SetEntityName(YukiArmy1, "YukiArmy1")
 
 		local pos = GetPosition("YukiSpawn11")
-		YukiArmy2 = AI.Entity_CreateFormation(1,Entities.PU_LeaderRifle1,0,4,pos.X,pos.Y,0,0,experience,0)
+		YukiArmy2 = AI.Entity_CreateFormation(1,etype4,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 		SetEntityName(YukiArmy2, "YukiArmy2")
 
 		local pos = GetPosition("YukiSpawn7")
-		YukiArmy3 = AI.Entity_CreateFormation(1,etype2,0,4,pos.X,pos.Y,0,0,experience,0)
+		YukiArmy3 = AI.Entity_CreateFormation(1,etype2,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 		SetEntityName(YukiArmy3, "YukiArmy3")
 
 		local pos = GetPosition("YukiSpawn9")
-		YukiArmy4 = AI.Entity_CreateFormation(1,etype3,0,4,pos.X,pos.Y,0,0,experience,0)
+		YukiArmy4 = AI.Entity_CreateFormation(1,etype3,0,8,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 		SetEntityName(YukiArmy4, "YukiArmy4")
 
 		--[[

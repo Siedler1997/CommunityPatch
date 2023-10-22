@@ -139,7 +139,7 @@
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
 	        
-	        <MaxRange>2300</MaxRange>
+	        <MaxRange>2400</MaxRange>
 	        <MinRange>0.0f</MinRange>
 		</Logic>
 	</Behavior>

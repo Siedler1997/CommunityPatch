@@ -46,15 +46,18 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -79,19 +82,26 @@ end
 function Mission_InitPlayerColorMapping()
  	-- set player colors
 	
-		Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, FRIENDLY_COLOR2)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, BARMECIA_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
-		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, PLAYER_FRIEND_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers1, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
-		Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
+	--Display.SetPlayerColorMapping(gvMission.PlayerID, PLAYER_COLOR)		
+	Display.SetPlayerColorMapping(gvMission.PlayerIDCleycourt, CLEYCOURT_COLOR)		
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers1, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDRobbers2, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(gvMission.PlayerIDAttacker, ENEMY_COLOR1)	
 		
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-		end
-		
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 3)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 3)	
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDTrader, 1)		
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBarmecia, 1)	
+	end
+	if p1color ~= 9 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, 9)		
+	else
+		Display.SetPlayerColorMapping(gvMission.PlayerIDPilgrim, 4)		
+	end
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -169,6 +179,9 @@ function Mission_FirstMapAction()
 	createPlayer5()
 	createPlayer6()
 	
+	Logic.SetPlayerName(gvMission.PlayerIDBarmecia, String.MainKey.."_Player3Name")
+	Logic.SetPlayerName(gvMission.PlayerIDCleycourt, String.MainKey.."_Player4Name")
+	
 	-- Create Armies
 	createArmyKidnapper()
 	createArmyRobbersEast()
@@ -183,25 +196,19 @@ function Mission_FirstMapAction()
 
 	StartCutscene("Intro", start1stQuest)
 
-	if CP_Difficulty == 0 then
-		CreateRandomChests()
-	else
-		local addWolves = 0
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		else
+			CreateRandomChests()
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
-
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = (3 + addWolves), ramount = (9 + addWolves)})
+		--]]
+	else
+		CreateRandomChests()
 	end
 	local bossID1 = SetEntityName(AI.Entity_CreateFormation(5,Entities.CU_LeaderOutlaw1,0,0,4300,19600,0,0,3,0), "kidnapper_boss")
 	local bossID2 = SetEntityName(AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,47900,18800,0,0,3,0), "robber_boss")
@@ -210,16 +217,12 @@ function Mission_FirstMapAction()
 
 	LookAt("TraderMarket1", "campfire_kidnapper")
 
-	--StartSimpleHiResJob("GetDarioPos")
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
 
 function CreateDummyBriefing(_Callback, _Position)
 

@@ -55,7 +55,7 @@
             </Cost>
             <Type>PB_VillageCenter3</Type>            
         </Upgrade>
-		  <NumberOfAttractableSettlers>100</NumberOfAttractableSettlers>
+		  <NumberOfAttractableSettlers>125</NumberOfAttractableSettlers>
 		  <Exploration>40</Exploration>
         <ConstructionInfo>
             

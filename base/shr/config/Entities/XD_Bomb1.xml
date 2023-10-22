@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_Hero2Bomb</Model>
+	</Display>
+    <Logic classname="EGL::CGLEEntityProps">
+        <Class>EGL::CGLEEntity</Class>
+        <AccessCategory>AccessCategoryStatic</AccessCategory>
+        <ForceNoPlayer>false</ForceNoPlayer>
+        <DeleteWhenBuiltOn>false</DeleteWhenBuiltOn>
+    </Logic>
+    <Behavior>
+        <Logic classname="GGL::CBombBehaviorProperties">
+            <Class>GGL::CBombBehavior</Class>
+            <Radius>1500</Radius>
+            <Delay>2.0</Delay>
+            <Damage>40</Damage>
+            <ExplodeEffectID>FXExplosionPilgrim</ExplodeEffectID>
+            
+            
+			<AffectedEntityType>XD_ClosedIronPit1</AffectedEntityType>
+			<AffectedEntityType>XD_ClosedStonePit1</AffectedEntityType>
+			<AffectedEntityType>XD_ClosedSulfurPit1</AffectedEntityType>
+			<AffectedEntityType>XD_ClosedClayPit1</AffectedEntityType>
+        
+            <AffectedEntityType>XD_RockDestroyableMedium1</AffectedEntityType>
+        </Logic>
+    </Behavior>
+</root>

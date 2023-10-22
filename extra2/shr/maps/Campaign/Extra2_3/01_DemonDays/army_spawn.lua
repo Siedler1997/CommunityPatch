@@ -75,28 +75,28 @@ function CreateArmyKerberos()
 		local troopDescription_1 	= {
 	
 			leaderType 				= Entities.CU_BlackKnight_LeaderMace2,
-			maxNumberOfSoldiers			= 4,
+			maxNumberOfSoldiers			= 6,
 			minNumberOfSoldiers			= 0,
 			experiencePoints 			= LOW_EXPERIENCE,
 		}
 		local troopDescription_2 	= {
 	
 			leaderType 				= Entities.CU_BanditLeaderSword2,
-			maxNumberOfSoldiers			= 4,
+			maxNumberOfSoldiers			= 6,
 			minNumberOfSoldiers			= 0,
 			experiencePoints 			= LOW_EXPERIENCE,
 		}
 		local troopDescription_3 	= {
 	
 			leaderType 				= Entities.CU_Barbarian_LeaderClub2,
-			maxNumberOfSoldiers			= 4,
+			maxNumberOfSoldiers			= 6,
 			minNumberOfSoldiers			= 0,
 			experiencePoints 			= LOW_EXPERIENCE,
 		}
 		local troopDescription_4 	= {
 	
-			leaderType 				= Entities.CU_BanditLeaderBow1,
-			maxNumberOfSoldiers			= 4,
+			leaderType 				= Entities.CU_BanditLeaderBow2,
+			maxNumberOfSoldiers			= 6,
 			minNumberOfSoldiers			= 0,
 			experiencePoints 			= LOW_EXPERIENCE,
 		}
@@ -213,7 +213,7 @@ SpawnArchery = function()
 		Redeploy(ArmyVillage,GetPosition("p3_def5"),3000)
 	
 		local etype = Entities.PU_LeaderBow1
-		if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
 			etype = Entities.PU_LeaderBow2
 		end
 
@@ -222,7 +222,7 @@ SpawnArchery = function()
 			leaderType 				= etype,
 			maxNumberOfSoldiers			= 4,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 				= LOW_EXPERIENCE,
+			experiencePoints 				= CP_Difficulty,
 		}
 		
 		EnlargeArmy(ArmyVillage,troopDescription)
@@ -324,12 +324,9 @@ function ControlArmyBarrack()
 		SPAWN_TIMER = GetRandom(10) + 10
 	
 		local etype = Entities.PU_LeaderSword3
-		local soldiers = 4
-		local experience = MEDIUM_EXPERIENCE
+		local soldiers = 4 + CP_Difficulty*2
 		if CP_Difficulty > 0 then
 			etype = Entities.PU_LeaderSword4
-			soldiers = soldiers * 2
-			experience = experience + 2
 		end
 
 		local troopDescription 	= {
@@ -337,7 +334,7 @@ function ControlArmyBarrack()
 			leaderType 				= etype,
 			maxNumberOfSoldiers			= soldiers,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 			= experience,
+			experiencePoints 			= CP_Difficulty+1,
 		}
 		
 		EnlargeArmy(ArmyBarrack,troopDescription)	
@@ -366,17 +363,12 @@ function createLightCavalry(_spawnPos,_entityDescription)
 	LightCavalry.rodeLength				= 3000
 	LightCavalry.AttackAllowed			= true
 	
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 3
-		end
-	
 		local troopDescription 	= {
 	
 			leaderType 				= _entityDescription,
 			maxNumberOfSoldiers			= 3,
 			minNumberOfSoldiers			= 0,
-			experiencePoints 			= experience,
+			experiencePoints 			= CP_Difficulty+1,
 		}
 
 		cavalry1 = CreateTroop(LightCavalry,troopDescription)
@@ -409,27 +401,7 @@ createArmySpawn = function()
 	troops9 = { Entities.CU_Evil_LeaderBearman1,
 				Entities.CU_Evil_LeaderSkirmisher1 }
 
-	local experience = LOW_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 2
-		table.insert(troops1, Entities.PU_LeaderBow3)
-		
-		table.insert(troops2, Entities.PU_LeaderBow3)
-		table.insert(troops2, Entities.PU_LeaderSword3)
-		
-		table.insert(troops3, Entities.PU_LeaderPoleArm3)
-		table.insert(troops3, Entities.PU_LeaderSword3)
-		
-		table.insert(troops4, Entities.PU_LeaderBow3)
-
-		table.insert(troops5, Entities.PU_LeaderHeavyCavalry2)
-
-		table.insert(troops6, Entities.PU_LeaderRifle2)
-
-		table.insert(troops7, Entities.PU_LeaderBow4)
-
-		table.insert(troops8, Entities.PU_LeaderBow2)
-	else
+	if CP_Difficulty == 0 then
 		table.insert(troops1, Entities.PU_LeaderBow1)
 		
 		table.insert(troops2, Entities.PU_LeaderBow2)
@@ -447,6 +419,42 @@ createArmySpawn = function()
 		table.insert(troops7, Entities.PU_LeaderBow3)
 		
 		table.insert(troops8, Entities.PU_LeaderBow1)
+	elseif CP_Difficulty == 1 then
+		table.insert(troops1, Entities.PU_LeaderBow2)
+		
+		table.insert(troops2, Entities.PU_LeaderBow3)
+		table.insert(troops2, Entities.PU_LeaderSword3)
+		
+		table.insert(troops3, Entities.PU_LeaderPoleArm3)
+		table.insert(troops3, Entities.PU_LeaderSword3)
+		
+		table.insert(troops4, Entities.PU_LeaderBow3)
+
+		table.insert(troops5, Entities.PU_LeaderHeavyCavalry1)
+
+		table.insert(troops6, Entities.PU_LeaderRifle1)
+
+		table.insert(troops7, Entities.PU_LeaderBow4)
+
+		table.insert(troops8, Entities.PU_LeaderBow2)
+	else
+		table.insert(troops1, Entities.PU_LeaderBow3)
+		
+		table.insert(troops2, Entities.PU_LeaderBow3)
+		table.insert(troops2, Entities.PU_LeaderSword4)
+		
+		table.insert(troops3, Entities.PU_LeaderPoleArm4)
+		table.insert(troops3, Entities.PU_LeaderSword4)
+		
+		table.insert(troops4, Entities.PU_LeaderBow4)
+
+		table.insert(troops5, Entities.PU_LeaderHeavyCavalry2)
+
+		table.insert(troops6, Entities.PU_LeaderRifle2)
+
+		table.insert(troops7, Entities.PU_LeaderBow4)
+
+		table.insert(troops8, Entities.PU_LeaderBow2)
 	end
 
 ---------------------------------------------------
@@ -454,94 +462,94 @@ createArmySpawn = function()
 	--p4 	*******village defenders(2 archer troops)**************
 
 		armyp4_1	= {}
-		createArmy(4, 1,armyp4_1,0,"p3_def1",experience,troops8)
+		createArmy(4, 1,armyp4_1,0,"p3_def1",CP_Difficulty+1,troops8)
 		StartJob("Controlarmyp4_1")
 
 	--	*******mary prison guardians***************************
 
 		armyp4_2	= {}
-		createArmy(4, 2,armyp4_2,0,"guards_1",experience,troops3)
+		createArmy(4, 2,armyp4_2,0,"guards_1",CP_Difficulty+1,troops3)
 		StartJob("Controlarmyp4_2")
 	
 		armyp4_3	= {}
-		createArmy(4, 3,armyp4_3,1,"guards_2",experience,troops2)
+		createArmy(4, 3,armyp4_3,1,"guards_2",CP_Difficulty+1,troops2)
 		StartJob("Controlarmyp4_3")
 
 		armyp4_4	= {}
-		createArmy(4, 4,armyp4_4,1,"guards_8",experience,troops3)
+		createArmy(4, 4,armyp4_4,1,"guards_8",CP_Difficulty+1,troops3)
 		StartJob("Controlarmyp4_4")
 
 		armyp4_5	= {}
-		createArmy(4, 5,armyp4_5,1,"guards_3",experience,troops2)
+		createArmy(4, 5,armyp4_5,1,"guards_3",CP_Difficulty+1,troops2)
 		StartJob("Controlarmyp4_5")
 
 		armyp4_6	= {}
-		createArmy(4, 6,armyp4_6,0,"guards_4",experience,troops4)
+		createArmy(4, 6,armyp4_6,0,"guards_4",CP_Difficulty+1,troops4)
 		StartJob("Controlarmyp4_6")
 
 		armyp4_7	= {}
-		createArmy(4, 7,armyp4_7,1,"guards_5",experience,troops2)
+		createArmy(4, 7,armyp4_7,1,"guards_5",CP_Difficulty+1,troops2)
 		StartJob("Controlarmyp4_7")
 
 		armyp4_8	= {}
-		createArmy(4, 8,armyp4_8,1,"guards_6",experience,troops4)
+		createArmy(4, 8,armyp4_8,1,"guards_6",CP_Difficulty+1,troops4)
 		StartJob("Controlarmyp4_8")
 
 
 	--p3 	*******town troops**************
 
 		armyp3_3	= {}
-		createArmy(3, 3,armyp3_3,1,"adef_7",experience,troops5)
+		createArmy(3, 3,armyp3_3,1,"adef_7",CP_Difficulty+1,troops5)
 		StartJob("Controlarmyp3_3")
 
 		armyp3_4	= {}
-		createArmy(3, 4,armyp3_4,1,"adef_4",experience,troops7)
+		createArmy(3, 4,armyp3_4,1,"adef_4",CP_Difficulty+1,troops7)
 		StartJob("Controlarmyp3_4")
 
 		armyp3_5	= {}
-		createArmy(3, 5,armyp3_5,1,"adef_6",experience,troops1)
+		createArmy(3, 5,armyp3_5,1,"adef_6",CP_Difficulty+1,troops1)
 		StartJob("Controlarmyp3_5")
 
 		armyp3_6	= {}
-		createArmy(3, 6,armyp3_6,1,"adef_5",experience,troops6)
+		createArmy(3, 6,armyp3_6,1,"adef_5",CP_Difficulty+1,troops6)
 		StartJob("Controlarmyp3_6")
 
 		armyp3_7	= {}
-		createArmy(3, 7,armyp3_7,1,"adef_8",experience,troops8)
+		createArmy(3, 7,armyp3_7,1,"adef_8",CP_Difficulty+1,troops8)
 		StartJob("Controlarmyp3_7")
 
 		armyp3_8	= {}
-		createArmy(3, 8,armyp3_8,1,"adef_9",experience,troops8)
+		createArmy(3, 8,armyp3_8,1,"adef_9",CP_Difficulty+1,troops8)
 		StartJob("Controlarmyp3_8")
 
 	--p2 	*******bearman troops**************
 
 		armyp2_1	= {}
-		createArmy(2, 0,armyp2_1,0,"p2_1",experience,troops9)
+		createArmy(2, 0,armyp2_1,0,"p2_1",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_1")
 
 		armyp2_2	= {}
-		createArmy(2, 1,armyp2_2,0,"p2_2",experience,troops9)
+		createArmy(2, 1,armyp2_2,0,"p2_2",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_2")
 
 		armyp2_3	= {}
-		createArmy(2, 2,armyp2_3,0,"p2_3",experience,troops9)
+		createArmy(2, 2,armyp2_3,0,"p2_3",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_3")
 
 		armyp2_4	= {}
-		createArmy(2, 3,armyp2_4,0,"p2_4",experience,troops9)
+		createArmy(2, 3,armyp2_4,0,"p2_4",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_4")
 
 		armyp2_5	= {}
-		createArmy(2, 4,armyp2_5,1,"p2_5",experience,troops9)
+		createArmy(2, 4,armyp2_5,1,"p2_5",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_5")
 
 		armyp2_6	= {}
-		createArmy(2, 5,armyp2_6,0,"p2_6",experience,troops9)
+		createArmy(2, 5,armyp2_6,0,"p2_6",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_6")
 
 		armyp2_7	= {}
-		createArmy(2, 6,armyp2_7,0,"p2_7",experience,troops9)
+		createArmy(2, 6,armyp2_7,0,"p2_7",CP_Difficulty+1,troops9)
 		StartJob("Controlarmyp2_7")
 
 

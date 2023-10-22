@@ -93,8 +93,8 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 										UpgradeCategories.LeaderSword,
 										UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon2,
-										Entities.PV_Cannon3,
-										Entities.PV_Cannon4
+										Entities.PV_Cannon3a,
+										Entities.PV_Cannon4a
 									}
 	else
 		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderPoleArm, 
@@ -102,8 +102,8 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 										Entities.PV_Cannon1,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon2,
-										Entities.PV_Cannon3,
-										Entities.PV_Cannon4
+										Entities.PV_Cannon3a,
+										Entities.PV_Cannon4a
 									}
 	end
 

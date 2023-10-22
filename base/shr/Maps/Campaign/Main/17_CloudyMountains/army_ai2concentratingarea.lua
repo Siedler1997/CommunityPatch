@@ -14,7 +14,7 @@ setupArmyAI2 = function()
 								{ Entities.PU_LeaderSword3, 8},
 								{ Entities.PU_LeaderBow3, 8},
 								{ Entities.PU_LeaderBow3, 8},
-								{ Entities.PV_Cannon3, 0 } }
+								{ Entities.PV_Cannon3a, 0 } }
 	else
 		ArmyAI2.strength	= 8
 		ArmyAI2.spawnTypes 	= { { Entities.PU_LeaderPoleArm4, 8},
@@ -23,8 +23,8 @@ setupArmyAI2 = function()
 								{ Entities.PU_LeaderSword4, 8},
 								{ Entities.PU_LeaderBow4, 8},
 								{ Entities.PU_LeaderBow4, 8},
-								{ Entities.PV_Cannon3, 0 },
-								{ Entities.PV_Cannon3, 0 } }
+								{ Entities.PV_Cannon3a, 0 },
+								{ Entities.PV_Cannon3a, 0 } }
 	end
 
 	ArmyAI2.spawnPos			= GetPosition("AI2_SpawnPos")
@@ -39,6 +39,7 @@ setupArmyAI2 = function()
 	ArmyAI2.outerDefenseRange		= 4200
 	ArmyAI2.Attack					= false
 	ArmyAI2.AttackAllowed			= false
+	ArmyAI2.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyAI2)

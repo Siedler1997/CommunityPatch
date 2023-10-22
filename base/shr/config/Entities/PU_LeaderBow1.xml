@@ -25,7 +25,7 @@
         <Cost>
 			  <Gold>150</Gold>
 			  <Iron>0</Iron>			  
-			  <Wood>60</Wood>			  
+			  <Wood>50</Wood>			  
         </Cost>
          
 
@@ -106,7 +106,7 @@
         <Category>Bow</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>150</MaxHealth>
-		  <Exploration>23</Exploration>
+		  <Exploration>22</Exploration>
 		  <ArmorClass>ArmorClassJerkin</ArmorClass> 
 		  <ArmorAmount>0</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
@@ -173,9 +173,9 @@
 	        <MissChance>6</MissChance>
 	        
 	        <ProjectileEffectID>FXArrow</ProjectileEffectID>
-	        <MaxRange>2300</MaxRange>
+	        <MaxRange>2200</MaxRange>
 	        <MinRange>500.0f</MinRange>	        
-	        <AutoAttackRange>2300</AutoAttackRange>
+	        <AutoAttackRange>2200</AutoAttackRange>
 	        
 			<HealingPoints>3</HealingPoints>
 	        <HealingSeconds>5</HealingSeconds>

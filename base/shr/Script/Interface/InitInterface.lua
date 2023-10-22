@@ -31,6 +31,7 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.SelectionHero7 = 		XGUIEng.GetWidgetID( "Selection_Hero7" ) 	
 	gvGUI_WidgetID.SelectionHero8 = 		XGUIEng.GetWidgetID( "Selection_Hero8" ) 	
 	gvGUI_WidgetID.SelectionHero9 = 		XGUIEng.GetWidgetID( "Selection_Hero9" ) 	
+	gvGUI_WidgetID.SelectionDovbar = 		XGUIEng.GetWidgetID( "Selection_Dovbar" ) 	
 	gvGUI_WidgetID.SelectionLeader = 		XGUIEng.GetWidgetID( "Selection_Leader" )	
 	
 	gvGUI_WidgetID.BackgroundContainer= 	XGUIEng.GetWidgetID( "BackGroundBottomContainer" )
@@ -153,6 +154,13 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.TaxesButtons[3] = 			XGUIEng.GetWidgetID( "SetHighTaxes" )
 	gvGUI_WidgetID.TaxesButtons[4] = 			XGUIEng.GetWidgetID( "SetVeryHighTaxes" )
 	
+	gvGUI_WidgetID.OP_TaxesButtons = {}
+	gvGUI_WidgetID.OP_TaxesButtons[0] = 			XGUIEng.GetWidgetID( "OP_SetVeryLowTaxes" )
+	gvGUI_WidgetID.OP_TaxesButtons[1] = 			XGUIEng.GetWidgetID( "OP_SetLowTaxes" )
+	gvGUI_WidgetID.OP_TaxesButtons[2] = 			XGUIEng.GetWidgetID( "OP_SetNormalTaxes" )
+	gvGUI_WidgetID.OP_TaxesButtons[3] = 			XGUIEng.GetWidgetID( "OP_SetHighTaxes" )
+	gvGUI_WidgetID.OP_TaxesButtons[4] = 			XGUIEng.GetWidgetID( "OP_SetVeryHighTaxes" )
+	
 	gvGUI_WidgetID.ActivateOvertimes = 		XGUIEng.GetWidgetID( "OvertimesButtonEnable" )
 	gvGUI_WidgetID.QuitOvertimes = 			XGUIEng.GetWidgetID( "OvertimesButtonDisable" )	
 	
@@ -230,6 +238,8 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.Hero8_MoraleDamage= 		XGUIEng.GetWidgetID( "Hero8_MoraleDamage" )	
 	gvGUI_WidgetID.Hero9_Berserk= 			XGUIEng.GetWidgetID( "Hero9_Berserk" )	
 	gvGUI_WidgetID.Hero9_CallWolfs= 		XGUIEng.GetWidgetID( "Hero9_CallWolfs" )	
+	gvGUI_WidgetID.Dovbar_Discipline= 		XGUIEng.GetWidgetID( "Dovbar_Discipline" )	
+	gvGUI_WidgetID.Dovbar_Summon= 			XGUIEng.GetWidgetID( "Dovbar_Summon" )	
 	
 	
 	--Others	
@@ -411,6 +421,8 @@ HintTable[UpgradeCategories.Cannon1] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon2] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon3] 		= "UNIT_Cannon"
 HintTable[UpgradeCategories.Cannon4] 		= "UNIT_Cannon"
+HintTable[UpgradeCategories.Cannon3a] 		= "UNIT_Cannon"
+HintTable[UpgradeCategories.Cannon4a] 		= "UNIT_Cannon"
 
 
 	--Table for generic sound and Text tipps

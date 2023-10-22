@@ -159,6 +159,13 @@ end
 
 
 start4thQuest = function()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(3, true)
+		ResearchAllMilitaryTechs(5, true)
+		ResearchAllMilitaryTechs(6, true)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(8, true)
+	end
 
 	Report("start 4th quest")
 

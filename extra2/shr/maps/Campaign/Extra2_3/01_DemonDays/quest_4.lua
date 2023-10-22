@@ -118,7 +118,7 @@ Action_WolfPack = function()
 
 for k = 1,4,1 do
 --CreateEntity(3, Entities.CU_Barbarian_Hero_wolf, GetPosition("cave_entrance"), "wolf"..w)
-CreateEntity(6, Entities.CU_AggressiveWolf, GetPosition("cave_entrance"), "wolf"..k)
+CreateEntity(6, Entities.CU_AggressiveWolf_Grey, GetPosition("cave_entrance"), "wolf"..k)
 Move("wolf"..k,"wolf_run4")
 end
 

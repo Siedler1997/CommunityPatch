@@ -20,8 +20,19 @@ function InitWeather()
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-    Display.SetPlayerColorMapping(8,NEPHILIM_COLOR)	
+    --Display.SetPlayerColorMapping(1,GetPlayerPreferredColor())	
+    --Display.SetPlayerColorMapping(8,NEPHILIM_COLOR)	
     Display.SetPlayerColorMapping(5,ROBBERS_COLOR)	
+
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(2, 2)		
+		Display.SetPlayerColorMapping(8, 2)		
+	else
+		Display.SetPlayerColorMapping(2, 6)		
+		Display.SetPlayerColorMapping(8, 6)		
+	end
 end
 
 ------------------------------------------------------------------------------

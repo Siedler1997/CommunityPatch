@@ -16,9 +16,9 @@ end
 -- Buy a cannon
 --------------------------------------------------------------------------------
 function GUIAction_BuyCannon(_CannonType, _UpgradeCategory)
-
 	-- Get barrack
-	local FoundryID = GUI.GetSelectedEntity()		
+	local FoundryID = GUI.GetSelectedEntity()	
+	local CannonToBuild = _CannonType
 
 	--gvGUI_CannonButtonIDArray[_CannonType] = XGUIEng.GetCurrentWidgetID()
 	gvGUI_CannonButtonIDArray[FoundryID] = XGUIEng.GetCurrentWidgetID()
@@ -48,8 +48,25 @@ function GUIAction_BuyCannon(_CannonType, _UpgradeCategory)
 	
 	if InterfaceTool_HasPlayerEnoughResources_Feedback( InterfaceGlobals.CostTable ) == 1 then	
 		-- Yes
+		if CP_GetEvilModUnitState(PlayerID) > 0 then
+			if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+				if CannonToBuild == Entities.PV_Cannon3 then
+					CannonToBuild = Entities.PV_Cannon3a
+				elseif CannonToBuild == Entities.PV_Cannon4 then
+					CannonToBuild = Entities.PV_Cannon4a
+				end
+			end
+		else
+			if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+				if CannonToBuild == Entities.PV_Cannon3 then
+					CannonToBuild = Entities.PV_Cannon3a
+				elseif CannonToBuild == Entities.PV_Cannon4 then
+					CannonToBuild = Entities.PV_Cannon4a
+				end
+			end
+		end
 		
-		GUI.BuyCannon(FoundryID, _CannonType)
+		GUI.BuyCannon(FoundryID, CannonToBuild)
 		--Sound.PlayGUISound( Sounds.klick_rnd_1, 0 )		
 		XGUIEng.ShowWidget(gvGUI_WidgetID.CannonInProgress,1)
 	end

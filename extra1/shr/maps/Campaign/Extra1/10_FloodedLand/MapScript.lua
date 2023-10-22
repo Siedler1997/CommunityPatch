@@ -10,27 +10,26 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(1000)
-    AddClay(1000)
-    AddGold(1000)
-    AddSulfur(1000)
-    AddIron(1000)
-    AddWood(1000)
-    end
+	GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 1000, 1000, 1000)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
-			ForbidTechnology(Technologies.UP2_Village)
+			--ForbidTechnology(Technologies.UP2_Village)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
 
-		ResearchAllMilitaryTechsAddOn(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechsAddOn(5, _ResearchSuperTech)	-- Friendly Cavalry
-		ResearchAllMilitaryTechsAddOn(6, _ResearchSuperTech)
+		ResearchAllMilitaryTechsAddOn(2)
+		ResearchAllMilitaryTechsAddOn(4)
+		ResearchAllMilitaryTechsAddOn(5)	-- Friendly Cavalry
+		ResearchAllMilitaryTechsAddOn(6)
 	end
 end
 ------------------------------------------------------------------------------
@@ -49,20 +48,22 @@ end
 
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
-	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
-		
-	if CP_Difficulty < 2 then
-		Display.SetPlayerColorMapping(1, PLAYER_COLOR)
-        Display.SetPlayerColorMapping(3, NEPHILIM_COLOR)
-        Display.SetPlayerColorMapping(4, NEPHILIM_COLOR)
+	if p1color ~= 2 then
+		Display.SetPlayerColorMapping(3, 2)		
+		Display.SetPlayerColorMapping(4, 2)	
 	else
-		Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-		Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
-		Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
+		Display.SetPlayerColorMapping(3, 6)		
+		Display.SetPlayerColorMapping(4, 6)	
 	end
+	if p1color ~= 13 then
+		Display.SetPlayerColorMapping(5,FRIENDLY_COLOR3)
+	else
+		Display.SetPlayerColorMapping(5,3)
+	end
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 end
 
 ------------------------------------------------------------------------------
@@ -72,6 +73,7 @@ function FirstMapAction()
 	-- load scripts
 	IncludeGlobals("MapEditorTools")
 	IncludeLocals("army_ambush")
+	IncludeLocals("army_playerattack")
 	IncludeLocals("army_big1")
 	IncludeLocals("army_big2")
 	IncludeLocals("army_blockade1")
@@ -131,41 +133,39 @@ function FirstMapAction()
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLDONECUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLTWOCUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[MISSIONCOMPLETECUTSCENE])	
-
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Moor)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_Moor
 
 	LocalMusic.UseSet = DARKMOORMUSIC
-
+	
 	start1stChapter()
 
 	local bossID1 = AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,25700,39500,0,0,3,0)
 	LookAt(bossID1, "LeoAssistant")
 	
 	if CP_Difficulty > 0 then
-		--local addWolves = 0
 		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, NEPHILIM_COLOR)
-			Display.SetPlayerColorMapping(3, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(4, ENEMY_COLOR1)
-
 			GUI.SetTaxLevel(1)
-			
-			--addWolves = addWolves + 2
 
 			ReplaceEntity("vc_player", Entities.CB_Grange)
 		end
 
+		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1, 53200, 25000, 90, 3), "NephilimBaseHQ");
+		SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 53800, 25100, 0, 3), "NephilimHQSpawnPos");
 	end
 
-	--StartSimpleHiResJob("GetDarioPos")
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (8 + CP_Difficulty * 2)})
+	
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos3", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 6, pos = "bearpos4", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+
+	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Add Merchant offers here. 

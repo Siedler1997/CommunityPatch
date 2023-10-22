@@ -91,17 +91,22 @@ end
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(5, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(8, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)
+		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(7)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -111,7 +116,7 @@ end
 function Mission_InitPlayerColorMapping()
 
 		Display.SetPlayerColorMapping(2, NPC_COLOR)				-- NPCs
-		Display.SetPlayerColorMapping(6, PLAYER_COLOR)			-- Player's walls
+		--Display.SetPlayerColorMapping(6, PLAYER_COLOR)			-- Player's walls
 
 		Display.SetPlayerColorMapping(3, KERBEROS_COLOR)		-- Kerberos walls
 		Display.SetPlayerColorMapping(4, KERBEROS_COLOR)		-- Kerberos Outpost
@@ -119,10 +124,8 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(7, KERBEROS_COLOR)		-- Kerberos Dummy 1
 		Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		-- Kerberos Dummy 2
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
-		end
+		Display.SetPlayerColorMapping(1, GetPlayerPreferredColor())
+		Display.SetPlayerColorMapping(6, GetPlayerPreferredColor())
 end
 
 
@@ -206,32 +209,28 @@ function Mission_FirstMapAction()
 		Logic.SetDiplomacyState( 1, 5, Diplomacy.Friendly )
 
 	-- Start prelude
-	
+
 		if CP_Difficulty == 0 then
-			CreateRandomGoldChests()
+			CreateRandomGoldChests()	
 			CreateRandomChests()
 
 			DestroyEntity("hard_rock")
 		else
-			local addWolves = 0
 			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-				Display.SetPlayerColorMapping(6, ENEMY_COLOR1)
 				GUI.SetTaxLevel(1)
-
-				addWolves = addWolves + 2
-
-				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 			end
 
 			if CP_Difficulty == 1 then
+				CreateRandomGoldChests()	
+				CreateRandomChests()
+
 				DestroyEntity("hard_rock")
 			end
-
+			--[[
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
-
+			--]]
 			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 48, 0) }
 			for i = 2, table.getn(towers1) do
 				ReplaceEntity(towers1[i], Entities.PB_Tower2)
@@ -271,22 +270,19 @@ function Mission_FirstMapAction()
 			LookAt(bossID7, "tower_spawn1")
 			local bossID8 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos7.X + 100),(bosspos7.Y - 350),0,0,3,0)
 			LookAt(bossID8, "tower_spawn1")
-
-			RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (10 + addWolves})
-			RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, samount = (3 + addWolves), ramount = (8 + addWolves)})
 		end
-		--SetPosition("dario",GetPosition("defend1"))
+
+		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+
+		RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+		RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+		RaidersCreate({player = 7, pos = "bearpos3", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
 		StartCutscene("Intro", startQuestDestroyOutpost)
-		--StartSimpleHiResJob("GetDarioPos")
+
+		--StartSimpleJob("GetMousePos")
 		--Tools.ExploreArea(-1, -1, 900)
 		--CP_ActivateEvilMod(1, 1, 1)
 		--ResearchTechnology( Technologies.GT_Tactics, 1 );
 end
-
---[[
-function GetDarioPos()
-	local pos = GetPosition("dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]

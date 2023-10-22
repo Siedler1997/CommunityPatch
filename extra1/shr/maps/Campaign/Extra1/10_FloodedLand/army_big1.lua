@@ -56,6 +56,7 @@ function CreateArmyBig1()
 													
 		ArmyBig1[i].spawnPos			=	GetPosition("ArmyBig1")
 		ArmyBig1[i].endless				=	true
+		ArmyBig1[i].experiencePoints		=	CP_Difficulty
 		
 		-- Spawn generator
 		SetupAITroopSpawnGenerator("ArmyBig1_"..i, ArmyBig1[i])

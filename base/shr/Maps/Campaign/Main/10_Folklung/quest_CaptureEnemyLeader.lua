@@ -173,6 +173,12 @@ end
 
 
 function Action_EnemyLeaderDead()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(5, true)
+	end
+
 	EndJob(LeaderWalkTrigger)
 	EndJob(LeaderCaptureTrigger)
 	EndJob(PeacefulWonTrigger)
@@ -196,6 +202,12 @@ end
 
 
 function Action_CapturedEnemiesLeader()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(5, true)
+	end
+
 	Report( "You have captured the General. Now bring him to Folklung castle!." )
 	SetNPCFollow("BigBadGuy", 1, 400, 3000, BigBadGuyEscaped)
 	EndJob(LeaderWalkTrigger)

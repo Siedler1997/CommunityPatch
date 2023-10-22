@@ -33,6 +33,7 @@ function CreateArmyBlockade1()
 	ArmyBlockade1.noEnemy				=	true
 	ArmyBlockade1.noEnemyDistance		=	5000
 	ArmyBlockade1.endless				=	true
+	ArmyBlockade1.experiencePoints		=	CP_Difficulty
 	
 	-- Spawn generator
 	SetupAITroopSpawnGenerator("ArmyBlockade1", ArmyBlockade1)

@@ -39,6 +39,8 @@ setupArmyKI1 = function()
 --	TimeLine.Enter("AttackArmy RetreatSize 8", TimeLine.Seconds + 2810, "IncreaseArmyRetreatSize" )
 -- 50min
 	TimeLine.Enter("AttackAllow Cannon2", TimeLine.Seconds + 3000, "AllowCannon2" )
+-- 70min
+	TimeLine.Enter("AttackAllow SuperTech", TimeLine.Seconds + 4200, "AllowSuperTech" )
 
 
 	-- Start attack after 10 minutes
@@ -83,10 +85,19 @@ AllowCannon2 = function()
 	if CP_Difficulty == 0 then
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
 	else
-		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon3)
+		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon3a)
 		
 		armyKI1.strength = armyKI1.strength + 3
 		table.insert(armyKI1.AllowedTypes, UpgradeCategories.LeaderHeavyCavalry)
+	end
+end
+
+AllowSuperTech = function()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(5, true)
+		ResearchAllMilitaryTechs(6, true)
+		ResearchAllMilitaryTechs(7, true)
 	end
 end
 

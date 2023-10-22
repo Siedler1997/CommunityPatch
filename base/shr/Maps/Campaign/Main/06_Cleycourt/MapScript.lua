@@ -23,16 +23,20 @@ end
 function Mission_InitPlayerColorMapping()
 
 --  Player _DstPlayerID will use color of player _SrcPlayerID. Params: _DstPlayerID, _SrcPlayerID.
-	Display.SetPlayerColorMapping(1,PLAYER_COLOR)
+	--Display.SetPlayerColorMapping(1,PLAYER_COLOR)
 	Display.SetPlayerColorMapping(2,NPC_COLOR)
-	Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
+	--Display.SetPlayerColorMapping(3,BARMECIA_COLOR)
 	Display.SetPlayerColorMapping(4,CLEYCOURT_COLOR)
-	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
+	Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 
-	if CP_Difficulty == 2 then
-		Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(3, 3)		
+	else
+		Display.SetPlayerColorMapping(3, 1)		
 	end
 
 end
@@ -51,14 +55,16 @@ end
 -- see Player_1.lua !!!
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
+		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
 		end
+		ResearchAnimalTechs(6, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
 
-		ResearchAllMilitaryTechs(6, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(7, _ResearchSuperTech)
+		ResearchAllMilitaryTechs(6)
+		ResearchAllMilitaryTechs(7)
 	end
 end
 
@@ -151,55 +157,44 @@ function Mission_FirstMapAction()
 		
 		StartChestQuest()
 
-
-	
 	-- Start prelude
 	start1stQuest()
 	-- Start time line
 	TimeLine.Start()
 
 --	EnableDebugging()
-	if CP_Difficulty == 0 then
-		CreateRandomGoldChests()
-		CreateRandomChests()
-	else
-		local addWolves = 0
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 1 then
+			CreateRandomChests()
+			CreateRandomGoldChests()
 			Logic.CreateEntity(Entities.PB_Tower2,8100,15000,0,7)
 		else
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
 			GUI.SetTaxLevel(1)
 			
 			Logic.CreateEntity(Entities.PB_Tower3,8100,15000,0,7)
 			StartCountdown(15 * 60, setupArmyP7PlayerAttack, false)
-			
-			addWolves = addWolves + 2
-
-			LocalMusic.SetBattle = LocalMusic.SetEvilBattle
 		end
-
+		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
-		
+
 		local vcpos2 = GetPosition("vc_empty2")
 		DestroyEntity("vc_empty2")
+		--]]
 
 		local bosspos = GetPosition("KerberosCamp")
 		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
 		LookAt(bossID, "Dario")
-		
-		RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, samount = (2 + addWolves), ramount = (6 + addWolves)})
-		RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, samount = (4 + addWolves), ramount = (10 + addWolves)})
+	else
+		CreateRandomChests()
+		CreateRandomGoldChests()
 	end
 
-	--Tools.ExploreArea(-1, -1, 900)
-	--StartSimpleHiResJob("GetDarioPos")
-end
+	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+	RaidersCreate({player = 6, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1", "rudelpos2_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
+	RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	--Tools.ExploreArea(-1, -1, 900)
+	--StartSimpleJob("GetMousePos")
 end
---]]

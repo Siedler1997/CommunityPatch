@@ -54,8 +54,8 @@ AllowArmyP2IronAttackCannons = function()
 		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon2)
 		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon2)
 	else
-		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3)
-		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3)
+		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3a)
+		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3a)
 	end
 end
 

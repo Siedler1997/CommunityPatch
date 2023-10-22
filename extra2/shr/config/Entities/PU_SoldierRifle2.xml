@@ -95,7 +95,7 @@
         <Category>LongRange</Category>
         <Category>SplashDamage</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>30</Exploration>
+		  <Exploration>28</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>25</ExperiencePoints>
 	</Logic>
@@ -139,14 +139,14 @@
 	        <DamageAmount>18</DamageAmount>
 	        <MaxRandomDamageBonus>0</MaxRandomDamageBonus>
 	        
-	        <AutoAttackRange>3000</AutoAttackRange>
+	        <AutoAttackRange>2800</AutoAttackRange>
 	        
 	        <BattleWaitUntil>4300</BattleWaitUntil>
 	        
 	        <MissChance>2</MissChance>
 	        
 	        <ProjectileEffectID>FXBulletRifleman</ProjectileEffectID>
-	        <MaxRange>3000</MaxRange>
+	        <MaxRange>2800</MaxRange>
 	        <MinRange>0.0f</MinRange>
 		</Logic>
 	</Behavior>

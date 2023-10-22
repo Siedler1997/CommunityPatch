@@ -96,6 +96,10 @@ end
 -- talk to tradelord 3
 ------------------------------------------------------------------------------
 function start2ndChapter()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(8, true)
+	end
 	
 	CreateBriefingTraderLord3()
 

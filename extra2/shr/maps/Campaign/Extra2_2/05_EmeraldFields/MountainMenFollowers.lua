@@ -1,20 +1,13 @@
 ---------------------------------------------------------------------------------------
 
 function MountainFollowers()
-		local experience = LOW_EXPERIENCE
-		local looper = 4
-		if CP_Difficulty == 0 then
-			experience = experience + 2
-			looper = looper + 4
-		end
-
-		for i = 1, looper do
+		for i = 1, 8 do
 			local poscount = i
 			if i > 6 then
 				poscount = 6
 			end
 			local pos = GetPosition("MMSpawn"..poscount)
-			local Follower = AI.Entity_CreateFormation(1,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+			local Follower = AI.Entity_CreateFormation(1,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 			SetEntityName(Follower, "Follower"..i)
 		end
 
@@ -26,7 +19,7 @@ function MountainFollowers()
 end
 
 function MMAreDeadJob()
-	local looper = (8 - CP_Difficulty * 4)
+	local looper = 8
 	local alivecount = 0
 	for i = 1, looper do
 		if IsAlive("Follower"..i) then

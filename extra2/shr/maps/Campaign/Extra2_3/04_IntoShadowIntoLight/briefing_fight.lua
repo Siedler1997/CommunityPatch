@@ -1,4 +1,13 @@
 function createBriefingFight()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(3, true)
+		ResearchAllMilitaryTechsAddOn(4, true)
+		ResearchAllMilitaryTechsAddOn(5, true)
+		ResearchAllMilitaryTechsAddOn(6, true)
+		ResearchAllMilitaryTechsAddOn(7, true)
+	end
+
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Neutral )
 	Logic.SetDiplomacyState( 1, 3, Diplomacy.Neutral )
 
@@ -6,6 +15,11 @@ function createBriefingFight()
 	erec = CreateEntity(3,Entities.PU_Hero4,GetPosition("erec_spawn"),"erec")
 	LookAt("dario","camera")
 	LookAt("erec","camera")
+	
+	if CP_Difficulty > 0 then
+		helias = CreateEntity(3,Entities.PU_Hero6,GetPosition("helias_spawn"),"helias")	
+		LookAt("helias","camera")
+	end
 
 	Explore.Show("Dario","dario", 1500)
 
@@ -93,24 +107,37 @@ BriefingFightFinished = function()
 				DestroyEntity("briefing_sup"..h)
 			end
 
-			local PlayerID = GUI.GetPlayerID()
-			NumerOfLeaders = Logic.GetNumberOfLeader(PlayerID)
-			createDarioArmy(NumerOfLeaders)
-			createDarioArmy1(NumerOfLeaders)
+			--local PlayerID = GUI.GetPlayerID()
+			--NumerOfLeaders = Logic.GetNumberOfLeader(PlayerID)
+			--NumerOfLeaders = 9
+			createDarioArmy()
+			createDarioArmy1()
+			createDarioArmy2()
 
 			if CP_Difficulty > 0 then
-				createDarioArmy2(NumerOfLeaders)
+				createDarioArmy3()
+				createDarioArmyCavalry1()
+				createDarioArmyCavalry2()
+				if CP_Difficulty == 2 then
+					createDarioArmyCavalry3()
+				end
 			end
 
 			Logic.SetDiplomacyState( 1, 6, Diplomacy.Hostile )
 			Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 			Logic.SetDiplomacyState( 1, 3, Diplomacy.Hostile )
 			ChangePlayer("erec",6)
-			Attack("erec","my_castle")
+			--Attack("erec","my_castle")
+			StartCountdown(20, erecAttack, false)
 			StartSimpleJob("HeroicResistance")
 	   else
 			createVargErecBriefing()
 	   end
+end
+
+function erecAttack()
+	Attack("erec","my_castle")
+	ErecOnTheMove=1
 end
 
 createVargErecBriefing = function()

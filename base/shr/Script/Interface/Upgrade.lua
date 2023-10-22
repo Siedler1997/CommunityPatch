@@ -163,7 +163,7 @@ function GameCallback_OnBuildingUpgradeComplete(_OldID, _NewID)
 
 	local ColorR, ColorG, ColorB = GUI.GetPlayerColor( PlayerID )
 	local Color =  "@color:" .. ColorR .. "," .. ColorG .. ",".. ColorB .. ",255 "
-	local UserTool_GetPlayerName = Color .. UserTool_GetPlayerName( PlayerID )
+	local PlayerName = Color .. UserTool_GetPlayerName( PlayerID )
 
 	if UserTool_GetLocalPlayerSex() == 1 then
 		PronounString = PronounString .. XGUIEng.GetStringTableText("MenuGeneric/Female_Pronoun_Generic")

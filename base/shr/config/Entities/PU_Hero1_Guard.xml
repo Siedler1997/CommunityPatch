@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>GD::CDisplaySettler</Class>
+		<Model>CU_BlackKnight_SoldierSword3</Model> 
+		<DrawPlayerColor>True</DrawPlayerColor>
+
+		<Anim>PU_SoldierSword3_Walk</Anim>
+		<Anim>PU_SoldierSword3_Run1</Anim>
+		<Anim>PU_SoldierSword3_Idle1</Anim>
+		<Anim>PU_SoldierSword3_Idle2</Anim>
+		<Anim>PU_SoldierSword3_Idle3</Anim>
+		<Anim>PU_SoldierSword3_Idle4</Anim>
+		<Anim>PU_SoldierSword3_Idle5</Anim>
+		<Anim>PU_SoldierSword3_Idle6</Anim>
+		<Anim>PU_SoldierSword3_Attack1</Anim>
+		<Anim>PU_SoldierSword3_Attack2</Anim>
+		<Anim>PU_SoldierSword3_IdleAttack1</Anim>
+		<Anim>PU_SoldierSword3_Finish</Anim>
+		<Anim>PU_SoldierSword3_Dying1</Anim>
+		<Anim>PU_SoldierSword3_Hit</Anim>
+	</Display>
+	<Logic classname="GGL::CGLSettlerProps">
+		<Class>GGL::CSettler</Class>
+		<AccessCategory>AccessCategorySettler</AccessCategory>		
+		<MaxHealth>200</MaxHealth>
+		<NeedsPlayer>true</NeedsPlayer>
+		<ForceNoPlayer>false</ForceNoPlayer>
+		<Convertible>false</Convertible>
+        <Hat></Hat>
+        <Cost>
+			<Gold>120</Gold>
+			<Iron>80</Iron>
+        </Cost>
+		
+		<!--Armor modifier-->
+		<ModifyArmor>
+			<Technology>T_LeatherMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_ChainMailArmor</Technology>
+		</ModifyArmor>
+
+		<ModifyArmor>
+			<Technology>T_PlateMailArmor</Technology>
+		</ModifyArmor>
+
+
+		<!-- Damage Modifier-->
+		<ModifyDamage>
+			<Technology>T_MasterOfSmithery</Technology>
+		</ModifyDamage>
+		<ModifyDamage>
+			<Technology>T_IronCasting</Technology>
+		</ModifyDamage>
+
+		<!-- Speed Modifier-->
+		<ModifySpeed>
+			<Technology>T_BetterTrainingBarracks</Technology>
+		</ModifySpeed>
+
+		<!-- Bonus -->
+		<ModifyExploration>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyExploration>
+		<ModifySpeed>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifySpeed>
+		<ModifyDamage>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyDamage>
+		<ModifyArmor>
+			<Technology>T_SuperTechnology</Technology>
+		</ModifyArmor>
+		
+<!-- NB: Do we want these categories for battle serfs? -->
+        <Category>Military</Category>
+        <Category>Sword</Category>
+		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
+		<Exploration>20</Exploration>
+		<ArmorClass>ArmorClassLeather</ArmorClass>
+		<ArmorAmount>4</ArmorAmount> 
+		<DodgeChance>0</DodgeChance> 
+    	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
+
+<!-- 
+    NB: I don't think battle serfs should be upgradeable.  In fact, if they are upgraded, 
+    quitting alarm mode will not work.  However, for the program to be happy, we need the
+    category...
+-->
+    	<!--Upgrade>
+            <Type>PU_LeaderSword2</Type> 
+            <Category>BattleSerf</Category>
+        </Upgrade-->
+	</Logic>
+	<Behavior>
+		<Logic classname="GGL::CGLAnimationBehaviorExProps">
+			<Class>GGL::CGLBehaviorAnimationEx</Class>
+			<!-- animation to be used when entity is suspended -->
+			<SuspensionAnimation>PU_SoldierSword3_Idle1</SuspensionAnimation>			
+			<AnimSet>SET_BLACKKNIGHT_SOLDIERSWORD3</AnimSet>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorAnimation</Class>
+		</Display>
+	</Behavior>
+	<Behavior>
+		<Logic classname="EGL::CMovementBehaviorProps">
+			<Class>GGL::CSettlerMovement</Class>
+			<Speed>400</Speed>
+			<RotationSpeed>30</RotationSpeed>
+			<MoveTaskList>TL_MILITIA_WALK</MoveTaskList>
+		</Logic>
+		<Display classname="ED::CBehaviorProps">
+			<Class>ED::CDisplayBehaviorMovement</Class>
+		</Display>
+	</Behavior>
+	<Behavior> <!-- this is required so the leader can be told to move around -->
+		<Logic classname="EGL::CGLEBehaviorProps">
+			<Class>GGL::CBehaviorWalkCommand</Class>
+		</Logic>
+	</Behavior>
+	<Behavior>
+		<Logic classname="GGL::CBattleSerfBehaviorProps">
+			<Class>GGL::CBattleSerfBehavior</Class>
+<!-- New for Battle Serf: task list to turn back into normal serf -->
+            <TurnIntoSerfTaskList>TL_BATTLE_SERF_TURN_INTO_SERF</TurnIntoSerfTaskList>
+<!-- NB: Do not provide a barrack for upgrade! -->
+			<!--BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory-->
+<!-- NB: And to be on the safe side, set HomeRadius to 0, so it's never close enough! -->
+            <HomeRadius>1500</HomeRadius>
+
+<!-- NB: Should not command any soldiers, of course -->
+			<!--SoldierType>PU_SoldierSword1</SoldierType-->
+	        <!--
+	            The task list below is the one driving the battle behavior, looking
+	            for enemies etc.
+	        -->
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
+
+			<NormalAttackAnim1>PU_SoldierSword3_Attack1</NormalAttackAnim1>
+			<NormalAttackAnim2>PU_SoldierSword3_Attack2</NormalAttackAnim2>
+			<CounterAttackAnim>PU_SoldierSword3_Finish</CounterAttackAnim>
+			<FinishingMoveAnim>PU_SoldierSword3_Finish</FinishingMoveAnim>
+			<MissAttackAnim>PU_SoldierSword3_IdleAttack1</MissAttackAnim>
+			<BattleIdleAnim>PU_SoldierSword3_IdleAttack1</BattleIdleAnim>
+			<BattleWalkAnim>PU_SoldierSword3_Run1</BattleWalkAnim>
+			<HitAnim>PU_SoldierSword3_Hit</HitAnim>
+
+	        <DamageClass>DC_Strike</DamageClass>
+	        <DamageAmount>16</DamageAmount>
+	        <MaxRandomDamageBonus>4</MaxRandomDamageBonus>
+	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        <MaxRange>200.0f</MaxRange>
+	        <MinRange>0.0f</MinRange>
+
+			<HealingPoints>3</HealingPoints>
+			<HealingSeconds>5</HealingSeconds>
+		</Logic>
+	</Behavior>
+
+<!-- NB: see above, no soldiers for this warrior! -->
+	<!--Behavior>
+		<Logic classname="GGL::CLimitedAttachmentBehaviorProperties">
+			<Class>GGL::CLimitedAttachmentBehavior</Class>
+            <Attachment>
+                <Type>ATTACHMENT_LEADER_SOLDIER</Type>
+                <Limit>12</Limit>
+            </Attachment>
+		</Logic>
+	</Behavior-->
+	
+	<Behavior>
+		<Logic classname="GGL::CGLBehaviorPropsDying">
+			<Class>GGL::CGLBehaviorDying</Class>
+			<DyingTaskList>TL_DIE</DyingTaskList>
+		</Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CWorkerEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>300</BasePriority>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CSummonedBehaviorProps">
+	        <Class>GGL::CSummonedBehavior</Class>
+	    </Logic>
+	</Behavior>
+	
+	<Behavior>
+	    <Logic classname="GGL::CLimitedLifespanBehaviorProps">
+	        <Class>GGL::CLimitedLifespanBehavior</Class>
+	        <LifespanSeconds>120</LifespanSeconds>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
+			<Class>GGL::CReplaceableEntityBehavior</Class>
+			<EntityType>XD_DroppedSwordShield</EntityType>
+		</Logic>
+	</Behavior>	
+</root>

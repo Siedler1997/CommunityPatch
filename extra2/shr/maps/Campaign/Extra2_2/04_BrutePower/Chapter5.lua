@@ -28,15 +28,10 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 
 		StartJob("TimeToSavePrincess")
-
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 2
-		end
-		
+	
 		for i = 1, 16 do
 			local pos = GetPosition("RitualSpawn"..i)
-			local RitualMen = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+			local RitualMen = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 			SetEntityName(RitualMen, "RitualMen"..i)
 		end
 
@@ -224,13 +219,9 @@ QUESTBombs_COUNTER 		=	QUESTBombs_DELAY
 		DestroyEntity("Druid8")
 		DestroyEntity("Druid9")
 		
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 2
-		end
 		for i = 1, 9 do
 			local pos = GetPosition("DruidReference"..i)
-			local Druid = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+			local Druid = AI.Entity_CreateFormation(5,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 			SetEntityName(Druid, "Druid"..i)
 		end
 

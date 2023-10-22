@@ -288,8 +288,8 @@ function GameCallback_GUI_SelectionChanged()
 				XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "BuildingMenuGroup")	
 				XGUIEng.HighLightButton(gvGUI_WidgetID.ToBuildingSettlersMenu,1)	
 				
-				XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes,0)
-				XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes,0)
+				--XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes,0)
+				--XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes,0)
 				
 				--GUIAction_ChangeBuildingMenu(gvGUI_WidgetID.ToBuildingSettlersMenu)			
 				
@@ -303,8 +303,8 @@ function GameCallback_GUI_SelectionChanged()
 				XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "BuildingMenuGroup")	
 				XGUIEng.HighLightButton(gvGUI_WidgetID.ToBuildingSettlersMenu,1)
 				
-				XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes,0)
-				XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes,0)
+				--XGUIEng.ShowWidget(gvGUI_WidgetID.ActivateOvertimes,0)
+				--XGUIEng.ShowWidget(gvGUI_WidgetID.QuitOvertimes,0)
 				
 								
 				--GUIAction_ChangeBuildingMenu(gvGUI_WidgetID.ToBuildingSettlersMenu)			
@@ -740,7 +740,7 @@ function GameCallback_OnBuildingConstructionComplete(_BuildingID, _PlayerID)
 	end
 	
 	if _player == GUI.GetPlayerID() then
-		Sound.PlayGUISound(Sounds.Misc_Chat,100)
+		Sound.PlayGUISound(Sounds.Misc_Chat,75)
 	end
 end
 

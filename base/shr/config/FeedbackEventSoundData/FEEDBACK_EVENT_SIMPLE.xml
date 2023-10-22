@@ -189,12 +189,24 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Hero5_Outlaw</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1_Guard</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
@@ -244,6 +256,18 @@
 				<EntityType>CU_RegentDovbar</EntityType>
 				<SoundID>VoicesHero0\Scout_Yes_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle03</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBlackBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle03</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressivePolarBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle03</SoundID>
+			</ValueSound>
 			
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BanditLeaderBow1</EntityType>
@@ -255,6 +279,22 @@
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
@@ -533,6 +573,14 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Serf</EntityType>
 				<SoundID>VoicesWorker\WORKER_FunnyNo_rnd_01</SoundID>
 			</ValueSound>
@@ -543,6 +591,22 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1_Guard</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle02</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBlackBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle02</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressivePolarBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle02</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
@@ -603,6 +667,22 @@
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
@@ -834,12 +914,36 @@
 
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon3a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PV_Cannon4a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PU_Hero5_Outlaw</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Barbarian_Hero_wolf</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1_Guard</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveBlackBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressivePolarBear</EntityType>
+				<SoundID>AmbientSounds\bear_idle01</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_BlackKnight_LeaderMace1</EntityType>
@@ -900,6 +1004,22 @@
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_AggressiveWolf</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Grey</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_White</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Brown</EntityType>
+				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_AggressiveWolf_Black</EntityType>
 				<SoundID>AmbientSounds\Wolf_rnd_1</SoundID>
 			</ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">

@@ -101,6 +101,10 @@ function Interface_SetCinematicMode( _CinematicStatus )
 
 		--	close menus
 		XGUIEng.ShowAllSubWidgets("Windows",0)
+		
+		-- Reset game speed
+		Game.GameTimeReset()
+		XGUIEng.SetText("GameSpeedButton", "@center x" .. Game.GameTimeGetFactor())
 
 		gvCamera.DefaultFlag = 0		
 		

@@ -67,22 +67,25 @@ createDefenseArmy1 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase1 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	DefenseArmy		= {	Entities.PU_LeaderBow3,
-					Entities.PU_LeaderPoleArm3,
-					Entities.PU_LeaderSword3
-					}
-
-	if CP_Difficulty > 0 then
-		experience = experience + 2
+	DefenseArmy		= {	}
+	
+	if CP_Difficulty < 2 then
+		table.insert(DefenseArmy, Entities.PU_LeaderBow3)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm3)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword3)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle1)
+	else
+		table.insert(DefenseArmy, Entities.PU_LeaderBow4)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm4)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword4)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle2)
 	end
-
 
 	PickAUnit1 		= 	DefenseArmy[Logic.GetRandom(table.getn(DefenseArmy))+1]
 
 
 		local pos = GetPosition("DefSpawn1")
-		Defense1 = AI.Entity_CreateFormation(2, PickAUnit1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense1 = AI.Entity_CreateFormation(2, PickAUnit1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense1, "BaseDefense1")
 		LookAt(Defense1, "lookpos")
 
@@ -147,22 +150,25 @@ createDefenseArmy2 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase2 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	DefenseArmy		= {	Entities.PU_LeaderBow3,
-					Entities.PU_LeaderPoleArm3,
-					Entities.PU_LeaderSword3
-					}
+	DefenseArmy		= {	}
 
-	if CP_Difficulty > 0 then
-		experience = experience + 2
+	if CP_Difficulty < 2 then
+		table.insert(DefenseArmy, Entities.PU_LeaderBow3)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm3)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword3)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle1)
+	else
+		table.insert(DefenseArmy, Entities.PU_LeaderBow4)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm4)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword4)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle2)
 	end
-
 
 	PickAUnit2 		= 	DefenseArmy[Logic.GetRandom(table.getn(DefenseArmy))+1]
 
 
 		local pos = GetPosition("DefSpawn2")
-		Defense2 = AI.Entity_CreateFormation(2, PickAUnit2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense2 = AI.Entity_CreateFormation(2, PickAUnit2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense2, "BaseDefense2")
 		LookAt(Defense2, "lookpos")
 
@@ -227,22 +233,25 @@ createDefenseArmy3 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase3 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	DefenseArmy		= {	Entities.PU_LeaderBow3,
-					Entities.PU_LeaderPoleArm3,
-					Entities.PU_LeaderSword3
-					}
+	DefenseArmy		= {	}
 
-	if CP_Difficulty > 0 then
-		experience = experience + 2
+	if CP_Difficulty < 2 then
+		table.insert(DefenseArmy, Entities.PU_LeaderBow3)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm3)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword3)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle1)
+	else
+		table.insert(DefenseArmy, Entities.PU_LeaderBow4)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm4)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword4)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle2)
 	end
-
 
 	PickAUnit3 		= 	DefenseArmy[Logic.GetRandom(table.getn(DefenseArmy))+1]
 
 
 		local pos = GetPosition("DefSpawn3")
-		Defense3 = AI.Entity_CreateFormation(2, PickAUnit3, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense3 = AI.Entity_CreateFormation(2, PickAUnit3, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense3, "BaseDefense3")
 		LookAt(Defense3, "lookpos")
 
@@ -307,22 +316,25 @@ createDefenseArmy4 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase4 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	DefenseArmy		= {	Entities.PU_LeaderBow3,
-					Entities.PU_LeaderPoleArm3,
-					Entities.PU_LeaderSword3
-					}
+	DefenseArmy		= {	}
 
-	if CP_Difficulty > 0 then
-		experience = experience + 2
+	if CP_Difficulty < 2 then
+		table.insert(DefenseArmy, Entities.PU_LeaderBow3)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm3)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword3)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle1)
+	else
+		table.insert(DefenseArmy, Entities.PU_LeaderBow4)
+		table.insert(DefenseArmy, Entities.PU_LeaderPoleArm4)
+		table.insert(DefenseArmy, Entities.PU_LeaderSword4)
+		table.insert(DefenseArmy, Entities.PU_LeaderRifle2)
 	end
-
 
 	PickAUnit4 		= 	DefenseArmy[Logic.GetRandom(table.getn(DefenseArmy))+1]
 
 
 		local pos = GetPosition("DefSpawn4")
-		Defense4 = AI.Entity_CreateFormation(2, PickAUnit4, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense4 = AI.Entity_CreateFormation(2, PickAUnit4, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense4, "BaseDefense4")
 		LookAt(Defense4, "lookpos")
 
@@ -387,18 +399,18 @@ createDefenseArmy5 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase5 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	local DefenseArmy	= 	{	
-				Entities.CU_BanditLeaderBow1
-				}
+	local DefenseArmy	= 	{ }
 
 	if CP_Difficulty == 0 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword1)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub1)
-	else
-		experience = experience + 2
+		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow1)
+	elseif CP_Difficulty == 1 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword2)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow2)
+	else
+		table.insert(DefenseArmy, Entities.PV_Cannon3)
 	end
 
 
@@ -406,7 +418,7 @@ DefenseBase5 = function()
 
 
 		local pos = GetPosition("DefSpawn5")
-		Defense5 = AI.Entity_CreateFormation(2, PickAUnit5, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense5 = AI.Entity_CreateFormation(2, PickAUnit5, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense5, "BaseDefense5")
 
 
@@ -470,18 +482,18 @@ createDefenseArmy6 = function()
 ---------------------------------------------------------------------------------------------------------------------------
 
 DefenseBase6 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	local DefenseArmy	= 	{	
-				Entities.CU_BanditLeaderBow1
-				}
+	local DefenseArmy	= 	{ }
 
 	if CP_Difficulty == 0 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword1)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub1)
-	else
-		experience = experience + 2
+		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow1)
+	elseif CP_Difficulty == 1 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword2)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub2)
+		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow2)
+	else
+		table.insert(DefenseArmy, Entities.PV_Cannon3)
 	end
 
 
@@ -489,7 +501,7 @@ DefenseBase6 = function()
 
 
 		local pos = GetPosition("DefSpawn6")
-		Defense6 = AI.Entity_CreateFormation(2, PickAUnit6, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		Defense6 = AI.Entity_CreateFormation(2, PickAUnit6, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(Defense6, "BaseDefense6")
 
 

@@ -89,22 +89,25 @@ function Mission_InitDiplomacy()
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
 function Mission_InitPlayerColorMapping()
-
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	
-		Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Robbers
-		Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Attackers from Cave
-
+	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)		-- Robbers
+	Display.SetPlayerColorMapping(3, ROBBERS_COLOR)			-- Attackers from Cave
+	
+	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- Oberkirch
-		Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
+	else
+		Display.SetPlayerColorMapping(4, 8)		-- Oberkirch
+	end
 
-		Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
+	Display.SetPlayerColorMapping(5, FRIENDLY_COLOR2)		-- Unterbach
 
-		Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
+	--Display.SetPlayerColorMapping(7, PLAYER_COLOR)			-- VC in palyer's village
 
-		if CP_Difficulty == 2 then
-			Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-			Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
-		end
+	Display.SetPlayerColorMapping(8, NPC_COLOR)				-- Trader
+
+	Display.SetPlayerColorMapping(7, p1color)
 		
 end
 
@@ -118,15 +121,16 @@ function Mission_InitResources()
 -- This function is called to setup Technology states on mission start
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
-		_ResearchSuperTech = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			_ResearchSuperTech = true
 			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			ResearchAnimalTechs(2)
+			ResearchAnimalTechs(3)
+			ResearchAnimalTechs(4)
 		end
 
-		ResearchAllMilitaryTechs(2, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(3, _ResearchSuperTech)
-		ResearchAllMilitaryTechs(4, _ResearchSuperTech)	--No enemy, but has to survive the cave-attack without help
+		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)	--No enemy, but has to survive the cave-attack without help
 	end
 end
 
@@ -207,19 +211,13 @@ function Mission_FirstMapAction()
 	--	entry point
 
 		startQuestMoveToCastle()
-	
-		if CP_Difficulty == 0 then
-			CreateRandomGoldChests()
-		else
-			local addWolves = 0
-			if CP_Difficulty == 2 then
-				Display.SetPlayerColorMapping(1, ENEMY_COLOR1)
-				Display.SetPlayerColorMapping(7, ENEMY_COLOR1)
-				GUI.SetTaxLevel(1)
-			
-				addWolves = addWolves + 2
 
-				LocalMusic.SetBattle = LocalMusic.SetEvilBattle
+		if CP_Difficulty > 0 then
+			local wolfSet = RaidersDefaultSets.Vanilla
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+			else
+				CreateRandomGoldChests()
 			end
 
 			local bosspos1 = GetPosition("guard1")
@@ -229,19 +227,16 @@ function Mission_FirstMapAction()
 			local bosspos2 = GetPosition("tower2")
 			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 			LookAt(bossID2, "defendRoute")
-
-			RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, samount = (2 + addWolves), ramount = (10 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, samount = (2 + addWolves), ramount = (6 + addWolves)})
-			RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, samount = (3 + addWolves), ramount = (8 + addWolves)})
+		else
+			CreateRandomGoldChests()
 		end
 
-		--Tools.ExploreArea(-1, -1, 900)
-		--StartSimpleHiResJob("GetDarioPos")
-	end
+		RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
---[[
-function GetDarioPos()
-	local pos = GetPosition("Dario")
-	Message("X: " .. pos.X .. "   Y: " .. pos.Y)
-end
---]]
+		--RaidersCreate({player = 3, pos = "rudelpos1", revier = 2000, range = 5000, types = wolfSet, samount = (2 + addWolves), ramount = (10 + addWolves)})
+		RaidersCreate({player = 3, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})
+		RaidersCreate({player = 3, pos = "rudelpos3", revier = {"rudelpos3", "rudelpos3_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
+
+		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
+	end

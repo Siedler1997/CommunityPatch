@@ -1796,6 +1796,17 @@ function CreateMilitaryGroup(_player,_entity,_soldiers,_position,_name,_lookAt)
 
 end
 
+-- Gibt die bevorzugte Spielerfarbe des Spielers zurück
+function GetPlayerPreferredColor()
+	local color = 1
+	
+	if GDB.IsKeyValid( "Config\\User\\PrefColor" ) then
+		color = GDB.GetValue("Config\\User\\PrefColor")
+	end
+
+	return color
+end
+
 --- GetRandom   mcb  1.0    (Original ???)  
 -- Gibt eine Pseudozufallszahl zwischen _min und _max zurück.  
 -- Ist _max nicht gesetzt, zwischen 1 und _min.  
@@ -1833,7 +1844,7 @@ function SetAIUnitsToBuild( _aiID, ... )
     end
 end
 
---Researchs Armor-, Attack- and other useful techs for military purposes
+--Researchs Armor-, Attack- and other useful techs for military purposes (except animal techs)
 function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_LeatherMailArmor, _PlayerId );
 	ResearchTechnology( Technologies.T_ChainMailArmor, _PlayerId );
@@ -1871,6 +1882,14 @@ function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 		ResearchTechnology( Technologies.T_SuperTechnology, _PlayerId );
 	end
 
+end
+
+function ResearchAnimalTechs(_PlayerId, _AnimalTech2)
+	ResearchTechnology( Technologies.T_AnimalTechnology1, _PlayerId );
+	
+	if _AnimalTech2 == true then
+		ResearchTechnology( Technologies.T_AnimalTechnology2, _PlayerId );
+	end
 end
 
 -- (von Peermanent? oder JugarTeam?) geändert bei Kingsia
@@ -2048,6 +2067,14 @@ function DestroyEffect( _effect )
 	assert(type(_effect) == "number", "fatal error: wrong input: _effect (function DestroyEffect()");
 	Logic.DestroyEffect( _effect );
 end
+
+-- Prints the current mouse position as a message
+function GetMousePos()
+	local position = {}
+	position.X,position.Y = GUI.Debug_GetMapPositionUnderMouse()
+
+	Message("X: " .. position.X .. "   Y: " .. position.Y)
+end
 --------------------------------------------------------------------------------
 --[[
 	Allows creation of evil units and buildings by a specific player
@@ -2079,7 +2106,7 @@ end
 function CP_GetEvilModUnitState(_playerId)
 	return CP_EvilMod[_playerId].UnitState
 end
-function CP_GetEvilModUnitState(_playerId, _state)
+function CP_SetEvilModUnitState(_playerId, _state)
 	CP_EvilMod[_playerId].UnitState = _state
 end
 
@@ -2091,10 +2118,58 @@ function CP_SetEvilModTowerState(_playerId, _state)
 end
 
 --------------------------------------------------------------------------------
--- Erstellt ein Rudel Wölfe, dass sich aktiv in seinem Revier bewegt
+-- Erstellt ein Rudel Tiere, dass sich aktiv in seinem Revier bewegt
 -- by Siedler1997
+
+-- Some default sets
+RaidersDefaultSets = {}
+RaidersDefaultSets.Vanilla = {
+	Entities.CU_AggressiveWolf
+}
+RaidersDefaultSets.Europe = {
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Highland = {
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_White,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Mediterranean = {
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Brown,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Grey,
+	Entities.CU_AggressiveWolf_Black
+}
+RaidersDefaultSets.Evelance = {
+	Entities.CU_AggressiveWolf_Black
+}
+
 function RaidersCreate(_data)
 	local dat = _data
+	if dat.types == nil or table.getn(dat.types) == 0 then
+		dat.types = { Entities.CU_AggressiveWolf }
+	end
+	if dat.experience == nil then
+		dat.experience = 0
+	end
 	if raid_table == nil then
 		raid_counter = 1
 		raid_ccount = 0
@@ -2107,7 +2182,7 @@ function RaidersCreate(_data)
 	local position = GetPosition(dat.pos)
 	for k = 1, dat.samount do 
 		local indpos = Zufall_Kreis(position, 500, true)
-		local eid = AI.Entity_CreateFormation(dat.player, Entities.CU_AggressiveWolf,0,0,(indpos.X),(indpos.Y),0,0,0,0);
+		local eid = AI.Entity_CreateFormation(dat.player, dat.types[GetRandom(1, table.getn(dat.types))],0,0,(indpos.X),(indpos.Y),0,0,dat.experience,0);
 		table.insert(_runits, eid)
 	end
 	local _rdata = {
@@ -2117,7 +2192,9 @@ function RaidersCreate(_data)
 		r_range = dat.range, 
 		r_sam = dat.samount, 
 		r_resam = dat.ramount, 
-		r_cpos = position
+		r_types = dat.types, 
+		r_cpos = position,
+		r_exp = dat.experience 
 		}
 	local raid_group = {raid_id = raid_counter, raid_units = _runits, raid_data = _rdata}
 	table.insert(raid_table, raid_group)
@@ -2142,7 +2219,7 @@ function RaidersControl()
 				if enemy ~= false then
 					for k = 1, table.getn(rtable.raid_units) do
 						local task = Logic.GetCurrentTaskList(rtable.raid_units[k])
-						if string.sub(task, 1, 9) ~= "TL_BATTLE" and task ~= "TL_START_BATTLE" then
+						if task ~= nil and string.sub(task, 1, 9) ~= "TL_BATTLE" and task ~= "TL_START_BATTLE" then
 							Attack(rtable.raid_units[k], GetPosition(enemy))
 						end
 					end
@@ -2163,7 +2240,7 @@ function RaidersControl()
 					end
 					for k = 1, nachw_zahl do
 						local adultp = GetPosition(rtable.raid_units[k])
-						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, Entities.CU_AggressiveWolf,0,0,(adultp.X),(adultp.Y),0,0,0,0);
+						local eid = AI.Entity_CreateFormation(rtable.raid_data.r_player, rtable.raid_data.r_types[GetRandom(1, table.getn(rtable.raid_data.r_types))],0,0,(adultp.X),(adultp.Y),0,0,rtable.raid_data.r_exp,0);
 						table.insert(rtable.raid_units, eid)
 					end
 				end
@@ -2243,7 +2320,7 @@ function AreEnemiesInArea( _player, _position, _range)
 	end
 end
 
--- Gibt den nächstgelegenen Gegner in der Nähe zurück
+-- Gibt den nächstgelegenen (lebenden) Gegner in der Nähe zurück
 -- by Siedler1997
 function GetNearestEnemyInArea(_player, _pos, _range)
 	local minrange = _range/4
@@ -2255,14 +2332,16 @@ function GetNearestEnemyInArea(_player, _pos, _range)
 		if Logic.GetDiplomacyState(_player, i) == Diplomacy.Hostile then
 			local enemies = SucheAufDerWelt(i, 0, _range, _pos)
 			for k = 1, table.getn(enemies) do
-				if GetDistance(enemies[k], _pos) < minrange then
-					table.insert(enemytable, enemies[k])
-				elseif GetDistance(enemies[k], _pos) < minrange*2 then
-					table.insert(etable2, enemies[k])
-				elseif GetDistance(enemies[k], _pos) < minrange*3 then
-					table.insert(etable3, enemies[k])
-				else
-					table.insert(etable4, enemies[k])
+				if IsAlive(enemies[k]) then
+					if GetDistance(enemies[k], _pos) < minrange then
+						table.insert(enemytable, enemies[k])
+					elseif GetDistance(enemies[k], _pos) < minrange*2 then
+						table.insert(etable2, enemies[k])
+					elseif GetDistance(enemies[k], _pos) < minrange*3 then
+						table.insert(etable3, enemies[k])
+					else
+						table.insert(etable4, enemies[k])
+					end
 				end
 			end
 		end
@@ -2322,4 +2401,12 @@ function IsPositionInMap(_pos, _correction)
 		local newpos = {X=posX, Y=posY}
 		return newpos
 	end
+end
+
+function SetAIUnitsToBuild( _aiID, _types )
+    for i = table.getn(DataTable), 1, -1 do
+        if DataTable[i].player == _aiID and DataTable[i].AllowedTypes then
+            DataTable[i].AllowedTypes = _types;
+        end
+    end
 end

@@ -354,6 +354,7 @@ function GUITooltip_FindUnits(_menu)
 	elseif _menu == "MenuTop/Find_cannon" then
 		local CanAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon3a) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon4a)
 		tempamount = tempamount + CanAmount
 	elseif _menu == "AOMenuTop/Find_scout" then
 		tempamount = tempamount + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_Scout)

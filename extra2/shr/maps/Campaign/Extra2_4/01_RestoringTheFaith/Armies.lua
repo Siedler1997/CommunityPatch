@@ -49,27 +49,34 @@ createSpawnRaid1 = function()
 	Action_TimerRaid1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-			local i=1+GetRandom(3)
-			local j=1+GetRandom(3)
+		local i=1+GetRandom(3)
+		local j=1+GetRandom(3)
+
+		local banditSwordType = Entities.CU_BanditLeaderSword1
+		--local banditBowType = Entities.CU_BanditLeaderBow1
+		if CP_Difficulty > 0 then
+			banditSwordType = Entities.CU_BanditLeaderSword2
+			--banditBowType = Entities.CU_BanditLeaderBow2
+		end
 				
-                        local pos = GetPosition("raidsp1")
-                        RaidAttack1 = Tools.CreateGroup(2, Entities.CU_BanditLeaderSword1, 8, pos.X, pos.Y, 180)
-                        SetEntityName(RaidAttack1, "Bulangii1")
+        local pos = GetPosition("raidsp1")
+        RaidAttack1 = Tools.CreateGroup(2, banditSwordType, 8, pos.X, pos.Y, 180)
+        SetEntityName(RaidAttack1, "Bulangii1")
 
 
-                     	local pos = GetPosition("raidsp2")
-                        RaidAttack2 = Tools.CreateGroup(2, Entities.CU_BanditLeaderSword1, 8, pos.X, pos.Y, 180)
-                        SetEntityName(RaidAttack2, "Bulangii2")
+        local pos = GetPosition("raidsp2")
+        RaidAttack2 = Tools.CreateGroup(2, banditSwordType, 8, pos.X, pos.Y, 180)
+        SetEntityName(RaidAttack2, "Bulangii2")
 
-			Attack("Bulangii1","attack"..i)
-			Attack("Bulangii2","attack"..j)
+		Attack("Bulangii1","attack"..i)
+		Attack("Bulangii2","attack"..j)
 
 
-                             Raid1_DELAY 		=       400
-                             Raid1_COUNTER 	        =	Raid1_DELAY
-	                     StartJob("TimerRaid1")
+        Raid1_DELAY 		=       400
+        Raid1_COUNTER 	        =	Raid1_DELAY
+		StartJob("TimerRaid1")
 
-                        return true
+		return true
 
 
 	end
@@ -101,7 +108,11 @@ setuppl6army = function()
 	pl6army.rodeLength		        = 500
 	
 	-- Spawn parameter
-	pl6army.spawnTypes 			= { { Entities.CU_BanditLeaderSword2, 8} }
+	if CP_Difficulty == 0 then
+		pl6army.spawnTypes 			= { { Entities.CU_BanditLeaderSword1, 8} }
+	else
+		pl6army.spawnTypes 			= { { Entities.CU_BanditLeaderSword2, 8} }
+	end
 	pl6army.spawnPos			= GetPosition("barboutpost")
 	--pl6army.spawnGenerator		        = "barboutpost"
 	pl6army.respawnTime			= 60*5
@@ -112,8 +123,9 @@ setuppl6army = function()
 	pl6army.retreatStrength			= 2
 	pl6army.baseDefenseRange		= 2000
 	pl6army.outerDefenseRange		= 3200
-	pl6army.Attack				= false
+	pl6army.Attack					= false
 	pl6army.AttackAllowed			= false
+	pl6army.experiencePoints		= CP_Difficulty
 
 	-- Setup army
 	SetupArmy(pl6army)
@@ -160,7 +172,11 @@ setupbarbuci = function()
 	barbuci.rodeLength		        = 500
 	
 	-- Spawn parameter
-	barbuci.spawnTypes 			= { { Entities.CU_BanditLeaderBow1, 4} }
+	if CP_Difficulty == 0 then
+		barbuci.spawnTypes 			= { { Entities.CU_BanditLeaderBow1, 8} }
+	else
+		barbuci.spawnTypes 			= { { Entities.CU_BanditLeaderBow2, 8} }
+	end
 	barbuci.spawnPos			= GetPosition("barbcamp")
 	barbuci.spawnGenerator		        = "LeaderB"
 	barbuci.respawnTime			= 60*5
@@ -171,8 +187,9 @@ setupbarbuci = function()
 	barbuci.retreatStrength			= 2
 	barbuci.baseDefenseRange		= 2000
 	barbuci.outerDefenseRange		= 3200
-	barbuci.Attack				= false
+	barbuci.Attack					= false
 	barbuci.AttackAllowed			= false
+	barbuci.experiencePoints		= CP_Difficulty
 
 	-- Setup army
 	SetupArmy(barbuci)
@@ -220,7 +237,11 @@ setupbarbuci1 = function()
 	barbuci1.rodeLength		        = 500
 	
 	-- Spawn parameter
-	barbuci1.spawnTypes 			= {  { Entities.CU_BanditLeaderBow1, 4} }
+	if CP_Difficulty == 0 then
+		barbuci1.spawnTypes 			= { { Entities.CU_BanditLeaderBow1, 8} }
+	else
+		barbuci1.spawnTypes 			= { { Entities.CU_BanditLeaderBow2, 8} }
+	end
 	barbuci1.spawnPos			= GetPosition("barbcamp1")
 	barbuci1.spawnGenerator			= "LeaderB"
 	barbuci1.respawnTime			= 60*5
@@ -231,8 +252,9 @@ setupbarbuci1 = function()
 	barbuci1.retreatStrength		= 2
 	barbuci1.baseDefenseRange		= 2000
 	barbuci1.outerDefenseRange		= 3200
-	barbuci1.Attack				= false
+	barbuci1.Attack					= false
 	barbuci1.AttackAllowed			= false
+	barbuci1.experiencePoints		= CP_Difficulty
 
 	-- Setup army
 	SetupArmy(barbuci1)
@@ -278,7 +300,11 @@ setupcaft = function()
 	caft.rodeLength		        = 500
 	
 	-- Spawn parameter
-	caft.spawnTypes 		= {  { Entities.CU_BanditLeaderBow1, 4} }
+	if CP_Difficulty == 0 then
+		caft.spawnTypes 			= { { Entities.CU_BanditLeaderBow1, 8} }
+	else
+		caft.spawnTypes 			= { { Entities.CU_BanditLeaderBow2, 8} }
+	end
 	caft.spawnPos			= GetPosition("barbcamp3")
 	caft.spawnGenerator		= "LeaderB"
 	caft.respawnTime		= 60*5
@@ -289,8 +315,9 @@ setupcaft = function()
 	caft.retreatStrength		= 2
 	caft.baseDefenseRange		= 2000
 	caft.outerDefenseRange		= 3200
-	caft.Attack			= false
-	caft.AttackAllowed		= false
+	caft.Attack					= false
+	caft.AttackAllowed			= false
+	caft.experiencePoints		= CP_Difficulty
 
 	-- Setup army
 	SetupArmy(caft)
@@ -326,8 +353,12 @@ end
 Spawnkillaz = function ()
 
 	local pos = GetPosition("barboutpost2")
-        CampBoys = Tools.CreateGroup(3, Entities.CU_BanditLeaderSword1, 6, pos.X, pos.Y, 180)
-         SetEntityName(CampBoys, "killaz") 
+	if CP_Difficulty == 0 then
+		CampBoys = AI.Entity_CreateFormation(3,Entities.CU_BanditLeaderSword1,0,8,pos.X,pos.Y,0,0,1,0)
+	else
+		CampBoys = AI.Entity_CreateFormation(3,Entities.CU_BanditLeaderSword2,0,8,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
+	end
+    SetEntityName(CampBoys, "killaz") 
 	 
 end
 -----------------------------------------------------------------------------------------

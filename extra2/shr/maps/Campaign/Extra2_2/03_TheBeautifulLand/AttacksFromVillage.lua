@@ -20,13 +20,14 @@ setupArmyAI1Attack = function()
 											UpgradeCategories.LeaderSword, 
 											UpgradeCategories.LeaderBow
 								}
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		ArmyAI1Attack.strength = ArmyAI1Attack.strength + 2
 		table.insert(ArmyAI1Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
 	end
 
 	ArmyAI1Attack.Attack				= false
 	ArmyAI1Attack.AttackAllowed			= false
+	ArmyAI1Attack.experiencePoints		=	CP_Difficulty
 
 
 	-- Setup army

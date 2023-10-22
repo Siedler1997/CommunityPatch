@@ -594,23 +594,23 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 
 function CreateAttackCaravans()
-	local experience = LOW_EXPERIENCE
 	local etype1 = Entities.CU_BanditLeaderSword1
+	local etype2 = Entities.CU_BanditLeaderBow1
 	if CP_Difficulty > 0 then
-		experience = experience + 3
 		etype1 = Entities.CU_BanditLeaderSword2
+		etype2 = Entities.CU_BanditLeaderBow2
 	end
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Attacker2 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attacker2 	= AI.Entity_CreateFormation(5, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attacker2, "Attacker2")
 
 	local pos 	= GetPosition("SpawnCaravanAttack")
-	Attacker3 	= AI.Entity_CreateFormation(5, Entities.CU_BanditLeaderBow1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	Attacker3 	= AI.Entity_CreateFormation(5, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(Attacker3, "Attacker3")
 	
 	local pos = GetPosition("MountainMenSpawn")
-	local DefBor1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,experience,0)
+	local DefBor1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranLieutenant,0,0,pos.X,pos.Y,0,0,CP_Difficulty+1,0)
 	SetEntityName(DefBor1, "DefBor1")
 
 end

@@ -33,6 +33,7 @@ setupArmyP7Defense = function()
 	ArmyP7Defense.outerDefenseRange	= 	2000
 	ArmyP7Defense.Attack			= 	false
 	ArmyP7Defense.AttackAllowed		= 	false
+	ArmyP7Defense.experiencePoints	=	CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyP7Defense)

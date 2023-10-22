@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>AOMapDescription/CM02_10_FloodedLand_name</NameKey>
+ <DescKey>AOMapDescription/CM02_10_FloodedLand_desc</DescKey>
+ <Name></Name>
+ <Desc></Desc>
+ <SizeX>641</SizeX>
+ <SizeY>641</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\Textures\GUI\MapPics\externalmap</MiniMapTextureName>
+ <Key>1</Key>
+ <GUID>
+  <Data>1f622ca5-2286-4ba6-9c56-759bed86e025</Data>
+ </GUID>
+</root>

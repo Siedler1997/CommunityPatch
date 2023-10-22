@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------
 function beginChapterOne()
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
         CreateRandomGoldChests()
         CreateRandomChests()
     end

@@ -163,6 +163,13 @@ end
 
 -- princess ist back home at major
 end7thQuest = function()
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechs(2, true)
+		ResearchAllMilitaryTechs(4, true)
+		ResearchAllMilitaryTechs(5, true)
+		ResearchAllMilitaryTechs(6, true)	--No enemy, but has to be useful
+		ResearchAllMilitaryTechs(7, true)
+	end
 
 	MajorQuestDone()
 	

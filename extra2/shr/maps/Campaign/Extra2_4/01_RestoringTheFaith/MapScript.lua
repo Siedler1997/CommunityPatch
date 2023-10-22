@@ -50,14 +50,26 @@ end
 function Mission_InitTechnologies()
 
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_Weathermachine, 0)
+	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 	Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
 		ResearchAllMilitaryTechsAddOn(5)
-		ResearchAllMilitaryTechsAddOn(6)
+		ResearchAllMilitaryTechsAddOn(6, true)
 	end
 
 end
@@ -96,9 +108,22 @@ end
 
 ----------------------------------------------------------------------------
 function InitPlayerColorMapping()
-    Display.SetPlayerColorMapping(7, 3)
-    Display.SetPlayerColorMapping(3, 7)
-    Display.SetPlayerColorMapping(6, 5)
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
+	
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)
+	else
+		Display.SetPlayerColorMapping(2, 6)
+	end
+    Display.SetPlayerColorMapping(3, MORTFICHET_COLOR)
+    Display.SetPlayerColorMapping(5, ROBBERS_COLOR)
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(6, ENEMY_COLOR2)
+	else
+		Display.SetPlayerColorMapping(6, 1)
+	end
+    Display.SetPlayerColorMapping(7, ARIS_ROBBERS)
 end
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -106,106 +131,118 @@ end
 function Mission_FirstMapAction()
 	CP_Difficulty = GDB.GetValue("Game\\Campaign_Difficulty")
 
+	local leaderBpos = GetPosition("LeaderB")
+	DestroyEntity("LeaderB")
+	local newLeaderB = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,leaderBpos.X,leaderBpos.Y,0,0,CP_Difficulty+1,0)
+    SetEntityName(newLeaderB, "LeaderB")
+	LookAt("LeaderB", "Dario")
 
 	String.Init("CM06_01_RestoringTheFaith")
 	--	flags
 
-		biserica = 0
-		brother  = 0
-		preputz  = 0
-		bulache	 = 0
+	biserica = 0
+	brother  = 0
+	preputz  = 0
+	bulache	 = 0
 
-	--	locals
+--	locals
 
-		IncludeLocals("gameControl")
+	IncludeLocals("gameControl")
 		
-		IncludeLocals("army_barbGuards")
-		IncludeLocals("army_Bombs")
-		IncludeLocals("army_bridge")
-		IncludeLocals("army_defenses")
-		IncludeLocals("army_raiders")
-		IncludeLocals("army_templarHero")
-		IncludeLocals("army_templars")
+	IncludeLocals("army_barbGuards")
+	IncludeLocals("army_Bombs")
+	IncludeLocals("army_bridge")
+	IncludeLocals("army_defenses")
+	IncludeLocals("army_raiders")
+	IncludeLocals("army_templarHero")
+	IncludeLocals("army_templars")
 		
-		IncludeLocals("npc_brother")
-		IncludeLocals("npc_sister")
-		IncludeLocals("npc_traitor")
-		IncludeLocals("npc_pietrar")
-		IncludeLocals("npc_demo")
-		IncludeLocals("npc_mayor_chapter2")
-		IncludeLocals("npc_templarHero")
-		--IncludeLocals("npc_geologist")
+	IncludeLocals("npc_brother")
+	IncludeLocals("npc_sister")
+	IncludeLocals("npc_traitor")
+	IncludeLocals("npc_pietrar")
+	IncludeLocals("npc_demo")
+	IncludeLocals("npc_mayor_chapter2")
+	IncludeLocals("npc_templarHero")
+	--IncludeLocals("npc_geologist")
 		
-		IncludeLocals("quest_captureleader")
-		IncludeLocals("quest_cathedral")
-		IncludeLocals("quest_defeat")
-		IncludeLocals("quest_victory")
-		IncludeLocals("quest_buildupmoor")
-		IncludeLocals("quest_buildupplateau")
-		IncludeLocals("quest_iron")
+	IncludeLocals("quest_captureleader")
+	IncludeLocals("quest_cathedral")
+	IncludeLocals("quest_defeat")
+	IncludeLocals("quest_victory")
+	IncludeLocals("quest_buildupmoor")
+	IncludeLocals("quest_buildupplateau")
+	IncludeLocals("quest_iron")
 		
 		
-		IncludeLocals("briefing_intro")
-		IncludeLocals("briefing_pietrar")
-		IncludeLocals("briefing_traitor")
-		IncludeLocals("briefing_traitorAppears")
-		IncludeLocals("briefing_sister")
-		IncludeLocals("briefing_sistersaved")
-		IncludeLocals("briefing_mayor_chapter2")
-		IncludeLocals("briefing_leaderBarb")
-		IncludeLocals("briefing_demo2")
-		IncludeLocals("briefing_ironpaid")
-		IncludeLocals("briefing_churchleft")
-		--IncludeLocals("briefing_geologist")
-		
-
-	--	resources
-
-	if CP_Difficulty == 0 then
-		AddGold(1500)
-		AddWood(500)
-		AddClay(2000)
-		AddStone(3000)
-		AddIron(3000)
-		AddSulfur(500)
-	else
-		AddGold(1000)
-		AddWood(500)
-		AddClay(1000)
-		AddStone(1500)
-		AddIron(1000)
-		AddSulfur(150)
-	end	
-
+	IncludeLocals("briefing_intro")
+	IncludeLocals("briefing_pietrar")
+	IncludeLocals("briefing_traitor")
+	IncludeLocals("briefing_traitorAppears")
+	IncludeLocals("briefing_sister")
+	IncludeLocals("briefing_sistersaved")
+	IncludeLocals("briefing_mayor_chapter2")
+	IncludeLocals("briefing_leaderBarb")
+	IncludeLocals("briefing_demo2")
+	IncludeLocals("briefing_ironpaid")
+	IncludeLocals("briefing_churchleft")
+	--IncludeLocals("briefing_geologist")
 	
-	-- 	Set Music-Set
-
-		LocalMusic.UseSet = EUROPEMUSIC
-	--	Chests
-		CreateChestOpener("Dario")
-		CreateRandomChests()
-		StartChestQuest()
-
-	--	Start Control
-
-		Start1stChapter()
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 		
-	--	Players
+-- 	Set Music-Set
+
+	LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
+	LocalMusic.UseSet = EUROPEMUSIC
+--	Chests
+	CreateChestOpener("Dario")
+	StartChestQuest()
 	
-		IncludeLocals("player_1")
-		IncludeLocals("player_2")
-		IncludeLocals("player_3")
-		IncludeLocals("player_4")
+--	Start Control
+
+	Start1stChapter()
+		
+--	Players
+	
+	IncludeLocals("player_1")
+	IncludeLocals("player_2")
+	IncludeLocals("player_3")
+	IncludeLocals("player_4")
 						    	
-		--EnableDebugging()
+	--EnableDebugging()
 
+	--SetPlayerName(2, "Barbar Raiders")
+	SetPlayerName(2, String.Key("_Player2Name"))
+	
+	Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
+	
+	if CP_Difficulty > 0 then
+		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 500, 1500, 1000, 150)
 
+		if CP_Difficulty == 2 then
+			GUI.SetTaxLevel(1)
+			
+			Logic.CreateEntity(Entities.PB_DarkTower3, 20000, 47300, 0, 2);
+			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 46700, 0, 2);
+		else
+			CreateRandomChests()
 
---SetPlayerName(2, "Barbar Raiders")
-SetPlayerName(2, String.Key("_Player2Name"))
+			Logic.CreateEntity(Entities.PB_DarkTower2, 20000, 47300, 0, 2);
+			Logic.CreateEntity(Entities.PB_DarkTower2, 25200, 46700, 0, 2);
+		end
+	else
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 500, 3000, 3000, 500)
 
---Tools.ExploreArea(-1, -1, 900)
+		CreateRandomChests()
+	end
+	
+	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (8 + CP_Difficulty * 2)})
+	RaidersCreate({player = 5, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+	RaidersCreate({player = 5, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 
+	--StartSimpleJob("GetMousePos")
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 

@@ -184,6 +184,14 @@
 			      <Cannon>PV_Cannon4</Cannon>
 			      <TaskList>TL_SMELTER_WORK6</TaskList>
 			  </CannonInfo>
+			  <CannonInfo>
+				  <Cannon>PV_Cannon3a</Cannon>
+				  <TaskList>TL_SMELTER_WORK5</TaskList>
+			  </CannonInfo>
+			  <CannonInfo>
+				  <Cannon>PV_Cannon4a</Cannon>
+				  <TaskList>TL_SMELTER_WORK6</TaskList>
+			  </CannonInfo>
 		</Logic>
 	</Behavior>
 

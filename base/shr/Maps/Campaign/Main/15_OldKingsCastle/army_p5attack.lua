@@ -19,8 +19,8 @@ setupArmyP5Attack = function()
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
 	else
 		ArmyP5Attack.strength		= 	8
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4)
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4)
+		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
+		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
 	end
 
 	-- Attack parameter

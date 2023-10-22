@@ -105,6 +105,9 @@ function GameCallback_OnGameStart()
 
 	-- Tribute Jingle sound
 	SetupTributeJingle()
+	
+	-- Init scout forester
+	ScoutFoerster_Init(ScoutFoerster_SET_Fir, {Gold=50});
 
 	-- Call first action
 	if Mission_FirstMapAction ~= nil then
@@ -136,6 +139,8 @@ function Mission_OnSaveGameLoaded()
 	elseif InitPlayerColorMapping ~= nil then
 		InitPlayerColorMapping()
 	end
+
+	LocalMusic.LastBattleMusicStarted = 0
 	
 	MainWindow_LoadGame_Done()
 

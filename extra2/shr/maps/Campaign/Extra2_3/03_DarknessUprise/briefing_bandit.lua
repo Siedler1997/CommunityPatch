@@ -75,7 +75,7 @@ function createBlockade()
 
 	for n=1,4,1 do
 		CreateEntity(1,Entities.XD_MiscHaybale3,GetPosition("blockade"..n),"hey"..n)
-		local Armybandit = AI.Entity_CreateFormation(7,Entities.CU_BanditLeaderBow1,0,4,pos1.X,pos1.Y,0,0,2,0)
+		local Armybandit = AI.Entity_CreateFormation(7,Entities.CU_BanditLeaderBow2,0,6,pos1.X,pos1.Y,0,0,VERYHIGH_EXPERIENCE-CP_Difficulty,0)
 		LookAt(Armybandit, "traderoute2_1")
 		SetEntityName(Armybandit, "Armybandit"..n)
 		Move("Armybandit"..n,"blockade"..n,100)

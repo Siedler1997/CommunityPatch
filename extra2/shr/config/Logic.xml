@@ -1015,6 +1015,16 @@
 		<Category>Lighthouse</Category>
 		<FirstBuilding>CB_Lighthouse</FirstBuilding>
 	</BuildingUpgrade>
+
+	<SettlerUpgrade>
+		<Category>Cannon3a</Category>
+		<FirstSettler>PV_Cannon3a</FirstSettler>
+	</SettlerUpgrade>
+
+	<SettlerUpgrade>
+		<Category>Cannon4a</Category>
+		<FirstSettler>PV_Cannon4a</FirstSettler>
+	</SettlerUpgrade>
 	
 	<AlarmRechargeTime>180000</AlarmRechargeTime>
 

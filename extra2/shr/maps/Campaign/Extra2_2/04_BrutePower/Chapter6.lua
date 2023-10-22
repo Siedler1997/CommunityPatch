@@ -1,11 +1,18 @@
 function StartChapter6()
 
-StartJob("CheckBrief1")
-ReplaceEntity("FinalGate", Entities.XD_PalisadeGate2)
-StartJob("BarbarianSettlementDead")
-StartJob("BarbarianAttacks")
-StartJob("BarbarianAttacks1")
-StartJob("BarbarianAttacks2")
+	if CP_Difficulty == 2 then
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(3, true)
+		ResearchAllMilitaryTechsAddOn(4, true)
+		ResearchAllMilitaryTechsAddOn(5, true)
+	end
+
+	StartJob("CheckBrief1")
+	ReplaceEntity("FinalGate", Entities.XD_PalisadeGate2)
+	StartJob("BarbarianSettlementDead")
+	StartJob("BarbarianAttacks")
+	StartJob("BarbarianAttacks1")
+	StartJob("BarbarianAttacks2")
 
 end
 
@@ -122,21 +129,19 @@ QUESTBarbarianAttacks_COUNTER 		=	QUESTBarbarianAttacks_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 function BarbarianArmy()
-	local experience = LOW_EXPERIENCE
-	local etype1 = Entities.CU_BlackKnight_LeaderMace1
+	local etype1 = Entities.CU_BlackKnight_LeaderMace2
 	local etype2 = Entities.PU_LeaderBow2
-	if CP_Difficulty > 0 then
-		experience = experience + 3
-		etype1 = Entities.CU_BlackKnight_LeaderMace2
+	if CP_Difficulty == 2 then
+		etype1 = Entities.PU_LeaderSword3
 		etype2 = Entities.PU_LeaderBow3
 	end
 
 	local pos = GetPosition("BSpawn1")
-	RaidAttack1 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack1 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack1, "RandAttack1")
 
 	local pos = GetPosition("BSpawn2")
-	RaidAttack2 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack2 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack2, "RandAttack2")
 
 	Attack("RandAttack1","Backup3")
@@ -201,21 +206,19 @@ QUESTBarbarianAttacks1_COUNTER 		=	QUESTBarbarianAttacks1_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 function BarbarianArmy1()
-	local experience = LOW_EXPERIENCE
-	local etype1 = Entities.CU_BlackKnight_LeaderMace1
+	local etype1 = Entities.CU_BlackKnight_LeaderMace2
 	local etype2 = Entities.PU_LeaderPoleArm2
-	if CP_Difficulty > 0 then
-		experience = experience + 3
-		etype1 = Entities.CU_BlackKnight_LeaderMace2
+	if CP_Difficulty == 2 then
+		etype1 = Entities.PU_LeaderSword3
 		etype2 = Entities.PU_LeaderPoleArm3
 	end
 
 	local pos = GetPosition("BSpawn3")
-	RaidAttack3 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack3 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack3, "RandAttack3")
 
 	local pos = GetPosition("BSpawn4")
-	RaidAttack4 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack4 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack4, "RandAttack4")
 
 
@@ -285,27 +288,25 @@ QUESTBarbarianAttacks2_COUNTER 		=	QUESTBarbarianAttacks2_DELAY
 -------------------------------------------------------------------------------------------------------------------------
 
 function BarbarianArmy2()
-	local experience = LOW_EXPERIENCE
-	local etype1 = Entities.CU_BanditLeaderBow1
-	local etype2 = Entities.CU_BanditLeaderSword1
-	local etype3 = Entities.CU_BlackKnight_LeaderMace1
-	if CP_Difficulty > 0 then
-		experience = experience + 3
+	local etype1 = Entities.CU_BanditLeaderBow2
+	local etype2 = Entities.CU_BanditLeaderSword2
+	local etype3 = Entities.CU_BlackKnight_LeaderMace2
+	if CP_Difficulty == 2 then
 		etype1 = Entities.PU_LeaderBow3
 		etype2 = Entities.PU_LeaderPoleArm3
-		etype3 = Entities.CU_BlackKnight_LeaderMace2
+		etype3 = Entities.PU_LeaderSword3
 	end
 
 	local pos = GetPosition("BSpawn5")
-	RaidAttack5 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack5 = AI.Entity_CreateFormation(2, etype1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack5, "RandAttack5")
 
 	local pos = GetPosition("BSpawn6")
-	RaidAttack6 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack6 = AI.Entity_CreateFormation(2, etype2, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack6, "RandAttack6")
 
 	local pos = GetPosition("BSpawn7")
-	RaidAttack7 = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+	RaidAttack7 = AI.Entity_CreateFormation(2, etype3, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 	SetEntityName(RaidAttack7, "RandAttack7")
 
 	Attack("RandAttack5","FinAttack2")

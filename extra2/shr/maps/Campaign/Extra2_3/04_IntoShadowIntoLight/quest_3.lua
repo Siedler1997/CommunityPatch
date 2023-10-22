@@ -130,14 +130,45 @@ end
 
 ---------------------------
 HeroicResistance = function()
-	if IsDead(ArmyPatrol) and IsDead(ArmyPatrol1) and IsDead("erec") then
-		if CP_Difficulty == 0 then
-			end3rdQuest()
-			return true
-		else
-			if IsDead(ArmyPatrol2) then
+	if Counter.Tick2("HeroicResistance", 10) then
+		if IsDead(ArmyPatrol) and IsDead(ArmyPatrol1) and IsDead(ArmyPatrol2) and IsDead("erec") then
+			if CP_Difficulty == 0 then
 				end3rdQuest()
 				return true
+			else
+				if CP_Difficulty == 1 then
+					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead(ArmyPatrolCavalry2) and IsDead("helias") then
+						end3rdQuest()
+						return true
+					end
+				else
+					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead(ArmyPatrolCavalry2) and IsDead(ArmyPatrolCavalry3) and IsDead("helias") then
+						end3rdQuest()
+						return true
+					end
+				end
+			end
+		elseif ErecOnTheMove == 1 then
+			if IsAlive("erec") then
+				Attack("erec","my_castle")
+				local ErecID =  GetID("erec")
+				if CP_Difficulty == 2 and Logic.GetEntityHealth(ErecID) <= (Logic.GetEntityMaxHealth(ErecID) * 0.95) then
+					if AreEnemiesInArea(GetPlayer("erec"), GetPosition("erec"), 400) then
+						GUI.SettlerCircularAttack(ErecID)
+					end
+					if AreEnemiesInArea(GetPlayer("erec"), GetPosition("erec"), 2000) then
+						GUI.SettlerAffectUnitsInArea(ErecID)
+					end
+				end
+			end
+			if IsAlive("helias") then
+				Attack("helias","my_castle")
+				local HeliasID =  GetID("helias")
+				if CP_Difficulty == 2 and Logic.GetEntityHealth(HeliasID) <= (Logic.GetEntityMaxHealth(HeliasID) * 0.95) then
+					if AreEnemiesInArea(GetPlayer("helias"), GetPosition("helias"), 2000) then
+						GUI.SettlerAffectUnitsInArea(HeliasID)
+					end
+				end
 			end
 		end
 	end

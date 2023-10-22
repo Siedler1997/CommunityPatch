@@ -30,6 +30,7 @@ function CreateArmyBlockade2()
 												
 	ArmyBlockade2.spawnPos				=	GetPosition("ArmyBlockade2")
 	ArmyBlockade2.endless				=	true
+	ArmyBlockade2.experiencePoints		=	CP_Difficulty
 	
 	-- Spawn generator
 	SetupAITroopSpawnGenerator("ArmyBlockade2", ArmyBlockade2)

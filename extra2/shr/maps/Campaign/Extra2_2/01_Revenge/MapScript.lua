@@ -62,11 +62,18 @@ function Mission_InitDiplomacy()
 -- This function is called on game start and after save game to initialize player colors
 function Mission_InitPlayerColorMapping()
 	-- Set Colors
+	local p1color = GetPlayerPreferredColor()
+	Display.SetPlayerColorMapping(1, p1color)
 	
-		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	
-		Display.SetPlayerColorMapping(7, KERBEROS_COLOR)	
-		Display.SetPlayerColorMapping(8, ROBBERS_COLOR)		
-	
+	if p1color ~= 4 then
+		Display.SetPlayerColorMapping(2, ENEMY_COLOR2)	
+	else
+		Display.SetPlayerColorMapping(2, 3)	
+	end
+	Display.SetPlayerColorMapping(4, 16)	
+	Display.SetPlayerColorMapping(5, NPC_COLOR)	
+	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
+	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		
 end
 
 
@@ -86,7 +93,15 @@ function Mission_InitTechnologies()
 	        Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather      	,0 ) 
 
 
-	if GDB.GetValue("Game\\Campaign_Difficulty") == 1 then
+	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
+		local animalTech2 = false
+		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
+			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			animalTech2 = true
+		end
+		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(7, animalTech2)
+
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(7)
 	end
@@ -113,9 +128,12 @@ end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called on game start you should setup your weather periods here
 function Mission_InitWeather()
-
-	Logic.AddWeatherElement(1, 1000, 1, 1, 5, 10)	-- Sommer
-
+	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
+		AddPeriodicSummer(10)	
+	else
+	    AddPeriodicSummer(600)
+	    AddPeriodicRain(120)
+	end
 end
 	
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -128,13 +146,11 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		AddGold(2000)
-		AddWood(500)
-		AddClay(500)
-		AddStone(500)
-		AddIron(500)
-		AddSulfur(500)
-
+		if CP_Difficulty == 0 then
+			GlobalMissionScripting.GiveResouces(1, 2000, 500, 500, 500, 500, 500)
+		else
+			GlobalMissionScripting.GiveResouces(1, 1000, 500, 500, 500, 500, 500)
+		end
 
 		CreateChestOpener("Dario")
 		CreateChestOpener("Erec")
@@ -143,7 +159,6 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 		CreateChestOpener("Salim")
 	
-		CreateRandomChests()
 		StartChestQuest()
 
 		--SetPlayerName(2, "Barbaren")
@@ -152,7 +167,8 @@ function Mission_FirstMapAction()
 
 
 	-- Set Music-Set
-
+	
+		LocalMusic.SetBriefing = LocalMusic.SetBriefingOld
 		LocalMusic.UseSet = EUROPEMUSIC
 		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
 	
@@ -182,17 +198,32 @@ function Mission_FirstMapAction()
 		createDefenseArmy5()
 		createDefenseArmy6()
 		startQuestDefeat()
+	
+	ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_DarkTree)
+	ScoutFoerster_gvScoutFoerster.treeSet = ScoutFoerster_SET_DarkTree
 		   
 		if CP_Difficulty > 0 then
-			local vc1pos = GetPosition("vc_empty1") 	
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+				
+				Logic.CreateEntity(Entities.PB_DarkTower3, 8800, 28640, 0, 2);
+			else
+				Logic.CreateEntity(Entities.PB_DarkTower2, 8800, 28640, 0, 2);
+				CreateRandomChests()
+			end
+			
 			local vc2pos = GetPosition("vc_empty2") 	
-
-			DestroyEntity("vc_empty1")
 			DestroyEntity("vc_empty2")
-			--Logic.CreateEntity(Entities.XD_RuinMonastery1,vc1pos.X,vc1pos.Y,0,0)
-			Logic.CreateEntity(Entities.XD_RuinTower2,vc2pos.X,vc2pos.Y,180,0)
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,270,0)
+			
+			RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+			--RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+			RaidersCreate({player = 7, pos = "bearpos3", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
+		else
+			CreateRandomChests()
 		end
 
 		--Tools.ExploreArea(-1, -1, 900)
+		--StartSimpleJob("GetMousePos")
 	end
 

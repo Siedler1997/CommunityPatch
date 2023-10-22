@@ -14,7 +14,17 @@
 ----------------------------------------------------------------------------------------------------
 -- Table containing ALL options menu stuff
 OptionsMenu = {}
-
+OptionsMenu.S10PrefPlayerColors = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	9,
+	13
+}
+OptionsMenu.S10PrefPlayerColorIndex = 1
 
 ----------------------------------------------------------------------------------------------------
 -- Global functions
@@ -95,6 +105,7 @@ OptionsMenu.S10_Start()
 	-- Init user name
 	OptionsMenu10_NameStringInputDone( nil, 0 )
 	
+	OptionsMenu.S10PrefPlayerColorIndex = IndexOf(OptionsMenu.S10PrefPlayerColors, OptionsMenu.S10_Tool_GetPrefColor())
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -182,7 +193,53 @@ OptionsMenu.S10_UpdateSex( _Sex )
 	XGUIEng.HighLightButton( XGUIEng.GetCurrentWidgetID(), HighLightFlag )
 
 end
+----------------------------------------------------------------------------------------------------
+-- Get user's prefered color
 
+function OptionsMenu.S10_Tool_GetPrefColor()
+	local color = 1
+	
+	if GDB.IsKeyValid( "Config\\User\\PrefColor" ) then
+		color = GDB.GetValue("Config\\User\\PrefColor")
+	end
+
+	return color
+end
+
+----------------------------------------------------------------------------------------------------
+-- Set user's prefered color
+
+function OptionsMenu.S10_SetPrefColor()
+	if OptionsMenu.S10PrefPlayerColorIndex == table.getn(OptionsMenu.S10PrefPlayerColors) then
+		OptionsMenu.S10PrefPlayerColorIndex = 1
+	else
+		OptionsMenu.S10PrefPlayerColorIndex = OptionsMenu.S10PrefPlayerColorIndex + 1
+	end
+	GDB.SetValue("Config\\User\\PrefColor", OptionsMenu.S10PrefPlayerColors[OptionsMenu.S10PrefPlayerColorIndex])
+end
+
+function OptionsMenu.S10_UpdatePrefColorPicker()
+	local r, g, b = MPMenu.GEN_GetPlayerColor(OptionsMenu.S10PrefPlayerColors[OptionsMenu.S10PrefPlayerColorIndex])
+
+	-- Set color
+	XGUIEng.SetMaterialColor( XGUIEng.GetCurrentWidgetID(), 0, r, g, b, 255 )
+	XGUIEng.SetMaterialColor( XGUIEng.GetCurrentWidgetID(), 1, r, g, b, 255 )
+	XGUIEng.SetMaterialColor( XGUIEng.GetCurrentWidgetID(), 2, r, g, b, 255 )
+	XGUIEng.SetMaterialColor( XGUIEng.GetCurrentWidgetID(), 3, r, g, b, 255 )
+	XGUIEng.SetMaterialColor( XGUIEng.GetCurrentWidgetID(), 4, r, g, b, 255 )
+end
+----------------------------------------------------------------------------------------------------
+-- Update user's prefered color
+
+function OptionsMenu.S10_UpdatePrefColor(_Color)
+	local HighLightFlag = 0
+	
+	if OptionsMenu.S10_Tool_GetPrefColor() == _Color then
+		HighLightFlag = 1
+	end
+	
+	XGUIEng.HighLightButton(XGUIEng.GetCurrentWidgetID(), HighLightFlag)
+end
 
 ----------------------------------------------------------------------------------------------------
 -- Screen 20
@@ -331,4 +388,13 @@ OptionsMenu.S50_UpdateConnectionTypeButton( _ConnectionType )
 end
 
 ----------------------------------------------------------------------------------------------------
-                                                                                                                                                                                                                                                                                    
+                           
+
+function IndexOf(array, value)
+    for i, v in ipairs(array) do
+        if v == value then
+            return i
+        end
+    end
+    return nil
+end                                                                                                                                                                                                                                                         

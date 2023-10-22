@@ -57,19 +57,16 @@ end
 ---------------------------------------------------------------------------------------------------------------------------
 
 SpawnArmyBase1 = function()
-	local experience = MEDIUM_EXPERIENCE	
-	local mainArmy1	= 	{	
-				Entities.CU_BanditLeaderBow1
-				}
+	local mainArmy1	= 	{ }
 
 	if CP_Difficulty == 0 then
 		table.insert(mainArmy1, Entities.CU_BanditLeaderSword1)
 		table.insert(mainArmy1, Entities.CU_Barbarian_LeaderClub1)
+		table.insert(mainArmy1, Entities.CU_BanditLeaderBow1)
 	else
-		experience = experience + 1
 		table.insert(mainArmy1, Entities.CU_BanditLeaderSword2)
 		table.insert(mainArmy1, Entities.CU_Barbarian_LeaderClub2)
-		table.insert(mainArmy1, Entities.PU_LeaderHeavyCavalry1)
+		table.insert(mainArmy1, Entities.CU_BanditLeaderBow2)
 	end
 
 
@@ -86,7 +83,7 @@ SpawnArmyBase1 = function()
 
 
 		local pos = GetPosition("EnemySpawn5")
-		MainAttack1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, 8, pos.X, pos.Y, 0, 0, experience, 0)
+		MainAttack1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(MainAttack1, "BaseAttack1")
 
 
