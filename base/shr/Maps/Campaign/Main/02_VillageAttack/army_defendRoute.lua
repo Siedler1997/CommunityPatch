@@ -17,11 +17,10 @@ createArmyDefendRoute = function()
 		SetupArmy(armyDefendRoute)
 
 	--	create 
-		local soldiers = 4
+		local soldiers = 4 + 2 * CP_Difficulty
 		local experience = 0
 		local etype = Entities.CU_BanditLeaderSword1
 		if CP_Difficulty > 0 then
-			soldiers = 8
 			experience = 2
 			etype = Entities.CU_BanditLeaderSword2
 		end

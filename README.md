@@ -158,6 +158,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Bauen Rohstoffe etwas langsamer ab
 			- Milizen 
 				- haben einen Rüstungspunkt mehr (=2)
+				- haben 2 Schadenspunkte mehr (=12)
+				- haben nur noch 150 Lebenspunkte (vorher: 200)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
 				- haben das AudioFeedback von Leibeigenen
 		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
