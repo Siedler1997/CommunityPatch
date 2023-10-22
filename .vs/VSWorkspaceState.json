@@ -1,15 +1,19 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance",
+    "\\base\\shr\\Script",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra1\\shr\\config\\Entities",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\config",
-    "\\extra2\\shr\\config\\Entities"
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\Campaign",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1\\06_TechOrResources"
   ],
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
   "PreviewInSolutionExplorer": false
 }

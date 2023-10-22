@@ -134,6 +134,9 @@ function FirstMapAction()
 	--createBriefingHeliastwo()
 	StartSimpleJob("VictoryJob")
 	StartSimpleJob("DefeatJob")
+	
+	local pos = GetPosition("dario")
+	Camera.ScrollSetLookAt(pos.X, pos.Y)
   
   StartCountdown(90 * 60, MakeP2Hostile, true)
 	
