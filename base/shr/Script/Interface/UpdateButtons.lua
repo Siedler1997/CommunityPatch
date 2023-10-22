@@ -958,9 +958,9 @@ function GUIUpdate_AlarmButton()
 		
 		if RemainingAlarmTimeInPercent == 0 then
 			XGUIEng.DisableButton("ActivateAlarm", 0)
-			XGUIEng.DisableButton("ActivateAlarm", 0)
+			XGUIEng.DisableButton("OP_ActivateAlarm", 0)
 		else
-			XGUIEng.DisableButton("OP_ActivateAlarm", 1)
+			XGUIEng.DisableButton("ActivateAlarm", 1)
 			XGUIEng.DisableButton("OP_ActivateAlarm", 1)
 		end
 	end
