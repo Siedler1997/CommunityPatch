@@ -476,6 +476,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Größtenteils Fixes und kleinere Optimierungen
 	- Die Grafik ist allgemein etwas besser (by yoq)
 	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
+	- Alarm: Wird dabei gleichzeitig 'Strg' gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
+		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
 	- Steuer-Predigt-Exploit entschärft
 		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
 		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
@@ -547,8 +549,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- In den Files vorhandene Sounds sind per Script verfügbar (siehe Datei 'Sounds.xml')
 	- Die 'MapEditorTools' 
 		- stehen auch im Hauptspiels zur Verfügung
-		- Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
-			-> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+		- MapEditor_SetupAI 
+			- aktivierte KIs bauen die richtigen Kanonen -> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+			- neuer Parameter (bool), der bestimmt, ob von Eisen- und Belagerungskanonen die Skins gebaut werden sollen
 	- Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
 		- Andere sind in den AddOns vorhanden, aber bereits anders definiert
 	- Darios Fähigkeit 'Schild des Königs'
