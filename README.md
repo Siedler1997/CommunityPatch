@@ -657,7 +657,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Korrekte Kostenanzeige für den Kauf von Soldaten
-- Kontrollierbare Schäferhunde(?)
 - Kalas Tod: stack overflow(?)
 - Eigene Texturen für
 	- Tech-Trader
@@ -682,6 +681,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
+- Kontrollierbare Schäferhunde(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein

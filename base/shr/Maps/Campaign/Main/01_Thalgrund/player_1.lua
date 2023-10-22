@@ -3,7 +3,7 @@ createPlayer1 = function()
 
 	-- 	start  resources 									
 		
-		GlobalMissionScripting.GiveResouces(GetHumanPlayer(),10000,10000,10000,10000,10000,0)
+		--GlobalMissionScripting.GiveResouces(GetHumanPlayer(),10000,10000,10000,10000,10000,0)
 
 		local PlayerID = GetHumanPlayer()
 --		Logic.SetPlayerName(GetHumanPlayer(), String.MainKey.."_Player1Name")
