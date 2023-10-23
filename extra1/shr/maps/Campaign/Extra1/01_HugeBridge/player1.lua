@@ -59,4 +59,5 @@ function createPlayer1()
 	ForbidTechnology(Technologies.B_Bank)
 	ForbidTechnology(Technologies.B_Beautification07)
 	ForbidTechnology(Technologies.B_Beautification10)
+	ForbidTechnology(Technologies.T_PlateBardingArmor)
 end                                                       
