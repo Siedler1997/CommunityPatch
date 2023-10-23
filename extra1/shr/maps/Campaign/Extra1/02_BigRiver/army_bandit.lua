@@ -33,3 +33,22 @@ function controlArmyBandit1()
             end
         end
     end
+
+function ControlBanditLeaders()
+    if Counter.Tick2("ControlBanditLeaders", 5) then
+        local heroToFollow = "Dario"
+        if IsDead("Dario") == false then
+            heroToFollow = "Dario"
+        elseif IsDead("Ari") == false then
+            heroToFollow = "Ari"
+        elseif IsDead("Pilgrim") == false then
+            heroToFollow = "Pilgrim"
+        end
+        for s = 1,6,1 do
+			if IsAlive("soldier"..s) then
+				Attack("soldier"..s, heroToFollow)
+			end
+		end
+        Attack("banditLeader", heroToFollow)
+    end
+end

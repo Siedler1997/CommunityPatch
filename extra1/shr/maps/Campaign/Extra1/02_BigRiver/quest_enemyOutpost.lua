@@ -65,8 +65,8 @@ function controlEnemyOutpost()
             DestroyNPC(npcBandit)
             armyBandit1.control.job = 2
             return true
-            end
         end
+    end
 
     if IsDead("enemyHq") then
         createBanditLeaderDialog_Victory()
@@ -78,15 +78,18 @@ function controlEnemyOutpost()
         SetHostile(6,8)
         SetHostile(5,8)
         for s = 1,6,1 do
-            if IsDead("soldier"..s) == false then
-                Move("soldier"..s,"banditTower",1000)
-                end
-           end
+			if IsDead("soldier"..s) == false then
+				Move("soldier"..s,"banditTower",1000)
+			end
+		end
         armyBandit1.control.job = 3
+	
+		Logic.SetShareExplorationWithPlayerFlag(1, 5, 1)
+		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
+		StartSimpleJob("ControlBanditLeaders")
         return true
-        end
-
     end
+end
 
 
 function createBanditLeaderDialog_Defeat()

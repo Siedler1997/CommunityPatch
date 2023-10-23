@@ -66,7 +66,7 @@ function InitTechnologies()
 		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
-		ResearchAllMilitaryTechsAddOn(5)
+		ResearchAllMilitaryTechsAddOn(5, true)
 		ResearchAllMilitaryTechsAddOn(6)
 		ResearchAllMilitaryTechsAddOn(8)
 	end
@@ -99,7 +99,7 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(7,1)
 	end
     Display.SetPlayerColorMapping(4,NPC_COLOR)
-    --Display.SetPlayerColorMapping(5,ENEMY_COLOR1)
+    Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
     Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 end
