@@ -2195,7 +2195,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PB_DarkTower3</Type>
+   <Type>PB_Tower3</Type>
    <Position>
     <X>1.200000e+004</X>
     <Y>4.320000e+004</Y>

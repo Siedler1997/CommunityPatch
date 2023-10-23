@@ -138,19 +138,19 @@ function FirstMapAction()
 			ReplaceEntity(towers1[i], Entities.PB_Tower2)
 		end
 
-		Logic.CreateEntity(Entities.PB_DarkTower3, 26400, 15800, 0, 2);
-		Logic.CreateEntity(Entities.PB_DarkTower3, 45100, 31200, 0, 2);
-		Logic.CreateEntity(Entities.PB_DarkTower3, 47600, 31300, 0, 2);
-		Logic.CreateEntity(Entities.PB_DarkTower3, 22000, 32700, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 26400, 15800, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 45100, 31200, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 47600, 31300, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 22000, 32700, 0, 2);
 
-		Logic.CreateEntity(Entities.PB_DarkTower3, 41600, 24300, 0, 2);
-		Logic.CreateEntity(Entities.PB_DarkTower3, 32400, 21200, 0, 2);
-		Logic.CreateEntity(Entities.PB_DarkTower3, 23100, 40900, 0, 2);
-		SetEntityName(Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 42000, 0, 2), "tower12")
+		Logic.CreateEntity(Entities.PB_Tower3, 41600, 24300, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 32400, 21200, 0, 2);
+		Logic.CreateEntity(Entities.PB_Tower3, 23100, 40900, 0, 2);
+		SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, 40200, 42000, 0, 2), "tower12")
 
 		local smpos = {X = 35600, Y = 45400}
 		local tpos = GetPosition("control1")
-		SetEntityName(Logic.CreateEntity(Entities.PB_DarkTower3, tpos.X, tpos.Y, 0, 2), "tower13")
+		SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, tpos.X, tpos.Y, 0, 2), "tower13")
 		DestroyEntity("control1")
 		SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
 		Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
