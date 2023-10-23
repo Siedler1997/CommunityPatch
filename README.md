@@ -478,6 +478,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
 	- Alarm: Wird dabei gleichzeitig 'Strg' gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
 		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
+	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
+		- Statt jede 8te nur noch jede 24te Selektion
 	- Steuer-Predigt-Exploit entschärft
 		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
 		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
