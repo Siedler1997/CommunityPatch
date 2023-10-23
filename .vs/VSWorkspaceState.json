@@ -3,12 +3,15 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\extra1",
+    "\\base\\shr\\text",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
     "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Campaign",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1",
-    "\\extra1\\shr\\maps\\User"
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\Interface",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\script\\Interface"
   ],
+  "SelectedNode": "\\base\\shr\\text\\de\\InGame\\CM01_02_VillageAttack_Txt.xml",
   "PreviewInSolutionExplorer": false
 }

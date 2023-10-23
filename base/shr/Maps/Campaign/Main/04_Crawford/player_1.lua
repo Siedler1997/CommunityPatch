@@ -118,7 +118,7 @@ createPlayer1 = function()
 	--	Logic.SetTechnologyState(PlayerID,Technologies.UP2_Monastery      	,2 )
 			
 			
-		Logic.SetTechnologyState(PlayerID,Technologies.B_Outpost      		,2 )	
+	--	Logic.SetTechnologyState(PlayerID,Technologies.B_Outpost      		,2 )	
 	--	Logic.SetTechnologyState(PlayerID,Technologies.B_Weathermachine    ,2 )	
 	--	Logic.SetTechnologyState(PlayerID,Technologies.B_PowerPlant      	,2 )		
 			                                                                  	
@@ -277,7 +277,7 @@ createPlayer1 = function()
 		 -- Technology Test -->	
 	--	Logic.SetTechnologyState(PlayerID,Technologies.T_SuperTechnology      	,2 )
 		
-		Logic.SetTechnologyState(PlayerID,Technologies.T_PlateBardingArmor     ,2 )	
+	--	Logic.SetTechnologyState(PlayerID,Technologies.T_PlateBardingArmor     ,2 )	
 		
 		 -- NOT USED FOR THE MOMENT: -->
 	--	Logic.SetTechnologyState(PlayerID,Technologies.T_Tracking      		,2 )			
