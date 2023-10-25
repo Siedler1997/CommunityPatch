@@ -24,6 +24,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- wirkt analog zu 'Maurerhandwerk'
 		- erhöht die Verteidigung von Gebäuden um 2 Punkte
 		- erforschbar in der Ziegelbrennerei
+	- Technologie 'Maurerhandwerk' erhöht die Verteidigung von Gebäuden nur noch um 2 Punkte (vorher: 3)
 	- Non-Player-Buildings (Allgemein)
 		- sind abreißbar und geben dabei symbolische 50 Taler
 		- sind reparierbar
@@ -50,7 +51,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
-		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
+		- haben weniger und nach Stufe gestaffelte Verteidigung (=2-3-4)
 		- Ausbau dauert doppelt so lange (=30 Sek.)
 		- Ballistatürme 
 			- haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
@@ -647,6 +648,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Erhöhte Minenkapazität auf allen Maps prüfen :/
 - Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)

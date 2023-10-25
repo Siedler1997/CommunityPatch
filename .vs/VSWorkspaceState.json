@@ -3,15 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\06_Cleycourt",
     "\\extra2\\shr",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2\\shr\\config",
+    "\\extra2\\shr\\config\\Entities"
   ],
-  "SelectedNode": "\\base\\shr\\text\\de\\InGame\\CM01_02_VillageAttack_Txt.xml",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\06_Cleycourt\\MapData.xml",
   "PreviewInSolutionExplorer": false
 }

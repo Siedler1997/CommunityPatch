@@ -174,11 +174,11 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_Tower3,8100,15000,0,7)
 			StartCountdown(15 * 60, setupArmyP7PlayerAttack, false)
 		end
-		--[[
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,0,0)
 
+		--[[
 		local vcpos2 = GetPosition("vc_empty2")
 		DestroyEntity("vc_empty2")
 		--]]
