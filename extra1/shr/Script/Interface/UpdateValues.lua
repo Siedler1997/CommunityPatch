@@ -576,9 +576,6 @@ function GUIUpdate_HeroAbility(_ability, _button)
 	
 		if Logic.IsHero(SelectedEntityID) == 1 then
 			SelectedEntityID = HeroSelection_GetCurrentSelectedHeroID()	
-			if Logic.GetEntityType(SelectedEntityID) == Entities.PU_Hero1c and _ability == Abilities.AbilitySendHawk then
-				button = "Hero1_KingsDefense"
-			end
 		end
 	
 		local RechargeTime = Logic.HeroGetAbilityRechargeTime(SelectedEntityID, _ability)

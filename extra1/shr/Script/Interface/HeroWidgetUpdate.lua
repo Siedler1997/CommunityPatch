@@ -21,10 +21,8 @@ function HeroWidgetUpdate_ShowHeroWidget(EntityId)
 	if Logic.IsEntityInCategory(EntityId,EntityCategories.Hero1) == 1 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.SelectionHero1,1)
 		if EntityType == Entities.PU_Hero1c then
-			XGUIEng.ShowWidget("Hero1_SendHawk", 0)
 			XGUIEng.ShowWidget("Hero1_KingsDefense", 1)
 		else
-			XGUIEng.ShowWidget("Hero1_SendHawk", 1)
 			XGUIEng.ShowWidget("Hero1_KingsDefense", 0)
 		end
 			

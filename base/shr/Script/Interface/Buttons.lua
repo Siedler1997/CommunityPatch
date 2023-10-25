@@ -326,7 +326,6 @@ end
 --------------------------------------------------------------------------------
 function GUIAction_Hero1Defense()
 	Sound.PlayFeedbackSound( Sounds.VoicesHero1_HERO1_ProtectPeople_rnd_01, 0 )	
-	Logic.HeroSetAbilityChargeSeconds(HeroSelection_GetCurrentSelectedHeroID(), Abilities.AbilitySendHawk, 0)
 	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
 end
 

@@ -225,10 +225,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Dario
 			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			- Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
-				- PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
-				- PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
+				- PU_Hero1a (Dario am Anfang) hat einen Rüstungspunkt weniger (=2)
+				- PU_Hero1b (Dario nach 'Crawford') ist unverändert
+				- PU_Hero1c (Dario ab 'Old Kings Castle') hat einen Rüstungspunkt (=4) und zwei Angriffspunkte mehr (=18)
 			- Bei Verwendung von 'Falkensicht' gibt Dario ein Audio-Feedback zurück
-			- In den AddOns wird bei seiner Königs-Version (PU_Hero1c) die Fähigkeit 'Falkenauge' durch 'Schild des Königs' ersetzt
+			- Neue Fähigkeit exklusiv für die Königs-Version (PU_Hero1c): 'Schild des Königs'
 				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				- reduziert zugleich Angriff jener Einheiten auf 50%
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
@@ -557,9 +558,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- neuer Parameter (bool), der bestimmt, ob von Eisen- und Belagerungskanonen die Skins gebaut werden sollen
 	- Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
 		- Andere sind in den AddOns vorhanden, aber bereits anders definiert
-	- Darios Fähigkeit 'Schild des Königs'
-		- ist intern die gleiche Fähigkeit wie 'Falkensicht' (Abilities.AbilitySendHawk)
-		- existiert auch schon im Hauptspiel, ist mangels Falken-Ersatz (Kundschafter-Fernrohr) aber absichtlich nicht verfügbar
 	- Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
 		- Ari (PU_Hero5)
 		- Kanonen (alle Arten)
