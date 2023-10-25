@@ -380,8 +380,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- gibt bei Türmen Hilfe in Abhängigkeit ihrer Ausbaustufe
 	- Find-Buttons
 		- werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
-		- Darios Button leuchtet in der Spielerfarbe statt nur blau
-			- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+		- Darios Button 
+			- leuchtet bei nahen Feinden in der Spielerfarbe statt nur blau
+				- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+			- "Flackern" bei nahen Feinden deutlich verlangsamt
 		- unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
 		- erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
 	- Briefing-Window verschönert
@@ -647,7 +649,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## ToDos:
 - Erhöhte Minenkapazität auf allen Maps prüfen :/
-- Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -685,6 +686,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Mehr als 6 Helden in HeroFind-View ermöglichen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
