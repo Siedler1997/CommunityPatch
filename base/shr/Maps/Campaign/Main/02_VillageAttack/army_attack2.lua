@@ -39,27 +39,31 @@ createArmyAttack2 = function()
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = 4,
+			maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
 			experiencePoints 	= experience,
 		}			
 
 		
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderSword1
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderSword2
+		else
+			troopDescription.leaderType = Entities.PU_LeaderSword3
 		end
 		EnlargeArmy(armyAttack2,troopDescription)
 		
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderPoleArm1
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+		else
+			troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 		end
 		EnlargeArmy(armyAttack2,troopDescription)
 		
 		if CP_Difficulty == 2 then
-			troopDescription.leaderType = Entities.PU_LeaderBow2
+			troopDescription.leaderType = Entities.PU_LeaderBow3
 			EnlargeArmy(armyAttack2,troopDescription)
 		end
 
@@ -179,7 +183,7 @@ createArmyAttack2 = function()
 
 				local troopDescription = {
 				
-					maxNumberOfSoldiers	= 4,
+					maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
 					minNumberOfSoldiers	= 0,
 					experiencePoints 	= experience,
 				}				
@@ -194,20 +198,24 @@ createArmyAttack2 = function()
 				
 					if CP_Difficulty == 0 then
 						troopDescription.leaderType = Entities.PU_LeaderSword1
-					else
+					elseif CP_Difficulty == 1 then
 						troopDescription.leaderType = Entities.PU_LeaderSword2
+					else
+						troopDescription.leaderType = Entities.PU_LeaderSword3
 					end
 					EnlargeArmy(armyAttack2,troopDescription)
 		
 					if CP_Difficulty == 0 then
 						troopDescription.leaderType = Entities.PU_LeaderPoleArm1
-					else
+					elseif CP_Difficulty == 1 then
 						troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+					else
+						troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 					end
 					EnlargeArmy(armyAttack2,troopDescription)
 					
 					if CP_Difficulty == 2 then
-						troopDescription.leaderType = Entities.PU_LeaderBow2
+						troopDescription.leaderType = Entities.PU_LeaderBow3
 						EnlargeArmy(armyAttack2,troopDescription)
 					end
 

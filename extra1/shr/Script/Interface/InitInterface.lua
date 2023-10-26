@@ -285,6 +285,7 @@ Interface_InitWidgets()
 	
 	gvGUI_WidgetID.Hero1_SendHawk= 			XGUIEng.GetWidgetID( "Hero1_SendHawk" )	
 	gvGUI_WidgetID.Hero1_ProtectUnits = 	XGUIEng.GetWidgetID( "Hero1_ProtectUnits" )	
+	gvGUI_WidgetID.Hero1_KingsDefense = 	XGUIEng.GetWidgetID( "Hero1_KingsDefense" )	
 	gvGUI_WidgetID.Hero2_PlaceBomb=			XGUIEng.GetWidgetID( "Hero2_PlaceBomb" )	
 	gvGUI_WidgetID.Hero2_BuildCannon= 		XGUIEng.GetWidgetID( "Hero2_BuildCannon" )		
 	gvGUI_WidgetID.Hero3_BuildTrap= 		XGUIEng.GetWidgetID( "Hero3_BuildTrap" )	

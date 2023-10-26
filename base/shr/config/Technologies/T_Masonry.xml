@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>20</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>0</Gold>
+		  <Clay/>
+		  <Wood>200</Wood>
+		  <Stone>400</Stone>		
+		  <Iron/>
+		  <Sulfur/>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	<ArmorModifier>
+		<Value>2</Value>
+		<Operation>+</Operation>
+	</ArmorModifier>
+	
+	<AutomaticResearch>false</AutomaticResearch>
+	<Conditions>	
+		
+	 	
+		  <EntityCondition>
+			  <EntityType>PB_StoneMason2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>			
+	</Conditions>
+</root>

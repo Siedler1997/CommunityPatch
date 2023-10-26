@@ -24,6 +24,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- wirkt analog zu 'Maurerhandwerk'
 		- erhöht die Verteidigung von Gebäuden um 2 Punkte
 		- erforschbar in der Ziegelbrennerei
+	- Technologie 'Maurerhandwerk' erhöht die Verteidigung von Gebäuden nur noch um 2 Punkte (vorher: 3)
 	- Non-Player-Buildings (Allgemein)
 		- sind abreißbar und geben dabei symbolische 50 Taler
 		- sind reparierbar
@@ -50,7 +51,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
-		- haben weniger und nach Stufe gestaffelte Verteidigung (=3-4-5)
+		- haben weniger und nach Stufe gestaffelte Verteidigung (=2-3-4)
 		- Ausbau dauert doppelt so lange (=30 Sek.)
 		- Ballistatürme 
 			- haben anderen Sound beim Schuss und Aufschlag ihres Geschosses
@@ -158,6 +159,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Bauen Rohstoffe etwas langsamer ab
 			- Milizen 
 				- haben einen Rüstungspunkt mehr (=2)
+				- haben 2 Schadenspunkte mehr (=12)
+				- haben nur noch 150 Lebenspunkte (vorher: 200)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
 				- haben das AudioFeedback von Leibeigenen
 		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
@@ -222,10 +225,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Dario
 			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			- Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
-				- PU_Hero1b (Dario nach 'Crawford') hat einen Rüstungspunkt mehr (=4)
-				- PU_Hero1c (Dario ab 'Old Kings Castle') hat noch einen Rüstungspunkt (=5) und dazu auch zwei Angriffspunkte mehr (=18)
+				- PU_Hero1a (Dario am Anfang) hat einen Rüstungspunkt weniger (=2)
+				- PU_Hero1b (Dario nach 'Crawford') ist unverändert
+				- PU_Hero1c (Dario ab 'Old Kings Castle') hat einen Rüstungspunkt (=4) und zwei Angriffspunkte mehr (=18)
 			- Bei Verwendung von 'Falkensicht' gibt Dario ein Audio-Feedback zurück
-			- In den AddOns wird bei seiner Königs-Version (PU_Hero1c) die Fähigkeit 'Falkenauge' durch 'Schild des Königs' ersetzt
+			- Neue Fähigkeit exklusiv für die Königs-Version (PU_Hero1c): 'Schild des Königs'
 				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				- reduziert zugleich Angriff jener Einheiten auf 50%
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
@@ -376,8 +380,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- gibt bei Türmen Hilfe in Abhängigkeit ihrer Ausbaustufe
 	- Find-Buttons
 		- werden stets korrekt angezeigt (unabhängig von der Einheiten-Entwicklungsstufe)
-		- Darios Button leuchtet in der Spielerfarbe statt nur blau
-			- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+		- Darios Button 
+			- leuchtet bei nahen Feinden in der Spielerfarbe statt nur blau
+				- Bei sehr hellen Spielerfarben (Weiß, Hellgrau) wird hierbei eine andere, dunklere Farbe gewählt
+			- "Flackern" bei nahen Feinden deutlich verlangsamt
 		- unterscheiden bei Bogenschützen nicht mehr nach Entwicklungsstufe
 		- erlauben bei Leibeigenen, alle - beschäftigt oder nicht - durchzugehen, wenn dabei gleichzeitig [Alt] gedrückt gehalten wird
 	- Briefing-Window verschönert
@@ -474,6 +480,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Größtenteils Fixes und kleinere Optimierungen
 	- Die Grafik ist allgemein etwas besser (by yoq)
 	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
+	- Alarm: Wird dabei gleichzeitig 'Strg' gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
+		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
+	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
+		- Statt jede 8te nur noch jede 24te Selektion
 	- Steuer-Predigt-Exploit entschärft
 		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
 		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
@@ -545,13 +555,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- In den Files vorhandene Sounds sind per Script verfügbar (siehe Datei 'Sounds.xml')
 	- Die 'MapEditorTools' 
 		- stehen auch im Hauptspiels zur Verfügung
-		- Per 'MapEditor_SetupAI' aktivierte KIs bauen die richtigen Kanonen
-			-> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+		- MapEditor_SetupAI 
+			- aktivierte KIs bauen die richtigen Kanonen -> d.h. 0 -> Bombarde, 1 -> Bronze, 2 -> Eisen, 3 -> Belagerung
+			- neuer Parameter (bool), der bestimmt, ob von Eisen- und Belagerungskanonen die Skins gebaut werden sollen
 	- Fehlende originale 'Player-Color-Definitions' (z.B. 'MORTFICHET_COLOR') stehen auch in den AddOns zur Verfügung
 		- Andere sind in den AddOns vorhanden, aber bereits anders definiert
-	- Darios Fähigkeit 'Schild des Königs'
-		- ist intern die gleiche Fähigkeit wie 'Falkensicht' (Abilities.AbilitySendHawk)
-		- existiert auch schon im Hauptspiel, ist mangels Falken-Ersatz (Kundschafter-Fernrohr) aber absichtlich nicht verfügbar
 	- Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
 		- Ari (PU_Hero5)
 		- Kanonen (alle Arten)
@@ -640,7 +648,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Victory-Screen taucht nicht auf?
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -657,7 +664,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Korrekte Kostenanzeige für den Kauf von Soldaten
-- Kontrollierbare Schäferhunde(?)
 - Kalas Tod: stack overflow(?)
 - Eigene Texturen für
 	- Tech-Trader
@@ -679,9 +685,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Mehr als 6 Helden in HeroFind-View ermöglichen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
+- Kontrollierbare Schäferhunde(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein

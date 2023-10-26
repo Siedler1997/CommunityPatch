@@ -326,7 +326,6 @@ end
 --------------------------------------------------------------------------------
 function GUIAction_Hero1Defense()
 	Sound.PlayFeedbackSound( Sounds.VoicesHero1_HERO1_ProtectPeople_rnd_01, 0 )	
-	Logic.HeroSetAbilityChargeSeconds(HeroSelection_GetCurrentSelectedHeroID(), Abilities.AbilitySendHawk, 0)
 	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
 end
 
@@ -611,10 +610,16 @@ end
 --------------------------------------------------------------------------------
 
 function GUIAction_ActivateAlarm()
-	
 	Sound.PlayFeedbackSound( Sounds.VoicesMentor_ALARM_ActivateAlarm, 0 )	
 	GUI.EnterWorkerAlarmMode()
 	
+	if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+		local SerfTable = {Logic.GetPlayerEntities(GUI.GetPlayerID(), Entities.PU_Serf, 48)}
+		Message(SerfTable[1])
+		for j = 1, SerfTable[1], 1 do
+			GUI.ChangeToBattleSerf(SerfTable[j+1])	
+		end
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -624,6 +629,14 @@ end
 function GUIAction_QuitAlarm()	
 	Sound.PlayFeedbackSound( Sounds.VoicesMentor_ALARM_QuitAlarm, 0 )		
 	GUI.QuitWorkerAlarmMode()
+	
+	if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+		local SerfTable = {Logic.GetPlayerEntities(GUI.GetPlayerID(), Entities.PU_BattleSerf, 48)}
+		Message(SerfTable[1])
+		for j = 1, SerfTable[1], 1 do
+			GUI.ChangeToSerf(SerfTable[j+1])	
+		end
+	end
 end
 
 

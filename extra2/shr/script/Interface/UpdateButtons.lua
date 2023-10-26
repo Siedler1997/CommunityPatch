@@ -399,15 +399,15 @@ function GUIUpdate_HeroButton()
 		XGUIEng.TransferMaterials(SourceButton, CurrentWidgetID)
 		if Logic.SentinelGetUrgency(EntityID) == 1 then	
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1, 255,255,255,255)
-			if gvGUI.DarioCounter < 50 then
+			if gvGUI.DarioCounter < 250 then
 				XGUIEng.SetMaterialColor(CurrentWidgetID,0, ColorR,ColorG,ColorB,255)				
 				gvGUI.DarioCounter = gvGUI.DarioCounter +1
 			end		
-			if gvGUI.DarioCounter >= 50 then			
+			if gvGUI.DarioCounter >= 250 then			
 				XGUIEng.SetMaterialColor(CurrentWidgetID,0, 230,230,230,255)					
 				gvGUI.DarioCounter = gvGUI.DarioCounter +1
 			end
-			if gvGUI.DarioCounter == 100 then
+			if gvGUI.DarioCounter == 500 then
 				gvGUI.DarioCounter= 0
 			end
 		else	
@@ -741,16 +741,16 @@ GUIUpdate_SentinelAbility(_WidgetID, _EntityID)
 	
 	if Logic.SentinelGetUrgency(_EntityID) == 1 then					
 		
-		if gvGUI.DarioCounter < 50 then
+		if gvGUI.DarioCounter < 250 then
 			
 			XGUIEng.SetMaterialColor(_WidgetID,0, 100,100,200,255)		
 			gvGUI.DarioCounter = gvGUI.DarioCounter +1
 		end		
-		if gvGUI.DarioCounter >= 50 then			
+		if gvGUI.DarioCounter >= 250 then			
 			XGUIEng.SetMaterialColor(_WidgetID,0, 255,255,255,255)		
 			gvGUI.DarioCounter = gvGUI.DarioCounter +1
 		end
-		if gvGUI.DarioCounter == 100 then
+		if gvGUI.DarioCounter == 500 then
 			gvGUI.DarioCounter= 0
 		end
 	else	
