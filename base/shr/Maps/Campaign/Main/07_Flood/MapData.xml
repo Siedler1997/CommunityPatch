@@ -1575,7 +1575,7 @@
    <PlayerID>0</PlayerID>
    <Health>-1</Health>
    <Name></Name>
-   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,14000);</ScriptCommandLine>
+   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,21000);</ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
   </Entity>
@@ -42270,7 +42270,7 @@
    <PlayerID>0</PlayerID>
    <Health>-1</Health>
    <Name></Name>
-   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,14000);</ScriptCommandLine>
+   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,21000);</ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
   </Entity>
@@ -47190,7 +47190,7 @@
    <PlayerID>0</PlayerID>
    <Health>-1</Health>
    <Name></Name>
-   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,12000);</ScriptCommandLine>
+   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,18000);</ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
   </Entity>
@@ -57240,7 +57240,7 @@
    <PlayerID>0</PlayerID>
    <Health>-1</Health>
    <Name></Name>
-   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,12000);</ScriptCommandLine>
+   <ScriptCommandLine>Logic.SetResourceDoodadGoodAmount(__LOGIC_CREATE_CURRENT_ENTITY_ID,18000);</ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
   </Entity>

@@ -3,14 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\06_Cleycourt",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\config",
-    "\\extra2\\shr\\config\\Entities"
+    "\\base\\shr\\Script",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\text\\de",
+    "\\extra1\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\06_Cleycourt\\MapData.xml",
+  "SelectedNode": "\\base\\shr\\Script\\Interface\\UpdateButtons.lua",
   "PreviewInSolutionExplorer": false
 }
