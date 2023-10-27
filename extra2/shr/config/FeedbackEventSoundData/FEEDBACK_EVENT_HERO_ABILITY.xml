@@ -231,6 +231,10 @@
 				<EntityType>CU_Hero10</EntityType>
 				<SoundID>AOVoicesHero10\HERO10_sniperattack_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero5</EntityType>
+				<SoundID>VoicesHero5\HERO5_Attack_rnd_04</SoundID>
+			</ValueSound>
 			
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
