@@ -19534,6 +19534,21 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>PU_Hero3</Type>
+		<Position>
+			<X>6.338639e+003</X>
+			<Y>2.339561e+004</Y>
+		</Position>
+		<Orientation>3.472000e+002</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name>Salim</Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_RockDestroyableMedium1</Type>
    <Position>

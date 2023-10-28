@@ -278,7 +278,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Reichweite mit 45 SM kürzer als bei Drake (55 SM)
 				- Cooldown mit 2 Min. etwas länger als bei Drake (1:30 Min.)
 				- unterbricht NICHT ihre andere Fähigkeit 'Tarnung'
-				- Nur in AddOns verfügbar
+				- Nur in den AddOns verfügbar
 		- Salims Heilung heilt Betroffene um 50% ihrer maximalen HP (vorher: 30%)
 		- Helias
 			- seine Fähigkeit 'Segnung' 
@@ -452,6 +452,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Tipps sprachlich und inhaltlich korrigiert
 		- fehlerhafte-unpassende Spielerzugehörigkeit mancher Einheiten-Gebäude gefixt
 		- Drakes Gewehrschüsse in Cutscenes sind vertont
+		- In manchen Missionen gibt es nun bis zu 7 Helden
+			- Konkret: Nebelberge, Geld oder Leben, Kampf oder Flucht
 		- Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
 		- in manchen Missionen können gegnerische Truppen respawnen
 			- z.T. abhängig vom Schwierigkeitsgrad
@@ -531,6 +533,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Der Selektionsring ist der gleiche wie bei normalen Arbeitern, nur ggf. etwas größer
 		- sie werden, je nach Typ, von zivilen oder militärischen Technologien beeinflusst
 	- Söldnerquartiere und Tech-Trader erlauben bis zu 6 Angebote
+	- Der Find-Button des 7. Helden kann folgendermaßen aktiviert
+		- Im Mapscript, z.B. in der FMA, die HeroId setzen: gvGUI.BonusHeroId = GetEntityId(heroName)
+		- Hinweise
+			- Sollte nur bei regulär 6 Helden erfolgen, da es sonst komisch aussieht
+			- Wer der 7. Held ist und somit in der regulären FindView fehlt muss je nach Map manuell ermittelt werden
 	- Der Held 'PU_Hero1' sieht aus wie Dovbar
 		- inkl. Find-Button
 		- MultiSelection-Button (Textur by Zedeg)
@@ -692,7 +699,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Mehr als 6 Helden in HeroFind-View ermöglichen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)

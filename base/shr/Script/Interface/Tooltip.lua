@@ -442,15 +442,18 @@ GUITooltip_WokerButtons(_tooltip)
 end
 
 
-function
-GUITooltip_FindHero()
-
+function GUITooltip_FindHero()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()	
 	local EntityID = XGUIEng.GetBaseWidgetUserVariable(CurrentWidgetID, 0)
 	
 	local CostString = " "
 	local ShortCutToolTip = " "
 	local TooltipString = " "
+	
+	--Stuff for 7th hero button
+	if gvGUI.BonusHeroId > 0 and IsExisting(gvGUI.BonusHeroId) and CurrentWidgetID == XGUIEng.GetWidgetID("FindHero7") then
+		EntityID = gvGUI.BonusHeroId
+	end
 	
 	if EntityID  ~= 0 then
 		if Logic.GetEntityType( EntityID )	== Entities.PU_Hero1 then
