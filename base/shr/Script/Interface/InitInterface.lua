@@ -341,7 +341,8 @@ function Interface_Init()
 	gvGUI.HawkIsFlying = 0
 
 	gvGUI.TriggerID_GUI_FollowEntity = 0
-   
+
+	gvGUI.BonusHeroId = 0
     					
    gvGUI.UpgrdaeHQFlag = 0
 	

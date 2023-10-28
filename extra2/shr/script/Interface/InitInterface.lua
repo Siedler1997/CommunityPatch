@@ -294,6 +294,7 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.Hero4_AuraOfWar= 		XGUIEng.GetWidgetID( "Hero4_AuraOfWar" )	
 	gvGUI_WidgetID.Hero5_Camouflage= 		XGUIEng.GetWidgetID( "Hero5_Camouflage" )		
 	gvGUI_WidgetID.Hero5_Summon	= 			XGUIEng.GetWidgetID( "Hero5_Summon" )	
+	gvGUI_WidgetID.Hero5_SniperAttack = 	XGUIEng.GetWidgetID( "Hero5_SniperAttack" ) 	
 	gvGUI_WidgetID.Hero6_ConvertSettlers= 	XGUIEng.GetWidgetID( "Hero6_ConvertSettler" )	
 	gvGUI_WidgetID.Hero6_Bless= 			XGUIEng.GetWidgetID( "Hero6_Bless" )
 	gvGUI_WidgetID.Hero7_InflictFear= 		XGUIEng.GetWidgetID( "Hero7_InflictFear" )	
@@ -422,7 +423,8 @@ function Interface_Init()
 	gvGUI.HawkIsFlying = 0
 
 	gvGUI.TriggerID_GUI_FollowEntity = 0
-	
+
+	gvGUI.BonusHeroId = 0
     					
    gvGUI.UpgrdaeHQFlag = 0
 	

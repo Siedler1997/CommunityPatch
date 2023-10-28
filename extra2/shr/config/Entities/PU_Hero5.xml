@@ -195,5 +195,15 @@
 	        <SummonTaskList>TL_HERO5_SUMMON</SummonTaskList>
 	    </Logic>
 	</Behavior>
-	
+
+	<Behavior>
+		<Logic classname="GGL::CSniperAbilityProps">
+			<Class>GGL::CSniperAbility</Class>
+			<RechargeTimeSeconds>120</RechargeTimeSeconds>
+			<TaskList>TL_SNIPE_SPECIAL_BOW</TaskList>
+			<Animation>PU_Hero5_Attack1</Animation>
+			<DamageFactor>1.0f</DamageFactor>
+			<Range>4500.0</Range>
+		</Logic>
+	</Behavior>
 </root>

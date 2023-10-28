@@ -386,6 +386,26 @@ function GUIUpdate_HeroButton()
 	local EntityID = XGUIEng.GetBaseWidgetUserVariable(CurrentWidgetID, 0)
 	local SourceButton
 	
+	--Stuff for 7th hero button
+	if gvGUI.BonusHeroId > 0 and IsExisting(gvGUI.BonusHeroId) then
+		XGUIEng.ShowWidget("Hero7BG",1)	
+		XGUIEng.ShowWidget("FindHero7",1)	
+
+		if IsAlive(gvGUI.BonusHeroId) then
+			XGUIEng.ShowWidget("Hero7Dead",0)	
+		else
+			XGUIEng.ShowWidget("Hero7Dead",1)	
+		end
+		
+		if CurrentWidgetID == XGUIEng.GetWidgetID("FindHero7") then
+			EntityID = gvGUI.BonusHeroId
+		end
+	else
+		XGUIEng.ShowWidget("Hero7BG",0)	
+		XGUIEng.ShowWidget("FindHero7",0)	
+		XGUIEng.ShowWidget("Hero7Dead",0)	
+	end
+	
 	if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then	
 		SourceButton = "FindHeroSource1"	
 		--Gibt die Spielerfarbe zurück und speichert ihre RGB_Werte in 3 Variablen

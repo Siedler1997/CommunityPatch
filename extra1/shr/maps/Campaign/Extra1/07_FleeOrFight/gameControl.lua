@@ -14,6 +14,7 @@ function start1stChapter()
 	CreateChestOpener("Pilgrim")
 	CreateChestOpener("Helias")
 	CreateChestOpener("Drake")
+	CreateChestOpener("Yuki")
 	StartChestQuest()
 	
 	-- Setup AI

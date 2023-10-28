@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
     "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\text\\de",
-    "\\extra1\\shr\\text\\de\\InGame"
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\User",
+    "\\extra1\\shr\\maps\\User\\Scripts",
+    "\\extra1\\shr\\Script",
+    "\\extra1\\shr\\Script\\Interface",
+    "\\extra2\\shr\\script",
+    "\\extra2\\shr\\script\\Interface"
   ],
-  "SelectedNode": "\\base\\shr\\Script\\Interface\\UpdateButtons.lua",
+  "SelectedNode": "\\extra1\\shr\\maps\\User\\Scripts\\Thalbach.lua",
   "PreviewInSolutionExplorer": false
 }

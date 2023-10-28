@@ -6,6 +6,8 @@ function beginChapterOne()
     CreateChestOpener("Ari")
     CreateChestOpener("Helias")
     CreateChestOpener("Salem")
+    CreateChestOpener("Yuki")
+    CreateChestOpener("Drake")
     StartChestQuest()
 
 	StartCutscene(Cutscenes[INTROCUTSCENE],createPreludeBriefing)

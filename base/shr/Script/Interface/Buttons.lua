@@ -674,14 +674,15 @@ end
 -- Find players heroes
 --------------------------------------------------------------------------------
 function GUIAction_FindHero(_hero)
-	
-	
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()	
 	local EntityID = XGUIEng.GetBaseWidgetUserVariable(CurrentWidgetID, 0)
 	
+	--Stuff for 7th hero button
+	if gvGUI.BonusHeroId > 0 and IsExisting(gvGUI.BonusHeroId) and CurrentWidgetID == XGUIEng.GetWidgetID("FindHero7") then
+		EntityID = gvGUI.BonusHeroId
+	end
 	
 	if EntityID  ~= 0 then
-		
 		GUI.ClearSelection()
 		GUI.SelectEntity( EntityID )	
 		
@@ -690,9 +691,7 @@ function GUIAction_FindHero(_hero)
 			Camera.ScrollSetLookAt(IDPosX, IDPosY)	
 			--GUIAction_FlyToEntity(HeroID)
 		end		
-		
 	end
-	
 end
 
 --------------------------------------------------------------------------------

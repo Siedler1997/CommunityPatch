@@ -125,6 +125,8 @@ function FirstMapAction()
     
 	StartSimpleJob("ControlEnemyHeroes")
 
+    gvGUI.BonusHeroId = GetEntityId("Yuki")
+
   --Tools.ExploreArea(-1, -1, 900)
 end
 
