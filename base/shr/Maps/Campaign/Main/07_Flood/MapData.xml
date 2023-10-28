@@ -42139,6 +42139,21 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>0.000000e+000</Scale>
   </Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>PB_VillageCenter1</Type>
+		<Position>
+			<X>2.010000e+004</X>
+			<Y>3.490000e+004</Y>
+		</Position>
+		<Orientation>0.000000e+000</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>4</PlayerID>
+		<Health>-1</Health>
+		<Name></Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>0.000000e+000</Scale>
+	</Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_VillageCenter</Type>
    <Position>
@@ -54035,7 +54050,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>XD_VillageCenter</Type>
+   <Type>XD_RuinResidence2</Type>
    <Position>
     <X>1.270000e+004</X>
     <Y>1.340000e+004</Y>

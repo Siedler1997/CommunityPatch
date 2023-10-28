@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\User",
-    "\\extra1\\shr\\maps\\User\\Scripts",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\base\\shr\\graphics\\TexturesMed\\gui",
+    "\\base\\shr\\graphics\\Textures\\GUI",
+    "\\base\\shr\\Maps",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\maps",
+    "\\extra2\\shr\\maps\\Singleplayer",
+    "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault"
   ],
-  "SelectedNode": "\\extra1\\shr\\maps\\User\\Scripts\\Thalbach.lua",
+  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapData.xml",
   "PreviewInSolutionExplorer": false
 }

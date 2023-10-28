@@ -21312,7 +21312,7 @@
    </Position>
    <Orientation>2.100000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>3</PlayerID>
+   <PlayerID>2</PlayerID>
    <Health>-1</Health>
    <Name>TraderMarket1</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -91557,7 +91557,7 @@
    </Position>
    <Orientation>3.100000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>1</PlayerID>
+   <PlayerID>3</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -91572,7 +91572,7 @@
    </Position>
    <Orientation>1.060000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>1</PlayerID>
+   <PlayerID>3</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
