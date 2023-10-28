@@ -97124,7 +97124,7 @@
    <Flags>0</Flags>
    <PlayerID>1</PlayerID>
    <Health>-1</Health>
-   <Name></Name>
+   <Name>Yuki</Name>
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
@@ -97369,6 +97369,21 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		<Type>CU_Mary_de_Mortfichet</Type>
+		<Position>
+			<X>2.097500e+004</X>
+			<Y>3.627500e+004</Y>
+		</Position>
+		<Orientation>1.800000e+002</Orientation>
+		<Flags>0</Flags>
+		<PlayerID>1</PlayerID>
+		<Health>-1</Health>
+		<Name></Name>
+		<ScriptCommandLine></ScriptCommandLine>
+		<AmbientSoundType></AmbientSoundType>
+		<Scale>1.000000e+000</Scale>
+	</Entity>
 	<Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
 		<Type>XD_Gold1</Type>
 		<Position>

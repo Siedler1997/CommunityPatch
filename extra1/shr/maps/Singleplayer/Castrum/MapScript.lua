@@ -146,6 +146,8 @@ String.Init("SP_Castrum")
 	
 	GUIQuestTools.ToggleStopWatch(4200, 1)
     StartCountdown(30 * 60, UpgradeEnemies, false)
+	
+    gvGUI.BonusHeroId = GetEntityId("Yuki")
 
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
