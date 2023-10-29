@@ -48,6 +48,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
 		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
+		- Neue Ziergebäude
+			- benötigen neben diversen Hochschul-Technologien auch mindestens eine Architektenstube zum Bau
+				- deshalb nur in den AddOns verfügbar
+			- folgende neuen Ziergebäude gibt es
+				- Podium
+				- Kerzenhalter
+				- Gefängniskäfig (aus AeK)
+				- Dampfmaschine
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
@@ -64,7 +72,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- AoE auf 4 SM reduziert (vorher: 7 SM)
 			- Ausbau zu diesen kostet zusätzlich 100 Eisen
 			- Schaden von 40 auf 50 erhöht
-		- dunkle Türme sind ausbaubar
+		- dunkle Türme 
+			- sind ausbaubar
+			- können in den AddOns regulär gebaut werden
+				- benötigen mindestens eine Architektenstube
+				- haltet dann beim Drücken auf den Turm-Button [Strg] gedrückt
+	- Architektenstube ermöglicht Bau dunkler Türme sowie neuer Ziergebäuden in den AddOns (siehe 'Ziergebäude' bzw. 'Türme')
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
 		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
@@ -544,6 +557,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- AudioFeedback stammt von den Kundschaftern
 	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
 	- Die Reskins von Eisen- und Belagerungskanone heißen 'PV_Cannon3a' und 'PV_Cannon4a'
+	- Der Bau von Reskins, die über [Strg] erfolgen, (z.B. dunkle Türme) kann über die Technologie 'T_AllowEntitySkins' pauschal verboten werden
 	- Die Technologie 'KI-Bonus' 
 		- ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
 		- ist bei allen Spieler-Entities hinterlegt
@@ -662,7 +676,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Turm-Skin: Trigger in AddOn-Vanilla-Maps prüfen
 - Forester Tooltip: Kostenanzeige auch wenn Tech verboten
+- Gefängniskäfig in Vanilla-Maps nutzen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -700,7 +716,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Architektenstube mit weiterem Nutzen
 - AeK-Frauen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
