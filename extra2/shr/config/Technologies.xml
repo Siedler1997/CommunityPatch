@@ -349,5 +349,9 @@
 	<Technology>T_ScoutForester</Technology>
 	<Technology>T_AnimalTechnology1</Technology>
 	<Technology>T_AnimalTechnology2</Technology>
-	
+
+	<Technology>B_Beautification13</Technology>
+	<Technology>B_Beautification14</Technology>
+	<Technology>B_Beautification15</Technology>
+	<Technology>B_Beautification16</Technology>
 </root>

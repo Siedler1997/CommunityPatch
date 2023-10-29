@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr\\graphics\\TexturesMed\\gui",
-    "\\base\\shr\\graphics\\Textures\\GUI",
+    "\\base\\shr",
     "\\base\\shr\\Maps",
-    "\\extra2",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\08_Barmecia",
     "\\extra2\\shr",
     "\\extra2\\shr\\maps",
     "\\extra2\\shr\\maps\\Singleplayer",
     "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapData.xml",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\08_Barmecia\\briefing_prelude.lua",
   "PreviewInSolutionExplorer": false
 }
