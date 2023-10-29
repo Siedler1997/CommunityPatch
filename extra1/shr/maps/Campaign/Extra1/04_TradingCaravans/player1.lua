@@ -4,4 +4,5 @@ function createPlayer1()
 		ForbidTechnology(Technologies.UP1_GunsmithWorkshop)
 		ForbidTechnology(Technologies.T_UpgradeRifle1)
 	end
+	ForbidTechnology(Technologies.B_Beautification16)
 end                                                       

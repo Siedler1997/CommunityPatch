@@ -21,6 +21,7 @@ function createPlayer1()
 	ForbidTechnology(Technologies.T_UpgradeRifle1)
 	ForbidTechnology(Technologies.T_ThiefSabotage)
 	ForbidTechnology(Technologies.T_ScoutForester)
+	ForbidTechnology(Technologies.B_Beautification16)
 
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 		ForbidTechnology(Technologies.UP2_Tower)
