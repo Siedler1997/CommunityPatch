@@ -676,9 +676,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Turm-Skin: Trigger in AddOn-Vanilla-Maps prüfen
-- Forester Tooltip: Kostenanzeige auch wenn Tech verboten
-- Gefängniskäfig in Vanilla-Maps nutzen
+- Gefängniskäfig 
+	- CB-Version mit besseren Stats
+	- in Vanilla-Maps nutzen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -716,6 +716,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- ZHundekäfig im Stronghold-Stil
 - AeK-Frauen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen

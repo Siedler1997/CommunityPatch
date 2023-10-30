@@ -29,9 +29,9 @@ function CreateArmyCityDefense()
 				experiencePoints 	= LOW_EXPERIENCE,
 			}			
 	
-			troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+			troopDescription.leaderType = Entities.PU_LeaderPoleArm1
 			EnlargeArmy(armyCityDefense[i],troopDescription)
-			troopDescription.leaderType = Entities.PU_LeaderSword2
+			troopDescription.leaderType = Entities.PU_LeaderSword1
 			EnlargeArmy(armyCityDefense[i],troopDescription)
 
 		end

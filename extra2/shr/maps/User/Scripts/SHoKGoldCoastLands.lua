@@ -571,9 +571,10 @@ function StartChapter1()
   CreateArmiesBase1()
   CreateArmiesBase2()
   startQuestDefeat()
-  Tower()
-  StartJob("TowersBuild")
-
+  --Tower()
+  --StartJob("TowersBuild")
+  
+  StartSimpleJob("TowersBuild2")
 end
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -649,6 +650,25 @@ Action_TowersBuild = function()
 
 end
 
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+function TowersBuild2()
+	if Counter.Tick2("TowersBuild2", 3) then
+		if CountTowers() >= 3 then
+            end1stChapter()
+			return true
+		end
+	end
+end
+
+function CountTowers()
+	local pos = GetPosition("tower")
+	local towerCount1 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_Tower2, pos.X, pos.Y, 6000, 6)}
+	local towerCount2 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_DarkTower2, pos.X, pos.Y, 6000, 6)}
+	local towerCount3 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_Tower3, pos.X, pos.Y, 6000, 6)}
+	local towerCount4 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_DarkTower3, pos.X, pos.Y, 6000, 6)}
+
+	return (towerCount1[1] + towerCount2[1] + towerCount3[1] + towerCount4[1])
+end
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 function StartChapter2()
 

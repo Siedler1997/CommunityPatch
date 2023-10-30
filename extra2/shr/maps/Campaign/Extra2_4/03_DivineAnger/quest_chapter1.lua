@@ -661,26 +661,46 @@ GUI.CreateMinimapPulse(x,y)
 end
 
 createQuestBuildDefense = function()
-
--- Quest
-		local Quest = {}
-		Quest.AreaPos = "defense"
-		Quest.AreaSize = 3200
+--[[
+	-- Quest
+	local Quest = {}
+	Quest.AreaPos = "defense"
+	Quest.AreaSize = 3200
 	
-		Quest.EntityTypes =	{ 	{ Entities.PB_Tower2, 4}
-					}
+	Quest.EntityTypes =	{ 	{ Entities.PB_Tower2, 4}
+				}
 	
-		Quest.Callback = DefenseDone
+	Quest.Callback = DefenseDone
 
-		SetupEstablish(Quest)
+	SetupEstablish(Quest)
+--]]
+	StartSimpleJob("QuestTowersJob")
 end
 
+function QuestTowersJob()
+	if Counter.Tick2("QuestTowersJob", 5) then
+		if CountTowers() >= 4 then
+			DefenseDone()
+			return true
+		end
+	end
+end
+
+function CountTowers()
+	local pos = GetPosition("defense")
+	local towerCount1 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_Tower2, pos.X, pos.Y, 3200, 6)}
+	local towerCount2 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_DarkTower2, pos.X, pos.Y, 3200, 6)}
+	local towerCount3 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_Tower3, pos.X, pos.Y, 3200, 6)}
+	local towerCount4 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_DarkTower3, pos.X, pos.Y, 3200, 6)}
+
+	return (towerCount1[1] + towerCount2[1] + towerCount3[1] + towerCount4[1])
+end
 
 DefenseDone = function ()
-local x,y = Tools.GetPosition("defping")
-GUI.DestroyMinimapPulse(x,y)
-ResolveBriefing (briefingTerminatRagnarMission)
-createBriefingSpawnCitizens()
+	local x,y = Tools.GetPosition("defping")
+	GUI.DestroyMinimapPulse(x,y)
+	ResolveBriefing (briefingTerminatRagnarMission)
+	createBriefingSpawnCitizens()
 end
 
 createBriefingSpawnCitizens = function()

@@ -15,10 +15,12 @@ function QuestBuildUpCity()
 	local currentTowerCount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower1) 
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower2)
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower3)
-	local minutes = 20
-	if CP_Difficulty == 2 then
-		minutes = minutes - 5
-	end
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower1) 
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower2)
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower3)
+
+	local minutes = 30 - 5 * CP_Difficulty
+
 	if Counter.Tick2("QuestBuildUpCity", minutes * 60) or currentTowerCount > BuildUpQuestTowerCount + 6	then
 	
 		end3rdChapter()
