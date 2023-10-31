@@ -27,7 +27,7 @@ end
 function CreateArmyPatrolTroops()
 
 	-- set random army position
-	local RandomPos 			= GetRandom(4)+1
+	local RandomPos 			= GetRandom(1,4)
 	ArmyPatrol.position		= GetPosition("P2_RandomSpawn_"..RandomPos)
 	
 	local experience = MEDIUM_EXPERIENCE
@@ -92,7 +92,7 @@ function RandomAttacks()
 
 		CreateArmyPatrolTroops()
 		
-		Counter.SetLimit("RandomAttacks", (60 * 10)+(GetRandom(60*10)))
+		Counter.SetLimit("RandomAttacks", (60 * 10)+(GetRandom(1, 60*10)))
 	end
 
 end

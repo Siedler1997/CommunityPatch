@@ -48,7 +48,7 @@ setupSpawnRaid1 = function()
 	Action_TimerRaid1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-			local i=1+GetRandom(3)
+			local i = GetRandom(1,4)
 				
             local pos = GetPosition("raidsp1")
 			if CP_Difficulty == 0 then

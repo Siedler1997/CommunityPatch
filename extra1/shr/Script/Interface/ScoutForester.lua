@@ -176,7 +176,7 @@ function ScoutFoerster_TreeGrow( _index )
 			tree.level = tree.level+1;
 		  -- Entity
 			local treeEntities = ScoutFoerster_gvScoutFoerster.treeSet[tree.level];
-			local randomType = GetRandom( table.getn(treeEntities) );
+			local randomType = GetRandom(1, table.getn(treeEntities));
 			DestroyEntity(tree.id);
 			tree.id = CreateEntity( 0, Entities[ treeEntities[randomType] ], pos );
 		  -- count

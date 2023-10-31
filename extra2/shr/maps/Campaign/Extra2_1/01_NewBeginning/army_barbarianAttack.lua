@@ -89,7 +89,7 @@ function ControlBarbarianAttack()
 						-- if spawn count is greater than 8
 						if j < 9 then
 							if IsExisting("towerSpawn") then
-								troopDescription.leaderType = troopLeaderType[GetRandom(3)+1]
+								troopDescription.leaderType = troopLeaderType[GetRandom(1,3)]
 								EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 							end
 						end

@@ -32,7 +32,7 @@ MoveThief = function()
 i = 1
 
 if j == 0 then
-j = GetRandom(3) + 1 --if no fire is lightened, the thief choose a random way
+j = GetRandom(1,3) --if no fire is lightened, the thief choose a random way
 end
 
 --ReplaceEntity("thief",Entities.CU_SettlerIdle)

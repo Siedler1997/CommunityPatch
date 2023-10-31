@@ -13,7 +13,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 	local u= 0
 		for i = 1,2,1 do
 		
-		p = 1+GetRandom(6)
+		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
 		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
@@ -23,7 +23,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 	
 		for i = 3,5,1 do
 		
-		p = 1+GetRandom(6)
+		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
 		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
@@ -33,7 +33,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		end
 
 		for i = 6,8,1 do
-		p = 1+GetRandom(6)
+		p = GetRandom(1,6)
 		
 		pos = GetPosition("spawn"..p)
 		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderPoleArm3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
@@ -43,7 +43,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		end
 
 		for i = 9,11,1 do
-		p = 1+GetRandom(6)
+		p = GetRandom(1,6)
 		
 		pos = GetPosition("spawn"..p)
 		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderHeavyCavalry1, 0, 3, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
@@ -53,7 +53,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		end
 
 		for i = 12,19,1 do
-		p = 1+GetRandom(6)
+		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
 		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderBow3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
@@ -336,7 +336,7 @@ spawnTemplarArmy = function ()
 local f = 0 
 
 for f = 1,30,1 do
-	local p = 1+GetRandom(4)
+	local p = GetRandom(1,5)
 	local pos = GetPosition("templarsarrive"..p)
 		templarone = Tools.CreateGroup(4, Entities.PU_LeaderHeavyCavalry2 , 6, pos.X+f*10, pos.Y+f*10, 90)
 		SetEntityName(templarone, "templarcav"..f) 

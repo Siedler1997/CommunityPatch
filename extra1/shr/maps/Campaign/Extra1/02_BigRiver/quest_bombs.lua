@@ -173,9 +173,9 @@ function controlBombQuest()
         local name = "bomb"..i
         if IsDead(name) == false then
 	        if CP_Difficulty < 2 then
-                Move(name,"t"..GetRandom(10) +1)
+                Move(name,"t"..GetRandom(1,10))
             else
-                Attack(name,"t"..GetRandom(10) +1)
+                Attack(name,"t"..GetRandom(1,10))
             end
         end
     end

@@ -7,7 +7,7 @@ function createArmyAlarm2()
 		Entities.CU_AggressiveWolf_White
     	}
     
-    local RandomPoint = GetRandom(2)+2
+    local RandomPoint = GetRandom(1,4)
     
 	if CP_Difficulty == 0 then
 		table.insert(troopsArmyAlarm2, Entities.CU_Barbarian_LeaderClub1)

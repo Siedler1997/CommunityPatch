@@ -67,7 +67,7 @@ function ArmyCaravanAttackRandomSpawn()
 		if Counter.Tick2("ArmyCaravanAttackRandomSpawn", minutes * 60) then
 	
 			-- set random army position
-			local RandomPos 			= GetRandom(4)+1
+			local RandomPos 			= GetRandom(1,4)
 			ArmyCaravanAttack.position	= GetPosition("P2_RandomSpawn_"..RandomPos)
 		
 			local troopDescription = {
@@ -89,7 +89,7 @@ function ArmyCaravanAttackRandomSpawn()
 				EnlargeArmy(ArmyCaravanAttack,troopDescription)
 			end
 				
-			Counter.SetLimit("ArmyCaravanAttackRandomSpawn", (60 * 1)+(GetRandom(60*1)))
+			Counter.SetLimit("ArmyCaravanAttackRandomSpawn", (60 * 1)+(GetRandom(1,60)))
 	
 			ArmyCaravanAttack.delay = 2
 	
