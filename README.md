@@ -716,7 +716,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- ZHundekäfig im Stronghold-Stil
+- Silbermine als CB
+- Hundekäfig im Stronghold-Stil
 - AeK-Frauen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
