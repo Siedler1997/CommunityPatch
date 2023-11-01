@@ -538,6 +538,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
 		- Misc-Items für Gewehre und NV-Drops ohne begrenzte Lebensdauer hinzugefügt
 			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
+	- Neue Bodentexturen
+		- Marmor
+		- Lava (auf Siedler 7)
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
