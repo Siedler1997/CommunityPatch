@@ -125,10 +125,10 @@ end
 
 function Cutscene_CITY_Text09()
 	-- Give player 2 to player 1
-	Logic.ChangeAllEntitiesPlayerID(2, 1)
+	--Logic.ChangeAllEntitiesPlayerID(2, 1)
 
-	 SpokenCinematicText("CM02_03_BigCity/CUTSCENE_CITY_TEXT09")	 
-	 Sound.PlayGUISound(Sounds.OnKlick_Select_ari)
+	SpokenCinematicText("CM02_03_BigCity/CUTSCENE_CITY_TEXT09")	 
+	Sound.PlayGUISound(Sounds.OnKlick_Select_ari)
 	
 end
 
@@ -138,7 +138,7 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 function Cutscene_CITY_Cancel()
 	-- Give player 2 to player 1
-	Logic.ChangeAllEntitiesPlayerID(2, 1)
+	--Logic.ChangeAllEntitiesPlayerID(2, 1)
 
 	Cutscene_CITY_Finished()	
 end
