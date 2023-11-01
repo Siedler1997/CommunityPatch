@@ -1,18 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\text",
-    "\\extra1\\shr\\text\\de\\InGame",
-    "\\extra1\\shr\\text\\en",
-    "\\extra1\\shr\\text\\en\\InGame",
+    "\\extra1\\shr\\maps\\Campaign",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1",
+    "\\extra1\\shr\\maps\\Campaign\\Extra1\\04_TradingCaravans",
+    "\\extra2",
     "\\extra2\\shr",
     "\\extra2\\shr\\maps",
     "\\extra2\\shr\\maps\\Campaign",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_4",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\03_DivineAnger"
+    "\\extra2\\shr\\maps\\Campaign\\Extra2_4"
   ],
-  "SelectedNode": "\\extra1\\shr\\text\\de",
+  "SelectedNode": "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\02_DefendingTheDryMoat",
   "PreviewInSolutionExplorer": false
 }
