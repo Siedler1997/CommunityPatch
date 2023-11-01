@@ -1042,6 +1042,11 @@
 		<Category>Beautification16</Category>
 		<FirstBuilding>PB_Beautification16</FirstBuilding>
 	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>PrisonCage</Category>
+		<FirstBuilding>CB_PrisonCage</FirstBuilding>
+	</BuildingUpgrade>
 	
 	<AlarmRechargeTime>180000</AlarmRechargeTime>
 

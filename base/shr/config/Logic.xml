@@ -910,6 +910,11 @@
 		<Category>Cannon4a</Category>
 		<FirstSettler>PV_Cannon4a</FirstSettler>
 	</SettlerUpgrade>
+
+	<BuildingUpgrade>
+		<Category>PrisonCage</Category>
+		<FirstBuilding>CB_PrisonCage</FirstBuilding>
+	</BuildingUpgrade>
 	
   <AlarmRechargeTime>180000</AlarmRechargeTime>
   

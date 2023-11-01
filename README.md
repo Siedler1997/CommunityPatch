@@ -680,7 +680,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## ToDos:
 - Gefängniskäfig 
-	- CB-Version mit besseren Stats
 	- in Vanilla-Maps nutzen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
