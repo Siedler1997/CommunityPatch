@@ -89,6 +89,10 @@ end
 
 function GUIUpdate_BuildingButtons(_Button, _Technology)
 	if _Button == "OnlineHelpButton" or _Button == "GameSpeedButton" then
+		XGUIEng.ShowWidget("GameSpeedButton", 1)
+		XGUIEng.ShowWidget("OnlineHelpButton", 0)
+		XGUIEng.DisableButton("GameSpeedButton",0)	
+		--[[
 		if GDB.GetValue("Game\\GameSpeedAdjust") == 1 then
 			XGUIEng.ShowWidget("GameSpeedButton", 1)
 			XGUIEng.ShowWidget("OnlineHelpButton", 0)
@@ -98,6 +102,7 @@ function GUIUpdate_BuildingButtons(_Button, _Technology)
 			XGUIEng.ShowWidget("OnlineHelpButton", 1)
 			GUIUpdate_UpgradeButtons("OnlineHelpButton", Technologies.T_OnlineHelp)
 		end
+		--]]
 	else
 		local PlayerID = GUI.GetPlayerID()
 		local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
