@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base\\shr",
+    "\\base\\shr\\config",
     "\\extra1\\shr",
-    "\\extra1\\shr\\maps\\Campaign",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1\\04_TradingCaravans",
+    "\\extra1\\shr\\maps",
+    "\\extra1\\shr\\maps\\Singleplayer",
     "\\extra2",
     "\\extra2\\shr",
     "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Campaign",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_4"
+    "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\01_RestoringTheFaith",
+    "\\extra2\\shr\\maps\\User"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\02_DefendingTheDryMoat",
+  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer",
   "PreviewInSolutionExplorer": false
 }

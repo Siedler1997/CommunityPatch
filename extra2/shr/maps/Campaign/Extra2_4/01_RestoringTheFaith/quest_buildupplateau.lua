@@ -150,8 +150,8 @@ end
 
 	function Count2Towers()
 		local pos = GetPosition("towers")
-		local towerCount1 = {0]
-		local towerCount2 = {0]
+		local towerCount1 = {0}
+		local towerCount2 = {0}
 		local towerCount3 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_Tower3, pos.X, pos.Y, 5000, 4)}
 		local towerCount4 = {Logic.GetPlayerEntitiesInArea(1, Entities.PB_DarkTower3, pos.X, pos.Y, 5000, 4)}
 		

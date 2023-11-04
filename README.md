@@ -392,7 +392,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
 	- In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
 	- Countdowns 
-		- bleiben im Hauptspiel auch nach dem Laden eines Spielstands sichtbar
+		- Hauptspiel
+			- bleiben auch nach dem Laden eines Spielstands sichtbar
+			- sind an der gleichen Position wie im AddOn
 		- bei Beginn der letzten Minute ertönt ein kleiner Sound
 	- Hilfe-Button
 		- gibt bei jedem Helden spezifische Hilfe
@@ -679,8 +681,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Gefängniskäfig 
-	- in Vanilla-Maps nutzen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten

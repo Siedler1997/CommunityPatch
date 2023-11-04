@@ -462,7 +462,7 @@ createArmySpawn = function()
 	--p4 	*******village defenders(2 archer troops)**************
 
 		armyp4_1	= {}
-		createArmy(4, 1,armyp4_1,0,"p3_def1",CP_Difficulty+1,troops8)
+		createArmy(4, 1,armyp4_1,0,"p3_def1",CP_Difficulty+1,troops1)
 		StartJob("Controlarmyp4_1")
 
 	--	*******mary prison guardians***************************
