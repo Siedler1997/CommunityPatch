@@ -358,8 +358,9 @@
 		<TaskList>TL_DIE_BEAR</TaskList>
 		<TaskList>TL_DIE_WOLF</TaskList>
 		<TaskList>TL_BATTLE_SWORD</TaskList>
+		<TaskList>TL_BATTLE_BEAR</TaskList>
+		<TaskList>TL_BATTLE_WOLF</TaskList>
 		<TaskList>TL_LEADER_INFANTRY_WALK</TaskList>
 		<TaskList>TL_LEADER_CAVALRY_WALK</TaskList>
-		<TaskList>TL_BATTLE_CLAW</TaskList>
 
 </root>
