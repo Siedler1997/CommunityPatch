@@ -2,16 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\TaskLists",
-    "\\base\\shr\\Script\\Interface",
-    "\\base\\shr\\sounds",
+    "\\base\\shr\\Script\\MapTools",
+    "\\base\\shr\\sounds\\Animals",
     "\\base\\shr\\sounds\\Military",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
-    "\\base\\shr\\text\\en\\InGame"
+    "\\extra1",
+    "\\extra2",
+    "\\extra2\\shr\\maps\\User",
+    "\\extra2\\shr\\maps\\User\\Scripts"
   ],
-  "SelectedNode": "\\base\\shr\\Script",
+  "SelectedNode": "\\base\\shr",
   "PreviewInSolutionExplorer": false
 }

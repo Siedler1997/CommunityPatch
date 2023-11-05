@@ -724,6 +724,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - AeK-Sounds
+	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
 - Silbermine als CB
