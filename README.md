@@ -522,6 +522,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Alle Einheiten, ausgenommen Helden und Kanonen, haben einen Sound beim sterben (aus AeK)
 		- Pfeile und Bullets haben, analog zu Kanonen, einen Impact-Sound (aus AeK)
 		- Bäume haben einen sound, wenn sie gefällt werden
+		- Wölfe und Bären haben eigene Todes- und Angriff Sounds
 	- Wetter-Effekte sind etwas gemischter
 		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
@@ -723,10 +724,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - AeK-Sounds
-	- Irgendwas für Helden und Kanonen
-	- Sounds für Bären und Wölfe
-	- Die Sound für Frauen
 	- Walk Sounds für Infanterie und Kavallerie
+	- Irgendwas für Helden und Kanonen
+	- Die Sound für Frauen
 - Silbermine als CB
 - Hundekäfig im Stronghold-Stil
 - AeK-Frauen
