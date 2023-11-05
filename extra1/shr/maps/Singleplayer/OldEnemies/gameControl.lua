@@ -24,21 +24,25 @@ create1stQuest = function()
         	EnableNpcMarker("Info2")
         	EnableNpcMarker("Info3")
         	EnableNpcMarker("Info4")
-        	EnableNpcMarker("Leonardo")
+        	--EnableNpcMarker("Leonardo")
         	EnableNpcMarker("Kel")
 
 	--	quests
 
 		StartChestQuest()
-                StartJob("UnlockP4gate1")
+        StartJob("UnlockP4gate1")
 		startQuestDefeat()
 		startQuestVictory()
 
+		StartSimpleJob("ActivateLeonardoNPC")
+end
 
-
+function ActivateLeonardoNPC()
+	if not IsExisting("PrisonCage") then
+        EnableNpcMarker("Leonardo")
+		return true
 	end
-
-
+end
 	
 destroy1stQuest = function()
 
@@ -187,22 +191,14 @@ GameCallback_NPCInteraction = function(_heroId,_npcId)
 
 
 	if Logic.IsHero(_heroId) then
-                  if npc_leo == nil and _npcId == GetEntityId("Leonardo") then
-		
-			if IsNear(_heroId,_npcId,BRIEFING_TALK_DISTANCE) then
+		if npc_leo == nil and _npcId == GetEntityId("Leonardo") then
+			if not IsExisting("PrisonCage") and IsNear(_heroId,_npcId,BRIEFING_TALK_DISTANCE) then
 				DisableNpcMarker("Leonardo")
 				createBriefingLeonardo()
-                                burnTowers()
-
-  
-		
-				end
-				
-			end
-                end
-
-
-				
+                burnTowers()
+			end	
+		end
+    end		
 end
 
 

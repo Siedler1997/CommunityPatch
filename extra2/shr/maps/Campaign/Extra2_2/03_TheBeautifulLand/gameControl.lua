@@ -169,9 +169,9 @@ end
 	Action_TentScout1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-		local pos 	= GetPosition("Scout1Spawn")
-		Messenger1 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
-		SetEntityName(Messenger1, "Messenger1")
+		--local pos 	= GetPosition("Scout1Spawn")
+		--Messenger1 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
+		--SetEntityName(Messenger1, "Messenger1")
 
 		Scout1Free=1
 
@@ -229,9 +229,9 @@ end
 	Action_TentScout2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-		local pos 	= GetPosition("Scout2Spawn")
-		Messenger2 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
-		SetEntityName(Messenger2, "Messenger2")
+		--local pos 	= GetPosition("Scout2Spawn")
+		--Messenger2 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
+		--SetEntityName(Messenger2, "Messenger2")
 
 		Scout2Free=1
 
@@ -289,9 +289,9 @@ end
 	Action_TentScout3 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-		local pos 	= GetPosition("Scout3Spawn")
-		Messenger3 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
-		SetEntityName(Messenger3, "Messenger3")
+		--local pos 	= GetPosition("Scout3Spawn")
+		--Messenger3 	= Tools.CreateGroup(4, Entities.PU_Scout, 0, pos.X, pos.Y, 180)
+		--SetEntityName(Messenger3, "Messenger3")
 
 		Scout3Free=1
 

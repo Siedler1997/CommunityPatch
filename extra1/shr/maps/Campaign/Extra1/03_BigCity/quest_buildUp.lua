@@ -1,30 +1,28 @@
 function CreateQuestBuildUpCity()
-
-	StartSimpleJob("QuestBuildUpCity")
-
-	BuildUpQuestTowerCount =	Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower1) 
+	BuildUpQuestTime = (25 - 5 * CP_Difficulty) * 60
+	BuildUpQuestTowerCount =	6 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower1) 
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower2)
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower3)
 
+	StartSimpleJob("QuestBuildUpCity")
 end
 
 -- time gone or 6 towers build
 function QuestBuildUpCity()
-
 	-- get amount of towers
 	local currentTowerCount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower1) 
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower2)
 								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_Tower3)
-	local minutes = 20
-	if CP_Difficulty == 2 then
-		minutes = minutes - 5
-	end
-	if Counter.Tick2("QuestBuildUpCity", minutes * 60) or currentTowerCount > BuildUpQuestTowerCount + 6	then
-	
-		end3rdChapter()
-	
-		return true
-	
-	end
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower1) 
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower2)
+								+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(1,Entities.PB_DarkTower3)
 
+	BuildUpQuestTime = BuildUpQuestTime - 1
+	
+	--Message("Time: " .. BuildUpQuestTime .. " - Towers: " .. currentTowerCount .. "/" .. BuildUpQuestTowerCount)
+	if BuildUpQuestTime <= 0 or (currentTowerCount > BuildUpQuestTowerCount) then
+		end3rdChapter()
+		--Message("Quest done!")
+		return true
+	end
 end

@@ -103,7 +103,7 @@ function FirstMapAction()
 	CreateBriefingMonk()
   InitNPC( "monk" );
   SetNPCWaypoints( "monk", "NPCmonk_WP", 5 );
-	CreateBriefingGirl()
+	--CreateBriefingGirl()
 	CreateBriefingHermit()
 	CreatePreludeBriefing()
 ---------------------------------------------------------------------------------------------	
@@ -1175,9 +1175,9 @@ end
 
 -- Diese Funktion ?ffnet das Gef?ngnis, wenn der Turm von player2 zerst?rt ist
 function OpenPrison()
-	if IsDead("player2") then
-		DestroyEntity (65589) 
+	if IsDead("player2") and IsDead("p2_prison") then
 		ResolveBriefing(BriefingMonkMarker)
+		CreateBriefingGirl()
 	end
 end
 

@@ -48,8 +48,9 @@ function GUIAction_BuyCannon(_CannonType, _UpgradeCategory)
 	
 	if InterfaceTool_HasPlayerEnoughResources_Feedback( InterfaceGlobals.CostTable ) == 1 then	
 		-- Yes
+		local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_AllowEntitySkins)
 		if CP_GetEvilModUnitState(PlayerID) > 0 then
-			if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+			if TechState ~= 2 or XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
 				if CannonToBuild == Entities.PV_Cannon3 then
 					CannonToBuild = Entities.PV_Cannon3a
 				elseif CannonToBuild == Entities.PV_Cannon4 then
@@ -57,7 +58,7 @@ function GUIAction_BuyCannon(_CannonType, _UpgradeCategory)
 				end
 			end
 		else
-			if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+			if TechState == 2 and XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
 				if CannonToBuild == Entities.PV_Cannon3 then
 					CannonToBuild = Entities.PV_Cannon3a
 				elseif CannonToBuild == Entities.PV_Cannon4 then

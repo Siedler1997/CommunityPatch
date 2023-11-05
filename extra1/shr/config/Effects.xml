@@ -51,6 +51,16 @@
 		</Display>
 	</Effect>
 
+	<Effect id="FXArrowImpact">
+		<Logic classname="EGL::CGLEEffectProps">
+			<Class>EGL::CEffect</Class>
+			<Duration>5</Duration>
+			<SoundID>Military\SO_ArrowHit_rnd_1</SoundID>
+			<SoundVolume>80</SoundVolume>
+			<SoundLooped>false</SoundLooped>
+		</Logic>
+	</Effect>
+
 	<Effect id="FXBuildingSmoke">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
@@ -138,11 +148,12 @@
             <Class>GGL::CArrowEffect</Class>
             <Global>false</Global>
             <Duration>0</Duration>
-            <Speed>1200.0</Speed>
+            <Speed>1400.0</Speed>
             <GravityFactor>600.0f</GravityFactor>
             <HeightOffsetStart>160.0</HeightOffsetStart>
             <HeightOffsetTarget>120.0</HeightOffsetTarget>
             <Damage>0</Damage>
+			<ImpactEffectID>FXArrowImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -155,11 +166,12 @@
             <Class>GGL::CArrowEffect</Class>
             <Global>false</Global>
             <Duration>0</Duration>
-            <Speed>1200.0</Speed>
+            <Speed>1400.0</Speed>
             <GravityFactor>300.0f</GravityFactor>
             <HeightOffsetStart>160.0</HeightOffsetStart>
             <HeightOffsetTarget>120.0</HeightOffsetTarget>
             <Damage>0</Damage>
+			<ImpactEffectID>FXArrowImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -172,11 +184,12 @@
             <Class>GGL::CArrowEffect</Class>
             <Global>false</Global>
             <Duration>0</Duration>
-            <Speed>1200.0</Speed>
+            <Speed>1400.0</Speed>
             <GravityFactor>600.0f</GravityFactor>
             <HeightOffsetStart>200.0</HeightOffsetStart>
             <HeightOffsetTarget>120.0</HeightOffsetTarget>
             <Damage>0</Damage>
+			<ImpactEffectID>FXArrowImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -189,11 +202,12 @@
             <Class>GGL::CArrowEffect</Class>
             <Global>false</Global>
             <Duration>0</Duration>
-            <Speed>1200.0</Speed>
+            <Speed>1400.0</Speed>
             <GravityFactor>300.0f</GravityFactor>
             <HeightOffsetStart>200.0</HeightOffsetStart>
             <HeightOffsetTarget>120.0</HeightOffsetTarget>
             <Damage>0</Damage>
+			<ImpactEffectID>FXArrowImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -206,7 +220,7 @@
 			<Class>EGL::CEffect</Class>
 			<Duration>5</Duration>
 			<SoundID>Military\SO_Cannon_rnd_1</SoundID>
-			<SoundVolume>127</SoundVolume>
+			<SoundVolume>100</SoundVolume>
 			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
@@ -222,7 +236,7 @@
 			<Class>EGL::CEffect</Class>
 			<Duration>5</Duration>
 			<SoundID>Military\SO_Cannon_rnd_1</SoundID>
-			<SoundVolume>127</SoundVolume>
+			<SoundVolume>100</SoundVolume>
 			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
@@ -237,7 +251,7 @@
 			<Class>EGL::CEffect</Class>
 			<Duration>5</Duration>
 			<SoundID>Military\SO_Cannon_rnd_1</SoundID>
-			<SoundVolume>127</SoundVolume>
+			<SoundVolume>100</SoundVolume>
 			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
@@ -252,7 +266,7 @@
 			<Class>EGL::CEffect</Class>
 			<Duration>5</Duration>
 			<SoundID>Military\SO_BallistaHit_rnd_1</SoundID>
-			<SoundVolume>127</SoundVolume>
+			<SoundVolume>100</SoundVolume>
 			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
@@ -267,7 +281,7 @@
 			<Class>EGL::CEffect</Class>
 			<Duration>5</Duration>
 			<SoundID>Military\SO_CannonHit_rnd_1</SoundID>
-			<SoundVolume>127</SoundVolume>
+			<SoundVolume>100</SoundVolume>
 			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
@@ -470,7 +484,10 @@
 	<Effect id="FXChopTree">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>
@@ -482,7 +499,10 @@
 	<Effect id="FXChopTreeInWinter">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>
@@ -494,7 +514,10 @@
 		<Effect id="FXChopTreeDead">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>
@@ -574,6 +597,16 @@
     
 <!--AddOn-->
 
+	<Effect id="FXBulletRifleImpact">
+		<Logic classname="EGL::CGLEEffectProps">
+			<Class>EGL::CEffect</Class>
+			<Duration>5</Duration>
+			<SoundID>Military\SO_BulletHit_rnd_1</SoundID>
+			<SoundVolume>80</SoundVolume>
+			<SoundLooped>false</SoundLooped>
+		</Logic>
+	</Effect>
+
 	<Effect id="FXBulletRifleman">
 		<Logic classname="GGL::CArrowEffectProps">
 			<Class>GGL::CArrowEffect</Class>
@@ -584,6 +617,7 @@
 			<GravityFactor>5.0f</GravityFactor>
 			<HeightOffsetStart>70.0</HeightOffsetStart>
 			<HeightOffsetTarget>70.0</HeightOffsetTarget>
+			<ImpactEffectID>FXBulletRifleImpact</ImpactEffectID>
 		</Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
@@ -602,6 +636,7 @@
 			<GravityFactor>5.0f</GravityFactor>
 			<HeightOffsetStart>70.0</HeightOffsetStart>
 			<HeightOffsetTarget>70.0</HeightOffsetTarget>
+			<ImpactEffectID>FXBulletRifleImpact</ImpactEffectID>
 		</Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>

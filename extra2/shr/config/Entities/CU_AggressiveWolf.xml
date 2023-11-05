@@ -99,7 +99,7 @@
 			
 			  <SoldierType>PU_SoldierSword1</SoldierType>
 			
-	        <BattleTaskList>TL_BATTLE_CLAW</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_WOLF</BattleTaskList>
 	        
 	        <NormalAttackAnim1>XA_Wolf_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>XA_Wolf_Attack1</NormalAttackAnim2>
@@ -132,7 +132,7 @@
 	<Behavior>
 		  <Logic classname="GGL::CGLBehaviorPropsDying">
 			  <Class>GGL::CGLBehaviorDying</Class>
-			  <DyingTaskList>TL_DIE</DyingTaskList>
+			  <DyingTaskList>TL_DIE_WOLF</DyingTaskList>
 		</Logic>
 	</Behavior>
 

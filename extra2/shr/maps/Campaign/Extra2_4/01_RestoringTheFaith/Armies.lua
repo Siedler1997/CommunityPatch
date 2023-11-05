@@ -49,8 +49,8 @@ createSpawnRaid1 = function()
 	Action_TimerRaid1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-		local i=1+GetRandom(3)
-		local j=1+GetRandom(3)
+		local i = GetRandom(1,4)
+		local j = GetRandom(1,4)
 
 		local banditSwordType = Entities.CU_BanditLeaderSword1
 		--local banditBowType = Entities.CU_BanditLeaderBow1

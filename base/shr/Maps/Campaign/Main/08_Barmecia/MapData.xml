@@ -21307,12 +21307,12 @@
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>CU_Trader</Type>
    <Position>
-    <X>4.066600e+003</X>
-    <Y>1.934280e+004</Y>
+	   <X>4.280000e+003</X>
+	   <Y>1.763000e+004</Y>
    </Position>
    <Orientation>2.100000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>3</PlayerID>
+   <PlayerID>2</PlayerID>
    <Health>-1</Health>
    <Name>TraderMarket1</Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -91557,7 +91557,7 @@
    </Position>
    <Orientation>3.100000e+001</Orientation>
    <Flags>0</Flags>
-   <PlayerID>1</PlayerID>
+   <PlayerID>3</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -91572,7 +91572,7 @@
    </Position>
    <Orientation>1.060000e+002</Orientation>
    <Flags>0</Flags>
-   <PlayerID>1</PlayerID>
+   <PlayerID>3</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -91650,6 +91650,21 @@
 		 <PlayerID>1</PlayerID>
 		 <Health>-1</Health>
 		 <Name></Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>0.000000e+000</Scale>
+	 </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>CB_PrisonCage</Type>
+		 <Position>
+			 <X>4.280000e+003</X>
+			 <Y>1.763000e+004</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>5</PlayerID>
+		 <Health>-1</Health>
+		 <Name>PrisonCage</Name>
 		 <ScriptCommandLine></ScriptCommandLine>
 		 <AmbientSoundType></AmbientSoundType>
 		 <Scale>0.000000e+000</Scale>

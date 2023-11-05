@@ -73,7 +73,7 @@ function ControlAttackers2()
 				if ArmyAttackers2[i].spawnCount < MAX_ATTACKER_SPAWN_COUNT then
 	
 					-- set random army position
-					local RandomPos 			= GetRandom(4)+1
+					local RandomPos 			= GetRandom(1,4)
 					ArmyAttackers2[i].position	= GetPosition("EnemySpawn"..RandomPos)
 				
 					local experience = LOW_EXPERIENCE

@@ -1692,7 +1692,7 @@
    </Position>
    <Orientation>0.000000e+000</Orientation>
    <Flags>0</Flags>
-   <PlayerID>1</PlayerID>
+   <PlayerID>3</PlayerID>
    <Health>-1</Health>
    <Name></Name>
    <ScriptCommandLine></ScriptCommandLine>
@@ -79759,6 +79759,21 @@
    <AmbientSoundType>AS_Leaves</AmbientSoundType>
    <Scale>3.000000e+001</Scale>
   </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>PB_Tower1</Type>
+		 <Position>
+			 <X>5.000000e+002</X>
+			 <Y>5.000000e+002</Y>
+		 </Position>
+		 <Orientation>0.000000e+000</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>4</PlayerID>
+		 <Health>-1</Health>
+		 <Name></Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+		 <Scale>1.000000e+000</Scale>
+	 </Entity>
 	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
 		 <Type>XD_Gold1</Type>
 		 <Position>

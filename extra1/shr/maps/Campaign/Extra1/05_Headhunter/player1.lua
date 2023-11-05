@@ -2,6 +2,7 @@ function createPlayer1()
 	ForbidTechnology(Technologies.GT_PulledBarrel)
 	ForbidTechnology(Technologies.UP1_GunsmithWorkshop)
 	ForbidTechnology(Technologies.T_UpgradeRifle1)
+	ForbidTechnology(Technologies.B_Beautification16)
 	
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		ForbidTechnology(Technologies.GT_Matchlock)

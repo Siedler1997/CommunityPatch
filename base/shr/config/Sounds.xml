@@ -1266,10 +1266,32 @@
 	<ID>VoicesHero0\Scout_Yes_rnd_10</ID>
 	<ID>VoicesHero0\Scout_FunnyComment_rnd_04</ID>
 
-	<ID>Military\SO_Bearman_rnd_1</ID>
-	<ID>Military\SO_Bearman_rnd_2</ID>
-	<ID>Military\SO_Bearman_rnd_3</ID>
 	<ID>Misc\so_signalhorn</ID>
+	<ID>Misc\SO_Die_Female_rnd_1</ID>
+	<ID>Animals\SO_Wolf_Die_rnd_1</ID>
+	<ID>Animals\SO_Bear_Die_rnd_1</ID>
+	<ID>Animals\SO_Bear_rnd_1</ID>
+	<ID>Animals\SO_Bear_rnd_2</ID>
+	<ID>Animals\SO_Wolf_rnd_1</ID>
+	<ID>Animals\SO_Wolf_rnd_2</ID>
+	<ID>Misc\so_treefall_rnd_1</ID>
+	<ID>Misc\so_treefall_rnd_2</ID>
+	<ID>Military\SO_ArrowHit_rnd_1</ID>
+	<ID>Military\SO_ArrowHit_rnd_2</ID>
+	<ID>Military\SO_ArrowHit_rnd_3</ID>
+	<ID>Military\SO_ArrowHit_rnd_4</ID>
+	<ID>Military\SO_ArrowHit_rnd_5</ID>
+	<ID>Military\SO_ArrowHit_rnd_6</ID>
+	<ID>Military\SO_ArrowHit_rnd_7</ID>
+	<ID>Military\SO_Die_rnd_1</ID>
+	<ID>Military\SO_Die_rnd_2</ID>
+	<ID>Military\SO_Die_rnd_3</ID>
+	<ID>Military\SO_Die_rnd_4</ID>
+	<ID>Military\SO_Die_rnd_5</ID>
+	<ID>Military\SO_Die_rnd_6</ID>
+	<ID>Military\SO_Die_rnd_7</ID>
+	<ID>Military\SO_Die_rnd_8</ID>
+	<ID>Military\SO_Die_rnd_9</ID>
 </root>
     
     

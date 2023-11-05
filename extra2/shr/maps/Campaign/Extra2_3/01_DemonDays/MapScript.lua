@@ -68,7 +68,7 @@ RED = 2
 	Display.SetPlayerColorMapping(4, p1color)
 	Display.SetPlayerColorMapping(5, NPC_COLOR)
 	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
-	Display.SetPlayerColorMapping(7, 15)
+	Display.SetPlayerColorMapping(7, NPC_COLOR)
 	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(8, BARBARIAN_COLOR)	
 	else

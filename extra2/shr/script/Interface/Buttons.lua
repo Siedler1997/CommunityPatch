@@ -146,9 +146,19 @@ function GUIAction_PlaceBuilding( _UpgradeCategory )
 		
 	local PlayerID = GUI.GetPlayerID()
 	local UCat = _UpgradeCategory
-
-	if UCat == UpgradeCategories.Tower and CP_GetEvilModTowerState(PlayerID) == 1 then
-		UCat = UpgradeCategories.DarkTower
+	
+	if UCat == UpgradeCategories.Tower then
+		local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_AllowEntitySkins)
+		local masterBuilderWorkshops = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_MasterBuilderWorkshop)
+		if CP_GetEvilModTowerState(PlayerID) == 1 then
+			if TechState ~= 2 or XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 or masterBuilderWorkshops == 0 then
+				UCat = UpgradeCategories.DarkTower
+			end
+		else
+			if TechState == 2 and XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 and masterBuilderWorkshops > 0 then
+				UCat = UpgradeCategories.DarkTower
+			end
+		end
 	end
 
 	Logic.FillBuildingCostsTable( Logic.GetBuildingTypeByUpgradeCategory(UCat, PlayerID ), InterfaceGlobals.CostTable )
@@ -159,9 +169,7 @@ function GUIAction_PlaceBuilding( _UpgradeCategory )
 		XGUIEng.HighLightButton(CurrentWidgetID,1)
 		GUI.ActivatePlaceBuildingState(UCat)
 		--Sound.PlayGUISound( Sounds.klick_rnd_1, 0 )
-		
 	end
-	
 end
 
 --------------------------------------------------------------------------------

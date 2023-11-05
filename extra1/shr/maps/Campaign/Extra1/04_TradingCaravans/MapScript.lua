@@ -152,10 +152,10 @@ function FirstMapAction()
 			Logic.CreateEntity(Entities.PV_Cannon3,39200,39100,110,2)
 
 			ReplaceEntity("vc_player", Entities.CB_Grange)
+		end
 
-			for i = 1, 3 do
-				ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
-			end
+		for i = 1, 3 do
+			ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
 		end
 		--[[
 		local vcpos = GetPosition("vc_empty")

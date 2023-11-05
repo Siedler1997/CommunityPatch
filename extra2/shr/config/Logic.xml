@@ -1025,6 +1025,28 @@
 		<Category>Cannon4a</Category>
 		<FirstSettler>PV_Cannon4a</FirstSettler>
 	</SettlerUpgrade>
+
+	<BuildingUpgrade>
+		<Category>Beautification13</Category>
+		<FirstBuilding>PB_Beautification13</FirstBuilding>
+	</BuildingUpgrade>
+	<BuildingUpgrade>
+		<Category>Beautification14</Category>
+		<FirstBuilding>PB_Beautification14</FirstBuilding>
+	</BuildingUpgrade>
+	<BuildingUpgrade>
+		<Category>Beautification15</Category>
+		<FirstBuilding>PB_Beautification15</FirstBuilding>
+	</BuildingUpgrade>
+	<BuildingUpgrade>
+		<Category>Beautification16</Category>
+		<FirstBuilding>PB_Beautification16</FirstBuilding>
+	</BuildingUpgrade>
+
+	<BuildingUpgrade>
+		<Category>PrisonCage</Category>
+		<FirstBuilding>CB_PrisonCage</FirstBuilding>
+	</BuildingUpgrade>
 	
 	<AlarmRechargeTime>180000</AlarmRechargeTime>
 

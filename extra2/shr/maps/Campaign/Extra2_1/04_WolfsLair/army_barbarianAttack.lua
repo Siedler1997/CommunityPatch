@@ -65,7 +65,7 @@ function ControlBarbarianAttack()
 				if ArmyBarbarianAttack[i].spawnCount < MAX_SPAWN_COUNT then
 	
 					-- set random army position
-					local RandomPos 			= GetRandom(4)+1
+					local RandomPos 			= GetRandom(1,4)
 					ArmyBarbarianAttack[i].position	= GetPosition("armySpawn"..RandomPos)
 				
 					local troopDescription = {
@@ -94,7 +94,7 @@ function ControlBarbarianAttack()
 						-- if spawn count is greater than 8
 						if j < 9 then
 							if IsExisting("towerSpawn"..RandomPos) then
-								troopDescription.leaderType = troopLeaderType[GetRandom(4)+1]
+								troopDescription.leaderType = troopLeaderType[GetRandom(1,4)]
 								EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 							end
 						end

@@ -48,6 +48,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
 		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
+		- Neue Ziergebäude
+			- benötigen neben diversen Hochschul-Technologien auch mindestens eine Architektenstube zum Bau
+				- deshalb nur in den AddOns verfügbar
+			- folgende neuen Ziergebäude gibt es
+				- Podium
+				- Kerzenhalter
+				- Gefängniskäfig (aus AeK)
+				- Dampfmaschine
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
@@ -64,7 +72,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- AoE auf 4 SM reduziert (vorher: 7 SM)
 			- Ausbau zu diesen kostet zusätzlich 100 Eisen
 			- Schaden von 40 auf 50 erhöht
-		- dunkle Türme sind ausbaubar
+		- dunkle Türme 
+			- sind ausbaubar
+			- können in den AddOns regulär gebaut werden
+				- benötigen mindestens eine Architektenstube
+				- haltet dann beim Drücken auf den Turm-Button [Strg] gedrückt
+	- Architektenstube ermöglicht Bau dunkler Türme sowie neuer Ziergebäuden in den AddOns (siehe 'Ziergebäude' bzw. 'Türme')
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
 		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
@@ -379,7 +392,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Der Entlassen-Button wird ausbeblendet, wenn Helden selektiert sind
 	- In Kanonengießereien können Arbeiter und in Tavernen Esser gesichtet werden
 	- Countdowns 
-		- bleiben im Hauptspiel auch nach dem Laden eines Spielstands sichtbar
+		- Hauptspiel
+			- bleiben auch nach dem Laden eines Spielstands sichtbar
+			- sind an der gleichen Position wie im AddOn
 		- bei Beginn der letzten Minute ertönt ein kleiner Sound
 	- Hilfe-Button
 		- gibt bei jedem Helden spezifische Hilfe
@@ -502,7 +517,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
 		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
 		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
-	- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+	- Neue Sounds
+		- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+		- Alle Einheiten, ausgenommen Helden und Kanonen, haben einen Sound beim sterben (aus AeK)
+		- Pfeile und Bullets haben, analog zu Kanonen, einen Impact-Sound (aus AeK)
+		- Bäume haben einen sound, wenn sie gefällt werden
+		- Wölfe und Bären haben eigene Todes- und Angriff Sounds
 	- Wetter-Effekte sind etwas gemischter
 		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
@@ -525,6 +545,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
 		- Misc-Items für Gewehre und NV-Drops ohne begrenzte Lebensdauer hinzugefügt
 			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
+	- Neue Bodentexturen
+		- Marmor
+		- Lava (auf Siedler 7)
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
@@ -544,6 +567,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- AudioFeedback stammt von den Kundschaftern
 	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
 	- Die Reskins von Eisen- und Belagerungskanone heißen 'PV_Cannon3a' und 'PV_Cannon4a'
+	- Der Bau von Reskins, die über [Strg] erfolgen, (z.B. dunkle Türme) kann über die Technologie 'T_AllowEntitySkins' pauschal verboten werden
 	- Die Technologie 'KI-Bonus' 
 		- ist als 'T_SuperTechnology' bekannt, nur deutlich weniger overpowered
 		- ist bei allen Spieler-Entities hinterlegt
@@ -699,6 +723,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- AeK-Sounds
+	- Eigener Todes-Sound für Nebelkrieger
+	- Walk Sounds für Infanterie und Kavallerie
+	- Irgendwas für Helden und Kanonen
+- Silbermine als CB
+- Hundekäfig im Stronghold-Stil
+- AeK-Frauen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)

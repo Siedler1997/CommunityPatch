@@ -2,16 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\base",
+    "\\base\\shr\\Script\\MapTools",
+    "\\base\\shr\\sounds\\Animals",
+    "\\base\\shr\\sounds\\Military",
     "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\User",
-    "\\extra1\\shr\\maps\\User\\Scripts",
-    "\\extra1\\shr\\Script",
-    "\\extra1\\shr\\Script\\Interface",
-    "\\extra2\\shr\\script",
-    "\\extra2\\shr\\script\\Interface"
+    "\\extra2",
+    "\\extra2\\shr\\maps\\User",
+    "\\extra2\\shr\\maps\\User\\Scripts"
   ],
-  "SelectedNode": "\\extra1\\shr\\maps\\User\\Scripts\\Thalbach.lua",
+  "SelectedNode": "\\base\\shr",
   "PreviewInSolutionExplorer": false
 }

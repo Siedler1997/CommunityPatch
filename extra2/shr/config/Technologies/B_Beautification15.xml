@@ -1,0 +1,19 @@
+<root>
+	<TecCategoryType>TC_Building</TecCategoryType>
+	<TimeToResearch>3</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>		
+
+	<Conditions>
+		<TecCondition>
+			<TecType>GT_Tactics</TecType>
+			<TecCategoryType></TecCategoryType>
+		</TecCondition>
+
+		<EntityCondition>
+			<EntityType>PB_MasterBuilderWorkshop</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

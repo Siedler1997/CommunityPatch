@@ -75,7 +75,7 @@ function ControlWolvesAttack()
 				if ArmyWolvesAttack[iw].spawnCount < MAX_WOLVES_SPAWN_COUNT then
 	
 					-- set random army position
-					local RandomPos 			= GetRandom(2)+1
+					local RandomPos 			= GetRandom(1,2)
 					ArmyWolvesAttack[iw].position	= GetPosition("armyWolves"..RandomPos)
 				
 					local troopDescription = {

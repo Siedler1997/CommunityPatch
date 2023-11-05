@@ -64,7 +64,7 @@ function ControlArmyPatrol()
 	
 		if ArmyPatrol.patrolPointTime < 0 and (GetClosestEntity(ArmyPatrol, ArmyPatrol.outerDefenseRange+1000) == 0) then
 			
-			local RandomPoint = GetRandom(7)+1
+			local RandomPoint = GetRandom(1,7)
 			
 			ArmyPatrol.position	=	GetPosition("PatrolPoint"..RandomPoint)
 			

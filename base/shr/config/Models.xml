@@ -3070,6 +3070,9 @@
 		<OcclusionReceiver>True</OcclusionReceiver>
 		<SelectionRadius>180</SelectionRadius>
 	</Model>
+	<Model id="D_X_PrisonCage">
+		<SelectionTexture>Selection_Building</SelectionTexture>
+	</Model>
 	<Model id="A_ME_Bear">
 		<Effect>SkinnedObject</Effect>
 	</Model>

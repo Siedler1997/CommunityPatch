@@ -1041,6 +1041,11 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>CB_PrisonCage</Entity>
+	<Entity>PB_Beautification13</Entity>
+	<Entity>PB_Beautification14</Entity>
+	<Entity>PB_Beautification15</Entity>
+	<Entity>PB_Beautification16</Entity>
 	<Entity>PV_Cannon3a</Entity>
 	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>

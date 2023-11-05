@@ -230,20 +230,10 @@ function Mission_FirstMapAction()
 			CreateRandomGoldChests()
 			CreateRandomChests()
 		end
-		--[[
-		local vcpos = GetPosition("vc_empty1")
-		DestroyEntity("vc_empty1")
-
-		--Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
-
-		local vcpos2 = GetPosition("vc_empty2")
-		DestroyEntity("vc_empty2")
-		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos2.X,vcpos2.Y,270,0)
 		
 		local vcpos3 = GetPosition("vc_empty3")
 		DestroyEntity("vc_empty3")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
-		--]]
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,0,0)
 	end
 
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

@@ -29,6 +29,8 @@ BriefingKidnapper = 	{}
 	BriefingKidnapper[page].quest.type			=	SUBQUEST_OPEN
 	BriefingKidnapper[page].quest.title			=	String.MainKey.."BriefingKidnapper[1].quest.title"
 	BriefingKidnapper[page].quest.text			=	String.MainKey.."BriefingKidnapper[1].quest.text"
+	BriefingKidnapper[page].position 			= 	GetPosition("kidnapper_boss")
+	BriefingKidnapper[page].explore				=	500
 	
 	BriefingKidnapperQuest = BriefingKidnapper[page]
 

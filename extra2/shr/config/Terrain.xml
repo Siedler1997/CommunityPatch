@@ -1,0 +1,3160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+	<Logic>
+	</Logic>
+	
+	<Display>
+		<TransitionTexture>TerrainTransitions</TransitionTexture>
+		<SnowTransitionTexture>SnowTerrainTransitions</SnowTransitionTexture>
+	</Display>
+	
+	<!-- 
+		+ NEVER REASSIGN ANY ID (value="...")!
+		+ NEVER CHANGE THE PRIORITY ORDER!
+		
+		+ Reassigning an ID will destroy loading of old maps.
+		+ Changing the priority order will change the visiual appearance.
+	-->
+	
+	<TerrainType id="GrassBright01B_AT" value="1">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2650</Priority>
+			<BaseTexture>GrassBright01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassBright01B_CT" value="2">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2625</Priority>
+			<BaseTexture>GrassBright01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>	
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+		
+	<TerrainType id="BlackInternalUseOnly" value="3">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1</Priority>
+			<BaseTexture>EarthBlack01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>0</R>
+				<G>0</G>
+				<B>0</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassDark01B_AT" value="4">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2550</Priority>
+			<BaseTexture>GrassDark01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>84</G>
+				<B>26</B>
+			</Color>		
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassDark01B_CT" value="5">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2525</Priority>
+			<BaseTexture>GrassDark01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>84</G>
+				<B>26</B>
+			</Color>	
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="EarthDark01B_AT" value="6">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2000</Priority>
+			<BaseTexture>EarthDark01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBright01B_AT" value="7">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2100</Priority>
+			<BaseTexture>EarthBright01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>103</R>
+				<G>92</G>
+				<B>53</B>
+			</Color>		
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBrStones01B_AT" value="8">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2200</Priority>
+			<BaseTexture>EarthBrStones01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>97</R>
+				<G>87</G>
+				<B>52</B>
+			</Color>		
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark01B_AT" value="9">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3075</Priority>
+			<BaseTexture>MudDark01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark01B_CT" value="10">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3050</Priority>
+			<BaseTexture>MudDark01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>					
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark01B_AT" value="12">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6001</Priority>
+			<BaseTexture>RockDark01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+	
+
+
+	<TerrainType id="GrassDarkLeaf01B_CT" value="13">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>3500</Priority>
+			<BaseTexture>GrassDarkLeaf01B</BaseTexture>
+			<TransitionsTexture>Transitions03</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>82</R>
+				<G>84</G>
+				<B>37</B>
+			</Color>								
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthRocky01B_AT" value="14">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2400</Priority>
+			<BaseTexture>EarthRocky01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>78</R>
+				<G>77</G>
+				<B>71</B>
+			</Color>											
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark01B_CT" value="15">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6000</Priority>
+			<BaseTexture>RockDark01B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>										
+      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandRocky01_AT_LP" value="16">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1500</Priority>
+			<BaseTexture>SandRocky01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>123</R>
+				<G>116</G>
+				<B>98</B>
+			</Color>														
+      <ReplacementTerrainType>SandRocky01_AT_HP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandRocky01_AT_HP" value="17">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6500</Priority>
+			<BaseTexture>SandRocky01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>123</R>
+				<G>116</G>
+				<B>98</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandEarth01_AT_LP" value="18">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1501</Priority>
+			<BaseTexture>SandEarth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>150</R>
+				<G>140</G>
+				<B>110</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandEarth01_AT_HP" value="19">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6501</Priority>
+			<BaseTexture>SandEarth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>150</R>
+				<G>140</G>
+				<B>110</B>
+			</Color>														
+      <ReplacementTerrainType>SandEarth01_AT_LP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="PebblesEarth01_AT" value="20">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7020</Priority>
+			<BaseTexture>PebblesEarth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>101</R>
+				<G>101</G>
+				<B>90</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="PebblesEarth01_CT" value="21">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7000</Priority>
+			<BaseTexture>PebblesEarth01</BaseTexture>
+			<TransitionsTexture>Transitions05</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>101</R>
+				<G>101</G>
+				<B>90</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthFir01_AT" value="22">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6700</Priority>
+			<BaseTexture>EarthFir01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>62</R>
+				<G>58</G>
+				<B>39</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthFir02_AT" value="23">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6710</Priority>
+			<BaseTexture>EarthFir02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>61</R>
+				<G>57</G>
+				<B>40</B>
+			</Color>														
+      <ReplacementTerrainType>EarthFir01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthFir03_AT" value="24">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6720</Priority>
+			<BaseTexture>EarthFir03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>62</R>
+				<G>58</G>
+				<B>40</B>
+			</Color>														
+      <ReplacementTerrainType>EarthFir01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthMoss01_AT" value="25">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6750</Priority>
+			<BaseTexture>EarthMoss01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>53</R>
+  				<G>61</G>
+  				<B>20</B>
+  			</Color>														
+      <ReplacementTerrainType>EarthMoss02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthMoss02_AT" value="26">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6755</Priority>
+			<BaseTexture>EarthMoss02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>55</R>
+				<G>62</G>
+				<B>27</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBlack01_AT" value="27">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2</Priority>
+			<BaseTexture>EarthBlack01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>1</Quads>
+			<Color>
+				<R>10</R>
+				<G>10</G>
+				<B>10</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark02_AT" value="28">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6011</Priority>
+			<BaseTexture>RockDark02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark02_CT" value="29">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6010</Priority>
+			<BaseTexture>RockDark02</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark03_AT" value="30">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6021</Priority>
+			<BaseTexture>RockDark03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>80</G>
+				<B>81</B>
+			</Color>
+      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDark03_CT" value="31">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6020</Priority>
+			<BaseTexture>RockDark03</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>80</G>
+				<B>81</B>
+			</Color>
+      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassBright02_AT" value="32">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2671</Priority>
+			<BaseTexture>GrassBright02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>97</R>
+				<G>102</G>
+				<B>43</B>
+			</Color>	
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassBright02_CT" value="33">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2670</Priority>
+			<BaseTexture>GrassBright02</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>97</R>
+				<G>102</G>
+				<B>43</B>
+			</Color>	
+            <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassBright03_AT" value="34">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2681</Priority>
+			<BaseTexture>GrassBright03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>103</R>
+				<G>110</G>
+				<B>48</B>
+			</Color>	
+            <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassBright03_CT" value="35">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2680</Priority>
+			<BaseTexture>GrassBright03</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>103</R>
+				<G>110</G>
+				<B>48</B>
+			</Color>	
+            <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassDark02_AT" value="36">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2555</Priority>
+			<BaseTexture>GrassDark02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>78</R>
+				<G>88</G>
+				<B>27</B>
+			</Color>	
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassDark02_CT" value="37">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2556</Priority>
+			<BaseTexture>GrassDark02</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>78</R>
+				<G>88</G>
+				<B>27</B>
+			</Color>	
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBright02_AT" value="38">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2105</Priority>
+			<BaseTexture>EarthBright02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>100</R>
+				<G>89</G>
+				<B>51</B>
+			</Color>	
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>		
+
+	<TerrainType id="EarthBright03_AT" value="39">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2106</Priority>
+			<BaseTexture>EarthBright03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>104</R>
+				<G>93</G>
+				<B>54</B>
+			</Color>	
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>		
+
+	<TerrainType id="EarthBrStones02_AT" value="40">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2206</Priority>
+			<BaseTexture>EarthBrStones02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>93</R>
+				<G>83</G>
+				<B>51</B>
+			</Color>
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>		
+
+	<TerrainType id="EarthDark02_AT" value="41">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2005</Priority>
+			<BaseTexture>EarthDark02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>74</R>
+				<G>64</G>
+				<B>46</B>
+			</Color>	
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+
+		</Display>
+	</TerrainType>		
+
+	<TerrainType id="EarthDark03_AT" value="42">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2006</Priority>
+			<BaseTexture>EarthDark03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>	
+      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>		
+
+	<TerrainType id="MudDark02B_AT" value="43">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3175</Priority>
+			<BaseTexture>MudDark02B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>73</R>
+				<G>70</G>
+				<B>58</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark02B_CT" value="44">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3150</Priority>
+			<BaseTexture>MudDark02B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>73</R>
+				<G>70</G>
+				<B>58</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark03_AT" value="45">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>3200</Priority>
+			<BaseTexture>MudDark03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>67</R>
+				<G>64</G>
+				<B>51</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark03_CT" value="47">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>3205</Priority>
+			<BaseTexture>MudDark03</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>67</R>
+				<G>64</G>
+				<B>51</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark04_AT" value="48">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3210</Priority>
+			<BaseTexture>MudDark04</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>65</R>
+				<G>62</G>
+				<B>51</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark04_CT" value="49">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3215</Priority>
+			<BaseTexture>MudDark04</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>65</R>
+				<G>62</G>
+				<B>51</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark05_AT" value="50">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3220</Priority>
+			<BaseTexture>MudDark05</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>72</R>
+				<G>69</G>
+				<B>57</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudDark05_CT" value="51">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>3225</Priority>
+			<BaseTexture>MudDark05</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>72</R>
+				<G>69</G>
+				<B>57</B>
+			</Color>
+      <ReplacementTerrainType>MudDark01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassDarkLeaf02_CT" value="52">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>3505</Priority>
+			<BaseTexture>GrassDarkLeaf02</BaseTexture>
+			<TransitionsTexture>Transitions03</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>86</R>
+				<G>85</G>
+				<B>39</B>
+			</Color>
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabed01_CT" value="53">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7120</Priority>
+			<BaseTexture>EarthSeabed01</BaseTexture>
+			<TransitionsTexture>Transitions06</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>86</R>
+				<G>89</G>
+				<B>76</B>
+			</Color>
+      <ReplacementTerrainType>EarthSeabed01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabed01_AT" value="54">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7121</Priority>
+			<BaseTexture>EarthSeabed01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>86</R>
+				<G>89</G>
+				<B>76</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabed02_CT" value="55">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7130</Priority>
+			<BaseTexture>EarthSeabed02</BaseTexture>
+			<TransitionsTexture>Transitions06</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>73</R>
+				<G>76</G>
+				<B>69</B>
+			</Color>
+      <ReplacementTerrainType>EarthSeabed01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabed02_AT" value="56">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7131</Priority>
+			<BaseTexture>EarthSeabed02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>73</R>
+				<G>76</G>
+				<B>69</B>
+			</Color>
+      <ReplacementTerrainType>EarthSeabed01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockMedium01B_AT" value="60">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>2098</Priority>
+			<BaseTexture>RockMedium01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>91</R>
+				<G>83</G>
+				<B>65</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+
+		<TerrainType id="RockLight01B_AT" value="61">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>2099</Priority>
+			<BaseTexture>RockLight01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>137</R>
+				<G>128</G>
+				<B>104</B>
+			</Color>														
+      <ReplacementTerrainType>RockMedium01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth01B_AT" value="100">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2645</Priority>
+			<BaseTexture>GrassNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>76</R>
+				<G>80</G>
+				<B>54</B>
+			</Color>
+      <ReplacementTerrainType>GrassNorth02B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth01B_CT" value="101">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2635</Priority>
+			<BaseTexture>GrassNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>76</R>
+				<G>80</G>
+				<B>54</B>
+			</Color>
+      <ReplacementTerrainType>GrassNorth02B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth02B_AT" value="102">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2630</Priority>
+			<BaseTexture>GrassNorth02B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>63</R>
+				<G>67</G>
+				<B>38</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth02B_CT" value="103">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2629</Priority>
+			<BaseTexture>GrassNorth02B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>63</R>
+				<G>67</G>
+				<B>38</B>
+			</Color>
+      <ReplacementTerrainType>GrassNorth02B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth03B_AT" value="104">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2628</Priority>
+			<BaseTexture>GrassNorth03B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>60</G>
+				<B>46</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorth03B_CT" value="105">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2627</Priority>
+			<BaseTexture>GrassNorth03B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>60</G>
+				<B>46</B>
+			</Color>
+      <ReplacementTerrainType>GrassNorth03B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBrightNorth01B_AT" value="106">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2107</Priority>
+			<BaseTexture>EarthBrightNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>70</R>
+				<G>66</G>
+				<B>62</B>
+			</Color>	
+ 		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkNorth01B_AT" value="107">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6005</Priority>
+			<BaseTexture>RockDarkNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>71</R>
+				<G>69</G>
+				<B>66</B>
+			</Color>														
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="RockDarkNorth01B_CT" value="108">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6004</Priority>
+			<BaseTexture>RockDarkNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>71</R>
+				<G>69</G>
+				<B>66</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkNorth01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthDarkNorth01B_AT" value="109">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>2103</Priority>
+			<BaseTexture>EarthDarkNorth01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>58</R>
+				<G>51</G>
+				<B>44</B>
+			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandRockyNorth01_AT_LP" value="110">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1505</Priority>
+			<BaseTexture>SandRockyNorth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>98</R>
+				<G>94</G>
+				<B>83</B>
+			</Color>	
+      <ReplacementTerrainType>SandRocky01_AT_HP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandRockyNorth01_AT_HP" value="111">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6505</Priority>
+			<BaseTexture>SandRockyNorth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>98</R>
+				<G>94</G>
+				<B>83</B>
+			</Color>
+      <ReplacementTerrainType>SandRocky01_AT_HP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandEarthNorth01_AT_LP" value="112">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1506</Priority>
+			<BaseTexture>SandEarthNorth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>108</R>
+				<G>102</G>
+				<B>85</B>
+			</Color>
+      <ReplacementTerrainType>SandEarth01_AT_LP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandEarthNorth01_AT_HP" value="113">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6506</Priority>
+			<BaseTexture>SandEarthNorth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>108</R>
+				<G>102</G>
+				<B>85</B>
+			</Color>
+      <ReplacementTerrainType>SandEarth01_AT_LP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabedNorth01_CT" value="114">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7122</Priority>
+			<BaseTexture>EarthSeabedNorth01</BaseTexture>
+			<TransitionsTexture>Transitions06</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>40</R>
+				<G>41</G>
+				<B>33</B>
+			</Color>
+      <ReplacementTerrainType>EarthSeabed01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthSeabedNorth01_AT" value="115">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7123</Priority>
+			<BaseTexture>EarthSeabedNorth01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>40</R>
+				<G>41</G>
+				<B>33</B>
+			</Color>
+      <ReplacementTerrainType>EarthSeabed01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorthMoor01B_AT" value="116">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2647</Priority>
+			<BaseTexture>GrassNorthMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>77</R>
+				<G>74</G>
+				<B>31</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassNorthMoor01B_CT" value="117">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2637</Priority>
+			<BaseTexture>GrassNorthMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>77</R>
+				<G>74</G>
+				<B>31</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="EarthSeabedNorth02_AT" value="118">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7124</Priority>
+			<BaseTexture>EarthSeabedNorth02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>102</R>
+				<G>97</G>
+				<B>82</B>
+			</Color>
+      <ReplacementTerrainType>SandEarth01_AT_LP</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthGarden01_CT" value="119">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8000</Priority>
+			<BaseTexture>EarthGarden01</BaseTexture>
+			<TransitionsTexture>Transitions07</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	
+	<TerrainType id="EdgeColor01_AT" value="120">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9999</Priority>
+			<BaseTexture>EdgeColor01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>1</Quads>
+			<Color>
+				<R>38</R>
+				<G>0</G>
+				<B>0</B>
+			</Color>														
+		</Display>
+	</TerrainType>	
+	
+
+	<TerrainType id="SandMediterrean01_AT" value="121">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1510</Priority>
+			<BaseTexture>SandMedi01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>140</R>
+				<G>133</G>
+				<B>97</B>
+			</Color>														
+
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandMediterrean02_AT" value="122">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1515</Priority>
+			<BaseTexture>SandMedi02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>137</R>
+				<G>131</G>
+				<B>96</B>
+			</Color>														
+      <ReplacementTerrainType>SandMediterrean01_AT</ReplacementTerrainType>
+
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandMediterrean03_AT" value="123">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1520</Priority>
+			<BaseTexture>SandMedi03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>133</R>
+				<G>126</G>
+				<B>99</B>
+			</Color>														
+      <ReplacementTerrainType>SandMediterrean01_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean01_AT" value="124">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1525</Priority>
+			<BaseTexture>GrassMedi01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>84</R>
+				<G>85</G>
+				<B>36</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean01_CT" value="125">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8010</Priority>
+			<BaseTexture>GrassMedi01</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>84</R>
+				<G>85</G>
+				<B>36</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean02_AT" value="126">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1528</Priority>
+			<BaseTexture>GrassMedi02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>113</R>
+				<G>108</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean02_CT" value="127">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8005</Priority>
+			<BaseTexture>GrassMedi02</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>113</R>
+				<G>108</G>
+				<B>47</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean03_AT" value="128">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1529</Priority>
+			<BaseTexture>GrassMedi03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>128</R>
+				<G>120</G>
+				<B>41</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean03_CT" value="129">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8007</Priority>
+			<BaseTexture>GrassMedi03</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>128</R>
+				<G>120</G>
+				<B>41</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassMediterrean04_AT" value="130">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>1540</Priority>
+			<BaseTexture>GrassMedi04</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>148</R>
+				<G>128</G>
+				<B>71</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassMediterrean04_CT" value="131">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8012</Priority>
+			<BaseTexture>GrassMedi04</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>148</R>
+				<G>128</G>
+				<B>71</B>
+			</Color>
+      <ReplacementTerrainType>GrassMediterrean02_AT</ReplacementTerrainType>
+		</Display>
+		
+	</TerrainType>
+  		<TerrainType id="EarthMoss01_CT" value="132">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6751</Priority>
+  			<BaseTexture>EarthMoss01</BaseTexture>
+  			<TransitionsTexture>Transitions08</TransitionsTexture>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+  			<Color>
+  				<R>53</R>
+  				<G>61</G>
+  				<B>20</B>
+  			</Color>														
+      <ReplacementTerrainType>EarthMoss02_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance01B_AT" value="133">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6030</Priority>
+  			<BaseTexture>RockDarkEvelance01B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>4</Quads>
+			<Color>
+				<R>49</R>
+				<G>48</G>
+				<B>46</B>
+			</Color>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance02_AT" value="134">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6035</Priority>
+  			<BaseTexture>RockDarkEvelance02</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>54</R>
+				<G>52</G>
+				<B>50</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="EarthErosiveEvelance01B_AT" value="135">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>2360</Priority>
+  			<BaseTexture>EarthErosiveEvelance01B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow01</SnowTexture>
+  			<Quads>4</Quads>
+			<Color>
+				<R>82</R>
+				<G>80</G>
+				<B>70</B>
+			</Color>	
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="GrassErosiveEvelance01B_AT" value="136">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>3360</Priority>
+  			<BaseTexture>GrassErosiveEvelance01B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow03</SnowTexture>
+  			<Quads>4</Quads>
+			<Color>
+				<R>73</R>
+				<G>72</G>
+				<B>53</B>
+			</Color>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="EarthBrightEvelance01B_AT" value="138">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>2370</Priority>
+  			<BaseTexture>EarthBrightEvelance01B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow01</SnowTexture>
+  			<Quads>4</Quads>
+			<Color>
+				<R>83</R>
+				<G>77</G>
+				<B>55</B>
+			</Color>	
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="EarthDarkEvelance01_AT" value="140">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>2380</Priority>
+  			<BaseTexture>EarthDarkEvelance01</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow01</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>62</R>
+				<G>54</G>
+				<B>44</B>
+			</Color>	
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="EarthDarkEvelance02_AT" value="145">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>2385</Priority>
+  			<BaseTexture>EarthDarkEvelance02</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow01</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>71</R>
+				<G>65</G>
+				<B>58</B>
+			</Color>	
+      <ReplacementTerrainType>EarthDarkEvelance01_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance03B_AT" value="148">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6043</Priority>
+  			<BaseTexture>RockDarkEvelance03B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance03B_CT" value="149">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6042</Priority>
+  			<BaseTexture>RockDarkEvelance03B</BaseTexture>
+  			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance01B_CT" value="150">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6029</Priority>
+  			<BaseTexture>RockDarkEvelance01B</BaseTexture>
+  			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>4</Quads>
+			<Color>
+				<R>49</R>
+				<G>48</G>
+				<B>46</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance02_CT" value="151">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6034</Priority>
+  			<BaseTexture>RockDarkEvelance02</BaseTexture>
+  			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>54</R>
+				<G>52</G>
+				<B>50</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="EarthBrightEvelance02_AT" value="153">
+  		<Logic>
+  			<Blocked>False</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>2387</Priority>
+  			<BaseTexture>EarthBrightEvelance02</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>Snow01</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>102</R>
+				<G>88</G>
+				<B>82</B>
+			</Color>	
+  		</Display>
+  	</TerrainType>
+
+	<TerrainType id="Snow01_CT" value="154">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9989</Priority>
+			<BaseTexture>Snow04</BaseTexture>
+			<TransitionsTexture>Transitions03</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>178</R>
+				<G>188</G>
+				<B>197</B>
+			</Color>	
+		</Display>
+	</TerrainType>
+	<TerrainType id="Snow02_CT" value="155">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9988</Priority>
+			<BaseTexture>Snow03</BaseTexture>
+			<TransitionsTexture>Transitions03</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>178</R>
+				<G>188</G>
+				<B>197</B>
+			</Color>	
+		</Display>
+	</TerrainType>
+	<TerrainType id="Snow03_CT" value="156">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9987</Priority>
+			<BaseTexture>Snow01</BaseTexture>
+			<TransitionsTexture>Transitions03</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>178</R>
+				<G>188</G>
+				<B>197</B>
+			</Color>	
+		</Display>
+	</TerrainType>
+  	<TerrainType id="RockDarkEvelance04B_AT" value="157">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6143</Priority>
+  			<BaseTexture>RockDarkEvelance04B</BaseTexture>
+  			<TransitionsTexture>Transitions01</TransitionsTexture>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+  	
+  	<TerrainType id="RockDarkEvelance04B_CT" value="158">
+  		<Logic>
+  			<Blocked>True</Blocked>
+  		</Logic>
+  		<Display>
+  			<Priority>6142</Priority>
+  			<BaseTexture>RockDarkEvelance04B</BaseTexture>
+  			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+  			<SnowTexture>SnowNone</SnowTexture>
+  			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+      <ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+  		</Display>
+  	</TerrainType>
+
+<!-- Extra1 -->
+<!-- TODO: add replacements -->
+
+<!-- Steppe textures -->
+
+	<TerrainType id="EarthBrightSteppe01B_AT" value="160">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2120</Priority>
+			<BaseTexture>EarthBrightSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassDarkSteppe01B_AT" value="161">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2770</Priority>
+			<BaseTexture>GrassDarkSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="EarthBrightSteppe02_AT" value="162">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2123</Priority>
+			<BaseTexture>EarthBrightSteppe02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe01B_AT" value="163">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6307</Priority>
+			<BaseTexture>RockDarkSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="EarthRockySteppe01B_AT" value="164">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2417</Priority>
+			<BaseTexture>EarthRockySteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>78</R>
+				<G>77</G>
+				<B>71</B>
+			</Color>											
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe01B_CT" value="165">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6306</Priority>
+			<BaseTexture>RockDarkSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>										
+<!--      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe02_AT" value="166">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6311</Priority>
+			<BaseTexture>RockDarkSteppe02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+<!--      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe02_CT" value="167">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6310</Priority>
+			<BaseTexture>RockDarkSteppe02</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+<!--      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe03_AT" value="168">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6321</Priority>
+			<BaseTexture>RockDarkSteppe03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+<!--      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkSteppe03_CT" value="169">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->		
+		</Logic>
+		<Display>
+			<Priority>6320</Priority>
+			<BaseTexture>RockDarkSteppe03</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>80</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>
+<!--      <ReplacementTerrainType>RockDark01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBrightSteppe03B_AT" value="170">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2126</Priority>
+			<BaseTexture>EarthBrightSteppe03b</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthWadiSteppe01_AT" value="171">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>4136</Priority>
+			<BaseTexture>EarthWadiSteppe01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthWadiSteppe02_CT" value="172">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>4147</Priority>
+			<BaseTexture>EarthWadiSteppe02</BaseTexture>
+			<TransitionsTexture>Transitions06</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthWadiSteppe03_CT" value="173">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>4148</Priority>
+			<BaseTexture>EarthWadiSteppe03</BaseTexture>
+			<TransitionsTexture>Transitions06</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassBrightSteppe01B_AT" value="174">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2653</Priority>
+			<BaseTexture>GrassBrightSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>84</G>
+				<B>26</B>
+			</Color>		
+<!--      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassBrightSteppe01B_CT" value="175">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2631</Priority>
+			<BaseTexture>GrassBrightSteppe01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow04</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>74</R>
+				<G>84</G>
+				<B>26</B>
+			</Color>	
+<!--      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType> -->
+
+		</Display>
+	</TerrainType>
+	
+<!-- Moor textures -->
+
+	<TerrainType id="EarthDarkMoor01B_AT" value="200">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2170</Priority>
+			<BaseTexture>EarthDarkMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>75</R>
+				<G>65</G>
+				<B>47</B>
+			</Color>
+<!--      <ReplacementTerrainType>EarthBright01B_AT</ReplacementTerrainType> -->
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassDarkMoor01B_AT" value="205">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2780</Priority>
+			<BaseTexture>GrassDarkMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassDarkMoor01B_CT" value="206">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2781</Priority>
+			<BaseTexture>GrassDarkMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="EarthBrightMoor01B_AT" value="210">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2145</Priority>
+			<BaseTexture>EarthBrightMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>103</R>
+				<G>92</G>
+				<B>53</B>
+			</Color>		
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthBrightMoor02B_AT" value="211">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2155</Priority>
+			<BaseTexture>EarthBrightMoor02B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>103</R>
+				<G>92</G>
+				<B>53</B>
+			</Color>		
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor01B_AT" value="212">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6121</Priority>
+			<BaseTexture>RockDarkMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor01B_CT" value="213">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6122</Priority>
+			<BaseTexture>RockDarkMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor02_AT" value="215">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6131</Priority>
+			<BaseTexture>RockDarkMoor02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor02_CT" value="216">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6132</Priority>
+			<BaseTexture>RockDarkMoor02</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor03_AT" value="217">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6141</Priority>
+			<BaseTexture>RockDarkMoor03</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor03_CT" value="218">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6144</Priority>
+			<BaseTexture>RockDarkMoor03</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor04B_AT" value="219">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6151</Priority>
+			<BaseTexture>RockDarkMoor04B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor04B_CT" value="220">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6152</Priority>
+			<BaseTexture>RockDarkMoor04B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor05_AT" value="221">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6161</Priority>
+			<BaseTexture>RockDarkMoor04B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="RockDarkMoor05_CT" value="222">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.2</WalkModifier-->
+		</Logic>
+		<Display>
+			<Priority>6162</Priority>
+			<BaseTexture>RockDarkMoor04B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>79</R>
+				<G>79</G>
+				<B>79</B>
+			</Color>					
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="EarthRockyMoor01_AT" value="225">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2357</Priority>
+			<BaseTexture>EarthRockyMoor01</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>78</R>
+				<G>77</G>
+				<B>71</B>
+			</Color>											
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassBrightMoor01B_AT" value="228">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2667</Priority>
+			<BaseTexture>GrassBrightMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+	
+	<TerrainType id="GrassBrightMoor01B_CT" value="229">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>2668</Priority>
+			<BaseTexture>GrassBrightMoor01B</BaseTexture>
+			<TransitionsTexture>Transitions08</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>Snow03</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>100</R>
+				<G>105</G>
+				<B>45</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+
+	<TerrainType id="IndoorFloor01" value="235">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9000</Priority>
+			<BaseTexture>IndoorFloor01</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor02" value="236">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9010</Priority>
+			<BaseTexture>IndoorFloor02</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor03" value="237">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9002</Priority>
+			<BaseTexture>IndoorFloor03</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor04" value="238">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9003</Priority>
+			<BaseTexture>IndoorFloor04</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor05" value="239">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9004</Priority>
+			<BaseTexture>IndoorFloor05</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor06" value="240">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>9005</Priority>
+			<BaseTexture>IndoorFloor06</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="IndoorFloor07" value="241">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>8999</Priority>
+			<BaseTexture>IndoorFloor07</BaseTexture>
+			<TransitionsTexture>Transitions10</TransitionsTexture>
+			<TransitionsColorModulate>false</TransitionsColorModulate>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+  			<Color>
+  				<R>60</R>
+  				<G>53</G>
+  				<B>37</B>
+  			</Color>	
+		</Display>
+	</TerrainType>
+
+
+<!-- Extra2 -->
+
+<!-- Tideland -->
+
+
+	<TerrainType id="MudTideland01B_AT" value="70">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3085</Priority>
+			<BaseTexture>MudTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="MudTideland02_AT" value="71">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3087</Priority>
+			<BaseTexture>MudTideland02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>MudTideland01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="SandEarthTideland01B_AT" value="72">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3089</Priority>
+			<BaseTexture>SandEarthTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="SandEarthTideland02_AT" value="73">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3090</Priority>
+			<BaseTexture>SandEarthTideland02</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>SandEarthTideland01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="RockBrightTideland01B_AT" value="74">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3092</Priority>
+			<BaseTexture>RockBrightTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassFlowersTideland01B_AT" value="75">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3098</Priority>
+			<BaseTexture>GrassFlowersTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="GrassFlowersTideland02B_AT" value="76">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3100</Priority>
+			<BaseTexture>GrassFlowersTideland02B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+
+	<TerrainType id="CobbledPavement01B_AT" value="77">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3105</Priority>
+			<BaseTexture>CobbledPavement01B</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="GrassFlowersTideland01B_CT" value="78">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3102</Priority>
+			<BaseTexture>GrassFlowersTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+      <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="GrassFlowersTideland02B_CT" value="79">
+		<Logic>
+			<Blocked>False</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3104</Priority>
+			<BaseTexture>GrassFlowersTideland02B</BaseTexture>
+			<TransitionsTexture>Transitions02</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>GrassBright01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="RockBrightTideland01B_CT" value="80">
+		<Logic>
+			<Blocked>True</Blocked>
+			<!--WalkModifier>0.5</WalkModifier-->	
+		</Logic>
+		<Display>
+			<Priority>3110</Priority>
+			<BaseTexture>RockBrightTideland01B</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<SnowTexture>Snow01</SnowTexture>
+			<Quads>4</Quads>
+			<Color>
+				<R>68</R>
+				<G>65</G>
+				<B>52</B>
+			</Color>				
+		</Display>
+    <ReplacementTerrainType>RockBrightTideland01B_AT</ReplacementTerrainType>
+	</TerrainType>
+
+	<TerrainType id="Marble01_AT" value="250">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7020</Priority>
+			<BaseTexture>Marble</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>101</R>
+				<G>101</G>
+				<B>90</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="Marble01_CT" value="251">
+		<Logic>
+			<Blocked>False</Blocked>
+		</Logic>
+		<Display>
+			<Priority>7000</Priority>
+			<BaseTexture>Marble</BaseTexture>
+			<TransitionsTexture>Transitions05</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>101</R>
+				<G>101</G>
+				<B>90</B>
+			</Color>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="Lava01_AT" value="252">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6143</Priority>
+			<BaseTexture>Lava</BaseTexture>
+			<TransitionsTexture>Transitions01</TransitionsTexture>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+			<ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+
+	<TerrainType id="Lava01_CT" value="253">
+		<Logic>
+			<Blocked>True</Blocked>
+		</Logic>
+		<Display>
+			<Priority>6142</Priority>
+			<BaseTexture>Lava</BaseTexture>
+			<TransitionsTexture>Transitions04</TransitionsTexture>
+			<TransitionsColorModulate>true</TransitionsColorModulate>
+			<SnowTexture>SnowNone</SnowTexture>
+			<Quads>2</Quads>
+			<Color>
+				<R>43</R>
+				<G>43</G>
+				<B>43</B>
+			</Color>
+			<ReplacementTerrainType>RockDarkEvelance01B_AT</ReplacementTerrainType>
+		</Display>
+	</TerrainType>
+</root>

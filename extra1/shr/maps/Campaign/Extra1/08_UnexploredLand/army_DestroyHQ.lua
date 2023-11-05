@@ -13,7 +13,7 @@ function CreateArmyDestroyHQ(_index)
 	-- id 1 - 4 used
 	ArmyDestroyHQ[_index].id				= 	6+_index
 	if CP_Difficulty == 0 then
-		ArmyDestroyHQ[_index].strength			=	2+GetRandom(2)
+		ArmyDestroyHQ[_index].strength			=	2+GetRandom(0,1)
 	elseif CP_Difficulty == 1 then
 		ArmyDestroyHQ[_index].strength			=	4
 	else
@@ -40,7 +40,7 @@ function CreateArmyDestroyHQ(_index)
 
 	for i=1,ArmyDestroyHQ[_index].strength do
 
-		if GetRandom(2) == 0 then
+		if GetRandom(0,1) == 0 then
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 		else
 			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1

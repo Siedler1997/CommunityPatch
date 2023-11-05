@@ -88,7 +88,8 @@ end
 function start3rdChapter()
 
 	StartCutscene(Cutscenes[THRESHOLDONECUTSCENE],CreateBriefingDefend)
-
+	
+	Logic.ChangeAllEntitiesPlayerID(2, 1)
 	CreateQuestBuildUpCity()
 
 end

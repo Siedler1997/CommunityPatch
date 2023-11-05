@@ -202,14 +202,14 @@ function Mission_FirstMapAction()
 		else
 			CreateRandomChests()
 		end
-		--[[
+		
 		local vcpos = GetPosition("vc_empty1")
 		DestroyEntity("vc_empty1")
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
-		--]]
 	else
 		CreateRandomChests()
 	end
+
 	local bossID1 = SetEntityName(AI.Entity_CreateFormation(5,Entities.CU_LeaderOutlaw1,0,0,4300,19600,0,0,3,0), "kidnapper_boss")
 	local bossID2 = SetEntityName(AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,47900,18800,0,0,3,0), "robber_boss")
 	LookAt("kidnapper_boss", "campfire_kidnapper")
