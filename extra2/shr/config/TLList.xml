@@ -418,6 +418,8 @@
 
 	<!-- Community Patch -->
 		<TaskList>TL_DIE_CANNON</TaskList>
+		<TaskList>TL_DIE_BEAR</TaskList>
+		<TaskList>TL_DIE_WOLF</TaskList>
 		<TaskList>TL_BATTLE_SWORD</TaskList>
 		<TaskList>TL_SNIPE_SPECIAL_BOW</TaskList>
 	

@@ -1472,6 +1472,8 @@
 	<ID>AmbientSounds\bear_idle01</ID>
 	<ID>AmbientSounds\bear_idle02</ID>
 	<ID>AmbientSounds\bear_idle03</ID>
+	<ID>Animals\SO_Wolf_Die_rnd_1</ID>
+	<ID>Animals\SO_Bear_Die_rnd_1</ID>
 	<ID>Misc\so_treefall_rnd_1</ID>
 	<ID>Misc\so_treefall_rnd_2</ID>
 	<ID>Military\SO_ArrowHit_rnd_1</ID>
