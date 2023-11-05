@@ -1472,6 +1472,15 @@
 	<ID>AmbientSounds\bear_idle01</ID>
 	<ID>AmbientSounds\bear_idle02</ID>
 	<ID>AmbientSounds\bear_idle03</ID>
+	<ID>Military\SO_Die_rnd_1</ID>
+	<ID>Military\SO_Die_rnd_2</ID>
+	<ID>Military\SO_Die_rnd_3</ID>
+	<ID>Military\SO_Die_rnd_4</ID>
+	<ID>Military\SO_Die_rnd_5</ID>
+	<ID>Military\SO_Die_rnd_6</ID>
+	<ID>Military\SO_Die_rnd_7</ID>
+	<ID>Military\SO_Die_rnd_8</ID>
+	<ID>Military\SO_Die_rnd_9</ID>
 </root>
 
 

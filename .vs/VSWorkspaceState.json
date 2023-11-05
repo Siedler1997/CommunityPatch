@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base",
     "\\base\\shr",
     "\\base\\shr\\config",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Singleplayer",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Campaign\\Extra2_4\\01_RestoringTheFaith",
-    "\\extra2\\shr\\maps\\User"
+    "\\base\\shr\\config\\TaskLists",
+    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\sounds",
+    "\\base\\shr\\sounds\\Military",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\base\\shr\\text\\en\\InGame"
   ],
-  "SelectedNode": "\\extra2\\shr\\maps\\Singleplayer",
+  "SelectedNode": "\\base\\shr\\Script",
   "PreviewInSolutionExplorer": false
 }

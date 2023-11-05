@@ -517,7 +517,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
 		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
 		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
-	- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+	- Neue Sounds
+		- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
+		- Alle Einheiten, ausgenommen Helden und Kanonen, haben einen Sound beim sterben (aus AeK)
 	- Wetter-Effekte sind etwas gemischter
 		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
@@ -718,6 +720,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- AeK-Sounds
+	- impact_arrow_03 - impact_arrow_10
+	- Irgendwas für Helden und Kanonen
+	- Sounds für Bären und Wölfe
+	- Die Sound für Frauen
+	- Walk Sounds für Infanterie und Kavallerie
 - Silbermine als CB
 - Hundekäfig im Stronghold-Stil
 - AeK-Frauen
