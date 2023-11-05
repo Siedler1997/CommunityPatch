@@ -484,7 +484,10 @@
 	<Effect id="FXChopTree">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>
@@ -496,7 +499,10 @@
 	<Effect id="FXChopTreeInWinter">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>
@@ -508,7 +514,10 @@
 		<Effect id="FXChopTreeDead">
 		<Logic classname="EGL::CGLEEffectProps">
 			<Class>EGL::CEffect</Class>
-			<Duration>5</Duration>
+			<Duration>10</Duration>
+			<SoundID>Misc\so_treefall_rnd_1</SoundID>
+			<SoundVolume>75</SoundVolume>
+			<SoundLooped>false</SoundLooped>
 		</Logic>
 		<Display classname="ED::CHAnimEffectProps">
 			<Class>ED::CHAnimEffect</Class>

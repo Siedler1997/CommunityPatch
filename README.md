@@ -521,6 +521,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
 		- Alle Einheiten, ausgenommen Helden und Kanonen, haben einen Sound beim sterben (aus AeK)
 		- Pfeile und Bullets haben, analog zu Kanonen, einen Impact-Sound (aus AeK)
+		- Bäume haben einen sound, wenn sie gefällt werden
 	- Wetter-Effekte sind etwas gemischter
 		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
@@ -722,7 +723,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - AeK-Sounds
-	- Baum fällen
 	- Irgendwas für Helden und Kanonen
 	- Sounds für Bären und Wölfe
 	- Die Sound für Frauen
