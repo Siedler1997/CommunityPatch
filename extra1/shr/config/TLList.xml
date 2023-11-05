@@ -420,6 +420,7 @@
 		<TaskList>TL_DIE_CANNON</TaskList>
 		<TaskList>TL_DIE_BEAR</TaskList>
 		<TaskList>TL_DIE_WOLF</TaskList>
+		<TaskList>TL_DIE_FEMALE</TaskList>
 		<TaskList>TL_BATTLE_SWORD</TaskList>
 		<TaskList>TL_BATTLE_BEAR</TaskList>
 		<TaskList>TL_BATTLE_WOLF</TaskList>

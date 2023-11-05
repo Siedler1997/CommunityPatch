@@ -726,7 +726,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - AeK-Sounds
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
-	- Die Sound für Frauen
 - Silbermine als CB
 - Hundekäfig im Stronghold-Stil
 - AeK-Frauen
