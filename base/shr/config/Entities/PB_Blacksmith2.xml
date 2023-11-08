@@ -39,8 +39,8 @@
 		</ModifyArmor>
 		
         <Worker>PU_Smith</Worker>
-        <MaxWorkers>6</MaxWorkers> 
-        <InitialMaxWorkers>6</InitialMaxWorkers> 
+        <MaxWorkers>4</MaxWorkers> 
+        <InitialMaxWorkers>4</InitialMaxWorkers> 
         <WorkTaskList>
             <Start>TL_SMITH_WORK2_START</Start> 
             <Work>TL_SMITH_WORK2</Work> 
