@@ -104,8 +104,8 @@ function Mission_InitPlayerColorMapping()
 	-- set player colors
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-	if p1color ~= 4 then
-		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, ENEMY_COLOR2)	
+	if p1color ~= 6 then
+		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, 6)	
 	else
 		Display.SetPlayerColorMapping(gvMission.PlayerIDBigBadGuy, 2)	
 	end
@@ -215,16 +215,15 @@ function Mission_FirstMapAction()
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
 	else
+		Logic.CreateEntity(Entities.PB_Tower3, 5200, 35700, 0, 5);
 		if CP_Difficulty == 1 then
 			CreateRandomChests()	
 			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
-			Logic.CreateEntity(Entities.PB_Tower2, 5200, 35700, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5700, 26300, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 15900, 24500, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 9700, 29800, 0, 5);
 		else
 			Logic.CreateEntity(Entities.PB_Tower3, 11200, 23900, 0, 5);
-			Logic.CreateEntity(Entities.PB_Tower3, 5200, 35700, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 5700, 26300, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 15900, 24500, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 9700, 29800, 0, 5);
@@ -235,11 +234,10 @@ function Mission_FirstMapAction()
 			createArmyAttackPlayerA()
 			StartCountdown(15 * 60, MakeArmyAttackPlayerAggressive, false)
 		end
-		--[[
+		
 		local vcpos = GetPosition("vc_empty")
 		DestroyEntity("vc_empty")
-		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,270,0)
-		--]]
+		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,270,0)
 	end
 
 	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})		

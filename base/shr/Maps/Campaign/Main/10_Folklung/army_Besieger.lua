@@ -83,13 +83,14 @@ ArmyBesiegerASetDefensive = function()
 		ArmyBesiegerA.refresh         = true
 		ArmyBesiegerA.AttackAllowed		= 	false
 		ArmyBesiegerA.respawnTime       =   10
-    ArmyBesiegerA.maxSpawnAmount    =   3
+		ArmyBesiegerA.maxSpawnAmount    =   3
 		ArmyBesiegerA.retreatStrength	= 	1
 		ArmyBesiegerA.baseDefenseRange	= 	4000
 		ArmyBesiegerA.outerDefenseRange	= 	7000
 		ArmyBesiegerA.rodeLength 				= 7000
-		ArmyBesiegerA.strength					= 12
+		ArmyBesiegerA.strength					= 8
 		ArmyBesiegerA.position			= 	GetPosition("P5TerritoryCenter")
+		ArmyBesiegerA.experiencePoints	=	CP_Difficulty + 1
 		SetupArmy(ArmyBesiegerA)
 		Retreat(ArmyBesiegerA)
 	end
