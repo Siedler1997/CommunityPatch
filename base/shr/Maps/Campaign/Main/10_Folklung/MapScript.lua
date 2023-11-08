@@ -233,6 +233,9 @@ function Mission_FirstMapAction()
 			DestroyEntity("TheRock")
 			createArmyAttackPlayerA()
 			StartCountdown(15 * 60, MakeArmyAttackPlayerAggressive, false)
+
+			ReplaceEntity("TheRock2", Entities.XD_CliffGrey1)
+			ReplaceEntity("TheRock3", Entities.XD_CliffGrey1)
 		end
 		
 		local vcpos = GetPosition("vc_empty")
