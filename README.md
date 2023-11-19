@@ -264,7 +264,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- richtet mit 20 Schaden etwas mehr an (vorher: 15)
 		- Drake 
 			- hat einen Rüstungspunkt weniger (=3)
-			- hat 2 Schadenpunkte weniger (=26)
+			- hat 4 Schadenpunkte weniger (=24)
 			- seine Fähigkeit 'Feuerkraft' betrifft auch
 				- Ari 
 				- Kanonen
