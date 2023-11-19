@@ -1035,13 +1035,20 @@ function GUIUpdate_TaxesButtons()
 	local TaxLevel = Logic.GetTaxLevel(PlayerID)
 	local BuildingID = GUI.GetSelectedEntity()
 	local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(BuildingID))
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_AdjustTaxes)
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	
-	if UpgradeCategory == UpgradeCategories.Outpost then
-		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-		XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+	if TechState == 4 then
+		XGUIEng.DisableButton(CurrentWidgetID, 0)
+		if UpgradeCategory == UpgradeCategories.Outpost then
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+		else
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+		end
 	else
-		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-		XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+		XGUIEng.DisableButton(CurrentWidgetID, 1)
 	end
 end
 
