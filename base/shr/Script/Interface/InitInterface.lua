@@ -361,6 +361,8 @@ function Interface_Init()
 	GUIAction_Market_Init()
 	GUIAction_Upgrade_Init()
 	GUIAction_BuyCannon_Init()
+
+	StartSimpleHiResJob("GUIUpdate_BonusTaxation")
 	
 	gvGUI.FunnyCommentsSelectionCounter = 0
 	gvGUI.LastSelectedEntityID = 0

@@ -822,3 +822,21 @@ GUIUpdate_HintText()
 	end
 	
 end
+
+--------------------------------------------------------------------------------
+-- CP Taxation Mod
+--------------------------------------------------------------------------------
+function GUIUpdate_BonusTaxation()
+	local PlayerID = GUI.GetPlayerID()
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+
+	if TechState == 4 then	
+		local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
+		local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
+		local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+
+		if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
+			Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+		end
+	end
+end 
