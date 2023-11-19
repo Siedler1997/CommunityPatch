@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>40</TimeToResearch>
+	<ResourceCosts>
+		<Gold>800</Gold>
+		<Clay/>
+		<Wood>200</Wood>
+		<Stone/>
+		<Iron/>
+		<Sulfur/>
+	</ResourceCosts>
+	<AutomaticResearch>false</AutomaticResearch>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+
+	<Conditions>
+		<TecCondition>
+			<TecType>T_AdjustTaxes</TecType>
+		</TecCondition>
+
+		<RequiredEntityConditions>1</RequiredEntityConditions>
+		<EntityCondition>
+			<EntityType>PB_Bank2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>
