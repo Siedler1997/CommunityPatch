@@ -485,22 +485,35 @@ function GUITooltip_FindHero()
 end
 
 --------------------------------------------------------------------------------
--- Display the Text for the Formation buttons
+-- Display the Text for ability buttons
 --------------------------------------------------------------------------------
-function GUITooltip_Formations(_NormalTooltip, _DisabledTooltip)
-	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
-	
-	if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 1 then		
-		TooltipText =  _DisabledTooltip
-	elseif XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then		
-		TooltipText = _NormalTooltip
-	end
-	
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, "")
-end
+function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut,_costs)
+	local pid = GUI.GetPlayerID()
+	local ShortCutToolTip = ""
+	local TextToolTip = ""
+	local CostToolTip = ""
+	local TechState = Logic.GetTechnologyState(pid, _tech)
 
+	if _ShortCut ~= nil and TechState == 4 then
+		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+	end
+
+	if TechState == 0 then
+		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/AbilityNotAvailable")
+	elseif TechState < 4 then
+		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
+	else
+		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
+	end
+
+	if _costs ~= nil and TechState ~= 0 then
+		CostToolTip = _costs
+	end
+
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostToolTip)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut,ShortCutToolTip)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText,TextToolTip)
+end
 --------------------------------------------------------------------------------
 -- Display Text for buttons that are only usable in singleplayer-mode
 --------------------------------------------------------------------------------

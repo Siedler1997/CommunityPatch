@@ -1238,3 +1238,26 @@ GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
 		end
 
 end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for ability buttons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_AbilityButtons(_Button, _Technology)
+	local sel = GUI.GetSelectedEntity()
+	local TechState = Logic.GetTechnologyState(GUI.GetPlayerID(), _Technology)
+	
+	XGUIEng.ShowWidget(_Button,1)
+
+	--Building is interdicted
+	if TechState == 0 then	
+		XGUIEng.DisableButton(_Button,1)
+	
+	--Building is not available yet or Technology is to far in the futur
+	elseif TechState == 1 or TechState == 2 or TechState == 5 or TechState == 3 then
+		XGUIEng.DisableButton(_Button,1)
+		
+	--Building is enabled and visible	
+	elseif TechState == 4 then
+		XGUIEng.DisableButton(_Button,0)
+	end
+end
