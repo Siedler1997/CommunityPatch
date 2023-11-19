@@ -167,7 +167,19 @@
       			<Effect>FXYukiFireworksJoy</Effect>
         </Logic>
     </Behavior>
-	
+
+	<Behavior>
+		<Logic classname="GGL::CRangedEffectAbilityProps">
+			<Class>GGL::CRangedEffectAbility</Class>
+			<RechargeTimeSeconds>120</RechargeTimeSeconds>
+			<AffectsOwn>true</AffectsOwn>
+			<AffectsFriends>true</AffectsFriends>
+			<AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+			<Range>2000.0</Range>
+			<DurationInSeconds>30</DurationInSeconds>
+			<DamageFactor>2.0</DamageFactor>
+		</Logic>
+	</Behavior>
 	
 	<Behavior>
 	    <Logic classname="GGL::CShurikenAbilityProps">

@@ -321,6 +321,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Shuriken: 
 				- Anzahl verdoppelt (4 -> 8)
 				- haben die gleiche DamageClass wie normale Angriff sowie Kala's 'Giftpfeile'
+			- Zusatzeffekt für 'Feuerwerk der Freude'
+				- erhöht kurzzeitig den Schaden naher Verbündeter um 100%
+				- wirkt analog Erecs 'Aura der Stärke', aber mit halber Dauer (30 Sek.) und etwas größerem Radius (20 SM)
+				- Funfact: Es wird einfach eine weitere Fähigkeit zusätzlich aktiviert ;)
 		- Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
 		- Kala 
 			- hat einen Rüstungspunkt weniger (=4)

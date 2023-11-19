@@ -32,9 +32,10 @@ GUIAction_Hero10LongRangeAura()
 	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
 end
 
-function
-GUIAction_Hero11FireworksMotivate()
+function GUIAction_Hero11FireworksMotivate()
 	GUI.SettlerMotivateWorkers(HeroSelection_GetCurrentSelectedHeroID())
+	--Activate another ability as well
+	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
 end
 
 function
