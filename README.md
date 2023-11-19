@@ -700,7 +700,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- GetRandom in unveränderten Legenden-Scripten fixen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -738,13 +737,16 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Steuer-Statistik auch in Banken anzeigen
 - AeK-Sounds
 	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
+- Helden mit Soldaten als Gefolge
 - Silbermine als CB
 - Hundekäfig im Stronghold-Stil
 - AeK-Frauen
+- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)

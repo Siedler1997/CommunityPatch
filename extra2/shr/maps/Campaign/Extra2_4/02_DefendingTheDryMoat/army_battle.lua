@@ -175,7 +175,7 @@ spDef = function()
 local l = 0
 local c= 0
 	for l = 1,8,1 do
-	p = 1+GetRandom(6)
+	p = GetRandom(1,7)
 	pos = GetPosition("spawn"..p)
 	battle = Tools.CreateGroup(8, Entities.PU_LeaderSword4, 6,pos.X+l*10, pos.Y+l*10 , 90)
 	SetEntityName(battle, "defense"..l) 
