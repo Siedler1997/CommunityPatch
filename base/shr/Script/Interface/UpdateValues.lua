@@ -757,20 +757,22 @@ GUIUpdate_TaxWorkerAmount()
 end
 
 
-function
-GUIUpdate_TaxPaydayIncome()
+function GUIUpdate_TaxPaydayIncome()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
 	
 	local TaxAmount = Logic.GetPlayerPaydayCost(PlayerID)
 	local Payday = Logic.GetPlayerPaydayLeaderCosts(PlayerID)
 		
+	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
+		TaxAmount = TaxAmount + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+	end
+
 	if Logic.GetPlayerPaysLeaderFlag(PlayerID) == 0 then
 		Payday = 0
 	end
 	
 	local TaxesPlayerWillGet = TaxAmount - Payday
-	
 	
 	local String
 	
@@ -781,19 +783,19 @@ GUIUpdate_TaxPaydayIncome()
     end
 	
 	XGUIEng.SetText(CurrentWidgetID, String)	
-	
 end
 
 
-function
-GUIUpdate_TaxSumOfTaxes()
+function GUIUpdate_TaxSumOfTaxes()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
-	local TaxIncome = Logic.GetPlayerPaydayCost(PlayerID)		
-	
+	local TaxIncome = Logic.GetPlayerPaydayCost(PlayerID)	
+
+	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
+		TaxIncome = TaxIncome + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+	end
 	
 	XGUIEng.SetText(CurrentWidgetID, TaxIncome)	
-	
 end
 
 
