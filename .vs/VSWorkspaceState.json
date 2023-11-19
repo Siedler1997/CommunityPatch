@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr\\Script\\MapTools",
-    "\\base\\shr\\sounds\\Animals",
-    "\\base\\shr\\sounds\\Military",
-    "\\extra1",
-    "\\extra2",
-    "\\extra2\\shr\\maps\\User",
-    "\\extra2\\shr\\maps\\User\\Scripts"
+    "\\base\\shr",
+    "\\base\\shr\\config",
+    "\\base\\shr\\config\\Technologies",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\text",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\base\\shr",
+  "SelectedNode": "\\base\\shr\\config\\Technologies\\T_BookKeeping.xml",
   "PreviewInSolutionExplorer": false
 }

@@ -17,7 +17,18 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
 	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
-	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	- Banken und Schatzkammern 
+		- zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+		- bieten 2 'neue' Technologien
+			- Besteuerung
+				- ermöglicht die Einstellung der Steuern in Burgen
+					- Literatur aus der Hochschule ist dafür keine Voraussetzung mehr
+				- benötigt lediglich eine Bank zum erforschen
+				- Grundlage zum erforschen von 'Buchhaltung'
+			- Buchhaltung
+				- benötigt 'Besteuerung' sowie eine Schatzkammer
+				- erhöht die Steuern pro Siedler um 20%
+				- interner Name: T_BookKeeping
 	- Minen: Abbaugeschwindigkeit leicht gesenkt
 	- Grobschmiede (Schmiede Lv. 2): Arbeiterzahl von 6 auf 4 gesenkt
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
@@ -365,6 +376,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Formations-Buttons
 		- stehen auch bei selektierter Kavallerie zur Verfügung
 		- verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
+	- Steuer-Buttons
+		- sind nun immer sichtbar, bis zur Erforschung aber deaktiviert
+		- haben DisabledTooltips
 	- Ergänzte und korrigierte SelectionNames und OverheadNames
 		- Außenposten
 		- CU_BlackKnight_SoldierSword3 -> Raubritter
