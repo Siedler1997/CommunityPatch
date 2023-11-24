@@ -81,11 +81,13 @@ function ControlCooldowns()
 		local scout = ScoutFoerster_gvScoutFoerster.scouts[i];
 		if scout.CD < scout.CD_Max then
 			scout.CD = scout.CD+1;
+			XGUIEng.ShowWidget("Scout_RechargeForester",1)	
 			if sel == scout.id then
 				XGUIEng.SetProgressBarValues( "Scout_RechargeForester", scout.CD, scout.CD_Max );
 			end
 		else
 			table.remove(ScoutFoerster_gvScoutFoerster.scouts, i);
+			XGUIEng.ShowWidget("Scout_RechargeForester",0)	
 			if sel == scout.id then
 				XGUIEng.SetProgressBarValues( "Scout_RechargeForester", 0, 1 );
 			end

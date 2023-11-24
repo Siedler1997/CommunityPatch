@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\config\\Technologies",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\Interface",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame"
+    "\\extra1",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\config",
+    "\\extra1\\shr\\config\\Entities",
+    "\\extra1\\shr\\text",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\text"
   ],
-  "SelectedNode": "\\base\\shr\\config\\Technologies\\T_BookKeeping.xml",
   "PreviewInSolutionExplorer": false
 }

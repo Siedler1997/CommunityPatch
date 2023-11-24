@@ -325,6 +325,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- erhöht kurzzeitig den Schaden naher Verbündeter um 100%
 				- wirkt analog Erecs 'Aura der Stärke', aber mit halber Dauer (30 Sek.) und etwas größerem Radius (20 SM)
 				- Funfact: Es wird einfach eine weitere Fähigkeit zusätzlich aktiviert ;)
+				- ACHTUNG: Nicht mit Vanilla-Savegames kompatibel!
 		- Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
 		- Kala 
 			- hat einen Rüstungspunkt weniger (=4)
@@ -746,15 +747,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
-- Helden mit Soldaten als Gefolge
-- Silbermine als CB
 - Hundekäfig im Stronghold-Stil
 - AeK-Frauen
 - 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
-- Kontrollierbare Schäferhunde(?)
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein
