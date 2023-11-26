@@ -29,6 +29,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- benötigt 'Besteuerung' sowie eine Schatzkammer
 				- erhöht die Steuern pro Siedler um 20%
 				- interner Name: T_BookKeeping
+		- Steuer-Statistik und Einstellung der Steuern sind hier ebenfalls sichtbar
 	- Minen: Abbaugeschwindigkeit leicht gesenkt
 	- Grobschmiede (Schmiede Lv. 2): Arbeiterzahl von 6 auf 4 gesenkt
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
@@ -476,9 +477,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Nahezu alle AddOn-Features sind dort nutzbar
 				- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
 		- In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
-		- Wenn eine Karte lädt
-			- wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
-			- wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
+		- Wenn eine Karte lädt, wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
 		- Blaue Hintergründe sind nun rot
 	- Kampagnen-Maps modifiziert
 		- Tipps-Button im Hauptmenü 
@@ -534,7 +533,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		- In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
 		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
-		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
+		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1404/1701, Herr der Ringe, Stronghold, Gothic)
 		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
 	- Neue Sounds
 		- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
@@ -705,6 +704,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Steuer-Statistik: Unbenutzes Multiplikator-Feld anzeigen
+- AeK Signalfeuer
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -713,10 +714,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Leader-Walk
 	- Leader-Train
 - Wasteland-Dörfer: Namen im Auftragsbuch
-- FunFacts im LoadingScreen
-	- mehr davon
-	- besser geschrieben
-	- auf Englisch übersetzen
 - Random(?) Crashs
 	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
@@ -742,17 +739,22 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Steuer-Statistik auch in Banken anzeigen
 - AeK-Sounds
 	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
 - Hundekäfig im Stronghold-Stil
-- AeK-Frauen
+- AeK-Frauen ergänzen
 - 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
+- FunFacts im LoadingScreen
+	- reaktivieren
+	- korrigieren
+	- mehr davon
+	- besser geschrieben
+	- auf Englisch übersetzen
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein
