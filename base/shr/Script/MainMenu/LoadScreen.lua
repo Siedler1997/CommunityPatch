@@ -3,7 +3,7 @@
 function LoadScreen_Init( _LoadSaveGameFlag, _MapName, _MapType, _MapCampaignName )
 
 	-- Set texture
-	local PictureNumber = 1 + XGUIEng.GetRandom( 5 )
+	local PictureNumber = 1 + XGUIEng.GetRandom( 6 )
 	local PictureName = "data\\graphics\\textures\\gui\\mainmenu\\loadscreen0" .. PictureNumber .. ".png"
 	XGUIEng.SetMaterialTexture( "LoadScreenPic01", 0, PictureName )
 
