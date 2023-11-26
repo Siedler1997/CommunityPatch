@@ -1006,6 +1006,9 @@ function GUIUpdate_TaxesButtons()
 		if UpgradeCategory == UpgradeCategories.Outpost then
 			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
 			XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+		elseif UpgradeCategory == UpgradeCategories.Bank then
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.Bank_TaxesButtons[TaxLevel] ,1)	
 		else
 			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
 			XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	

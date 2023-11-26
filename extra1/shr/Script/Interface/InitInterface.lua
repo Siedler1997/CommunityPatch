@@ -209,6 +209,13 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.OP_TaxesButtons[3] = 			XGUIEng.GetWidgetID( "OP_SetHighTaxes" )
 	gvGUI_WidgetID.OP_TaxesButtons[4] = 			XGUIEng.GetWidgetID( "OP_SetVeryHighTaxes" )
 	
+	gvGUI_WidgetID.Bank_TaxesButtons = {}
+	gvGUI_WidgetID.Bank_TaxesButtons[0] = 			XGUIEng.GetWidgetID( "Bank_SetVeryLowTaxes" )
+	gvGUI_WidgetID.Bank_TaxesButtons[1] = 			XGUIEng.GetWidgetID( "Bank_SetLowTaxes" )
+	gvGUI_WidgetID.Bank_TaxesButtons[2] = 			XGUIEng.GetWidgetID( "Bank_SetNormalTaxes" )
+	gvGUI_WidgetID.Bank_TaxesButtons[3] = 			XGUIEng.GetWidgetID( "Bank_SetHighTaxes" )
+	gvGUI_WidgetID.Bank_TaxesButtons[4] = 			XGUIEng.GetWidgetID( "Bank_SetVeryHighTaxes" )
+	
 	gvGUI_WidgetID.ActivateOvertimes = 		XGUIEng.GetWidgetID( "OvertimesButtonEnable" )
 	gvGUI_WidgetID.QuitOvertimes = 			XGUIEng.GetWidgetID( "OvertimesButtonDisable" )	
 	
