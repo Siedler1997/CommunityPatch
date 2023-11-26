@@ -285,4 +285,7 @@ function Mission_FirstMapAction()
 		--Tools.ExploreArea(-1, -1, 900)
 		--CP_ActivateEvilMod(1, 1, 1)
 		--ResearchTechnology( Technologies.GT_Tactics, 1 );
+		--ResearchTechnology( Technologies.T_AdjustTaxes, 1 );
+		--ResearchTechnology( Technologies.UP1_Bank, 1 );
+		--ResearchTechnology( Technologies.B_Outpost, 1 );
 end

@@ -96,6 +96,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- geben beim Abriss 150 Holz und 50 Steine
 		- haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
 	- Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
+	- Burg/Außenposten/Bank: Multiplikator für Steuern und Sold werden angezeigt
 - Einheiten
 	- Selbstheilung ist für alle Einheiten reduziert
 	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
@@ -704,7 +705,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Steuer-Statistik: Unbenutzes Multiplikator-Feld anzeigen
 - AeK Signalfeuer
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)

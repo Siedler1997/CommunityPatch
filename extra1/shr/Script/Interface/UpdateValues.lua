@@ -671,15 +671,24 @@ GUIUpdate_TaxLeaderCosts()
 end
 
 
-function
-GUIUpdate_TaxTaxAmountOfWorker()
+function GUIUpdate_TaxTaxAmountOfWorker()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local PlayerID = GUI.GetPlayerID()
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+	local TaxesString = Logic.GetTaxLevel(PlayerID) * 5
+	
+	if TechState == 4 then	
+		TaxesString = TaxesString * 1.2
+	end
+	
+	XGUIEng.SetText(CurrentWidgetID, TaxesString)	
+end
+
+function GUIUpdate_TaxTaxAmountOfLeader()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
 	
-	local TaxAmountOneWorker = Logic.GetTaxAmountOfWorker()
-	
-	XGUIEng.SetText(CurrentWidgetID, TaxAmountOneWorker)	
-	
+	XGUIEng.SetText(CurrentWidgetID, 20)	
 end
 
 
