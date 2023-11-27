@@ -5,6 +5,11 @@ function createPlayer1()
 	ForbidTechnology(Technologies.B_Beautification16)
 	ForbidTechnology(Technologies.T_PlateBardingArmor)
 	
+	ForbidTechnology(Technologies.T_ChangeWeather)
+	ForbidTechnology(Technologies.T_WeatherForecast)
+	ForbidTechnology(Technologies.B_Weathermachine)
+	ForbidTechnology(Technologies.B_PowerPlant)
+	
 	if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 		ForbidTechnology(Technologies.GT_Matchlock)
 		ForbidTechnology(Technologies.B_GunsmithWorkshop)

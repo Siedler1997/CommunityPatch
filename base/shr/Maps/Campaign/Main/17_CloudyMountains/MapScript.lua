@@ -59,7 +59,10 @@ end
 function Mission_InitTechnologies()
 
 	-- forbid weather machine base
-	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_ChangeWeather, 0)
+	ForbidTechnology(Technologies.T_ChangeWeather)
+	ForbidTechnology(Technologies.T_WeatherForecast)
+	ForbidTechnology(Technologies.B_Weathermachine)
+	ForbidTechnology(Technologies.B_PowerPlant)
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_WeatherForecast, 0)
 
 	Logic.SetTechnologyState(gvMission.PlayerID, Technologies.T_MarketSulfur, 0)
