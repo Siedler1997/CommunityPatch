@@ -1,10 +1,10 @@
 SPAWN = 1
 ATTACK = 2
 ONEMINUTE = 60
+time2 = 20
 ------------------------------------------------------------------------------------------------------------------------------------
 function createArmyVillageAttackers()
     local time1 = 15
-    local time2 = 20
     if CP_Difficulty > 0 then
         time1 = time1 - 5
         time2 = time2 - 5
