@@ -10,13 +10,13 @@ function createArmyWayDefenders()
     	}
 
     if CP_Difficulty == 0 then
-        createArmy(2,4,armyWayDefenders1,2,"armyWay1",MEDIUM_EXPERIENCE,troopsDefenders)
-        createArmy(2,5,armyWayDefenders2,2,"armyWay2",MEDIUM_EXPERIENCE,troopsDefenders)
-        createArmy(2,6,armyCamp1,4,"armyCamp1",MEDIUM_EXPERIENCE,troopsDefenders)
+        createArmy(2,4,armyWayDefenders1,2,"armyWay1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+        createArmy(2,5,armyWayDefenders2,2,"armyWay2",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+        createArmy(2,6,armyCamp1,4,"armyCamp1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
     else
-        createArmy(2,4,armyWayDefenders1,4,"armyWay1",VERYHIGH_EXPERIENCE,troopsDefenders)
-        createArmy(2,5,armyWayDefenders2,4,"armyWay2",VERYHIGH_EXPERIENCE,troopsDefenders)
-        createArmy(2,6,armyCamp1,7,"armyCamp1",VERYHIGH_EXPERIENCE,troopsDefenders)
+        createArmy(2,4,armyWayDefenders1,4,"armyWay1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+        createArmy(2,5,armyWayDefenders2,4,"armyWay2",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+        createArmy(2,6,armyCamp1,7,"armyCamp1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
     end
 
     StartSimpleJob("controlArmyWayDefenders")
@@ -47,11 +47,11 @@ function createArmyCamps()
 
     armyCamp2 = {}
 
-    createArmy(2,7,armyCamp2,strength,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders)
+    createArmy(2,7,armyCamp2,strength,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders,16)
 
     armyCamp3 = {}
 
-    createArmy(2,8,armyCamp3,strength,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders)
+    createArmy(2,8,armyCamp3,strength,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders,16)
 
     delayArmyAdvancing = 10
 
