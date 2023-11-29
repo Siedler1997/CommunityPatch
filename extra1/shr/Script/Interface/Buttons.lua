@@ -230,7 +230,11 @@ function GUIAction_ChangeFormation(_formationtype)
 			elseif Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.EvilLeader) == 1 then
 				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 9)
 			else
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 1)
+				if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+					Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 1)
+				else
+					Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 9)
+				end
 			end
 		end
 	else
@@ -239,11 +243,27 @@ function GUIAction_ChangeFormation(_formationtype)
 				local SelectedEntityID = SelectedEntityIDs[ i ]
 				if SelectedEntityID ~= nil and SelectedEntityID > 0 then
 					if _formationtype == 2 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 2 )
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							GUI.LeaderChangeFormationType( SelectedEntityID, 2 )
+						else
+							GUI.LeaderChangeFormationType( SelectedEntityID, 5 )
+						end
 					elseif _formationtype == 3 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 3 )
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							GUI.LeaderChangeFormationType( SelectedEntityID, 3 )
+						else
+							GUI.LeaderChangeFormationType( SelectedEntityID, 6 )
+						end
 					elseif _formationtype == 4 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 4 )
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 and XGUIEng.IsModifierPressed(Keys.ModifierShift) == 0 then
+							GUI.LeaderChangeFormationType( SelectedEntityID, 4 )
+						else 
+							if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+								GUI.LeaderChangeFormationType( SelectedEntityID, 7 )
+							else
+								GUI.LeaderChangeFormationType( SelectedEntityID, 8 )
+							end
+						end
 					end			
 				end
 			end
@@ -334,18 +354,27 @@ end
 function GUIAction_HeroGenericExplore() 
 	local PlayerID = GUI.GetPlayerID()
 	local heroId = GUI.GetSelectedEntity()
+
 	if Logic.IsHero(heroId) == 1 then
 		if IsExisting("cp_p"..PlayerID.."_marker_pos") then
 			local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
+
 			GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
 			Explore.Hide("cp_p"..PlayerID.."explorer")
 			DestroyEntity("cp_p"..PlayerID.."_marker_pos")
 		end
 		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
 			local _pos = GetPosition(heroId)
+			local _range = 2000
+
 			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
 			GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
-			Explore.Show("cp_p"..PlayerID.."explorer", _pos, 2000)
+
+			if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
+				_range = _range * 1.5
+			end
+
+			Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
 		end
 	end
 end

@@ -104,6 +104,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Formationen
 		- bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
 		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
 	- NPCs (Zivilisten)
 		- können wirklich sterben
@@ -705,7 +706,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- AeK Signalfeuer
+- Helden-Marker
+	- Helden-Feedback
+	- Soll was kosten ODER Cooldown haben
+	- Im MP sperren
+- Uhrzeit
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -739,11 +744,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Trailer von Gold Edition
 - AeK-Sounds
 	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
 - Hundekäfig im Stronghold-Stil
+- AeK Signalfeuer
 - AeK-Frauen ergänzen
 - 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
@@ -762,7 +769,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Hauptmenü
 	- MP-Window fixen
 	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)
-- Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
+- Verschiebung von Overhead-Daten (RessourceAmount) fixen
 - Neue Spielerfarben
 - Auftragsbuch-Highlight fixen
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
