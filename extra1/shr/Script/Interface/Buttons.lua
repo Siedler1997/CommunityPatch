@@ -908,7 +908,7 @@ function GUIAction_BlessSettlers(_BlessCategory)
 	if BlessCosts <= CurrentFaith then
 		local BlessPrice = InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory)
 		if HasPlayerEnoughResources{Gold=BlessPrice} == 1 then
-			AddGold(-BlessPrice)
+			AddGold(PlayerID, -BlessPrice)
 			local random_num = GetRandom(1, 100)
 			if random_num > 25 then
 				GUI.BlessByBlessCategory(_BlessCategory)
