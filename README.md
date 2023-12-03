@@ -446,10 +446,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Minimap
 		- VideoPreview
 	- Viele kleine Detail-Anpassungen (Verschobene Buttons, größere Tooltip-Boxen, etc.)
-	- Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
-		- u.a. werden Spielstände (dank Zedeg)
-			- auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
-			- unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
+	- MainWindow- und Savegame-Anzeige
+		- Diverse Fixes by mcb & Zedeg
+			- Spielstände werden auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
+			- Spielstände sind unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
+		- Name ist anders aufgebaut: Slot - Datum, Uhrzeit - Mapname
 - Diverses
 	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
 		- Button dafür ersetzt den Hilfe-Button
