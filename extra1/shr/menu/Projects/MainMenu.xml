@@ -4974,6 +4974,36 @@ MPM00_ToUbiComButton</Name>
                     </Color>
                   </StringHelper>
                 </WidgetList>
+                <WidgetList classname="EGUIX::CStaticWidget" classid="0x213a8776">
+                  <Name>MPM20_RightBG</Name>
+                  <Rectangle>
+                    <X>652</X>
+                    <Y>0</Y>
+                    <W>372</W>
+                    <H>768</H>
+                  </Rectangle>
+                  <IsShown>True</IsShown>
+                  <ZPriority>1</ZPriority>
+                  <MotherID>MPMenu20</MotherID>
+                  <Group></Group>
+                  <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                  <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                  <BackgroundMaterial>
+                    <Texture>data\graphics\textures\gui\mainmenu\right_bg.png</Texture>
+                    <TextureCoordinates>
+                      <X>0</X>
+                      <Y>0</Y>
+                      <W>1</W>
+                      <H>1</H>
+                    </TextureCoordinates>
+                    <Color>
+                      <Red>255</Red>
+                      <Green>255</Green>
+                      <Blue>255</Blue>
+                      <Alpha>255</Alpha>
+                    </Color>
+                  </BackgroundMaterial>
+                </WidgetList>
               </SubWidgets>
             </WidgetList>
             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
