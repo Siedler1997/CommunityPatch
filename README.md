@@ -68,6 +68,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Kerzenhalter
 				- Gefängniskäfig (aus AeK)
 				- Dampfmaschine
+		- manche haben Spezialeffekte
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
@@ -711,7 +712,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Helden-Feedback
 	- Soll was kosten ODER Cooldown haben
 	- Im MP sperren
-- Uhrzeit
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten

@@ -479,6 +479,10 @@ function GameCallback_GUI_SelectionChanged()
 			elseif 	UpgradeCategory == UpgradeCategories.PowerPlant then				
 				XGUIEng.ShowWidget(gvGUI_WidgetID.PowerPlant,1)					
 			
+			--Is EntityType mechanical clock?
+			elseif 	UpgradeCategory == UpgradeCategories.Beautification07 then				
+				XGUIEng.ShowWidget(gvGUI_WidgetID.Beautification,1)					
+			
 			end
 			--Update Upgrade Buttons
 			InterfaceTool_UpdateUpgradeButtons(EntityType, UpgradeCategory,ButtonStem)								

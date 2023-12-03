@@ -771,6 +771,39 @@ GUIUpdate_HintText()
 	
 end
 
+function GUIUpdate_BeautificationClockDate()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local systemDateTime = Framework.GetSystemTimeDateString()
+
+	local year = string.sub(systemDateTime,1,4)
+	local month = string.sub(systemDateTime,6,7)
+	local day = string.sub(systemDateTime,9,10) 
+
+	local newDateTimeString = ""
+	local lang = XNetworkUbiCom.Tool_GetCurrentLanguageShortName()
+
+	if lang == "de" then
+		newDateTimeString = " "..day.."."..month.."."..year
+	else
+		newDateTimeString = " "..year.."-"..month.."-"..day
+	end
+	
+	XGUIEng.SetText(CurrentWidgetID, newDateTimeString)	
+end
+
+function GUIUpdate_BeautificationClockTime()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local systemDateTime = Framework.GetSystemTimeDateString()
+
+	local hours = string.sub(systemDateTime,12,13) 
+	local minutes = string.sub(systemDateTime,15,16) 
+	local seconds = string.sub(systemDateTime,18,19) 
+
+	local newDateTimeString = " "..hours..":"..minutes..":"..seconds
+	
+	XGUIEng.SetText(CurrentWidgetID, newDateTimeString)	
+end
+
 --------------------------------------------------------------------------------
 -- CP Taxation Mod
 --------------------------------------------------------------------------------
@@ -785,6 +818,17 @@ function GUIUpdate_BonusTaxation()
 
 		if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
 			Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+		end
+	end
+
+	--Get additional gold for draw wells
+	if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
+		local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
+		local random_num = GetRandom(1, 100)
+
+		if random_num <= wells then
+			AddGold(PlayerID, 1)
+			--Message("Wells: " .. wells)
 		end
 	end
 end 

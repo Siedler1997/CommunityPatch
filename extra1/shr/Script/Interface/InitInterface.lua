@@ -141,7 +141,7 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.ToBuildingCommandMenu= 	XGUIEng.GetWidgetID( "ToBuildingCommandMenu")
 	gvGUI_WidgetID.ToBuildingSettlersMenu= 	XGUIEng.GetWidgetID( "ToBuildingSettlersMenu")
 	gvGUI_WidgetID.BuildingTabs=		 	XGUIEng.GetWidgetID( "BuildingTabs")
-	
+	gvGUI_WidgetID.Beautification=		 	XGUIEng.GetWidgetID( "Beautification")
 	
 	
 	--Addon:

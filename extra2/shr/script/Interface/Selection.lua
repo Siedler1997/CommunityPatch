@@ -520,8 +520,11 @@ function GameCallback_GUI_SelectionChanged()
 				XGUIEng.ShowWidget(gvGUI_WidgetID.WeatherTower,1)					
 			--Is EntityType the powerPlant?
 			elseif 	UpgradeCategory == UpgradeCategories.PowerPlant then				
-				XGUIEng.ShowWidget(gvGUI_WidgetID.PowerPlant,1)					
-				
+				XGUIEng.ShowWidget(gvGUI_WidgetID.PowerPlant,1)						
+			
+			--Is EntityType mechanical clock?
+			elseif 	UpgradeCategory == UpgradeCategories.Beautification07 then				
+				XGUIEng.ShowWidget(gvGUI_WidgetID.Beautification,1)		
 				
 			-- ADDON:
 			--Is EntityType the Tavern?
