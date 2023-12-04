@@ -390,6 +390,46 @@ function DestroyHeroExplore()
 		Explore.Hide("cp_p"..PlayerID.."explorer")
 		DestroyEntity("cp_p"..PlayerID.."_marker_pos")
 	end
+
+	Sound.PlayFeedbackSound(GetHeroYesSound() , 0 )
+end
+
+function GetHeroYesSound()
+	local SelectedHeroID = HeroSelection_GetCurrentSelectedHeroID()
+	local SpokenText = Sounds.VoicesMentor_COMMENT_Yes_rnd_01
+	if Logic.IsHero(SelectedHeroID) == 1 then
+		local EntityType = Logic.GetEntityType(SelectedHeroID)
+		
+		if Logic.IsEntityInCategory(SelectedHeroID,EntityCategories.Hero1) == 1 then
+			SpokenText	= Sounds.VoicesHero1_HERO1_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero2 then
+			SpokenText	= Sounds.VoicesHero2_HERO2_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero3 then
+			SpokenText	= Sounds.VoicesHero3_HERO3_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero4 then
+			SpokenText	= Sounds.VoicesHero4_HERO4_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero5 then
+			SpokenText	= Sounds.VoicesHero5_HERO5_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero6 then
+			SpokenText	= Sounds.VoicesHero6_HERO6_Yes_rnd_01
+		elseif EntityType == Entities.CU_BlackKnight then
+			SpokenText	= Sounds.VoicesHero7_HERO7_Yes_rnd_01
+		elseif EntityType == Entities.CU_Mary_de_Mortfichet then
+			SpokenText	= Sounds.VoicesHero8_HERO8_Yes_rnd_01
+		elseif EntityType == Entities.CU_Barbarian_Hero then
+			SpokenText	= Sounds.VoicesHero9_HERO9_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero1 then
+			SpokenText	= Sounds.AOVoicesScout_Scout_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero10 or EntityType == Entities.CU_Hero10 then
+			SpokenText	= Sounds.AOVoicesHero10_HERO10_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero11 then
+			SpokenText	= Sounds.AOVoicesHero11_HERO11_Yes_rnd_01
+		elseif EntityType == Entities.CU_Evil_Queen then
+			SpokenText	= Sounds.AOVoicesHero12_HERO12_Yes_rnd_01
+		end
+	end
+	--Message("Sound: " .. SpokenText)
+	return SpokenText
 end
 
 --------------------------------------------------------------------------------

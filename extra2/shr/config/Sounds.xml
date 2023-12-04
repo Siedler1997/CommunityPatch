@@ -1464,6 +1464,47 @@
 
 	<!--Community Patch-->
 	<ID>AOVoicesScout\Scout_Forester_rnd_01</ID>
+
+	<ID>VoicesMentor\COMMENT_Yes_rnd_01</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_02</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_03</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_04</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_05</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_06</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_07</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_08</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_09</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_10</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_11</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_12</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_13</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_14</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_15</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_16</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_17</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_18</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_19</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_20</ID>
+	<ID>VoicesMentor\COMMENT_Yes_rnd_21</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_01</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_02</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_03</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_04</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_05</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_06</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_07</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_08</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_09</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_10</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_11</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_12</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_13</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_14</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_15</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_16</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_17</ID>
+	<ID>VoicesMentor\COMMENT_No_rnd_18</ID>
+	
 	<ID>Smith01</ID>
 	<ID>Buildings\so_weathermachineelectro</ID>
 	<ID>Misc\so_buildingonfire_loop_1</ID>

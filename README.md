@@ -710,8 +710,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Helden-Marker
-	- Helden-Feedback
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
