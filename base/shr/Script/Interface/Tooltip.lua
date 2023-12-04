@@ -520,14 +520,16 @@ end
 function GUITooltip_SinglePlayerButton(_NormalTooltip, _ShortCut)
 	local ShortCutToolTip = " "
 	local TooltipText = ""
+	local TooltipCost = ""
 
 	if XNetwork.Manager_IsGameRunning() == 1 then
 		TooltipText = TooltipText .. "MenuGeneric/FeatureNotAvailable"
 	else
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 		TooltipText = TooltipText .. _NormalTooltip
+		TooltipCost = CreateCostString{Gold=50}
 	end
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
 	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, TooltipCost)
 end

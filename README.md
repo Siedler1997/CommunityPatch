@@ -248,7 +248,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Drake: 'Bleikugel', 'Kimme und Korn'
 		- können eine Markierung setzen, die den Bereich dauerhaft aufdeckt
 			- die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
-			- das Setzen einer neuen Markierung entfernt zugleich die Alte
+			- das Setzen einer neuen Markierung 
+				- entfernt zugleich die Alte
+				- kostet jeweils 50 Taler
 			- wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
 		- Dario
 			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
@@ -710,8 +712,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 ## ToDos:
 - Helden-Marker
 	- Helden-Feedback
-	- Soll was kosten ODER Cooldown haben
-	- Im MP sperren
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten

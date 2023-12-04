@@ -328,28 +328,42 @@ function GUIAction_HeroGenericExplore()
 	local heroId = GUI.GetSelectedEntity()
 
 	if Logic.IsHero(heroId) == 1 then
-		if IsExisting("cp_p"..PlayerID.."_marker_pos") then
-			local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
-
-			GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
-			Explore.Hide("cp_p"..PlayerID.."explorer")
-			DestroyEntity("cp_p"..PlayerID.."_marker_pos")
-		end
 		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
-			local _pos = GetPosition(heroId)
-			local _range = 2000
+			if HasPlayerEnoughResources{Gold=50} == 1 then
+				DestroyHeroExplore()
 
-			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
-			GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
+				local _pos = GetPosition(heroId)
+				local _range = 2000
 
-			if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
-				_range = _range * 1.5
+				AddGold(PlayerID, -50)
+
+				CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
+				GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
+
+				if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
+					_range = _range * 1.5
+				end
+
+				Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
 			end
-
-			Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
+		else
+			DestroyHeroExplore()
 		end
 	end
 end
+
+function DestroyHeroExplore()
+	local PlayerID = GUI.GetPlayerID()
+
+	if IsExisting("cp_p"..PlayerID.."_marker_pos") then
+		local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
+
+		GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
+		Explore.Hide("cp_p"..PlayerID.."explorer")
+		DestroyEntity("cp_p"..PlayerID.."_marker_pos")
+	end
+end
+
 --------------------------------------------------------------------------------
 -- King's Defense'
 --------------------------------------------------------------------------------
