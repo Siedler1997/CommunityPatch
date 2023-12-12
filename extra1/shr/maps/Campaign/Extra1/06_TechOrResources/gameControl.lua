@@ -13,7 +13,7 @@ function beginChapterOne()
 	StartCutscene(Cutscenes[INTROCUTSCENE],createPreludeBriefing)
     createFarmerBriefing()
 
-    createAssaultArmies()
+    --createAssaultArmies()
     createDefendArmies()
     createFriendlyArmies()
     createGuardArmies()
