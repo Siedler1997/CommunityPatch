@@ -14,7 +14,8 @@ function Cutscene_MISSIONCOMPLETE_Start()
         
     SetPosition("Helias", GetPosition("CUTSCENE_HELIAS_EXTRO"))
     CreateEntity(5, Entities.CU_Hero10, GetPosition("CUTSCENE_HEADHUNTER_MOVE"), "HEADHUNTER" )
-    CreateEntity(1, Entities.PU_Hero1c, GetPosition("CUTSCENE_MOVE_START_DARIO"), "DARIO" )
+    SetPosition("Dario", GetPosition("CUTSCENE_MOVE_START_DARIO"))
+    --CreateEntity(1, Entities.PU_Hero1c, GetPosition("CUTSCENE_MOVE_START_DARIO"), "DARIO" )
     --CreateEntity(1, Entities.PU_Hero10, GetPosition("CUTSCENE_QUINTOS_EXTRO"), "QUINTOS" )
     
     SetNeutral(1,5)
@@ -45,8 +46,8 @@ function Cutscene_MISSIONCOMPLETE_Move01()
  
  function Cutscene_MISSIONCOMPLETE_Move02()   
  
-        SetPosition("DARIO", GetPosition("CUTSCENE_MOVE_START_DARIO"))
-        Move("DARIO", "CUTSCENE_MOVE_END_DARIO")
+        SetPosition("Dario", GetPosition("CUTSCENE_MOVE_START_DARIO"))
+        Move("Dario", "CUTSCENE_MOVE_END_DARIO")
    
  end     
         
@@ -62,8 +63,8 @@ function Cutscene_MISSIONCOMPLETE_Move01()
 
  function Cutscene_MISSIONCOMPLETE_Move04()   
  
-        SetPosition("DARIO", GetPosition("CUTSCENE_MOVE_START_DARIO2"))
-        Move("DARIO", "CUTSCENE_MOVE_END_DARIO2")
+        SetPosition("Dario", GetPosition("CUTSCENE_MOVE_START_DARIO2"))
+        Move("Dario", "CUTSCENE_MOVE_END_DARIO2")
    
  end 
 
@@ -99,8 +100,8 @@ end
  function Cutscene_MISSIONCOMPLETE_Move06()   
  	
 	
-	SetPosition("DARIO", GetPosition("CUTSCENE_MOVE_START_DARIO5"))
-	Move("DARIO", "CUTSCENE_MOVE_END_DARIO5")
+	SetPosition("Dario", GetPosition("CUTSCENE_MOVE_START_DARIO5"))
+	Move("Dario", "CUTSCENE_MOVE_END_DARIO5")
    
  end 
 
