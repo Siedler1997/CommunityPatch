@@ -3,6 +3,10 @@ function CreatePlayer1()
 	ForbidTechnology(Technologies.UP1_Market)
 	ForbidTechnology(Technologies.B_Outpost)
 	ResearchTechnology(Technologies.T_ThiefSabotage)
+	ForbidTechnology(Technologies.T_ChangeWeather)
+	ForbidTechnology(Technologies.T_WeatherForecast)
+	ForbidTechnology(Technologies.B_Weathermachine)
+	ForbidTechnology(Technologies.B_PowerPlant)
 
 	if GDB.GetValue("Game\\Campaign_Difficulty") < 2 then
 		ResearchTechnology(Technologies.GT_Mercenaries)
