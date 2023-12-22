@@ -1046,6 +1046,10 @@
 	<Entity>PB_Beautification14</Entity>
 	<Entity>PB_Beautification15</Entity>
 	<Entity>PB_Beautification16</Entity>
+	<Entity>CU_Settler_Female1</Entity>
+	<Entity>CU_Settler_Female2</Entity>
+	<Entity>CU_Settler_Female3</Entity>
+	<Entity>CU_Settler_Female4</Entity>
 	<Entity>PV_Cannon3a</Entity>
 	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>

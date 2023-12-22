@@ -425,5 +425,5 @@
 		<TaskList>TL_BATTLE_BEAR</TaskList>
 		<TaskList>TL_BATTLE_WOLF</TaskList>
 		<TaskList>TL_SNIPE_SPECIAL_BOW</TaskList>
-	
+		<TaskList>TL_SETTLER_FEMALE_IDLE</TaskList>
  </root>

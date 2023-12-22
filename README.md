@@ -117,6 +117,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben bessere Stats
 			- mehr Lebenspunkte (idR. 100)
 			- höhere Sichtweite
+		- Neu: AeK-Frauen
 	- NPCs (Militär)
 		- verlangen ebenfalls Sold
 		- 'Veteranen' 
@@ -706,6 +707,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Kanonen-Skins sind bei der Herstellung in der Kanonenmanufaktur noch nicht sichtbar
 	- Map 'Thalbach' ist schlecht gestaltet und/oder verbuggt
 		- Der CP hat hier nur Schadenbegrenzung betrieben. Die Map stammt von Ubisoft selbst...
+	- AeK-Frauen
+		- haben keine 'richtige' Sterbeanimation, sondern einen zweckdienlichen Platzhalter
+		- Spielerfarbe wird angezeigt und sieht dabei unschön aus
 
 
 
@@ -750,7 +754,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Irgendwas für Helden und Kanonen
 - Hundekäfig im Stronghold-Stil
 - AeK Signalfeuer
-- AeK-Frauen ergänzen
 - 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen

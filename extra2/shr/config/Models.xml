@@ -3996,6 +3996,26 @@
 		<OcclusionReceiver>True</OcclusionReceiver>
 	</Model>
 
+	<Model id="U_BathsWorker">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="U_SpouseS01">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="U_SpouseS02">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
+	<Model id="U_SpouseS03">
+		<SelectionRadius>65</SelectionRadius>
+		<Effect>SettlerPlayerColor</Effect>
+		<SelectionTexture>Selection_civilian</SelectionTexture>
+	</Model>
 	<Model id="PV_Cannon3a">
 		<Effect>SimpleUnitPlayerColorSpecular</Effect>
 		<SelectionTexture>Selection</SelectionTexture>
