@@ -32,13 +32,9 @@ function start1stChapter()
 
 	CreateQuestRescueSerfs()
 
-	-- Start winter after some time
-	CreateQuestWinter()
-
-
 	CreateNPCHeadquarters()
-
 end
+
 function end1stChapter()
 	
 	ResolveBriefing(briefingPreludeRescueSerfs)
