@@ -119,9 +119,20 @@ function end4thChapter()
 	
 	ResolveBriefing(briefingQueenDefenseQuest)
 
+	LocalMusic.UseSet = {
+		summer = {
+			{ "honor_medley.mp3", 211 }
+		},
+		snow = {
+			{ "honor_medley.mp3", 211 }
+		},
+		battle = {
+			{ "43_Extra1_DarkMoor_Combat.mp3", 120 }
+		}
+	}
+
 	StartCutscene(Cutscenes[THRESHOLTWOCUTSCENE],start5thChapter)
 	
-
 end
 
 ------------------------------------------------------------------------------

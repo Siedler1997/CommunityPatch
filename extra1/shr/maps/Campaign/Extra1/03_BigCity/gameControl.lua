@@ -149,6 +149,8 @@ function end5thChapter()
 	ResolveBriefing(briefingAttackersQuest)
 
 	CreateBriefingRiflemen()
+	
+	LocalMusic.UseSet = LocalMusic.SetDarkMoor
 
 	start6thChapter()
 	

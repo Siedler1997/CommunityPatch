@@ -30,6 +30,8 @@ function QuestWinter()
 			
 			end3rdChapter()
 			
+		    LocalMusic.UseSet = LocalMusic.SetDarkMoor
+			
 			return true
 	
 		end
