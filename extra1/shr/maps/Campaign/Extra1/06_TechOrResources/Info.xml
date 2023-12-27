@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>AOMapDescription/CM02_06_TechOrResources_name</NameKey>
+ <DescKey>AOMapDescription/CM02_06_TechOrResources_desc</DescKey>
+ <Name></Name>
+ <Desc></Desc>
+ <SizeX>65</SizeX>
+ <SizeY>65</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\Textures\GUI\MapPics\externalmap</MiniMapTextureName>
+ <Key>1</Key>
+ <GUID>
+  <Data>d2ae66b3-411c-48c3-bf6d-b5626ee9f86e</Data>
+ </GUID>
+</root>

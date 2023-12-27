@@ -85,6 +85,19 @@ function createPreludeBriefing()
 ---------------------------------------------------------------------------------------------
 function PreludeBriefingFinished()
     createAssaultArmies()
+
+	-- Start countdowns and bridge quest
+	if CP_Difficulty > 0 then
+		local timerLength = 20
+
+		if CP_Difficulty == 2 then
+			timerLength = timerLength - 5
+			createTimerForBombers()
+		end
+
+		StartCountdown(timerLength * 60, createPlayer2, false)
+		createQuestBridges()
+	end
 end
 
 function destroyPreludeBriefing()
