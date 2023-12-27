@@ -572,7 +572,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
 	- Neue Bodentexturen
 		- Marmor
-		- Lava (auf Siedler 7)
+		- Lava (aus Siedler 7)
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
@@ -651,6 +651,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
 		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie ihren Zielort nie erreichen
 	- Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
+	- Die Farbe von per Briefing erstellten Markern kann mittels '.markerColor' eingestellt werden
+		- Als Standard wird weiterhin Grün verwendet
+		- Beispiel: 'NPCHeadquartersBriefing[page].markerColor	=	3'
 	- ScoutForester
 		- Default Tree-Set ist Fir (ScoutFoerster_SET_Fir)
 		- Kann folgendermaßen in der FMA geändert werden
