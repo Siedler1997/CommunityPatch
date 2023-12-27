@@ -126,20 +126,18 @@ function startBombArmy()
 
 ------------------------------------------------------------------------------------------------------------------------------------
 function createBombQuestTroops()
-
     delayBombPeople = 5
+    local bombSpawnyPos = GetPosition("bombSpawny")
 
     for i = 1,12,1 do
-
-        CreateEntity(2,Entities.PU_LeaderHeavyCavalry2,GetPosition("bombSpawny"),"bomb"..i)
-
-        end
+        --CreateEntity(2,Entities.PU_LeaderHeavyCavalry2,GetPosition("bombSpawny"),"bomb"..i)
+		SetEntityName(AI.Entity_CreateFormation(2,Entities.PU_LeaderHeavyCavalry2,0,0,bombSpawnyPos.X,bombSpawnyPos.Y,0,0,CP_Difficulty+1,0), "bomb"..i)
+    end
 
     StartSimpleJob("controlBombQuest")
 
     return true
-
-    end
+end
 ------------------------------------------------------------------------------------------------------------------------------------
 function controlBombQuest()
 
