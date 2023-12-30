@@ -16,7 +16,10 @@ function CreateArmyBridges()
 	ArmyBridges.AttackAllowed		=	false
 	
 	ArmyBridges.AllowedTypes		=	{ 	UpgradeCategories.LeaderBow,
+											UpgradeCategories.LeaderBow,
 											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderSword,
+											UpgradeCategories.LeaderPoleArm,
 											UpgradeCategories.LeaderPoleArm,
 											UpgradeCategories.LeaderRifle,
 											Entities.PV_Cannon3 }

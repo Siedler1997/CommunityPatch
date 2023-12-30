@@ -1,9 +1,4 @@
 function CreateArmyPlayer()
-
-
-	local Position = GetPosition("PlayerRanged")
-	local LookAt = GetPosition("Dario")
-
 	local bowmen = Entities.PU_LeaderBow3
 	local swordmen = Entities.PU_LeaderSword3
 	if CP_Difficulty > 0 then
@@ -11,6 +6,7 @@ function CreateArmyPlayer()
 		swordmen = Entities.PU_LeaderSword2
 	end
 
+	local Position = GetPosition("PlayerRanged")
 	-- Create bow men
 	Logic.SetEntityName(AI.Entity_CreateFormation(
 						1,
@@ -18,13 +14,12 @@ function CreateArmyPlayer()
 						0,
 						16,
 						Position.X,Position.Y,
-						LookAt.X,LookAt.Y,
-						0,
+						0,0,
+						2,
 						0),"P1Ranged")
+	LookAt("P1Ranged", "Dario")
 
 	Position = GetPosition("PlayerMelees")
-	LookAt = GetPosition("Dario")
-
 	-- Create bow men
 	Logic.SetEntityName(AI.Entity_CreateFormation(
 						1,
@@ -32,9 +27,8 @@ function CreateArmyPlayer()
 						0,
 						16,
 						Position.X,Position.Y,
-						LookAt.X,LookAt.Y,
-						0,
+						0,0,
+						2,
 						0),"P1Melees")
-
-
+	LookAt("P1Melees", "Dario")
 end

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <NameKey>AOMapDescription/CM02_08_UnexploredLand_name</NameKey>
+ <DescKey>AOMapDescription/CM02_08_UnexploredLand_desc</DescKey>
+ <Name></Name>
+ <Desc></Desc>
+ <SizeX>769</SizeX>
+ <SizeY>769</SizeY>
+ <MPFlag>false</MPFlag>
+ <MPPlayerCount>0</MPPlayerCount>
+ <MPGameOptionFlagSet>0</MPGameOptionFlagSet>
+ <MiniMapTextureName>data\graphics\Textures\GUI\MapPics\externalmap</MiniMapTextureName>
+ <Key>1</Key>
+ <GUID>
+  <Data>c3368dd9-bc2b-4c01-9995-384b1e0a1e66</Data>
+ </GUID>
+</root>

@@ -717,6 +717,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- 07_FleeOrFight: Signalfeuer testen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Thalgrund: Erster Angriff mit Cutscene-Einheiten
@@ -750,6 +751,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
+- 4er Truppen: Varianten mit 8 Solis
+- 07_FleeOrFight: Signalfeuer auch über 'normale' Tribute endzündbar machen
+- 08_UnexploredLand:
+	- Entfernte Brückenbauplätze wieder einfügen
+	- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
+- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Trailer von Gold Edition
 - AeK-Sounds
 	- Eigener Todes-Sound für Nebelkrieger
@@ -757,7 +765,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Irgendwas für Helden und Kanonen
 - Hundekäfig im Stronghold-Stil
 - AeK Signalfeuer
-- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Meuchel-Ability für Diebe(?)
 - extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)

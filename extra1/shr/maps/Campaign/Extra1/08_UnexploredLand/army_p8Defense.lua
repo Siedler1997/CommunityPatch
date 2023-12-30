@@ -8,7 +8,7 @@ function CreateArmyP8Defense()
 		ArmyP8Defense[i]					= 	{}
 		ArmyP8Defense[i].player 			=	8
 		ArmyP8Defense[i].id					=	0+i
-		ArmyP8Defense[i].strength			=	5
+		ArmyP8Defense[i].strength			=	6
 		ArmyP8Defense[i].position			=	GetPosition("P8_DefensePoint"..i)
 		ArmyP8Defense[i].rodeLength			=	3000
 		ArmyP8Defense[i].retreatStrength	=	0
@@ -17,7 +17,10 @@ function CreateArmyP8Defense()
 		ArmyP8Defense[i].AttackAllowed		=	false
 		
 		ArmyP8Defense[i].AllowedTypes		=	{ 	UpgradeCategories.LeaderBow,
+													UpgradeCategories.LeaderBow,
 													UpgradeCategories.LeaderSword,
+													UpgradeCategories.LeaderSword,
+													UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderRifle,
 													Entities.PV_Cannon3 }

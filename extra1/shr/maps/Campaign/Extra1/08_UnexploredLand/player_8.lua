@@ -34,8 +34,8 @@ function CreatePlayer8()
 				updateTime			=	2
 			},
 			rebuild = {
-				delay				=	10,
-				randomTime			=	5
+				delay				=	15,
+				randomTime			=	15
 			},
 		}
 		
@@ -43,18 +43,16 @@ function CreatePlayer8()
 	
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player8.id)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player8.id)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player8.id)
 
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, player8.id)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, player8.id)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, player8.id)
 
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, player8.id)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, player8.id)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, player8.id)
 	
-		if CP_Difficulty == 0 then
-			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, player8.id)
-			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, player8.id)
-			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player8.id)
-			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, player8.id)
-		end
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, player8.id)
 
 	end
