@@ -4,16 +4,13 @@
     "\\base",
     "\\base\\shr",
     "\\base\\shr\\config",
-    "\\base\\shr\\config\\Entities",
-    "\\base\\shr\\graphics",
-    "\\base\\shr\\graphics\\Animations",
+    "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
     "\\extra1\\shr\\maps",
     "\\extra1\\shr\\maps\\Campaign",
     "\\extra1\\shr\\maps\\Campaign\\Extra1",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1\\06_TechOrResources"
+    "\\extra1\\shr\\maps\\Campaign\\Extra1\\10_FloodedLand"
   ],
-  "SelectedNode": "\\base\\shr\\config\\Entities\\CU_Barbarian_Hero_wolf.xml",
+  "SelectedNode": "\\extra1\\shr\\maps\\Campaign\\Extra1\\10_FloodedLand\\gameControl.lua",
   "PreviewInSolutionExplorer": false
 }

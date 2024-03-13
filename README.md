@@ -751,8 +751,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - 4er Truppen: Varianten mit 8 Solis
+- Upgrade-Technologien für böse Einheiten
 - 07_FleeOrFight: Signalfeuer auch über 'normale' Tribute endzündbar machen
 - 08_UnexploredLand:
 	- Entfernte Brückenbauplätze wieder einfügen
