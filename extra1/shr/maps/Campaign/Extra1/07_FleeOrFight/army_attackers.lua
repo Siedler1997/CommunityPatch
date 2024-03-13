@@ -56,12 +56,8 @@ function SpawnArmyAttackers(_index)
 
 		maxNumberOfSoldiers	= 16,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 	}
-
-	if CP_Difficulty > 0 then
-		troopDescription.experiencePoints = troopDescription.experiencePoints + 1
-	end	
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)

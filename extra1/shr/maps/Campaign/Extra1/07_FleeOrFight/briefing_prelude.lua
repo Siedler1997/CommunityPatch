@@ -79,7 +79,7 @@ function BriefingPreludeFinished()
 	-- Move princess near fire signal
 	--MoveAndVanish("P4_SouthVillage_NPC", "P2_Army_South_SpawnPoint2")
 	
-	StartCountdown(15, BriefingPreludeStartBattleOnTheMap, false)
+	StartCountdown(20, BriefingPreludeStartBattleOnTheMap, false)
 
 	-- Start winter after some time
 	CreateQuestWinter()

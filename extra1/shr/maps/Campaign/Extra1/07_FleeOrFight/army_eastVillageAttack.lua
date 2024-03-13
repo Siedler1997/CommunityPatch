@@ -42,11 +42,8 @@ function CreateArmyEastVillageAttackByIndex(_index)
 
 		maxNumberOfSoldiers	= 16,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 	}
-	if CP_Difficulty > 0 then
-		troopDescription.experiencePoints = troopDescription.experiencePoints + 1
-	end	
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 	for i=1,_index do

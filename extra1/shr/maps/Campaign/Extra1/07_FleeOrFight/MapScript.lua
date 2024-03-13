@@ -9,6 +9,8 @@ function InitDiplomacy()
 	SetHostile(1,5)
 	SetHostile(3,2)
 	SetHostile(3,5)
+	SetHostile(4,2)
+	SetHostile(4,5)
 	SetHostile(7,2)
 	SetHostile(7,5)
 
@@ -21,7 +23,7 @@ function InitDiplomacy()
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-	GlobalMissionScripting.GiveResouces(1, 500, 500, 1000, 1000, 500, 0)
+	--GlobalMissionScripting.GiveResouces(1, 500, 500, 1000, 1000, 500, 0)
 end
 ------------------------------------------------------------------------------
 function InitTechnologies()
@@ -34,11 +36,13 @@ function InitTechnologies()
 		end
 		ResearchAnimalTechs(2, animalTech2)
 		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
 		ResearchAnimalTechs(5, animalTech2)
 		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechsAddOn(2)
 		ResearchAllMilitaryTechsAddOn(3)
+		ResearchAllMilitaryTechsAddOn(4)
 		ResearchAllMilitaryTechsAddOn(5)
 		ResearchAllMilitaryTechsAddOn(8)
 	end
@@ -68,15 +72,16 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(2, 6)		
 		Display.SetPlayerColorMapping(5, 6)	
 	end
+
+	Display.SetPlayerColorMapping(4,15)
+
 	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)
-		Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
 	else
 		Display.SetPlayerColorMapping(3,8)
-		Display.SetPlayerColorMapping(4,8)
 	end
 	Display.SetPlayerColorMapping(6,NPC_COLOR)
-	Display.SetPlayerColorMapping(7, p1color)
+	Display.SetPlayerColorMapping(7,15)
 	Display.SetPlayerColorMapping(8,ROBBERS_COLOR)
 	
 end
@@ -119,6 +124,7 @@ function FirstMapAction()
 	IncludeLocals("quest_surviveFinalAttack")
 	IncludeLocals("quest_winter")
 	IncludeLocals("quest_showlastattackers")
+	IncludeLocals("quest_signalFires")
 	
 	
 	LocalMusic.UseSet = HIGHLANDMUSIC
@@ -139,6 +145,7 @@ function FirstMapAction()
 	Cutscenes[THRESHOLTWOCUTSCENE] = "WINTERATTACK"
 	Cutscenes[MISSIONCOMPLETECUTSCENE] = "MISSIONCOMPLETE"
 	
+	SetPlayerName(4, String.Key("_Player4Name"))
 			
 	IncludeLocals("Cutscene_" .. Cutscenes[INTROCUTSCENE])
 	IncludeLocals("Cutscene_" .. Cutscenes[THRESHOLDONECUTSCENE])	
@@ -173,7 +180,7 @@ function FirstMapAction()
 	RaidersCreate({player = 8, pos = "bearpos3", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 	
 	gvGUI.BonusHeroId = GetEntityId("Yuki")
-
+	
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
 end
@@ -184,10 +191,10 @@ function
 Mission_InitMerchants()
 	
 	mercenaryId = Logic.GetEntityIDByName("NPC_Merchant_1")
-	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Thief, 2, ResourceType.Sulfur, 150, ResourceType.Gold, 100)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon2, 4, ResourceType.Sulfur, 155, ResourceType.Iron, 175, ResourceType.Gold, 100)
-	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon3, 2, ResourceType.Sulfur, 195, ResourceType.Iron, 225, ResourceType.Gold, 175)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_Thief, 2, ResourceType.Sulfur, 100, ResourceType.Gold, 150)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon2, 4, ResourceType.Sulfur, 150, ResourceType.Iron, 100, ResourceType.Gold, 200)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon3, 2, ResourceType.Sulfur, 200, ResourceType.Iron, 150, ResourceType.Gold, 250)
 		
 	mercenaryId = Logic.GetEntityIDByName("NPC_Merchant_2")
-	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 8, ResourceType.Iron, 225, ResourceType.Wood, 175, ResourceType.Gold, 150)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_Barbarian_LeaderClub2, 8, ResourceType.Iron, 100, ResourceType.Wood, 150, ResourceType.Gold, 200)
 end

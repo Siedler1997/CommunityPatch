@@ -165,7 +165,13 @@ end
 function NPCHeadquartersBriefingFinishedDone()
 
 	Logic.SetShareExplorationWithPlayerFlag(1,3,1)
+	
+	-- remove from diplomacy window
+	SetPlayerName(4)
+	
+    Logic.SetPlayerPaysLeaderFlag(1,1)
+	GlobalMissionScripting.GiveResouces(1, 500, 500, 1000, 1000, 500, 0)
 
 	ReplaceEntity("P4_Headquarter_NPC", Entities.PU_LeaderSword2)
-	ChangePlayer("P4_Headquarter_NPC", 1)
+	Logic.ChangeAllEntitiesPlayerID(4, 1)
 end

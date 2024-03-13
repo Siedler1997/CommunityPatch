@@ -24,9 +24,7 @@ function CreateArmyRobbers()
 		ArmyRobbers.respawnTime			=	3*60
 		ArmyRobbers.maxSpawnAmount		= 	2
 	end
-	if CP_Difficulty == 2 then
-		ArmyRobbers.experiencePoints	=	1
-	end
+	ArmyRobbers.experiencePoints	=	CP_Difficulty
 												
 	ArmyRobbers.spawnGenerator		=	"RobberyTower"
 	ArmyRobbers.spawnPos			=	GetPosition("RobbersSpawnPos")

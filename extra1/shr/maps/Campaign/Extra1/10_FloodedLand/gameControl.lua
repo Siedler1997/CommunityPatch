@@ -127,7 +127,7 @@ function end4thChapter()
 			{ "honor_medley.mp3", 211 }
 		},
 		battle = {
-			{ "43_Extra1_DarkMoor_Combat.mp3", 120 }
+			{ "honormix_01.mp3", 144 }
 		}
 	}
 

@@ -12,8 +12,6 @@ end
 
 function CreateNPCEastVillageBriefing()
 
-	end2ndChapter()
-
 	NPCEastVillageBriefing					=	{}
 	NPCEastVillageBriefing.restoreCamera	=	true
 	NPCEastVillageBriefing.finished			=	NPCEastVillageBriefingFinished
@@ -109,5 +107,7 @@ function CreateNPCEastVillageBriefing()
 end
 
 function NPCEastVillageBriefingFinished()
+	end2ndChapter()
+
 	DestroyEntity("P3_EastVillage_NPC")
 end
