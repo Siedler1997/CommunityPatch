@@ -198,13 +198,6 @@ function Mission_FirstMapAction()
 		ReplaceEntity("KI3_HQ", Entities.PB_Headquarters2)
 		ReplaceEntity("start_1", Entities.PB_Headquarters1)
 
-		local towers2 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
-		for i = 1, table.getn(towers2) do
-			if IsExisting(towers2[i]) then
-				ReplaceEntity(towers2[i], Entities.PB_DarkTower2)
-			end
-		end
-
 		local bosspos1 = GetPosition("KI3_SpawnPos")
 		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
 		LookAt(bossID1, "RescueObject1")
