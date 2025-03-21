@@ -509,8 +509,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Startbedingungen des Spielers sind bzgl. Rohstoffe-Truppen-Gebäude etwas schlechter
 			- Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		- Schwierigkeitsgrad 'Albtraum'
-			- Schatztruhen entfallen größtenteils
 			- enthält die gleichen Features wie auf 'Schwer'
+			- Schatztruhen entfallen größtenteils
 			- KI-Truppen und Gebäude sind noch stärker bzw. zahlreicher
 			- Die Steuern sind auf 'Halbe Steuern' festgesetzt
 				- Änderungen im Haupthaus sind NICHT möglich
@@ -521,7 +521,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- diverse Gemeinheiten;)
 		- Wilde Tiere (Wölfe und Bären) streifen durch die Gegend
 		- Start-Rohstoffe sind immer veredelbar
-		- Diverse Optimierungen-Anpassungen-Fixes in einigen Missionen
+		- Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	- SP-Maps modifiziert
 		- Ähnliche Features wie bei den Kampagnen-Maps. Ausnahmen:
 			- Keine Schwierigkeitsgrade und damit einhergehende Anpassungen
