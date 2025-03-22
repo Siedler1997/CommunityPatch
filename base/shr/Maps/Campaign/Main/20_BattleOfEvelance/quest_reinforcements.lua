@@ -166,26 +166,36 @@ Action_QuestReinforcements2 = function()
 
 --	troopDescription.leaderType = Entities.Entities.PV_Cannon4
 	troopDescription.leaderType = Entities.PV_Cannon4
-
 	Move(CreateTroop(army,troopDescription),"supportB1")
 	Move(CreateTroop(army,troopDescription),"supportB2")
+
+	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+	Move(CreateTroop(army,troopDescription),"supportB5")
+	Move(CreateTroop(army,troopDescription),"supportB6")
+	Move(CreateTroop(army,troopDescription),"supportB7")
+	Move(CreateTroop(army,troopDescription),"supportB8")
+	
+	troopDescription.leaderType = Entities.PU_LeaderBow4
+	Move(CreateTroop(army,troopDescription),"supportB13")
+	Move(CreateTroop(army,troopDescription),"supportB14")
+	
+	--second part
+	army.position	=	GetPosition("supportA2")
+	troopDescription.leaderType = Entities.PV_Cannon4
 	Move(CreateTroop(army,troopDescription),"supportB3")
 	Move(CreateTroop(army,troopDescription),"supportB4")
 
-	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
-
-	Move(CreateTroop(army,troopDescription),"supportB5")
-	Move(CreateTroop(army,troopDescription),"supportB6")
-	Move(CreateTroop(army,troopDescription),"supportB7")
-	Move(CreateTroop(army,troopDescription),"supportB8")
-
 	troopDescription.leaderType = Entities.PU_LeaderBow4
+	Move(CreateTroop(army,troopDescription),"supportB9")
+	Move(CreateTroop(army,troopDescription),"supportB10")
 
-	Move(CreateTroop(army,troopDescription),"supportB5")
-	Move(CreateTroop(army,troopDescription),"supportB6")
-	Move(CreateTroop(army,troopDescription),"supportB7")
-	Move(CreateTroop(army,troopDescription),"supportB8")
-
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
+	Move(CreateTroop(army,troopDescription),"supportB11")
+	Move(CreateTroop(army,troopDescription),"supportB12")
+	
+	CreateEntity(1, Entities.PU_Hero1, GetPosition("supportA2"), "Dovbar")
+	Move("Dovbar","supportB0")
+    gvGUI.BonusHeroId = GetEntityId("Dovbar")
 
 	--	check if briefing is active
 	if IsBriefingActive() ~= true then

@@ -493,7 +493,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- fehlerhafte-unpassende Spielerzugehörigkeit mancher Einheiten-Gebäude gefixt
 		- Drakes Gewehrschüsse in Cutscenes sind vertont
 		- In manchen Missionen gibt es nun bis zu 7 Helden
-			- Konkret: Nebelberge, Geld oder Leben, Kampf oder Flucht
+			- Konkret: Nebelberge, Schlacht um Evelance, Geld oder Leben, Kampf oder Flucht
 		- Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
 		- in manchen Missionen können gegnerische Truppen respawnen
 			- z.T. abhängig vom Schwierigkeitsgrad

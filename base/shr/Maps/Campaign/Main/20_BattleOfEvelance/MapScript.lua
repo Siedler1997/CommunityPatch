@@ -215,6 +215,13 @@ function Mission_FirstMapAction()
 			CreateRandomChests()
 
 			DestroyEntity("hard_rock")
+
+			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm3,0,8,29687,8770,0,0,0,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,29687,8770,0,0,3,0)
+			Move(southernSpear1, "southernSpearPos1")
+			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm3,0,8,29687,8770,0,0,0,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,21300,11250,0,0,3,0)
+			Move(southernSpear2, "southernSpearPos2")
 		else
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
@@ -250,6 +257,13 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 35400, 0, 5);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 36100, 32200, 0, 5);
 			
+			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			Move(southernSpear1, "southernSpearPos1")
+			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,21300,11250,0,0,CP_Difficulty,0)
+			Move(southernSpear2, "southernSpearPos2")
+
 			for i = 1, 3 do
 				local bosspos3 = GetPosition("tower_spawn"..i)
 				local bossID3 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
