@@ -75,6 +75,7 @@ createQuestReinforcements = function()
 		----------------------------------------------------------------
 			                                                            
 		    CreateReinforcement()
+			createQuestReinforcements2()
 			EndJob(Reinforcement_Started)
 		
 		end
@@ -110,7 +111,7 @@ createQuestReinforcements = function()
 				leaderType 			= Entities.PU_LeaderBow4,
 				maxNumberOfSoldiers	= 9,
 				minNumberOfSolderis	= 9,
-				experiencePoints 	= MEDIUM_EXPERIENCE,
+				experiencePoints 	= VERYHIGH_EXPERIENCE-CP_Difficulty,
 			}			
 	
 			Move(CreateTroop(army,troopDescription),"deployEnd1")
@@ -125,7 +126,7 @@ createQuestReinforcements = function()
 				leaderType 			= Entities.PU_LeaderSword4,
 				maxNumberOfSoldiers	= 9,
 				minNumberOfSolderis	= 9,
-				experiencePoints 	= MEDIUM_EXPERIENCE,
+				experiencePoints 	= VERYHIGH_EXPERIENCE-CP_Difficulty,
 			}			
 	
 			Move(CreateTroop(army,troopDescription),"deployEnd2")
@@ -139,7 +140,7 @@ createQuestReinforcements = function()
 
 createQuestReinforcements2 = function()
 
-	reinforcements2 = 60 * 4
+	reinforcements2 = 60 * 60 * 2
 
 	StartJob("QuestReinforcements2")
 
@@ -161,7 +162,7 @@ Action_QuestReinforcements2 = function()
 		leaderType 			= Entities.PV_Cannon4,
 		maxNumberOfSoldiers	= 9,
 		minNumberOfSolderis	= 9,
-		experiencePoints 	= MEDIUM_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE-CP_Difficulty,
 	}			
 
 --	troopDescription.leaderType = Entities.Entities.PV_Cannon4
@@ -169,11 +170,11 @@ Action_QuestReinforcements2 = function()
 	Move(CreateTroop(army,troopDescription),"supportB1")
 	Move(CreateTroop(army,troopDescription),"supportB2")
 
-	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+	troopDescription.leaderType = Entities.PU_LeaderSword4
 	Move(CreateTroop(army,troopDescription),"supportB5")
 	Move(CreateTroop(army,troopDescription),"supportB6")
-	Move(CreateTroop(army,troopDescription),"supportB7")
-	Move(CreateTroop(army,troopDescription),"supportB8")
+	--Move(CreateTroop(army,troopDescription),"supportB7")
+	--Move(CreateTroop(army,troopDescription),"supportB8")
 	
 	troopDescription.leaderType = Entities.PU_LeaderBow4
 	Move(CreateTroop(army,troopDescription),"supportB13")
@@ -192,6 +193,15 @@ Action_QuestReinforcements2 = function()
 	troopDescription.leaderType = Entities.PU_LeaderPoleArm4
 	Move(CreateTroop(army,troopDescription),"supportB11")
 	Move(CreateTroop(army,troopDescription),"supportB12")
+
+	SetEntityName(Logic.CreateEntity(Entities.PU_Serf, 29735, 2640, 0, 1), "supportSerf1")
+	SetEntityName(Logic.CreateEntity(Entities.PU_Serf, 29500, 2625, 0, 1), "supportSerf2")
+	SetEntityName(Logic.CreateEntity(Entities.PU_Serf, 29630, 2740, 0, 1), "supportSerf3")
+	SetEntityName(Logic.CreateEntity(Entities.PU_Serf, 29620, 2510, 0, 1), "supportSerf4")
+	LookAt("supportSerf1", "supportSerf2")
+	LookAt("supportSerf2", "supportSerf1")
+	LookAt("supportSerf3", "supportSerf4")
+	LookAt("supportSerf4", "supportSerf3")
 	
 	CreateEntity(1, Entities.PU_Hero1, GetPosition("supportA2"), "Dovbar")
 	Move("Dovbar","supportB0")

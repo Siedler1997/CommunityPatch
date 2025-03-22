@@ -87,7 +87,7 @@ startQuestDestroyLionsDen = function()
 	
 --		Logic.ChangeAllEntitiesPlayerID(4,GetHumanPlayer())
 
-		createQuestReinforcements2()
+		--createQuestReinforcements2()
 
 	--	ai
 	

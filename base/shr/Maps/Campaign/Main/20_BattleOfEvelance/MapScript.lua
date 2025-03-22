@@ -209,7 +209,7 @@ function Mission_FirstMapAction()
 		Logic.SetDiplomacyState( 1, 5, Diplomacy.Friendly )
 
 	-- Start prelude
-
+	
 		if CP_Difficulty == 0 then
 			CreateRandomGoldChests()	
 			CreateRandomChests()
@@ -225,8 +225,13 @@ function Mission_FirstMapAction()
 		else
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
-			end
 
+				local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
+				for i = 2, table.getn(towers1) do
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
+				end
+			end
+			--Wetterturm: "p5WeatherTower"
 			if CP_Difficulty == 1 then
 				CreateRandomGoldChests()	
 				CreateRandomChests()
@@ -238,10 +243,6 @@ function Mission_FirstMapAction()
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
 			--]]
-			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 48, 0) }
-			for i = 2, table.getn(towers1) do
-				ReplaceEntity(towers1[i], Entities.PB_Tower2)
-			end
 
 			Logic.CreateEntity(Entities.PB_DarkTower3, 23600, 24400, 0, 4);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 24500, 0, 4);
