@@ -71,5 +71,4 @@ createPlayer4 = function()
 		
 		SetupPlayerAi(player4.id,description)
 	
-		Sound.PlayGUISound(Sounds.VoicesHero7_HERO7_Madness_rnd_01)
 	end

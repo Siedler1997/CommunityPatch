@@ -2,16 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\lng\\en",
-    "\\base\\lng\\en\\voice",
-    "\\base\\lng\\en\\voice\\CM01_20_BattleOfEvelance_Txt",
     "\\base\\shr",
     "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance",
-    "\\base\\shr\\Script"
+    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\text\\en",
+    "\\base\\shr\\text\\en\\InGame",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\text",
+    "\\extra1\\shr\\text\\de",
+    "\\extra1\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\player_7.lua",
   "PreviewInSolutionExplorer": false
 }

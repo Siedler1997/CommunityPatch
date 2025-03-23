@@ -43,6 +43,7 @@
 		IncludeLocals("quest_reachWeatherMachine")
 		IncludeLocals("quest_rewards")
 		IncludeLocals("quest_weatherMaker")
+		IncludeLocals("quest_enemyWeather")
 		
 		IncludeLocals("army_attack1")
 		IncludeLocals("army_attack2")
@@ -231,7 +232,7 @@ function Mission_FirstMapAction()
 					ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
 				end
 			end
-			--Wetterturm: "p5WeatherTower"
+			
 			if CP_Difficulty == 1 then
 				CreateRandomGoldChests()	
 				CreateRandomChests()
@@ -297,7 +298,7 @@ function Mission_FirstMapAction()
 		StartCutscene("Intro", startQuestDestroyOutpost)
 
 		--StartSimpleJob("GetMousePos")
-		Tools.ExploreArea(-1, -1, 900)
+		--Tools.ExploreArea(-1, -1, 900)
 		--CP_ActivateEvilMod(1, 1, 1)
 		--ResearchTechnology( Technologies.GT_Tactics, 1 );
 		--ResearchTechnology( Technologies.T_AdjustTaxes, 1 );

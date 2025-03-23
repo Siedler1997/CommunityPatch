@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\PlayerColors.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\PlayerColors.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -50,8 +50,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 19,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerColors.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\PlayerColors.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\PlayerColors.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\PlayerColors.lua",
+              "RelativeToolTip": "base\\shr\\Script\\MapTools\\PlayerColors.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-21T20:52:01.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "quest_reinforcements.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAAALwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-13T20:09:56.083Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -94,63 +120,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MapData.xml",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapData.xml",
-              "ViewState": "AQIAAAsCAAAAAAAAAADwvywCAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-03-14T19:50:18.09Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-14T18:44:31.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ViewState": "AQIAAOEAAAAAAAAAAAAAABMBAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-14T18:07:07.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "quest_reinforcements.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\quest_reinforcements.lua",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAAIsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-13T20:09:56.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "briefing_reinforcementArrives.lua",
               "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua",
               "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua",
               "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua",
               "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\briefing_reinforcementArrives.lua",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAAwAAAA",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-13T20:09:26.292Z"
+              "WhenOpened": "2024-03-13T20:09:26.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAOMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-14T18:44:31.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAAOAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-14T18:07:07.751Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -166,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "army_attack2.lua",
               "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua",
               "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\army_attack2.lua",
@@ -202,13 +207,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAANUCAAAAAAAAAAAAAPMCAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAANsCAAAAAAAAAAAAAPMCAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2023-09-24T14:38:22.087Z",
               "EditorCaption": ""
