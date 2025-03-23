@@ -904,7 +904,14 @@ function GUIAction_ChangeWeather(_weathertype)
 	local NeededWeatherEnergy = Logic.GetEnergyRequiredForWeatherChange()
 	
 	if CurrentWeatherEnergy >= NeededWeatherEnergy then		
-		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_WeathermashineActivated"))		
+		--Get player name and color
+		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(PlayerID)
+		local Color =  "@color:" .. ColorR .. "," .. ColorG .. ",".. ColorB .. ",255 "
+		local PlayerName = Color .. UserTool_GetPlayerName(PlayerID)
+			
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_PlayerXWeathermashineActivated"), PlayerName))	
+
+		--GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_WeathermashineActivated"))		
 		GUI.SetWeather(_weathertype)
 		
 	else
