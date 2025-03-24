@@ -215,7 +215,9 @@ function Mission_FirstMapAction()
 			CreateRandomGoldChests()	
 			CreateRandomChests()
 
-			DestroyEntity("hard_rock")
+			--Remove new rocks so that AI uses vanilla route
+			DestroyEntity("hard_rock1")
+			DestroyEntity("hard_rock2")
 
 			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm3,0,8,29687,8770,0,0,0,0)
 			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,29687,8770,0,0,3,0)
@@ -224,6 +226,15 @@ function Mission_FirstMapAction()
 			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,21300,11250,0,0,3,0)
 			Move(southernSpear2, "southernSpearPos2")
 		else
+			if CP_Difficulty == 1 then
+				CreateRandomGoldChests()	
+				CreateRandomChests()
+
+				--Keep the rocks so that AI uses modded route
+				--DestroyEntity("hard_rock1")
+				--DestroyEntity("hard_rock2")
+			end
+
 			if CP_Difficulty == 2 then
 				GUI.SetTaxLevel(1)
 
@@ -233,12 +244,6 @@ function Mission_FirstMapAction()
 				end
 			end
 			
-			if CP_Difficulty == 1 then
-				CreateRandomGoldChests()	
-				CreateRandomChests()
-
-				DestroyEntity("hard_rock")
-			end
 			--[[
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
@@ -262,7 +267,7 @@ function Mission_FirstMapAction()
 			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
 			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,29687,8770,0,0,CP_Difficulty,0)
 			Move(southernSpear1, "southernSpearPos1")
-			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,21300,11250,0,0,CP_Difficulty,0)
 			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,21300,11250,0,0,CP_Difficulty,0)
 			Move(southernSpear2, "southernSpearPos2")
 
