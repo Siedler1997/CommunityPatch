@@ -1021,6 +1021,66 @@
 		<Category>Cannon4a</Category>
 		<FirstSettler>PV_Cannon4a</FirstSettler>
 	</SettlerUpgrade>
+
+	<!-- Sword men -->
+	<SettlerUpgrade>
+		<Category>LeaderSword2a</Category>
+		<FirstSettler>PU_LeaderSword2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierSword2a</Category>
+		<FirstSettler>PU_SoldierSword2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Spear men -->
+	<SettlerUpgrade>
+		<Category>LeaderPoleArm2a</Category>
+		<FirstSettler>PU_LeaderPoleArm2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierPoleArm2a</Category>
+		<FirstSettler>PU_SoldierPoleArm2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Bow men -->
+	<SettlerUpgrade>
+		<Category>LeaderBow2a</Category>
+		<FirstSettler>PU_LeaderBow2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierBow2a</Category>
+		<FirstSettler>PU_SoldierBow2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Light Cavalry -->
+	<SettlerUpgrade>
+		<Category>LeaderCavalry1a</Category>
+		<FirstSettler>PU_LeaderCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierCavalry1a</Category>
+		<FirstSettler>PU_SoldierCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Heavy Cavalry -->
+	<SettlerUpgrade>
+		<Category>LeaderHeavyCavalry1a</Category>
+		<FirstSettler>PU_LeaderHeavyCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierHeavyCavalry1a</Category>
+		<FirstSettler>PU_SoldierHeavyCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Rifle -->
+	<SettlerUpgrade>
+		<Category>LeaderRifle1a</Category>
+		<FirstSettler>PU_LeaderRifle1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierRifle1a</Category>
+		<FirstSettler>PU_SoldierRifle1a</FirstSettler>
+	</SettlerUpgrade>
 	
 	<BuildingUpgrade>
 		<Category>Beautification13</Category>

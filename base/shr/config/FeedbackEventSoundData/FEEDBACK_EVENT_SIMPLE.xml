@@ -168,7 +168,7 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PB_Barracks2</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
-			</ValueSound>			
+			</ValueSound>
 			<!-- -->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PV_Cannon1</EntityType>
@@ -321,8 +321,29 @@
 				<EntityType>CU_Sheep3</EntityType>
 				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
 			</ValueSound>
-			
-<!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
+			</ValueSound>
+
+			<!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
 				<Value>0</Value>
 				<SoundID>VoicesMenotor\comment_yes_rnd_01</SoundID>
 			</ValueSound>-->
@@ -492,7 +513,7 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PB_Barracks2</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
-			</ValueSound>			
+			</ValueSound>
 				<!-- -->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>PV_Cannon1</EntityType>
@@ -709,7 +730,27 @@
 				<EntityType>CU_Sheep3</EntityType>
 				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
 			</ValueSound>
-			
+
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
+			</ValueSound>
 <!--			<ValueSound classname="GGUI::SoundFeedback::CNormalValue">
 				<Value>0</Value>
 				<SoundID>VoicesMenotor\comment_no_rnd_01</SoundID>
@@ -1045,6 +1086,27 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Sheep3</EntityType>
 				<SoundID>AmbientSounds\Sheep_rnd_1</SoundID>
+			</ValueSound>
+			
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderBow2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderPoleArm2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderSword2a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_LeaderHeavyCavalry1a</EntityType>
+				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
 			</ValueSound>
 			
 		<ParameterIndex>2</ParameterIndex>

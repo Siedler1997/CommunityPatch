@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_MilitaryUnits</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>		
+
+	<Conditions>
+		<TecCondition>
+			<TecType>T_UpgradeRifle1</TecType>
+		</TecCondition>
+		
+		<RequiredEntityConditions>1</RequiredEntityConditions>
+		<EntityCondition>
+			<EntityType>PB_GunsmithWorkshop1</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+
+		<EntityCondition>
+			<EntityType>PB_GunsmithWorkshop2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

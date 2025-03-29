@@ -780,4 +780,15 @@
 	<Entity>CU_AggressiveBear</Entity>
 	<Entity>CU_AggressiveBlackBear</Entity>
 	<Entity>CU_AggressivePolarBear</Entity>
+	
+	<Entity>PU_LeaderBow2a</Entity>
+	<Entity>PU_SoldierBow2a</Entity>
+	<Entity>PU_LeaderCavalry1a</Entity>
+	<Entity>PU_LeaderHeavyCavalry1a</Entity>
+	<Entity>PU_SoldierCavalry1a</Entity>
+	<Entity>PU_SoldierHeavyCavalry1a</Entity>
+	<Entity>PU_LeaderPoleArm2a</Entity>
+	<Entity>PU_SoldierPoleArm2a</Entity>
+	<Entity>PU_LeaderSword2a</Entity>
+	<Entity>PU_SoldierSword2a</Entity>
 </root>

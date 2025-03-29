@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_MilitaryUnits</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>		
+
+	<Conditions>
+		<TecCondition>
+			<TecType>T_UpgradeSword3</TecType>
+		</TecCondition>
+	</Conditions>
+</root>
