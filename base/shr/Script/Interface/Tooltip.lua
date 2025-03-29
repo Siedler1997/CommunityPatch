@@ -332,24 +332,30 @@ function GUITooltip_FindUnits(_menu)
 	local tempamount = 0
 	if _menu == "MenuTop/Find_sword" then
 		local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword2a)
 		tempamount = tempamount + SwordAmount
 	elseif _menu == "MenuTop/Find_spear" then
 		local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm2a)
 		tempamount = tempamount + SpearAmount
 	elseif _menu == "MenuTop/Find_bow" then
 		local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow2a)
 		tempamount = tempamount + BowAmount
 	elseif _menu == "MenuTop/Find_lightcavalry" then
 		local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry1a)
 		tempamount = tempamount + LCavAmount
 	elseif _menu == "MenuTop/Find_heavycavalry" then
 		local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1)
 		tempamount = tempamount + HCavAmount
 	elseif _menu == "AOMenuTop/Find_rifle" then
 		local RifAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle1a)
 		tempamount = tempamount + RifAmount
 	elseif _menu == "MenuTop/Find_cannon" then
 		local CanAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon2)

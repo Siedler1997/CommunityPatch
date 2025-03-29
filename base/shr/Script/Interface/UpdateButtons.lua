@@ -213,59 +213,67 @@ end
 --------------------------------------------------------------------------------
 -- Update Buy Military Unit Buttons
 --------------------------------------------------------------------------------
-function
-GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory)
-
+function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory, _PreviousTech)
 	local PlayerID = GUI.GetPlayerID()	
-	
-	
 	local SettlerType = Logic.GetSettlerTypeByUpgradeCategory( _UpgradeCategory, PlayerID )
 	
 	--HACK: AnSu Change this after Alpha!
-	if 		SettlerType == Entities.PU_LeaderSword2 then
-				_Technology = Technologies.MU_LeaderSword2
-	elseif	SettlerType == Entities.PU_LeaderSword3 then 
-				_Technology = Technologies.MU_LeaderSword3
-	elseif	SettlerType == Entities.PU_LeaderSword4 then 
-				_Technology = Technologies.MU_LeaderSword4				
+	if SettlerType == Entities.PU_LeaderSword2 then
+		_Technology = Technologies.MU_LeaderSword2
+	elseif SettlerType == Entities.PU_LeaderSword3 then 
+		_Technology = Technologies.MU_LeaderSword3
+	elseif SettlerType == Entities.PU_LeaderSword4 then 
+		_Technology = Technologies.MU_LeaderSword4		
+		XGUIEng.TransferMaterials("Buy_Sword_Gold", "Buy_LeaderSword")		
 	end
 	
-	if 		SettlerType == Entities.PU_LeaderPoleArm2 then
-				_Technology = Technologies.MU_LeaderSpear2
-	elseif 	SettlerType == Entities.PU_LeaderPoleArm3 then
-				_Technology = Technologies.MU_LeaderSpear3
+	if SettlerType == Entities.PU_LeaderPoleArm2 then
+		_Technology = Technologies.MU_LeaderSpear2
+	elseif SettlerType == Entities.PU_LeaderPoleArm3 then
+		_Technology = Technologies.MU_LeaderSpear3
 	elseif	SettlerType == Entities.PU_LeaderPoleArm4 then			
-				_Technology = Technologies.MU_LeaderSpear4
+		_Technology = Technologies.MU_LeaderSpear4
+		XGUIEng.TransferMaterials("Buy_Spear_Gold", "Buy_LeaderSpear")		
 	end
 	
-	if 			SettlerType == Entities.PU_LeaderBow3
-			or 	SettlerType == Entities.PU_LeaderBow4 
-			then
-					_Technology = Technologies.MU_LeaderBow3
+	if SettlerType == Entities.PU_LeaderBow3 or SettlerType == Entities.PU_LeaderBow4 then
+		_Technology = Technologies.MU_LeaderBow3
+		if SettlerType == Entities.PU_LeaderBow4 then
+			XGUIEng.TransferMaterials("Buy_Bow_Gold", "Buy_LeaderBow")	
+		end
 	end
-	
+
+	if SettlerType == Entities.PU_LeaderCavalry2 then
+		XGUIEng.TransferMaterials("Buy_CavalryLight_Gold", "Buy_LeaderCavalryLight")	
+	end
+
+	if SettlerType == Entities.PU_LeaderHeavyCavalry2 then
+		XGUIEng.TransferMaterials("Buy_CavalryHeavy_Gold", "Buy_LeaderCavalryHeavy")	
+	end
 	
 	local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
+	local PreviousTechState = 4
+	if _PreviousTech ~= nil then
+		PreviousTechState = Logic.GetTechnologyState(PlayerID, _PreviousTech)
+	end
 	
+	if PreviousTechState ~= 4 then
+		XGUIEng.ShowWidget(_Button,0)
+	else
+		XGUIEng.ShowWidget(_Button,1)
 		--Unit type is interdicted
 		if TechState == 0 then	
 			XGUIEng.DisableButton(_Button,1)
-		
-		
 		elseif TechState == 1 then	
-				XGUIEng.DisableButton(_Button,1)
-	
+			XGUIEng.DisableButton(_Button,1)
 		--Technology is enabled 
 		elseif TechState == 2 then
 			XGUIEng.DisableButton(_Button,0)
-		
 		--Technology is in reserach ot to far in the future
 		elseif TechState == 3 or TechState == 5 then
 			XGUIEng.DisableButton(_Button,1)
-		
 		end
-		
-	
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -319,6 +327,7 @@ function GUIUpdate_FindView()
 	--Sword
 	local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword4)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2a)
 	if SwordAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSwordLeader ,1)
 	else
@@ -327,6 +336,7 @@ function GUIUpdate_FindView()
 	--Spear
 	local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2a)
 	if SpearAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSpearLeader ,1)
 	else
@@ -335,6 +345,7 @@ function GUIUpdate_FindView()
 	--Bow
 	local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2a)
 	if BowAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindBowLeader ,1)
 	else
@@ -342,6 +353,7 @@ function GUIUpdate_FindView()
 	end
 	--light Cavalry
 	local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1a)
 	if LCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindLightCavalryLeader ,1)
 	else
@@ -349,6 +361,7 @@ function GUIUpdate_FindView()
 	end
 	--heavy Cavalry
 	local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1a)
 	if HCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindHeavyCavalryLeader ,1)
 	else
@@ -574,13 +587,16 @@ end
 -- Update Upgrade Settlers Button
 --------------------------------------------------------------------------------
 
-function
-GUIUpdate_SettlersUpgradeButtons(_Button, _TechnologyType)
+function GUIUpdate_SettlersUpgradeButtons(_Button, _TechnologyType, _PreviousTech)
 	local PlayerID = GUI.GetPlayerID()
 	local TechState = Logic.GetTechnologyState(PlayerID, _TechnologyType)
+	local PreviousTechState = 4
+	if _PreviousTech ~= nil then
+		PreviousTechState = Logic.GetTechnologyState(PlayerID, _PreviousTech)
+	end
 	
 	--Upgarde is interdicted
-	if TechState == 0 then	
+	if TechState == 0 or PreviousTechState ~= 4 then	
 		XGUIEng.ShowWidget(_Button,0)
 	
 	--Upgarde is enabled and visible	

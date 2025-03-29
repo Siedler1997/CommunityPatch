@@ -411,7 +411,7 @@ end
 
 gvKeyBindings_LastSelectedEntityPos = 0
 
-function KeyBindings_SelectUnit(_UpgradeCategory,_type)
+function KeyBindings_SelectUnit(_UpgradeCategory,_type,_SecondCategory)
 	-- Do not jump in cutscene!
 	if gvInterfaceCinematicFlag == 1 then
 		return
@@ -421,26 +421,45 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type)
 
 	if _UpgradeCategory == UpgradeCategories.LeaderBow then
 		local BowTable = {}
-		BowTable[1] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow1, 24 )}; BowTable[2] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2, 24 )};
-		BowTable[3] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow3, 24 )}; BowTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow4, 24 )}
-		for i=1,4,1 do
+		BowTable[1] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow1, 24 )}
+		BowTable[2] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2, 24 )}
+		BowTable[3] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow3, 24 )}
+		BowTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow4, 24 )}
+		BowTable[5] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2a, 24 )}
+		for i=1,5,1 do
 			for j=2,table.getn(BowTable[i]),1 do
 				table.insert (EntityTable, BowTable[i][j])	
 			end
 		end
 	else
 		local UpgradeTypeTable = {}	
+		local SecondTypeTable = {}	
 	
 		if _type == 1 then	
 			UpgradeTypeTable = {Logic.GetBuildingTypesInUpgradeCategory(_UpgradeCategory)}
+			if _SecondCategory ~= nil then
+				SecondTypeTable = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory)}
+			end
 		else 
 			UpgradeTypeTable = {Logic.GetSettlerTypesInUpgradeCategory(_UpgradeCategory)}
+			if _SecondCategory ~= nil then
+				SecondTypeTable = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory)}
+			end
 		end
 	
 		local AmountOfUpgradeTypes = UpgradeTypeTable[1]	
+		local AmountOfSecondTypes = SecondTypeTable[1]	
 		for i = 1, AmountOfUpgradeTypes, 1 do
 			-- Get ID of upgradecategory of player
 			local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), UpgradeTypeTable[i+1], 48 )	}
+			local number = TempTable[1]		
+			for j = 1, number, 1 do
+				table.insert(EntityTable,TempTable[j+1])
+			end	
+		end
+		for i = 1, AmountOfSecondTypes, 1 do
+			-- Get ID of upgradecategory of player
+			local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i+1], 48 )	}
 			local number = TempTable[1]		
 			for j = 1, number, 1 do
 				table.insert(EntityTable,TempTable[j+1])
