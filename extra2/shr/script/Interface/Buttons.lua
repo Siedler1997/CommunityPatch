@@ -223,50 +223,53 @@ function GUIAction_ChangeFormation(_formationtype)
 	local SelectedEntityIDs = { GUI.GetSelectedEntities() }
 	
 	-- Do action
-	if (_formationtype == 1) then
-		for n = 1, table.getn(SelectedEntityIDs) do		
-			if Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.CavalryLight) == 1 then
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 8)
-			elseif Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.EvilLeader) == 1 then
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 9)
-			else
-				if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
-					Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 1)
-				else
-					Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 9)
-				end
-			end
-		end
-	else
-		do
-			for i=1, 20, 1 do
-				local SelectedEntityID = SelectedEntityIDs[ i ]
-				if SelectedEntityID ~= nil and SelectedEntityID > 0 then
-					if _formationtype == 2 then
+	do
+		for i=1, 20, 1 do
+			local SelectedEntityID = SelectedEntityIDs[ i ]
+			local formationId = 1
+			if SelectedEntityID ~= nil and SelectedEntityID > 0 then
+				if _formationtype == 1 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 8
+					elseif Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.EvilLeader) == 1 then
+						formationId = 9
+					else
 						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
-							GUI.LeaderChangeFormationType( SelectedEntityID, 2 )
+							formationId = 1
 						else
-							GUI.LeaderChangeFormationType( SelectedEntityID, 5 )
+							formationId = 9
 						end
-					elseif _formationtype == 3 then
+					end	
+				elseif _formationtype == 2 then
+					if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+						formationId = 2
+					else
+						formationId = 5
+					end
+				elseif _formationtype == 3 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 6
+					else
 						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
-							GUI.LeaderChangeFormationType( SelectedEntityID, 3 )
+							formationId = 3
 						else
-							GUI.LeaderChangeFormationType( SelectedEntityID, 6 )
+							formationId = 6
 						end
-					elseif _formationtype == 4 then
-						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 and XGUIEng.IsModifierPressed(Keys.ModifierShift) == 0 then
-							GUI.LeaderChangeFormationType( SelectedEntityID, 4 )
-						else 
-							if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
-								GUI.LeaderChangeFormationType( SelectedEntityID, 7 )
-							else
-								GUI.LeaderChangeFormationType( SelectedEntityID, 8 )
-							end
+					end	
+				elseif _formationtype == 4 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 7
+					else
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							formationId = 4
+						else
+							formationId = 7
 						end
-					end				
-				end
+					end	
+				end			
 			end
+
+			GUI.LeaderChangeFormationType(SelectedEntityID, formationId)	
 		end
 	end
 
