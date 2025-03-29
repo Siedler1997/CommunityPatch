@@ -331,6 +331,7 @@ function GUIUpdate_FindView()
 	--Sword
 	local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword4)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2a)
 	if SwordAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSwordLeader ,1)
 	else
@@ -339,6 +340,7 @@ function GUIUpdate_FindView()
 	--Spear
 	local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2a)
 	if SpearAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSpearLeader ,1)
 	else
@@ -347,6 +349,7 @@ function GUIUpdate_FindView()
 	--Bow
 	local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2a)
 	if BowAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindBowLeader ,1)
 	else
@@ -354,6 +357,7 @@ function GUIUpdate_FindView()
 	end
 	--light Cavalry
 	local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1a)
 	if LCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindLightCavalryLeader ,1)
 	else
@@ -361,6 +365,7 @@ function GUIUpdate_FindView()
 	end
 	--heavy Cavalry
 	local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1a)
 	if HCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindHeavyCavalryLeader ,1)
 	else
@@ -377,6 +382,7 @@ function GUIUpdate_FindView()
 	end
 	--rifle	
 	local RifAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderRifle1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderRifle2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderRifle1a)
 	if RifAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindRifleLeader ,1)
 	else
