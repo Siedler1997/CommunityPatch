@@ -25,7 +25,7 @@
 		  <AccessCategory>AccessCategorySettler</AccessCategory>		
 		  <MaxHealth>150</MaxHealth>
 		  <ArmorClass>ArmorClassJerkin</ArmorClass>
-		  <ArmorAmount>4</ArmorAmount>
+		  <ArmorAmount>5</ArmorAmount>
 		  <DodgeChance>0</DodgeChance> 
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
