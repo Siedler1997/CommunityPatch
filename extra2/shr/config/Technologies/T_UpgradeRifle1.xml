@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>100</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>600</Gold>
+		  <Iron>100</Iron>
+		  <Clay/>		
+		  <Wood></Wood>
+		  <Stone/>				
+		  <Sulfur>300</Sulfur>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+
+	<Conditions>
+		<EntityCondition>
+			<EntityType>PB_Headquarters3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<EntityCondition>
+			<EntityType>PB_Archery2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>		
+		<EntityCondition>
+			<EntityType>PB_GunsmithWorkshop2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

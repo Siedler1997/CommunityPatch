@@ -219,6 +219,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Schwere Scharfschützen 
 				- zielen erheblich besser
 				- haben einen Schadenspunkt weniger (=18)
+			- Upgrade auf Schwere Scharfschützen kostet mehr und erfordert eine Zitadelle
 		- Diebe und Kundschafter 
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
@@ -760,7 +761,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Assassinen
 - Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
-- 4er Truppen: Varianten mit 8 Solis
 - Upgrade-Technologien für böse Einheiten
 - 07_FleeOrFight: Signalfeuer auch über 'normale' Tribute endzündbar machen
 - 08_UnexploredLand:
