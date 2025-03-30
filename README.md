@@ -103,7 +103,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
 	- Wird beim Drücken auf den Entlassen-Button gleichzeitig [Strg] gedrückt, werden alle selektierten Einheiten (außer Helden) sofort entlassen
 	- Formationen
-		- bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
+		- Kavallerie und Nebelkrieger verwenden ihre eigenen Formationen
 		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
 		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
@@ -195,6 +195,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			- Berittene Bogenschützen (Stufe 1) kosten Holz
 			- Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		- Speerkämpfer haben einen Rüstungspunkt mehr
 		- Schwertkämpfer
 			- haben einen eigenen Kampf-Sound
 			- Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
@@ -751,6 +752,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Soldaten-Upgrades: Höchste Stufe des ursprünglichen Gebäudes als Bedingung
+	- z.B. Hellebardiere: Sägewerk
+- Hauptspiel-Kampagne in einem AddOn spielbar
+	- Legenden?
+	- AddOn-Features einbinden
+- Assassinen
 - Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - 4er Truppen: Varianten mit 8 Solis
@@ -789,7 +796,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 - Neue Map "Tal der Verdammten"
 	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
-	- Erec lebt
-	- Nettes NV
+	- Erec lebt (mit Amnesie)
+	- Nettes NV (und vllt. Varg/Kerberos)
 	- Kadirs Bruder
 	- Giftiger Schwefelnebel und Dampfmaschinen
