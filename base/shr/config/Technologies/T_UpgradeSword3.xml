@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>100</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>600</Gold>
+		  <Iron>500</Iron>				
+		  <Clay/>		
+		  <Wood/>
+		  <Stone/>				
+		  <Sulfur/>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+
+	<Conditions>	
+		<TecCondition>
+			<TecType>T_UpgradeSword2</TecType>
+			<TecCategoryType/>
+		</TecCondition>
+		
+		<EntityCondition>
+			<EntityType>PB_Headquarters3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<EntityCondition>
+			<EntityType>PB_Barracks2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<EntityCondition>
+			<EntityType>PB_Blacksmith3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

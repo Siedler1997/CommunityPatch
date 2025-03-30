@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?><root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>100</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>500</Gold>
+		  <Iron></Iron>
+		  <Clay/>		
+		  <Wood>400</Wood>
+		  <Stone/>				
+		  <Sulfur/>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+
+	<Conditions>	
+		<EntityCondition>
+			<EntityType>PB_Stable2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<EntityCondition>
+			<EntityType>PB_Sawmill2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+	</Conditions>
+</root>

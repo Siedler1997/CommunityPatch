@@ -236,6 +236,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
 					- Kostet 50 Taler pro Verwendung
 					- Wachstum hängt vom Wetter ab
+		- Letztes Upgrade benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
+			- Schwerkämpfer und schwere Kavallerie: Feinschmiede
+			- (Berittene) Bogenschützen, Speerkämpfer: Sägewerk
+			- Scharfschützen: Zitadelle
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -753,8 +757,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Soldaten-Upgrades: Höchste Stufe des ursprünglichen Gebäudes als Bedingung
-	- z.B. Hellebardiere: Sägewerk
 - Hauptspiel-Kampagne in einem AddOn spielbar
 	- Legenden?
 	- AddOn-Features einbinden
