@@ -17,6 +17,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
 	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
+	- Festung: Ausbau Burg -> Festung benötigt die Technologie 'Konstruktion'
 	- Zitadelle: Ausbau Festung -> Zitadelle benötigt nun drei hochrangige/ausgebaute Veredelungsgebäude
 		- konkret: Ziegelei, Feinschmiede, Sägewerk, Steinmetze, Laboratorium, Büchsenmacherei oder Bank
 		- Schatzkammer und Büchsenmanufaktur zählen auch, benötigen aber ihrerseits erst eine Zitadelle
@@ -768,11 +769,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Ausbau Burg -> Festung an Bedingungen knüpfen
-	- Konstruktion
-	- Alternativ: Vanilla Zitadellen Bedingung
-		- Also: 3 beliebige Veredelungsgebäude
-		- für mehr Techs sollte dann aber eine Burg ausreichen - statt Festung
 - Ausbau Hochschule -> Universität
 	- Hauptspiel: 4 Techs (quasi für jeden Weg eine)
 	- AddOns: 5 Techs
