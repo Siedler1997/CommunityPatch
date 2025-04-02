@@ -17,8 +17,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
 	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
+	- Zitadelle: Ausbau Festung -> Zitadelle benötigt nun drei hochrangige/ausgebaute Veredelungsgebäude
+		- konkret: Ziegelei, Feinschmiede, Sägewerk, Steinmetze, Laboratorium, Büchsenmacherei oder Bank
+		- Schatzkammer und Büchsenmanufaktur zählen auch, benötigen aber ihrerseits erst eine Zitadelle
 	- Banken und Schatzkammern 
-		- zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
 		- bieten 2 'neue' Technologien
 			- Besteuerung
 				- ermöglicht die Einstellung der Steuern in Burgen
@@ -364,7 +366,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Nebeneffekt: Einige Settings wirken etwas heller
 			- Im Gegenzug sind speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
 	- Tooltips gefixt bzw. ergänzt
-		- Ausbau-Button Festung -> Zitadelle: 'ermöglicht'-Teil ergänzt
+		- Ausbau-Button Festung -> Zitadelle:
+			- Alle relevanten Veredelungsgebäude werden aufgeführt
+			- 'ermöglicht'-Teil ergänzt
 		- 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
 		- 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
 		- 'Fährtenlesen' hat einen Erforscht-Tooltip
@@ -723,6 +727,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- EMS Inspiration
+	- Schneller Rekrutierung in ausgebauten Militärgebäuden
+	- Kanonen rebalancen
+		- Noch stärker gegen Gebäude
+		- Noch schwächer gegen alles andere
+		- Alle anderen DCs schwächer gegen Gebäude
+- Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
@@ -742,7 +753,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Veteranen
 	- Varg
 	- Bogen-Banditen-Hauptmänner
-	- Leonardos Assistent
+	- Leonardos Assistent (z.B. AeK Apotheker)
 	- Hauptmann, Ordensritter und Wächter
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
@@ -757,6 +768,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Ausbau Burg -> Festung an Bedingungen knüpfen
+	- Konstruktion
+	- Alternativ: Vanilla Zitadellen Bedingung
+		- Also: 3 beliebige Veredelungsgebäude
+		- für mehr Techs sollte dann aber eine Burg ausreichen - statt Festung
+- Ausbau Hochschule -> Universität
+	- Hauptspiel: 4 Techs (quasi für jeden Weg eine)
+	- AddOns: 5 Techs
 - Hauptspiel-Kampagne in einem AddOn spielbar
 	- Legenden?
 	- AddOn-Features einbinden

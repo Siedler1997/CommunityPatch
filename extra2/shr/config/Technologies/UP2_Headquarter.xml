@@ -6,57 +6,57 @@
 	</ResourceCosts>
 	<Conditions>
 		<RequiredEntityConditions>3</RequiredEntityConditions>
-	 	
+		<!--
 		<EntityCondition>
 			  <EntityType>PB_Blacksmith1</EntityType>
 			  <Amount>1</Amount>
 		</EntityCondition>	
-		
+
 		<EntityCondition>
 			  <EntityType>PB_Blacksmith2</EntityType>
 			  <Amount>1</Amount>
 		</EntityCondition>	
-		
+		-->
 		<EntityCondition>
-			  <EntityType>PB_Blacksmith3</EntityType>
-			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+			<EntityType>PB_Blacksmith3</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<!--
 		<EntityCondition>
 			  <EntityType>PB_Sawmill1</EntityType>
 			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+		</EntityCondition>
+		-->
 		<EntityCondition>
-			  <EntityType>PB_Sawmill2</EntityType>
-			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+			<EntityType>PB_Sawmill2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<!--
 		<EntityCondition>
 			  <EntityType>PB_Alchemist1</EntityType>
 			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+		</EntityCondition>
+		-->
 		<EntityCondition>
-			  <EntityType>PB_Alchemist2</EntityType>
-			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+			<EntityType>PB_Alchemist2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<!--
 		<EntityCondition>
 			  <EntityType>PB_StoneMason1</EntityType>
 			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+		</EntityCondition>
+		-->
 		<EntityCondition>
-			  <EntityType>PB_StoneMason2</EntityType>
-			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+			<EntityType>PB_StoneMason2</EntityType>
+			<Amount>1</Amount>
+		</EntityCondition>
+		<!--
 		<EntityCondition>
 			  <EntityType>PB_Brickworks1</EntityType>
 			  <Amount>1</Amount>
-		</EntityCondition>	
-		
+		</EntityCondition>
+		-->
 		<EntityCondition>
 			  <EntityType>PB_Brickworks2</EntityType>
 			  <Amount>1</Amount>
