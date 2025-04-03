@@ -10,7 +10,7 @@
 			<ArmorClassJerkinFactor>1.7</ArmorClassJerkinFactor>
 			<ArmorClassLeatherFactor>1.5</ArmorClassLeatherFactor>
 			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
+			<ArmorClassFortificationFactor>0.1</ArmorClassFortificationFactor>
 			<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
 			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
 		</Logic>
@@ -48,7 +48,7 @@
 			<ArmorClassJerkinFactor>0.1</ArmorClassJerkinFactor>
 			<ArmorClassLeatherFactor>0.1</ArmorClassLeatherFactor>
 			<ArmorClassIronFactor>0.1</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>1.8</ArmorClassFortificationFactor>
+			<ArmorClassFortificationFactor>2.0</ArmorClassFortificationFactor>
 			<ArmorClassHeroFactor>0.1</ArmorClassHeroFactor>
 			<ArmorClassFurFactor>0.1</ArmorClassFurFactor>
 		</Logic>
@@ -71,8 +71,8 @@
 			<ArmorClassNoneFactor>1.0</ArmorClassNoneFactor>
 			<ArmorClassJerkinFactor>1.2</ArmorClassJerkinFactor>
 			<ArmorClassLeatherFactor>1.0</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.8</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.6</ArmorClassFortificationFactor>
+			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
+			<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
 			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
 			<ArmorClassFurFactor>1.0</ArmorClassFurFactor>
 		</Logic>
@@ -83,9 +83,9 @@
 			<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
 			<ArmorClassJerkinFactor>1.5</ArmorClassJerkinFactor>
 			<ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
+			<ArmorClassIronFactor>0.5</ArmorClassIronFactor>
+			<ArmorClassFortificationFactor>0.1</ArmorClassFortificationFactor>
+			<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
 			<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
 		</Logic>
 	</DamageClass>

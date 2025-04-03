@@ -110,6 +110,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
 		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
+	- Verursachen deutlich weniger Schaden an Gebäuden (x0,1)
+		- Ausnahmen: Schwere Kavallerie, Bombarden, Eisenkanonen, Helden, Nebelvolk (x0,5)
 	- NPCs (Zivilisten)
 		- können wirklich sterben
 			- dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -144,6 +146,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- haben einen Rüstungspunkt weniger (=1)
 			- Bärenmenschen greifen etwas schneller an
 			- sind resistenter gegen alle Schadensarten außer ihre eigene und Scharfschützen
+			- verursachen etwas weniger Schaden an schwerer Kavallerie
 			- Hauptmänner sind leicht umtexturiert
 		- Barbaren 
 			- haben die gleiche ArmorClass wie Speerkämpfer und Schützen
@@ -203,11 +206,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- haben einen eigenen Kampf-Sound
 			- Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
 		- Kanonen
-			- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
-			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
-			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+			- Fixes
+				- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
+				- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
+				- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
 			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
 			- Lebenspunkte etwas erhöht
+			- Bronze- und Belagerungskanonen verursachen mehr Schaden gegen Gebäude (1,7x -> 2,0x)
 			- Reichweite von Bombarden und Bronzekanonen etwas erhöht
 			- Bombarden
 				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
@@ -217,7 +222,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Schaden auf 70 erhöht (vorher: 65)
 			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
 		- Scharfschützen
-			- sind nicht mehr ganz so effektiv gegen Gebäude
+			- sind (etwas) weniger effektiv gegen 
+				- Kavallerie
+				- Helden
+				- Gebäude
 			- Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
 			- Schwere Scharfschützen 
 				- zielen erheblich besser
@@ -730,10 +738,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 ## ToDos:
 - EMS Inspiration
 	- Schneller Rekrutierung in ausgebauten Militärgebäuden
-	- Kanonen rebalancen
-		- Noch stärker gegen Gebäude
-		- Noch schwächer gegen alles andere
-		- Alle anderen DCs schwächer gegen Gebäude
 - Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
