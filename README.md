@@ -769,9 +769,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Ausbau Hochschule -> Universität
-	- Hauptspiel: 4 Techs (quasi für jeden Weg eine)
-	- AddOns: 5 Techs
+- Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
+- Adaptive KI
 - Hauptspiel-Kampagne in einem AddOn spielbar
 	- Legenden?
 	- AddOn-Features einbinden
