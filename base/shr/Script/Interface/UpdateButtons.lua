@@ -216,6 +216,9 @@ end
 function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory, _PreviousTech)
 	local PlayerID = GUI.GetPlayerID()	
 	local SettlerType = Logic.GetSettlerTypeByUpgradeCategory( _UpgradeCategory, PlayerID )
+	local SelectedBuildingID = GUI.GetSelectedEntity()
+	local SelectedBuildingType = Logic.GetEntityType( SelectedBuildingID )
+	local RequiredBuildingType = 0
 	
 	--HACK: AnSu Change this after Alpha!
 	if SettlerType == Entities.PU_LeaderSword2 then
@@ -225,6 +228,7 @@ function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory
 	elseif SettlerType == Entities.PU_LeaderSword4 then 
 		_Technology = Technologies.MU_LeaderSword4		
 		XGUIEng.TransferMaterials("Buy_Sword_Gold", "Buy_LeaderSword")		
+		RequiredBuildingType = Entities.PB_Barracks2
 	end
 	
 	if SettlerType == Entities.PU_LeaderPoleArm2 then
@@ -234,21 +238,25 @@ function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory
 	elseif	SettlerType == Entities.PU_LeaderPoleArm4 then			
 		_Technology = Technologies.MU_LeaderSpear4
 		XGUIEng.TransferMaterials("Buy_Spear_Gold", "Buy_LeaderSpear")		
+		RequiredBuildingType = Entities.PB_Barracks2
 	end
 	
 	if SettlerType == Entities.PU_LeaderBow3 or SettlerType == Entities.PU_LeaderBow4 then
 		_Technology = Technologies.MU_LeaderBow3
 		if SettlerType == Entities.PU_LeaderBow4 then
 			XGUIEng.TransferMaterials("Buy_Bow_Gold", "Buy_LeaderBow")	
+			RequiredBuildingType = Entities.PB_Archery2
 		end
 	end
 
 	if SettlerType == Entities.PU_LeaderCavalry2 then
 		XGUIEng.TransferMaterials("Buy_CavalryLight_Gold", "Buy_LeaderCavalryLight")	
+		RequiredBuildingType = Entities.PB_Stable2
 	end
 
 	if SettlerType == Entities.PU_LeaderHeavyCavalry2 then
 		XGUIEng.TransferMaterials("Buy_CavalryHeavy_Gold", "Buy_LeaderCavalryHeavy")	
+		RequiredBuildingType = Entities.PB_Stable2
 	end
 	
 	local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
@@ -261,8 +269,11 @@ function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory
 		XGUIEng.ShowWidget(_Button,0)
 	else
 		XGUIEng.ShowWidget(_Button,1)
+		--High-rank units require high-rang buildings
+		if RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType then
+			XGUIEng.DisableButton(_Button,1)
 		--Unit type is interdicted
-		if TechState == 0 then	
+		elseif TechState == 0 then	
 			XGUIEng.DisableButton(_Button,1)
 		elseif TechState == 1 then	
 			XGUIEng.DisableButton(_Button,1)

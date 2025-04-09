@@ -180,7 +180,7 @@ function GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledToo
 
 	if SettlerTypeID == Entities.PU_LeaderSword4 or SettlerTypeID == Entities.PU_LeaderPoleArm4 then 
 		RequiredBuildingType = Entities.PB_Barracks2
-	elseif SettlerTypeID == Entities.PU_LeaderBow4 then
+	elseif SettlerTypeID == Entities.PU_LeaderBow4 or SettlerTypeID == Entities.PU_LeaderRifle2 then
 		RequiredBuildingType = Entities.PB_Archery2
 	elseif SettlerTypeID == Entities.PU_LeaderCavalry2 or SettlerTypeID == Entities.PU_LeaderHeavyCavalry2  then
 		RequiredBuildingType = Entities.PB_Stable2
@@ -192,7 +192,12 @@ function GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledToo
 			TooltipText =  "MenuGeneric/UnitNotAvailable"
 			CostString = " "
 		elseif TechState == 1 or (RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType) then
-			TooltipText = _DisabledTooltip
+			-- Riflemen already have their own disabled tooltip so we need a little hack to catch the wrong recruitment building
+			if SettlerTypeID == Entities.PU_LeaderRifle2 then
+				TooltipText = "AOMenuArchery/BuyLeaderRifle2_disabled"
+			else
+				TooltipText = _DisabledTooltip
+			end
 		end
 	end
 	

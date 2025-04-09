@@ -247,10 +247,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
 					- Kostet 50 Taler pro Verwendung
 					- Wachstum hängt vom Wetter ab
-		- Letztes Upgrade benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
-			- Schwerkämpfer und schwere Kavallerie: Feinschmiede
-			- (Berittene) Bogenschützen, Speerkämpfer: Sägewerk
-			- Scharfschützen: Zitadelle
+		- Letztes Upgrade 
+			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
+				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
+				- (Berittene) Bogenschützen, Speerkämpfer: Sägewerk
+				- Scharfschützen: Zitadelle
+			- voll aufgewertete Einheiten können ausschließlich in ausgebauten Militärgebäuden rekrutiert werden
+				- Bastardschwertkämpfer und Hellebardiere: Garnison
+				- Arbalesten- und Scharfschützen: Schießanlage
+				- Berittene Streitaxtkämpfer und Armbrustschützen: Reiterei
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -736,8 +741,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- EMS Inspiration
-	- Schneller Rekrutierung in ausgebauten Militärgebäuden
 - Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
@@ -758,7 +761,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Veteranen
 	- Varg
 	- Bogen-Banditen-Hauptmänner
-	- Leonardos Assistent (z.B. AeK Apotheker)
+	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
@@ -773,6 +776,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Goldmine
+- Baubarer Leuchtturm
+- Holzhaufen
 - Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
 - Adaptive KI
 - Hauptspiel-Kampagne in einem AddOn spielbar
