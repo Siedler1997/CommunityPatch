@@ -576,6 +576,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
 		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
 	- Geröllhaufen werden, wie Steinhaufen auch, mit dem Abbau kleiner
+	- Steuern haben teilweise einen stärkeren Effekt auf die Motivation der Siedler
+		- Keine: +20%
+		- Niedrige: +10% (vorher: +8%)
+		- Moderate: 0
+		- Hohe: -10% (vorher: -8%)
+		- Sehr hohe: -20% (vorher: -12%)
 	- ein paar EasterEggs;)
 - Für Mapper
 	- Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
@@ -776,6 +782,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Beautifications 
+	- rebalancen?
+		- Goldkosten erhöhen
+		- Effekt senken
+	- noch mehr (aus AeK)
+- Überstunden sollen sich mehr lohnen (Motivationseffekt senken?)
+- Wettereffekte abmildern
 - Goldmine
 - Baubarer Leuchtturm
 - Holzhaufen

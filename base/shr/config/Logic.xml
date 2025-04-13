@@ -130,7 +130,7 @@
     <!-- 1: LOW TAXES-->
     <TaxationLevel>
         <RegularTax>5</RegularTax>
-        <MotivationChange>0.08</MotivationChange>
+        <MotivationChange>0.1</MotivationChange>
     </TaxationLevel>
     <!-- 2: NORMAL TAXES-->
     <TaxationLevel>
@@ -140,12 +140,12 @@
     <!-- 3: HIGH TAXES-->
     <TaxationLevel>
         <RegularTax>15</RegularTax>
-        <MotivationChange>-0.08</MotivationChange>
+        <MotivationChange>-0.1</MotivationChange>
     </TaxationLevel>
     <!-- 4: VERY HIGH TAXES-->
     <TaxationLevel>
         <RegularTax>20</RegularTax>
-        <MotivationChange>-0.12</MotivationChange>
+        <MotivationChange>-0.2</MotivationChange>
     </TaxationLevel>
 
 
