@@ -32,14 +32,14 @@
         <Upgrade>
             <Category>Beautification08</Category>            
         </Upgrade>
-		  <Exploration>12</Exploration>
+		  <Exploration>10</Exploration>
         <ConstructionInfo>
             <Time>30</Time>
             <Cost>
 				    <Clay/>
 				    <Wood/>
-				    <Stone>100</Stone>
-				    <Gold>300</Gold>
+				    <Stone>250</Stone>
+				    <Gold>400</Gold>
 				    <Iron/>
 				    <Sulfur/>
             </Cost>
@@ -102,7 +102,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CAffectMotivationBehaviorProps">
 	        <Class>GGL::CAffectMotivationBehavior</Class>
-	        <MotivationEffect>0.05</MotivationEffect>
+	        <MotivationEffect>0.03</MotivationEffect>
 	    </Logic>
 	</Behavior>
 

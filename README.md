@@ -62,6 +62,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- profitieren von Maurerhandwerk und Stadtwache
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
+		- haben etwas weniger Sichtweite
+		- kosten mehr
+		- Bonus auf die Motivation ist geringer
 		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
 		- Neue Ziergebäude
 			- benötigen neben diversen Hochschul-Technologien auch mindestens eine Architektenstube zum Bau
@@ -798,11 +801,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - Beautifications 
-	- rebalancen?
-		- Goldkosten erhöhen
-		- Effekt senken
+	- Neue auch rebalancen
 	- noch mehr (aus AeK)
 - Überstunden sollen sich mehr lohnen (Motivationseffekt senken?)
+- Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
 - Goldmine
 - Baubarer Leuchtturm
 - Holzhaufen
