@@ -181,7 +181,7 @@
     <WorkTimeThresholdWork>25</WorkTimeThresholdWork>
 
     <!-- The amount of motivation each worker loses when forced to work -->
-	<ForceToWorkPenalty>0.2</ForceToWorkPenalty>
+	<ForceToWorkPenalty>0.1</ForceToWorkPenalty>
 
 	<!-- The base work time which is multiplied by the worker's motivation -->
 	<WorkTimeBase>125</WorkTimeBase>

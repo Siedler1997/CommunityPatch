@@ -110,6 +110,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Kapelle: +10% (vorher: +8%)
 			- Kirche: +15% (vorher: +10%)
 			- Kathedrale: +20% (vorher: +15%)
+	- Der Effekt von Überstunden auf die Motivation der betroffenen Arbeiter wurde reduziert
 - Einheiten
 	- Selbstheilung ist für alle Einheiten reduziert
 	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
@@ -803,7 +804,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Beautifications 
 	- Neue auch rebalancen
 	- noch mehr (aus AeK)
-- Überstunden sollen sich mehr lohnen (Motivationseffekt senken?)
+- LevyTaxes sinnvoll einfügen
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
 - Goldmine
 - Baubarer Leuchtturm
