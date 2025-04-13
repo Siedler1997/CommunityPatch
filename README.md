@@ -101,6 +101,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
 	- Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
 	- Burg/Außenposten/Bank: Multiplikator für Steuern und Sold werden angezeigt
+	- Kapelle
+		- Basistufe kostet 100 Taler, 400 Holz, 500 Steine (vorher: 500 Holz, 550 Steine)
+		- Alle Stufen haben einen stärkeren Effekt auf die Motivation von Siedlern
+			- Kapelle: +10% (vorher: +8%)
+			- Kirche: +15% (vorher: +10%)
+			- Kathedrale: +20% (vorher: +15%)
 - Einheiten
 	- Selbstheilung ist für alle Einheiten reduziert
 	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner

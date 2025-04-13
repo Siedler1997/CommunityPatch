@@ -60,10 +60,10 @@
             <Cost>
 			    <Clay>400</Clay>
 			    <Wood/>
-				    <Stone>500</Stone>
-				    <Gold>200</Gold>
-				    <Iron/>
-				    <Sulfur/>
+				<Stone>500</Stone>
+				<Gold>200</Gold>
+				<Iron/>
+				<Sulfur/>
             </Cost>
             <Type>PB_Monastery2</Type>
         </Upgrade>
@@ -72,11 +72,11 @@
             <Time>140</Time>
             <Cost>
 			    <Clay>0</Clay>
-			    <Wood>500</Wood>
-				    <Stone>550</Stone>
-				    <Gold/>
-				    <Iron/>
-				    <Sulfur/>
+			    <Wood>400</Wood>
+				<Stone>500</Stone>
+				<Gold>100</Gold>
+				<Iron/>
+				<Sulfur/>
             </Cost>
             <BuilderSlot>
                 <Position>
@@ -203,7 +203,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CAffectMotivationBehaviorProps">
 	        <Class>GGL::CAffectMotivationBehavior</Class>
-	        <MotivationEffect>0.08</MotivationEffect>
+	        <MotivationEffect>0.1</MotivationEffect>
 	    </Logic>
 	</Behavior>
 	
