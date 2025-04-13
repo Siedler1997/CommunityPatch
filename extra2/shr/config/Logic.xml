@@ -262,7 +262,7 @@
 	</BlessingCost>
 
 	<!-- The amount by which a workers motivation is increased when blessed -->
-	<BlessingBonus>0.3</BlessingBonus>
+	<BlessingBonus>0.2</BlessingBonus>
 
 	<!-- The amount of seconds the motivation bonus persists for after to settler is blessed -->
 	<BlessingBonusTime>180</BlessingBonusTime>
@@ -324,8 +324,6 @@
 		<EntityType>PU_Engineer</EntityType>
         <EntityType>PU_Smith</EntityType>
 		<EntityType>PU_Alchemist</EntityType>
-		<EntityType>PU_Smelter</EntityType>
-        <EntityType>PU_Smith</EntityType>
 		<EntityType>PU_Smelter</EntityType>
         <EntityType>PU_Trader</EntityType>
 		<EntityType>PU_Treasurer</EntityType>
