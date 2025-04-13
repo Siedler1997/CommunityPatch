@@ -264,27 +264,38 @@ end
 --------------------------------------------------------------------------------
 function InterfaceTool_GetBlessingCosts(_PID, _BlessCategory)
 	local BlessPrice = 0
+
+	local constructionsPrice = 1 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Farmer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_BrickMaker)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Sawmillworker)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Stonecutter)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Miner)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.CU_Serf))
+	local researchPrice = 3 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Scholar)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Engineer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Priest))
+	local weaponsPrice = 5 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smith)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Alchemist)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smelter))
+	local financialPrice = 10 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Treasurer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Trader))
+
 	if _BlessCategory == BlessCategories.Construction then
-		BlessPrice = BlessPrice + 50 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Farmer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_BrickMaker)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Sawmillworker)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Stonecutter)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Miner)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.CU_Serf)
+		BlessPrice = constructionsPrice
 	elseif _BlessCategory == BlessCategories.Research then
-		BlessPrice = BlessPrice + 50 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Scholar)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Engineer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Priest)
+		BlessPrice = researchPrice
 	elseif _BlessCategory == BlessCategories.Weapons then
-		BlessPrice = BlessPrice + 100 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smith)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Alchemist)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smelter)
+		BlessPrice = weaponsPrice
 	elseif _BlessCategory == BlessCategories.Financial then
-		BlessPrice = BlessPrice + 100 + 2 * (Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Treasurer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Trader))
+		BlessPrice = financialPrice
 	elseif _BlessCategory == BlessCategories.Canonisation then
-		BlessPrice = BlessPrice + 200 + Logic.GetNumberOfAttractedWorker(_PID) * 4
+		BlessPrice = constructionsPrice + researchPrice + weaponsPrice + financialPrice
 	end
+
 	return BlessPrice
 end
 

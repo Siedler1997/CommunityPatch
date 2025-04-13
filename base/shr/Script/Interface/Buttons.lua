@@ -931,24 +931,21 @@ function GUIAction_BlessSettlers(_BlessCategory)
 	if InterfaceTool_IsBuildingDoingSomething( GUI.GetSelectedEntity() ) == true then		
 		return
 	end
+
 	local PlayerID = GUI.GetPlayerID()
 	local CurrentFaith = Logic.GetPlayersGlobalResource( PlayerID, ResourceType.Faith )	
 	local BlessCosts = Logic.GetBlessCostByBlessCategory(_BlessCategory)
 	if BlessCosts <= CurrentFaith then
-		local BlessPrice = InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory)
-		if HasPlayerEnoughResources{Gold=BlessPrice} == 1 then
-			AddGold(PlayerID, -BlessPrice)
-			local random_num = GetRandom(1, 100)
-			if random_num > 20 then
-				GUI.BlessByBlessCategory(_BlessCategory)
-			else
-				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_SettlersBlessed"))
-				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_BlessingFailed"))
-				Logic.SubFromPlayersGlobalResource(PlayerID, ResourceType.Faith, Logic.GetPlayersGlobalResource(PlayerID, ResourceType.Faith))
-			end
-			Sound.PlayGUISound( Sounds.Buildings_Monastery, 0 ) 
-			Sound.PlayFeedbackSound(Sounds.VoicesMentor_INFO_SettlersBlessed_rnd_01 , 0 )
+		if GetRandom(1, 100) > 20 then
+			GUI.BlessByBlessCategory(_BlessCategory)
+			AddGold(PlayerID, InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory))
+		else
+			GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_SettlersBlessed"))
+			GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_BlessingFailed"))
+			Logic.SubFromPlayersGlobalResource(PlayerID, ResourceType.Faith, Logic.GetPlayersGlobalResource(PlayerID, ResourceType.Faith))
 		end
+		--Sound.PlayGUISound( Sounds.Buildings_Monastery, 0 ) 
+		--Sound.PlayFeedbackSound(Sounds.VoicesMentor_INFO_SettlersBlessed_rnd_01 , 0 )
 	else	
 		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughFaith"))
 		Sound.PlayFeedbackSound( Sounds.VoicesMentor_INFO_MonksNeedMoreTime_rnd_01, 0 )

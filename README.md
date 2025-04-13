@@ -559,9 +559,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
 	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
 		- Statt jede 8te nur noch jede 24te Selektion
-	- Steuer-Predigt-Exploit entschärft
-		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
-		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
+	- Predigten rebalanced
+		- Priester arbeiten nur halb so schnell bzw. erzeugen nur halb so schnell 'Faith'
+		- Predigten 
+			- bringen nur noch +20% Motivation (vorher: +30%)
+			- können mit einer Wahrscheinlichkeit von 20% wirkungslos bleiben
+			- bringen Taler abhängig von der Anzahl und Art der betroffenen Siedler
 	- Musik
 		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		- In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik

@@ -257,7 +257,6 @@ function GUITooltip_BlessSettlers(_DisabledTooltip, _NormalTooltip, _NotUsed, _S
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local TooltipText = ""
 	local ShortCutToolTip = ""
-	local CostString = ""
 	local blessCategory = 0
 
 	if _Technology == Technologies.T_BlessSettlers1 then
@@ -282,16 +281,16 @@ function GUITooltip_BlessSettlers(_DisabledTooltip, _NormalTooltip, _NotUsed, _S
 		end	
 
 		if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then
-			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_NormalTooltip)
+			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_NormalTooltip) .. " @color:255,255,255,255 @cr @cr " .. XGUIEng.GetStringTableText("InGameMessages/GUI_NameMoney") .. ": " .. InterfaceTool_GetBlessingCosts(PID, blessCategory)
 		else
 			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_DisabledTooltip)
 		end
-		CostString = CostString .. CreateCostString{Gold=InterfaceTool_GetBlessingCosts(PID, blessCategory)};			
+		--CostString = CostString .. CreateCostString{Gold=InterfaceTool_GetBlessingCosts(PID, blessCategory)};			
 	end
 	
 	--Message("CostString: " .. CostString .. "   TooltipText: " .. TooltipText .. "   ShortCutToolTip: " .. ShortCutToolTip)
 
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
 end
