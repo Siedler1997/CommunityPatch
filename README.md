@@ -247,6 +247,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
 					- Kostet 50 Taler pro Verwendung
 					- Wachstum hängt vom Wetter ab
+						- bei Regen schneller
+						- bei Winter langsamer
 		- Letztes Upgrade 
 			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
 				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
@@ -572,9 +574,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Pfeile und Bullets haben, analog zu Kanonen, einen Impact-Sound (aus AeK)
 		- Bäume haben einen sound, wenn sie gefällt werden
 		- Wölfe und Bären haben eigene Todes- und Angriff Sounds
-	- Wetter-Effekte sind etwas gemischter
-		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
-		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+	- Wetter-Effekte etwas abgeändert
+		- leicht abgeschwächt
+			- Regen: Sichtweite von Einheiten und Gebäuden nur noch um 10% reduziert (vorher: 20%)
+			- Winter: Bewegungsgeschwindigkeit von Einheiten nur noch um 10% reduziert (vorher: 15%)
+		- sind etwas gemischter
+			- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5%
+			- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5%
 	- Geröllhaufen werden, wie Steinhaufen auch, mit dem Abbau kleiner
 	- Steuern haben teilweise einen stärkeren Effekt auf die Motivation der Siedler
 		- Keine: +20%
@@ -788,7 +794,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Effekt senken
 	- noch mehr (aus AeK)
 - Überstunden sollen sich mehr lohnen (Motivationseffekt senken?)
-- Wettereffekte abmildern
 - Goldmine
 - Baubarer Leuchtturm
 - Holzhaufen

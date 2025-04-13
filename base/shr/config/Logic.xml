@@ -25,10 +25,10 @@
 
 <!--WEATHER -->
 	<!-- Factor for exploration of buildings if raining -->
-	<WeatherExplorationBuildingRainFactor>0.8</WeatherExplorationBuildingRainFactor>
+	<WeatherExplorationBuildingRainFactor>0.9</WeatherExplorationBuildingRainFactor>
 
 	<!-- Factor for exploration of settlers if raining -->
-	<WeatherExplorationSettlerRainFactor>0.8</WeatherExplorationSettlerRainFactor>
+	<WeatherExplorationSettlerRainFactor>0.9</WeatherExplorationSettlerRainFactor>
 
 	<!-- Factor for move speed if raining -->
 	<WeatherMoveSpeedRainFactor>0.95</WeatherMoveSpeedRainFactor>
@@ -41,7 +41,7 @@
 	<WeatherExplorationSettlerSnowFactor>0.95</WeatherExplorationSettlerSnowFactor>
 
 	<!-- Factor for move speed if snowing -->
-	<WeatherMoveSpeedSnowFactor>0.85</WeatherMoveSpeedSnowFactor>
+	<WeatherMoveSpeedSnowFactor>0.9</WeatherMoveSpeedSnowFactor>
 
 	<!-- Miss Chance change (projectiles) (integer %) when it's raining -->
 	<WeatherMissChanceChangeRain>5</WeatherMissChanceChangeRain>
