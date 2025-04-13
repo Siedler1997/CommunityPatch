@@ -939,7 +939,7 @@ function GUIAction_BlessSettlers(_BlessCategory)
 		if HasPlayerEnoughResources{Gold=BlessPrice} == 1 then
 			AddGold(PlayerID, -BlessPrice)
 			local random_num = GetRandom(1, 100)
-			if random_num > 25 then
+			if random_num > 20 then
 				GUI.BlessByBlessCategory(_BlessCategory)
 			else
 				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_SettlersBlessed"))
