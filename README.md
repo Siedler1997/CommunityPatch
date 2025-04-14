@@ -573,7 +573,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Priester arbeiten nur halb so schnell bzw. erzeugen nur halb so schnell 'Faith'
 		- Predigten 
 			- bringen nur noch +20% Motivation (vorher: +30%)
-			- können mit einer Wahrscheinlichkeit von 20% wirkungslos bleiben
+			- können mit einer Wahrscheinlichkeit von 10% wirkungslos bleiben
 			- bringen Taler abhängig von der Anzahl und Art der betroffenen Siedler
 	- Musik
 		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
@@ -801,6 +801,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Berittener Schütze bei Spielstart, als Scout
+	- Armbrust?
+	- ggf. mehr Sichtweite
+	- nicht automatisch in jeder Map
 - Beautifications 
 	- Neue auch rebalancen
 	- noch mehr (aus AeK)

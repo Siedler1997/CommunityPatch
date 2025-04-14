@@ -970,7 +970,7 @@ function GUIAction_BlessSettlers(_BlessCategory)
 	local CurrentFaith = Logic.GetPlayersGlobalResource( PlayerID, ResourceType.Faith )	
 	local BlessCosts = Logic.GetBlessCostByBlessCategory(_BlessCategory)
 	if BlessCosts <= CurrentFaith then
-		if GetRandom(1, 100) > 20 then
+		if GetRandom(1, 100) > 10 then
 			GUI.BlessByBlessCategory(_BlessCategory)
 			AddGold(PlayerID, InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory))
 		else
