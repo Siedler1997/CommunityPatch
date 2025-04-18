@@ -39,8 +39,8 @@
 				<Clay/>
 				<Wood/>
 				<Stone/>
-				<Gold>300</Gold>
-				<Iron>200</Iron>
+				<Gold>400</Gold>
+				<Iron>250</Iron>
 				<Sulfur/>
             </Cost>
             <BuilderSlot>
@@ -102,7 +102,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CAffectMotivationBehaviorProps">
 	        <Class>GGL::CAffectMotivationBehavior</Class>
-	        <MotivationEffect>0.06</MotivationEffect>
+	        <MotivationEffect>0.03</MotivationEffect>
 	    </Logic>
 	</Behavior>
 

@@ -766,6 +766,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
 - Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
 - Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
@@ -801,15 +802,29 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Schwere Kampagne: Statt Steuern halbieren Sold erhöhen
+- Lv 4 Elite Leader: 
+	- Textur: Gold durch rot austauschen
+	- generell etwas verdunkeln
+	- auf Veteranen Niveau
+- Trainingsdauer zwischen ausgebauten und nicht-ausgebauten Militärgebäude angleichen?
+- Reparierbare Kanonen
+	- Button in Kanone analog Kauf von Soldaten in Nähe einer Gießerei
+	- Reparatur kostet anteilig Material, abhängig von verlorenen HP und ursprünglichen Baukosten
+	- Fragen
+		- Hochwertige Kanonen nur in Manufaktur reparierbar
+		- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
+		- Nur möglich, wenn keine Feinde in der Nähe sind
 - Berittener Schütze bei Spielstart, als Scout
 	- Armbrust?
 	- ggf. mehr Sichtweite
 	- nicht automatisch in jeder Map
 - Beautifications 
-	- Neue auch rebalancen
+	- Astrolabium und Podium tauschen
 	- noch mehr (aus AeK)
 - LevyTaxes sinnvoll einfügen
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
+- Palisadentore aus AeK?
 - Goldmine
 - Baubarer Leuchtturm
 - Holzhaufen
@@ -860,3 +875,5 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Nettes NV (und vllt. Varg/Kerberos)
 	- Kadirs Bruder
 	- Giftiger Schwefelnebel und Dampfmaschinen
+- Neue Map "Morbus Rache"
+	- S4 lässt Grüßen ;)
