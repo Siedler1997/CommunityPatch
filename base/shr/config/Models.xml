@@ -3015,6 +3015,15 @@
 	<Model id="CB_Grange">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>
+  <Model id="XD_Wood1">
+    <CastShadow>True</CastShadow>
+  </Model>
+  <Model id="XD_Wood1">
+    <CastShadow>True</CastShadow>
+  </Model>
+  <Model id="XD_Wood1">
+    <CastShadow>True</CastShadow>
+  </Model>
 	<Model id="XD_Gold1">
 		<CastShadow>False</CastShadow>
 	</Model>

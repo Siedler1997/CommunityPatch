@@ -611,7 +611,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- eine Variante von Drake mit Kapuze (wie auf dem Nebelreich-Cover)
 			- hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
 		- Deko-Objekte 'XD_WreckedBoat01' und 'XD_WreckedBoat02' (Bootsfracks)
-		- Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+		- Neue Rohstoffhaufen
+			- Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+			- Holzhaufen
+				- Modell basiert auf Signalfeuer
+				- Standard-Menge: 800 Holz
+				- Achtung: Enthält Ressource 'Wood' anstatt 'WoodRaw', da es sonst zu UI Bugs käme. Holz von solchen Haufen ist deshalb NICHT verdelbar!
 		- Der Drache ist theoretisch als 'CU_Dragon' nutzbar (aber leider unsichtbar)
 		- Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
 		- Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
@@ -827,7 +832,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Palisadentore aus AeK?
 - Goldmine
 - Baubarer Leuchtturm
-- Holzhaufen
 - Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
 - Adaptive KI
 - Hauptspiel-Kampagne in einem AddOn spielbar

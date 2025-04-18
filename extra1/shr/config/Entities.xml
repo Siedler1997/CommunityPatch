@@ -971,6 +971,7 @@
 	<Entity>CB_Grange</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>
+  <Entity>XD_Wood1</Entity>
 	<Entity>XD_Gold1</Entity>
 	<Entity>XD_MiscRifle1</Entity>
 	<Entity>XD_MiscRifle2</Entity>

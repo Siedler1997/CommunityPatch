@@ -172,6 +172,11 @@
 				  <Delay>5</Delay>
 				  <Amount>1</Amount>
 			  </ExtractionInfo>
+        <ExtractionInfo>
+          <ResourceEntityType>XD_Wood1</ResourceEntityType>
+          <Delay>5</Delay>
+          <Amount>2</Amount>
+        </ExtractionInfo>
 		  </Logic>
 	</Behavior>
 	<Behavior>
