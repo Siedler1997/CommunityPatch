@@ -101,6 +101,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- können in den AddOns regulär gebaut werden
 				- benötigen mindestens eine Architektenstube
 				- haltet dann beim Drücken auf den Turm-Button [Strg] gedrückt
+	- Militärgebäude: Rekrutierungsgeschwindigkeit von Soldaten unabhängig von der Ausbaustufe
+		- Kaserne/Garnison und Schießplatz/Schießanlage: 30 Sek. (vorher: 20/30 Sek.)
+		- Stall/Reiterei unverändert (20 Sek.)
 	- Architektenstube ermöglicht Bau dunkler Türme sowie neuer Ziergebäuden in den AddOns (siehe 'Ziergebäude' bzw. 'Türme')
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
@@ -776,7 +779,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## ToDos:
 - Keybindings sowie deren Tooltips von AddOn Content fixen
-- Schwere Kampagne: Statt Steuern halbieren Sold erhöhen
+- Schwere Kampagne: 
+	- Statt Steuern halbieren Sold erhöhen
+	- Wieder mehr uniquen Content nach Albtraum schieben
 - Crawford: letztes Tor erst gegen Ende des Briefings öffnen
 - Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
@@ -813,6 +818,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Reparierbare Kanonen
+	- Button in Kanone analog Kauf von Soldaten in Nähe einer Gießerei
+	- Reparatur kostet anteilig Material, abhängig von verlorenen HP und ursprünglichen Baukosten
+	- Fragen
+		- Hochwertige Kanonen nur in Manufaktur reparierbar
+		- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
+		- Nur möglich, wenn keine Feinde in der Nähe sind
+- Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)
 	- stark gegen leichte Panzerung
 		- Speerkämpfer (1.5)
@@ -821,18 +834,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- schwach gegen schwere Panzerung
 		- Schwertkämpfer (0.5)
 		- Schwere Kavallerie (1.0)
+	- Tooltips anpassen
+	- Nerfs zurücknehmen?
 - Lv 4 Elite Leader: 
 	- Textur: Gold durch rot austauschen
 	- generell etwas verdunkeln
 	- auf Veteranen Niveau
-- Trainingsdauer zwischen ausgebauten und nicht-ausgebauten Militärgebäude angleichen?
-- Reparierbare Kanonen
-	- Button in Kanone analog Kauf von Soldaten in Nähe einer Gießerei
-	- Reparatur kostet anteilig Material, abhängig von verlorenen HP und ursprünglichen Baukosten
-	- Fragen
-		- Hochwertige Kanonen nur in Manufaktur reparierbar
-		- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
-		- Nur möglich, wenn keine Feinde in der Nähe sind
 - Berittener Schütze bei Spielstart, als Scout
 	- Armbrust?
 	- ggf. mehr Sichtweite
