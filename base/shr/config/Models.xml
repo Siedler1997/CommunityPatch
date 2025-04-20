@@ -2757,6 +2757,9 @@
 	</Model>
 
 	<!-- Community Patch-->
+  <Model id="CB_LighthouseActivated">
+    <SelectionTexture>Selection_Building</SelectionTexture>
+  </Model>
 	<Model id="CB_Abbey01">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>
