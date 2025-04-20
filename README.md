@@ -499,6 +499,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Spielstände sind unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
 		- Name ist anders aufgebaut: Slot - Datum, Uhrzeit - Mapname
 - Diverses
+	- Einige Shortcuts im Leibeigenen Menü gefixt
+		- Brücken teilen sich den Shortcut nicht mehr mit Dorfzentren - sie haben gar keinen mehr (mangels Buchstaben im Alphabet...)
+		- AddOn Gebäuden haben nun eigene Shortcuts im englischen - keine doppelte Belegung mehr!
 	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
 		- Button dafür ersetzt den Hilfe-Button
 			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
@@ -778,7 +781,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Keybindings sowie deren Tooltips von AddOn Content fixen
+- Keybindings sowie deren Tooltips von AddOn Content prüfen und ggf fixen
+	- besonders im englischen
 - Schwere Kampagne: 
 	- Statt Steuern halbieren Sold erhöhen
 	- Wieder mehr uniquen Content nach Albtraum schieben
@@ -871,6 +875,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Heldentum
 		- benötigt: ?
 		- ermöglicht: Gewährt Helden eine 3. Fähigkeit, Aegis
+- FXKalaArrow für Ari nutzen
+	- Sniper gegen Shuriken tauschen?
 - Adaptive KI
 - Hauptspiel-Kampagne in einem AddOn spielbar
 	- Legenden?
