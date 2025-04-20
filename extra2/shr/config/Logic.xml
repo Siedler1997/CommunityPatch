@@ -1014,6 +1014,11 @@
 		<FirstBuilding>CB_Lighthouse</FirstBuilding>
 	</BuildingUpgrade>
 
+  <BuildingUpgrade>
+    <Category>LighthouseActivated</Category>
+    <FirstBuilding>CB_LighthouseActivated</FirstBuilding>
+  </BuildingUpgrade>
+
 	<SettlerUpgrade>
 		<Category>Cannon3a</Category>
 		<FirstSettler>PV_Cannon3a</FirstSettler>

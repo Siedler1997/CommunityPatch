@@ -898,6 +898,11 @@
 		<Category>SoldierBanditBow</Category>
 		<FirstSettler>CU_BanditSoldierBow1</FirstSettler>
 	</SettlerUpgrade>
+
+  <BuildingUpgrade>
+    <Category>LighthouseActivated</Category>
+    <FirstBuilding>CB_LighthouseActivated</FirstBuilding>
+  </BuildingUpgrade>
 	
 	<SettlerUpgrade>
 		<Category>Cannon3a</Category>

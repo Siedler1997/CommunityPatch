@@ -1010,6 +1010,11 @@
 		<FirstSettler>CU_AggressiveWolf</FirstSettler>
 	</SettlerUpgrade>
 
+  <BuildingUpgrade>
+    <Category>LighthouseActivated</Category>
+    <FirstBuilding>CB_LighthouseActivated</FirstBuilding>
+  </BuildingUpgrade>
+
 	<SettlerUpgrade>
 		<Category>Cannon3a</Category>
 		<FirstSettler>PV_Cannon3a</FirstSettler>

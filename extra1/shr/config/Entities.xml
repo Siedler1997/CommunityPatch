@@ -953,7 +953,9 @@
 		   Community Patch
 	************************************************
 	-->
+	<Entity>CB_Grange</Entity>
 	<Entity>CB_PrisonCage</Entity>
+  <Entity>CB_LighthouseActivated</Entity>
 	<Entity>PB_Beautification13</Entity>
 	<Entity>PB_Beautification14</Entity>
 	<Entity>PB_Beautification15</Entity>
@@ -968,7 +970,6 @@
 	<Entity>CU_SmithIdle</Entity>
 	<Entity>CU_StonecutterIdle</Entity>
 	<Entity>CU_BrickMakerIdle</Entity>
-	<Entity>CB_Grange</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>
   <Entity>XD_Wood1</Entity>

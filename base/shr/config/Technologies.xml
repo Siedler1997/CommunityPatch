@@ -298,7 +298,9 @@
 	<Technology>T_PaddedBardingArmor</Technology>	
 	<Technology>T_LeatherBaringArmor</Technology>
 
-	<Technology>T_AllowEntitySkins</Technology>
+  <Technology>B_Lighthouse</Technology>
+  <Technology>T_HeroMarker</Technology>
+  <Technology>T_AllowEntitySkins</Technology>
 	<Technology>T_AnimalTechnology1</Technology>
 	<Technology>T_AnimalTechnology2</Technology>
 

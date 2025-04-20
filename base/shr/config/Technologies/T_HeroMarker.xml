@@ -1,0 +1,20 @@
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>1</TimeToResearch>
+	<ResourceCosts>
+    <Clay>100</Clay>
+	</ResourceCosts>
+
+  <Conditions>
+    <RequiredEntityConditions>1</RequiredEntityConditions>
+    <EntityCondition>
+      <EntityType>CB_LighthouseActivated</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
+
+    <EntityCondition>
+      <EntityType>CB_Lighthouse</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
+  </Conditions>
+</root>

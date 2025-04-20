@@ -744,6 +744,7 @@
 	-->
 	<Entity>CB_Grange</Entity>
 	<Entity>CB_PrisonCage</Entity>
+  <Entity>CB_LighthouseActivated</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_EngineerIdle</Entity>
 	<Entity>CU_SmithIdle</Entity>
