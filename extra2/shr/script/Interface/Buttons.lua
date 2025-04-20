@@ -360,23 +360,19 @@ function GUIAction_HeroGenericExplore()
 
 	if Logic.IsHero(heroId) == 1 then
 		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
-			if HasPlayerEnoughResources{Gold=50} == 1 then
-				DestroyHeroExplore()
+			DestroyHeroExplore()
 
-				local _pos = GetPosition(heroId)
-				local _range = 2000
+			local _pos = GetPosition(heroId)
+			local _range = 2000
 
-				AddGold(PlayerID, -50)
+			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
+			GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
 
-				CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
-				GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
-
-				if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
-					_range = _range * 1.5
-				end
-
-				Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
+			if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
+				_range = _range * 1.5
 			end
+
+			Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
 		else
 			DestroyHeroExplore()
 		end

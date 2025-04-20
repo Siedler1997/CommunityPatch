@@ -60,6 +60,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
 		- können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
 		- profitieren von Maurerhandwerk und Stadtwache
+	- Leuchtturm
+		- Ist nun baubar (auch im Hauptspiel und Nebelreich)
+		- benötigt die Technologie 'Konstruktion'
+		- Bietet hohe Sichtweite (50 SM)
+		- Bedingung für Helden-Markierung
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
 		- haben etwas weniger Sichtweite
@@ -283,10 +288,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Drake: 'Bleikugel', 'Kimme und Korn'
 		- können eine Markierung setzen, die den Bereich dauerhaft aufdeckt
 			- die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
-			- das Setzen einer neuen Markierung 
-				- entfernt zugleich die Alte
-				- kostet jeweils 50 Taler
+			- das Setzen einer neuen Markierung entfernt zugleich die Alte
 			- wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
+			- Im MP können ALLE Spieler solche Markierungen sehen!
 		- Dario
 			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			- Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
@@ -771,6 +775,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Keybindings sowie deren Tooltips von AddOn Content fixen
+- Schwere Kampagne: Statt Steuern halbieren Sold erhöhen
 - Crawford: letztes Tor erst gegen Ende des Briefings öffnen
 - Low-Tier Units in Maps verteilen
 - 07_FleeOrFight: Signalfeuer testen
@@ -807,7 +813,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Schwere Kampagne: Statt Steuern halbieren Sold erhöhen
+- Eigene DamageClass für Schützen (DC_Arrow)
+	- stark gegen leichte Panzerung
+		- Speerkämpfer (1.5)
+		- Arbeiter (1.5)
+		- andere Schützen (1.5)
+	- schwach gegen schwere Panzerung
+		- Schwertkämpfer (0.5)
+		- Schwere Kavallerie (1.0)
 - Lv 4 Elite Leader: 
 	- Textur: Gold durch rot austauschen
 	- generell etwas verdunkeln
@@ -831,8 +844,26 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
 - Palisadentore aus AeK?
 - Goldmine
-- Baubarer Leuchtturm
+- Forsthaus
+- Leuchtturm
+	- Alarm (de-) aktivierbar
+	- Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
 - Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
+- Neue Hochschul-Techs
+	- Ziergebäude (GT_Beautification)
+		- ermöglicht: Bau von Ziergebäuden
+		- existiert bereits!
+	- Söldner
+		- benötigt: Taktiken
+		- ermöglicht: Rekrutierung von Söldnern in Militärgebäuden
+			- Alternativ: Gesetze
+				- Bau eines Schuldturms (AeK Gefängnisturm)
+					- Tech für Hauptmänner mit 8 Soldaten
+				- Rektutierung von Banditen
+					- Nahkämpfer sind bereits unique, aber Schützen?
+	- Heldentum
+		- benötigt: ?
+		- ermöglicht: Gewährt Helden eine 3. Fähigkeit, Aegis
 - Adaptive KI
 - Hauptspiel-Kampagne in einem AddOn spielbar
 	- Legenden?
@@ -873,11 +904,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Neue Spielerfarben
 - Auftragsbuch-Highlight fixen
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
-- Neue Map "Tal der Verdammten"
-	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
-	- Erec lebt (mit Amnesie)
-	- Nettes NV (und vllt. Varg/Kerberos)
-	- Kadirs Bruder
-	- Giftiger Schwefelnebel und Dampfmaschinen
-- Neue Map "Morbus Rache"
-	- S4 lässt Grüßen ;)
+- Neue Maps
+	- "Tal der Verdammten"
+		- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+		- Erec lebt (mit Amnesie)
+		- Nettes NV (und vllt. Varg/Kerberos)
+		- Kadirs Bruder
+		- Giftiger Schwefelnebel und Dampfmaschinen
+	- "Morbus Rache"
+		- S4 lässt Grüßen ;)

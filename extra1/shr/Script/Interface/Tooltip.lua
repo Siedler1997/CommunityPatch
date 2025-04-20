@@ -517,7 +517,11 @@ function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut,_costs)
 	if TechState == 0 then
 		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/AbilityNotAvailable")
 	elseif TechState < 4 then
-		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
+		if TechState == 2 and _tech == Technologies.T_HeroMarker then
+			TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
+		else
+			TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
+		end
 	else
 		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
 	end

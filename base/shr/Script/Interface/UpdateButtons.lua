@@ -1290,11 +1290,33 @@ function GUIUpdate_AbilityButtons(_Button, _Technology)
 		XGUIEng.DisableButton(_Button,1)
 	
 	--Building is not available yet or Technology is to far in the futur
-	elseif TechState == 1 or TechState == 2 or TechState == 5 or TechState == 3 then
+	elseif TechState == 1 or TechState == 5 or TechState == 3 then
 		XGUIEng.DisableButton(_Button,1)
 		
 	--Building is enabled and visible	
-	elseif TechState == 4 then
-		XGUIEng.DisableButton(_Button,0)
+	elseif TechState == 4 or TechState == 2 then
+		if _Button == "HeroGeneric_ExploreArea" then
+			XGUIEng.DisableButton(_Button,0)
+		else
+			if TechState == 4 then
+				if (_Button == "Scout_Torches") then
+					if Logic.HeroGetAbilityRechargeTime(sel, Abilities.AbilityScoutTorches) == Logic.HeroGetAbiltityChargeSeconds(sel, Abilities.AbilityScoutTorches) then
+						XGUIEng.DisableButton(_Button,0)
+					else
+						XGUIEng.DisableButton(_Button,1)
+					end
+				elseif (_Button == "Thief_PlaceExplosives") then
+					if Logic.HeroGetAbilityRechargeTime(sel, Abilities.AbilityPlaceKeg) == Logic.HeroGetAbiltityChargeSeconds(sel, Abilities.AbilityPlaceKeg) then
+						XGUIEng.DisableButton(_Button,0)
+					else
+						XGUIEng.DisableButton(_Button,1)
+					end
+				else
+					XGUIEng.DisableButton(_Button,0)
+				end
+			else
+				XGUIEng.DisableButton(_Button,1)
+			end
+		end
 	end
 end
