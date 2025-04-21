@@ -782,25 +782,35 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Schwere Kampagne: 
-	- Statt Steuern halbieren Sold erhöhen
-	- Wieder mehr uniquen Content nach Albtraum schieben
-- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
-- Low-Tier Units in Maps verteilen
-- 07_FleeOrFight: Signalfeuer testen
-- Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
+- Kampagne nochmal überarbeiten
+	- Holzhaufen verteilen
+	- Low-Tier Units verteilen
+	- Schwierigkeitgrad 'Albtraum'
+		- Statt Steuern halbieren Sold erhöhen
+		- Wieder mehr uniquen Content dorthin schieben
+	- Map spezifisch
+		- Basegame
+			- Thalgrund: Erster Angriff mit Cutscene-Einheiten
+				- ggf. mehr Spielertruppen als Hilfe
+			- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
+			- Wasteland-Dörfer: Namen im Auftragsbuch
+		- Extra1
+			- 07_FleeOrFight
+				- Neue Signalfeuer Logik testen
+				- Signalfeuer auch über 'normale' Tribute endzündbar machen
+			- 08_UnexploredLand:
+				- Entfernte Brückenbauplätze wieder einfügen
+				- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
+				- Alternativ Spuren solcher Bauplätze entfernen
+			- 'Thalbach' neu aufsetzen
+		- Extra2
+			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-- Thalgrund: Erster Angriff mit Cutscene-Einheiten
-	- ggf. mehr Spielertruppen als Hilfe
 - Vertonte Animationen (per TaskLists)
 	- Leader-Walk
 	- Leader-Train
-- Wasteland-Dörfer: Namen im Auftragsbuch
-- Random(?) Crashs
-	- erste 2 Verstärkungen in '03_Neighborhood'
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Korrekte Kostenanzeige für den Kauf von Soldaten
-- Kalas Tod: stack overflow(?)
 - Eigene Texturen für
 	- Tech-Trader
 	- Veteranen
@@ -884,20 +894,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - Upgrade-Technologien für böse Einheiten
-- 07_FleeOrFight: Signalfeuer auch über 'normale' Tribute endzündbar machen
-- 08_UnexploredLand:
-	- Entfernte Brückenbauplätze wieder einfügen
-	- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
-- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Trailer von Gold Edition
 - AeK-Sounds
 	- Eigener Todes-Sound für Nebelkrieger
 	- Walk Sounds für Infanterie und Kavallerie
 	- Irgendwas für Helden und Kanonen
 - Hundekäfig im Stronghold-Stil
-- AeK Signalfeuer
 - Meuchel-Ability für Diebe(?)
-- extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - FunFacts im LoadingScreen
 	- reaktivieren
