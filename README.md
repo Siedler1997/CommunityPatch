@@ -498,14 +498,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Spielstände werden auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
 			- Spielstände sind unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
 		- Name ist anders aufgebaut: Slot - Datum, Uhrzeit - Mapname
+	- Shortcut-Auflistung in Tastatur Optionen gefixt bzw. erweitert
 - Diverses
 	- Einige Shortcuts im Leibeigenen Menü gefixt
 		- Brücken teilen sich den Shortcut nicht mehr mit Dorfzentren - sie haben gar keinen mehr (mangels Buchstaben im Alphabet...)
 		- AddOn Gebäuden haben nun eigene Shortcuts im englischen - keine doppelte Belegung mehr!
 	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
+		- Kann auch über den Shortcut '*' ausgelöst werden
 		- Button dafür ersetzt den Hilfe-Button
 			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
-		- Kann auch über den Shortcut '-' ausgelöst werden
 	- Hauptmenü
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
@@ -781,8 +782,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Keybindings sowie deren Tooltips von AddOn Content prüfen und ggf fixen
-	- besonders im englischen
 - Schwere Kampagne: 
 	- Statt Steuern halbieren Sold erhöhen
 	- Wieder mehr uniquen Content nach Albtraum schieben
