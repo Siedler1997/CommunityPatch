@@ -457,13 +457,15 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type,_SecondCategory)
 				table.insert(EntityTable,TempTable[j+1])
 			end	
 		end
-		for i = 1, AmountOfSecondTypes, 1 do
-			-- Get ID of upgradecategory of player
-			local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i+1], 48 )	}
-			local number = TempTable[1]		
-			for j = 1, number, 1 do
-				table.insert(EntityTable,TempTable[j+1])
-			end	
+		if AmountOfSecondTypes ~= nil then
+			for i = 1, AmountOfSecondTypes, 1 do
+				-- Get ID of upgradecategory of player
+				local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i+1], 48 )	}
+				local number = TempTable[1]		
+				for j = 1, number, 1 do
+					table.insert(EntityTable,TempTable[j+1])
+				end	
+			end
 		end
 	end
 
