@@ -583,7 +583,7 @@ GUIUpdate_BuySoldierButton()
 	local LeaderID = GUI.GetSelectedEntity() 
 	local MilitaryBuildingID = Logic.LeaderGetNearbyBarracks(LeaderID)
 	
-	local test = Logic.IsEntityInCategory(LeaderID,EntityCategories.Cannon)
+	--local test = Logic.IsEntityInCategory(LeaderID,EntityCategories.Cannon)
 	
 	if MilitaryBuildingID ~= 0	then		
 		if Logic.IsConstructionComplete( MilitaryBuildingID ) == 1 then
@@ -1318,5 +1318,23 @@ function GUIUpdate_AbilityButtons(_Button, _Technology)
 				XGUIEng.DisableButton(_Button,1)
 			end
 		end
+	end
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_RepairCannonButton()
+	local cannonID = GUI.GetSelectedEntity() 
+	local MilitaryBuildingID = Logic.LeaderGetNearbyBarracks(cannonID)
+	local currentHealth = Logic.GetEntityHealth(cannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(cannonID)
+	
+	if MilitaryBuildingID ~= 0 and currentHealth < maxHealth then		
+		if Logic.IsConstructionComplete(MilitaryBuildingID) == 1 then
+			XGUIEng.DisableButton("Repair_Cannon_Button",0)
+		end
+	else		
+		XGUIEng.DisableButton("Repair_Cannon_Button",1)
 	end
 end

@@ -222,6 +222,12 @@ function GameCallback_GUI_SelectionChanged()
 					XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldierArea ,1)
 					--XGUIEng.ShowWidget("Commands_Leader",1)		
 				end
+				
+				if Logic.IsEntityInCategory(EntityId,EntityCategories.Cannon) == 0 then
+					XGUIEng.ShowWidget("Repair_Cannon" ,0)
+				else
+					XGUIEng.ShowWidget("Repair_Cannon" ,1)
+				end
 				--XGUIEng.ShowWidget(gvGUI_WidgetID.BuySoldier,1)
 				
 				--FunnyComment = Sounds.VoicesLeader_LEADER_FunnyComment_rnd_04

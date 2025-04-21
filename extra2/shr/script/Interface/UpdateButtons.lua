@@ -1312,3 +1312,20 @@ function GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
 
 end
 
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_RepairCannonButton()
+	local cannonID = GUI.GetSelectedEntity() 
+	local MilitaryBuildingID = Logic.LeaderGetNearbyBarracks(cannonID)
+	local currentHealth = Logic.GetEntityHealth(cannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(cannonID)
+	
+	if MilitaryBuildingID ~= 0 and currentHealth < maxHealth then		
+		if Logic.IsConstructionComplete(MilitaryBuildingID) == 1 then
+			XGUIEng.DisableButton("Repair_Cannon_Button",0)
+		end
+	else		
+		XGUIEng.DisableButton("Repair_Cannon_Button",1)
+	end
+end

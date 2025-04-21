@@ -1390,3 +1390,39 @@ function GUIAction_LevyTaxes()
 		Sound.PlayFeedbackSound(Sounds.LevyTaxes , 0 )
 	end
 end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Action for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIAction_RepairCannonButton()
+	local PlayerID = GUI.GetPlayerID()	
+	local SelectedCannonID = GUI.GetSelectedEntity()
+	local SelectedCannonType = Logic.GetEntityType(SelectedCannonID)
+	local SelectedCannonCategory = 0
+
+	if SelectedCannonType == Entities.PV_Cannon1 then
+		SelectedCannonCategory = UpgradeCategories.Cannon1
+	elseif SelectedCannonType == Entities.PV_Cannon2 then
+		SelectedCannonCategory = UpgradeCategories.Cannon2
+	elseif SelectedCannonType == Entities.PV_Cannon3 or SelectedCannonType == Entities.PV_Cannon3a then
+		SelectedCannonCategory = UpgradeCategories.Cannon3
+	elseif SelectedCannonType == Entities.PV_Cannon4 or SelectedCannonType == Entities.PV_Cannon4a then
+		SelectedCannonCategory = UpgradeCategories.Cannon4
+	end
+
+	local currentHealth = Logic.GetEntityHealth(SelectedCannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(SelectedCannonID)
+	if SelectedCannonCategory ~= 0 and currentHealth < maxHealth then
+		local lostHealth = 1 - (currentHealth / maxHealth)
+		Logic.FillLeaderCostsTable(PlayerID, SelectedCannonCategory, InterfaceGlobals.CostTable)
+		InterfaceGlobals.CostTable[ResourceType.Gold] = round(InterfaceGlobals.CostTable[ResourceType.Gold] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Wood] = round(InterfaceGlobals.CostTable[ResourceType.Wood] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Iron] = round(InterfaceGlobals.CostTable[ResourceType.Iron] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Sulfur] = round(InterfaceGlobals.CostTable[ResourceType.Sulfur] * lostHealth)
+
+		if InterfaceTool_HasPlayerEnoughResources_Feedback(InterfaceGlobals.CostTable) == 1 then	
+			InterfaceTool_PayResources(InterfaceGlobals.CostTable);
+			SetHealth(SelectedCannonID, 100)
+		end
+	end
+end

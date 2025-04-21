@@ -553,3 +553,57 @@ function GUITooltip_SinglePlayerButton(_NormalTooltip, _ShortCut)
 	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, TooltipCost)
 end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Tooltip for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUITooltip_RepairCannonButton(_tooltip, _ShortCut)
+	local PlayerID = GUI.GetPlayerID()	
+	local SelectedCannonID = GUI.GetSelectedEntity()
+	local SelectedCannonType = Logic.GetEntityType(SelectedCannonID)
+	local SelectedCannonCategory = 0
+	local CostString = ""
+	local ShortCutString = ""
+	local TooltipString = ""
+
+	if SelectedCannonType == Entities.PV_Cannon1 then
+		SelectedCannonCategory = UpgradeCategories.Cannon1
+	elseif SelectedCannonType == Entities.PV_Cannon2 then
+		SelectedCannonCategory = UpgradeCategories.Cannon2
+	elseif SelectedCannonType == Entities.PV_Cannon3 or SelectedCannonType == Entities.PV_Cannon3a then
+		SelectedCannonCategory = UpgradeCategories.Cannon3
+	elseif SelectedCannonType == Entities.PV_Cannon4 or SelectedCannonType == Entities.PV_Cannon4a then
+		SelectedCannonCategory = UpgradeCategories.Cannon4
+	end
+
+	local currentHealth = Logic.GetEntityHealth(SelectedCannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(SelectedCannonID)
+	if SelectedCannonCategory ~= 0 and currentHealth < maxHealth then
+		local lostHealth = 1 - (currentHealth / maxHealth)
+		Logic.FillLeaderCostsTable(PlayerID, SelectedCannonCategory, InterfaceGlobals.CostTable)
+		InterfaceGlobals.CostTable[ResourceType.Gold] = round(InterfaceGlobals.CostTable[ResourceType.Gold] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Wood] = round(InterfaceGlobals.CostTable[ResourceType.Wood] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Iron] = round(InterfaceGlobals.CostTable[ResourceType.Iron] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Sulfur] = round(InterfaceGlobals.CostTable[ResourceType.Sulfur] * lostHealth)
+		CostString = InterfaceTool_CreateCostString(InterfaceGlobals.CostTable)
+	end
+	
+	if _ShortCut ~= nil then
+		ShortCutString = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+	end
+	
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 1 then	
+		if currentHealth < maxHealth then
+			TooltipString =  _tooltip .. "_disabled"
+		else
+			TooltipString =  _tooltip .. "_full"
+		end
+	elseif XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then		
+		TooltipString = _tooltip .. "_normal"
+	end
+
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutString)
+	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipString)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
+end
