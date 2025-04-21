@@ -1274,8 +1274,14 @@ end
 function GUIAction_AdjustGameSpeed()
 	if Game.GameTimeGetFactor() ~= 0 then
 		if (IsBriefingActive == nil or IsBriefingActive() == false) and (IsCutsceneActive == nil or IsCutsceneActive() == false) then
-			if Game.GameTimeGetFactor() < 3 then
-				Game.GameTimeSetFactor(Game.GameTimeGetFactor() + 1)
+			if Game.GameTimeGetFactor() < 10 then
+				if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+					Game.GameTimeReset()
+				elseif XGUIEng.IsModifierPressed(Keys.ModifierShift) == 1 then
+					Game.GameTimeSetFactor(10)
+				else
+					Game.GameTimeSetFactor(Game.GameTimeGetFactor() + 1)
+				end
 			else
 				Game.GameTimeReset()
 			end

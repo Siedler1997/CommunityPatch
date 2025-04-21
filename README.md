@@ -503,10 +503,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Einige Shortcuts im Leibeigenen Menü gefixt
 		- Brücken teilen sich den Shortcut nicht mehr mit Dorfzentren - sie haben gar keinen mehr (mangels Buchstaben im Alphabet...)
 		- AddOn Gebäuden haben nun eigene Shortcuts im englischen - keine doppelte Belegung mehr!
-	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
-		- Kann auch über den Shortcut '*' ausgelöst werden
-		- Button dafür ersetzt den Hilfe-Button
+	- Die Spielgeschwindigkeit kann bis auf das 10-Fache erhöht werden
+		- Button ersetzt den Hilfe-Button
 			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
+		- Jeder Klick auf den Button erhöht die Geschwindigkeit
+			- Nach erreichen des Maximums (x10) wird sie zurück gesetzt
+			- Wird gleichzeit [Strg] gedrückt, wird sie direkt zurück gesetzt
+			- Wird gleichzeit [Shift] gedrückt, wird sie direkt auf das Maximum (x10) gesetzt
+		- Kann auch über den Shortcut '*' ausgelöst werden
 	- Hauptmenü
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
@@ -576,7 +580,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Größtenteils Fixes und kleinere Optimierungen
 	- Die Grafik ist allgemein etwas besser (by yoq)
 	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
-	- Alarm: Wird dabei gleichzeitig 'Strg' gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
+	- Alarm: Wird dabei gleichzeitig [Strg] gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
 		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
 	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
 		- Statt jede 8te nur noch jede 24te Selektion
