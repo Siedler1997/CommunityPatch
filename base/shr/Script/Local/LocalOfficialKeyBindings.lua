@@ -104,7 +104,7 @@ function OfficialKeyBindings_Init()
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectFarm" )], 			"KeyBindings_SelectUnit(UpgradeCategories.Farm,1)", 2)
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectVillage" )],		"KeyBindings_SelectUnit(UpgradeCategories.VillageCenter,1)", 2)
 
-	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectHeadquarter" )],	"KeyBindings_SelectUnit(UpgradeCategories.Headquarters,1)", 2)
+	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectHeadquarter" )],	"KeyBindings_SelectUnit(UpgradeCategories.Headquarters,1,UpgradeCategories.Outpost)", 2)
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectUniversity" )], 	"KeyBindings_SelectUnit(UpgradeCategories.University,1)", 2)	
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMarket" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Market,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMonastery" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Monastery,1)", 2) 
@@ -125,10 +125,12 @@ function OfficialKeyBindings_Init()
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectArchery" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Archery,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectFoundry" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Foundry,1)", 2)    
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectStables" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Stable,1)", 2)
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectTower" )], 			"KeyBindings_SelectUnit(UpgradeCategories.Tower,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectTower" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Tower,1)", 2)
     
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectWeatherTower" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Weathermachine,1)", 2)
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectPowerPlant" )], 		"KeyBindings_SelectUnit(UpgradeCategories.PowerPlant,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectWeatherTower" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Weathermachine,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectPowerPlant" )], 	"KeyBindings_SelectUnit(UpgradeCategories.PowerPlant,1)", 2)
+
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectLighthouse" )], 	"KeyBindings_SelectUnit(UpgradeCategories.LighthouseActivated,1)", 2)
 
 	-----------------------------------------------------------------------------------------------
 	-- Select Units
