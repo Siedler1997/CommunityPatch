@@ -2454,3 +2454,7 @@ function ChangeWeatherByPlayer(_player, _weathertype, _duration, _playerName)
 	end	
 	return success
 end
+
+function round( _n )
+	return math.floor( _n + 0.5 );
+end

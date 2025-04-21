@@ -324,10 +324,6 @@ ScoutFoerster_SET_Evelance = {
 	},
 }
 
-function round( _n )
-	return math.floor( _n + 0.5 );
-end
-
 function ActionWithCooldown( _key, _cooldown, _action, _params )
 	assert( type(_key) == "string", "ActionWithCooldown: _key must be a string!" );
 	assert( type(_cooldown) == "number", "ActionWithCooldown: _cooldown must be a number!" );
