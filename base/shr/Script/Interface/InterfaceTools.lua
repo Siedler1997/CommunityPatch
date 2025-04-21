@@ -300,6 +300,32 @@ function InterfaceTool_GetBlessingCosts(_PID, _BlessCategory)
 end
 
 --------------------------------------------------------------------------------
+-- Tool function to sub ressources from a vanilla cost table (eg. InterfaceGlobals.CostTable)
+--------------------------------------------------------------------------------
+function InterfaceTool_PayResources(_Costs)
+	local pID = GUI.GetPlayerID();
+
+	if _Costs[ResourceType.Gold] ~= nil and _Costs[ResourceType.Gold] ~= 0 and GetGold(pID) >= _Costs[ResourceType.Gold] then
+		AddGold(-_Costs[ResourceType.Gold]);
+	end
+	if _Costs[ResourceType.Clay] ~= nil and _Costs[ResourceType.Clay] ~= 0 and GetClay(pID) >= _Costs[ResourceType.Clay] then
+		AddClay(-_Costs[ResourceType.Clay]);
+	end
+	if _Costs[ResourceType.Wood] ~= nil and _Costs[ResourceType.Wood] ~= 0 and GetWood(pID) >= _Costs[ResourceType.Wood] then
+		AddWood(-_Costs[ResourceType.Wood]);
+	end
+	if _Costs[ResourceType.Stone] ~= nil and _Costs[ResourceType.Stone] ~= 0 and GetStone(pID) >= _Costs[ResourceType.Stone] then
+		AddStone(-_Costs[ResourceType.Stone]);
+	end
+	if _Costs[ResourceType.Iron] ~= nil and _Costs[ResourceType.Iron] ~= 0 and GetIron(pID) >= _Costs[ResourceType.Iron] then
+		AddIron(-_Costs[ResourceType.Iron]);
+	end
+	if _Costs[ResourceType.Sulfur] ~= nil and _Costs[ResourceType.Sulfur] ~= 0 and GetSulfur(pID) >= _Costs[ResourceType.Sulfur] then
+		AddSulfur(-_Costs[ResourceType.Sulfur]);
+	end
+end
+
+--------------------------------------------------------------------------------
 -- Another tool function to convert a table containing costs into a string (by Noigi)
 --------------------------------------------------------------------------------
 function CreateCostString(_t)

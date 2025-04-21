@@ -738,6 +738,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			-> return: int Segnungskosten
 		- 'CreateCostString(_costs)' by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
 			-> return: string CostString
+		- 'InterfaceTool_PayResources(_Costs)': Zieht ein Table an Ressourcen vom Spieler ab
+			- _Costs muss dem Format des Parameters von 'InterfaceTool_CreateCostString(_Costs)' bzw. InterfaceGlobals.CostTable entsprechen
 		- 'HasPlayerEnoughResources(_costs)': Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
 			-> return int reicht (1) oder reicht nicht (0)
 		- 'RaidersCreate(_data)': Erstellt ein aggressives Wolfsrudel mit einem Revier, in dem es sich bewegt
@@ -836,10 +838,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - Reparierbare Kanonen
-	- Button in Kanone analog Kauf von Soldaten in Nähe einer Gießerei
 	- Reparatur kostet anteilig Material, abhängig von verlorenen HP und ursprünglichen Baukosten
 	- Fragen
-		- Hochwertige Kanonen nur in Manufaktur reparierbar
 		- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
 		- Nur möglich, wenn keine Feinde in der Nähe sind
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
