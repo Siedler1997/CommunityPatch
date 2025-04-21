@@ -116,6 +116,7 @@ function OfficialKeyBindings_Init()
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectAlchemist" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Alchemist,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectSawmill" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Sawmill,1)", 2)
     
+	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMine" )],	"KeyBindings_SelectUnit(UpgradeCategories.ClayMine,1,{UpgradeCategories.StoneMine,UpgradeCategories.IronMine,UpgradeCategories.SulfurMine})", 2)
     --Input.KeyBindDown(Keys.A, 			"KeyBindings_SelectUnit(UpgradeCategories.ClayMine,1)", 2)
     --Input.KeyBindDown(Keys.S, 			"KeyBindings_SelectUnit(UpgradeCategories.StoneMine,1)", 2)
     --Input.KeyBindDown(Keys.D, 			"KeyBindings_SelectUnit(UpgradeCategories.IronMine,1)", 2)
@@ -439,18 +440,47 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type,_SecondCategory)
 	
 		if _type == 1 then	
 			UpgradeTypeTable = {Logic.GetBuildingTypesInUpgradeCategory(_UpgradeCategory)}
+
 			if _SecondCategory ~= nil then
-				SecondTypeTable = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory)}
+				if type(_SecondCategory) == "number" then
+					local buildingTypes = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory)}
+					for c = 1, buildingTypes[1] do
+						table.insert(SecondTypeTable, buildingTypes[c+1])
+					end
+
+				elseif type(_SecondCategory) == "table" and table.getn(_SecondCategory) > 0 then
+					for c = 1, table.getn(_SecondCategory) do
+						local buildingTypes = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory[c])}
+						for t = 1, buildingTypes[1] do
+							table.insert(SecondTypeTable, buildingTypes[t+1])
+						end
+					end
+				end
 			end
 		else 
 			UpgradeTypeTable = {Logic.GetSettlerTypesInUpgradeCategory(_UpgradeCategory)}
+
 			if _SecondCategory ~= nil then
-				SecondTypeTable = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory)}
+				if type(_SecondCategory) == "number" then
+					local settlerTypes = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory)}
+					for c = 1, settlerTypes[1] do
+						table.insert(SecondTypeTable, settlerTypes[c+1])
+					end
+
+				elseif type(_SecondCategory) == "table" and table.getn(_SecondCategory) > 0 then
+					for c = 1, table.getn(_SecondCategory) do
+						local settlerTypes = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory[c])}
+						for t = 1, settlerTypes[1] do
+							table.insert(SecondTypeTable, settlerTypes[t+1])
+						end
+					end
+				end
 			end
 		end
 	
 		local AmountOfUpgradeTypes = UpgradeTypeTable[1]	
-		local AmountOfSecondTypes = SecondTypeTable[1]	
+		local AmountOfSecondTypes = table.getn(SecondTypeTable)	
+		--Message("Anzahl: " .. AmountOfUpgradeTypes + AmountOfSecondTypes)
 		for i = 1, AmountOfUpgradeTypes, 1 do
 			-- Get ID of upgradecategory of player
 			local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), UpgradeTypeTable[i+1], 48 )	}
@@ -462,7 +492,7 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type,_SecondCategory)
 		if AmountOfSecondTypes ~= nil then
 			for i = 1, AmountOfSecondTypes, 1 do
 				-- Get ID of upgradecategory of player
-				local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i+1], 48 )	}
+				local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i], 48 )	}
 				local number = TempTable[1]		
 				for j = 1, number, 1 do
 					table.insert(EntityTable,TempTable[j+1])
