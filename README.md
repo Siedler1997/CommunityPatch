@@ -239,6 +239,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
 				- Schaden auf 70 erhöht (vorher: 65)
 			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
+			- sind reparierbar
+				- bei Selektion einer Kanone ist ein Button an Stelle des 'Soldat rekrutieren'-Buttons zu sehen. Die Logik ist identisch:
+					- Reparatur ist nur in der Nähe von Kanonengießereien/-manufakturen möglich
+					- Shortcut [Q] gilt hier ebenfalls
+				- kostet Rohstoffe abhängig von den verlorenen HP und den ursprünglichen Baukosten (in %)
 		- Scharfschützen
 			- sind (etwas) weniger effektiv gegen 
 				- Kavallerie
@@ -838,10 +843,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## Weitere Ideen:
 - Reparierbare Kanonen
-	- Reparatur kostet anteilig Material, abhängig von verlorenen HP und ursprünglichen Baukosten
-	- Fragen
-		- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
-		- Nur möglich, wenn keine Feinde in der Nähe sind
+	- Nur möglich, wenn keine Feinde in der Nähe sind
+	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)
 	- stark gegen leichte Panzerung
