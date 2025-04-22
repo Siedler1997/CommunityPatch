@@ -795,6 +795,20 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Verbesserte KI
+	- Advanced Setting
+		- MaxArmySize
+		- Zusammensetzung
+			- Mixed: Vanilla. Alles ist dabei!
+			- Grouped: ein paar Armeen sind nach Typ geordnet
+				- Kavallerie
+				- Infanterie
+				- Schützen
+				- Rest: Mixed
+			- Picked: Mapper bestimmt
+			- Adaptive: abhängig vom Spieler, um diesen zu kontern
+	- SetupPlayerAi integrieren
+	- EvilMod integrieren
 - Kampagne nochmal überarbeiten
 	- Holzhaufen verteilen
 	- Low-Tier Units verteilen
@@ -813,16 +827,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Signalfeuer auch über 'normale' Tribute endzündbar machen
 			- 08_UnexploredLand:
 				- Entfernte Brückenbauplätze wieder einfügen
-				- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
+					- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
 				- Alternativ Spuren solcher Bauplätze entfernen
 			- 'Thalbach' neu aufsetzen
 		- Extra2
 			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
-- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-- Vertonte Animationen (per TaskLists)
-	- Leader-Walk
-	- Leader-Train
-- Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader
@@ -831,6 +840,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Bogen-Banditen-Hauptmänner
 	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
+- Hauptspiel-Kampagne in einem AddOn spielbar
+	- Legenden?
+	- AddOn-Features einbinden
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
 	- FeatureList auch auf Englisch
@@ -905,21 +917,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Dovbar: Wirbelschlag (Erec, aber etwas schwächer)
 - FXKalaArrow für Ari nutzen
 	- Sniper gegen Shuriken tauschen?
-- Adaptive KI
-- Hauptspiel-Kampagne in einem AddOn spielbar
-	- Legenden?
-	- AddOn-Features einbinden
-- Assassinen
+- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+- Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - Upgrade-Technologien für böse Einheiten
-- Trailer von Gold Edition
-- AeK-Sounds
-	- Eigener Todes-Sound für Nebelkrieger
-	- Walk Sounds für Infanterie und Kavallerie
-	- Irgendwas für Helden und Kanonen
+- Mehr Sounds
+	- Eigener Todes-Sound für Nebelkrieger, Helden und Kanonen
+	- Walk und Training Sounds für Infanterie und Kavallerie (per TaskLists)
 - Hundekäfig im Stronghold-Stil
-- Meuchel-Ability für Diebe(?)
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
 - FunFacts im LoadingScreen
 	- reaktivieren
@@ -930,7 +936,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein
-- Rand-Clipping bei Briefing-Minimap entfernen 
+- Rand-Clipping bei Briefing-Minimap fixen 
 - Hauptmenü
 	- MP-Window fixen
 	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)
