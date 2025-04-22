@@ -793,6 +793,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Shortcuts für Formationen
 - Kampagne nochmal überarbeiten
 	- Holzhaufen verteilen
 	- Low-Tier Units verteilen
@@ -845,6 +846,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Reparierbare Kanonen
 	- Nur möglich, wenn keine Feinde in der Nähe sind
 	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
+- Flammenwerfer (mobil oder Kanone)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)
 	- stark gegen leichte Panzerung
@@ -869,9 +871,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- noch mehr (aus AeK)
 - LevyTaxes sinnvoll einfügen
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
-- Palisadentore aus AeK?
-- Goldmine
-- Forsthaus
 - Leuchtturm
 	- Alarm (de-) aktivierbar
 	- Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
@@ -880,17 +879,29 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Ziergebäude (GT_Beautification)
 		- ermöglicht: Bau von Ziergebäuden
 		- existiert bereits!
-	- Söldner
-		- benötigt: Taktiken
-		- ermöglicht: Rekrutierung von Söldnern in Militärgebäuden
-			- Alternativ: Gesetze
-				- Bau eines Schuldturms (AeK Gefängnisturm)
-					- Tech für Hauptmänner mit 8 Soldaten
-				- Rektutierung von Banditen
-					- Nahkämpfer sind bereits unique, aber Schützen?
+	- Gesetze
+		- benötigt: ?, Universität
+		- ermöglicht: Rekrutierung von Banditen in Militärgebäuden
+			- Nahkämpfer sind bereits unique, aber Schützen?
+			- Gefängniskäfig
+			- Bau eines Schuldturms (AeK-Gefängnisturm)?
+				- Tech für Hauptmänner mit 8 Soldaten
 	- Heldentum
-		- benötigt: ?
+		- benötigt: Gesetze, Zitadelle
 		- ermöglicht: Gewährt Helden eine 3. Fähigkeit, Aegis
+			- Dario: Schild des Königs (eigene Einheiten: ++DEF, -ATK)
+			- Pilgrim: Bombenwurf (Kalas Giftpfeile, aber weniger und mit SplashDamage)
+			- Salim: Baumeister rufen (Leibeigene, die nur bauen können)
+			- Erec: Ritter rufen (Summoring, 3 PU_SoldierSword4)
+			- Ari: Meisterschuss (Drake) oder Giftpfeile (Kala) oder Falle stellen (Salim)
+			- Helias: Wunder der Natur (ScoutForester, aber kostenlos. Tech muss erlaubt, aber nicht erforscht sein)
+			- Kerberos: Wirbelschlag (Erec, Animation dafür existiert!)
+			- Mary: Exitus (Drakes Meisterschuss, aber im Nahkampf)
+			- Varg: Aura der Furcht oder Höllenschrei (also eine von Kerberos Fähigkeiten)
+			- Drake: Tarnen (Ari) oder Jagdtrupp rufen (Summoring, 3 Scharfschützen)
+			- Yuki: Wechsel zu einer Fernkampf-Version
+			- Kala: Berserkerwut (Varg) oder Bär(en) rufen
+			- Dovbar: Wirbelschlag (Erec, aber etwas schwächer)
 - FXKalaArrow für Ari nutzen
 	- Sniper gegen Shuriken tauschen?
 - Adaptive KI

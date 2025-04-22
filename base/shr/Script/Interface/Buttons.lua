@@ -1364,6 +1364,7 @@ function GUIAction_RepairCannonButton()
 		if InterfaceTool_HasPlayerEnoughResources_Feedback(InterfaceGlobals.CostTable) == 1 then	
 			InterfaceTool_PayResources(InterfaceGlobals.CostTable);
 			SetHealth(SelectedCannonID, 100)
+			Sound.PlayFeedbackSound( Sounds.Coiner01, 0 )
 		end
 	end
 end
