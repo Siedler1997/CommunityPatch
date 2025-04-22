@@ -126,6 +126,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Formationen
 		- Kavallerie und Nebelkrieger verwenden ihre eigenen Formationen
 		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+		- sind nun auch über Shortcuts einnehmbar
+			- Genauer: [Y], [X], [C] und [V]
 		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
 	- Verursachen deutlich weniger Schaden an Gebäuden (x0,1)
@@ -793,7 +795,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Shortcuts für Formationen
 - Kampagne nochmal überarbeiten
 	- Holzhaufen verteilen
 	- Low-Tier Units verteilen
@@ -846,7 +847,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Reparierbare Kanonen
 	- Nur möglich, wenn keine Feinde in der Nähe sind
 	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
-- Flammenwerfer (mobil oder Kanone)
+- Flammenwerfer (mobil oder als Turm)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)
 	- stark gegen leichte Panzerung
