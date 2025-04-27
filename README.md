@@ -225,6 +225,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Schwertkämpfer
 			- haben einen eigenen Kampf-Sound
 			- Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
+			- Effektivitäten leicht angepasst
+				- ein kleines bisschen stärker gegen leicht gepanzerte Einheiten (1.7 -> 1.75)
+				- etwas schwächer gegen andere Schwertkämpfer (1.5 -> 1.25)
 		- Kanonen
 			- Fixes
 				- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
