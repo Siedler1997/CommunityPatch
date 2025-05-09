@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CTasksList>
+    <!-- fool around as you wish, then end with -->
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task> 
+    <Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>1</LowerBound>
+        <UpperBound>5</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle1</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle2</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task> 
+    <Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task> 
+    <Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle3</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task> 
+    <Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task> 
+    <Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+        <TaskType>TASK_SET_ANIM</TaskType> 
+            <Category>Idle4</Category> 
+        <PlayBackwards>false</PlayBackwards> 
+    </Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle5</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+		<TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType>
+		<LowerBound>0</LowerBound>
+		<UpperBound>1</UpperBound>
+	</Task>
+	<Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+		<TaskType>TASK_SET_ANIM</TaskType>
+		<Category>Idle6</Category>
+		<PlayBackwards>false</PlayBackwards>
+	</Task>
+	<Task classname="EGL::CTaskArgsRandomWaitForAnim" classid="0xeaa8fc97">
+        <TaskType>TASK_RANDOM_WAIT_FOR_ANIM</TaskType> 
+        <LowerBound>0</LowerBound>
+        <UpperBound>1</UpperBound>
+    </Task>                                
+</CTasksList>

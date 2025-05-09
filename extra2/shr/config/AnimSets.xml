@@ -164,4 +164,5 @@
 	<AnimSet>SET_CU_SERF</AnimSet>
 	<AnimSet>SET_Dragon</AnimSet>
 	<AnimSet>SET_CU_HERO10</AnimSet>
+	<AnimSet>SET_CU_SETTLER_FEMALE</AnimSet>
 </root>

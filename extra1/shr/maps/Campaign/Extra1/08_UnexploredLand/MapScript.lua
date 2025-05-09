@@ -13,13 +13,8 @@ end
 ------------------------------------------------------------------------------
 function InitResources()
     -- set some resources
-    AddStone(0)
-    AddClay(0)
-    AddGold(0)
-    AddSulfur(0)
-    AddIron(0)
-    AddWood(0)
-    end
+	GlobalMissionScripting.GiveResouces(1, 500, 0, 0, 0, 0, 0)
+end
 ------------------------------------------------------------------------------
 function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
@@ -115,8 +110,10 @@ function FirstMapAction()
     -- debugging stuff
 
     --EnableDebugging()
+
+	--Init NPC Merchant Offers
+	Mission_InitMerchants()   
     
-   
 	-- String
 	String.Init("CM02_08_UnexploredLand")
 	
@@ -168,4 +165,14 @@ function FirstMapAction()
 
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Add Merchant offers here. 
+function Mission_InitMerchants()
+	mercenaryId = Logic.GetEntityIDByName("NPC_Merchant_1")
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PU_LeaderRifle1, 3, ResourceType.Sulfur, 200, ResourceType.Gold, 400)		
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon1, 4, ResourceType.Sulfur, 100, ResourceType.Iron, 100, ResourceType.Gold, 200)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.PV_Cannon2, 3, ResourceType.Sulfur, 150, ResourceType.Iron, 150, ResourceType.Gold, 250)
+	Logic.AddMercenaryOffer(mercenaryId, Entities.CU_BlackKnight_LeaderMace2, 4, ResourceType.Iron, 200, ResourceType.Gold, 300)	
 end

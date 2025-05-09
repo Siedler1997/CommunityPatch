@@ -1,10 +1,10 @@
 SPAWN = 1
 ATTACK = 2
 ONEMINUTE = 60
+time2 = 20
 ------------------------------------------------------------------------------------------------------------------------------------
 function createArmyVillageAttackers()
     local time1 = 15
-    local time2 = 20
     if CP_Difficulty > 0 then
         time1 = time1 - 5
         time2 = time2 - 5
@@ -72,9 +72,9 @@ function controlArmyAttack(_army)
             Report("Spawn NOW!")
             
             if CP_Difficulty == 0 then
-                createArmy(2,_army.info.id,_army,2,_army.info.spawnPosition,MEDIUM_EXPERIENCE,troopsAttacker)
+                createArmy(2,_army.info.id,_army,2,_army.info.spawnPosition,CP_Difficulty+1,troopsAttacker,10+CP_Difficulty*3)
             else
-                createArmy(2,_army.info.id,_army,4,_army.info.spawnPosition,VERYHIGH_EXPERIENCE,troopsAttacker)
+                createArmy(2,_army.info.id,_army,4,_army.info.spawnPosition,CP_Difficulty+1,troopsAttacker,10+CP_Difficulty*3)
             end
             _army.info.state = ATTACK
 

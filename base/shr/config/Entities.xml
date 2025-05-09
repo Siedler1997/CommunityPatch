@@ -744,12 +744,14 @@
 	-->
 	<Entity>CB_Grange</Entity>
 	<Entity>CB_PrisonCage</Entity>
+  <Entity>CB_LighthouseActivated</Entity>
 	<Entity>CU_Dragon</Entity>
 	<Entity>CU_EngineerIdle</Entity>
 	<Entity>CU_SmithIdle</Entity>
 	<Entity>CU_StonecutterIdle</Entity>
 	<Entity>CU_BrickMakerIdle</Entity>
 	<Entity>CU_LeaderOutlaw1</Entity>
+  <Entity>XD_Wood1</Entity>
 	<Entity>XD_Gold1</Entity>
 	<Entity>XD_WreckedBoat01</Entity>
 	<Entity>XD_WreckedBoat02</Entity>
@@ -758,6 +760,10 @@
 	<Entity>CU_BanditSoldierBow1</Entity>
 	<Entity>CU_BanditSoldierBow2</Entity>
 
+	<Entity>CU_Settler_Female1</Entity>
+	<Entity>CU_Settler_Female2</Entity>
+	<Entity>CU_Settler_Female3</Entity>
+	<Entity>CU_Settler_Female4</Entity>
 	<Entity>PV_Cannon3a</Entity>
 	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>
@@ -776,4 +782,15 @@
 	<Entity>CU_AggressiveBear</Entity>
 	<Entity>CU_AggressiveBlackBear</Entity>
 	<Entity>CU_AggressivePolarBear</Entity>
+	
+	<Entity>PU_LeaderBow2a</Entity>
+	<Entity>PU_SoldierBow2a</Entity>
+	<Entity>PU_LeaderCavalry1a</Entity>
+	<Entity>PU_LeaderHeavyCavalry1a</Entity>
+	<Entity>PU_SoldierCavalry1a</Entity>
+	<Entity>PU_SoldierHeavyCavalry1a</Entity>
+	<Entity>PU_LeaderPoleArm2a</Entity>
+	<Entity>PU_SoldierPoleArm2a</Entity>
+	<Entity>PU_LeaderSword2a</Entity>
+	<Entity>PU_SoldierSword2a</Entity>
 </root>

@@ -23,7 +23,6 @@
         </Cost>
         <Category>Military</Category>
         <Category>Cannon</Category>
-        <Category>SplashDamage</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>200</MaxHealth>
 		  <Exploration>26</Exploration>
@@ -112,11 +111,11 @@
 	        <BattleWalkAnim>PV_Cannon1_Drive</BattleWalkAnim>
 	    
 	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>35</DamageAmount>
-	        <MaxRandomDamageBonus>8</MaxRandomDamageBonus>
-	        <DamageRange>150</DamageRange>
+	        <DamageAmount>30</DamageAmount>
+	        <MaxRandomDamageBonus>10</MaxRandomDamageBonus>
+	        <DamageRange>200</DamageRange>
 	        
-	        <BattleWaitUntil>3000</BattleWaitUntil>
+	        <BattleWaitUntil>2000</BattleWaitUntil>
   			<ProjectileOffsetFront>40</ProjectileOffsetFront>
   			<ProjectileOffsetRight/>
 	        <ProjectileEffectID>FXCannonBallShrapnel</ProjectileEffectID>

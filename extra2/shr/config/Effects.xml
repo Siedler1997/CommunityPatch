@@ -737,6 +737,25 @@
 			<Anim>XF_NephilimFlowerDestroy</Anim>
 		</Display>
 	</Effect>
-
-
+<!--
+  <Effect id="FXGranade">
+    <Logic classname="GGL::CCannonBallEffectProps">
+      <Class>GGL::CCannonBallEffect</Class>
+      <Global>false</Global>
+      <Duration>0</Duration>
+      <Speed>1200.0</Speed>
+      <Radius>1000</Radius>
+      <Damage>100</Damage>
+      <GravityFactor>600.0f</GravityFactor>
+      <HeightOffsetStart>160.0</HeightOffsetStart>
+      <HeightOffsetTarget>120.0</HeightOffsetTarget>
+      <Damage>0</Damage>
+      <ImpactEffectID>FXExplosionPilgrim</ImpactEffectID>
+    </Logic>
+    <Display classname="ED::CFlyingEffectProps">
+      <Class>ED::CFlyingEffect</Class>
+      <Model>XD_Hero2Bomb</Model>
+    </Display>
+  </Effect>
+-->
 </root>

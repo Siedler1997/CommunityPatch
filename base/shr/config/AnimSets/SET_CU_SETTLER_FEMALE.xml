@@ -1,0 +1,47 @@
+<AnimSet>
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Walk</Name>
+		<Animation>U_SpouseS_Normal_Walk</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle</Name>
+		<Animation>U_SpouseS_Normal_Idle</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle1</Name>
+		<Animation>U_SpouseS_Normal_Idle1</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle2</Name>
+		<Animation>U_SpouseS_Normal_Idle2</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle3</Name>
+		<Animation>U_SpouseS_Normal_Idle3</Animation>		
+    </Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle4</Name>
+		<Animation>U_SpouseS_Normal_Idle4</Animation>		
+    </Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle5</Name>
+		<Animation>U_SpouseS_Normal_Idle5</Animation>
+	</Category>
+
+	<Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Idle6</Name>
+		<Animation>U_SpouseS_Normal_Idle6</Animation>
+	</Category>
+    
+    <Category classname="GGL::CGLAnimCategory" classid="0xa7b5dfb8">
+		<Name>Die</Name>
+		<Animation>U_SpouseS_Alarmed_Stand</Animation>		
+    </Category>
+
+</AnimSet>

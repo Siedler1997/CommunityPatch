@@ -223,30 +223,53 @@ function GUIAction_ChangeFormation(_formationtype)
 	local SelectedEntityIDs = { GUI.GetSelectedEntities() }
 	
 	-- Do action
-	if (_formationtype == 1) then
-		for n = 1, table.getn(SelectedEntityIDs) do		
-			if Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.CavalryLight) == 1 then
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 8)
-			elseif Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.EvilLeader) == 1 then
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 9)
-			else
-				Logic.LeaderChangeFormationType(GetEntityId(SelectedEntityIDs[n]), 1)
+	do
+		for i=1, 20, 1 do
+			local SelectedEntityID = SelectedEntityIDs[ i ]
+			local formationId = 1
+			if SelectedEntityID ~= nil and SelectedEntityID > 0 then
+				if _formationtype == 1 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 8
+					elseif Logic.IsEntityInCategory(SelectedEntityIDs[n],EntityCategories.EvilLeader) == 1 then
+						formationId = 9
+					else
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							formationId = 1
+						else
+							formationId = 9
+						end
+					end	
+				elseif _formationtype == 2 then
+					if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+						formationId = 2
+					else
+						formationId = 5
+					end
+				elseif _formationtype == 3 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 6
+					else
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							formationId = 3
+						else
+							formationId = 6
+						end
+					end	
+				elseif _formationtype == 4 then
+					if Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryHeavy) == 1 or Logic.IsEntityInCategory(SelectedEntityID,EntityCategories.CavalryLight) == 1 then
+						formationId = 7
+					else
+						if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+							formationId = 4
+						else
+							formationId = 7
+						end
+					end	
+				end			
 			end
-		end
-	else
-		do
-			for i=1, 20, 1 do
-				local SelectedEntityID = SelectedEntityIDs[ i ]
-				if SelectedEntityID ~= nil and SelectedEntityID > 0 then
-					if _formationtype == 2 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 2 )
-					elseif _formationtype == 3 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 3 )
-					elseif _formationtype == 4 then
-						GUI.LeaderChangeFormationType( SelectedEntityID, 4 )
-					end			
-				end
-			end
+
+			GUI.LeaderChangeFormationType(SelectedEntityID, formationId)	
 		end
 	end
 
@@ -334,20 +357,78 @@ end
 function GUIAction_HeroGenericExplore() 
 	local PlayerID = GUI.GetPlayerID()
 	local heroId = GUI.GetSelectedEntity()
+
 	if Logic.IsHero(heroId) == 1 then
-		if IsExisting("cp_p"..PlayerID.."_marker_pos") then
-			local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
-			GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
-			Explore.Hide("cp_p"..PlayerID.."explorer")
-			DestroyEntity("cp_p"..PlayerID.."_marker_pos")
-		end
 		if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 0 then
+			DestroyHeroExplore()
+
 			local _pos = GetPosition(heroId)
+			local _range = 2000
+
 			CreateEntity(PlayerID, Entities.XD_ScriptEntity, _pos, "cp_p"..PlayerID.."_marker_pos")
 			GUI.CreateMinimapMarker(_pos.X, _pos.Y, CP_HeroMarkColor)
-			Explore.Show("cp_p"..PlayerID.."explorer", _pos, 2000)
+
+			if Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification10) > 0 then
+				_range = _range * 1.5
+			end
+
+			Explore.Show("cp_p"..PlayerID.."explorer", _pos, _range)
+		else
+			DestroyHeroExplore()
 		end
 	end
+end
+
+function DestroyHeroExplore()
+	local PlayerID = GUI.GetPlayerID()
+
+	if IsExisting("cp_p"..PlayerID.."_marker_pos") then
+		local markerpos = GetPosition("cp_p"..PlayerID.."_marker_pos")
+
+		GUI.DestroyMinimapPulse(markerpos.X, markerpos.Y)
+		Explore.Hide("cp_p"..PlayerID.."explorer")
+		DestroyEntity("cp_p"..PlayerID.."_marker_pos")
+	end
+
+	Sound.PlayFeedbackSound(GetHeroYesSound() , 0 )
+end
+
+function GetHeroYesSound()
+	local SelectedHeroID = HeroSelection_GetCurrentSelectedHeroID()
+	local SpokenText = Sounds.VoicesMentor_COMMENT_Yes_rnd_01
+	if Logic.IsHero(SelectedHeroID) == 1 then
+		local EntityType = Logic.GetEntityType(SelectedHeroID)
+		
+		if Logic.IsEntityInCategory(SelectedHeroID,EntityCategories.Hero1) == 1 then
+			SpokenText	= Sounds.VoicesHero1_HERO1_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero2 then
+			SpokenText	= Sounds.VoicesHero2_HERO2_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero3 then
+			SpokenText	= Sounds.VoicesHero3_HERO3_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero4 then
+			SpokenText	= Sounds.VoicesHero4_HERO4_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero5 then
+			SpokenText	= Sounds.VoicesHero5_HERO5_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero6 then
+			SpokenText	= Sounds.VoicesHero6_HERO6_Yes_rnd_01
+		elseif EntityType == Entities.CU_BlackKnight then
+			SpokenText	= Sounds.VoicesHero7_HERO7_Yes_rnd_01
+		elseif EntityType == Entities.CU_Mary_de_Mortfichet then
+			SpokenText	= Sounds.VoicesHero8_HERO8_Yes_rnd_01
+		elseif EntityType == Entities.CU_Barbarian_Hero then
+			SpokenText	= Sounds.VoicesHero9_HERO9_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero1 then
+			SpokenText	= Sounds.AOVoicesScout_Scout_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero10 or EntityType == Entities.CU_Hero10 then
+			SpokenText	= Sounds.AOVoicesHero10_HERO10_Yes_rnd_01
+		elseif EntityType == Entities.PU_Hero11 then
+			SpokenText	= Sounds.AOVoicesHero11_HERO11_Yes_rnd_01
+		elseif EntityType == Entities.CU_Evil_Queen then
+			SpokenText	= Sounds.AOVoicesHero12_HERO12_Yes_rnd_01
+		end
+	end
+	--Message("Sound: " .. SpokenText)
+	return SpokenText
 end
 
 --------------------------------------------------------------------------------
@@ -856,7 +937,14 @@ function GUIAction_ChangeWeather(_weathertype)
 	local NeededWeatherEnergy = Logic.GetEnergyRequiredForWeatherChange()
 	
 	if CurrentWeatherEnergy >= NeededWeatherEnergy then		
-		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_WeathermashineActivated"))		
+		--Get player name and color
+		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(PlayerID)
+		local Color =  "@color:" .. ColorR .. "," .. ColorG .. ",".. ColorB .. ",255 "
+		local PlayerName = Color .. UserTool_GetPlayerName(PlayerID)
+			
+		GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_PlayerXWeathermashineActivated"), PlayerName))	
+
+		--GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_WeathermashineActivated"))		
 		GUI.SetWeather(_weathertype)
 		
 	else
@@ -873,24 +961,21 @@ function GUIAction_BlessSettlers(_BlessCategory)
 	if InterfaceTool_IsBuildingDoingSomething( GUI.GetSelectedEntity() ) == true then		
 		return
 	end
+
 	local PlayerID = GUI.GetPlayerID()
 	local CurrentFaith = Logic.GetPlayersGlobalResource( PlayerID, ResourceType.Faith )	
 	local BlessCosts = Logic.GetBlessCostByBlessCategory(_BlessCategory)
 	if BlessCosts <= CurrentFaith then
-		local BlessPrice = InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory)
-		if HasPlayerEnoughResources{Gold=BlessPrice} == 1 then
-			AddGold(-BlessPrice)
-			local random_num = GetRandom(1, 100)
-			if random_num > 25 then
-				GUI.BlessByBlessCategory(_BlessCategory)
-			else
-				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_SettlersBlessed"))
-				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_BlessingFailed"))
-				Logic.SubFromPlayersGlobalResource(PlayerID, ResourceType.Faith, Logic.GetPlayersGlobalResource(PlayerID, ResourceType.Faith))
-			end
-			Sound.PlayGUISound( Sounds.Buildings_Monastery, 0 ) 
-			Sound.PlayFeedbackSound(Sounds.VoicesMentor_INFO_SettlersBlessed_rnd_01 , 0 )
+		if GetRandom(1, 100) > 10 then
+			GUI.BlessByBlessCategory(_BlessCategory)
+			AddGold(PlayerID, InterfaceTool_GetBlessingCosts(PlayerID, _BlessCategory))
+		else
+			GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_SettlersBlessed"))
+			GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_BlessingFailed"))
+			Logic.SubFromPlayersGlobalResource(PlayerID, ResourceType.Faith, Logic.GetPlayersGlobalResource(PlayerID, ResourceType.Faith))
 		end
+		--Sound.PlayGUISound( Sounds.Buildings_Monastery, 0 ) 
+		--Sound.PlayFeedbackSound(Sounds.VoicesMentor_INFO_SettlersBlessed_rnd_01 , 0 )
 	else	
 		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_NotEnoughFaith"))
 		Sound.PlayFeedbackSound( Sounds.VoicesMentor_INFO_MonksNeedMoreTime_rnd_01, 0 )
@@ -1189,8 +1274,14 @@ end
 function GUIAction_AdjustGameSpeed()
 	if Game.GameTimeGetFactor() ~= 0 then
 		if (IsBriefingActive == nil or IsBriefingActive() == false) and (IsCutsceneActive == nil or IsCutsceneActive() == false) then
-			if Game.GameTimeGetFactor() < 3 then
-				Game.GameTimeSetFactor(Game.GameTimeGetFactor() + 1)
+			if Game.GameTimeGetFactor() < 10 then
+				if XGUIEng.IsModifierPressed(Keys.ModifierControl) == 1 then
+					Game.GameTimeReset()
+				elseif XGUIEng.IsModifierPressed(Keys.ModifierShift) == 1 then
+					Game.GameTimeSetFactor(10)
+				else
+					Game.GameTimeSetFactor(Game.GameTimeGetFactor() + 1)
+				end
 			else
 				Game.GameTimeReset()
 			end
@@ -1297,5 +1388,42 @@ function GUIAction_LevyTaxes()
 	else
 		GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/GUI_LevyTaxesFailed"))
 		Sound.PlayFeedbackSound(Sounds.LevyTaxes , 0 )
+	end
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Action for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIAction_RepairCannonButton()
+	local PlayerID = GUI.GetPlayerID()	
+	local SelectedCannonID = GUI.GetSelectedEntity()
+	local SelectedCannonType = Logic.GetEntityType(SelectedCannonID)
+	local SelectedCannonCategory = 0
+
+	if SelectedCannonType == Entities.PV_Cannon1 then
+		SelectedCannonCategory = UpgradeCategories.Cannon1
+	elseif SelectedCannonType == Entities.PV_Cannon2 then
+		SelectedCannonCategory = UpgradeCategories.Cannon2
+	elseif SelectedCannonType == Entities.PV_Cannon3 or SelectedCannonType == Entities.PV_Cannon3a then
+		SelectedCannonCategory = UpgradeCategories.Cannon3
+	elseif SelectedCannonType == Entities.PV_Cannon4 or SelectedCannonType == Entities.PV_Cannon4a then
+		SelectedCannonCategory = UpgradeCategories.Cannon4
+	end
+
+	local currentHealth = Logic.GetEntityHealth(SelectedCannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(SelectedCannonID)
+	if SelectedCannonCategory ~= 0 and currentHealth < maxHealth then
+		local lostHealth = 1 - (currentHealth / maxHealth)
+		Logic.FillLeaderCostsTable(PlayerID, SelectedCannonCategory, InterfaceGlobals.CostTable)
+		InterfaceGlobals.CostTable[ResourceType.Gold] = round(InterfaceGlobals.CostTable[ResourceType.Gold] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Wood] = round(InterfaceGlobals.CostTable[ResourceType.Wood] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Iron] = round(InterfaceGlobals.CostTable[ResourceType.Iron] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Sulfur] = round(InterfaceGlobals.CostTable[ResourceType.Sulfur] * lostHealth)
+
+		if InterfaceTool_HasPlayerEnoughResources_Feedback(InterfaceGlobals.CostTable) == 1 then	
+			InterfaceTool_PayResources(InterfaceGlobals.CostTable);
+			SetHealth(SelectedCannonID, 100)
+			Sound.PlayFeedbackSound( Sounds.Coiner01, 0 )
+		end
 	end
 end

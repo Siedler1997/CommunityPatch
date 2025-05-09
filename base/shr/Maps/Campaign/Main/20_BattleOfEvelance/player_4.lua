@@ -12,12 +12,14 @@ createPlayer4 = function()
 	
 		if CP_Difficulty == 0 then
 			MapEditor_SetupAI(player4.id, 2, 3000, 3, "outpost", 1, 0, true)
-		else
+		elseif CP_Difficulty == 1 then
 			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 2, 0, true)
+		else
+			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 3, 0, true)
 		end
 		local description = {
 		
-			serfLimit				=	5,
+			serfLimit				=	4+2*CP_Difficulty,
 			--------------------------------------------------
 			extracting				=	false,
 			--------------------------------------------------

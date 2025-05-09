@@ -1,0 +1,10 @@
+<root>
+	<TecCategoryType>TC_Building</TecCategoryType>
+	
+	<Conditions>
+		<TecCondition>
+			<TecType>GT_Construction</TecType>
+			<TecCategoryType></TecCategoryType>
+		</TecCondition>		
+	</Conditions>
+</root>

@@ -14,8 +14,10 @@ createPlayer5 = function()
 	
 		if CP_Difficulty == 0 then
 			MapEditor_SetupAI(player5.id, 2, 3000, 3, "lionsDen", 1, 0, true)
-		else
+		elseif CP_Difficulty == 1 then
 			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 2, 0, true)
+		else
+			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 3, 0, true)
 		end
 		local description = {
 		

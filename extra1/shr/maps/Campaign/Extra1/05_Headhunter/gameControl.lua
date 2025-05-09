@@ -79,6 +79,11 @@ function endChapterThree()
         local name = "scout"..i
         ChangePlayer(name,1)
         end
+        
+	AllowTechnology(Technologies.T_ChangeWeather)
+	AllowTechnology(Technologies.T_WeatherForecast)
+	AllowTechnology(Technologies.B_Weathermachine)
+	AllowTechnology(Technologies.B_PowerPlant)
 
     beginChapterFour()
 

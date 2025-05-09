@@ -43,6 +43,7 @@
 		IncludeLocals("quest_reachWeatherMachine")
 		IncludeLocals("quest_rewards")
 		IncludeLocals("quest_weatherMaker")
+		IncludeLocals("quest_enemyWeather")
 		
 		IncludeLocals("army_attack1")
 		IncludeLocals("army_attack2")
@@ -209,32 +210,45 @@ function Mission_FirstMapAction()
 		Logic.SetDiplomacyState( 1, 5, Diplomacy.Friendly )
 
 	-- Start prelude
-
+	
 		if CP_Difficulty == 0 then
 			CreateRandomGoldChests()	
 			CreateRandomChests()
 
-			DestroyEntity("hard_rock")
-		else
-			if CP_Difficulty == 2 then
-				GUI.SetTaxLevel(1)
-			end
+			--Remove new rocks so that AI uses vanilla route
+			DestroyEntity("hard_rock1")
+			DestroyEntity("hard_rock2")
 
+			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm3,0,8,29687,8770,0,0,0,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,29687,8770,0,0,3,0)
+			Move(southernSpear1, "southernSpearPos1")
+			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm3,0,8,29687,8770,0,0,0,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow3,0,8,21300,11250,0,0,3,0)
+			Move(southernSpear2, "southernSpearPos2")
+		else
 			if CP_Difficulty == 1 then
 				CreateRandomGoldChests()	
 				CreateRandomChests()
 
-				DestroyEntity("hard_rock")
+				--Keep the rocks so that AI uses modded route
+				--DestroyEntity("hard_rock1")
+				--DestroyEntity("hard_rock2")
 			end
+
+			if CP_Difficulty == 2 then
+				GUI.SetTaxLevel(1)
+
+				local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
+				for i = 2, table.getn(towers1) do
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
+				end
+			end
+			
 			--[[
 			local vcpos = GetPosition("vc_empty")
 			DestroyEntity("vc_empty")
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
 			--]]
-			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 48, 0) }
-			for i = 2, table.getn(towers1) do
-				ReplaceEntity(towers1[i], Entities.PB_Tower2)
-			end
 
 			Logic.CreateEntity(Entities.PB_DarkTower3, 23600, 24400, 0, 4);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 24500, 0, 4);
@@ -250,6 +264,13 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 35400, 0, 5);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 36100, 32200, 0, 5);
 			
+			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,29687,8770,0,0,CP_Difficulty,0)
+			Move(southernSpear1, "southernSpearPos1")
+			local southernSpear2 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,21300,11250,0,0,CP_Difficulty,0)
+			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,21300,11250,0,0,CP_Difficulty,0)
+			Move(southernSpear2, "southernSpearPos2")
+
 			for i = 1, 3 do
 				local bosspos3 = GetPosition("tower_spawn"..i)
 				local bossID3 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos3.X,(bosspos3.Y - 100),0,0,3,0)
@@ -273,7 +294,7 @@ function Mission_FirstMapAction()
 		end
 
 		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
-		RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
+		--RaidersCreate({player = 7, pos = "rudelpos2", revier = {"rudelpos2", "rudelpos2_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (3 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})
 
 		RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 		RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
@@ -285,4 +306,7 @@ function Mission_FirstMapAction()
 		--Tools.ExploreArea(-1, -1, 900)
 		--CP_ActivateEvilMod(1, 1, 1)
 		--ResearchTechnology( Technologies.GT_Tactics, 1 );
+		--ResearchTechnology( Technologies.T_AdjustTaxes, 1 );
+		--ResearchTechnology( Technologies.UP1_Bank, 1 );
+		--ResearchTechnology( Technologies.B_Outpost, 1 );
 end

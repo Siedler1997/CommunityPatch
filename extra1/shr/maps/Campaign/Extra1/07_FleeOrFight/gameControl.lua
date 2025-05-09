@@ -2,11 +2,13 @@
 -- Introduction, rescue serfs
 ------------------------------------------------------------------------------
 function start1stChapter()
-
+	Logic.SetShareExplorationWithPlayerFlag(1,4,1)
 	Logic.SetShareExplorationWithPlayerFlag(1,7,1)
 
 	AddDefeatEntity("P1_Headquarter")
 	AddDefeatEntity("P3_EastVillage_HQ")
+	
+    Logic.SetPlayerPaysLeaderFlag(1,0)
 
 	CreateChestOpener("Ari")
 	CreateChestOpener("Salim")
@@ -32,13 +34,9 @@ function start1stChapter()
 
 	CreateQuestRescueSerfs()
 
-	-- Start winter after some time
-	CreateQuestWinter()
-
-
 	CreateNPCHeadquarters()
-
 end
+
 function end1stChapter()
 	
 	ResolveBriefing(briefingPreludeRescueSerfs)
@@ -84,8 +82,7 @@ function start3rdChapter()
 	start2ndSubChapter()
 
 	-- fire signals
-	start3rdSubChapter()
-
+	CreateQuestSignalFires()
 end
 	
 function end3rdChapter()
@@ -170,74 +167,4 @@ function end2ndSubChapter()
 	-- stop respawn
 	StopArmyEastVillageAttackRespawn()
 	
-end
-
-------------------------------------------------------------------------------
--- hermit npc
-------------------------------------------------------------------------------
-function start3rdSubChapter()
-	
-	GUIQuestTools.StartQuestInformation("Fire", "CM02_07_FleeOrFight/QI_signalFire", 1, 1)	
-
-	GUIQuestTools.UpdateQuestInformationString("0/4")
-
-	CreateNPCHermit()
-	
-end
-function end3rdSubChapter()
-
-	GUIQuestTools.UpdateQuestInformationString("1/4")
-
-	start4thSubChapter()
-
-end
-
-------------------------------------------------------------------------------
--- johannes
-------------------------------------------------------------------------------
-function start4thSubChapter()
-
-	CreateNPCJohannes()
-
-end
-function end4thSubChapter()
-
-	GUIQuestTools.UpdateQuestInformationString("2/4")
-	start5thSubChapter()
-
-end
-
-------------------------------------------------------------------------------
--- serf
-------------------------------------------------------------------------------
-function start5thSubChapter()
-
-	CreateNPCFireSignal3()
-
-end
-function end5thSubChapter()
-
-	GUIQuestTools.UpdateQuestInformationString("3/4")
-	start6thSubChapter()
-
-end
-
-------------------------------------------------------------------------------
--- ruins
-------------------------------------------------------------------------------
-function start6thSubChapter()
-
-	CreateNPCRuins()
-
-end
-function end6thSubChapter()
-
-	AllFireSignalsBurning = true
-	
-	GUIQuestTools.DisableQuestInformation()
-	
-	ResolveBriefing(NPCEastVillageBriefingShowNPCs)
-
-	StartCutscene(Cutscenes[THRESHOLDONECUTSCENE])
-
 end

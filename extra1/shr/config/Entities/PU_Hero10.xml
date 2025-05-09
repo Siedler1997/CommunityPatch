@@ -132,7 +132,7 @@
 	        <HitAnim>PU_Hero10_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Hero</DamageClass>
-	         <DamageAmount>26</DamageAmount>
+	         <DamageAmount>24</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        

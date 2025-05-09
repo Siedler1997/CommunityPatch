@@ -25,10 +25,10 @@
 
 <!--WEATHER -->
 	<!-- Factor for exploration of buildings if raining -->
-	<WeatherExplorationBuildingRainFactor>0.8</WeatherExplorationBuildingRainFactor>
+	<WeatherExplorationBuildingRainFactor>0.9</WeatherExplorationBuildingRainFactor>
 
 	<!-- Factor for exploration of settlers if raining -->
-	<WeatherExplorationSettlerRainFactor>0.8</WeatherExplorationSettlerRainFactor>
+	<WeatherExplorationSettlerRainFactor>0.9</WeatherExplorationSettlerRainFactor>
 
 	<!-- Factor for move speed if raining -->
 	<WeatherMoveSpeedRainFactor>0.95</WeatherMoveSpeedRainFactor>
@@ -41,7 +41,7 @@
 	<WeatherExplorationSettlerSnowFactor>0.95</WeatherExplorationSettlerSnowFactor>
 
 	<!-- Factor for move speed if snowing -->
-	<WeatherMoveSpeedSnowFactor>0.85</WeatherMoveSpeedSnowFactor>
+	<WeatherMoveSpeedSnowFactor>0.9</WeatherMoveSpeedSnowFactor>
 
 	<!-- Miss Chance change (projectiles) (integer %) when it's raining -->
 	<WeatherMissChanceChangeRain>5</WeatherMissChanceChangeRain>
@@ -127,26 +127,26 @@
         <RegularTax>0</RegularTax>
         <MotivationChange>0.2</MotivationChange>
     </TaxationLevel>
-    <!-- 1: LOW TAXES-->
-    <TaxationLevel>
-        <RegularTax>5</RegularTax>
-        <MotivationChange>0.08</MotivationChange>
-    </TaxationLevel>
-    <!-- 2: NORMAL TAXES-->
-    <TaxationLevel>
-        <RegularTax>10</RegularTax>
-        <MotivationChange>0</MotivationChange>
-    </TaxationLevel>
-    <!-- 3: HIGH TAXES-->
-    <TaxationLevel>
-        <RegularTax>15</RegularTax>
-        <MotivationChange>-0.08</MotivationChange>
-    </TaxationLevel>
-    <!-- 4: VERY HIGH TAXES-->
-    <TaxationLevel>
-        <RegularTax>20</RegularTax>
-        <MotivationChange>-0.12</MotivationChange>
-    </TaxationLevel>
+	<!-- 1: LOW TAXES-->
+	<TaxationLevel>
+		<RegularTax>5</RegularTax>
+		<MotivationChange>0.1</MotivationChange>
+	</TaxationLevel>
+	<!-- 2: NORMAL TAXES-->
+	<TaxationLevel>
+		<RegularTax>10</RegularTax>
+		<MotivationChange>0</MotivationChange>
+	</TaxationLevel>
+	<!-- 3: HIGH TAXES-->
+	<TaxationLevel>
+		<RegularTax>15</RegularTax>
+		<MotivationChange>-0.1</MotivationChange>
+	</TaxationLevel>
+	<!-- 4: VERY HIGH TAXES-->
+	<TaxationLevel>
+		<RegularTax>20</RegularTax>
+		<MotivationChange>-0.2</MotivationChange>
+	</TaxationLevel>
 
 
 <!-- MOTIVATION and WORK TIME -->
@@ -181,7 +181,7 @@
     <WorkTimeThresholdWork>25</WorkTimeThresholdWork>
 
     <!-- The amount of motivation each worker loses when forced to work -->
-	<ForceToWorkPenalty>0.2</ForceToWorkPenalty>
+	<ForceToWorkPenalty>0.1</ForceToWorkPenalty>
 
 	<!-- The base work time which is multiplied by the worker's motivation -->
 	<WorkTimeBase>125</WorkTimeBase>
@@ -262,7 +262,7 @@
 	</BlessingCost>
 
 	<!-- The amount by which a workers motivation is increased when blessed -->
-	<BlessingBonus>0.3</BlessingBonus>
+	<BlessingBonus>0.2</BlessingBonus>
 
 	<!-- The amount of seconds the motivation bonus persists for after to settler is blessed -->
 	<BlessingBonusTime>180</BlessingBonusTime>
@@ -324,8 +324,6 @@
 		<EntityType>PU_Engineer</EntityType>
         <EntityType>PU_Smith</EntityType>
 		<EntityType>PU_Alchemist</EntityType>
-		<EntityType>PU_Smelter</EntityType>
-        <EntityType>PU_Smith</EntityType>
 		<EntityType>PU_Smelter</EntityType>
         <EntityType>PU_Trader</EntityType>
 		<EntityType>PU_Treasurer</EntityType>
@@ -1016,6 +1014,11 @@
 		<FirstBuilding>CB_Lighthouse</FirstBuilding>
 	</BuildingUpgrade>
 
+  <BuildingUpgrade>
+    <Category>LighthouseActivated</Category>
+    <FirstBuilding>CB_LighthouseActivated</FirstBuilding>
+  </BuildingUpgrade>
+
 	<SettlerUpgrade>
 		<Category>Cannon3a</Category>
 		<FirstSettler>PV_Cannon3a</FirstSettler>
@@ -1024,6 +1027,66 @@
 	<SettlerUpgrade>
 		<Category>Cannon4a</Category>
 		<FirstSettler>PV_Cannon4a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Sword men -->
+	<SettlerUpgrade>
+		<Category>LeaderSword2a</Category>
+		<FirstSettler>PU_LeaderSword2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierSword2a</Category>
+		<FirstSettler>PU_SoldierSword2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Spear men -->
+	<SettlerUpgrade>
+		<Category>LeaderPoleArm2a</Category>
+		<FirstSettler>PU_LeaderPoleArm2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierPoleArm2a</Category>
+		<FirstSettler>PU_SoldierPoleArm2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Bow men -->
+	<SettlerUpgrade>
+		<Category>LeaderBow2a</Category>
+		<FirstSettler>PU_LeaderBow2a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierBow2a</Category>
+		<FirstSettler>PU_SoldierBow2a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Light Cavalry -->
+	<SettlerUpgrade>
+		<Category>LeaderCavalry1a</Category>
+		<FirstSettler>PU_LeaderCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierCavalry1a</Category>
+		<FirstSettler>PU_SoldierCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Heavy Cavalry -->
+	<SettlerUpgrade>
+		<Category>LeaderHeavyCavalry1a</Category>
+		<FirstSettler>PU_LeaderHeavyCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierHeavyCavalry1a</Category>
+		<FirstSettler>PU_SoldierHeavyCavalry1a</FirstSettler>
+	</SettlerUpgrade>
+
+	<!-- Rifle -->
+	<SettlerUpgrade>
+		<Category>LeaderRifle1a</Category>
+		<FirstSettler>PU_LeaderRifle1a</FirstSettler>
+	</SettlerUpgrade>
+	<SettlerUpgrade>
+		<Category>SoldierRifle1a</Category>
+		<FirstSettler>PU_SoldierRifle1a</FirstSettler>
 	</SettlerUpgrade>
 
 	<BuildingUpgrade>

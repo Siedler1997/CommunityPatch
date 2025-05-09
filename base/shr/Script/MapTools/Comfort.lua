@@ -2410,3 +2410,51 @@ function SetAIUnitsToBuild( _aiID, _types )
         end
     end
 end
+
+function ChangeWeatherByPlayer(_player, _weathertype, _duration, _playerName)
+	local success = false
+	--Do not change while already changing
+	if Logic.IsWeatherChangeActive() == true then	
+		return
+	end
+	
+	local PlayerID = _player
+	local WeatherTowerAmount, WeatherTowerID = Logic.GetPlayerEntities(PlayerID, Entities.PB_WeatherTower1,1)
+
+	if WeatherTowerAmount >= 1 and Logic.IsConstructionComplete(WeatherTowerID) == 1 then
+		local CurrentWeatherEnergy = Logic.GetPlayersGlobalResource(PlayerID, ResourceType.WeatherEnergy)	
+		local NeededWeatherEnergy = Logic.GetEnergyRequiredForWeatherChange()
+	
+		if CurrentWeatherEnergy >= NeededWeatherEnergy then	
+			--Get player name and color
+			local ColorR, ColorG, ColorB = GUI.GetPlayerColor(PlayerID)
+			local PlayerName = "@color:" .. ColorR .. "," .. ColorG .. ",".. ColorB .. ",255 "
+			
+			--Use specified player name or try to get name from player
+			if _playerName ~= nil then
+				PlayerName = PlayerName .. _playerName
+			else
+				--try to get player name
+				PlayerName = PlayerName .. UserTool_GetPlayerName(PlayerID)
+			end
+				
+			GUI.AddNote(string.format(XGUIEng.GetStringTableText("InGameMessages/GUI_PlayerXWeathermashineActivated"), PlayerName))	
+			
+			Logic.SubFromPlayersGlobalResource(PlayerID, ResourceType.WeatherEnergy, Logic.GetPlayersGlobalResource(PlayerID, ResourceType.WeatherEnergy))
+			if (_weathertype == 1) then
+				StartSummer(_duration)
+			elseif (_weathertype == 2) then
+				StartRain(_duration)
+			else
+				StartWinter(_duration)
+			end
+			success = true
+			--GUI.SetWeather(_weathertype)
+		end
+	end	
+	return success
+end
+
+function round( _n )
+	return math.floor( _n + 0.5 );
+end

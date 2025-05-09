@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CGLETaskList>
+ <Script>
+    	Logic.CreateEntity(Entities.PB_Monastery1,1500,1500,0);
+    	Logic.CreateEntity(Entities.PU_Priest,50,50,0);
+    	Logic.CreateEntity(Entities.PU_Priest,50,50,0);
+    	Logic.CreateEntity(Entities.PU_Priest,50,50,0);    	
+	</Script>
+ 
+     <PrincipalTask>Work</PrincipalTask>
+ 
+  <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_CHECK_FEAR</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_CHECK_FEAR</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_APPEAR</TaskType>
+ </Task>
+  <Task classname="EGL::CGLETaskArgsPosAndOrientation" classid="0x2f706fdd">
+  <TaskType>TASK_SET_POS</TaskType>
+  <Position>
+   <X>-400</X>
+   <Y>200</Y>
+  </Position>
+  <Orientation>180</Orientation>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+  <TaskType>TASK_SET_ANIM</TaskType>
+  <AnimID>PU_Priest_Walk</AnimID>
+  <Category></Category>
+  <PlayBackwards>false</PlayBackwards>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>-3.765543e+002</X>
+   <Y>2.369690e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>-3.808311e+002</X>
+   <Y>9.811328e+001</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>-3.561765e+002</X>
+   <Y>-5.201890e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>2.629343e+002</X>
+   <Y>-5.282834e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>2.944899e+002</X>
+   <Y>-4.683643e+001</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>7.262793e+001</X>
+   <Y>-1.111265e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>9.292651e+001</X>
+   <Y>-2.932961e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>6.380493e+001</X>
+   <Y>-3.268125e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+  <TaskType>TASK_SET_ANIM</TaskType>
+  <AnimID>PU_Priest_Work2</AnimID>
+  <Category></Category>
+  <PlayBackwards>false</PlayBackwards>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+  <Thousandths>100</Thousandths>
+ </Task>
+ <Task classname="EGL::CTaskArgsInteger" classid="0xb3f8356d">
+  <TaskType>TASK_INCREASE_PLAYER_FAITH</TaskType>
+  <Value>50</Value>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+  <Thousandths>800</Thousandths>
+ </Task>
+ <Task classname="EGL::CTaskArgsInteger" classid="0xb3f8356d">
+  <TaskType>TASK_INCREASE_PLAYER_FAITH</TaskType>
+  <Value>50</Value>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT_FOR_ANIM</TaskType>
+  <Thousandths>1000</Thousandths>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsAnimation" classid="0x4d90ecb8">
+  <TaskType>TASK_SET_ANIM</TaskType>
+  <AnimID>PU_Priest_Walk</AnimID>
+  <Category></Category>
+  <PlayBackwards>false</PlayBackwards>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>7.117432e+000</X>
+   <Y>-2.998682e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>2.738513e+001</X>
+   <Y>-1.161548e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>2.838833e+002</X>
+   <Y>-9.574951e+001</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>2.947271e+002</X>
+   <Y>3.065601e+001</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>-3.796194e+002</X>
+   <Y>8.609180e+001</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgsPosition" classid="0x5cc25f38">
+  <TaskType>TASK_GO_TO_POS</TaskType>
+  <Position>
+   <X>-3.760698e+002</X>
+   <Y>2.364932e+002</Y>
+  </Position>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_VANISH</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_WORK_WAIT_UNTIL</TaskType>
+ </Task>
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_ADVANCE_IN_CYCLE</TaskType>
+ </Task>
+</CGLETaskList>

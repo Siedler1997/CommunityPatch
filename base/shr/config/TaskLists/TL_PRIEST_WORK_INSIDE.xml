@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CGLETaskList>
+ 
+     <PrincipalTask>Work</PrincipalTask>
+ 
+  <Script>
+    	Logic.CreateEntity(Entities.PB_Monastery1,600,500,0);
+    	Logic.CreateEntity(Entities.PU_Priest,50,50,0);
+	</Script>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_CHECK_FEAR</TaskType>
+    </Task>
+    
+    <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+        <TaskType>TASK_CHECK_FEAR</TaskType>
+    </Task>
+        
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_RESET_TASK_LIST_TIMER</TaskType>
+ </Task>
+ 
+ <Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT</TaskType>
+	  <Thousandths>5000</Thousandths>
+ </Task>
+<Task classname="EGL::CTaskArgsInteger" classid="0xb3f8356d">
+  <TaskType>TASK_INCREASE_PLAYER_FAITH</TaskType>
+  <Value>50</Value>
+ </Task>
+ 
+<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+	    <TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+	
+<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT</TaskType>
+	  <Thousandths>5000</Thousandths>
+ </Task>
+
+<Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+	    <TaskType>TASK_CHANGE_WORK_TIME_WORK</TaskType>
+	</Task>
+	
+	
+	
+<Task classname="EGL::CTaskArgsInteger" classid="0xb3f8356d">
+  <TaskType>TASK_INCREASE_PLAYER_FAITH</TaskType>
+  <Value>50</Value>
+ </Task>
+ 
+	<Task classname="EGL::CGLETaskArgsThousandths" classid="0x230862d8">
+  <TaskType>TASK_WAIT</TaskType>
+	  <Thousandths>5000</Thousandths>
+ </Task>
+	
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_WORK_WAIT_UNTIL</TaskType>
+ </Task>
+ 
+ <Task classname="EGL::CGLETaskArgs" classid="0x7ce66308">
+  <TaskType>TASK_ADVANCE_IN_CYCLE</TaskType>
+ </Task>
+</CGLETaskList>
+ 

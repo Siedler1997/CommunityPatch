@@ -213,59 +213,78 @@ end
 --------------------------------------------------------------------------------
 -- Update Buy Military Unit Buttons
 --------------------------------------------------------------------------------
-function
-GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory)
-
+function GUIUpdate_BuyMilitaryUnitButtons(_Button, _Technology, _UpgradeCategory, _PreviousTech)
 	local PlayerID = GUI.GetPlayerID()	
-	
-	
 	local SettlerType = Logic.GetSettlerTypeByUpgradeCategory( _UpgradeCategory, PlayerID )
+	local SelectedBuildingID = GUI.GetSelectedEntity()
+	local SelectedBuildingType = Logic.GetEntityType( SelectedBuildingID )
+	local RequiredBuildingType = 0
 	
 	--HACK: AnSu Change this after Alpha!
-	if 		SettlerType == Entities.PU_LeaderSword2 then
-				_Technology = Technologies.MU_LeaderSword2
-	elseif	SettlerType == Entities.PU_LeaderSword3 then 
-				_Technology = Technologies.MU_LeaderSword3
-	elseif	SettlerType == Entities.PU_LeaderSword4 then 
-				_Technology = Technologies.MU_LeaderSword4				
+	if SettlerType == Entities.PU_LeaderSword2 then
+		_Technology = Technologies.MU_LeaderSword2
+	elseif SettlerType == Entities.PU_LeaderSword3 then 
+		_Technology = Technologies.MU_LeaderSword3
+	elseif SettlerType == Entities.PU_LeaderSword4 then 
+		_Technology = Technologies.MU_LeaderSword4		
+		XGUIEng.TransferMaterials("Buy_Sword_Gold", "Buy_LeaderSword")		
+		RequiredBuildingType = Entities.PB_Barracks2
 	end
 	
-	if 		SettlerType == Entities.PU_LeaderPoleArm2 then
-				_Technology = Technologies.MU_LeaderSpear2
-	elseif 	SettlerType == Entities.PU_LeaderPoleArm3 then
-				_Technology = Technologies.MU_LeaderSpear3
+	if SettlerType == Entities.PU_LeaderPoleArm2 then
+		_Technology = Technologies.MU_LeaderSpear2
+	elseif SettlerType == Entities.PU_LeaderPoleArm3 then
+		_Technology = Technologies.MU_LeaderSpear3
 	elseif	SettlerType == Entities.PU_LeaderPoleArm4 then			
-				_Technology = Technologies.MU_LeaderSpear4
+		_Technology = Technologies.MU_LeaderSpear4
+		XGUIEng.TransferMaterials("Buy_Spear_Gold", "Buy_LeaderSpear")		
+		RequiredBuildingType = Entities.PB_Barracks2
 	end
 	
-	if 			SettlerType == Entities.PU_LeaderBow3
-			or 	SettlerType == Entities.PU_LeaderBow4 
-			then
-					_Technology = Technologies.MU_LeaderBow3
+	if SettlerType == Entities.PU_LeaderBow3 or SettlerType == Entities.PU_LeaderBow4 then
+		_Technology = Technologies.MU_LeaderBow3
+		if SettlerType == Entities.PU_LeaderBow4 then
+			XGUIEng.TransferMaterials("Buy_Bow_Gold", "Buy_LeaderBow")	
+			RequiredBuildingType = Entities.PB_Archery2
+		end
 	end
-	
+
+	if SettlerType == Entities.PU_LeaderCavalry2 then
+		XGUIEng.TransferMaterials("Buy_CavalryLight_Gold", "Buy_LeaderCavalryLight")	
+		RequiredBuildingType = Entities.PB_Stable2
+	end
+
+	if SettlerType == Entities.PU_LeaderHeavyCavalry2 then
+		XGUIEng.TransferMaterials("Buy_CavalryHeavy_Gold", "Buy_LeaderCavalryHeavy")	
+		RequiredBuildingType = Entities.PB_Stable2
+	end
 	
 	local TechState = Logic.GetTechnologyState(PlayerID, _Technology)
+	local PreviousTechState = 4
+	if _PreviousTech ~= nil then
+		PreviousTechState = Logic.GetTechnologyState(PlayerID, _PreviousTech)
+	end
 	
-		--Unit type is interdicted
-		if TechState == 0 then	
+	if PreviousTechState ~= 4 then
+		XGUIEng.ShowWidget(_Button,0)
+	else
+		XGUIEng.ShowWidget(_Button,1)
+		--High-rank units require high-rang buildings
+		if RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType then
 			XGUIEng.DisableButton(_Button,1)
-		
-		
+		--Unit type is interdicted
+		elseif TechState == 0 then	
+			XGUIEng.DisableButton(_Button,1)
 		elseif TechState == 1 then	
-				XGUIEng.DisableButton(_Button,1)
-	
+			XGUIEng.DisableButton(_Button,1)
 		--Technology is enabled 
 		elseif TechState == 2 then
 			XGUIEng.DisableButton(_Button,0)
-		
 		--Technology is in reserach ot to far in the future
 		elseif TechState == 3 or TechState == 5 then
 			XGUIEng.DisableButton(_Button,1)
-		
 		end
-		
-	
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -319,6 +338,7 @@ function GUIUpdate_FindView()
 	--Sword
 	local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword4)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderSword2a)
 	if SwordAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSwordLeader ,1)
 	else
@@ -327,6 +347,7 @@ function GUIUpdate_FindView()
 	--Spear
 	local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderPoleArm2a)
 	if SpearAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindSpearLeader ,1)
 	else
@@ -335,6 +356,7 @@ function GUIUpdate_FindView()
 	--Bow
 	local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2)
 						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderBow2a)
 	if BowAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindBowLeader ,1)
 	else
@@ -342,6 +364,7 @@ function GUIUpdate_FindView()
 	end
 	--light Cavalry
 	local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderCavalry1a)
 	if LCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindLightCavalryLeader ,1)
 	else
@@ -349,6 +372,7 @@ function GUIUpdate_FindView()
 	end
 	--heavy Cavalry
 	local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID,Entities.PU_LeaderHeavyCavalry1a)
 	if HCavAmount > 0 then
 		XGUIEng.ShowWidget(gvGUI_WidgetID.FindHeavyCavalryLeader ,1)
 	else
@@ -401,15 +425,15 @@ function GUIUpdate_HeroButton()
 		XGUIEng.TransferMaterials(SourceButton, CurrentWidgetID)
 		if Logic.SentinelGetUrgency(EntityID) == 1 then	
 			XGUIEng.SetMaterialColor(CurrentWidgetID,1, 255,255,255,255)
-			if gvGUI.DarioCounter < 250 then
+			if gvGUI.DarioCounter < 200 then
 				XGUIEng.SetMaterialColor(CurrentWidgetID,0, ColorR,ColorG,ColorB,255)				
 				gvGUI.DarioCounter = gvGUI.DarioCounter +1
 			end		
-			if gvGUI.DarioCounter >= 250 then			
+			if gvGUI.DarioCounter >= 200 then			
 				XGUIEng.SetMaterialColor(CurrentWidgetID,0, 230,230,230,255)					
 				gvGUI.DarioCounter = gvGUI.DarioCounter +1
 			end
-			if gvGUI.DarioCounter == 500 then
+			if gvGUI.DarioCounter == 400 then
 				gvGUI.DarioCounter= 0
 			end
 		else	
@@ -559,7 +583,7 @@ GUIUpdate_BuySoldierButton()
 	local LeaderID = GUI.GetSelectedEntity() 
 	local MilitaryBuildingID = Logic.LeaderGetNearbyBarracks(LeaderID)
 	
-	local test = Logic.IsEntityInCategory(LeaderID,EntityCategories.Cannon)
+	--local test = Logic.IsEntityInCategory(LeaderID,EntityCategories.Cannon)
 	
 	if MilitaryBuildingID ~= 0	then		
 		if Logic.IsConstructionComplete( MilitaryBuildingID ) == 1 then
@@ -574,13 +598,16 @@ end
 -- Update Upgrade Settlers Button
 --------------------------------------------------------------------------------
 
-function
-GUIUpdate_SettlersUpgradeButtons(_Button, _TechnologyType)
+function GUIUpdate_SettlersUpgradeButtons(_Button, _TechnologyType, _PreviousTech)
 	local PlayerID = GUI.GetPlayerID()
 	local TechState = Logic.GetTechnologyState(PlayerID, _TechnologyType)
+	local PreviousTechState = 4
+	if _PreviousTech ~= nil then
+		PreviousTechState = Logic.GetTechnologyState(PlayerID, _PreviousTech)
+	end
 	
 	--Upgarde is interdicted
-	if TechState == 0 then	
+	if TechState == 0 or PreviousTechState ~= 4 then	
 		XGUIEng.ShowWidget(_Button,0)
 	
 	--Upgarde is enabled and visible	
@@ -731,16 +758,16 @@ GUIUpdate_SentinelAbility(_WidgetID, _EntityID)
 	
 	if Logic.SentinelGetUrgency(_EntityID) == 1 then					
 		
-		if gvGUI.DarioCounter < 250 then
+		if gvGUI.DarioCounter < 200 then
 			
 			XGUIEng.SetMaterialColor(_WidgetID,0, 100,100,200,255)		
 			gvGUI.DarioCounter = gvGUI.DarioCounter +1
 		end		
-		if gvGUI.DarioCounter >= 250 then			
+		if gvGUI.DarioCounter >= 200 then			
 			XGUIEng.SetMaterialColor(_WidgetID,0, 255,255,255,255)		
 			gvGUI.DarioCounter = gvGUI.DarioCounter +1
 		end
-		if gvGUI.DarioCounter == 500 then
+		if gvGUI.DarioCounter == 400 then
 			gvGUI.DarioCounter= 0
 		end
 	else	
@@ -998,13 +1025,23 @@ function GUIUpdate_TaxesButtons()
 	local TaxLevel = Logic.GetTaxLevel(PlayerID)
 	local BuildingID = GUI.GetSelectedEntity()
 	local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(BuildingID))
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_AdjustTaxes)
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	
-	if UpgradeCategory == UpgradeCategories.Outpost then
-		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-		XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+	if TechState == 4 then
+		XGUIEng.DisableButton(CurrentWidgetID, 0)
+		if UpgradeCategory == UpgradeCategories.Outpost then
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+		elseif UpgradeCategory == UpgradeCategories.Bank then
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.Bank_TaxesButtons[TaxLevel] ,1)	
+		else
+			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
+			XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+		end
 	else
-		XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-		XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+		XGUIEng.DisableButton(CurrentWidgetID, 1)
 	end
 end
 
@@ -1237,4 +1274,67 @@ GUIUpdate_HighlightNewWorkerHaveNoFarmOrResidenceButtons()
 			end
 		end
 
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for ability buttons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_AbilityButtons(_Button, _Technology)
+	local sel = GUI.GetSelectedEntity()
+	local TechState = Logic.GetTechnologyState(GUI.GetPlayerID(), _Technology)
+	
+	XGUIEng.ShowWidget(_Button,1)
+
+	--Building is interdicted
+	if TechState == 0 then	
+		XGUIEng.DisableButton(_Button,1)
+	
+	--Building is not available yet or Technology is to far in the futur
+	elseif TechState == 1 or TechState == 5 or TechState == 3 then
+		XGUIEng.DisableButton(_Button,1)
+		
+	--Building is enabled and visible	
+	elseif TechState == 4 or TechState == 2 then
+		if _Button == "HeroGeneric_ExploreArea" then
+			XGUIEng.DisableButton(_Button,0)
+		else
+			if TechState == 4 then
+				if (_Button == "Scout_Torches") then
+					if Logic.HeroGetAbilityRechargeTime(sel, Abilities.AbilityScoutTorches) == Logic.HeroGetAbiltityChargeSeconds(sel, Abilities.AbilityScoutTorches) then
+						XGUIEng.DisableButton(_Button,0)
+					else
+						XGUIEng.DisableButton(_Button,1)
+					end
+				elseif (_Button == "Thief_PlaceExplosives") then
+					if Logic.HeroGetAbilityRechargeTime(sel, Abilities.AbilityPlaceKeg) == Logic.HeroGetAbiltityChargeSeconds(sel, Abilities.AbilityPlaceKeg) then
+						XGUIEng.DisableButton(_Button,0)
+					else
+						XGUIEng.DisableButton(_Button,1)
+					end
+				else
+					XGUIEng.DisableButton(_Button,0)
+				end
+			else
+				XGUIEng.DisableButton(_Button,1)
+			end
+		end
+	end
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_RepairCannonButton()
+	local cannonID = GUI.GetSelectedEntity() 
+	local MilitaryBuildingID = Logic.LeaderGetNearbyBarracks(cannonID)
+	local currentHealth = Logic.GetEntityHealth(cannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(cannonID)
+	
+	if MilitaryBuildingID ~= 0 and currentHealth < maxHealth then		
+		if Logic.IsConstructionComplete(MilitaryBuildingID) == 1 then
+			XGUIEng.DisableButton("Repair_Cannon_Button",0)
+		end
+	else		
+		XGUIEng.DisableButton("Repair_Cannon_Button",1)
+	end
 end

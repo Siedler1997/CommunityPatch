@@ -4,89 +4,88 @@
 -->
 <root>
 
-	<DamageClass id="DC_Strike">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>1.7</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>1.5</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
+		<DamageClass id="DC_Strike">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>1.75</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>1.25</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
-	<DamageClass id="DC_Pierce">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>1.5</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>1.5</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.1</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
+		<DamageClass id="DC_Pierce">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>1.5</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>1.5</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
+		<DamageClass id="DC_Chaos">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>1.5</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>1.25</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
-	<DamageClass id="DC_Chaos">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>1.5</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>1.25</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
+		<DamageClass id="DC_Siege">
+				<Logic classname="GGL::CDamageClassProps">
+          <ArmorClassNoneFactor>0.5</ArmorClassNoneFactor>
+          <ArmorClassJerkinFactor>0.5</ArmorClassJerkinFactor>
+          <ArmorClassLeatherFactor>0.5</ArmorClassLeatherFactor>
+          <ArmorClassIronFactor>0.5</ArmorClassIronFactor>
+          <ArmorClassFortificationFactor>2.0</ArmorClassFortificationFactor>
+          <ArmorClassHeroFactor>0.5</ArmorClassHeroFactor>
+          <ArmorClassFurFactor>0.5</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
+		<DamageClass id="DC_Hero">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>1.0</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>1.0</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>1.0</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>1.0</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>1.0</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
-	<DamageClass id="DC_Siege">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>0.1</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>0.1</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>0.1</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.1</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>1.8</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>0.1</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.1</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
+		<DamageClass id="DC_Evil">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>1.0</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>1.2</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>1.0</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>1.0</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
 
-	<DamageClass id="DC_Hero">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>1.0</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>1.0</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>1.0</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>1.0</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>0.75</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
-
-	<DamageClass id="DC_Evil">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>1.0</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>1.2</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>1.0</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.8</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.6</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>1.0</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
-
-	<DamageClass id="DC_Bullet">
-		<Logic classname="GGL::CDamageClassProps">
-			<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
-			<ArmorClassJerkinFactor>1.5</ArmorClassJerkinFactor>
-			<ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
-			<ArmorClassIronFactor>0.75</ArmorClassIronFactor>
-			<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
-			<ArmorClassHeroFactor>1.0</ArmorClassHeroFactor>
-			<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
-		</Logic>
-	</DamageClass>
+		<DamageClass id="DC_Bullet">
+				<Logic classname="GGL::CDamageClassProps">
+						<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>1.5</ArmorClassJerkinFactor>
+						<ArmorClassLeatherFactor>0.75</ArmorClassLeatherFactor>
+						<ArmorClassIronFactor>0.5</ArmorClassIronFactor>
+						<ArmorClassFortificationFactor>0.2</ArmorClassFortificationFactor>
+						<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
+						<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
+				</Logic>
+		</DamageClass>
+  
 </root>

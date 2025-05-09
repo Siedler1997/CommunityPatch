@@ -17,7 +17,22 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- richten im Alarm-Modus etwas mehr Schaden an
 	- können stillgelegt werden (per Button im Siedler-Menü)
 	- Dorfzentren erhöhen das Einwohnerlimit um zusätzliche 25 Einwohner pro Ausbaustufe
-	- Banken und Schatzkammern zählen ebenfalls zu den Veredelungsgebäuden, die den Ausbau einer Festung zur Zitadelle ermöglichen
+	- Festung: Ausbau Burg -> Festung benötigt die Technologie 'Konstruktion'
+	- Zitadelle: Ausbau Festung -> Zitadelle benötigt nun drei hochrangige/ausgebaute Veredelungsgebäude
+		- konkret: Ziegelei, Feinschmiede, Sägewerk, Steinmetze, Laboratorium, Büchsenmacherei oder Bank
+		- Schatzkammer und Büchsenmanufaktur zählen auch, benötigen aber ihrerseits erst eine Zitadelle
+	- Banken und Schatzkammern 
+		- bieten 2 'neue' Technologien
+			- Besteuerung
+				- ermöglicht die Einstellung der Steuern in Burgen
+					- Literatur aus der Hochschule ist dafür keine Voraussetzung mehr
+				- benötigt lediglich eine Bank zum erforschen
+				- Grundlage zum erforschen von 'Buchhaltung'
+			- Buchhaltung
+				- benötigt 'Besteuerung' sowie eine Schatzkammer
+				- erhöht die Steuern pro Siedler um 20%
+				- interner Name: T_BookKeeping
+		- Steuer-Statistik und Einstellung der Steuern sind hier ebenfalls sichtbar
 	- Minen: Abbaugeschwindigkeit leicht gesenkt
 	- Grobschmiede (Schmiede Lv. 2): Arbeiterzahl von 6 auf 4 gesenkt
 	- profitieren von der neuen Technologie 'Leichte Ziegel'
@@ -45,8 +60,16 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- verfügen über alle Funktionen und Kampfwerte, die auch Hauptquartiere bieten (Außer Ausbau)
 		- können für Leibeigene dazu dienen, dort ihre Waffen zu bekommen und wieder abzulegen
 		- profitieren von Maurerhandwerk und Stadtwache
+	- Leuchtturm
+		- Ist nun baubar (auch im Hauptspiel und Nebelreich)
+		- benötigt die Technologie 'Konstruktion'
+		- Bietet hohe Sichtweite (50 SM)
+		- Bedingung für Helden-Markierung
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
+		- haben etwas weniger Sichtweite
+		- kosten mehr
+		- Bonus auf die Motivation ist geringer
 		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
 		- Neue Ziergebäude
 			- benötigen neben diversen Hochschul-Technologien auch mindestens eine Architektenstube zum Bau
@@ -56,6 +79,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Kerzenhalter
 				- Gefängniskäfig (aus AeK)
 				- Dampfmaschine
+		- manche haben Spezialeffekte
 	- Türme
 		- haben die richtige ArmorClass -> solider gegen alles außer Artillerie
 		- haben auf jeder Stufe 200 Lebenspunkte weniger (=800-1000-1200)
@@ -77,6 +101,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- können in den AddOns regulär gebaut werden
 				- benötigen mindestens eine Architektenstube
 				- haltet dann beim Drücken auf den Turm-Button [Strg] gedrückt
+	- Militärgebäude: Rekrutierungsgeschwindigkeit von Soldaten unabhängig von der Ausbaustufe
+		- Kaserne/Garnison und Schießplatz/Schießanlage: 30 Sek. (vorher: 20/30 Sek.)
+		- Stall/Reiterei unverändert (20 Sek.)
 	- Architektenstube ermöglicht Bau dunkler Türme sowie neuer Ziergebäuden in den AddOns (siehe 'Ziergebäude' bzw. 'Türme')
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
@@ -84,14 +111,27 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- geben beim Abriss 150 Holz und 50 Steine
 		- haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
 	- Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
+	- Burg/Außenposten/Bank: Multiplikator für Steuern und Sold werden angezeigt
+	- Kapelle
+		- Basistufe kostet 100 Taler, 400 Holz, 500 Steine (vorher: 500 Holz, 550 Steine)
+		- Alle Stufen haben einen stärkeren Effekt auf die Motivation von Siedlern
+			- Kapelle: +10% (vorher: +8%)
+			- Kirche: +15% (vorher: +10%)
+			- Kathedrale: +20% (vorher: +15%)
+	- Der Effekt von Überstunden auf die Motivation der betroffenen Arbeiter wurde reduziert
 - Einheiten
 	- Selbstheilung ist für alle Einheiten reduziert
 	- Soldaten haben die Rüstungspunkte sowie die Rüstungsart ihrer Hauptmänner
 	- Wird beim Drücken auf den Entlassen-Button gleichzeitig [Strg] gedrückt, werden alle selektierten Einheiten (außer Helden) sofort entlassen
 	- Formationen
-		- bei Wahl der Marschformation begeben sich Kavallerie und Nebelkrieger stattdessen in ihre eigene Standard-Formation
+		- Kavallerie und Nebelkrieger verwenden ihre eigenen Formationen
 		- werden diversen Tooltips entsprechend wirklich mit Erforschung von 'Stehendes Heer' freigeschaltet (nicht erst mit 'Taktiken')
+		- sind nun auch über Shortcuts einnehmbar
+			- Genauer: [Y], [X], [C] und [V]
+		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
+	- Verursachen deutlich weniger Schaden an Gebäuden (x0,2)
+		- Ausnahmen: Schwere Kavallerie, Helden, Nebelvolk (x0,5)
 	- NPCs (Zivilisten)
 		- können wirklich sterben
 			- dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -102,6 +142,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- haben bessere Stats
 			- mehr Lebenspunkte (idR. 100)
 			- höhere Sichtweite
+		- Neu: AeK-Frauen
 	- NPCs (Militär)
 		- verlangen ebenfalls Sold
 		- 'Veteranen' 
@@ -125,6 +166,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- haben einen Rüstungspunkt weniger (=1)
 			- Bärenmenschen greifen etwas schneller an
 			- sind resistenter gegen alle Schadensarten außer ihre eigene und Scharfschützen
+			- verursachen etwas weniger Schaden an schwerer Kavallerie
 			- Hauptmänner sind leicht umtexturiert
 		- Barbaren 
 			- haben die gleiche ArmorClass wie Speerkämpfer und Schützen
@@ -179,29 +221,46 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			- Berittene Bogenschützen (Stufe 1) kosten Holz
 			- Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		- Speerkämpfer haben einen Rüstungspunkt mehr
 		- Schwertkämpfer
 			- haben einen eigenen Kampf-Sound
 			- Angriffsgeschwindigkeit leicht reduziert (analog zu z.B. Speerkämpfern, Barbaren, etc.)
+			- Effektivitäten leicht angepasst
+				- ein kleines bisschen stärker gegen leicht gepanzerte Einheiten (1.7 -> 1.75)
+				- etwas schwächer gegen andere Schwertkämpfer (1.5 -> 1.25)
 		- Kanonen
-			- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
-			- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
-			- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+			- Fixes
+				- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
+				- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
+				- DamageClasses gefixt
+					- Nutzung dieser wurde zuvor durch die Entity Category 'SplashDamage' verhindert
+					- Effektivitäten stimmen nun mit den jeweiligen Tooltips überein
 			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
 			- Lebenspunkte etwas erhöht
+			- Bronze- und Belagerungskanonen verursachen mehr Schaden gegen Gebäude (1,7x -> 2,0x)
 			- Reichweite von Bombarden und Bronzekanonen etwas erhöht
 			- Bombarden
-				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
-				- Schaden auf 35 erhöht (vorher: 30)
+				- Nachladedauer auf 2 Sek. reduziert (vorher: 3 1/2 Sek.)
+				- AoE leicht erhöht (1,5 -> 2 SM)
 			- Eisenkanonen
-				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
-				- Schaden auf 70 erhöht (vorher: 65)
+				- Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
+				- Schaden auf 60 reduziert (vorher: 65)
 			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
+			- sind reparierbar
+				- bei Selektion einer Kanone ist ein Button an Stelle des 'Soldat rekrutieren'-Buttons zu sehen. Die Logik ist identisch:
+					- Reparatur ist nur in der Nähe von Kanonengießereien/-manufakturen möglich
+					- Shortcut [Q] gilt hier ebenfalls
+				- kostet Rohstoffe abhängig von den verlorenen HP und den ursprünglichen Baukosten (in %)
 		- Scharfschützen
-			- sind nicht mehr ganz so effektiv gegen Gebäude
+			- sind (etwas) weniger effektiv gegen 
+				- Kavallerie
+				- Helden
+				- Gebäude
 			- Leichte Scharfschützen verursachen wirklich Bonusschaden gegen Nebelkrieger
 			- Schwere Scharfschützen 
 				- zielen erheblich besser
 				- haben einen Schadenspunkt weniger (=18)
+			- Upgrade auf Schwere Scharfschützen kostet mehr und erfordert eine Zitadelle
 		- Diebe und Kundschafter 
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
@@ -218,6 +277,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
 					- Kostet 50 Taler pro Verwendung
 					- Wachstum hängt vom Wetter ab
+						- bei Regen schneller
+						- bei Winter langsamer
+		- Letztes Upgrade 
+			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
+				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
+				- (Berittene) Bogenschützen, Speerkämpfer: Sägewerk
+				- Scharfschützen: Zitadelle
+			- voll aufgewertete Einheiten können ausschließlich in ausgebauten Militärgebäuden rekrutiert werden
+				- Bastardschwertkämpfer und Hellebardiere: Garnison
+				- Arbalesten- und Scharfschützen: Schießanlage
+				- Berittene Streitaxtkämpfer und Armbrustschützen: Reiterei
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -235,6 +305,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- die Stelle ist auf der Minmap mit einem weißen Kreis gekennzeichnet
 			- das Setzen einer neuen Markierung entfernt zugleich die Alte
 			- wenn zugleich [Strg] gedrückt gehalten wird, wird eine Markierung entfernt, ohne eine neue zu setzen
+			- Im MP können ALLE Spieler solche Markierungen sehen!
 		- Dario
 			- Falke hat etwas höhere Sichtweite (15 SM -> 20 SM)
 			- Entwicklungsstufen haben leicht unterschiedliche Kampfwerte
@@ -253,7 +324,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- richtet mit 20 Schaden etwas mehr an (vorher: 15)
 		- Drake 
 			- hat einen Rüstungspunkt weniger (=3)
-			- hat 2 Schadenpunkte weniger (=26)
+			- hat 4 Schadenpunkte weniger (=24)
 			- seine Fähigkeit 'Feuerkraft' betrifft auch
 				- Ari 
 				- Kanonen
@@ -310,6 +381,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Shuriken: 
 				- Anzahl verdoppelt (4 -> 8)
 				- haben die gleiche DamageClass wie normale Angriff sowie Kala's 'Giftpfeile'
+			- Zusatzeffekt für 'Feuerwerk der Freude'
+				- erhöht kurzzeitig den Schaden naher Verbündeter um 100%
+				- wirkt analog Erecs 'Aura der Stärke', aber mit halber Dauer (30 Sek.) und etwas größerem Radius (20 SM)
+				- Funfact: Es wird einfach eine weitere Fähigkeit zusätzlich aktiviert ;)
+				- ACHTUNG: Nicht mit Vanilla-Savegames kompatibel!
 		- Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
 		- Kala 
 			- hat einen Rüstungspunkt weniger (=4)
@@ -335,7 +411,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Nebeneffekt: Einige Settings wirken etwas heller
 			- Im Gegenzug sind speziell die Settings von Evelance- und Moorregionen etwas abgedunkelt
 	- Tooltips gefixt bzw. ergänzt
-		- Ausbau-Button Festung -> Zitadelle: 'ermöglicht'-Teil ergänzt
+		- Ausbau-Button Festung -> Zitadelle:
+			- Alle relevanten Veredelungsgebäude werden aufgeführt
+			- 'ermöglicht'-Teil ergänzt
 		- 'Heiligsprechung' hat einen Erforscht-Tooltip im Hauptspiel
 		- 'Läutet die Glocken' gibt im Hauptspiel alle betroffenen Siedler an
 		- 'Fährtenlesen' hat einen Erforscht-Tooltip
@@ -365,6 +443,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Formations-Buttons
 		- stehen auch bei selektierter Kavallerie zur Verfügung
 		- verschwinden nicht mehr dauerhaft bei Selektion von Milizsoldaten
+	- Steuer-Buttons
+		- sind nun immer sichtbar, bis zur Erforschung aber deaktiviert
+		- haben DisabledTooltips
 	- Ergänzte und korrigierte SelectionNames und OverheadNames
 		- Außenposten
 		- CU_BlackKnight_SoldierSword3 -> Raubritter
@@ -424,15 +505,24 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Minimap
 		- VideoPreview
 	- Viele kleine Detail-Anpassungen (Verschobene Buttons, größere Tooltip-Boxen, etc.)
-	- Diverse Fixes bzgl. MainWindow- und Savegame-Anzeige (by mcb & Zedeg)
-		- u.a. werden Spielstände (dank Zedeg)
-			- auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
-			- unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
+	- MainWindow- und Savegame-Anzeige
+		- Diverse Fixes by mcb & Zedeg
+			- Spielstände werden auch mit spezieller Textfarbe dargestellt (wenn vom Mapper so vorgesehen)
+			- Spielstände sind unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
+		- Name ist anders aufgebaut: Slot - Datum, Uhrzeit - Mapname
+	- Shortcut-Auflistung in Tastatur Optionen gefixt bzw. erweitert
 - Diverses
-	- Die Spielgeschwindigkeit kann bis auf das 3-Fache erhöht werden
-		- Button dafür ersetzt den Hilfe-Button
+	- Einige Shortcuts im Leibeigenen Menü gefixt
+		- Brücken teilen sich den Shortcut nicht mehr mit Dorfzentren - sie haben gar keinen mehr (mangels Buchstaben im Alphabet...)
+		- AddOn Gebäuden haben nun eigene Shortcuts im englischen - keine doppelte Belegung mehr!
+	- Die Spielgeschwindigkeit kann bis auf das 10-Fache erhöht werden
+		- Button ersetzt den Hilfe-Button
 			- Hilfe kann weiterhin über den Shortcut F10 abgerufen werden
-		- Kann auch über den Shortcut '-' ausgelöst werden
+		- Jeder Klick auf den Button erhöht die Geschwindigkeit
+			- Nach erreichen des Maximums (x10) wird sie zurück gesetzt
+			- Wird gleichzeit [Strg] gedrückt, wird sie direkt zurück gesetzt
+			- Wird gleichzeit [Shift] gedrückt, wird sie direkt auf das Maximum (x10) gesetzt
+		- Kann auch über den Shortcut '*' ausgelöst werden
 	- Hauptmenü
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
@@ -457,9 +547,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Nahezu alle AddOn-Features sind dort nutzbar
 				- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
 		- In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
-		- Wenn eine Karte lädt
-			- wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
-			- wird beim Laden eines Spielstands ein zufälliger Fakt bzw. eine Theorie angezeigt
+		- Wenn eine Karte lädt, wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
 		- Blaue Hintergründe sind nun rot
 	- Kampagnen-Maps modifiziert
 		- Tipps-Button im Hauptmenü 
@@ -468,7 +556,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- fehlerhafte-unpassende Spielerzugehörigkeit mancher Einheiten-Gebäude gefixt
 		- Drakes Gewehrschüsse in Cutscenes sind vertont
 		- In manchen Missionen gibt es nun bis zu 7 Helden
-			- Konkret: Nebelberge, Geld oder Leben, Kampf oder Flucht
+			- Konkret: Nebelberge, Schlacht um Evelance, Geld oder Leben, Kampf oder Flucht
 		- Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
 		- in manchen Missionen können gegnerische Truppen respawnen
 			- z.T. abhängig vom Schwierigkeitsgrad
@@ -484,8 +572,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Startbedingungen des Spielers sind bzgl. Rohstoffe-Truppen-Gebäude etwas schlechter
 			- Ausnahmen: Tutorial, M12: Nebelberge (friedlicher Weg)
 		- Schwierigkeitsgrad 'Albtraum'
-			- Schatztruhen entfallen größtenteils
 			- enthält die gleichen Features wie auf 'Schwer'
+			- Schatztruhen entfallen größtenteils
 			- KI-Truppen und Gebäude sind noch stärker bzw. zahlreicher
 			- Die Steuern sind auf 'Halbe Steuern' festgesetzt
 				- Änderungen im Haupthaus sind NICHT möglich
@@ -496,7 +584,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- diverse Gemeinheiten;)
 		- Wilde Tiere (Wölfe und Bären) streifen durch die Gegend
 		- Start-Rohstoffe sind immer veredelbar
-		- Diverse Optimierungen-Anpassungen-Fixes in einigen Missionen
+		- Diverse Optimierungen/Anpassungen/Fixes in einigen Missionen
 	- SP-Maps modifiziert
 		- Ähnliche Features wie bei den Kampagnen-Maps. Ausnahmen:
 			- Keine Schwierigkeitsgrade und damit einhergehende Anpassungen
@@ -504,18 +592,21 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Größtenteils Fixes und kleinere Optimierungen
 	- Die Grafik ist allgemein etwas besser (by yoq)
 	- Die Dreckrand-Texturen um Gebäude gibt es nicht mehr (by yoq)
-	- Alarm: Wird dabei gleichzeitig 'Strg' gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
+	- Alarm: Wird dabei gleichzeitig [Strg] gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
 		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
 	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
 		- Statt jede 8te nur noch jede 24te Selektion
-	- Steuer-Predigt-Exploit entschärft
-		- Predigten können mit einer Wahrscheinlichkeit von 25% wirkungslos bleiben
-		- Predigten kosten Taler abhängig von der 'Stufe' der Predigt und der Anzahl der betroffenen Siedler
+	- Predigten rebalanced
+		- Priester arbeiten nur halb so schnell bzw. erzeugen nur halb so schnell 'Faith'
+		- Predigten 
+			- bringen nur noch +20% Motivation (vorher: +30%)
+			- können mit einer Wahrscheinlichkeit von 10% wirkungslos bleiben
+			- bringen Taler abhängig von der Anzahl und Art der betroffenen Siedler
 	- Musik
 		- Winter-Regen-Tracklist aller MusicSets (außer Evelance und Moor) für mehr Vielfalt vereinheitlicht
 		- In Evelance- und Moorsettings spielt auch bei Regen/Winter die düstere Sommer-Musik
 		- Buggt nicht mehr rum bei Pausierung sowie Änderung der Spielgeschwindigkeit (by Zedeg)
-		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1701, Herr der Ringe, Stronghold (1, Legends))
+		- Soundtrack aus anderen Spielen (AeK, S4, Anno 1404/1701, Herr der Ringe, Stronghold, Gothic)
 		- Analog zum Wetter hat jedes MusicSet eigene Battle-Tracks
 	- Neue Sounds
 		- Bei Zerstörung und (Aus-)Bau von Gebäuden ertönt ein kleiner Ambient-Sound
@@ -523,10 +614,20 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Pfeile und Bullets haben, analog zu Kanonen, einen Impact-Sound (aus AeK)
 		- Bäume haben einen sound, wenn sie gefällt werden
 		- Wölfe und Bären haben eigene Todes- und Angriff Sounds
-	- Wetter-Effekte sind etwas gemischter
-		- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5% (Winter 15%)
-		- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5% (Regen 20%)
+	- Wetter-Effekte etwas abgeändert
+		- leicht abgeschwächt
+			- Regen: Sichtweite von Einheiten und Gebäuden nur noch um 10% reduziert (vorher: 20%)
+			- Winter: Bewegungsgeschwindigkeit von Einheiten nur noch um 10% reduziert (vorher: 15%)
+		- sind etwas gemischter
+			- Regen reduziert zusätzlich die Bewegungsgeschwindigkeit von Einheiten um 5%
+			- Winter reduziert zusätzlich die Sichtweite von Einheiten und Gebäuden um 5%
 	- Geröllhaufen werden, wie Steinhaufen auch, mit dem Abbau kleiner
+	- Steuern haben teilweise einen stärkeren Effekt auf die Motivation der Siedler
+		- Keine: +20%
+		- Niedrige: +10% (vorher: +8%)
+		- Moderate: 0
+		- Hohe: -10% (vorher: -8%)
+		- Sehr hohe: -20% (vorher: -12%)
 	- ein paar EasterEggs;)
 - Für Mapper
 	- Mapeditoren für die AddOns sind im jeweiligen bin-Ordner enthalten
@@ -537,7 +638,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- eine Variante von Drake mit Kapuze (wie auf dem Nebelreich-Cover)
 			- hat genau die gleichen Stats und Fähigkeiten wie das Original, ist aber nicht auf regulärem Weg erhältlich
 		- Deko-Objekte 'XD_WreckedBoat01' und 'XD_WreckedBoat02' (Bootsfracks)
-		- Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+		- Neue Rohstoffhaufen
+			- Goldhaufen 'XD_Gold1', der analog zu den vier bekannten Rohstoffhaufen für Gold abgebaut werden kann
+			- Holzhaufen
+				- Modell basiert auf Signalfeuer
+				- Standard-Menge: 800 Holz
+				- Achtung: Enthält Ressource 'Wood' anstatt 'WoodRaw', da es sonst zu UI Bugs käme. Holz von solchen Haufen ist deshalb NICHT verdelbar!
 		- Der Drache ist theoretisch als 'CU_Dragon' nutzbar (aber leider unsichtbar)
 		- Gebäude 'CB_Grange' (Dorfplatz) ist eine indirekte Vorstufe des Dorfzentrums
 		- Gebäude 'CB_TechTrader' (Technologie-Händler) ist nutzbar
@@ -547,7 +653,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
 	- Neue Bodentexturen
 		- Marmor
-		- Lava (auf Siedler 7)
+		- Lava (aus Siedler 7)
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 
@@ -626,6 +732,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Per 'MoveAndVanish' bewegte NPCs despawnen auch, wenn sie ihren Zielort erreicht haben
 		- Könnten aber noch zwischendurch "hängen bleiben", wodurch sie ihren Zielort nie erreichen
 	- Per 'SetupAITroopSpawnGenerator' erstellte Armeen haben neue (optionale) Property 'experiencePoints', mit der man die Truppen-Erfahrung zwischen 0 und 3 setzen kann
+	- Die Farbe von per Briefing erstellten Markern kann mittels '.markerColor' eingestellt werden
+		- Als Standard wird weiterhin Grün verwendet
+		- Beispiel: 'NPCHeadquartersBriefing[page].markerColor	=	3'
 	- ScoutForester
 		- Default Tree-Set ist Fir (ScoutFoerster_SET_Fir)
 		- Kann folgendermaßen in der FMA geändert werden
@@ -641,6 +750,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			-> return: int Segnungskosten
 		- 'CreateCostString(_costs)' by Noigi: Erstellt einen Kostenstring für Tooltips und dergleichen
 			-> return: string CostString
+		- 'InterfaceTool_PayResources(_Costs)': Zieht ein Table an Ressourcen vom Spieler ab
+			- _Costs muss dem Format des Parameters von 'InterfaceTool_CreateCostString(_Costs)' bzw. InterfaceGlobals.CostTable entsprechen
 		- 'HasPlayerEnoughResources(_costs)': Basiert auf CreateCostString, gibt aber stattdessen ein Feedback, wenn die Resourcen nicht reichen
 			-> return int reicht (1) oder reicht nicht (0)
 		- 'RaidersCreate(_data)': Erstellt ein aggressives Wolfsrudel mit einem Revier, in dem es sich bewegt
@@ -682,34 +793,63 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Kanonen-Skins sind bei der Herstellung in der Kanonenmanufaktur noch nicht sichtbar
 	- Map 'Thalbach' ist schlecht gestaltet und/oder verbuggt
 		- Der CP hat hier nur Schadenbegrenzung betrieben. Die Map stammt von Ubisoft selbst...
+	- AeK-Frauen
+		- haben keine 'richtige' Sterbeanimation, sondern einen zweckdienlichen Platzhalter
+		- Spielerfarbe wird angezeigt und sieht dabei unschön aus
 
 
 
 ## ToDos:
-- Neue Tastaturbelegungen ingame dokumentieren (Optionen -> 'Tastatur')
-- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
-- Thalgrund: Erster Angriff mit Cutscene-Einheiten
-	- ggf. mehr Spielertruppen als Hilfe
-- Vertonte Animationen (per TaskLists)
-	- Leader-Walk
-	- Leader-Train
-- Wasteland-Dörfer: Namen im Auftragsbuch
-- FunFacts im LoadingScreen
-	- mehr davon
-	- besser geschrieben
-	- auf Englisch übersetzen
-- Random(?) Crashs
-	- erste 2 Verstärkungen in '03_Neighborhood'
-- Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
+- SP Map Auswahl: Filter für Vanilla und Usermaps
+- Verbesserte KI
+	- Advanced Settings
+		- MaxArmySize
+		- Zusammensetzung
+			- Mixed: Vanilla. Alles ist dabei!
+			- Grouped: ein paar Armeen sind nach Typ geordnet
+				- Kavallerie
+				- Infanterie
+				- Schützen
+				- Rest: Mixed
+			- Picked: Mapper bestimmt
+			- Adaptive: abhängig vom Spieler, um diesen zu kontern
+	- Integrationen
+		- SetupPlayerAi
+		- EvilMod
+- Kampagne nochmal überarbeiten
+	- Holzhaufen verteilen
+	- Low-Tier Units verteilen
+	- Schwierigkeitgrad 'Albtraum'
+		- Statt Steuern halbieren Sold erhöhen
+		- Wieder mehr uniquen Content dorthin schieben
+	- Map spezifisch
+		- Basegame
+			- Thalgrund: Erster Angriff mit Cutscene-Einheiten
+				- ggf. mehr Spielertruppen als Hilfe
+			- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
+			- Wasteland-Dörfer: Namen im Auftragsbuch
+		- Extra1
+			- 07_FleeOrFight
+				- Neue Signalfeuer Logik testen
+				- Signalfeuer auch über 'normale' Tribute endzündbar machen
+			- 08_UnexploredLand:
+				- Entfernte Brückenbauplätze wieder einfügen
+					- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
+				- Alternativ Spuren solcher Bauplätze entfernen
+			- 'Thalbach' neu aufsetzen
+		- Extra2
+			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 - Korrekte Kostenanzeige für den Kauf von Soldaten
-- Kalas Tod: stack overflow(?)
 - Eigene Texturen für
 	- Tech-Trader
 	- Veteranen
 	- Varg
 	- Bogen-Banditen-Hauptmänner
-	- Leonardos Assistent
+	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
+- Hauptspiel-Kampagne in einem AddOn spielbar
+	- Legenden?
+	- AddOn-Features einbinden
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
 	- FeatureList auch auf Englisch
@@ -723,31 +863,104 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- AeK-Sounds
-	- Eigener Todes-Sound für Nebelkrieger
-	- Walk Sounds für Infanterie und Kavallerie
-	- Irgendwas für Helden und Kanonen
-- Silbermine als CB
+- Reparierbare Kanonen
+	- Nur möglich, wenn keine Feinde in der Nähe sind
+	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
+- Neue DamageClass "DC_Blunt"
+	- Für: Schwere Cav., Barbaren, Banditen, Schwarze Ritter
+	- Damage Multiplikatoren analog zu bisheriger DC_Chaos
+	- DC_Chaos wird exklusiv für Türme und Anti-Unit-Kanonen umfunktioniert und für Anti-Infanterie gebufft
+- Flammenwerfer (mobil oder als Turm)
+- Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
+- Eigene DamageClass für Schützen (DC_Arrow)
+	- stark gegen leichte Panzerung
+		- Speerkämpfer (1.5)
+		- Arbeiter (1.5)
+		- andere Schützen (1.5)
+	- schwach gegen schwere Panzerung
+		- Schwertkämpfer (0.5)
+		- Schwere Kavallerie (1.0)
+	- Tooltips anpassen
+	- Nerfs zurücknehmen?
+- Lv 4 Elite Leader: 
+	- Textur: Gold durch rot austauschen
+	- generell etwas verdunkeln
+	- auf Veteranen Niveau
+- Berittener Schütze bei Spielstart, als Scout
+	- Armbrust?
+	- ggf. mehr Sichtweite
+	- nicht automatisch in jeder Map
+- Beautifications 
+	- Astrolabium und Podium tauschen
+	- noch mehr (aus AeK)
+- LevyTaxes sinnvoll einfügen
+- Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
+- Leuchtturm
+	- Alarm (de-) aktivierbar
+	- Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
+- Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
+- Neue Hochschul-Techs
+	- Ziergebäude (GT_Beautification)
+		- ermöglicht: Bau von Ziergebäuden
+		- existiert bereits!
+	- Gesetze
+		- benötigt: ?, Universität
+		- ermöglicht: Rekrutierung von Banditen in Militärgebäuden
+			- Nahkämpfer sind bereits unique, aber Schützen?
+			- Gefängniskäfig
+			- Bau eines Schuldturms (AeK-Gefängnisturm)?
+				- Tech für Hauptmänner mit 8 Soldaten
+	- Heldentum
+		- benötigt: Gesetze, Zitadelle
+		- ermöglicht: Gewährt Helden eine 3. Fähigkeit, Aegis
+			- Dario: Schild des Königs (eigene Einheiten: ++DEF, -ATK)
+			- Pilgrim: Bombenwurf (Kalas Giftpfeile, aber weniger und mit SplashDamage)
+			- Salim: Baumeister rufen (Leibeigene, die nur bauen können)
+			- Erec: Ritter rufen (Summoring, 3 PU_SoldierSword4)
+			- Ari: Meisterschuss (Drake) oder Giftpfeile (Kala) oder Falle stellen (Salim)
+			- Helias: Wunder der Natur (ScoutForester, aber kostenlos. Tech muss erlaubt, aber nicht erforscht sein)
+			- Kerberos: Wirbelschlag (Erec, Animation dafür existiert!)
+			- Mary: Exitus (Drakes Meisterschuss, aber im Nahkampf)
+			- Varg: Aura der Furcht oder Höllenschrei (also eine von Kerberos Fähigkeiten)
+			- Drake: Tarnen (Ari) oder Jagdtrupp rufen (Summoring, 3 Scharfschützen)
+			- Yuki: Wechsel zu einer Fernkampf-Version
+			- Kala: Berserkerwut (Varg) oder Bär(en) rufen
+			- Dovbar: Wirbelschlag (Erec, aber etwas schwächer)
+- FXKalaArrow für Ari nutzen
+	- Sniper gegen Shuriken tauschen?
+- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+- Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
+- Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
+- Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
+- Upgrade-Technologien für böse Einheiten
+- Mehr Sounds
+	- Eigener Todes-Sound für Nebelkrieger, Helden und Kanonen
+	- Walk und Training Sounds für Infanterie und Kavallerie (per TaskLists)
 - Hundekäfig im Stronghold-Stil
-- AeK-Frauen
-- Meuchel-Ability für Diebe(?)
-- extra1-Map 'Thalbach' neu aufsetzen
 - BattleMusic bei vom Spieler besiegten Einheiten(?)
-- Kontrollierbare Schäferhunde(?)
+- FunFacts im LoadingScreen
+	- reaktivieren
+	- korrigieren
+	- mehr davon
+	- besser geschrieben
+	- auf Englisch übersetzen
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein
-- Rand-Clipping bei Briefing-Minimap entfernen 
+- Rand-Clipping bei Briefing-Minimap fixen 
 - Hauptmenü
 	- MP-Window fixen
 	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)
-- Verschiebung von Overhead-Daten (RessourceAmount) und SelectionNames auf 4k fixen
+- Verschiebung von Overhead-Daten (RessourceAmount) fixen
 - Neue Spielerfarben
 - Auftragsbuch-Highlight fixen
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
-- Neue Map "Tal der Verdammten"
-	- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
-	- Erec lebt
-	- Nettes NV
-	- Kadirs Bruder
-	- Giftiger Schwefelnebel und Dampfmaschinen
+- Neue Maps
+	- "Tal der Verdammten"
+		- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
+		- Erec lebt (mit Amnesie)
+		- Nettes NV (und vllt. Varg/Kerberos)
+		- Kadirs Bruder
+		- Giftiger Schwefelnebel und Dampfmaschinen
+	- "Morbus Rache"
+		- S4 lässt Grüßen ;)

@@ -2,14 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\base",
-    "\\base\\shr\\Script\\MapTools",
-    "\\base\\shr\\sounds\\Animals",
-    "\\base\\shr\\sounds\\Military",
-    "\\extra1",
-    "\\extra2",
-    "\\extra2\\shr\\maps\\User",
-    "\\extra2\\shr\\maps\\User\\Scripts"
+    "\\base\\shr",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Script\\Interface",
+    "\\base\\shr\\text\\en",
+    "\\base\\shr\\text\\en\\InGame",
+    "\\extra1\\shr",
+    "\\extra1\\shr\\text",
+    "\\extra1\\shr\\text\\de",
+    "\\extra1\\shr\\text\\de\\InGame"
   ],
-  "SelectedNode": "\\base\\shr",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\player_7.lua",
   "PreviewInSolutionExplorer": false
 }

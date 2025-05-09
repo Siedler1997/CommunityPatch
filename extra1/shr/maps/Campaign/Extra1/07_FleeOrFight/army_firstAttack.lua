@@ -42,12 +42,9 @@ function CreateArmyFirstAttack()
 		
 			maxNumberOfSoldiers	= 16,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
-		if CP_Difficulty > 0 then
-			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
-		end	
 		for k = 1, (CP_Difficulty+1) do
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 			EnlargeArmy(armyFirstAttack[i],troopDescription)

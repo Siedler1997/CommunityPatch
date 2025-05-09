@@ -14,13 +14,13 @@ function createPlayer2()
 
 		local description = {
 
-			serfLimit				=	2,
+			serfLimit				=	4,
 			--------------------------------------------------
 			extracting				=	false,
 			--------------------------------------------------
 			rebuild = {
-				delay				=	5,
-				randomTime			=	5
+				delay				=	15,
+				randomTime			=	15
 			},
 			--------------------------------------------------
 			resources = {
@@ -33,13 +33,13 @@ function createPlayer2()
 			},
 			--------------------------------------------------
 			refresh = {
-				gold				=	100,
-				clay				=	10,
+				gold				=	150,
+				clay				=	25,
 				iron				=	100,
 				sulfur				=	50,
-				stone				=	10,
+				stone				=	25,
 				wood				=	100,
-				updateTime			=	5
+				updateTime			=	10
 			},
 		}
 

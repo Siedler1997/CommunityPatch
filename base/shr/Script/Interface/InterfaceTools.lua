@@ -264,28 +264,65 @@ end
 --------------------------------------------------------------------------------
 function InterfaceTool_GetBlessingCosts(_PID, _BlessCategory)
 	local BlessPrice = 0
+
+	local constructionsPrice = 1 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Farmer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_BrickMaker)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Sawmillworker)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Stonecutter)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Miner)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.CU_Serf))
+	local researchPrice = 3 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Scholar)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Engineer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Priest))
+	local weaponsPrice = 5 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smith)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Alchemist)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smelter))
+	local financialPrice = 10 * (
+		Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Treasurer)
+		+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Trader))
+
 	if _BlessCategory == BlessCategories.Construction then
-		BlessPrice = BlessPrice + 50 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Farmer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_BrickMaker)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Sawmillworker)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Stonecutter)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Miner)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.CU_Serf)
+		BlessPrice = constructionsPrice
 	elseif _BlessCategory == BlessCategories.Research then
-		BlessPrice = BlessPrice + 50 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Scholar)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Engineer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Priest)
+		BlessPrice = researchPrice
 	elseif _BlessCategory == BlessCategories.Weapons then
-		BlessPrice = BlessPrice + 100 + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smith)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Alchemist)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Smelter)
+		BlessPrice = weaponsPrice
 	elseif _BlessCategory == BlessCategories.Financial then
-		BlessPrice = BlessPrice + 100 + 2 * (Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Treasurer)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_PID, Entities.PU_Trader))
+		BlessPrice = financialPrice
 	elseif _BlessCategory == BlessCategories.Canonisation then
-		BlessPrice = BlessPrice + 200 + Logic.GetNumberOfAttractedWorker(_PID) * 4
+		BlessPrice = constructionsPrice + researchPrice + weaponsPrice + financialPrice
 	end
+
 	return BlessPrice
+end
+
+--------------------------------------------------------------------------------
+-- Tool function to sub ressources from a vanilla cost table (eg. InterfaceGlobals.CostTable)
+--------------------------------------------------------------------------------
+function InterfaceTool_PayResources(_Costs)
+	local pID = GUI.GetPlayerID();
+
+	if _Costs[ResourceType.Gold] ~= nil and _Costs[ResourceType.Gold] ~= 0 and GetGold(pID) >= _Costs[ResourceType.Gold] then
+		AddGold(-_Costs[ResourceType.Gold]);
+	end
+	if _Costs[ResourceType.Clay] ~= nil and _Costs[ResourceType.Clay] ~= 0 and GetClay(pID) >= _Costs[ResourceType.Clay] then
+		AddClay(-_Costs[ResourceType.Clay]);
+	end
+	if _Costs[ResourceType.Wood] ~= nil and _Costs[ResourceType.Wood] ~= 0 and GetWood(pID) >= _Costs[ResourceType.Wood] then
+		AddWood(-_Costs[ResourceType.Wood]);
+	end
+	if _Costs[ResourceType.Stone] ~= nil and _Costs[ResourceType.Stone] ~= 0 and GetStone(pID) >= _Costs[ResourceType.Stone] then
+		AddStone(-_Costs[ResourceType.Stone]);
+	end
+	if _Costs[ResourceType.Iron] ~= nil and _Costs[ResourceType.Iron] ~= 0 and GetIron(pID) >= _Costs[ResourceType.Iron] then
+		AddIron(-_Costs[ResourceType.Iron]);
+	end
+	if _Costs[ResourceType.Sulfur] ~= nil and _Costs[ResourceType.Sulfur] ~= 0 and GetSulfur(pID) >= _Costs[ResourceType.Sulfur] then
+		AddSulfur(-_Costs[ResourceType.Sulfur]);
+	end
 end
 
 --------------------------------------------------------------------------------

@@ -10,10 +10,10 @@
 
 		<NeedsPlayer>true</NeedsPlayer>
 		<ForceNoPlayer>false</ForceNoPlayer>
-		<MaxHealth>600</MaxHealth>
+		<MaxHealth>800</MaxHealth>
 		<ArmorClass>ArmorClassFortification</ArmorClass> 
-		<ArmorAmount>5</ArmorAmount>
-		<Exploration>30</Exploration>
+		<ArmorAmount>4</ArmorAmount>
+		<Exploration>40</Exploration>
 
 		<!-- Armor -->
 		<ModifyArmor>
@@ -37,16 +37,16 @@
 		</ModifyArmor>
 
 		<Upgrade>
-			<Category>CB_Lighthouse</Category>
+			<Category>Lighthouse</Category>
 		</Upgrade>
 
 		<ConstructionInfo>
-			<Time>80</Time>
+			<Time>90</Time>
 			<Cost>
 				<Clay />
-				<Wood />
-				<Stone />
-				<Gold>100</Gold>
+        <Wood>300</Wood>
+        <Stone>400</Stone>
+        <Gold />
 				<Iron />
 				<Sulfur />
 			</Cost>

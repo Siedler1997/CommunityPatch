@@ -11,7 +11,7 @@ function CreatePlayer3()
 
 		local description = {
 		
-			serfLimit				=	1,
+			serfLimit				=	4,
 			--------------------------------------------------
 			extracting				=	false,
 			--------------------------------------------------

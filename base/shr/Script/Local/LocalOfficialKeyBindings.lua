@@ -104,7 +104,7 @@ function OfficialKeyBindings_Init()
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectFarm" )], 			"KeyBindings_SelectUnit(UpgradeCategories.Farm,1)", 2)
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectVillage" )],		"KeyBindings_SelectUnit(UpgradeCategories.VillageCenter,1)", 2)
 
-	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectHeadquarter" )],	"KeyBindings_SelectUnit(UpgradeCategories.Headquarters,1)", 2)
+	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectHeadquarter" )],	"KeyBindings_SelectUnit(UpgradeCategories.Headquarters,1,UpgradeCategories.Outpost)", 2)
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectUniversity" )], 	"KeyBindings_SelectUnit(UpgradeCategories.University,1)", 2)	
 	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMarket" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Market,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMonastery" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Monastery,1)", 2) 
@@ -116,6 +116,7 @@ function OfficialKeyBindings_Init()
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectAlchemist" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Alchemist,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectSawmill" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Sawmill,1)", 2)
     
+	Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectMine" )],	"KeyBindings_SelectUnit(UpgradeCategories.ClayMine,1,{UpgradeCategories.StoneMine,UpgradeCategories.IronMine,UpgradeCategories.SulfurMine})", 2)
     --Input.KeyBindDown(Keys.A, 			"KeyBindings_SelectUnit(UpgradeCategories.ClayMine,1)", 2)
     --Input.KeyBindDown(Keys.S, 			"KeyBindings_SelectUnit(UpgradeCategories.StoneMine,1)", 2)
     --Input.KeyBindDown(Keys.D, 			"KeyBindings_SelectUnit(UpgradeCategories.IronMine,1)", 2)
@@ -125,10 +126,12 @@ function OfficialKeyBindings_Init()
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectArchery" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Archery,1)", 2)
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectFoundry" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Foundry,1)", 2)    
     Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectStables" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Stable,1)", 2)
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectTower" )], 			"KeyBindings_SelectUnit(UpgradeCategories.Tower,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectTower" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Tower,1)", 2)
     
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectWeatherTower" )], 		"KeyBindings_SelectUnit(UpgradeCategories.Weathermachine,1)", 2)
-    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectPowerPlant" )], 		"KeyBindings_SelectUnit(UpgradeCategories.PowerPlant,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectWeatherTower" )], 	"KeyBindings_SelectUnit(UpgradeCategories.Weathermachine,1)", 2)
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectPowerPlant" )], 	"KeyBindings_SelectUnit(UpgradeCategories.PowerPlant,1)", 2)
+
+    Input.KeyBindDown(Keys.ModifierControl + Keys[XGUIEng.GetStringTableText( "KeyBindings/SelectLighthouse" )], 	"KeyBindings_SelectUnit(UpgradeCategories.LighthouseActivated,1)", 2)
 
 	-----------------------------------------------------------------------------------------------
 	-- Select Units
@@ -411,7 +414,7 @@ end
 
 gvKeyBindings_LastSelectedEntityPos = 0
 
-function KeyBindings_SelectUnit(_UpgradeCategory,_type)
+function KeyBindings_SelectUnit(_UpgradeCategory,_type,_SecondCategory)
 	-- Do not jump in cutscene!
 	if gvInterfaceCinematicFlag == 1 then
 		return
@@ -421,23 +424,63 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type)
 
 	if _UpgradeCategory == UpgradeCategories.LeaderBow then
 		local BowTable = {}
-		BowTable[1] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow1, 24 )}; BowTable[2] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2, 24 )};
-		BowTable[3] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow3, 24 )}; BowTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow4, 24 )}
-		for i=1,4,1 do
+		BowTable[1] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow1, 24 )}
+		BowTable[2] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2, 24 )}
+		BowTable[3] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow3, 24 )}
+		BowTable[4] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow4, 24 )}
+		BowTable[5] = {Logic.GetPlayerEntities( GUI.GetPlayerID(), Entities.PU_LeaderBow2a, 24 )}
+		for i=1,5,1 do
 			for j=2,table.getn(BowTable[i]),1 do
 				table.insert (EntityTable, BowTable[i][j])	
 			end
 		end
 	else
 		local UpgradeTypeTable = {}	
+		local SecondTypeTable = {}	
 	
 		if _type == 1 then	
 			UpgradeTypeTable = {Logic.GetBuildingTypesInUpgradeCategory(_UpgradeCategory)}
+
+			if _SecondCategory ~= nil then
+				if type(_SecondCategory) == "number" then
+					local buildingTypes = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory)}
+					for c = 1, buildingTypes[1] do
+						table.insert(SecondTypeTable, buildingTypes[c+1])
+					end
+
+				elseif type(_SecondCategory) == "table" and table.getn(_SecondCategory) > 0 then
+					for c = 1, table.getn(_SecondCategory) do
+						local buildingTypes = {Logic.GetBuildingTypesInUpgradeCategory(_SecondCategory[c])}
+						for t = 1, buildingTypes[1] do
+							table.insert(SecondTypeTable, buildingTypes[t+1])
+						end
+					end
+				end
+			end
 		else 
 			UpgradeTypeTable = {Logic.GetSettlerTypesInUpgradeCategory(_UpgradeCategory)}
+
+			if _SecondCategory ~= nil then
+				if type(_SecondCategory) == "number" then
+					local settlerTypes = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory)}
+					for c = 1, settlerTypes[1] do
+						table.insert(SecondTypeTable, settlerTypes[c+1])
+					end
+
+				elseif type(_SecondCategory) == "table" and table.getn(_SecondCategory) > 0 then
+					for c = 1, table.getn(_SecondCategory) do
+						local settlerTypes = {Logic.GetSettlerTypesInUpgradeCategory(_SecondCategory[c])}
+						for t = 1, settlerTypes[1] do
+							table.insert(SecondTypeTable, settlerTypes[t+1])
+						end
+					end
+				end
+			end
 		end
 	
 		local AmountOfUpgradeTypes = UpgradeTypeTable[1]	
+		local AmountOfSecondTypes = table.getn(SecondTypeTable)	
+		--Message("Anzahl: " .. AmountOfUpgradeTypes + AmountOfSecondTypes)
 		for i = 1, AmountOfUpgradeTypes, 1 do
 			-- Get ID of upgradecategory of player
 			local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), UpgradeTypeTable[i+1], 48 )	}
@@ -445,6 +488,16 @@ function KeyBindings_SelectUnit(_UpgradeCategory,_type)
 			for j = 1, number, 1 do
 				table.insert(EntityTable,TempTable[j+1])
 			end	
+		end
+		if AmountOfSecondTypes ~= nil then
+			for i = 1, AmountOfSecondTypes, 1 do
+				-- Get ID of upgradecategory of player
+				local TempTable = {Logic.GetPlayerEntities( GUI.GetPlayerID(), SecondTypeTable[i], 48 )	}
+				local number = TempTable[1]		
+				for j = 1, number, 1 do
+					table.insert(EntityTable,TempTable[j+1])
+				end	
+			end
 		end
 	end
 

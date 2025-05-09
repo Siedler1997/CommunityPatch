@@ -8,7 +8,7 @@ createPlayer5 = function()
 	--	describe the player structure
 			local description = {
 		
-				serfLimit				=	0,
+				serfLimit				=	4,
 				--------------------------------------------------
 				extracting				=	false,
 				--------------------------------------------------
@@ -38,7 +38,7 @@ createPlayer5 = function()
 			}
 
 		if CP_Difficulty == 2 then
-			description.serfLimit = 4
+			description.serfLimit = 8
 			description.rebuild	=	{
 				delay				=	30,
 				randomTime			=	30

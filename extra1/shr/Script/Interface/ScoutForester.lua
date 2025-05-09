@@ -81,11 +81,13 @@ function ControlCooldowns()
 		local scout = ScoutFoerster_gvScoutFoerster.scouts[i];
 		if scout.CD < scout.CD_Max then
 			scout.CD = scout.CD+1;
+			XGUIEng.ShowWidget("Scout_RechargeForester",1)	
 			if sel == scout.id then
 				XGUIEng.SetProgressBarValues( "Scout_RechargeForester", scout.CD, scout.CD_Max );
 			end
 		else
 			table.remove(ScoutFoerster_gvScoutFoerster.scouts, i);
+			XGUIEng.ShowWidget("Scout_RechargeForester",0)	
 			if sel == scout.id then
 				XGUIEng.SetProgressBarValues( "Scout_RechargeForester", 0, 1 );
 			end
@@ -321,10 +323,6 @@ ScoutFoerster_SET_Evelance = {
 		"XD_TreeEvelance1",
 	},
 }
-
-function round( _n )
-	return math.floor( _n + 0.5 );
-end
 
 function ActionWithCooldown( _key, _cooldown, _action, _params )
 	assert( type(_key) == "string", "ActionWithCooldown: _key must be a string!" );

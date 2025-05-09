@@ -173,21 +173,11 @@
 		  <Logic classname="GGL::CBarrackBehaviorProperties">
 			  <Class>GGL::CBarrackBehavior</Class>
 			  <LeaveTaskList>TL_LEAVE_BARRACKS</LeaveTaskList>
-			  <TrainingTime>20</TrainingTime>
+			  <TrainingTime>30</TrainingTime>
 			  <TrainingTaskList>TL_TRAIN1_BARRACKS1</TrainingTaskList>
 			  <TrainingTaskList>TL_TRAIN2_BARRACKS1</TrainingTaskList>
 			  <TrainingTaskList>TL_TRAIN3_BARRACKS1</TrainingTaskList>
 		</Logic>
 	</Behavior>
-
-
-
-
-
-
-
-
-
-
 
 </root>

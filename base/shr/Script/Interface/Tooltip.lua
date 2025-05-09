@@ -163,13 +163,12 @@ end
 -- Display the Costs and the Text for Buttons that buy military units
 --------------------------------------------------------------------------------
 
-function
-GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledTooltip, _TechnologyType,_ShortCut)
-	
-	
+function GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledTooltip, _TechnologyType,_ShortCut)
 	local PlayerID = GUI.GetPlayerID()		
-	
 	local SettlerTypeID = Logic.GetSettlerTypeByUpgradeCategory(_UpgradeCategory, PlayerID )
+	local SelectedBuildingID = GUI.GetSelectedEntity()
+	local SelectedBuildingType = Logic.GetEntityType( SelectedBuildingID )
+	local RequiredBuildingType = 0
 	
 	Logic.FillLeaderCostsTable(PlayerID, _UpgradeCategory, InterfaceGlobals.CostTable)
 	local CostString = InterfaceTool_CreateCostString( InterfaceGlobals.CostTable )
@@ -178,14 +177,21 @@ GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledTooltip, _Te
 	local ShortCutToolTip = " "
 	
 	CostString = CostString .. XGUIEng.GetStringTableText("InGameMessages/GUI_NamePlaces") .. ": " .. NeededPlaces
-	
-	
+
+	if SettlerTypeID == Entities.PU_LeaderSword4 or SettlerTypeID == Entities.PU_LeaderPoleArm4 then 
+		RequiredBuildingType = Entities.PB_Barracks2
+	elseif SettlerTypeID == Entities.PU_LeaderBow4 then
+		RequiredBuildingType = Entities.PB_Archery2
+	elseif SettlerTypeID == Entities.PU_LeaderCavalry2 or SettlerTypeID == Entities.PU_LeaderHeavyCavalry2  then
+		RequiredBuildingType = Entities.PB_Stable2
+	end
+
 	if _TechnologyType ~= nil then
 		local TechState = Logic.GetTechnologyState(PlayerID, _TechnologyType)			
 		if TechState == 0 then
 			TooltipText =  "MenuGeneric/UnitNotAvailable"
 			CostString = " "
-		elseif TechState == 1 then
+		elseif TechState == 1 or (RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType) then
 			TooltipText = _DisabledTooltip
 		end
 	end
@@ -246,7 +252,6 @@ function GUITooltip_BlessSettlers(_DisabledTooltip, _NormalTooltip, _NotUsed, _S
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local TooltipText = ""
 	local ShortCutToolTip = ""
-	local CostString = ""
 	local blessCategory = 0
 
 	if _Technology == Technologies.T_BlessSettlers1 then
@@ -271,16 +276,16 @@ function GUITooltip_BlessSettlers(_DisabledTooltip, _NormalTooltip, _NotUsed, _S
 		end	
 
 		if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then
-			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_NormalTooltip)
+			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_NormalTooltip) .. " @color:255,255,255,255 @cr @cr " .. XGUIEng.GetStringTableText("InGameMessages/GUI_NameMoney") .. ": " .. InterfaceTool_GetBlessingCosts(PID, blessCategory)
 		else
 			TooltipText = TooltipText .. XGUIEng.GetStringTableText(_DisabledTooltip)
 		end
-		CostString = CostString .. CreateCostString{Gold=InterfaceTool_GetBlessingCosts(PID, blessCategory)};			
+		--CostString = CostString .. CreateCostString{Gold=InterfaceTool_GetBlessingCosts(PID, blessCategory)};			
 	end
 	
 	--Message("CostString: " .. CostString .. "   TooltipText: " .. TooltipText .. "   ShortCutToolTip: " .. ShortCutToolTip)
 
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText, TooltipText)
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
 end
@@ -332,24 +337,30 @@ function GUITooltip_FindUnits(_menu)
 	local tempamount = 0
 	if _menu == "MenuTop/Find_sword" then
 		local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderSword2a)
 		tempamount = tempamount + SwordAmount
 	elseif _menu == "MenuTop/Find_spear" then
 		local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderPoleArm2a)
 		tempamount = tempamount + SpearAmount
 	elseif _menu == "MenuTop/Find_bow" then
 		local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow2)
-						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow4)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderBow2a)
 		tempamount = tempamount + BowAmount
 	elseif _menu == "MenuTop/Find_lightcavalry" then
 		local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderCavalry1a)
 		tempamount = tempamount + LCavAmount
 	elseif _menu == "MenuTop/Find_heavycavalry" then
 		local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1)
 		tempamount = tempamount + HCavAmount
 	elseif _menu == "AOMenuTop/Find_rifle" then
 		local RifAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle2)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle1a)
 		tempamount = tempamount + RifAmount
 	elseif _menu == "MenuTop/Find_cannon" then
 		local CanAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PV_Cannon2)
@@ -485,36 +496,109 @@ function GUITooltip_FindHero()
 end
 
 --------------------------------------------------------------------------------
--- Display the Text for the Formation buttons
+-- Display the Text for ability buttons
 --------------------------------------------------------------------------------
-function GUITooltip_Formations(_NormalTooltip, _DisabledTooltip)
-	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
-	
-	if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 1 then		
-		TooltipText =  _DisabledTooltip
-	elseif XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then		
-		TooltipText = _NormalTooltip
-	end
-	
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
-	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, "")
-end
+function GUITooltip_AbilityButton(_tech,_tooltip,_ShortCut,_costs)
+	local pid = GUI.GetPlayerID()
+	local ShortCutToolTip = ""
+	local TextToolTip = ""
+	local CostToolTip = ""
+	local TechState = Logic.GetTechnologyState(pid, _tech)
 
+	if _ShortCut ~= nil and TechState == 4 then
+		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+	end
+
+	if TechState == 0 then
+		TextToolTip = XGUIEng.GetStringTableText("MenuGeneric/AbilityNotAvailable")
+	elseif TechState < 4 then
+		if TechState == 2 and _tech == Technologies.T_HeroMarker then
+			TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
+		else
+			TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_disabled")
+		end
+	else
+		TextToolTip = XGUIEng.GetStringTableText(_tooltip .. "_normal")
+	end
+
+	if _costs ~= nil and TechState ~= 0 then
+		CostToolTip = _costs
+	end
+
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostToolTip)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut,ShortCutToolTip)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomText,TextToolTip)
+end
 --------------------------------------------------------------------------------
 -- Display Text for buttons that are only usable in singleplayer-mode
 --------------------------------------------------------------------------------
 function GUITooltip_SinglePlayerButton(_NormalTooltip, _ShortCut)
 	local ShortCutToolTip = " "
 	local TooltipText = ""
+	local TooltipCost = ""
 
 	if XNetwork.Manager_IsGameRunning() == 1 then
 		TooltipText = TooltipText .. "MenuGeneric/FeatureNotAvailable"
 	else
 		ShortCutToolTip = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
 		TooltipText = TooltipText .. _NormalTooltip
+		TooltipCost = CreateCostString{Gold=50}
 	end
 	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutToolTip)
 	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipText)
-	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, "")
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, TooltipCost)
+end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Tooltip for repair cannons
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUITooltip_RepairCannonButton(_tooltip, _ShortCut)
+	local PlayerID = GUI.GetPlayerID()	
+	local SelectedCannonID = GUI.GetSelectedEntity()
+	local SelectedCannonType = Logic.GetEntityType(SelectedCannonID)
+	local SelectedCannonCategory = 0
+	local CostString = ""
+	local ShortCutString = ""
+	local TooltipString = ""
+
+	if SelectedCannonType == Entities.PV_Cannon1 then
+		SelectedCannonCategory = UpgradeCategories.Cannon1
+	elseif SelectedCannonType == Entities.PV_Cannon2 then
+		SelectedCannonCategory = UpgradeCategories.Cannon2
+	elseif SelectedCannonType == Entities.PV_Cannon3 or SelectedCannonType == Entities.PV_Cannon3a then
+		SelectedCannonCategory = UpgradeCategories.Cannon3
+	elseif SelectedCannonType == Entities.PV_Cannon4 or SelectedCannonType == Entities.PV_Cannon4a then
+		SelectedCannonCategory = UpgradeCategories.Cannon4
+	end
+
+	local currentHealth = Logic.GetEntityHealth(SelectedCannonID)
+	local maxHealth = Logic.GetEntityMaxHealth(SelectedCannonID)
+	if SelectedCannonCategory ~= 0 and currentHealth < maxHealth then
+		local lostHealth = 1 - (currentHealth / maxHealth)
+		Logic.FillLeaderCostsTable(PlayerID, SelectedCannonCategory, InterfaceGlobals.CostTable)
+		InterfaceGlobals.CostTable[ResourceType.Gold] = round(InterfaceGlobals.CostTable[ResourceType.Gold] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Wood] = round(InterfaceGlobals.CostTable[ResourceType.Wood] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Iron] = round(InterfaceGlobals.CostTable[ResourceType.Iron] * lostHealth)
+		InterfaceGlobals.CostTable[ResourceType.Sulfur] = round(InterfaceGlobals.CostTable[ResourceType.Sulfur] * lostHealth)
+		CostString = InterfaceTool_CreateCostString(InterfaceGlobals.CostTable)
+	end
+	
+	if _ShortCut ~= nil then
+		ShortCutString = XGUIEng.GetStringTableText("MenuGeneric/Key_name") .. ": [" .. XGUIEng.GetStringTableText(_ShortCut) .. "]"
+	end
+	
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	if XGUIEng.IsButtonDisabled(CurrentWidgetID) == 1 then	
+		if currentHealth < maxHealth then
+			TooltipString =  _tooltip .. "_disabled"
+		else
+			TooltipString =  _tooltip .. "_full"
+		end
+	elseif XGUIEng.IsButtonDisabled(CurrentWidgetID) == 0 then		
+		TooltipString = _tooltip .. "_normal"
+	end
+
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomShortCut, ShortCutString)
+	XGUIEng.SetTextKeyName(gvGUI_WidgetID.TooltipBottomText, TooltipString)
+	XGUIEng.SetText(gvGUI_WidgetID.TooltipBottomCosts, CostString)
 end

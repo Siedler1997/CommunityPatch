@@ -101,9 +101,7 @@ end
 ----------------------------------------------------------------------------------------------------
 -- Tool to create save game description of current game
 
-function
-MainWindow_SaveGame_CreateSaveGameDescription()
-
+function MainWindow_SaveGame_CreateSaveGameDescription()
 	-- Create description
 	local Description = ""
 
@@ -111,6 +109,16 @@ MainWindow_SaveGame_CreateSaveGameDescription()
 	local MapName = Framework.GetCurrentMapName()
 	local MapType, CampaignName = Framework.GetCurrentMapTypeAndCampaignName()
 	local MapNameString, MapDescString = Framework.GetMapNameAndDescription( MapName, MapType, CampaignName )
+
+	local systemDateTime = Framework.GetSystemTimeDateString()
+	local year = string.sub(systemDateTime,1,4)
+	local month = string.sub(systemDateTime,6,7)
+	local day = string.sub(systemDateTime,9,10) 
+	local hours = string.sub(systemDateTime,12,13) 
+	local minutes = string.sub(systemDateTime,15,16) 
+	local seconds = string.sub(systemDateTime,18,19) 
+	local newDateTimeString = ""
+	local lang = XNetworkUbiCom.Tool_GetCurrentLanguageShortName()
 	
 	-- Map name to use
 	local TempString = MapNameString
@@ -118,12 +126,15 @@ MainWindow_SaveGame_CreateSaveGameDescription()
 		TempString= MapName
 	end
 	
-	-- Create description - name & date
-	Description = TempString .. " - " .. Framework.GetSystemTimeDateString()
+	if lang == "de" then
+		Description = day.."."..month.."."..year
+	else
+		Description = year.."-"..month.."-"..day
+	end
+	Description = Description..", "..hours..":"..minutes..":"..seconds.." - "..TempString
 
 	-- Use it
 	return Description
-	
 end
 
 

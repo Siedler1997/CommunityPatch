@@ -79,9 +79,30 @@ function BriefingPreludeFinished()
 	-- Move princess near fire signal
 	--MoveAndVanish("P4_SouthVillage_NPC", "P2_Army_South_SpawnPoint2")
 	
-	StartCountdown(15, BriefingPreludeStartBattleOnTheMap, false)
+	StartCountdown(20, BriefingPreludeStartBattleOnTheMap, false)
+
+	-- Start winter after some time
+	CreateQuestWinter()
+
+	StartSimpleJob("ControlPrincess")
 end
 
 function BriefingPreludeStartBattleOnTheMap()
 	LocalMusic.BattlesOnTheMap = 2
+end
+
+function ControlPrincess()
+	if Counter.Tick2("ControlPrincess", 5) then
+		if IsExisting("P4_SouthVillage_NPC") then
+			if not IsNear("P4_SouthVillage_NPC", "princesspos", 500) then
+				Move("P4_SouthVillage_NPC", "princesspos")
+			else
+				DestroyEntity("P4_SouthVillage_NPC")
+				AddGold(500)
+				return true
+			end
+		else
+			return true
+		end
+	end
 end

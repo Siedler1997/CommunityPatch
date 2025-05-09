@@ -41,6 +41,11 @@ startQuestDestroyOutpost = function()
 
 		createQuestRewards()
 
+		--Kerberos starts using his weather tower after 15 minutes to drown player armies
+		if CP_Difficulty > 0 then
+			StartCountdown(15 * 60, createQuestEnemyWeather, false)
+		end
+
 	-- NPCs
 
 		InitMapNPCs()
@@ -87,7 +92,7 @@ startQuestDestroyLionsDen = function()
 	
 --		Logic.ChangeAllEntitiesPlayerID(4,GetHumanPlayer())
 
-		createQuestReinforcements2()
+		--createQuestReinforcements2()
 
 	--	ai
 	

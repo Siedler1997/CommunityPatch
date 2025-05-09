@@ -1,5 +1,7 @@
 ---------------------------------------------------------------------------------------------
 function createQuestRescueGateKeeper()
+    
+    Logic.SetShareExplorationWithPlayerFlag(1, 7, 1)
 
     StartSimpleJob("controlRescueGateKeeper")
 
@@ -21,9 +23,9 @@ function controlRescueGateKeeper()
 
     --DestroyEntity("jail")
 
-    Move("gateKeeper","keyKeeper",1000)
+    --Move("gateKeeper","keyKeeper",1000)
 
-    createBriefingKeyKeeper_GateKeeperIsOnTheWay()
+    --createBriefingKeyKeeper_GateKeeperIsOnTheWay()
 
     createBriefingGateKeeper()
 

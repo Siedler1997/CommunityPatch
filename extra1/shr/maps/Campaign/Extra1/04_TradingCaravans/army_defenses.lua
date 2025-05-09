@@ -51,7 +51,7 @@ CreateArmiesBanditsDefense = function()
 		ArmyBanditsDefense[i].outerDefenseRange= 	2000
 		ArmyBanditsDefense[i].Attack			= 	false
 		ArmyBanditsDefense[i].AttackAllowed	= 	false
-		ArmyBanditsDefense[i].experiencePoints	=	CP_Difficulty
+		ArmyBanditsDefense[i].experiencePoints	=	CP_Difficulty+1
 	
 	
 		-- Setup army

@@ -733,15 +733,24 @@ GUIUpdate_TaxLeaderCosts()
 end
 
 
-function
-GUIUpdate_TaxTaxAmountOfWorker()
+function GUIUpdate_TaxTaxAmountOfWorker()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local PlayerID = GUI.GetPlayerID()
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+	local TaxesString = Logic.GetTaxLevel(PlayerID) * 5
+	
+	if TechState == 4 then	
+		TaxesString = TaxesString * 1.2
+	end
+	
+	XGUIEng.SetText(CurrentWidgetID, TaxesString)	
+end
+
+function GUIUpdate_TaxTaxAmountOfLeader()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
 	
-	local TaxAmountOneWorker = Logic.GetTaxAmountOfWorker()
-	
-	XGUIEng.SetText(CurrentWidgetID, TaxAmountOneWorker)	
-	
+	XGUIEng.SetText(CurrentWidgetID, 20)	
 end
 
 
@@ -757,20 +766,22 @@ GUIUpdate_TaxWorkerAmount()
 end
 
 
-function
-GUIUpdate_TaxPaydayIncome()
+function GUIUpdate_TaxPaydayIncome()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
 	
 	local TaxAmount = Logic.GetPlayerPaydayCost(PlayerID)
 	local Payday = Logic.GetPlayerPaydayLeaderCosts(PlayerID)
 		
+	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
+		TaxAmount = TaxAmount + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+	end
+
 	if Logic.GetPlayerPaysLeaderFlag(PlayerID) == 0 then
 		Payday = 0
 	end
 	
 	local TaxesPlayerWillGet = TaxAmount - Payday
-	
 	
 	local String
 	
@@ -781,19 +792,19 @@ GUIUpdate_TaxPaydayIncome()
     end
 	
 	XGUIEng.SetText(CurrentWidgetID, String)	
-	
 end
 
 
-function
-GUIUpdate_TaxSumOfTaxes()
+function GUIUpdate_TaxSumOfTaxes()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
-	local TaxIncome = Logic.GetPlayerPaydayCost(PlayerID)		
-	
+	local TaxIncome = Logic.GetPlayerPaydayCost(PlayerID)	
+
+	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
+		TaxIncome = TaxIncome + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+	end
 	
 	XGUIEng.SetText(CurrentWidgetID, TaxIncome)	
-	
 end
 
 
@@ -822,3 +833,65 @@ GUIUpdate_HintText()
 	end
 	
 end
+
+function GUIUpdate_BeautificationClockDate()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local systemDateTime = Framework.GetSystemTimeDateString()
+
+	local year = string.sub(systemDateTime,1,4)
+	local month = string.sub(systemDateTime,6,7)
+	local day = string.sub(systemDateTime,9,10) 
+
+	local newDateTimeString = ""
+	local lang = XNetworkUbiCom.Tool_GetCurrentLanguageShortName()
+
+	if lang == "de" then
+		newDateTimeString = " "..day.."."..month.."."..year
+	else
+		newDateTimeString = " "..year.."-"..month.."-"..day
+	end
+	
+	XGUIEng.SetText(CurrentWidgetID, newDateTimeString)	
+end
+
+function GUIUpdate_BeautificationClockTime()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local systemDateTime = Framework.GetSystemTimeDateString()
+
+	local hours = string.sub(systemDateTime,12,13) 
+	local minutes = string.sub(systemDateTime,15,16) 
+	local seconds = string.sub(systemDateTime,18,19) 
+
+	local newDateTimeString = " "..hours..":"..minutes..":"..seconds
+	
+	XGUIEng.SetText(CurrentWidgetID, newDateTimeString)	
+end
+
+--------------------------------------------------------------------------------
+-- CP Taxation Mod
+--------------------------------------------------------------------------------
+function GUIUpdate_BonusTaxation()
+	local PlayerID = GUI.GetPlayerID()
+	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+
+	if TechState == 4 then	
+		local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
+		local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
+		local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+
+		if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
+			Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+		end
+	end
+
+	--Get additional gold for draw wells
+	if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
+		local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
+		local random_num = GetRandom(1, 100)
+
+		if random_num <= wells then
+			AddGold(PlayerID, 1)
+			--Message("Wells: " .. wells)
+		end
+	end
+end 

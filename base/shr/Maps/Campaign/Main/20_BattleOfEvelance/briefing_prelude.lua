@@ -108,4 +108,14 @@ createBriefingPrelude = function()
 briefingPreludeFinished = function()
 	-- Remove exploration
 	ResolveBriefing(briefingPrelude[6])
+		
+	if CP_Difficulty == 2 then
+		--Make it random if enemies use vanilla or modded route
+		local random_num = GetRandom(1,100)
+		if random_num > 50 then
+			DestroyEntity("hard_rock1")
+			DestroyEntity("hard_rock2")
+		end
+		--Message("Random: " .. random_num)
+	end
 end

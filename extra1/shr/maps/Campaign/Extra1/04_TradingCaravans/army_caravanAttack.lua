@@ -57,10 +57,9 @@ function ControlArmyCaravanAttack()
 end
 function ArmyCaravanAttackRandomSpawn()
 	local minutes = 7
-	local experience = LOW_EXPERIENCE
+	local experience = CP_Difficulty+1
 	if CP_Difficulty > 0 then
 		minutes = minutes - 4
-		experience = experience + 2
 	end
 	if IsDead(ArmyCaravanAttack) then
 

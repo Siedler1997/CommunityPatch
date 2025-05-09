@@ -172,11 +172,16 @@
 				  <Delay>5</Delay>
 				  <Amount>1</Amount>
 			  </ExtractionInfo>
+        <ExtractionInfo>
+          <ResourceEntityType>XD_Wood1</ResourceEntityType>
+          <Delay>5</Delay>
+          <Amount>2</Amount>
+        </ExtractionInfo>
 		  </Logic>
 	</Behavior>
 	<Behavior>
-		  <Logic classname="GGL::CSerfBattleBehaviorProps">
-			  <Class>GGL::CSerfBattleBehavior</Class>
+		  <Logic classname="GGL::CLeaderBehaviorProps">
+			  <Class>GGL::CLeaderBehavior</Class>
 
 				<BattleTaskList>TL_BATTLE</BattleTaskList>
            
@@ -195,6 +200,7 @@
 				<BattleWaitUntil>2500</BattleWaitUntil>
 				<MaxRange>250.0f</MaxRange>
 				<MinRange>0.0f</MinRange>
+        <AutoAttackRange>0</AutoAttackRange>
 
 				<HealingPoints>1</HealingPoints>
 				<HealingSeconds>5</HealingSeconds>

@@ -174,5 +174,21 @@
 	        <BasePriority>500</BasePriority>
 	    </Logic>
 	</Behavior>
-
+<!--
+  <Behavior>
+    <Logic classname="GGL::CShurikenAbilityProps">
+      <Class>GGL::CShurikenAbility</Class>
+      <RechargeTimeSeconds>90</RechargeTimeSeconds>
+      <TaskList>TL_SHURIKEN_SPECIAL</TaskList>
+      <Animation>PU_Hero11_Attack3</Animation>
+      <Range>3000.0</Range>
+      <MaxArcDegree>90</MaxArcDegree>
+      <NumberShuriken>3</NumberShuriken>
+      <ProjectileType>FXGranade</ProjectileType>
+      <ProjectileOffsetHeight>120.0</ProjectileOffsetHeight>
+      <DamageClass>DC_Hero</DamageClass>
+      <DamageAmount>50</DamageAmount>
+    </Logic>
+  </Behavior>
+-->  
 </root>
