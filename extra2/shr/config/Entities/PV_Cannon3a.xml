@@ -24,7 +24,6 @@
         </Cost>
         <Category>Military</Category>
         <Category>Cannon</Category>
-        <Category>SplashDamage</Category>
 		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>250</MaxHealth>
@@ -112,13 +111,13 @@
 	        <MissAttackAnim>PV_Cannon3_Shoot</MissAttackAnim>
 	        <BattleIdleAnim>PV_Cannon3_Idle</BattleIdleAnim>
 	        <BattleWalkAnim>PV_Cannon3_Drive</BattleWalkAnim>
+
+        <DamageClass>DC_Strike</DamageClass>
+        <DamageAmount>60</DamageAmount>
+        <MaxRandomDamageBonus>10</MaxRandomDamageBonus>
+        <DamageRange>300</DamageRange>
 	        
-	        <DamageClass>DC_Chaos</DamageClass>
-	        <DamageAmount>70</DamageAmount>
-	        <MaxRandomDamageBonus>8</MaxRandomDamageBonus>
-	        <DamageRange>300</DamageRange>
-	        
-	        <BattleWaitUntil>2000</BattleWaitUntil>
+	        <BattleWaitUntil>3000</BattleWaitUntil>
 	        
 	        <ProjectileEffectID>FXCannonBall</ProjectileEffectID>
 	        <MaxRange>2700</MaxRange>

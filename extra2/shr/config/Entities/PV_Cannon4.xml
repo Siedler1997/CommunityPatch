@@ -23,7 +23,6 @@
         </Cost>
         <Category>Military</Category>
         <Category>Cannon</Category>
-        <Category>SplashDamage</Category>
 		<Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <MaxHealth>250</MaxHealth>
@@ -115,7 +114,7 @@
 	        
 	        <DamageClass>DC_Siege</DamageClass>
 	        <DamageAmount>75</DamageAmount>
-	        <MaxRandomDamageBonus>8</MaxRandomDamageBonus>
+	        <MaxRandomDamageBonus>10</MaxRandomDamageBonus>
 	        <DamageRange>400</DamageRange>
 	        
 	        <BattleWaitUntil>5000</BattleWaitUntil>

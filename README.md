@@ -130,8 +130,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Genauer: [Y], [X], [C] und [V]
 		- wird gleichzeitig [Strg] oder [Shift] gedrückt, können noch weitere Formationen eingenommen werden
 	- 'Meisterschütze' bewirkt einen schwächeren Bewegungsbonus, dafür aber auch einen Schadenspunkt mehr
-	- Verursachen deutlich weniger Schaden an Gebäuden (x0,1)
-		- Ausnahmen: Schwere Kavallerie, Bombarden, Eisenkanonen, Helden, Nebelvolk (x0,5)
+	- Verursachen deutlich weniger Schaden an Gebäuden (x0,2)
+		- Ausnahmen: Schwere Kavallerie, Helden, Nebelvolk (x0,5)
 	- NPCs (Zivilisten)
 		- können wirklich sterben
 			- dabei crashen sie nicht mehr das Spiel (Leonardo, Bischof, ...)
@@ -232,17 +232,19 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Fixes
 				- werden wirklich von der Technologie 'Verbessertes Fahrgestell' beeinflusst
 				- bekommen mit 'Schießpulver' wirklich die Verbesserung in Reichweite und Sichtweite (statt Schadensbonus)
-				- nutzen die laut ihren Tooltips richtigen DamageClasses und die damit einhergehenden (In-)Effektivitäten
+				- DamageClasses gefixt
+					- Nutzung dieser wurde zuvor durch die Entity Category 'SplashDamage' verhindert
+					- Effektivitäten stimmen nun mit den jeweiligen Tooltips überein
 			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
 			- Lebenspunkte etwas erhöht
 			- Bronze- und Belagerungskanonen verursachen mehr Schaden gegen Gebäude (1,7x -> 2,0x)
 			- Reichweite von Bombarden und Bronzekanonen etwas erhöht
 			- Bombarden
-				- Nachladedauer auf 3 Sek. reduziert (vorher: 3 1/2 Sek.)
-				- Schaden auf 35 erhöht (vorher: 30)
+				- Nachladedauer auf 2 Sek. reduziert (vorher: 3 1/2 Sek.)
+				- AoE leicht erhöht (1,5 -> 2 SM)
 			- Eisenkanonen
-				- Nachladedauer auf 2 Sek. erhöht (vorher: 1/2 Sek.)
-				- Schaden auf 70 erhöht (vorher: 65)
+				- Nachladedauer auf 3 Sek. erhöht (vorher: 1/2 Sek.)
+				- Schaden auf 60 reduziert (vorher: 65)
 			- Reskins für Eisen- und Belagerungskanone (mit identischen Stats)
 			- sind reparierbar
 				- bei Selektion einer Kanone ist ein Button an Stelle des 'Soldat rekrutieren'-Buttons zu sehen. Die Logik ist identisch:
@@ -798,8 +800,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- SP Map Auswahl: Filter für Vanilla und Usermaps
 - Verbesserte KI
-	- Advanced Setting
+	- Advanced Settings
 		- MaxArmySize
 		- Zusammensetzung
 			- Mixed: Vanilla. Alles ist dabei!
@@ -810,8 +813,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Rest: Mixed
 			- Picked: Mapper bestimmt
 			- Adaptive: abhängig vom Spieler, um diesen zu kontern
-	- SetupPlayerAi integrieren
-	- EvilMod integrieren
+	- Integrationen
+		- SetupPlayerAi
+		- EvilMod
 - Kampagne nochmal überarbeiten
 	- Holzhaufen verteilen
 	- Low-Tier Units verteilen
@@ -862,6 +866,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Reparierbare Kanonen
 	- Nur möglich, wenn keine Feinde in der Nähe sind
 	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
+- Neue DamageClass "DC_Blunt"
+	- Für: Schwere Cav., Barbaren, Banditen, Schwarze Ritter
+	- Damage Multiplikatoren analog zu bisheriger DC_Chaos
+	- DC_Chaos wird exklusiv für Türme und Anti-Unit-Kanonen umfunktioniert und für Anti-Infanterie gebufft
 - Flammenwerfer (mobil oder als Turm)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)

@@ -42,13 +42,13 @@
 
 		<DamageClass id="DC_Siege">
 				<Logic classname="GGL::CDamageClassProps">
-						<ArmorClassNoneFactor>0.1</ArmorClassNoneFactor>
-						<ArmorClassJerkinFactor>0.1</ArmorClassJerkinFactor>
-						<ArmorClassLeatherFactor>0.1</ArmorClassLeatherFactor>
-						<ArmorClassIronFactor>0.1</ArmorClassIronFactor>
-						<ArmorClassFortificationFactor>2.0</ArmorClassFortificationFactor>
-						<ArmorClassHeroFactor>0.1</ArmorClassHeroFactor>
-						<ArmorClassFurFactor>0.1</ArmorClassFurFactor>
+          <ArmorClassNoneFactor>0.5</ArmorClassNoneFactor>
+          <ArmorClassJerkinFactor>0.5</ArmorClassJerkinFactor>
+          <ArmorClassLeatherFactor>0.5</ArmorClassLeatherFactor>
+          <ArmorClassIronFactor>0.5</ArmorClassIronFactor>
+          <ArmorClassFortificationFactor>2.0</ArmorClassFortificationFactor>
+          <ArmorClassHeroFactor>0.5</ArmorClassHeroFactor>
+          <ArmorClassFurFactor>0.5</ArmorClassFurFactor>
 				</Logic>
 		</DamageClass>
 
