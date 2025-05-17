@@ -44,12 +44,14 @@ end
 ----------------------------------------------------------------------------------------------------
 -- Show custom map screen
 
-function
-SPMenu.S00_ToCustomMap()
+function SPMenu.S00_ToCustomMap()
 
 	-- Show screen
 	XGUIEng.ShowAllSubWidgets( "Screens", 0 )
 	XGUIEng.ShowWidget("SPMenu20", 1)
+
+	-- Update and filter map list in extra2 (doesn't do anything in base and extra1)
+	LoadMap.FilterMapList(LoadMap.ShowUserMaps)
 end
 
 ----------------------------------------------------------------------------------------------------

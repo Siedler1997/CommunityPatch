@@ -40,7 +40,7 @@ function LoadMap.LoadMapsSortAndAddToMainList(_MapType)
 	local i
 	for i = 1, MPTable.NumberOfMaps do
 	
-		table.insert( LoadMap.MapTable.MapArray, MPTable.MapArray[i] )
+		table.insert( LoadMap.MapTable.BackupMapArray, MPTable.MapArray[i] )
 	
 	end
 	
@@ -64,7 +64,7 @@ function LoadMap.Init()
 		MapListHandler_AddMaps( LoadMap.MapTable, 0 )									-- Add singleplayer maps		
 		MapListHandler_AddMaps( LoadMap.MapTable, 3, nil, false)			-- Add external SP maps
 
-		table.sort(LoadMap.MapTable.MapArray, LoadMap.Sort)
+		table.sort(LoadMap.MapTable.BackupMapArray, LoadMap.Sort)
 
 		local MPTable = {}
 		MapListHandler_Init(MPTable)
@@ -72,15 +72,16 @@ function LoadMap.Init()
 		--MapListHandler_AddMaps( MPTable, 3, nil, true )								-- Add external maps MP Maps
 		--MapListHandler_AddMaps( MPTable, 2, nil, true)								-- Add multi player maps    
 	
-		table.sort(MPTable.MapArray, LoadMap.Sort)
+		table.sort(MPTable.BackupMapArray, LoadMap.Sort)
 	
 		-- copy to maps
-		LoadMap.MapTable.NumberOfMaps = LoadMap.MapTable.NumberOfMaps + MPTable.NumberOfMaps
-	
+		--LoadMap.MapTable.NumberOfMaps = LoadMap.MapTable.NumberOfMaps + MPTable.NumberOfMaps
+		LoadMap.MapTable.NumberOfMaps = table.getn(LoadMap.MapTable.BackupMapArray)
+		
 		local i
 		for i = 1, MPTable.NumberOfMaps do
 		
-			table.insert( LoadMap.MapTable.MapArray, MPTable.MapArray[i] )
+			table.insert( LoadMap.MapTable.BackupMapArray, MPTable.MapArray[i] )
 		
 		end
 
@@ -90,26 +91,17 @@ function LoadMap.Init()
 	do
 		LoadMap.ListBox = nil
 		LoadMap.ListBox = {}	
-		LoadMap.ListBox.ElementsShown = 6								-- Elements in list box
+		LoadMap.ListBox.ElementsShown = 10								-- Elements in list box
 		LoadMap.ListBox.ElementsInList = LoadMap.MapTable.NumberOfMaps	-- Elements in list
 		LoadMap.ListBox.CurrentTopIndex = 0								-- Current top index
 		LoadMap.ListBox.CurrentSelectedIndex = 0						-- Current selected index
-	
-		-- Set start index to current map	
-		local MapIndex = MapListHandler_GetMapIndex( LoadMap.MapTable, Framework.GetCurrentMapName() )
-		ListBoxHandler_SetSelected( LoadMap.ListBox, MapIndex )
-		ListBoxHandler_CenterOnSelected( LoadMap.ListBox )
-		
-		-- Update map preview
-		LoadMap.UpdateMapPreview()
-		
-		-- Update map description
-		LoadMap.UpdateMapDescription()
-		LoadMap.UpdateMapTitle()
+
+		--Init map filter
+		LoadMap.ShowUserMaps = 0
+
+		--LoadMap.UpdateMapFilter()
+		LoadMap.FilterMapList(0)
 	end
-	
-	-- Init slider value
-	LoadMap_UpdateSliderValue()
 	
 end
 
@@ -170,7 +162,7 @@ function LoadMap.UpdateMapName( _Index )
 		HighLightFlag = 1
 	end
 	XGUIEng.HighLightButton( XGUIEng.GetCurrentWidgetID(), HighLightFlag )
-	
+
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -305,15 +297,16 @@ function MapListHandler_Init( _MapHandler )
 	-- Init map table
 	_MapHandler.MapArray = nil
 	_MapHandler.MapArray = {}
-		
+	
+	-- Init map table
+	_MapHandler.BackupMapArray = nil
+	_MapHandler.BackupMapArray = {}
 end
 
 ----------------------------------------------------------------------------------------------------
 -- Add maps to list
 
 function MapListHandler_AddMaps( _MapHandler, _MapType, _CampaignName, _MultiplayerOnly, _LadderOnly )
-
-
 	-- Get number of maps
 	local NumberOfMaps = Framework.GetNumberOfMaps( _MapType, _CampaignName )
 	if NumberOfMaps == 0 then
@@ -322,52 +315,41 @@ function MapListHandler_AddMaps( _MapHandler, _MapType, _CampaignName, _Multipla
 	
 	-- Add all maps
 	for i=1, NumberOfMaps, 1 do
-	
 		-- Get map data
-		local MapNameNumber, MapName = Framework.GetMapNames( i - 1, 1, _MapType, _CampaignName )		
-	
+		local MapNameNumber, MapName = Framework.GetMapNames( i - 1, 1, _MapType, _CampaignName )
 		local MultiplayerMap,maxPlayers, mpFlags = Framework.GetMapMultiplayerInformation(MapName, _MapType, _CampaignName)
 		MultiplayerMap = MultiplayerMap == 1
 	
-		if 	_MultiplayerOnly == nil 
-			or 
-			(_MultiplayerOnly and MultiplayerMap)
-			or
-			(not _MultiplayerOnly and not MultiplayerMap) then
-			
+		if _MultiplayerOnly == nil or (_MultiplayerOnly and MultiplayerMap) or (not _MultiplayerOnly and not MultiplayerMap) then
 			if _LadderOnly ~= true or not MultiplayerMap or ( math.mod(mpFlags,128) >= 64 ) then
-
 				local MapNameString, MapDescString = Framework.GetMapNameAndDescription( MapName, _MapType, _CampaignName )
-	
 				-- Get counter
 				local Counter = _MapHandler.NumberOfMaps
 			
 				-- Create sub table
-				_MapHandler.MapArray[ Counter+1 ] = nil
-				_MapHandler.MapArray[ Counter+1 ] = {}
+				_MapHandler.BackupMapArray[ Counter+1 ] = nil
+				_MapHandler.BackupMapArray[ Counter+1 ] = {}
 			
 				-- Fill sub table
-				_MapHandler.MapArray[ Counter+1 ].Name = MapName
-				_MapHandler.MapArray[ Counter+1 ].Type = _MapType
-				_MapHandler.MapArray[ Counter+1 ].CampaignIndex = _CampaignName
+				_MapHandler.BackupMapArray[ Counter+1 ].Name = MapName
+				_MapHandler.BackupMapArray[ Counter+1 ].Type = _MapType
+				_MapHandler.BackupMapArray[ Counter+1 ].CampaignIndex = _CampaignName
 			
 				if _MapType == -1 and MapNameString ~= "" then
 					local TempName = "*" .. MapNameString
-					_MapHandler.MapArray[ Counter+1 ].MapNameString = TempName
+					_MapHandler.BackupMapArray[ Counter+1 ].MapNameString = TempName
 				else
-					_MapHandler.MapArray[ Counter+1 ].MapNameString = MapNameString
+					_MapHandler.BackupMapArray[ Counter+1 ].MapNameString = MapNameString
 				end
 			
-				_MapHandler.MapArray[ Counter+1 ].MapDescString = MapDescString
+				_MapHandler.BackupMapArray[ Counter+1 ].MapDescString = MapDescString
 			
 				-- Increment counter
 				_MapHandler.NumberOfMaps = Counter + 1
 			end
-		
 		end
-	
 	end
-	
+
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -462,4 +444,70 @@ function LoadMap_MinimizeName(_string)
 		_string = string.sub(_string, 1, string.len(_string)-1)
 	end
     return _string
+end
+
+----------------------------------------------------------------------------------------------------
+-- Filter map list
+
+function LoadMap.FilterMapList(_type)
+	if LoadMap.MapTable.MapArray == nil then return false end
+	LoadMap.ShowUserMaps = _type
+	
+	local numberofmaps = table.getn(LoadMap.MapTable.MapArray)
+	if numberofmaps > 0 then
+		for i = 1, numberofmaps do
+			table.remove(LoadMap.MapTable.MapArray,1)
+		end
+	end
+
+	if LoadMap.ShowUserMaps == 0 then
+		--LoadMap.MapTable.MapArray = LoadMap.OrigMapArray
+		for o in pairs (LoadMap.MapTable.BackupMapArray) do
+			if LoadMap.MapTable.BackupMapArray[o].Type == 0 then
+				table.insert(LoadMap.MapTable.MapArray, LoadMap.MapTable.BackupMapArray[o])
+			end
+		end
+	else
+		--LoadMap.MapTable.MapArray = LoadMap.UserMapArray
+		for o in pairs (LoadMap.MapTable.BackupMapArray) do
+			if LoadMap.MapTable.BackupMapArray[o].Type == 3 then
+				table.insert(LoadMap.MapTable.MapArray, LoadMap.MapTable.BackupMapArray[o])
+			end
+		end
+	end
+	LoadMap.MapTable.NumberOfMaps = table.getn(LoadMap.MapTable.MapArray)
+
+	-- reset ListBox data
+	LoadMap.ListBox.CurrentTopIndex = 0
+	LoadMap.ListBox.CurrentSelectedIndex = 0
+	LoadMap.ListBox.ElementsInList = LoadMap.MapTable.NumberOfMaps
+	
+	-- Set start index to current map	
+	local MapIndex = MapListHandler_GetMapIndex( LoadMap.MapTable, Framework.GetCurrentMapName() )
+	ListBoxHandler_SetSelected( LoadMap.ListBox, MapIndex )
+	ListBoxHandler_CenterOnSelected( LoadMap.ListBox )
+		
+	-- Update map preview
+	LoadMap.UpdateMapPreview()
+		
+	-- Update map description
+	LoadMap.UpdateMapDescription()
+	LoadMap.UpdateMapTitle()
+
+	LoadMap_UpdateSliderValue()
+
+	LoadMap.UpdateMapFilter()
+end
+
+----------------------------------------------------------------------------------------------------
+-- Update map filter
+
+function LoadMap.UpdateMapFilter()
+	if LoadMap.ShowUserMaps == 0 then
+		XGUIEng.HighLightButton("SPM20_VanillaMapButton", 1)
+		XGUIEng.HighLightButton("SPM20_UserMapButton", 0)
+	else
+		XGUIEng.HighLightButton("SPM20_VanillaMapButton", 0)
+		XGUIEng.HighLightButton("SPM20_UserMapButton", 1)
+	end
 end

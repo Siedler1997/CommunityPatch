@@ -57,7 +57,7 @@ function LoadMap.Init()
 		MapListHandler_Init( LoadMap.MapTable )				-- Init table
 --		MapListHandler_AddMaps( LoadMap.MapTable, -1, "Main" )	-- Add campaign maps
 		MapListHandler_AddMaps( LoadMap.MapTable, 0 )		-- Add single player maps
-		MapListHandler_AddMaps( LoadMap.MapTable, 1 )		-- Add user maps
+		--MapListHandler_AddMaps( LoadMap.MapTable, 1 )		-- Add user maps
 		MapListHandler_AddMaps( LoadMap.MapTable, 3, nil, false )-- Add external maps SP Maps
 
 		table.sort(LoadMap.MapTable.MapArray, LoadMap.Sort)
@@ -102,6 +102,9 @@ function LoadMap.Init()
 		-- Update map description
 		LoadMap.UpdateMapDescription()
 		LoadMap.UpdateMapTitle()
+
+		--Init map filter
+		LoadMap.ShowUserMaps = 0
 	end
 	
 	-- Init slider value
@@ -458,4 +461,14 @@ function LoadMap_MinimizeName(_string)
 		_string = string.sub(_string, 1, string.len(_string)-1)
 	end
     return _string
+end
+
+-- Placeholder for filter in extra2
+function LoadMap.FilterMapList(_type)
+	-- Update map preview
+	LoadMap.UpdateMapPreview()
+		
+	-- Update map description
+	LoadMap.UpdateMapDescription()
+	LoadMap.UpdateMapTitle()
 end

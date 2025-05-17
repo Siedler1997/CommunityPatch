@@ -542,10 +542,16 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		- In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		- Mapauswahl im SP-Menü verändert
-			- MP-Maps sind nicht mehr enthalten -> Bessere Übersicht
-			- Basegame-Maps sind im Nebelreich-AddOn ebenfalls auswählbar
-				- Nahezu alle AddOn-Features sind dort nutzbar
-				- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
+			- Nach Beenden einer Map und erneutem Aufruf der Mapliste werden die Daten der selektierten Map nun korrekt angezeigt
+			- MP-Maps sind nicht mehr in der Liste enthalten -> Bessere Übersicht
+			- Legenden
+				- Liste vergrößert: Es werden nun bis zu 10 Maps gleichzeitig angezeigt
+				- Maps werden nach Herkunft gefiltert
+					- Initial werden ausschließlich originale Maps angezeigt
+					- Per Button kann zu User Maps gewechselt werden
+				- Basegame-Maps sind im Legenden-AddOn ebenfalls auswählbar
+					- Nahezu alle AddOn-Features sind dort nutzbar
+					- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
 		- In den Grafik-Einstellungen sind auch bei 'modernen' Grafikkarten wieder hohe Einstellungen auswählbar (Fix bei yoq)
 		- Wenn eine Karte lädt, wird beim ersten Laden der Karte die Kartenbeschreibung angezeigt
 		- Blaue Hintergründe sind nun rot
@@ -800,7 +806,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- SP Map Auswahl: Filter für Vanilla und Usermaps
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize
