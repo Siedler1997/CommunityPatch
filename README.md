@@ -385,6 +385,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Shuriken: 
 				- Anzahl verdoppelt (4 -> 8)
 				- haben die gleiche DamageClass wie normale Angriff sowie Kala's 'Giftpfeile'
+				- haben einen Impact-Sound
 			- Zusatzeffekt für 'Feuerwerk der Freude'
 				- erhöht kurzzeitig den Schaden naher Verbündeter um 100%
 				- wirkt analog Erecs 'Aura der Stärke', aber mit halber Dauer (30 Sek.) und etwas größerem Radius (20 SM)
@@ -811,7 +812,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Impact sound für Shuriken
 - SP Map Liste
 	- User Maps
 		- Scripting Tutorial Map für Legenden
@@ -836,6 +836,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- EvilMod
 - Kampagne nochmal überarbeiten
 	- Holzhaufen verteilen
+	- Dunkle Wohnstätten (abhänig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
 	- Schwierigkeitgrad 'Albtraum'
 		- Statt Steuern halbieren Sold erhöhen

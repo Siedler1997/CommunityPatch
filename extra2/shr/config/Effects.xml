@@ -668,6 +668,16 @@
 		</Display>
     </Effect>
 
+  <Effect id="FXShurikenImpact">
+    <Logic classname="EGL::CGLEEffectProps">
+      <Class>EGL::CEffect</Class>
+      <Duration>5</Duration>
+      <SoundID>Military\SO_SoldierSword_rnd_1</SoundID>
+      <SoundVolume>80</SoundVolume>
+      <SoundLooped>false</SoundLooped>
+    </Logic>
+  </Effect>
+
     <Effect id="FXYukiShuriken">
         <Logic classname="GGL::CArrowEffectProps">
             <Class>GGL::CArrowEffect</Class>
@@ -678,6 +688,7 @@
             <HeightOffsetStart>0.0</HeightOffsetStart>
             <HeightOffsetTarget>0.0</HeightOffsetTarget>
             <Damage>0</Damage>
+						<ImpactEffectID>FXShurikenImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>
