@@ -529,6 +529,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Wird gleichzeit [Shift] gedrückt, wird sie direkt auf das Maximum (x10) gesetzt
 		- Kann auch über den Shortcut '*' ausgelöst werden
 	- Hauptmenü
+		- Tooltip Hintergrund dunkler -> stärkerer Kontrast zur weißen Schrift
 		- Der Reiter 'Spieler' ist reaktiviert
 			- Spielername kann geändert werden
 			- Eine bevorzugte Spielerfarbe kann eingestellt werden
@@ -812,11 +813,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- SP Map Liste
+- SP Map Liste (Legenden)
 	- User Maps
-		- Scripting Tutorial Map für Legenden
-		- Siedler1997 "Venedig"
-		- Belagerung von Evelance
+		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
+		- Siedler1997 "Venedig" (vorher überarbeiten)
+		- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
 	- MP Maps wieder einbinden
 	- Filter für MP Maps
 - Verbesserte KI
