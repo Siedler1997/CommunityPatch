@@ -2,7 +2,7 @@
 <root>
 	<Display classname="ED::CDisplayEntityProps">
 		  <Class>ED::CDisplayBuilding</Class>
-		  <Model>CB_EvilTower1</Model>
+		  <Model>CB_EvilTower2</Model>
 	</Display>
 	<Logic classname="GGL::CGLBuildingProps">
 		  <Class>GGL::CBuilding</Class>
@@ -10,9 +10,9 @@
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <UpgradeSite>ZB_UpgradeSiteTower1</UpgradeSite>
-		  <MaxHealth>1000</MaxHealth>
+		  <MaxHealth>1200</MaxHealth>
 		  <ArmorClass>ArmorClassFortification</ArmorClass> 
-		  <ArmorAmount>4</ArmorAmount>
+		  <ArmorAmount>5</ArmorAmount>
 	      <Category>MilitaryBuilding</Category>
 		  <Category>Military</Category>
 		
@@ -41,27 +41,8 @@
 		
 		<Upgrade>
 			<Category>Evil_Tower1</Category>
-      <Time>30.0</Time>
-      <Cost>
-        <Clay>0</Clay>
-        <Wood>200</Wood>
-        <Stone>100</Stone>
-        <Gold/>
-        <Iron/>
-        <Sulfur>200</Sulfur>
-      </Cost>
-      <Type>CB_Evil_Tower2</Type>
-    </Upgrade>     
+		</Upgrade>     
         <ConstructionInfo>
-			<Time>80</Time>
-			<Cost>
-				<Clay>0</Clay>
-				<Wood>300</Wood>
-				<Stone>100</Stone>
-				<Gold/>
-				<Iron/>
-				<Sulfur/>
-			</Cost>
             <BuilderSlot>
                 <Position>
                     <X>100</X>
@@ -141,7 +122,7 @@
 	<Behavior>
 	    <Logic classname="GGL::CFoundationBehaviorProps">
 	        <Class>GGL::CFoundationBehavior</Class>
-	        <TopEntityType>CB_Evil_Tower1_ArrowLauncher</TopEntityType>
+	        <TopEntityType>CB_Evil_Tower2_ArrowLauncher</TopEntityType>
         </Logic>
     </Behavior>
 

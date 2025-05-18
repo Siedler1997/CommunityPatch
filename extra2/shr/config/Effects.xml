@@ -702,11 +702,12 @@
             <Class>GGL::CArrowEffect</Class>
             <Global>false</Global>
             <Duration>0</Duration>
-            <Speed>1200.0</Speed>
+            <Speed>1400.0</Speed>
             <GravityFactor>600.0f</GravityFactor>
             <HeightOffsetStart>160.0</HeightOffsetStart>
             <HeightOffsetTarget>120.0</HeightOffsetTarget>
             <Damage>0</Damage>
+						<ImpactEffectID>FXArrowImpact</ImpactEffectID>
         </Logic>
 		<Display classname="ED::CFlyingEffectProps">
 			<Class>ED::CFlyingEffect</Class>

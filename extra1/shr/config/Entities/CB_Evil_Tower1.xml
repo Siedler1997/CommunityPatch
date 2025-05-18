@@ -16,7 +16,7 @@
 	      <Category>MilitaryBuilding</Category>
 		  <Category>Military</Category>
 		
-		  <Exploration>33</Exploration>
+		  <Exploration>30</Exploration>
 
 		  <!-- Armor -->
 		<ModifyArmor>
@@ -41,6 +41,16 @@
 		
 		<Upgrade>
 			<Category>Evil_Tower1</Category>
+      <Time>30.0</Time>
+      <Cost>
+        <Clay>0</Clay>
+        <Wood>200</Wood>
+        <Stone>100</Stone>
+        <Gold/>
+        <Iron/>
+        <Sulfur>200</Sulfur>
+      </Cost>
+      <Type>CB_Evil_Tower2</Type>
 		</Upgrade>     
         <ConstructionInfo>
 			<Time>80</Time>

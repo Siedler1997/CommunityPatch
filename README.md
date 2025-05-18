@@ -110,6 +110,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
 		- geben beim Abriss 150 Holz und 50 Steine
 		- haben weniger Lebenspunkte (=1000) und Verteidigung (=4)
+		- können zu "Dunkle Wohnstätte" ausgebaut werden
+			- stärker, zäher und höhere Reichweite als normale Wohnstätten
+			- verschießen Giftpfeile
+			- benötigt die Technologie 'Chemie'
 	- Die Gebäude 'Turm', 'Motte', 'Abtei', 'Landsitz' und 'Schloss' haben deutlich mehr Lebenspunkte
 	- Burg/Außenposten/Bank: Multiplikator für Steuern und Sold werden angezeigt
 	- Kapelle
@@ -677,6 +681,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- inkl. Find-Button
 		- MultiSelection-Button (Textur by Zedeg)
 		- AudioFeedback stammt von den Kundschaftern
+	- Der Ausbau von Wohnstätten zu dunklen Wohnstätten ist an die neue Technologie 'UP1_EvilTower' gekoppelt
 	- Die Technologie 'Aegis' trägt die interne Bezeichnung 'T_PlateBardingArmor'
 	- Die Reskins von Eisen- und Belagerungskanone heißen 'PV_Cannon3a' und 'PV_Cannon4a'
 	- Der Bau von Reskins, die über [Strg] erfolgen, (z.B. dunkle Türme) kann über die Technologie 'T_AllowEntitySkins' pauschal verboten werden
@@ -806,6 +811,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Impact sound für Shuriken
+- SP Map Liste
+	- User Maps
+		- Scripting Tutorial Map für Legenden
+		- Siedler1997 "Venedig"
+		- Belagerung von Evelance
+	- MP Maps wieder einbinden
+	- Filter für MP Maps
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize

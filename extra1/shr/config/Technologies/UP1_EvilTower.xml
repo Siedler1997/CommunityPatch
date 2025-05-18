@@ -1,0 +1,14 @@
+<root>
+	<TecCategoryType>TC_BuildingUpgrades</TecCategoryType>
+	<TimeToResearch>3</TimeToResearch>
+	<ResourceCosts>
+		<Clay>100</Clay>
+	</ResourceCosts>
+
+	<Conditions>
+		<TecCondition>
+			<TecType>GT_Chemistry</TecType>
+			<TecCategoryType></TecCategoryType>
+		</TecCondition>		
+	</Conditions>
+</root>

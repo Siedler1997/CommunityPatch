@@ -515,6 +515,11 @@ function GameCallback_GUI_SelectionChanged()
 				XGUIEng.ShowWidget("DarkTower",1)					
 				ButtonStem =  "DT_Upgrade_Tower"
 				
+			--Is EntityType the Evil_Tower?
+			elseif 	UpgradeCategory == UpgradeCategories.Evil_Tower1 then
+				XGUIEng.ShowWidget("EvilTower",1)					
+				ButtonStem =  "Upgrade_EvilTower"
+
 			--Is EntityType the outpost?
 			elseif 	UpgradeCategory == UpgradeCategories.Outpost then
 				

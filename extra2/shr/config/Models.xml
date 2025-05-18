@@ -3916,6 +3916,9 @@
 	<Model id="CB_EvilTower1">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>
+  <Model id="CB_EvilTower2">
+    <SelectionTexture>Selection_Building</SelectionTexture>
+  </Model>
 	<Model id="CB_Mercenary">
 		<SelectionTexture>Selection_Building</SelectionTexture>
 	</Model>

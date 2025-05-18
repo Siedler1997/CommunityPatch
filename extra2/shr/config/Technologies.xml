@@ -347,6 +347,7 @@
 	<Technology>T_LeatherBaringArmor</Technology>
 
   <Technology>B_Lighthouse</Technology>
+  <Technology>UP1_EvilTower</Technology>
   <Technology>T_HeroMarker</Technology>
 	<Technology>T_ScoutForester</Technology>
 	<Technology>T_AllowEntitySkins</Technology>

@@ -956,6 +956,8 @@
 	<Entity>CB_Grange</Entity>
 	<Entity>CB_PrisonCage</Entity>
   <Entity>CB_LighthouseActivated</Entity>
+  <Entity>CB_Evil_Tower2</Entity>
+  <Entity>CB_Evil_Tower2_ArrowLauncher</Entity>
 	<Entity>PB_Beautification13</Entity>
 	<Entity>PB_Beautification14</Entity>
 	<Entity>PB_Beautification15</Entity>
