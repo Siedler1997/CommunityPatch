@@ -545,6 +545,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Nahezu alle Vanilla-SP-Maps respektieren diese Einstellung
 				- Ggf. haben KIs dadurch auch andere Spielerfarben
 				- Gilt NICHT für den MP
+		- Hauptspiel-Kampagne kann im Legenden-AddOn gestartet werden
+			- inklusive alle AddOn-Features
 		- Unter 'Extras' sind auch im Legenden-AddOn die Hauptspiel-Videos einsehbar
 		- In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		- Mapauswahl im SP-Menü verändert
