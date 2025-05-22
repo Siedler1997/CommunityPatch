@@ -149,10 +149,11 @@ function LoadMap.UpdateMapName( _Index )
 	local MapIndex = LoadMap.ListBox.CurrentTopIndex + _Index
 	local Name = ""
 	if MapIndex >= 0 and MapIndex < LoadMap.ListBox.ElementsInList then
-		if LoadMap.MapTable.MapArray[ MapIndex+1 ].MapNameString ~= "" then
-			Name = LoadMap.MapTable.MapArray[ MapIndex+1 ].MapNameString
+		local map = LoadMap.MapTable.MapArray[ MapIndex+1 ]
+		if map ~= nil and map.MapNameString ~= "" then
+			Name = map.MapNameString
 		else
-			Name = LoadMap.MapTable.MapArray[ MapIndex+1 ].Name
+			Name = map.Name
 		end
 	end
 	XGUIEng.SetText( XGUIEng.GetCurrentWidgetID(), Name )
