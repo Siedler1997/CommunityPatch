@@ -61,8 +61,10 @@ function LoadMap.Init()
 		--MapListHandler_AddMaps( LoadMap.MapTable, -1, "Extra2_4" )	-- Add campaign maps
 		--MapListHandler_AddMaps( LoadMap.MapTable, 1 )								-- Add development maps
 		
-		MapListHandler_AddMaps( LoadMap.MapTable, 0 )									-- Add singleplayer maps		
+		MapListHandler_AddMaps( LoadMap.MapTable, 0, nil, false )			-- Add singleplayer maps		
 		MapListHandler_AddMaps( LoadMap.MapTable, 3, nil, false)			-- Add external SP maps
+		MapListHandler_AddMaps( LoadMap.MapTable, 2, nil, true)				-- Add multi player maps   
+		MapListHandler_AddMaps( LoadMap.MapTable, 3, nil, true )			-- Add external maps MP Maps
 
 		table.sort(LoadMap.MapTable.BackupMapArray, LoadMap.Sort)
 
@@ -97,7 +99,12 @@ function LoadMap.Init()
 		LoadMap.ListBox.CurrentSelectedIndex = 0						-- Current selected index
 
 		--Init map filter
-		LoadMap.ShowUserMaps = 0
+		--[[
+			0 -> Base
+			1 -> User (SP)
+			2 -> MP (Base & User)
+		--]]
+		LoadMap.MapFilter = 0
 
 		--LoadMap.UpdateMapFilter()
 		LoadMap.FilterMapList(0)
@@ -344,6 +351,7 @@ function MapListHandler_AddMaps( _MapHandler, _MapType, _CampaignName, _Multipla
 				end
 			
 				_MapHandler.BackupMapArray[ Counter+1 ].MapDescString = MapDescString
+				_MapHandler.BackupMapArray[ Counter+1 ].MultiplayerOnly = _MultiplayerOnly
 			
 				-- Increment counter
 				_MapHandler.NumberOfMaps = Counter + 1
@@ -452,7 +460,7 @@ end
 
 function LoadMap.FilterMapList(_type)
 	if LoadMap.MapTable.MapArray == nil then return false end
-	LoadMap.ShowUserMaps = _type
+	LoadMap.MapFilter = _type
 	
 	local numberofmaps = table.getn(LoadMap.MapTable.MapArray)
 	if numberofmaps > 0 then
@@ -461,17 +469,23 @@ function LoadMap.FilterMapList(_type)
 		end
 	end
 
-	if LoadMap.ShowUserMaps == 0 then
+	if LoadMap.MapFilter == 0 then
 		--LoadMap.MapTable.MapArray = LoadMap.OrigMapArray
 		for o in pairs (LoadMap.MapTable.BackupMapArray) do
 			if LoadMap.MapTable.BackupMapArray[o].Type == 0 then
 				table.insert(LoadMap.MapTable.MapArray, LoadMap.MapTable.BackupMapArray[o])
 			end
 		end
-	else
+	elseif LoadMap.MapFilter == 1 then
 		--LoadMap.MapTable.MapArray = LoadMap.UserMapArray
 		for o in pairs (LoadMap.MapTable.BackupMapArray) do
-			if LoadMap.MapTable.BackupMapArray[o].Type == 3 then
+			if LoadMap.MapTable.BackupMapArray[o].Type == 3 and not LoadMap.MapTable.BackupMapArray[o].MultiplayerOnly then
+				table.insert(LoadMap.MapTable.MapArray, LoadMap.MapTable.BackupMapArray[o])
+			end
+		end
+	else
+		for o in pairs (LoadMap.MapTable.BackupMapArray) do
+			if LoadMap.MapTable.BackupMapArray[o].MultiplayerOnly then
 				table.insert(LoadMap.MapTable.MapArray, LoadMap.MapTable.BackupMapArray[o])
 			end
 		end
@@ -496,7 +510,7 @@ function LoadMap.FilterMapList(_type)
 	LoadMap.UpdateMapTitle()
 
 	LoadMap_UpdateSliderValue()
-
+	
 	LoadMap.UpdateMapFilter()
 end
 
@@ -504,11 +518,17 @@ end
 -- Update map filter
 
 function LoadMap.UpdateMapFilter()
-	if LoadMap.ShowUserMaps == 0 then
+	if LoadMap.MapFilter == 0 then
 		XGUIEng.HighLightButton("SPM20_VanillaMapButton", 1)
 		XGUIEng.HighLightButton("SPM20_UserMapButton", 0)
-	else
+		XGUIEng.HighLightButton("SPM20_MPMapButton", 0)
+	elseif LoadMap.MapFilter == 1 then
 		XGUIEng.HighLightButton("SPM20_VanillaMapButton", 0)
 		XGUIEng.HighLightButton("SPM20_UserMapButton", 1)
+		XGUIEng.HighLightButton("SPM20_MPMapButton", 0)
+	else
+		XGUIEng.HighLightButton("SPM20_VanillaMapButton", 0)
+		XGUIEng.HighLightButton("SPM20_UserMapButton", 0)
+		XGUIEng.HighLightButton("SPM20_MPMapButton", 1)
 	end
 end

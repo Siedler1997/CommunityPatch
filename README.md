@@ -551,12 +551,12 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- In den Kampagnen-Menüs kann ein höherer Schwierigkeitsgrad für Kampagnen-Missionen ausgewählt werden
 		- Mapauswahl im SP-Menü verändert
 			- Nach Beenden einer Map und erneutem Aufruf der Mapliste werden die Daten der selektierten Map nun korrekt angezeigt
-			- MP-Maps sind nicht mehr in der Liste enthalten -> Bessere Übersicht
+			- Hauptspiel und Nebelreich: MP-Maps sind nicht mehr in der Liste enthalten -> Bessere Übersicht
 			- Legenden
 				- Liste vergrößert: Es werden nun bis zu 10 Maps gleichzeitig angezeigt
-				- Maps werden nach Herkunft gefiltert
-					- Initial werden ausschließlich originale Maps angezeigt
-					- Per Button kann zu User Maps gewechselt werden
+				- Maps werden nach Herkunft/Typ gefiltert
+					- Initial werden ausschließlich originale SP-Maps angezeigt
+					- Per Button kann zu User-SP- und MP-Maps gewechselt werden
 				- Basegame-Maps sind im Legenden-AddOn ebenfalls auswählbar
 					- Nahezu alle AddOn-Features sind dort nutzbar
 					- Leichte Anpassungen wurden vorgenommen, um AddOn-Features besser einzubinden
@@ -820,8 +820,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
 		- Siedler1997 "Venedig" (vorher überarbeiten)
 		- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
-	- MP Maps wieder einbinden
-	- Filter für MP Maps
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize

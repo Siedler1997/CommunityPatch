@@ -104,7 +104,7 @@ function LoadMap.Init()
 		LoadMap.UpdateMapTitle()
 
 		--Init map filter
-		LoadMap.ShowUserMaps = 0
+		LoadMap.MapFilter = 0
 	end
 	
 	-- Init slider value
