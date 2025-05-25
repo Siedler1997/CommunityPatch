@@ -40999,9 +40999,9 @@
                     <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                       <Name>SPM20_MapDetailsHeadline</Name>
                       <Rectangle>
-                        <X>0</X>
+                        <X>9</X>
                         <Y>0</Y>
-                        <W>278</W>
+                        <W>250</W>
                         <H>17</H>
                       </Rectangle>
                       <IsShown>True</IsShown>
@@ -41053,8 +41053,8 @@
                       <Name>SPM20_VanillaMapButton</Name>
                       <Rectangle>
                         <X>0</X>
-                        <Y>30</Y>
-                        <W>138</W>
+                        <Y>25</Y>
+                        <W>90</W>
                         <H>47</H>
                       </Rectangle>
                       <IsShown>True</IsShown>
@@ -41075,7 +41075,7 @@
                         </ShortCutString>
                       </ButtonHelper>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41090,7 +41090,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_hi.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_hi.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41105,7 +41105,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_sel.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_sel.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41120,7 +41120,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_in.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_in.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41135,7 +41135,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_akt.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_akt.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41173,7 +41173,7 @@
                           <StringTableKey>AOMainMenu/SP20_SelectByOrig</StringTableKey>
                           <RawString></RawString>
                         </String>
-                        <StringFrameDistance>0</StringFrameDistance>
+                        <StringFrameDistance>3</StringFrameDistance>
                         <Color>
                           <Red>255</Red>
                           <Green>255</Green>
@@ -41185,9 +41185,9 @@
                     <WidgetList classname="EGUIX::CTextButtonWidget" classid="0x5dd085a6">
                       <Name>SPM20_UserMapButton</Name>
                       <Rectangle>
-                        <X>140</X>
-                        <Y>30</Y>
-                        <W>138</W>
+                        <X>92</X>
+                        <Y>25</Y>
+                        <W>90</W>
                         <H>47</H>
                       </Rectangle>
                       <IsShown>True</IsShown>
@@ -41208,7 +41208,7 @@
                         </ShortCutString>
                       </ButtonHelper>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41223,7 +41223,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_hi.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_hi.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41238,7 +41238,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_sel.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_sel.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41253,7 +41253,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_in.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_in.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41268,7 +41268,7 @@
                         </Color>
                       </Materials>
                       <Materials>
-                        <Texture>graphics\textures\gui\mainmenu\small_button_akt.png</Texture>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_akt.png</Texture>
                         <TextureCoordinates>
                           <X>0</X>
                           <Y>0</Y>
@@ -41306,7 +41306,140 @@
                           <StringTableKey>AOMainMenu/SP20_SelectByUser</StringTableKey>
                           <RawString></RawString>
                         </String>
-                        <StringFrameDistance>0</StringFrameDistance>
+                        <StringFrameDistance>3</StringFrameDistance>
+                        <Color>
+                          <Red>255</Red>
+                          <Green>255</Green>
+                          <Blue>255</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </StringHelper>
+                    </WidgetList>
+                    <WidgetList classname="EGUIX::CTextButtonWidget" classid="0x5dd085a6">
+                      <Name>SPM20_MPMapButton</Name>
+                      <Rectangle>
+                        <X>184</X>
+                        <Y>25</Y>
+                        <W>90</W>
+                        <H>47</H>
+                      </Rectangle>
+                      <IsShown>True</IsShown>
+                      <ZPriority>5</ZPriority>
+                      <MotherID>SPM20_FilterList</MotherID>
+                      <Group></Group>
+                      <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                      <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                      <ButtonHelper>
+                        <DisabledFlag>False</DisabledFlag>
+                        <HighLightedFlag>False</HighLightedFlag>
+                        <ActionFunction>
+                          <LuaCommand>LoadMap.FilterMapList(2)</LuaCommand>
+                        </ActionFunction>
+                        <ShortCutString>
+                          <StringTableKey></StringTableKey>
+                          <RawString></RawString>
+                        </ShortCutString>
+                      </ButtonHelper>
+                      <Materials>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button.png</Texture>
+                        <TextureCoordinates>
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>1</W>
+                          <H>1</H>
+                        </TextureCoordinates>
+                        <Color>
+                          <Red>255</Red>
+                          <Green>255</Green>
+                          <Blue>255</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </Materials>
+                      <Materials>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_hi.png</Texture>
+                        <TextureCoordinates>
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>1</W>
+                          <H>1</H>
+                        </TextureCoordinates>
+                        <Color>
+                          <Red>255</Red>
+                          <Green>255</Green>
+                          <Blue>255</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </Materials>
+                      <Materials>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_sel.png</Texture>
+                        <TextureCoordinates>
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>1</W>
+                          <H>1</H>
+                        </TextureCoordinates>
+                        <Color>
+                          <Red>255</Red>
+                          <Green>255</Green>
+                          <Blue>255</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </Materials>
+                      <Materials>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_in.png</Texture>
+                        <TextureCoordinates>
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>1</W>
+                          <H>1</H>
+                        </TextureCoordinates>
+                        <Color>
+                          <Red>254</Red>
+                          <Green>254</Green>
+                          <Blue>254</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </Materials>
+                      <Materials>
+                        <Texture>graphics\textures\gui\mainmenu\very_small_button_akt.png</Texture>
+                        <TextureCoordinates>
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>1</W>
+                          <H>1</H>
+                        </TextureCoordinates>
+                        <Color>
+                          <Red>255</Red>
+                          <Green>255</Green>
+                          <Blue>255</Blue>
+                          <Alpha>255</Alpha>
+                        </Color>
+                      </Materials>
+                      <ToolTipHelper>
+                        <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                        <ToolTipString>
+                          <StringTableKey>AOMainMenuTooltips/SP20_SelectByMP</StringTableKey>
+                          <RawString></RawString>
+                        </ToolTipString>
+                        <TargetWidget>StartMenu_TooltipText</TargetWidget>
+                        <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                        <UpdateFunction>
+                          <LuaCommand></LuaCommand>
+                        </UpdateFunction>
+                      </ToolTipHelper>
+                      <UpdateFunction>
+                        <LuaCommand>LoadMap.UpdateMapFilter()</LuaCommand>
+                      </UpdateFunction>
+                      <UpdateManualFlag>True</UpdateManualFlag>
+                      <StringHelper>
+                        <Font>
+                          <FontName>data\menu\fonts\mainmenularge.met</FontName>
+                        </Font>
+                        <String>
+                          <StringTableKey>AOMainMenu/SP20_SelectByMP</StringTableKey>
+                          <RawString></RawString>
+                        </String>
+                        <StringFrameDistance>3</StringFrameDistance>
                         <Color>
                           <Red>255</Red>
                           <Green>255</Green>
@@ -41323,7 +41456,7 @@
                     <X>707</X>
                     <Y>50</Y>
                     <W>272</W>
-                    <H>275</H>
+                    <H>265</H>
                   </Rectangle>
                   <IsShown>True</IsShown>
                   <ZPriority>10</ZPriority>

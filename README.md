@@ -858,7 +858,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Alternativ Spuren solcher Bauplätze entfernen
 			- 'Thalbach' neu aufsetzen
 		- Extra2
-			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
+			- 03_Neighborhood: 
+				- KIs sollen Alarm nutzen (bei Bedarf) 
+				- Belohnungen/Upgrades für halten strategischer Positionen
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader

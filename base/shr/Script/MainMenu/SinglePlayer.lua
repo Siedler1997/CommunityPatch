@@ -51,7 +51,7 @@ function SPMenu.S00_ToCustomMap()
 	XGUIEng.ShowWidget("SPMenu20", 1)
 
 	-- Update and filter map list in extra2 (doesn't do anything in base and extra1)
-	LoadMap.FilterMapList(LoadMap.ShowUserMaps)
+	LoadMap.FilterMapList(LoadMap.MapFilter)
 end
 
 ----------------------------------------------------------------------------------------------------
