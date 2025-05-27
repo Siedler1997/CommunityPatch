@@ -88,4 +88,16 @@
         </Logic>
     </DamageClass>
   
+  <DamageClass id="DC_Blunt">
+    <Logic classname="GGL::CDamageClassProps">
+      <ArmorClassNoneFactor>1.25</ArmorClassNoneFactor>
+      <ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
+      <ArmorClassLeatherFactor>1.75</ArmorClassLeatherFactor>
+      <ArmorClassIronFactor>1.25</ArmorClassIronFactor>
+      <ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
+      <ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
+      <ArmorClassFurFactor>0.5</ArmorClassFurFactor>
+    </Logic>
+  </DamageClass>
+
 </root>
