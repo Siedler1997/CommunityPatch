@@ -158,7 +158,7 @@
 	        <BattleWalkAnim>PU_LeaderCavalry3_Run1</BattleWalkAnim>
 	        <HitAnim>PU_LeaderCavalry3_Hit</HitAnim>
 			
-			  <DamageClass>DC_Chaos</DamageClass>
+			  <DamageClass>DC_Blunt</DamageClass>
 	        <DamageAmount>26</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
