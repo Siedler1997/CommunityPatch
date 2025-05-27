@@ -30,7 +30,7 @@
     	    <ReloadTime>4000</ReloadTime>
     	    <MaxAttackRange>3000.0f</MaxAttackRange>
     	    <MinRange>800.0f</MinRange>
-    	    <DamageClass>DC_Strike</DamageClass>
+    	    <DamageClass>DC_Chaos</DamageClass>
     	    <DamageAmount>50</DamageAmount>
     	    <DamageRange>400</DamageRange>
     	    <BattleTaskList>TL_BATTLE_CANNONTOWER</BattleTaskList>

@@ -27,7 +27,7 @@
     	    <CannonBallEffectType>FXCannonBallShrapnel</CannonBallEffectType>
     	    <ReloadTime>5000</ReloadTime>
     	    <MaxAttackRange>3000.0f</MaxAttackRange>
-    	    <DamageClass>DC_Strike</DamageClass>
+    	    <DamageClass>DC_Chaos</DamageClass>
     	    <DamageAmount>20</DamageAmount>
     	    <DamageRange>800</DamageRange>
     	    <AutoAttackRange>3000</AutoAttackRange>

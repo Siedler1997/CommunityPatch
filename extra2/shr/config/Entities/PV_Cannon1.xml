@@ -113,7 +113,7 @@
 	        <BattleIdleAnim>PV_Cannon1_Idle</BattleIdleAnim>
 	        <BattleWalkAnim>PV_Cannon1_Drive</BattleWalkAnim>
 
-        <DamageClass>DC_Strike</DamageClass>
+        <DamageClass>DC_Chaos</DamageClass>
         <DamageAmount>30</DamageAmount>
         <MaxRandomDamageBonus>10</MaxRandomDamageBonus>
         <DamageRange>200</DamageRange>

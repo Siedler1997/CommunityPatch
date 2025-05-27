@@ -30,10 +30,10 @@
 
 		<DamageClass id="DC_Chaos">
 				<Logic classname="GGL::CDamageClassProps">
-						<ArmorClassNoneFactor>0.75</ArmorClassNoneFactor>
-						<ArmorClassJerkinFactor>0.75</ArmorClassJerkinFactor>
+						<ArmorClassNoneFactor>1.5</ArmorClassNoneFactor>
+						<ArmorClassJerkinFactor>1.5</ArmorClassJerkinFactor>
 						<ArmorClassLeatherFactor>1.5</ArmorClassLeatherFactor>
-						<ArmorClassIronFactor>1.25</ArmorClassIronFactor>
+						<ArmorClassIronFactor>1.0</ArmorClassIronFactor>
 						<ArmorClassFortificationFactor>0.5</ArmorClassFortificationFactor>
 						<ArmorClassHeroFactor>0.75</ArmorClassHeroFactor>
 						<ArmorClassFurFactor>0.5</ArmorClassFurFactor>
@@ -87,7 +87,7 @@
 						<ArmorClassFurFactor>1.5</ArmorClassFurFactor>
 				</Logic>
 		</DamageClass>
-  
+
   <DamageClass id="DC_Blunt">
 			<Logic classname="GGL::CDamageClassProps">
 					<ArmorClassNoneFactor>1.25</ArmorClassNoneFactor>
