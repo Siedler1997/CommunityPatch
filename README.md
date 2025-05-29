@@ -149,15 +149,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Neu: AeK-Frauen
 	- NPCs (Militär)
 		- verlangen ebenfalls Sold
-		- 'Veteranen' 
-			- können keine Gefolgsleute mehr haben
-			- regenerieren ihre Lebenspunkte etwas schneller
-			- haben etwas weniger Lebenspunkte
 		- Banditen
 			- zählen als Schwertkämpfer
 			- können Soldaten an Kasernen nachfüllen
 			- haben Rekrutierungskosten (Hauptmänner und Soldaten)
-			- haben die gleiche DamageClass wie schwere Kavallerie
+			- haben die selben Stats wie Breitschwertkämpfer
+				- Rüstungspunkt: 3
+				- Schadenpunkte: 14
+			- nutzen die neue DC_Blunt
 		- Bogenschützen-Banditen
 			- haben 150 Lebenspunkte (vorher: 120)
 			- Hauptmänner und Soldaten haben 
@@ -173,13 +172,21 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- verursachen etwas weniger Schaden an schwerer Kavallerie
 			- Hauptmänner sind leicht umtexturiert
 		- Barbaren 
-			- haben die gleiche ArmorClass wie Speerkämpfer und Schützen
 			- haben einen Rüstungspunkt weniger (=1)
 			- haben zwei Schadenpunkte mehr (=14)
+			- nutzen die neue DC_Blunt
 			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		- Schwarze Ritter 
-			- haben einen Rüstungspunkt mehr (=3)
+			- haben die selben Stats wie Langschwertkämpfer
+				- Rüstungspunkt: 4
+				- Schadenpunkte: 16
+			- nutzen die neue DC_Blunt
 			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- 'Veteranen' 
+			- können keine Gefolgsleute mehr haben
+			- regenerieren ihre Lebenspunkte etwas schneller
+			- haben etwas weniger Lebenspunkte
+			- verwenden, je nach Typ, die neue DC_Blunt
 		- haben Audio-Feedback
 		- profitieren von verschiedenen Waffen- und Rüstungstechnologien
 			- Schwarze Ritter: Technologien der Schwertkämpfer
@@ -225,6 +232,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
 			- Berittene Bogenschützen (Stufe 1) kosten Holz
 			- Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		- Schwere Kavallerie nutzt die neue DC_Blunt
 		- Speerkämpfer haben einen Rüstungspunkt mehr
 		- Schwertkämpfer
 			- haben einen eigenen Kampf-Sound
@@ -239,6 +247,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- DamageClasses gefixt
 					- Nutzung dieser wurde zuvor durch die Entity Category 'SplashDamage' verhindert
 					- Effektivitäten stimmen nun mit den jeweiligen Tooltips überein
+						- Bombarden und Eisenkanonen nutzen eine gebuffte DC_Chaos
 			- Kosten zusätzlich Holz (Menge identisch mit Eisen-Kosten)
 			- Lebenspunkte etwas erhöht
 			- Bronze- und Belagerungskanonen verursachen mehr Schaden gegen Gebäude (1,7x -> 2,0x)
@@ -336,6 +345,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Speerwerfer
 		- Varg 
 			- hat einen Rüstungspunkt weniger (=3)
+			- hat 2 Schadenspunkte mehr (=18)
 			- seine Wölfe
 				- haben eine Lebensdauer von 2:30 Min (vorher: 3 Min.)
 				- werden zu 3. beschworen (vorher: 2)
@@ -839,6 +849,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Holzhaufen verteilen
 	- Dunkle Wohnstätten (abhänig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
+	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Schwierigkeitgrad 'Albtraum'
 		- Statt Steuern halbieren Sold erhöhen
 		- Wieder mehr uniquen Content dorthin schieben
@@ -848,6 +859,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- ggf. mehr Spielertruppen als Hilfe
 			- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
 			- Wasteland-Dörfer: Namen im Auftragsbuch
+			- SP Maps: Player Colors an Map Previes angleichen
 		- Extra1
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
@@ -861,6 +873,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 03_Neighborhood: 
 				- KIs sollen Alarm nutzen (bei Bedarf) 
 				- Belohnungen/Upgrades für halten strategischer Positionen
+			- Die schwarzen Berge: Arbeitsloser Bauer beim Spieler?
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader
@@ -885,13 +898,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Unused CU_TemplarCavalry und CU_TemplarSword
+	- Fixen
+	- Vollständig implementieren
+	- Veteranen-like balancen?
 - Reparierbare Kanonen
 	- Nur möglich, wenn keine Feinde in der Nähe sind
 	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
-- Neue DamageClass "DC_Blunt"
-	- Für: Schwere Cav., Barbaren, Banditen, Schwarze Ritter
-	- Damage Multiplikatoren analog zu bisheriger DC_Chaos
-	- DC_Chaos wird exklusiv für Türme und Anti-Unit-Kanonen umfunktioniert und für Anti-Infanterie gebufft
 - Flammenwerfer (mobil oder als Turm)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Eigene DamageClass für Schützen (DC_Arrow)
