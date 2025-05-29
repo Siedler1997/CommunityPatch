@@ -23,10 +23,15 @@ createArmyAttackPlayerA = function()
 													{Entities.CU_Barbarian_LeaderClub2, 8}, 
 													{Entities.CU_Barbarian_LeaderClub2, 8},
 													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.PU_LeaderBow2, 4}, 
-													{Entities.PU_LeaderBow2, 4},
+													{Entities.CU_Barbarian_LeaderClub2, 8},
 													 }
+		if CP_Difficulty == 1 then
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2, 4})
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2, 4})
+		else
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, 8})
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, 8})
+		end
 		ArmyAttackPlayerA.respawnTime       =   60
 	end
     

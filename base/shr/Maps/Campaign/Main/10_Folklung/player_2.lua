@@ -53,7 +53,7 @@ createPlayer2 = function()
 
 		SetupPlayerAi(player2.id, description)	  
 	
-		for i = 1, 2 do
+		for i = 1, 3 do
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, player2.id)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, player2.id)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, player2.id)

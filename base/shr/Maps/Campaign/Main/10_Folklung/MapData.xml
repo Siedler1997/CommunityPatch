@@ -70340,7 +70340,7 @@
    <Scale>1.000000e+00</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon3</Type>
+   <Type>PV_Cannon4</Type>
    <Position>
     <X>6.894500e+03</X>
     <Y>2.955900e+04</Y>

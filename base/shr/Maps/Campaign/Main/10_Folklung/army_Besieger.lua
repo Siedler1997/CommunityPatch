@@ -23,8 +23,8 @@ createArmyBesiegerA = function()
 													{Entities.CU_Barbarian_LeaderClub2, 8},
 													{Entities.CU_Barbarian_LeaderClub2, 8}, 
 													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.PU_LeaderBow2, 4}, 
-													{Entities.PU_LeaderBow2, 4}
+													{Entities.PU_LeaderBow2a, 8}, 
+													{Entities.PU_LeaderBow2a, 8}
 													 }
 	end
 
