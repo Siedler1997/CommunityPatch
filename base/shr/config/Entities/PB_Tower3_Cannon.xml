@@ -14,7 +14,6 @@
     <Category>MilitaryBuilding</Category>
 		<Category>Military</Category> 
 		<Category>Cannon</Category> 	
-		<Category>SplashDamage</Category>
         <!--NumBlockedPoints>2</NumBlockedPoints-->
         <SnapTolerance>30.0f</SnapTolerance>
 		<MapFileDontSave>true</MapFileDontSave>

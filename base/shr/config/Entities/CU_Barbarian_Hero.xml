@@ -123,7 +123,7 @@
 	        <HitAnim>CU_Barbarian_LeaderClub1_Hit</HitAnim>
 
 	        <DamageClass>DC_Hero</DamageClass>
-	        <DamageAmount>16</DamageAmount>
+	        <DamageAmount>18</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>
