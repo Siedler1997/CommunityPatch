@@ -78,7 +78,7 @@
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>20</Exploration>
 		  <ArmorClass>ArmorClassLeather</ArmorClass>
-		  <ArmorAmount>3</ArmorAmount> 
+		  <ArmorAmount>4</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
     	<ExperiencePoints>30</ExperiencePoints>
@@ -135,8 +135,8 @@
 	        <BattleWalkAnim>CU_BlackKnight_LeaderMace1_Run1</BattleWalkAnim>
 	        <HitAnim>CU_BlackKnight_LeaderMace1_Hit</HitAnim>
 
-	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>12</DamageAmount>
+	        <DamageClass>DC_Blunt</DamageClass>
+	        <DamageAmount>16</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>

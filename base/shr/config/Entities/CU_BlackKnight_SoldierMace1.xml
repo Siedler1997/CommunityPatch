@@ -25,7 +25,7 @@
 		  <AccessCategory>AccessCategorySettler</AccessCategory>		
 		  <MaxHealth>150</MaxHealth>
 		  <ArmorClass>ArmorClassLeather</ArmorClass>
-		<ArmorAmount>3</ArmorAmount>
+		<ArmorAmount>4</ArmorAmount>
 		<NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
         <Hat/>
@@ -131,8 +131,8 @@
 	        <BattleWalkAnim>CU_BlackKnight_SoldierMace1_Run1</BattleWalkAnim> 
 	        <HitAnim>CU_BlackKnight_SoldierMace1_Hit</HitAnim>
 	        
-	        <DamageClass>DC_Strike</DamageClass>
-	        <DamageAmount>12</DamageAmount>
+	        <DamageClass>DC_Blunt</DamageClass>
+	        <DamageAmount>16</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>
