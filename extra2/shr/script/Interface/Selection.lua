@@ -535,7 +535,12 @@ function GameCallback_GUI_SelectionChanged()
 			
 			--Is EntityType mechanical clock?
 			elseif 	UpgradeCategory == UpgradeCategories.Beautification07 then				
-				XGUIEng.ShowWidget(gvGUI_WidgetID.Beautification,1)		
+				XGUIEng.ShowWidget(gvGUI_WidgetID.Beautification,1)						
+			
+			--Is EntityType the lighthouse?
+			elseif 	UpgradeCategory == UpgradeCategories.LighthouseActivated then
+				XGUIEng.ShowWidget("Lighthouse",1)					
+				XGUIEng.ShowWidget("Commands_Lighthouse",1)	
 				
 			-- ADDON:
 			--Is EntityType the Tavern?

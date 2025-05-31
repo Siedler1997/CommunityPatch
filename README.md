@@ -64,6 +64,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Ist nun baubar (auch im Hauptspiel und Nebelreich)
 		- benötigt die Technologie 'Konstruktion'
 		- Bietet hohe Sichtweite (50 SM)
+		- Kann zu (De-)Aktivierung des Alarms genutzt werden
 		- Bedingung für Helden-Markierung
 	- Ziergebäude
 		- haben 100 Lebenspunkte weniger (=200)
@@ -930,9 +931,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- noch mehr (aus AeK)
 - LevyTaxes sinnvoll einfügen
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
-- Leuchtturm
-	- Alarm (de-) aktivierbar
-	- Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
+- Leuchtturm: Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
 - Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
 - Neue Hochschul-Techs
 	- Ziergebäude (GT_Beautification)

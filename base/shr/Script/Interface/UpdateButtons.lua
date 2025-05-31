@@ -996,7 +996,11 @@ function GUIUpdate_AlarmButton()
 
 		XGUIEng.ShowWidget("OP_QuitAlarm", 1)	
 		XGUIEng.ShowWidget("OP_ActivateAlarm", 0)	
-		XGUIEng.SetMaterialColor("OP_ActivateAlarm_Recharge", 1, 0, 0, 0, 0)			
+		XGUIEng.SetMaterialColor("OP_ActivateAlarm_Recharge", 1, 0, 0, 0, 0)		
+
+		XGUIEng.ShowWidget("Lighthouse_QuitAlarm", 1)	
+		XGUIEng.ShowWidget("Lighthouse_ActivateAlarm", 0)	
+		XGUIEng.SetMaterialColor("Lighthouse_ActivateAlarm_Recharge", 1, 0, 0, 0, 0)		
 	else
 		XGUIEng.ShowWidget("QuitAlarm", 0)	
 		XGUIEng.ShowWidget("ActivateAlarm", 1)	
@@ -1004,19 +1008,26 @@ function GUIUpdate_AlarmButton()
 
 		XGUIEng.ShowWidget("OP_QuitAlarm", 0)	
 		XGUIEng.ShowWidget("OP_ActivateAlarm", 1)	
-		XGUIEng.SetMaterialColor("OP_ActivateAlarm_Recharge", 1, 214, 44, 24, 189)			
+		XGUIEng.SetMaterialColor("OP_ActivateAlarm_Recharge", 1, 214, 44, 24, 189)		
+
+		XGUIEng.ShowWidget("Lighthouse_QuitAlarm", 0)	
+		XGUIEng.ShowWidget("Lighthouse_ActivateAlarm", 1)	
+		XGUIEng.SetMaterialColor("Lighthouse_ActivateAlarm_Recharge", 1, 214, 44, 24, 189)		
 		
 		if RemainingAlarmTimeInPercent == 0 then
 			XGUIEng.DisableButton("ActivateAlarm", 0)
 			XGUIEng.DisableButton("OP_ActivateAlarm", 0)
+			XGUIEng.DisableButton("Lighthouse_ActivateAlarm", 0)
 		else
 			XGUIEng.DisableButton("ActivateAlarm", 1)
 			XGUIEng.DisableButton("OP_ActivateAlarm", 1)
+			XGUIEng.DisableButton("Lighthouse_ActivateAlarm", 1)
 		end
 	end
 		
 	XGUIEng.SetProgressBarValues("ActivateAlarm_Recharge", RemainingAlarmTimeInPercent, 100)
 	XGUIEng.SetProgressBarValues("OP_ActivateAlarm_Recharge", RemainingAlarmTimeInPercent, 100)
+	XGUIEng.SetProgressBarValues("Lighthouse_ActivateAlarm_Recharge", RemainingAlarmTimeInPercent, 100)
 end
 
 
