@@ -279,20 +279,23 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			- regenerieren ihre HP langsamer
-			- Kundschafter Fähigkeiten angepasst
-				- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
-				- 'Fackeln' verbessert
-					- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
-					- Sichtweite leicht erhöht (10 SM -> 15 SM)
-					- Schon in der Taverne erforschbar
-				- Neue Fähigkeit 'Aufforsten'
-				    - Basiert auf Noigis ScoutForester Script
-					- Kann im Wirthaus erforscht werden, sobald 'Fackeln' erforscht wurde
-					- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
-					- Kostet 50 Taler pro Verwendung
-					- Wachstum hängt vom Wetter ab
-						- bei Regen schneller
-						- bei Winter langsamer
+			- Kundschafter 
+				- haben höhere Sichtweite (18 SM -> 24 SM)
+				- kosten mehr Taler (100 -> 200)
+				- Fähigkeiten angepasst
+					- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
+					- 'Fackeln' verbessert
+						- Lebensdauer deutlich erhöht (60 Sek. -> 120 Sek.)
+						- Sichtweite leicht erhöht (10 SM -> 15 SM)
+						- Schon in der Taverne erforschbar
+					- Neue Fähigkeit 'Aufforsten'
+						- Basiert auf Noigis ScoutForester Script
+						- Kann im Wirthaus erforscht werden, sobald 'Fackeln' erforscht wurde
+						- Ermöglicht pflanzen neuer Baum-Setzlinge in der Nähe von Baumstümpfen, die zu neuen Bäumen heranwachsen können
+						- Kostet 50 Taler pro Verwendung
+						- Wachstum hängt vom Wetter ab
+							- bei Regen schneller
+							- bei Winter langsamer
 		- Letztes Upgrade 
 			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
 				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
@@ -826,11 +829,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- SP Map Liste (Legenden)
-	- User Maps
-		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
-		- Siedler1997 "Venedig" (vorher überarbeiten)
-		- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
+- Nebelreich-Kampagne: Wetterturm unlogisch?
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize
@@ -883,9 +882,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Bogen-Banditen-Hauptmänner
 	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
-- Hauptspiel-Kampagne in einem AddOn spielbar
-	- Legenden?
-	- AddOn-Features einbinden
+- Hauptspiel-Kampagne in extra2 spielbar machen + AddOn-Features einbinden
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
 	- FeatureList auch auf Englisch
@@ -899,6 +896,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Leibeigene in Tavernen rekrutierbar machen
+	- Brauchen kein Training
+	- Technologien ebenfalls hier erforschbar (nicht nur im DZ)
+	- Achtung: Bei Missionen ohne Burg Rekrutierung oder Taverne generell sperren
+- SP Map Liste (Legenden)
+	- User Maps
+		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
+		- Siedler1997 "Venedig" (vorher überarbeiten)
+		- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
 - Unused CU_TemplarCavalry und CU_TemplarSword
 	- Fixen
 	- Vollständig implementieren

@@ -22,7 +22,7 @@
 		<ForceNoPlayer>false</ForceNoPlayer>
 		<Hat></Hat>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		<Exploration>18</Exploration>
+		<Exploration>24</Exploration>
 		<IdleTaskList>TL_NPC_IDLE</IdleTaskList>
 
 		<ArmorClass>ArmorClassNone</ArmorClass>
