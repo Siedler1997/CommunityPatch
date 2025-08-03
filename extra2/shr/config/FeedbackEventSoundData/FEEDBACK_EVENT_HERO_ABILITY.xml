@@ -157,6 +157,11 @@
 				<EntityType>CU_Evil_Queen</EntityType>
 				<SoundID>AOVoicesHero12\HERO12_poisonrange_rnd_01</SoundID>
 			</ValueSound>
+      <!-- Community Patch-->
+      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
+        <EntityType>CU_BlackKnight</EntityType>
+        <SoundID>VoicesHero7\HERO7_InflictFear_rnd_01</SoundID>
+      </ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
 		<CanBeIgnored>true</CanBeIgnored>
@@ -235,6 +240,10 @@
 				<EntityType>PU_Hero5</EntityType>
 				<SoundID>VoicesHero5\HERO5_Attack_rnd_04</SoundID>
 			</ValueSound>
+      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
+        <EntityType>PU_Hero8</EntityType>
+        <SoundID>VoicesHero8\HERO8_MoraleDamage_rnd_04</SoundID>
+      </ValueSound>
 			
 			<ParameterIndex>2</ParameterIndex>
 		</Data>

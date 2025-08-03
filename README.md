@@ -365,7 +365,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- wirkt auf gleiche Entfernung wie Erecs 'Aura der Stärke' (15 SM)
 				- bewirkt keine einmalige HP-Regeneration mehr
 				- erhöht den verursachten Schaden betroffener Einheiten um 200% (vorher: 100%)
-		- Aris 
+		- Ari
 			- ihre Banditen
 				- werden zu 5. beschworen (vorher: 3)
 				- haben eine Lebensdauer von 2 Min. (vorher: 1 Min.)
@@ -406,7 +406,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- wirkt analog Erecs 'Aura der Stärke', aber mit halber Dauer (30 Sek.) und etwas größerem Radius (20 SM)
 				- Funfact: Es wird einfach eine weitere Fähigkeit zusätzlich aktiviert ;)
 				- ACHTUNG: Nicht mit Vanilla-Savegames kompatibel!
-		- Kerberos 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
+		- Kerberos 
+			- 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
+			- Neue Fähigkeit 'Wirbelschlag': Funktioniert genauso wie Erecs Wirbelschlag
+		- Mary de Mortfichet
+			- Neue Fähigkeit 'Exitus': 
+				- Funktioniert so wie Drakes 'Meisterschuss' (Tötet einen Gegner sofort)
+				- Reichweite deutlich geringer (3 SM)
 		- Kala 
 			- hat einen Rüstungspunkt weniger (=4)
 			- 'Giftnebel'
@@ -831,6 +837,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 ## ToDos:
 - Nebelreich-Kampagne: Wetterturm unlogisch?
+- Castrum
+	- Spawns an Gebäude koppeln
+	- Alternative Siegbedingung: Alle Spawner zerstören
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize
