@@ -334,6 +334,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Aura, die Verteidigung von Verbündeten in der Nähe auf 300% erhöht
 				- reduziert zugleich Angriff jener Einheiten auf 50%
 				- Dauer und Cooldown entsprechen Vargs 'Berserkerwut'
+				- Nur in den AddOns verfügbar
 		- Pilgrim
 			- Bombe richtet nur noch 40 Schaden an (vorher: 50)
 			- Selbstschuss-Kanone
@@ -938,7 +939,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - LevyTaxes sinnvoll einfügen
 - Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
 - Leuchtturm: Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
-- Ausbau Hochschule -> Universität: 5 Techs in AddOns (wegen Mathe)
 - Neue Hochschul-Techs
 	- Ziergebäude (GT_Beautification)
 		- ermöglicht: Bau von Ziergebäuden
