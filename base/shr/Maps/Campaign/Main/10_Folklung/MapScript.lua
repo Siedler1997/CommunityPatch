@@ -210,7 +210,7 @@ function Mission_FirstMapAction()
 	Logic.HurtEntity(GetID("BurningHouse"),400)
 
 	if CP_Difficulty == 0 then
-		CreateRandomChests(true)	
+		CreateRandomChests()	
 		local hqpos = GetPosition("Pl5_SpawnPos")
 		DestroyEntity("Pl5_SpawnPos")
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1,hqpos.X,hqpos.Y,0,5), "Pl5_SpawnPos")
@@ -255,7 +255,7 @@ function Mission_FirstMapAction()
 	createArmyDefendBase()
 
 	--StartSimpleJob("GetMousePos")
-	Tools.ExploreArea(-1, -1, 900)
+	--Tools.ExploreArea(-1, -1, 900)
 end
 
 function StartOldCutscene()

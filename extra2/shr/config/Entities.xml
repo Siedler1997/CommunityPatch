@@ -1069,6 +1069,8 @@
 	<Entity>XD_Misc_EvilBearman</Entity>
 	<Entity>XD_WreckedBoat01</Entity>
 	<Entity>XD_WreckedBoat02</Entity>
+  <Entity>XD_DarkChestOpen</Entity>
+  <Entity>XD_DarkChestClose</Entity>
 	<Entity>CU_BanditLeaderBow2</Entity>
 	<Entity>CU_BanditSoldierBow2</Entity>
 	<Entity>CU_Hero10</Entity>
