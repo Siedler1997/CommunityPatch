@@ -109,18 +109,27 @@ EnableExpanding = function(_playerId)
 --
 -------------------------------------------------------------------------------------------------------
 
-CreateChest = function(_position,_callback)
+CreateChest = function(_position,_callback,_dark)
 	chestCounter = chestCounter +1
 	local name = "_chest_"..chestCounter
-	local entityId = CreateEntity(0,Entities.XD_ChestClose,_position,name)
+	local isDarkChest = true
+	if _dark == nil or _dark == false then
+		isDarkChest = false
+	end
+	local type = Entities.XD_ChestClose
+	if isDarkChest == true then
+		type = Entities.XD_DarkChestClose
+	end
+	local entityId = CreateEntity(0,type,_position,name)
 	local chestData = {}
 	chestData.name 		= name
+	chestData.dark		= isDarkChest
 	chestData.state		= CHEST_CLOSED
 	if _callback == nil then
 		chestData.callback 	= chestDefaultCallback
 	else
 		chestData.callback 	= _callback
-		end
+	end
 	table.insert(chestControl.list,chestData)
 	return entityId
 	end
@@ -766,7 +775,11 @@ Action_ChestJob = function()
 				if IsNear(chestOpener[j],chestControl.list[i].name,250) then
 					chestControl.list[i].callback()
 					chestControl.list[i].state = CHEST_OPENED
-					ReplaceEntity(chestControl.list[i].name,Entities.XD_ChestOpen)
+					local newType = Entities.XD_ChestOpen
+					if chestControl.list[i].dark == true then
+						newType = Entities.XD_DarkChestOpen
+					end
+					ReplaceEntity(chestControl.list[i].name,newType)
 
 					Sound.PlayGUISound( Sounds.OnKlick_Select_erec, 0 )
 --					Sound.PlayGUISound(Sounds.Misc_Chat,65)

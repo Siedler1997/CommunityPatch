@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Display classname="ED::CDisplayEntityProps">
+		<Class>ED::CDisplayStaticEntity</Class>
+		<Model>XD_DarkChestClose</Model>
+		<RenderInFoW>true</RenderInFoW>
+	</Display>
+	<Logic classname="EGL::CGLEEntityProps">
+		<Class>EGL::CGLEEntity</Class>
+  		<AccessCategory>AccessCategoryStatic</AccessCategory> 
+		<DoNotExecute>True</DoNotExecute>
+		
+        <NumBlockedPoints>2</NumBlockedPoints>
+        <SnapTolerance>20.0f</SnapTolerance>
+		
+	</Logic>
+</root>

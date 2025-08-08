@@ -126,13 +126,13 @@ function ResolveBriefing(_page)
 -- @see CreateChestOpener.
 -- @see StartChestQuest.
 
-function CreateRandomGoldChests()
+function CreateRandomGoldChests(_dark)
 	local chestCount = 1
 	local continueLoop = true
 	while continueLoop == true do
 		local name = "GoldChest"..chestCount
 		if IsValid(name) then
-			CreateRandomGoldChest(GetPosition(name))
+			CreateRandomGoldChest(GetPosition(name), nil, _dark)
 			chestCount=chestCount+1
 		else
 			continueLoop = false
@@ -150,13 +150,13 @@ function CreateRandomGoldChests()
 -- @see CreateChestOpener.
 -- @see StartChestQuest.
 
-function CreateRandomChests()
+function CreateRandomChests(_dark)
 	local chestCount = 1
 	local continueLoop = true
 	while continueLoop == true do
 		local name = "RandomChest"..chestCount
 		if IsValid(name) then
-			CreateChest(GetPosition(name))
+			CreateChest(GetPosition(name), nil, _dark)
 			chestCount=chestCount+1
 		else
 			continueLoop = false
@@ -174,8 +174,8 @@ function CreateRandomChests()
 -- @see CreateChestOpener.
 -- @see StartChestQuest.
 
-function CreateRandomGoldChest(_position)
-	return CreateChest(_position,chestDefaultCallbackRandomGold)
+function CreateRandomGoldChest(_position, _dark)
+	return CreateChest(_position,chestDefaultCallbackRandomGold, _dark)
 	end
 
 -------------------------------------------------------------------------------------------------------
@@ -188,8 +188,8 @@ function CreateRandomGoldChest(_position)
 -- @see CreateChestOpener.
 -- @see StartChestQuest.
 
-function CreateGoldChest(_position)
-	return CreateChest(_position,chestDefaultCallbackGold)
+function CreateGoldChest(_position, _dark)
+	return CreateChest(_position,chestDefaultCallbackGold, _dark)
 	end
 
 -------------------------------------------------------------------------------------------------------
@@ -202,8 +202,8 @@ function CreateGoldChest(_position)
 -- @see CreateChestOpener.
 -- @see StartChestQuest.
 
-function CreateIronChest(_position)
-	return CreateChest(_position,chestDefaultCallbackIron)
+function CreateIronChest(_position, _dark)
+	return CreateChest(_position,chestDefaultCallbackIron, _dark)
 	end
 
 -------------------------------------------------------------------------------------------------------

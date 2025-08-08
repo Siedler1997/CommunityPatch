@@ -686,6 +686,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- 'PU_Coiner' (Goldschmied) ist nun ein NPC, kein Arbeiter
 		- Misc-Items für Gewehre und NV-Drops ohne begrenzte Lebensdauer hinzugefügt
 			- Konkret: XD_MiscRifle1, XD_MiscRifle2, XD_Misc_EvilBearman & XD_Misc_EvilSkirmisher
+		- Es gibt dunklere Varianten von Schatztruhen: 'XD_DarkChestClose' und 'XD_DarkChestOpen'
+			- 'XD_DarkChestClose' hat zudem keine Sparkles, ist somit etwas unauffälliger
 	- Neue Bodentexturen
 		- Marmor
 		- Lava (aus Siedler 7)
@@ -856,7 +858,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- SetupPlayerAi
 		- EvilMod
 - Kampagne nochmal überarbeiten
+	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
+	- Dunkle Schatztruhen auf schwer nutzen
 	- Dunkle Wohnstätten (abhänig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
@@ -867,10 +871,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Basegame
 			- Thalgrund: Erster Angriff mit Cutscene-Einheiten
 				- ggf. mehr Spielertruppen als Hilfe
-			- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
+			- Crawford
+				- letztes Tor erst gegen Ende des Briefings öffnen
+				- Stadtwache als simple Defense (Speerträger und Bogenschützen)
+			- Folklung: Platz für Schützen und/oder Kanonen schaffen, dafür keine Lv4 Schwertis mehr
 			- Wasteland-Dörfer: Namen im Auftragsbuch
+			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
 			- SP Maps: Player Colors an Map Previes angleichen
 		- Extra1
+			- M4 'Fahrende Händler: Banditen (hell-)grün färben, in Anlehnung an Kadir
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
 				- Signalfeuer auch über 'normale' Tribute endzündbar machen
@@ -906,10 +915,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Leibeigene in Tavernen rekrutierbar machen
-	- Brauchen kein Training
-	- Technologien ebenfalls hier erforschbar (nicht nur im DZ)
-	- Achtung: Bei Missionen ohne Burg Rekrutierung oder Taverne generell sperren
+- Schatztruhen überarbeiten
+	- Kundschafter und Diebe sollen die ebenfalls öffnen können
+		- ggf. erst mit einer neuen Technologie
 - SP Map Liste (Legenden)
 	- User Maps
 		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
