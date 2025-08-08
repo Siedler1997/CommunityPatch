@@ -44,7 +44,7 @@
 		<Category>Melee</Category>    
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>18</Exploration>
-		  <ArmorClass>ArmorClassHero</ArmorClass>
+		  <ArmorClass>ArmorClassNone</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 
     	<IdleTaskList>TL_THIEF_IDLE</IdleTaskList>
@@ -116,7 +116,7 @@
 			  <BarrackUpgradeCategory>Barracks</BarrackUpgradeCategory>
             <HomeRadius>1500</HomeRadius>
 			
-	        <BattleTaskList>TL_BATTLE_MACE</BattleTaskList>
+	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
 	        
 	        <NormalAttackAnim1>PU_Thief_Attack1</NormalAttackAnim1>
 	        <NormalAttackAnim2>PU_Thief_Attack2</NormalAttackAnim2>
@@ -127,8 +127,8 @@
 	        <BattleWalkAnim>PU_Thief_Run1</BattleWalkAnim>
 	        <HitAnim>PU_Thief_Hit</HitAnim>
 
-	        <DamageClass>DC_Pierce</DamageClass>
-	        <DamageAmount>5</DamageAmount>
+	        <DamageClass>DC_Chaos</DamageClass>
+	        <DamageAmount>16</DamageAmount>
 	        <MaxRandomDamageBonus>8</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>2000</BattleWaitUntil>

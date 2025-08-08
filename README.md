@@ -282,6 +282,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Kundschafter 
 				- haben höhere Sichtweite (18 SM -> 24 SM)
 				- kosten mehr Taler (100 -> 200)
+				- nutzen die neue DC_Blunt
 				- Fähigkeiten angepasst
 					- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
 					- 'Fackeln' verbessert
@@ -296,6 +297,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 						- Wachstum hängt vom Wetter ab
 							- bei Regen schneller
 							- bei Winter langsamer
+			- Diebe
+				- sind etwas fragiler (durch 'ArmorClassNone')
+				- verursachen mehr Schaden
+					- haben deutlich mehr Schadenspunke (5 -> 16)
+					- DamageClass geändert (DC_Pierce -> DC_Chaos)
 		- Letztes Upgrade 
 			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
 				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
@@ -915,9 +921,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Schatztruhen überarbeiten
-	- Kundschafter und Diebe sollen die ebenfalls öffnen können
-		- ggf. erst mit einer neuen Technologie
+- Kundschafter und Diebe sollen die ebenfalls öffnen können
+	- ggf. erst mit einer neuen Technologie
 - SP Map Liste (Legenden)
 	- User Maps
 		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
