@@ -120,7 +120,7 @@
 	        <HitAnim>PU_Scout_Hit</HitAnim>
 
 	        <DamageClass>DC_Blunt</DamageClass>
-	        <DamageAmount>10</DamageAmount>
+	        <DamageAmount>8</DamageAmount>
 	        <MaxRandomDamageBonus>2</MaxRandomDamageBonus>
 	        
 	        <BattleWaitUntil>1500</BattleWaitUntil>
