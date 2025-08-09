@@ -16,6 +16,10 @@
 			<EntityType>PB_Stable2</EntityType>
 			<Amount>1</Amount>
 		</EntityCondition>
+    <EntityCondition>
+      <EntityType>PB_Headquarters3</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
 		<EntityCondition>
 			<EntityType>PB_Sawmill2</EntityType>
 			<Amount>1</Amount>
