@@ -222,6 +222,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Leibeigene 
 				- haben einen Rüstungspunkt mehr (=1)
 				- haben 50 Lebenspunkte weniger (=150)
+				- haben etwas geringere sichtweite (24 -> 20 SM)
 				- bewegen sich etwas langsamer
 				- Bauen Rohstoffe etwas langsamer ab
 			- Milizen 
@@ -280,7 +281,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			- regenerieren ihre HP langsamer
 			- Kundschafter 
-				- haben höhere Sichtweite (18 SM -> 24 SM)
+				- haben etwas höhere Sichtweite (18 SM -> 20 SM)
 				- kosten mehr Taler (100 -> 200)
 				- nutzen die neue DC_Blunt
 				- verursachen weniger Schaden (10 -> 8)
