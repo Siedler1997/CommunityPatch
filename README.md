@@ -284,6 +284,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- kosten mehr Taler (100 -> 200)
 				- nutzen die neue DC_Blunt
 				- verursachen weniger Schaden (10 -> 8)
+				- haben weniger Lebenspunkte (200 -> 150)
 				- Fähigkeiten angepasst
 					- 'Rohstoffe finden' muss nicht erforscht werden, sondern steht direkt zur Verfügung
 					- 'Fackeln' verbessert
