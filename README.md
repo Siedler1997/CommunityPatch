@@ -856,7 +856,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Nebelreich-Kampagne: Wetterturm unlogisch?
 - Castrum
 	- Spawns an Gebäude koppeln
 	- Alternative Siegbedingung: Alle Spawner zerstören
@@ -880,7 +879,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
 	- Dunkle Schatztruhen auf schwer nutzen
-	- Dunkle Wohnstätten (abhänig vom Schwierigkeitsgrad)
+	- Dunkle Wohnstätten (abhängig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Schwierigkeitgrad 'Albtraum'
@@ -896,7 +895,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Folklung: Platz für Schützen und/oder Kanonen schaffen, dafür keine Lv4 Schwertis mehr
 			- Wasteland-Dörfer: Namen im Auftragsbuch
 			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
-			- SP Maps: Player Colors an Map Previes angleichen
+			- Mornheim: Nienburg Leibeigene sind verwirrt...
 		- Extra1
 			- M4 'Fahrende Händler: Banditen (hell-)grün färben, in Anlehnung an Kadir
 			- 07_FleeOrFight
@@ -906,6 +905,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Entfernte Brückenbauplätze wieder einfügen
 					- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
 				- Alternativ Spuren solcher Bauplätze entfernen
+			- 09_LandUnter: Anspielungen an Wiederbelebung Kerberos'
 			- 'Thalbach' neu aufsetzen
 		- Extra2
 			- 03_Neighborhood: 
@@ -934,7 +934,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Kundschafter, Diebe und Späher sollen die ebenfalls öffnen können
+- Kundschafter, Diebe und Späher sollen ebenfalls Schatztruhen öffnen können
 	- ggf. erst mit einer neuen Technologie
 - SP Map Liste (Legenden)
 	- User Maps
