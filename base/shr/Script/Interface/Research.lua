@@ -144,6 +144,7 @@ function GameCallback_OnTechnologyResearched( _PlayerID, _TechnologyType )
 	elseif _TechnologyType == Technologies.T_UpgradeLightCavalry1 then
 		GUI.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry,PlayerID)
 		GUI.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry,PlayerID)
+		GUI.UpgradeSettlerCategory(UpgradeCategories.CavalryScout,PlayerID)
 		if _TechnologyType == Technologies.T_UpgradeLightCavalry1 then
 			XGUIEng.TransferMaterials("Buy_CavalryLight_Gold", "Buy_LeaderCavalryLight")	
 		end

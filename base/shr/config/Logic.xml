@@ -919,6 +919,11 @@
 		<FirstBuilding>CB_PrisonCage</FirstBuilding>
 	</BuildingUpgrade>
 
+  <SettlerUpgrade>
+    <Category>CavalryScout</Category>
+    <FirstSettler>PU_CavalryScout1</FirstSettler>
+  </SettlerUpgrade>
+
 	<!-- Sword men -->
 	<SettlerUpgrade>
 		<Category>LeaderSword2a</Category>

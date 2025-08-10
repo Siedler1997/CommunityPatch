@@ -1029,6 +1029,11 @@
 		<FirstSettler>PV_Cannon4a</FirstSettler>
 	</SettlerUpgrade>
 
+  <SettlerUpgrade>
+    <Category>CavalryScout</Category>
+    <FirstSettler>PU_CavalryScout1</FirstSettler>
+  </SettlerUpgrade>
+
 	<!-- Sword men -->
 	<SettlerUpgrade>
 		<Category>LeaderSword2a</Category>

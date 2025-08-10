@@ -784,7 +784,9 @@
 	<Entity>CU_AggressiveBear</Entity>
 	<Entity>CU_AggressiveBlackBear</Entity>
 	<Entity>CU_AggressivePolarBear</Entity>
-	
+
+  <Entity>PU_CavalryScout1</Entity>
+  <Entity>PU_CavalryScout2</Entity>
 	<Entity>PU_LeaderBow2a</Entity>
 	<Entity>PU_SoldierBow2a</Entity>
 	<Entity>PU_LeaderCavalry1a</Entity>
