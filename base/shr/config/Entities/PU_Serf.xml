@@ -47,7 +47,7 @@
         </Cost>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <RepairFactor>0.3</RepairFactor>
-		  <Exploration>20</Exploration>		
+		  <Exploration>24</Exploration>		
 		  
 		  <ModifyExploration>
 			  <Technology>T_Tracking</Technology>			
