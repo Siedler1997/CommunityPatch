@@ -33,7 +33,7 @@
         <Category>CavalryLight</Category>
         <Category>LongRange</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>27</Exploration>
+		  <Exploration>29</Exploration>
 		  <ArmorClass>ArmorClassNone</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance>

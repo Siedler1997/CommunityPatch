@@ -33,7 +33,7 @@
         <Category>Leader</Category>
         <Category>CavalryLight</Category>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>23</Exploration>
+		  <Exploration>25</Exploration>
 		  <ArmorClass>ArmorClassNone</ArmorClass>
 		  <ArmorAmount>0</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 

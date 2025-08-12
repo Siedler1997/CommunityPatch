@@ -43,7 +43,7 @@
 		<Category>Thief</Category>
 		<Category>Melee</Category>
 		<AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
-		  <Exploration>18</Exploration>
+		  <Exploration>20</Exploration>
 		  <ArmorClass>ArmorClassNone</ArmorClass>
 		  <ArmorAmount>1</ArmorAmount> 
 		  <DodgeChance>0</DodgeChance> 

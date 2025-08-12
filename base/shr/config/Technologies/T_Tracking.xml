@@ -5,7 +5,7 @@
 		<Gold>400</Gold>
 	</ResourceCosts>
 	<ExplorationModifier>
-		<Value>10</Value>
+		<Value>6</Value>
 		<Operation>+</Operation>
 	</ExplorationModifier>
 	<UseForStatisticsFlag>true</UseForStatisticsFlag>

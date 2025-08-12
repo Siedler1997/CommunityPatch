@@ -148,6 +148,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- mehr Lebenspunkte (idR. 100)
 			- höhere Sichtweite
 		- Neu: AeK-Frauen
+	- 'Fährtenlesen': Bonus auf Sichtweite reduziert (+10 -> +6)
 	- NPCs (Militär)
 		- verlangen ebenfalls Sold
 		- Banditen
@@ -230,9 +231,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- haben nur noch 150 Lebenspunkte (vorher: 200)
 				- profitieren von jenen Technologien, die auch Leibeigene betreffen
 				- haben das AudioFeedback von Leibeigenen
-		- Rekrutierungskosten von Hauptmännern und Soldaten leichter Kavallerie einander angeglichen
-			- Berittene Bogenschützen (Stufe 1) kosten Holz
-			- Berittene Armbrustschützen (Stufe 2) kosten Eisen
+		- Leichte Kavallerie: Sichtweite und Rekrutierungskosten von Hauptmännern und Soldaten einander angeglichen
+			- Sichtweite
+				- Berittene Bogenschützen: 23 -> 25
+				- Berittene Armbrustschützen: 27 -> 29
+			- Rekrutierungskosten
+				- Berittene Bogenschützen (Stufe 1) kosten Holz
+				- Berittene Armbrustschützen (Stufe 2) kosten Eisen
 		- Schwere Kavallerie nutzt die neue DC_Blunt
 		- Speerkämpfer haben einen Rüstungspunkt mehr
 		- Schwertkämpfer
@@ -300,6 +305,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 							- bei Regen schneller
 							- bei Winter langsamer
 			- Diebe
+				- haben eine etwas höhere Sichtweite (18 SM -> 20 SM)
 				- sind etwas fragiler (durch 'ArmorClassNone')
 				- verursachen mehr Schaden
 					- haben deutlich mehr Schadenspunke (5 -> 16)
