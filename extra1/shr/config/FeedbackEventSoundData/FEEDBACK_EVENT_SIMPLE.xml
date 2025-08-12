@@ -372,14 +372,6 @@
 				<EntityType>CU_VeteranLieutenant</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
 			</ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout1</EntityType>
-        <SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
-      </ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout2</EntityType>
-        <SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
-      </ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranCaptain</EntityType>
 				<SoundID>VoicesLeader\LEADER_Yes_rnd_01</SoundID>
@@ -868,14 +860,6 @@
 				<EntityType>CU_AggressivePolarBear</EntityType>
 				<SoundID>AmbientSounds\bear_idle02</SoundID>
 			</ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout1</EntityType>
-        <SoundID>VoicesLeader\LEADER_No_rnd_01</SoundID>
-      </ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout2</EntityType>
-        <SoundID>VoicesLeader\LEADER_No_rnd_01</SoundID>
-      </ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranLieutenant</EntityType>
 				<SoundID>VoicesLeader\LEADER_NO_rnd_10</SoundID>
@@ -1307,14 +1291,6 @@
 				<EntityType>CU_AggressivePolarBear</EntityType>
 				<SoundID>AmbientSounds\bear_idle01</SoundID>
 			</ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout1</EntityType>
-        <SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
-      </ValueSound>
-      <ValueSound classname="GGUI::SoundFeedback::CEntityType">
-        <EntityType>PU_CavalryScout2</EntityType>
-        <SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>
-      </ValueSound>
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_VeteranLieutenant</EntityType>
 				<SoundID>VoicesLeader\LEADER_Attack_rnd_01</SoundID>

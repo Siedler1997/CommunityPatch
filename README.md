@@ -314,16 +314,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Bastardschwertkämpfer und Hellebardiere: Garnison
 				- Arbalesten- und Scharfschützen: Schießanlage
 				- Berittene Streitaxtkämpfer und Armbrustschützen: Reiterei
-		- Neue Einheit: 'Späher'
-			- Schneller, berittener Kundschafter mit hoher Sichtweite
-			- Unterschiede zum klassischen Kundschafter
-				- Höhere Sichtweite und Bewegungsgeschwindigkeit
-				- Profitiert von allen Technologien, die auch leichte Kavallerie betreffen
-				- Upgrade zum 'Elite-Späher' möglich
-					- Sichtweite und Kampffertigkeiten werden verbessert
-					- Wird automatisch mit dem Upgrade der leichten Kavallerie (berittener Armbrustschütze) mit erforscht
-				- hat keine aktiven Fähigkeiten - definiert sich stattdessen über seine Statuswerte
-			- etwas geringere Reichweite als leichte Kavallerie, aber höhere Sichtweite
 	- Helden
 		- Fernkampf-Helden brauchen länger zum Nachladen
 		- haben (je nach Waffe) anderen Kampf-Sound
@@ -876,7 +866,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- SetupPlayerAi
 		- EvilMod
 - Kampagne nochmal überarbeiten
-	- Späher bei Spielstart (nicht in jeder Map)
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
 	- Dunkle Schatztruhen auf schwer nutzen
@@ -935,7 +924,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Kundschafter, Diebe und Späher sollen ebenfalls Schatztruhen öffnen können
+- Kundschafter und Diebe sollen die ebenfalls öffnen können
 	- ggf. erst mit einer neuen Technologie
 - SP Map Liste (Legenden)
 	- User Maps
@@ -965,6 +954,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Textur: Gold durch rot austauschen
 	- generell etwas verdunkeln
 	- auf Veteranen Niveau
+- Berittener Schütze bei Spielstart, als Scout
+	- Armbrust?
+	- ggf. mehr Sichtweite
+	- nicht automatisch in jeder Map
 - Beautifications 
 	- Astrolabium und Podium tauschen
 	- noch mehr (aus AeK)
