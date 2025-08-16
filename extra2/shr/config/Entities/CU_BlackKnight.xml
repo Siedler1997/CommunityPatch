@@ -106,15 +106,15 @@
 			  <SoldierType>CU_BlackKnight_SoldierSword3</SoldierType>
 			
 	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
-	        
-	        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
-	        <CounterAttackAnim>CU_BlackKnight_Blackknight_Attack1</CounterAttackAnim>
-	        <FinishingMoveAnim>CU_BlackKnight_Blackknight_Finish</FinishingMoveAnim>
-	        <MissAttackAnim>CU_BlackKnight_Blackknight_Attack1</MissAttackAnim>
-	        <BattleIdleAnim>CU_BlackKnight_Blackknight_Attack1</BattleIdleAnim>
-	        <BattleWalkAnim>CU_BlackKnight_Blackknight_Run1</BattleWalkAnim>
-	        <HitAnim>CU_BlackKnight_Blackknight_Hit</HitAnim>
+
+        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
+        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
+        <CounterAttackAnim>CU_BlackKnight_Blackknight_Finish</CounterAttackAnim>
+        <FinishingMoveAnim>CU_BlackKnight_Blackknight_Finish</FinishingMoveAnim>
+        <MissAttackAnim>CU_BlackKnight_Blackknight_Attack1</MissAttackAnim>
+        <BattleIdleAnim>CU_BlackKnight_Blackknight_IdleAttack1</BattleIdleAnim>
+        <BattleWalkAnim>CU_BlackKnight_Blackknight_Run1</BattleWalkAnim>
+        <HitAnim>CU_BlackKnight_Blackknight_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Hero</DamageClass>
 	        <DamageAmount>22</DamageAmount>

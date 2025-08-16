@@ -15,7 +15,8 @@
 		  <Anim>CU_BlackKnight_Blackknight_Order1</Anim>
 		  <Anim>CU_BlackKnight_Blackknight_Talk1</Anim>
 		  <Anim>CU_BlackKnight_Blackknight_Talk2</Anim>
-  		  <Anim>CU_BlackKnight_Blackknight_Dead</Anim>		
+  		<Anim>CU_BlackKnight_Blackknight_Dead</Anim>
+    <Anim>CU_Blackknight_Blackknight_CircularAttack</Anim>	
 	</Display>
 	<Logic classname="GGL::CGLSettlerProps">
 		  <Class>GGL::CSettler</Class>
@@ -105,15 +106,15 @@
 			  <SoldierType>CU_BlackKnight_SoldierSword3</SoldierType>
 			
 	        <BattleTaskList>TL_BATTLE_SWORD</BattleTaskList>
-	        
-	        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
-	        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
-	        <CounterAttackAnim>CU_BlackKnight_Blackknight_Attack1</CounterAttackAnim>
-	        <FinishingMoveAnim>CU_BlackKnight_Blackknight_Finish</FinishingMoveAnim>
-	        <MissAttackAnim>CU_BlackKnight_Blackknight_Attack1</MissAttackAnim>
-	        <BattleIdleAnim>CU_BlackKnight_Blackknight_Attack1</BattleIdleAnim>
-	        <BattleWalkAnim>CU_BlackKnight_Blackknight_Run1</BattleWalkAnim>
-	        <HitAnim>CU_BlackKnight_Blackknight_Hit</HitAnim>
+
+        <NormalAttackAnim1>CU_BlackKnight_Blackknight_Attack1</NormalAttackAnim1>
+        <NormalAttackAnim2>CU_BlackKnight_Blackknight_Attack2</NormalAttackAnim2>
+        <CounterAttackAnim>CU_BlackKnight_Blackknight_Finish</CounterAttackAnim>
+        <FinishingMoveAnim>CU_BlackKnight_Blackknight_Finish</FinishingMoveAnim>
+        <MissAttackAnim>CU_BlackKnight_Blackknight_Attack1</MissAttackAnim>
+        <BattleIdleAnim>CU_BlackKnight_Blackknight_IdleAttack1</BattleIdleAnim>
+        <BattleWalkAnim>CU_BlackKnight_Blackknight_Run1</BattleWalkAnim>
+        <HitAnim>CU_BlackKnight_Blackknight_Hit</HitAnim>
 	        
 	        <DamageClass>DC_Hero</DamageClass>
 	        <DamageAmount>22</DamageAmount>
@@ -174,6 +175,17 @@
 	    </Logic>
 	</Behavior>
 
+  <Behavior>
+    <Logic classname="GGL::CCircularAttackProps">
+      <Class>GGL::CCircularAttack</Class>
+      <RechargeTimeSeconds>120</RechargeTimeSeconds>
+      <TaskList>TL_BATTLE_SPECIAL</TaskList>
+      <Animation>CU_Blackknight_Blackknight_CircularAttack</Animation>
+      <DamageClass>DC_Hero</DamageClass>
+      <DamageAmount>80</DamageAmount>
+      <Range>400.0</Range>
+    </Logic>
+  </Behavior>
 
 
 </root>
