@@ -860,9 +860,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Castrum
-	- Spawns an Gebäude koppeln
-	- Alternative Siegbedingung: Alle Spawner zerstören
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize
@@ -911,12 +908,16 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
 				- Alternativ Spuren solcher Bauplätze entfernen
 			- 09_LandUnter: Anspielungen an Wiederbelebung Kerberos'
+			- Castrum
+				- Spawns an Gebäude koppeln
+				- Alternative Siegbedingung: Alle Spawner zerstören
 			- 'Thalbach' neu aufsetzen
 		- Extra2
 			- 03_Neighborhood: 
 				- KIs sollen Alarm nutzen (bei Bedarf) 
 				- Belohnungen/Upgrades für halten strategischer Positionen
 			- Die schwarzen Berge: Arbeitsloser Bauer beim Spieler?
+			- Hauptspiel-Kampagne in extra2 spielbar machen + AddOn-Features einbinden
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader
@@ -925,7 +926,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Bogen-Banditen-Hauptmänner
 	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
-- Hauptspiel-Kampagne in extra2 spielbar machen + AddOn-Features einbinden
 - Umsetzung in Vanilla-DEdK
 - Organisatorisches
 	- FeatureList auch auf Englisch
@@ -971,7 +971,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Astrolabium und Podium tauschen
 	- noch mehr (aus AeK)
 - LevyTaxes sinnvoll einfügen
-- Stadtwache: Zeitlich begrenzte Miliz (Minutemen)
 - Leuchtturm: Automatischer Alarm oder Notification, wenn Feinde in der Nähe sind
 - Neue Hochschul-Techs
 	- Ziergebäude (GT_Beautification)
@@ -1000,11 +999,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Yuki: Wechsel zu einer Fernkampf-Version
 			- Kala: Berserkerwut (Varg) oder Bär(en) rufen
 			- Dovbar: Wirbelschlag (Erec, aber etwas schwächer)
-- FXKalaArrow für Ari nutzen
-	- Sniper gegen Shuriken tauschen?
 - Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
-- Barbaren mit NV-Formation (geht über Entity Category 'EvilLeader')?
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - Upgrade-Technologien für böse Einheiten
 - Mehr Sounds
