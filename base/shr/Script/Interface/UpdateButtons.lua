@@ -1349,3 +1349,23 @@ function GUIUpdate_RepairCannonButton()
 		XGUIEng.DisableButton("Repair_Cannon_Button",1)
 	end
 end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for chest opener button
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_ChestOpenerButton()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local isChestOpener = false
+	local unitId = GUI.GetSelectedEntity() 
+
+	if IsChestOpener(unitId) then
+		--Is unit in chestOpener table?
+		isChestOpener = true
+	end
+
+	if isChestOpener == true then 
+		XGUIEng.ShowWidget(CurrentWidgetID, 1)	
+	else
+		XGUIEng.ShowWidget(CurrentWidgetID, 0)	
+	end
+end

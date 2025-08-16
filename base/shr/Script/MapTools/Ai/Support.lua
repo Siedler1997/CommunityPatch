@@ -771,24 +771,36 @@ Condition_ChestJob = function()
 Action_ChestJob = function()
 	for i = 1 , table.getn(chestControl.list) , 1 do
 		if chestControl.list[i].state == CHEST_CLOSED then
+			local open = false
+			
+			if CheckLockpicking ~= nil then
+				open = CheckLockpicking(GetPosition(chestControl.list[i].name))
+			end
+
+			--Check for chest openers
 			for j = 1 , table.getn(chestOpener) , 1 do
 				if IsNear(chestOpener[j],chestControl.list[i].name,250) then
-					chestControl.list[i].callback()
-					chestControl.list[i].state = CHEST_OPENED
-					local newType = Entities.XD_ChestOpen
-					if chestControl.list[i].dark == true then
-						newType = Entities.XD_DarkChestOpen
-					end
-					ReplaceEntity(chestControl.list[i].name,newType)
-
-					Sound.PlayGUISound( Sounds.OnKlick_Select_erec, 0 )
---					Sound.PlayGUISound(Sounds.Misc_Chat,65)
-					end
+					open = true
 				end
 			end
+
+			--Open chest?
+			if open == true then
+				chestControl.list[i].callback()
+				chestControl.list[i].state = CHEST_OPENED
+				local newType = Entities.XD_ChestOpen
+				if chestControl.list[i].dark == true then
+					newType = Entities.XD_DarkChestOpen
+				end
+				ReplaceEntity(chestControl.list[i].name,newType)
+
+				Sound.PlayGUISound( Sounds.OnKlick_Select_erec, 0 )
+--				Sound.PlayGUISound(Sounds.Misc_Chat,65)
+			end
 		end
-	return false
 	end
+	return false
+end
 
 
 -------------------------------------------------------------------------------------------------------

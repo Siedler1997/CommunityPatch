@@ -232,6 +232,31 @@ function CreateChestOpener(_name)
 function StartChestQuest()
 	StartJob("ChestJob")
 	end
+
+-------------------------------------------------------------------------------------------------------
+-- Checks if the specified entity is a chest opener
+function IsChestOpener(_entity)
+    assert(type(_entity) == "string" or type(_entity) == "number");
+	local isChestOpener = false
+
+	if type(_entity) == "string" then
+		--entity name -> search directly
+		if IstDrin(_entity, chestOpener) then
+			isChestOpener = true
+		end
+	elseif type(_entity) == "number" then
+		--entity id -> get id of chest openers
+		for i = 1, table.getn(chestOpener) do
+			local openerId = GetEntityId(chestOpener[i])
+			if _entity == openerId then
+				isChestOpener = true
+				return true
+			end
+		end
+	end
+
+	return isChestOpener
+end
 	
 -------------------------------------------------------------------------------------------------------
 -- Returns the logic Id of an entity.
@@ -2457,4 +2482,30 @@ end
 
 function round( _n )
 	return math.floor( _n + 0.5 );
+end
+
+function CreateScout(_playerId, _position, _entityType, _name, _isChestOpener)
+	--Get position
+	local position = GetPosition(_position)
+
+	--Set entity type or use default
+	local entityType = 0
+	if _entityType ~= nil then
+		entityType = _entityType
+	else
+		entityType = Entities.PU_LeaderCavalry1
+	end
+
+	--Create entity
+	local scoutId = Logic.CreateEntity(entityType, position.X, position.Y, 0, _playerId)
+
+	--Set name if defined
+	if _name ~= nil then
+		SetEntityName(scoutId, _name);
+
+		--Add scout as chest opener (only possible if entity has a name)
+		if _isChestOpener ~= nil and _isChestOpener then
+			CreateChestOpener(_name)
+		end
+	end
 end

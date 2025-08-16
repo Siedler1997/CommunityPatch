@@ -1348,3 +1348,30 @@ function GUIUpdate_RepairCannonButton()
 		XGUIEng.DisableButton("Repair_Cannon_Button",1)
 	end
 end
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Update for chest opener button
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function GUIUpdate_ChestOpenerButton()
+	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
+	local isChestOpener = false
+	local unitId = GUI.GetSelectedEntity() 
+
+	if IsChestOpener(unitId) then
+		--Is unit in chestOpener table?
+		isChestOpener = true
+	else
+		--Is unit scout or thief and lockpicking tech researched?
+		local PlayerID = GUI.GetPlayerID()
+		local EntityType = Logic.GetEntityType(unitId)
+		if (EntityType == Entities.PU_Scout or EntityType == Entities.PU_Thief) and Logic.GetTechnologyState(PlayerID, Technologies.T_Lockpicking) == 4 then
+			isChestOpener = true
+		end
+	end
+
+	if isChestOpener == true then 
+		XGUIEng.ShowWidget(CurrentWidgetID, 1)	
+	else
+		XGUIEng.ShowWidget(CurrentWidgetID, 0)	
+	end
+end

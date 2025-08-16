@@ -1,0 +1,23 @@
+<root>
+	<TecCategoryType>TC_Technologies</TecCategoryType>
+	<TimeToResearch>60</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>200</Gold>
+		  <Clay/>
+		  <Wood/>
+		  <Stone/>		
+		  <Iron>100</Iron>
+		  <Sulfur>200</Sulfur>
+	</ResourceCosts>
+
+	<Conditions>
+    <TecCondition>
+      <TecType>T_Lockpicking</TecType>
+    </TecCondition>
+    
+		<EntityCondition>
+			  <EntityType>PB_Tavern2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>	
+	</Conditions>
+</root>

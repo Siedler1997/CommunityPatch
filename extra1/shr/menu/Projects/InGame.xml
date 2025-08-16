@@ -53772,7 +53772,7 @@
                                 <Texture>graphics\textures\gui\b_civil_university.png</Texture>
                                 <TextureCoordinates>
                                   <X>0</X>
-                                  <Y>0.3125</Y>
+                                  <Y>0.4375</Y>
                                   <W>0.25</W>
                                   <H>0.03125</H>
                                 </TextureCoordinates>
@@ -53787,7 +53787,7 @@
                                 <Texture>graphics\textures\gui\b_civil_university.png</Texture>
                                 <TextureCoordinates>
                                   <X>0.25</X>
-                                  <Y>0.3125</Y>
+                                  <Y>0.4375</Y>
                                   <W>0.25</W>
                                   <H>0.03125</H>
                                 </TextureCoordinates>
@@ -53802,7 +53802,7 @@
                                 <Texture>graphics\textures\gui\b_civil_university.png</Texture>
                                 <TextureCoordinates>
                                   <X>0.5</X>
-                                  <Y>0.3125</Y>
+                                  <Y>0.4375</Y>
                                   <W>0.25</W>
                                   <H>0.03125</H>
                                 </TextureCoordinates>
@@ -53817,7 +53817,7 @@
                                 <Texture>graphics\textures\gui\b_civil_university.png</Texture>
                                 <TextureCoordinates>
                                   <X>0.5</X>
-                                  <Y>0.3125</Y>
+                                  <Y>0.4375</Y>
                                   <W>0.25</W>
                                   <H>0.03125</H>
                                 </TextureCoordinates>
@@ -53832,7 +53832,7 @@
                                 <Texture>graphics\textures\gui\b_civil_university.png</Texture>
                                 <TextureCoordinates>
                                   <X>0.75</X>
-                                  <Y>0.3125</Y>
+                                  <Y>0.4375</Y>
                                   <W>0.25</W>
                                   <H>0.03125</H>
                                 </TextureCoordinates>
@@ -54253,6 +54253,138 @@
                               </ToolTipHelper>
                               <UpdateFunction>
                                 <LuaCommand></LuaCommand>
+                              </UpdateFunction>
+                              <UpdateManualFlag>True</UpdateManualFlag>
+                              <IconMaterial>
+                                <Texture></Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0</Y>
+                                  <W>0.25</W>
+                                  <H>0.25</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>0</Alpha>
+                                </Color>
+                              </IconMaterial>
+                            </WidgetList>
+                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                              <Name>BeautificationMenu_LockpickingSerf</Name>
+                              <Rectangle>
+                                <X>328</X>
+                                <Y>76</Y>
+                                <W>32</W>
+                                <H>32</H>
+                              </Rectangle>
+                              <IsShown>True</IsShown>
+                              <ZPriority>0</ZPriority>
+                              <MotherID>SerfBeautificationMenu</MotherID>
+                              <Group>Command_group</Group>
+                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                              <ButtonHelper>
+                                <DisabledFlag>False</DisabledFlag>
+                                <HighLightedFlag>False</HighLightedFlag>
+                                <ActionFunction>
+                                  <LuaCommand></LuaCommand>
+                                </ActionFunction>
+                                <ShortCutString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ShortCutString>
+                              </ButtonHelper>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <ToolTipHelper>
+                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                                <ToolTipString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ToolTipString>
+                                <TargetWidget>TooltipBottom</TargetWidget>
+                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                                <UpdateFunction>
+                                  <LuaCommand>("MenuSelectionGeneric/Lockpicking")</LuaCommand>
+                                </UpdateFunction>
+                              </ToolTipHelper>
+                              <UpdateFunction>
+                                <LuaCommand>GUIUpdate_ChestOpenerButton()</LuaCommand>
                               </UpdateFunction>
                               <UpdateManualFlag>True</UpdateManualFlag>
                               <IconMaterial>
@@ -57966,6 +58098,138 @@
                               </ToolTipHelper>
                               <UpdateFunction>
                                 <LuaCommand>GUIUpdate_BuildingButtons("Build_Bridge", Technologies.B_Bridge)</LuaCommand>
+                              </UpdateFunction>
+                              <UpdateManualFlag>True</UpdateManualFlag>
+                              <IconMaterial>
+                                <Texture></Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0</Y>
+                                  <W>0.25</W>
+                                  <H>0.25</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>0</Alpha>
+                                </Color>
+                              </IconMaterial>
+                            </WidgetList>
+                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                              <Name>LockpickingSerf</Name>
+                              <Rectangle>
+                                <X>328</X>
+                                <Y>76</Y>
+                                <W>32</W>
+                                <H>32</H>
+                              </Rectangle>
+                              <IsShown>True</IsShown>
+                              <ZPriority>0</ZPriority>
+                              <MotherID>SerfConstructionMenu</MotherID>
+                              <Group>Command_group</Group>
+                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                              <ButtonHelper>
+                                <DisabledFlag>False</DisabledFlag>
+                                <HighLightedFlag>False</HighLightedFlag>
+                                <ActionFunction>
+                                  <LuaCommand></LuaCommand>
+                                </ActionFunction>
+                                <ShortCutString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ShortCutString>
+                              </ButtonHelper>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <ToolTipHelper>
+                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                                <ToolTipString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ToolTipString>
+                                <TargetWidget>TooltipBottom</TargetWidget>
+                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                                <UpdateFunction>
+                                  <LuaCommand>("MenuSelectionGeneric/Lockpicking")</LuaCommand>
+                                </UpdateFunction>
+                              </ToolTipHelper>
+                              <UpdateFunction>
+                                <LuaCommand>GUIUpdate_ChestOpenerButton()</LuaCommand>
                               </UpdateFunction>
                               <UpdateManualFlag>True</UpdateManualFlag>
                               <IconMaterial>
@@ -97197,7 +97461,7 @@
                               <Name>Research_ThiefSabotage</Name>
                               <Rectangle>
                                 <X>40</X>
-                                <Y>40</Y>
+                                <Y>76</Y>
                                 <W>32</W>
                                 <H>32</H>
                               </Rectangle>
@@ -97571,6 +97835,138 @@
                               </ToolTipHelper>
                               <UpdateFunction>
                                 <LuaCommand>GUIUpdate_TechnologyButtons("Research_ScoutForester", Technologies.T_ScoutForester, Entities.PB_Tavern2)</LuaCommand>
+                              </UpdateFunction>
+                              <UpdateManualFlag>True</UpdateManualFlag>
+                              <IconMaterial>
+                                <Texture></Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0</Y>
+                                  <W>0.25</W>
+                                  <H>0.25</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>0</Alpha>
+                                </Color>
+                              </IconMaterial>
+                            </WidgetList>
+                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                              <Name>Research_Lockpicking</Name>
+                              <Rectangle>
+                                <X>40</X>
+                                <Y>40</Y>
+                                <W>32</W>
+                                <H>32</H>
+                              </Rectangle>
+                              <IsShown>True</IsShown>
+                              <ZPriority>0</ZPriority>
+                              <MotherID>Commands_Tavern</MotherID>
+                              <Group></Group>
+                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                              <ButtonHelper>
+                                <DisabledFlag>False</DisabledFlag>
+                                <HighLightedFlag>False</HighLightedFlag>
+                                <ActionFunction>
+                                  <LuaCommand>GUIAction_ReserachTechnology(Technologies.T_Lockpicking)</LuaCommand>
+                                </ActionFunction>
+                                <ShortCutString>
+                                  <StringTableKey>KeyBindings/ReserachTechnologies1</StringTableKey>
+                                  <RawString></RawString>
+                                </ShortCutString>
+                              </ButtonHelper>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.25</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>128</Red>
+                                  <Green>128</Green>
+                                  <Blue>128</Blue>
+                                  <Alpha>128</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.3125</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <ToolTipHelper>
+                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                                <ToolTipString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ToolTipString>
+                                <TargetWidget>TooltipBottom</TargetWidget>
+                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                                <UpdateFunction>
+                                  <LuaCommand>GUITooltip_ResearchTechnologies(Technologies.T_Lockpicking,"MenuTavern/Lockpicking","KeyBindings/ReserachTechnologies1")</LuaCommand>
+                                </UpdateFunction>
+                              </ToolTipHelper>
+                              <UpdateFunction>
+                                <LuaCommand>GUIUpdate_TechnologyButtons("Research_Lockpicking", Technologies.T_Lockpicking, Entities.PB_Tavern2)</LuaCommand>
                               </UpdateFunction>
                               <UpdateManualFlag>True</UpdateManualFlag>
                               <IconMaterial>
@@ -109392,6 +109788,138 @@
                           </ToolTipHelper>
                           <UpdateFunction>
                             <LuaCommand></LuaCommand>
+                          </UpdateFunction>
+                          <UpdateManualFlag>True</UpdateManualFlag>
+                          <IconMaterial>
+                            <Texture></Texture>
+                            <TextureCoordinates>
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>0.25</W>
+                              <H>0.25</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>0</Alpha>
+                            </Color>
+                          </IconMaterial>
+                        </WidgetList>
+                        <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                          <Name>Command_Lockpicking</Name>
+                          <Rectangle>
+                            <X>328</X>
+                            <Y>76</Y>
+                            <W>32</W>
+                            <H>32</H>
+                          </Rectangle>
+                          <IsShown>True</IsShown>
+                          <ZPriority>0</ZPriority>
+                          <MotherID>Commands_generic</MotherID>
+                          <Group>Command_group</Group>
+                          <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                          <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                          <ButtonHelper>
+                            <DisabledFlag>False</DisabledFlag>
+                            <HighLightedFlag>False</HighLightedFlag>
+                            <ActionFunction>
+                              <LuaCommand></LuaCommand>
+                            </ActionFunction>
+                            <ShortCutString>
+                              <StringTableKey></StringTableKey>
+                              <RawString></RawString>
+                            </ShortCutString>
+                          </ButtonHelper>
+                          <Materials>
+                            <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                            <TextureCoordinates>
+                              <X>0.75</X>
+                              <Y>0.3125</Y>
+                              <W>0.25</W>
+                              <H>0.03125</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>255</Alpha>
+                            </Color>
+                          </Materials>
+                          <Materials>
+                            <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                            <TextureCoordinates>
+                              <X>0.75</X>
+                              <Y>0.3125</Y>
+                              <W>0.25</W>
+                              <H>0.03125</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>255</Alpha>
+                            </Color>
+                          </Materials>
+                          <Materials>
+                            <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                            <TextureCoordinates>
+                              <X>0.5</X>
+                              <Y>0.3125</Y>
+                              <W>0.25</W>
+                              <H>0.03125</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>255</Alpha>
+                            </Color>
+                          </Materials>
+                          <Materials>
+                            <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                            <TextureCoordinates>
+                              <X>0.5</X>
+                              <Y>0.3125</Y>
+                              <W>0.25</W>
+                              <H>0.03125</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>255</Alpha>
+                            </Color>
+                          </Materials>
+                          <Materials>
+                            <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                            <TextureCoordinates>
+                              <X>0.75</X>
+                              <Y>0.3125</Y>
+                              <W>0.25</W>
+                              <H>0.03125</H>
+                            </TextureCoordinates>
+                            <Color>
+                              <Red>255</Red>
+                              <Green>255</Green>
+                              <Blue>255</Blue>
+                              <Alpha>255</Alpha>
+                            </Color>
+                          </Materials>
+                          <ToolTipHelper>
+                            <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                            <ToolTipString>
+                              <StringTableKey></StringTableKey>
+                              <RawString></RawString>
+                            </ToolTipString>
+                            <TargetWidget>TooltipBottom</TargetWidget>
+                            <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                            <UpdateFunction>
+                              <LuaCommand>GUITooltip_NormalButton("MenuSelectionGeneric/Lockpicking")</LuaCommand>
+                            </UpdateFunction>
+                          </ToolTipHelper>
+                          <UpdateFunction>
+                            <LuaCommand>GUIUpdate_ChestOpenerButton()</LuaCommand>
                           </UpdateFunction>
                           <UpdateManualFlag>True</UpdateManualFlag>
                           <IconMaterial>

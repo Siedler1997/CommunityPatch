@@ -284,6 +284,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- geben ihre persönlichen FunnyComments zum Besten
 			- profitieren von 'Webstuhl', 'Hochwertige Schuhe' und 'Fährtenlesen'
 			- regenerieren ihre HP langsamer
+			- Können die Technologie 'Schlösser knacken' erlernen
+				- erforschbar im Wirtshaus
+				- Kundschafter und Diebe können, ähnlich wie Helden, die meisten Schatztruhen öffnen
+				- interner Name: 'T_Lockpicking'
+				- je nach Map können sie ggf. nicht alle Truhen öffnen
 			- Kundschafter 
 				- haben höhere Sichtweite (18 SM -> 24 SM)
 				- kosten mehr Taler (100 -> 200)
@@ -310,6 +315,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- verursachen mehr Schaden
 					- haben deutlich mehr Schadenspunke (5 -> 16)
 					- DamageClass geändert (DC_Pierce -> DC_Chaos)
+				- 'Sabotage' hat 'Schlösser knacken' als Vorraussetzung
 		- Letztes Upgrade 
 			- benötigt zusätzlich die ausgebaute Version des Gebäudes, das für das erste Upgrade benötigt wurde
 				- Schwerkämpfer und schwere Kavallerie: Feinschmiede
@@ -551,6 +557,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Spielstände sind unabhängig von Textfarbe und anderen "Schnörkeln" richtig sortiert
 		- Name ist anders aufgebaut: Slot - Datum, Uhrzeit - Mapname
 	- Shortcut-Auflistung in Tastatur Optionen gefixt bzw. erweitert
+	- Im SelectionMenu von Einheiten wird ein Button angezeigt, wenn sie als Chest Opener definiert sind
+		- je nach Map können sie ggf. trotzdem nicht alle Truhen öffnen
 - Diverses
 	- Einige Shortcuts im Leibeigenen Menü gefixt
 		- Brücken teilen sich den Shortcut nicht mehr mit Dorfzentren - sie haben gar keinen mehr (mangels Buchstaben im Alphabet...)
@@ -877,6 +885,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Dunkle Wohnstätten (abhängig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
+	- Scout bei Mapstart setzen
+	- 'T_Lockpicking' berücksichtigen
 	- Schwierigkeitgrad 'Albtraum'
 		- Statt Steuern halbieren Sold erhöhen
 		- Wieder mehr uniquen Content dorthin schieben
@@ -929,8 +939,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- Kundschafter und Diebe sollen die ebenfalls öffnen können
-	- ggf. erst mit einer neuen Technologie
 - SP Map Liste (Legenden)
 	- User Maps
 		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
@@ -959,10 +967,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Textur: Gold durch rot austauschen
 	- generell etwas verdunkeln
 	- auf Veteranen Niveau
-- Berittener Schütze bei Spielstart, als Scout
-	- Armbrust?
-	- ggf. mehr Sichtweite
-	- nicht automatisch in jeder Map
 - Beautifications 
 	- Astrolabium und Podium tauschen
 	- noch mehr (aus AeK)
