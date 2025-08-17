@@ -244,6 +244,6 @@ function Mission_FirstMapAction()
 		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 5000, 3000, 3000, 500)
 	end
 
-	Tools.ExploreArea(-1, -1, 900)
+	--Tools.ExploreArea(-1, -1, 900)
 	--StartSimpleJob("GetMousePos")
 end
