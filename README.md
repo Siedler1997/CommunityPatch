@@ -161,6 +161,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- nutzen die neue DC_Blunt
 		- Bogenschützen-Banditen
 			- haben 150 Lebenspunkte (vorher: 120)
+			- sind etwas schneller (340 -> 360)
 			- Hauptmänner und Soldaten haben 
 				- die gleiche Nachladedauer
 				- die gleiche Maximalreichweite
@@ -954,20 +955,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
 - Flammenwerfer (mobil oder als Turm)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
-- Eigene DamageClass für Schützen (DC_Arrow)
-	- stark gegen leichte Panzerung
-		- Speerkämpfer (1.5)
-		- Arbeiter (1.5)
-		- andere Schützen (1.5)
-	- schwach gegen schwere Panzerung
-		- Schwertkämpfer (0.5)
-		- Schwere Kavallerie (1.0)
-	- Tooltips anpassen
-	- Nerfs zurücknehmen?
-- Lv 4 Elite Leader: 
-	- Textur: Gold durch rot austauschen
-	- generell etwas verdunkeln
-	- auf Veteranen Niveau
 - Beautifications 
 	- Astrolabium und Podium tauschen
 	- noch mehr (aus AeK)
