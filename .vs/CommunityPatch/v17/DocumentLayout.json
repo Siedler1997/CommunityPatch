@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\Buttons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\Interface\\Buttons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\config\\Entities\\PU_Hero4.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\config\\Entities\\PU_Hero4.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\config\\DamageClasses.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\config\\DamageClasses.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\Script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra2\\shr\\script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\script\\Interface\\UpdateButtons.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,50 +42,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 16,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "gameControl.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\gameControl.lua",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-22T20:10:09.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Comfort.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Comfort.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
-              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Comfort.lua",
-              "ViewState": "AgIAAGcJAAAAAAAAAAAAAIQJAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-22T18:55:28.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Buttons.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\Buttons.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Script\\Interface\\Buttons.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\Buttons.lua",
-              "RelativeToolTip": "base\\shr\\Script\\Interface\\Buttons.lua",
-              "ViewState": "AgIAAHEDAAAAAAAAAAAAAJgDAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-22T11:47:54.807Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -109,32 +86,139 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAAAOsAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "UpdateButtons.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "RelativeDocumentMoniker": "extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "RelativeToolTip": "extra1\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "ViewState": "AgIAAC0FAAAAAAAAAAAAAEAFAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-14T18:07:07.751Z",
+              "WhenOpened": "2025-08-16T17:00:53.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "UpdateButtons.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra2\\shr\\script\\Interface\\UpdateButtons.lua",
+              "RelativeDocumentMoniker": "extra2\\shr\\script\\Interface\\UpdateButtons.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra2\\shr\\script\\Interface\\UpdateButtons.lua",
+              "RelativeToolTip": "extra2\\shr\\script\\Interface\\UpdateButtons.lua",
+              "ViewState": "AgIAACAFAAAAAAAAAAAAAE4FAACRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-16T16:54:03.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Comfort.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Comfort.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
+              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Comfort.lua",
+              "ViewState": "AgIAAJgJAAAAAAAAAAAAABEBAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-12T18:04:21.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAOgBAAAAAAAAAAAAAPEBAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAKcDAAAAAAAAAAAAANYDAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2023-09-24T14:38:22.087Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "d6ccc1bd-c46b-4ef2-a9ba-f8682cf50734",
+        "Display": 0,
+        "X": 2048,
+        "Y": 305,
+        "Width": 936,
+        "Height": 1348,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Support_Extra.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua",
+              "RelativeDocumentMoniker": "extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua",
+              "RelativeToolTip": "extra1\\shr\\Script\\MapTools\\Ai\\Support_Extra.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-15T17:06:39.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateButtons.lua",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "RelativeToolTip": "base\\shr\\Script\\Interface\\UpdateButtons.lua",
+              "ViewState": "AgIAACsFAAAAAAAAAAAAADMFAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-12T19:13:54.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DamageClasses.xml",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\config\\DamageClasses.xml",
+              "RelativeDocumentMoniker": "extra1\\shr\\config\\DamageClasses.xml",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\extra1\\shr\\config\\DamageClasses.xml",
+              "RelativeToolTip": "extra1\\shr\\config\\DamageClasses.xml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-08-16T20:14:57.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PU_Hero4.xml",
+              "DocumentMoniker": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\config\\Entities\\PU_Hero4.xml",
+              "RelativeDocumentMoniker": "base\\shr\\config\\Entities\\PU_Hero4.xml",
+              "ToolTip": "C:\\Users\\Patrik\\source\\repos\\Siedler1997\\CommunityPatch\\base\\shr\\config\\Entities\\PU_Hero4.xml",
+              "RelativeToolTip": "base\\shr\\config\\Entities\\PU_Hero4.xml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-08-16T20:43:26.923Z",
               "EditorCaption": ""
             }
           ]
