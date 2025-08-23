@@ -159,6 +159,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Rüstungspunkt: 3
 				- Schadenpunkte: 14
 			- nutzen die neue DC_Blunt
+		- Barbaren 
+			- haben einen Rüstungspunkt weniger (=1)
+			- haben zwei Schadenpunkte mehr (=14)
+			- nutzen die neue DC_Blunt
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- Schwarze Ritter 
+			- haben die selben Stats wie Langschwertkämpfer
+				- Rüstungspunkt: 4
+				- Schadenpunkte: 16
+			- nutzen die neue DC_Blunt
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		- Bogenschützen-Banditen
 			- haben 150 Lebenspunkte (vorher: 120)
 			- sind etwas schneller (340 -> 360)
@@ -175,17 +186,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- verursachen etwas weniger Schaden an schwerer Kavallerie
 			- Hauptmänner sind leicht umtexturiert
 			- sind von Helias konvertierbar (aber weiterhin furchtlos)
-		- Barbaren 
-			- haben einen Rüstungspunkt weniger (=1)
-			- haben zwei Schadenpunkte mehr (=14)
-			- nutzen die neue DC_Blunt
-			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
-		- Schwarze Ritter 
-			- haben die selben Stats wie Langschwertkämpfer
-				- Rüstungspunkt: 4
-				- Schadenpunkte: 16
-			- nutzen die neue DC_Blunt
-			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		- 'Veteranen' 
 			- können keine Gefolgsleute mehr haben
 			- regenerieren ihre Lebenspunkte etwas schneller
@@ -619,6 +619,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Alternative Schwierigkeitsgrade (im Hauptmenü wählbar)
 		- in manchen Missionen können gegnerische Truppen respawnen
 			- z.T. abhängig vom Schwierigkeitsgrad
+		- Thalgrund: Der erste Angriff besteht aus ähnlichen Einheiten wie in der vorangegangenen
 		- 'Schlacht um Evelance' ist ein würdigeres Finale
 			- Gegner sind zahlreicher
 			- Gegner bilden auch Truppen in Militärgebäuden aus
@@ -891,8 +892,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
-			- Thalgrund: Erster Angriff mit Cutscene-Einheiten
-				- ggf. mehr Spielertruppen als Hilfe
 			- Crawford
 				- letztes Tor erst gegen Ende des Briefings öffnen
 				- Stadtwache als simple Defense (Speerträger und Bogenschützen)

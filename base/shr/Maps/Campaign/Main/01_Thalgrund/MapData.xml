@@ -29644,6 +29644,36 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+     <Type>XD_ScriptEntity</Type>
+     <Position>
+       <X>2.331200e+004</X>
+       <Y>2.373200e+004</Y>
+     </Position>
+     <Orientation>0.000000e+000</Orientation>
+     <Flags>0</Flags>
+     <PlayerID>1</PlayerID>
+     <Health>-1</Health>
+     <Name>HomeVillage3</Name>
+     <ScriptCommandLine></ScriptCommandLine>
+     <AmbientSoundType></AmbientSoundType>
+     <Scale>1.000000e+000</Scale>
+   </Entity>
+   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+     <Type>XD_ScriptEntity</Type>
+     <Position>
+       <X>2.007000e+004</X>
+       <Y>2.128800e+004</Y>
+     </Position>
+     <Orientation>0.000000e+000</Orientation>
+     <Flags>0</Flags>
+     <PlayerID>1</PlayerID>
+     <Health>-1</Health>
+     <Name>HomeVillage4</Name>
+     <ScriptCommandLine></ScriptCommandLine>
+     <AmbientSoundType></AmbientSoundType>
+     <Scale>1.000000e+000</Scale>
+   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_RockKhakiBright3</Type>
    <Position>
@@ -48184,6 +48214,36 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
+   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+     <Type>PU_LeaderPoleArm1</Type>
+     <Position>
+       <X>2.301200e+004</X>
+       <Y>2.373200e+004</Y>
+     </Position>
+     <Orientation>0.000000e+000</Orientation>
+     <Flags>0</Flags>
+     <PlayerID>1</PlayerID>
+     <Health>-1</Health>
+     <Name></Name>
+     <ScriptCommandLine></ScriptCommandLine>
+     <AmbientSoundType></AmbientSoundType>
+     <Scale>1.000000e+000</Scale>
+   </Entity>
+  <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+   <Type>PU_LeaderPoleArm1</Type>
+   <Position>
+     <X>2.007000e+004</X>
+     <Y>2.100000e+004</Y>
+   </Position>
+   <Orientation>0.000000e+000</Orientation>
+   <Flags>0</Flags>
+   <PlayerID>1</PlayerID>
+   <Health>-1</Health>
+   <Name></Name>
+   <ScriptCommandLine></ScriptCommandLine>
+   <AmbientSoundType></AmbientSoundType>
+   <Scale>1.000000e+000</Scale>
+  </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>PB_Sawmill1</Type>
    <Position>
@@ -56592,7 +56652,7 @@
 		 </Position>
 		 <Orientation>1.800000e+002</Orientation>
 		 <Flags>0</Flags>
-		 <PlayerID>4</PlayerID>
+		 <PlayerID>5</PlayerID>
 		 <Health>-1</Health>
 		 <Name>keymaster</Name>
 		 <ScriptCommandLine></ScriptCommandLine>

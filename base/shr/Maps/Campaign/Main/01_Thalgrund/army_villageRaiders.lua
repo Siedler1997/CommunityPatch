@@ -23,12 +23,14 @@ createArmyVillageRaiders = function()
 		
 			maxNumberOfSoldiers	= 0,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= 0
 		}			
 
-		troopDescription.maxNumberOfSoldiers = 1
+		if CP_Difficulty == 2 then
+			troopDescription.experiencePoints = 1
+		end
 
-		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+		troopDescription.leaderType = Entities.PU_LeaderSword1
 --		troopDescription.leaderType = Entities.PU_LeaderPoleArm1
 		EnlargeArmy(armyVillageRaidersA,troopDescription)
 
@@ -46,10 +48,42 @@ createArmyVillageRaiders = function()
 
 	--	create army	b
 			
-		troopDescription.maxNumberOfSoldiers = 0
-		
-		troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+		troopDescription.leaderType = Entities.PU_LeaderCavalry1
 		EnlargeArmy(armyVillageRaidersB,troopDescription)
+
+	--	village raiders c
+
+		armyVillageRaidersC				= {}
+	
+		armyVillageRaidersC.player 		= 7
+		armyVillageRaidersC.id			= 7
+		armyVillageRaidersC.strength	= 1
+		armyVillageRaidersC.position	= GetPosition("HomeVillage3")
+		armyVillageRaidersC.rodeLength	= 300
+		
+		SetupArmy(armyVillageRaidersC)
+
+	--	create army	c
+			
+		troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+		EnlargeArmy(armyVillageRaidersC,troopDescription)
+
+	--	village raiders d
+
+		armyVillageRaidersD				= {}
+	
+		armyVillageRaidersD.player 		= 7
+		armyVillageRaidersD.id			= 8
+		armyVillageRaidersD.strength	= 1
+		armyVillageRaidersD.position	= GetPosition("HomeVillage4")
+		armyVillageRaidersD.rodeLength	= 300
+		
+		SetupArmy(armyVillageRaidersD)
+
+	--	create army	d
+			
+		troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+		EnlargeArmy(armyVillageRaidersD,troopDescription)
 	
 
 	--	start jobs
@@ -115,7 +149,7 @@ createArmyVillageRaiders = function()
 
 		--	start next quest?
 
-			if IsDead(armyVillageRaidersA) and IsDead(armyVillageRaidersB) then
+			if IsDead(armyVillageRaidersA) and IsDead(armyVillageRaidersB) and IsDead(armyVillageRaidersC) and IsDead(armyVillageRaidersD) then
 
 				end1stQuest()	
 								
@@ -128,8 +162,9 @@ createArmyVillageRaiders = function()
 		--	ai 
 			
 			FrontalAttack(armyVillageRaidersA)
-			
 			FrontalAttack(armyVillageRaidersB)
+			FrontalAttack(armyVillageRaidersC)
+			FrontalAttack(armyVillageRaidersD)
 		
 		return false
 		
