@@ -1400,7 +1400,8 @@ function GUIAction_RepairCannonButton()
 	local SelectedCannonID = GUI.GetSelectedEntity()
 	local SelectedCannonType = Logic.GetEntityType(SelectedCannonID)
 	local SelectedCannonCategory = 0
-
+	
+	--Get upgrade category of selected cannon
 	if SelectedCannonType == Entities.PV_Cannon1 then
 		SelectedCannonCategory = UpgradeCategories.Cannon1
 	elseif SelectedCannonType == Entities.PV_Cannon2 then
@@ -1414,6 +1415,7 @@ function GUIAction_RepairCannonButton()
 	local currentHealth = Logic.GetEntityHealth(SelectedCannonID)
 	local maxHealth = Logic.GetEntityMaxHealth(SelectedCannonID)
 	if SelectedCannonCategory ~= 0 and currentHealth < maxHealth then
+		--calculate repair costs based on cannon building costs and lost health
 		local lostHealth = 1 - (currentHealth / maxHealth)
 		Logic.FillLeaderCostsTable(PlayerID, SelectedCannonCategory, InterfaceGlobals.CostTable)
 		InterfaceGlobals.CostTable[ResourceType.Gold] = round(InterfaceGlobals.CostTable[ResourceType.Gold] * lostHealth)
@@ -1422,9 +1424,14 @@ function GUIAction_RepairCannonButton()
 		InterfaceGlobals.CostTable[ResourceType.Sulfur] = round(InterfaceGlobals.CostTable[ResourceType.Sulfur] * lostHealth)
 
 		if InterfaceTool_HasPlayerEnoughResources_Feedback(InterfaceGlobals.CostTable) == 1 then	
-			InterfaceTool_PayResources(InterfaceGlobals.CostTable);
-			SetHealth(SelectedCannonID, 100)
-			Sound.PlayFeedbackSound( Sounds.Coiner01, 0 )
+			--Can only repair cannons if no enemies are nearby (for balancing reasons)
+			if AreEnemiesInArea(PlayerID, GetPosition(SelectedCannonID), 2000) then
+				GUI.AddNote(XGUIEng.GetStringTableText("InGameMessages/Note_EnemiesInArea"))	
+			else
+				InterfaceTool_PayResources(InterfaceGlobals.CostTable);
+				SetHealth(SelectedCannonID, 100)
+				Sound.PlayFeedbackSound( Sounds.Coiner01, 0 )
+			end
 		end
 	end
 end

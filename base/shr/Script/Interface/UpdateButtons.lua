@@ -1342,7 +1342,9 @@ function GUIUpdate_RepairCannonButton()
 	local maxHealth = Logic.GetEntityMaxHealth(cannonID)
 	
 	if MilitaryBuildingID ~= 0 and currentHealth < maxHealth then		
-		if Logic.IsConstructionComplete(MilitaryBuildingID) == 1 then
+		local WorkerTable = { Logic.GetAttachedWorkersToBuilding(MilitaryBuildingID) }
+		--construction completed and at least one worker in building
+		if Logic.IsConstructionComplete(MilitaryBuildingID) == 1 and WorkerTable[1] > 0 then
 			XGUIEng.DisableButton("Repair_Cannon_Button",0)
 		end
 	else		

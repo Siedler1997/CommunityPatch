@@ -272,6 +272,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Reparatur ist nur in der Nähe von Kanonengießereien/-manufakturen möglich
 					- Shortcut [Q] gilt hier ebenfalls
 				- kostet Rohstoffe abhängig von den verlorenen HP und den ursprünglichen Baukosten (in %)
+				- nur möglich, wenn 
+					- keine Feinde in der Nähe der Kanone sind (20 SM)
+					- der Kanonengießerei/-manufaktur ein Arbeiter zugeordnet ist
 		- Scharfschützen
 			- sind (etwas) weniger effektiv gegen 
 				- Kavallerie
@@ -949,9 +952,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Fixen
 	- Vollständig implementieren
 	- Veteranen-like balancen?
-- Reparierbare Kanonen
-	- Nur möglich, wenn keine Feinde in der Nähe sind
-	- Prüfung auf Zustand (Arbeiter vorhanden) der Gießerei
 - Flammenwerfer (mobil oder als Turm)
 - Militärgebäude: Alle Hauptmänner in der Nähe auffüllen
 - Beautifications 
@@ -1004,13 +1004,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Dombaustelle: Arbeiter sollen ermüden und im 'Motivationssystem' drin sein
 - Auch normale Arbeiter sollen automatisch HP regenerieren
 	- scheint leider nicht möglich zu sein
+- Neue Spielerfarben
+- Auftragsbuch-Highlight fixen
 - Rand-Clipping bei Briefing-Minimap fixen 
 - Hauptmenü
 	- MP-Window fixen
 	- MP-Fix (https://dedk.de/wiki/doku.php?id=multiplayer:help:historyedition)
 - Verschiebung von Overhead-Daten (RessourceAmount) fixen
-- Neue Spielerfarben
-- Auftragsbuch-Highlight fixen
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 - Neue Maps
 	- "Tal der Verdammten"
