@@ -58,8 +58,8 @@ function Interface_SetCinematicMode( _CinematicStatus )
 		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(GUI.GetPlayerID())
 		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicBar00"),0, ColorR,ColorG,ColorB,190)
 		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicBar01"),0, ColorR,ColorG,ColorB,190)
-		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrame"),0, ColorR,ColorG,ColorB,190)
-		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrameBG"),0, ColorR,ColorG,ColorB,190)
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrame"),0, ColorR,ColorG,ColorB,255)
+		XGUIEng.SetMaterialColor(XGUIEng.GetWidgetID("CinematicFrameBG"),0, ColorR,ColorG,ColorB,255)
 	
 		-- Start cinematic mode
 		Camera.SetControlMode( _CinematicStatus )
