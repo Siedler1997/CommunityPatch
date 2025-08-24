@@ -61757,7 +61757,7 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>HQTaxes</Name>
                               <Rectangle>
-                                <X>129</X>
+                                <X>140</X>
                                 <Y>4</Y>
                                 <W>160</W>
                                 <H>36</H>
@@ -62804,9 +62804,9 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>TaxesAndPayStatistics</Name>
                               <Rectangle>
-                                <X>97</X>
+                                <X>120</X>
                                 <Y>39</Y>
-                                <W>220</W>
+                                <W>190</W>
                                 <H>73</H>
                               </Rectangle>
                               <IsShown>True</IsShown>
@@ -62821,7 +62821,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>6</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -62848,7 +62848,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>31</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -62873,7 +62873,7 @@
                                 <WidgetList classname="EGUIX::CPureTooltipWidget" classid="0x82cc8876">
                                   <Name>TaxSumOfPaydayTooltip</Name>
                                   <Rectangle>
-                                    <X>150</X>
+                                    <X>130</X>
                                     <Y>54</Y>
                                     <W>60</W>
                                     <H>16</H>
@@ -62900,9 +62900,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxWorkerAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>6</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -62983,7 +62983,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxWorkerTaxes</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>6</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -63036,7 +63036,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxWorkerSumOfTaxes</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>6</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -63119,7 +63119,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxLeaderSumOfPay</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>31</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -63172,7 +63172,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxLeaderPay</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>31</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -63225,7 +63225,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxLeaderMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>31</Y>
                                     <W>10</W>
                                     <H>16</H>
@@ -63278,9 +63278,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxLeaderAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>31</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -63331,9 +63331,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxWorkerMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -63384,9 +63384,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxWorkerEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -63437,9 +63437,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxLeaderEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>31</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -63490,7 +63490,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>TaxSumOfPayday</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>54</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -63544,8 +63544,8 @@
                                   <Name>TaxBar</Name>
                                   <Rectangle>
                                     <X>4</X>
-                                    <Y>49</Y>
-                                    <W>210</W>
+                                    <Y>50</Y>
+                                    <W>185</W>
                                     <H>1</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -74692,7 +74692,7 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>Bank_HQTaxes</Name>
                               <Rectangle>
-                                <X>129</X>
+                                <X>140</X>
                                 <Y>4</Y>
                                 <W>160</W>
                                 <H>36</H>
@@ -75422,9 +75422,9 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>Bank_TaxesAndPayStatistics</Name>
                               <Rectangle>
-                                <X>97</X>
+                                <X>120</X>
                                 <Y>39</Y>
-                                <W>220</W>
+                                <W>190</W>
                                 <H>73</H>
                               </Rectangle>
                               <IsShown>True</IsShown>
@@ -75439,7 +75439,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>6</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -75466,7 +75466,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>31</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -75491,7 +75491,7 @@
                                 <WidgetList classname="EGUIX::CPureTooltipWidget" classid="0x82cc8876">
                                   <Name>Bank_TaxSumOfPaydayTooltip</Name>
                                   <Rectangle>
-                                    <X>150</X>
+                                    <X>130</X>
                                     <Y>54</Y>
                                     <W>60</W>
                                     <H>16</H>
@@ -75518,9 +75518,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxWorkerAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>6</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -75601,7 +75601,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxWorkerTaxes</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>6</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -75654,7 +75654,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxWorkerSumOfTaxes</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>6</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -75737,7 +75737,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxLeaderSumOfPay</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>31</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -75790,7 +75790,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxLeaderPay</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>31</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -75843,7 +75843,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxLeaderMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>31</Y>
                                     <W>10</W>
                                     <H>16</H>
@@ -75896,9 +75896,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxLeaderAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>31</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -75949,9 +75949,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxWorkerMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -76002,9 +76002,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxWorkerEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -76055,9 +76055,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxLeaderEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>31</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -76108,7 +76108,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>Bank_TaxSumOfPayday</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>54</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -76162,8 +76162,8 @@
                                   <Name>Bank_TaxBar</Name>
                                   <Rectangle>
                                     <X>4</X>
-                                    <Y>49</Y>
-                                    <W>210</W>
+                                    <Y>50</Y>
+                                    <W>185</W>
                                     <H>1</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -88335,138 +88335,6 @@
                               </IconMaterial>
                             </WidgetList>
                             <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
-                              <Name>OP_Research_HeroArmor</Name>
-                              <Rectangle>
-                                <X>40</X>
-                                <Y>76</Y>
-                                <W>32</W>
-                                <H>32</H>
-                              </Rectangle>
-                              <IsShown>True</IsShown>
-                              <ZPriority>0</ZPriority>
-                              <MotherID>Commands_Outpost</MotherID>
-                              <Group></Group>
-                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
-                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
-                              <ButtonHelper>
-                                <DisabledFlag>False</DisabledFlag>
-                                <HighLightedFlag>False</HighLightedFlag>
-                                <ActionFunction>
-                                  <LuaCommand>GUIAction_ReserachTechnology(Technologies.T_PlateBardingArmor)</LuaCommand>
-                                </ActionFunction>
-                                <ShortCutString>
-                                  <StringTableKey>KeyBindings/ReserachTechnologies2</StringTableKey>
-                                  <RawString></RawString>
-                                </ShortCutString>
-                              </ButtonHelper>
-                              <Materials>
-                                <Texture>graphics\textures\gui\b_civil_keep.png</Texture>
-                                <TextureCoordinates>
-                                  <X>0</X>
-                                  <Y>0.1875</Y>
-                                  <W>0.25</W>
-                                  <H>0.0625</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>255</Red>
-                                  <Green>255</Green>
-                                  <Blue>255</Blue>
-                                  <Alpha>255</Alpha>
-                                </Color>
-                              </Materials>
-                              <Materials>
-                                <Texture>graphics\textures\gui\b_civil_keep.png</Texture>
-                                <TextureCoordinates>
-                                  <X>0.25</X>
-                                  <Y>0.1875</Y>
-                                  <W>0.25</W>
-                                  <H>0.0625</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>255</Red>
-                                  <Green>255</Green>
-                                  <Blue>255</Blue>
-                                  <Alpha>255</Alpha>
-                                </Color>
-                              </Materials>
-                              <Materials>
-                                <Texture>graphics\textures\gui\b_civil_keep.png</Texture>
-                                <TextureCoordinates>
-                                  <X>0.5</X>
-                                  <Y>0.1875</Y>
-                                  <W>0.25</W>
-                                  <H>0.0625</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>255</Red>
-                                  <Green>255</Green>
-                                  <Blue>255</Blue>
-                                  <Alpha>255</Alpha>
-                                </Color>
-                              </Materials>
-                              <Materials>
-                                <Texture>graphics\textures\gui\b_civil_keep.png</Texture>
-                                <TextureCoordinates>
-                                  <X>0</X>
-                                  <Y>0.1875</Y>
-                                  <W>0.25</W>
-                                  <H>0.0625</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>128</Red>
-                                  <Green>128</Green>
-                                  <Blue>128</Blue>
-                                  <Alpha>128</Alpha>
-                                </Color>
-                              </Materials>
-                              <Materials>
-                                <Texture>graphics\textures\gui\b_civil_keep.png</Texture>
-                                <TextureCoordinates>
-                                  <X>0.75</X>
-                                  <Y>0.1875</Y>
-                                  <W>0.25</W>
-                                  <H>0.0625</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>255</Red>
-                                  <Green>255</Green>
-                                  <Blue>255</Blue>
-                                  <Alpha>255</Alpha>
-                                </Color>
-                              </Materials>
-                              <ToolTipHelper>
-                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
-                                <ToolTipString>
-                                  <StringTableKey></StringTableKey>
-                                  <RawString></RawString>
-                                </ToolTipString>
-                                <TargetWidget>TooltipBottom</TargetWidget>
-                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
-                                <UpdateFunction>
-                                  <LuaCommand>GUITooltip_ResearchTechnologies(Technologies.T_PlateBardingArmor,"MenuHeadquarter/HeroArmor","KeyBindings/ReserachTechnologies2")</LuaCommand>
-                                </UpdateFunction>
-                              </ToolTipHelper>
-                              <UpdateFunction>
-                                <LuaCommand>GUIUpdate_GlobalTechnologiesButtons("OP_Research_HeroArmor", Technologies.T_PlateBardingArmor,Entities.PB_Headquarters1)</LuaCommand>
-                              </UpdateFunction>
-                              <UpdateManualFlag>True</UpdateManualFlag>
-                              <IconMaterial>
-                                <Texture></Texture>
-                                <TextureCoordinates>
-                                  <X>0</X>
-                                  <Y>0</Y>
-                                  <W>0.25</W>
-                                  <H>0.25</H>
-                                </TextureCoordinates>
-                                <Color>
-                                  <Red>255</Red>
-                                  <Green>255</Green>
-                                  <Blue>255</Blue>
-                                  <Alpha>0</Alpha>
-                                </Color>
-                              </IconMaterial>
-                            </WidgetList>
-                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
                               <Name>OP_Buy_Hero</Name>
                               <Rectangle>
                                 <X>40</X>
@@ -89146,7 +89014,7 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>OP_HQTaxes</Name>
                               <Rectangle>
-                                <X>129</X>
+                                <X>140</X>
                                 <Y>4</Y>
                                 <W>160</W>
                                 <H>36</H>
@@ -90193,9 +90061,9 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>OP_TaxesAndPayStatistics</Name>
                               <Rectangle>
-                                <X>97</X>
+                                <X>120</X>
                                 <Y>39</Y>
-                                <W>220</W>
+                                <W>190</W>
                                 <H>73</H>
                               </Rectangle>
                               <IsShown>True</IsShown>
@@ -90210,7 +90078,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>6</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90237,7 +90105,7 @@
                                   <Rectangle>
                                     <X>0</X>
                                     <Y>31</Y>
-                                    <W>220</W>
+                                    <W>190</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90262,7 +90130,7 @@
                                 <WidgetList classname="EGUIX::CPureTooltipWidget" classid="0x82cc8876">
                                   <Name>OP_TaxSumOfPaydayTooltip</Name>
                                   <Rectangle>
-                                    <X>150</X>
+                                    <X>130</X>
                                     <Y>54</Y>
                                     <W>60</W>
                                     <H>16</H>
@@ -90289,9 +90157,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxWorkerAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>6</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90372,7 +90240,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxWorkerTaxes</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>6</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -90425,7 +90293,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxWorkerSumOfTaxes</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>6</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -90508,7 +90376,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxLeaderSumOfPay</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>31</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -90561,7 +90429,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxLeaderPay</Name>
                                   <Rectangle>
-                                    <X>96</X>
+                                    <X>85</X>
                                     <Y>31</Y>
                                     <W>30</W>
                                     <H>16</H>
@@ -90614,7 +90482,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxLeaderMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>31</Y>
                                     <W>10</W>
                                     <H>16</H>
@@ -90667,9 +90535,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxLeaderAmount</Name>
                                   <Rectangle>
-                                    <X>36</X>
+                                    <X>35</X>
                                     <Y>31</Y>
-                                    <W>40</W>
+                                    <W>30</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90720,9 +90588,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxWorkerMultiply</Name>
                                   <Rectangle>
-                                    <X>81</X>
+                                    <X>70</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90773,9 +90641,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxWorkerEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>6</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90826,9 +90694,9 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxLeaderEqual</Name>
                                   <Rectangle>
-                                    <X>130</X>
+                                    <X>120</X>
                                     <Y>31</Y>
-                                    <W>20</W>
+                                    <W>10</W>
                                     <H>16</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
@@ -90879,7 +90747,7 @@
                                 <WidgetList classname="EGUIX::CStaticTextWidget" classid="0x86e3bc06">
                                   <Name>OP_TaxSumOfPayday</Name>
                                   <Rectangle>
-                                    <X>156</X>
+                                    <X>135</X>
                                     <Y>54</Y>
                                     <W>50</W>
                                     <H>16</H>
@@ -90933,8 +90801,8 @@
                                   <Name>OP_TaxBar</Name>
                                   <Rectangle>
                                     <X>4</X>
-                                    <Y>49</Y>
-                                    <W>210</W>
+                                    <Y>50</Y>
+                                    <W>185</W>
                                     <H>1</H>
                                   </Rectangle>
                                   <IsShown>True</IsShown>
