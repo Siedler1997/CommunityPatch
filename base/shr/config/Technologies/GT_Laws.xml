@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+	<TecCategoryType>TC_Administration</TecCategoryType>
+	<TimeToResearch>60</TimeToResearch>
+	<ResourceCosts>
+		  <Gold>500</Gold>
+			<Wood>200</Wood>
+	</ResourceCosts>
+	<UseForStatisticsFlag>true</UseForStatisticsFlag>
+	<Conditions>
+    <TecCondition>
+      <TecType>GT_Literacy</TecType>
+    </TecCondition>
+    <RequiredEntityConditions>1</RequiredEntityConditions>			
+		  <EntityCondition>
+			  <EntityType>PB_Headquarters2</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>
+		  <EntityCondition>
+			  <EntityType>PB_Headquarters3</EntityType>
+			  <Amount>1</Amount>
+		</EntityCondition>
+		  
+	</Conditions>
+</root>
