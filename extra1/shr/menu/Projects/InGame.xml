@@ -60946,9 +60946,141 @@
                               </IconMaterial>
                             </WidgetList>
                             <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
-                              <Name>Research_HeroArmor</Name>
+                              <Name>Research_Laws</Name>
                               <Rectangle>
                                 <X>40</X>
+                                <Y>76</Y>
+                                <W>32</W>
+                                <H>32</H>
+                              </Rectangle>
+                              <IsShown>True</IsShown>
+                              <ZPriority>0</ZPriority>
+                              <MotherID>Commands_Headquarter</MotherID>
+                              <Group></Group>
+                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                              <ButtonHelper>
+                                <DisabledFlag>False</DisabledFlag>
+                                <HighLightedFlag>False</HighLightedFlag>
+                                <ActionFunction>
+                                  <LuaCommand>GUIAction_ReserachTechnology(Technologies.GT_Laws)</LuaCommand>
+                                </ActionFunction>
+                                <ShortCutString>
+                                  <StringTableKey>KeyBindings/ReserachTechnologies2</StringTableKey>
+                                  <RawString></RawString>
+                                </ShortCutString>
+                              </ButtonHelper>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.4375</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.25</X>
+                                  <Y>0.4375</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.4375</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.4375</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>128</Red>
+                                  <Green>128</Green>
+                                  <Blue>128</Blue>
+                                  <Alpha>128</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_civil_university.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.4375</Y>
+                                  <W>0.25</W>
+                                  <H>0.03125</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <ToolTipHelper>
+                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                                <ToolTipString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ToolTipString>
+                                <TargetWidget>TooltipBottom</TargetWidget>
+                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                                <UpdateFunction>
+                                  <LuaCommand>GUITooltip_ResearchTechnologies(Technologies.GT_Laws,"MenuUniversity/Laws","KeyBindings/ReserachTechnologies2")</LuaCommand>
+                                </UpdateFunction>
+                              </ToolTipHelper>
+                              <UpdateFunction>
+                                <LuaCommand>GUIUpdate_GlobalTechnologiesButtons("Research_Laws", Technologies.GT_Laws,Entities.PB_Headquarters1)</LuaCommand>
+                              </UpdateFunction>
+                              <UpdateManualFlag>True</UpdateManualFlag>
+                              <IconMaterial>
+                                <Texture></Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0</Y>
+                                  <W>0.25</W>
+                                  <H>0.25</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>0</Alpha>
+                                </Color>
+                              </IconMaterial>
+                            </WidgetList>
+                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                              <Name>Research_HeroArmor</Name>
+                              <Rectangle>
+                                <X>76</X>
                                 <Y>76</Y>
                                 <W>32</W>
                                 <H>32</H>
@@ -60966,7 +61098,7 @@
                                   <LuaCommand>GUIAction_ReserachTechnology(Technologies.T_PlateBardingArmor)</LuaCommand>
                                 </ActionFunction>
                                 <ShortCutString>
-                                  <StringTableKey>KeyBindings/ReserachTechnologies2</StringTableKey>
+                                  <StringTableKey>KeyBindings/ReserachTechnologies3</StringTableKey>
                                   <RawString></RawString>
                                 </ShortCutString>
                               </ButtonHelper>
@@ -61054,7 +61186,7 @@
                                 <TargetWidget>TooltipBottom</TargetWidget>
                                 <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                 <UpdateFunction>
-                                  <LuaCommand>GUITooltip_ResearchTechnologies(Technologies.T_PlateBardingArmor,"MenuHeadquarter/HeroArmor","KeyBindings/ReserachTechnologies2")</LuaCommand>
+                                  <LuaCommand>GUITooltip_ResearchTechnologies(Technologies.T_PlateBardingArmor,"MenuHeadquarter/HeroArmor","KeyBindings/ReserachTechnologies3")</LuaCommand>
                                 </UpdateFunction>
                               </ToolTipHelper>
                               <UpdateFunction>
