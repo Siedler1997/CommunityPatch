@@ -7,13 +7,18 @@
 
 	<Conditions>
 		<TecCondition>
-			<TecType>GT_Literacy</TecType>
+			<TecType>GT_Alchemy</TecType>
 			<TecCategoryType></TecCategoryType>
 		</TecCondition>
-		
+
+    <RequiredEntityConditions>1</RequiredEntityConditions>
 		<EntityCondition>
-			<EntityType>PB_MasterBuilderWorkshop</EntityType>
+			<EntityType>PB_University1</EntityType>
 			<Amount>1</Amount>
 		</EntityCondition>
+    <EntityCondition>
+      <EntityType>PB_University2</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
 	</Conditions>
 </root>

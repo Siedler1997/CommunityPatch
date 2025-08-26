@@ -10,10 +10,15 @@
 			<TecType>GT_Literacy</TecType>
 			<TecCategoryType></TecCategoryType>
 		</TecCondition>
-		
-		<EntityCondition>
-			<EntityType>PB_MasterBuilderWorkshop</EntityType>
-			<Amount>1</Amount>
-		</EntityCondition>
+
+    <RequiredEntityConditions>1</RequiredEntityConditions>
+    <EntityCondition>
+      <EntityType>PB_University1</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
+    <EntityCondition>
+      <EntityType>PB_University2</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
 	</Conditions>
 </root>

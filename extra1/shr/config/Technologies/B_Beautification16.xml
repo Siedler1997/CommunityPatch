@@ -11,9 +11,13 @@
 			<TecCategoryType></TecCategoryType>
 		</TecCondition>
 
-		<EntityCondition>
-			<EntityType>PB_MasterBuilderWorkshop</EntityType>
-			<Amount>1</Amount>
-		</EntityCondition>
+    <EntityCondition>
+      <EntityType>PB_Blacksmith3</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
+    <EntityCondition>
+      <EntityType>PB_Alchemist2</EntityType>
+      <Amount>1</Amount>
+    </EntityCondition>
 	</Conditions>
 </root>
