@@ -68395,7 +68395,7 @@
                             <WidgetList classname="EGUIX::CContainerWidget" classid="0x55f9d1f6">
                               <Name>Group_Evil_Melee</Name>
                               <Rectangle>
-                                <X>148</X>
+                                <X>184</X>
                                 <Y>4</Y>
                                 <W>144</W>
                                 <H>36</H>
@@ -68516,11 +68516,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.BlackKnightLeaderMace1,"MenuBarracks/BuyLeaderBlackknight_normal","MenuBarracks/BuyLeaderBlackknight_normal", Technologies.MU_LeaderSword, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.BlackKnightLeaderMace1,"MenuBarracks/BuyLeaderBlackknight_normal","MenuBarracks/BuyLeaderBlackknight_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSword", Technologies.MU_LeaderSword, UpgradeCategories.BlackKnightLeaderMace1)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBlackKnight", Technologies.MU_LeaderBanditAxe, UpgradeCategories.BlackKnightLeaderMace1)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
@@ -68648,143 +68648,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBarbarian,"MenuBarracks/BuyLeaderBarbarian_normal","MenuBarracks/BuyLeaderBarbarian_normal", Technologies.MU_LeaderSword, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBarbarian,"MenuBarracks/BuyLeaderBarbarian_normal","MenuBarracks/BuyLeaderBarbarian_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSword", Technologies.MU_LeaderSword, UpgradeCategories.LeaderBarbarian)</LuaCommand>
-                                  </UpdateFunction>
-                                  <UpdateManualFlag>True</UpdateManualFlag>
-                                  <IconMaterial>
-                                    <Texture></Texture>
-                                    <TextureCoordinates>
-                                      <X>0</X>
-                                      <Y>0</Y>
-                                      <W>0.25</W>
-                                      <H>0.25</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>255</Red>
-                                      <Green>255</Green>
-                                      <Blue>255</Blue>
-                                      <Alpha>0</Alpha>
-                                    </Color>
-                                  </IconMaterial>
-                                </WidgetList>
-                                <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
-                                  <Name>Buy_LeaderBanditAxe</Name>
-                                  <Rectangle>
-                                    <X>72</X>
-                                    <Y>0</Y>
-                                    <W>32</W>
-                                    <H>32</H>
-                                  </Rectangle>
-                                  <IsShown>False</IsShown>
-                                  <ZPriority>0</ZPriority>
-                                  <MotherID>Group_Evil_Melee</MotherID>
-                                  <Group></Group>
-                                  <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
-                                  <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
-                                  <ButtonHelper>
-                                    <DisabledFlag>False</DisabledFlag>
-                                    <HighLightedFlag>False</HighLightedFlag>
-                                    <ActionFunction>
-                                      <LuaCommand>GUIAction_BuyMilitaryUnit(UpgradeCategories.LeaderBandit)</LuaCommand>
-                                    </ActionFunction>
-                                    <ShortCutString>
-                                      <StringTableKey></StringTableKey>
-                                      <RawString></RawString>
-                                    </ShortCutString>
-                                  </ButtonHelper>
-                                  <Materials>
-                                    <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
-                                    <TextureCoordinates>
-                                      <X>0</X>
-                                      <Y>0.5625</Y>
-                                      <W>0.25</W>
-                                      <H>0.0625</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>255</Red>
-                                      <Green>255</Green>
-                                      <Blue>255</Blue>
-                                      <Alpha>255</Alpha>
-                                    </Color>
-                                  </Materials>
-                                  <Materials>
-                                    <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
-                                    <TextureCoordinates>
-                                      <X>0.25</X>
-                                      <Y>0.5625</Y>
-                                      <W>0.25</W>
-                                      <H>0.0625</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>255</Red>
-                                      <Green>255</Green>
-                                      <Blue>255</Blue>
-                                      <Alpha>255</Alpha>
-                                    </Color>
-                                  </Materials>
-                                  <Materials>
-                                    <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
-                                    <TextureCoordinates>
-                                      <X>0.5</X>
-                                      <Y>0.5625</Y>
-                                      <W>0.25</W>
-                                      <H>0.0625</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>255</Red>
-                                      <Green>255</Green>
-                                      <Blue>255</Blue>
-                                      <Alpha>255</Alpha>
-                                    </Color>
-                                  </Materials>
-                                  <Materials>
-                                    <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
-                                    <TextureCoordinates>
-                                      <X>0</X>
-                                      <Y>0.5625</Y>
-                                      <W>0.25</W>
-                                      <H>0.0625</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>128</Red>
-                                      <Green>128</Green>
-                                      <Blue>128</Blue>
-                                      <Alpha>128</Alpha>
-                                    </Color>
-                                  </Materials>
-                                  <Materials>
-                                    <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
-                                    <TextureCoordinates>
-                                      <X>0.75</X>
-                                      <Y>0.5625</Y>
-                                      <W>0.25</W>
-                                      <H>0.0625</H>
-                                    </TextureCoordinates>
-                                    <Color>
-                                      <Red>255</Red>
-                                      <Green>255</Green>
-                                      <Blue>255</Blue>
-                                      <Alpha>255</Alpha>
-                                    </Color>
-                                  </Materials>
-                                  <ToolTipHelper>
-                                    <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
-                                    <ToolTipString>
-                                      <StringTableKey></StringTableKey>
-                                      <RawString></RawString>
-                                    </ToolTipString>
-                                    <TargetWidget>TooltipBottom</TargetWidget>
-                                    <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
-                                    <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBandit,"MenuBarracks/BuyLeaderBanditAxe_normal","MenuBarracks/BuyLeaderBanditAxe_normal", Technologies.MU_LeaderSword, nil)</LuaCommand>
-                                    </UpdateFunction>
-                                  </ToolTipHelper>
-                                  <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSword", Technologies.MU_LeaderSword, UpgradeCategories.LeaderBandit)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBarbarian", Technologies.MU_LeaderBanditAxe, UpgradeCategories.LeaderBarbarian)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
@@ -68806,7 +68674,7 @@
                                 <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
                                   <Name>Buy_LeaderBearman</Name>
                                   <Rectangle>
-                                    <X>108</X>
+                                    <X>72</X>
                                     <Y>0</Y>
                                     <W>32</W>
                                     <H>32</H>
@@ -68912,11 +68780,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.Evil_LeaderBearman,"MenuBarracks/BuyLeaderBearman_normal","MenuBarracks/BuyLeaderBearman_normal", Technologies.MU_LeaderSword, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.Evil_LeaderBearman,"MenuBarracks/BuyLeaderBearman_normal","MenuBarracks/BuyLeaderBearman_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSword", Technologies.MU_LeaderSword, UpgradeCategories.Evil_LeaderBearman)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBearman", Technologies.MU_LeaderBanditAxe, UpgradeCategories.Evil_LeaderBearman)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
@@ -69456,6 +69324,138 @@
                                   <Y>0</Y>
                                   <W>1</W>
                                   <H>1</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>0</Alpha>
+                                </Color>
+                              </IconMaterial>
+                            </WidgetList>
+                            <WidgetList classname="EGUIX::CGfxButtonWidget" classid="0x56dda656">
+                              <Name>Buy_LeaderBanditAxe</Name>
+                              <Rectangle>
+                                <X>148</X>
+                                <Y>4</Y>
+                                <W>32</W>
+                                <H>32</H>
+                              </Rectangle>
+                              <IsShown>True</IsShown>
+                              <ZPriority>0</ZPriority>
+                              <MotherID>Commands_Barracks</MotherID>
+                              <Group></Group>
+                              <ForceToHandleMouseEventsFlag>False</ForceToHandleMouseEventsFlag>
+                              <ForceToNeverBeFoundFlag>False</ForceToNeverBeFoundFlag>
+                              <ButtonHelper>
+                                <DisabledFlag>False</DisabledFlag>
+                                <HighLightedFlag>False</HighLightedFlag>
+                                <ActionFunction>
+                                  <LuaCommand>GUIAction_BuyMilitaryUnit(UpgradeCategories.LeaderBandit)</LuaCommand>
+                                </ActionFunction>
+                                <ShortCutString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ShortCutString>
+                              </ButtonHelper>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.5625</Y>
+                                  <W>0.25</W>
+                                  <H>0.0625</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.25</X>
+                                  <Y>0.5625</Y>
+                                  <W>0.25</W>
+                                  <H>0.0625</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.5</X>
+                                  <Y>0.5625</Y>
+                                  <W>0.25</W>
+                                  <H>0.0625</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0.5625</Y>
+                                  <W>0.25</W>
+                                  <H>0.0625</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>128</Red>
+                                  <Green>128</Green>
+                                  <Blue>128</Blue>
+                                  <Alpha>128</Alpha>
+                                </Color>
+                              </Materials>
+                              <Materials>
+                                <Texture>graphics\textures\gui\b_units_heroes.png</Texture>
+                                <TextureCoordinates>
+                                  <X>0.75</X>
+                                  <Y>0.5625</Y>
+                                  <W>0.25</W>
+                                  <H>0.0625</H>
+                                </TextureCoordinates>
+                                <Color>
+                                  <Red>255</Red>
+                                  <Green>255</Green>
+                                  <Blue>255</Blue>
+                                  <Alpha>255</Alpha>
+                                </Color>
+                              </Materials>
+                              <ToolTipHelper>
+                                <ToolTipEnabledFlag>True</ToolTipEnabledFlag>
+                                <ToolTipString>
+                                  <StringTableKey></StringTableKey>
+                                  <RawString></RawString>
+                                </ToolTipString>
+                                <TargetWidget>TooltipBottom</TargetWidget>
+                                <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
+                                <UpdateFunction>
+                                  <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBandit,"MenuBarracks/BuyLeaderBanditAxe_normal","MenuBarracks/BuyLeaderBanditAxe_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
+                                </UpdateFunction>
+                              </ToolTipHelper>
+                              <UpdateFunction>
+                                <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBanditAxe", Technologies.MU_LeaderBanditAxe, UpgradeCategories.LeaderBandit)</LuaCommand>
+                              </UpdateFunction>
+                              <UpdateManualFlag>True</UpdateManualFlag>
+                              <IconMaterial>
+                                <Texture></Texture>
+                                <TextureCoordinates>
+                                  <X>0</X>
+                                  <Y>0</Y>
+                                  <W>0.25</W>
+                                  <H>0.25</H>
                                 </TextureCoordinates>
                                 <Color>
                                   <Red>255</Red>
@@ -83437,11 +83437,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBanditBow,"MenuArchery/BuyLeaderBanditBow_normal","MenuArchery/BuyLeaderBanditBow_normal", Technologies.MU_LeaderBow, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.LeaderBanditBow,"MenuArchery/BuyLeaderBanditBow_normal","MenuArchery/BuyLeaderBanditBow_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBanditBow", Technologies.MU_LeaderBow, UpgradeCategories.LeaderBanditBow)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderBanditBow", Technologies.MU_LeaderBanditAxe, UpgradeCategories.LeaderBanditBow)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
@@ -83569,11 +83569,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.Evil_LeaderSkirmisher,"AOMenuArchery/BuyLeaderSkirmisher_normal","AOMenuArchery/BuyLeaderSkirmisher_normal", Technologies.MU_LeaderBow, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.Evil_LeaderSkirmisher,"AOMenuArchery/BuyLeaderSkirmisher_normal","AOMenuArchery/BuyLeaderSkirmisher_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSkirmisher", Technologies.MU_LeaderBow, UpgradeCategories.Evil_LeaderSkirmisher)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_LeaderSkirmisher", Technologies.MU_LeaderBanditAxe, UpgradeCategories.Evil_LeaderSkirmisher)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
@@ -85072,11 +85072,11 @@
                                     <TargetWidget>TooltipBottom</TargetWidget>
                                     <ControlTargetWidgetDisplayState>True</ControlTargetWidgetDisplayState>
                                     <UpdateFunction>
-                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.AggressiveWolf,"MenuStables/BuyAggressiveWolf_normal","MenuStables/BuyAggressiveWolf_normal", Technologies.MU_LeaderLightCavalry, nil)</LuaCommand>
+                                      <LuaCommand>GUITooltip_BuyMilitaryUnit(UpgradeCategories.AggressiveWolf,"MenuStables/BuyAggressiveWolf_normal","MenuStables/BuyAggressiveWolf_disabled", Technologies.MU_LeaderBanditAxe, nil)</LuaCommand>
                                     </UpdateFunction>
                                   </ToolTipHelper>
                                   <UpdateFunction>
-                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_AggressiveWolf", Technologies.MU_LeaderLightCavalry, UpgradeCategories.AggressiveWolf)</LuaCommand>
+                                    <LuaCommand>GUIUpdate_BuyMilitaryUnitButtons("Buy_AggressiveWolf", Technologies.MU_LeaderBanditAxe, UpgradeCategories.AggressiveWolf)</LuaCommand>
                                   </UpdateFunction>
                                   <UpdateManualFlag>True</UpdateManualFlag>
                                   <IconMaterial>
