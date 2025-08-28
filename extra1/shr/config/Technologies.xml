@@ -361,6 +361,7 @@
 	<Technology>MU_LeaderLightCavalry1a</Technology>
 	<Technology>MU_LeaderHeavyCavalry1a</Technology>
 	<Technology>MU_LeaderRifle1a</Technology>
+  <Technology>MU_LeaderBanditAxe</Technology>
 
 	<Technology>B_Beautification13</Technology>
 	<Technology>B_Beautification14</Technology>
