@@ -191,7 +191,7 @@ function GUITooltip_BuyMilitaryUnit(_UpgradeCategory,_NormalTooltip,_DisabledToo
 		if TechState == 0 then
 			TooltipText =  "MenuGeneric/UnitNotAvailable"
 			CostString = " "
-		elseif TechState == 1 or (RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType) then
+		elseif TechState == 1 or TechState == 5 or (RequiredBuildingType ~= 0 and RequiredBuildingType ~= SelectedBuildingType) then
 			TooltipText = _DisabledTooltip
 		end
 	end

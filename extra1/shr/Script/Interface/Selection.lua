@@ -357,7 +357,7 @@ function GameCallback_GUI_SelectionChanged()
 					if CP_GetEvilModUnitState(PlayerID) == 1 or CP_GetEvilModUnitState(PlayerID) == 3 then
 						XGUIEng.ShowWidget("Buy_LeaderBlackKnight", 1)
 						XGUIEng.ShowWidget("Buy_LeaderBarbarian", 1)
-						XGUIEng.ShowWidget("Buy_LeaderBanditAxe", 1)
+						--XGUIEng.ShowWidget("Buy_LeaderBanditAxe", 1)
 					end
 					if CP_GetEvilModUnitState(PlayerID) == 2 or CP_GetEvilModUnitState(PlayerID) == 3 then
 						XGUIEng.ShowWidget("Buy_LeaderBearman", 1)
