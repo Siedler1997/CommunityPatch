@@ -333,38 +333,42 @@
 	
 	<!-- Technology Test -->	
 	<Technology>T_SuperTechnology</Technology>
-	
-	
-	<!-- NOT USED FOR THE MOMENT: -->
-	<Technology>T_Tracking</Technology>			
-	<Technology>T_CropCycle</Technology>	
-	<Technology>T_PickAxe</Technology>	
-	<Technology>T_SpinningWheel</Technology>	
-	<Technology>T_CityGuard</Technology>		
-	<Technology>T_ChainBardingArmor</Technology>		
-	<Technology>T_PlateBardingArmor</Technology>	
-	<Technology>T_PaddedBardingArmor</Technology>	
-	<Technology>T_LeatherBaringArmor</Technology>
 
+  <Technology>T_Tracking</Technology>
+
+  <!-- NOT USED FOR THE MOMENT: -->
+  <Technology>T_CropCycle</Technology>
+  <Technology>T_PickAxe</Technology>
+  <Technology>T_SpinningWheel</Technology>
+  <Technology>T_CityGuard</Technology>
+  <Technology>T_ChainBardingArmor</Technology>
+  <Technology>T_PaddedBardingArmor</Technology>
+  <Technology>T_LeatherBaringArmor</Technology>
+
+  <!-- CP (Base) -->
   <Technology>B_Lighthouse</Technology>
-  <Technology>UP1_EvilTower</Technology>
+  <Technology>T_PlateBardingArmor</Technology>
   <Technology>T_HeroMarker</Technology>
-	<Technology>T_ScoutForester</Technology>
-  <Technology>T_Lockpicking</Technology>
-	<Technology>T_AllowEntitySkins</Technology>
-	<Technology>T_AnimalTechnology1</Technology>
-	<Technology>T_AnimalTechnology2</Technology>
+  <Technology>T_AllowEntitySkins</Technology>
+  <Technology>T_AnimalTechnology1</Technology>
+  <Technology>T_AnimalTechnology2</Technology>
 
-	<Technology>MU_LeaderBow2a</Technology>
-	<Technology>MU_LeaderSword2a</Technology>
-	<Technology>MU_LeaderSpear2a</Technology>
-	<Technology>MU_LeaderLightCavalry1a</Technology>
-	<Technology>MU_LeaderHeavyCavalry1a</Technology>
-	<Technology>MU_LeaderRifle1a</Technology>
   <Technology>MU_LeaderBanditAxe</Technology>
+  <Technology>MU_LeaderBow2a</Technology>
+  <Technology>MU_LeaderSword2a</Technology>
+  <Technology>MU_LeaderSpear2a</Technology>
+  <Technology>MU_LeaderLightCavalry1a</Technology>
+  <Technology>MU_LeaderHeavyCavalry1a</Technology>
 
-	<Technology>B_Beautification13</Technology>
-	<Technology>B_Beautification14</Technology>
-	<Technology>B_Beautification15</Technology>
-	<Technology>B_Beautification16</Technology>
+  <!-- CP (AddOn) -->
+  <Technology>T_ScoutForester</Technology>
+  <Technology>T_Lockpicking</Technology>
+
+  <Technology>B_Beautification13</Technology>
+  <Technology>B_Beautification14</Technology>
+  <Technology>B_Beautification15</Technology>
+  <Technology>B_Beautification16</Technology>
+  <Technology>UP1_EvilTower</Technology>
+
+  <Technology>MU_LeaderRifle1a</Technology>
 </root>
