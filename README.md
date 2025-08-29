@@ -907,7 +907,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
 			- Mornheim: Nienburg Leibeigene sind verwirrt...
 		- Extra1
-			- M4 'Fahrende Händler: Banditen (hell-)grün färben, in Anlehnung an Kadir
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
 				- Signalfeuer auch über 'normale' Tribute endzündbar machen
@@ -925,7 +924,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- KIs sollen Alarm nutzen (bei Bedarf) 
 				- Belohnungen/Upgrades für halten strategischer Positionen
 			- Die schwarzen Berge: Arbeitsloser Bauer beim Spieler?
-			- Hauptspiel-Kampagne in extra2 spielbar machen + AddOn-Features einbinden
+			- Hauptspiel-Kampagne in extra2: AddOn-Features sinnvoll einbinden
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader

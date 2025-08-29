@@ -45,7 +45,7 @@ end
 function InitPlayerColorMapping()
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
-	Display.SetPlayerColorMapping(2,NPC_COLOR)
+	Display.SetPlayerColorMapping(2,8)
 	if p1color ~= 5 then
 		Display.SetPlayerColorMapping(3,FRIENDLY_COLOR1)	
 	else
@@ -57,7 +57,7 @@ function InitPlayerColorMapping()
 	if p1color ~= 3 then
 		Display.SetPlayerColorMapping(5, 3)		
 	else
-		Display.SetPlayerColorMapping(5, 8)		
+		Display.SetPlayerColorMapping(5, NPC_COLOR)		
 	end
 	Display.SetPlayerColorMapping(6,CLEYCOURT_COLOR)
 	
