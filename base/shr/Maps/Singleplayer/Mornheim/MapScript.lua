@@ -51,10 +51,8 @@ function Mission_InitPlayerColorMapping()
 	if p1color == 2 then
 		Display.SetPlayerColorMapping(2, BARBARIAN_COLOR)	-- 
 	end
-	if p1color == 9 then
-		Display.SetPlayerColorMapping(3, 8)		-- 
-	else
-		Display.SetPlayerColorMapping(3, PLAYER_FRIEND_COLOR)		-- 
+	if p1color == 3 then
+		Display.SetPlayerColorMapping(3, BARBARIAN_COLOR)		-- 
 	end
 	if p1color == 4 then
 		Display.SetPlayerColorMapping(4, 1)		-- 
@@ -62,7 +60,11 @@ function Mission_InitPlayerColorMapping()
 
 	--Display.SetPlayerColorMapping(3, ENEMY_COLOR1)		-- 
 	--Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)		-- 
-	Display.SetPlayerColorMapping(5, NPC_COLOR)	-- 
+	if p1color == 9 then
+		Display.SetPlayerColorMapping(5, 1)		-- 
+	else
+		Display.SetPlayerColorMapping(5, 9)	-- 
+	end
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 end
 
