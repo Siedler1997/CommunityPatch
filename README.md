@@ -923,7 +923,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 03_Neighborhood: 
 				- KIs sollen Alarm nutzen (bei Bedarf) 
 				- Belohnungen/Upgrades für halten strategischer Positionen
-			- Die schwarzen Berge: Arbeitsloser Bauer beim Spieler?
 			- Hauptspiel-Kampagne in extra2: AddOn-Features sinnvoll einbinden
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
