@@ -58,8 +58,8 @@ createArmyFolklungA = function()
 											UpgradeCategories.LeaderSword,
 											UpgradeCategories.LeaderSword,
 											UpgradeCategories.LeaderSword,
-											UpgradeCategories.LeaderSword,
-											UpgradeCategories.LeaderSword}
+											UpgradeCategories.LeaderBow,
+											Entities.PV_Cannon3}
 
 	-- Attack parameter
 	ArmyFolklungA.retreatStrength	= 	1
