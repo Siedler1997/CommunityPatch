@@ -135,10 +135,18 @@ function Mission_ForbidAllTechnologies(_PlayerID)
 		Logic.SetTechnologyState(_PlayerID,Technologies.UP2_Tower      		,0 )	
 		
 		 --Beautifications -->	
---	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification01      ,0 )
---	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification02      ,0 )
---	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification03      ,0 )
---	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification04      ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification01  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification02  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification03  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification04  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification05  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification06  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification07  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification08  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification09  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification10  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification11  ,0 )
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Beautification12  ,0 )
 		
 	
 	 --Feature Technologies -->			
@@ -272,6 +280,8 @@ function Mission_ForbidAllTechnologies(_PlayerID)
 		
 	Logic.SetTechnologyState(_PlayerID,Technologies.T_PlateBardingArmor     ,0 )
 	Logic.SetTechnologyState(_PlayerID,Technologies.T_Tracking      		,0 )		
+	Logic.SetTechnologyState(_PlayerID,Technologies.B_Lighthouse      		,0 )	
+	Logic.SetTechnologyState(_PlayerID,Technologies.MU_LeaderBanditAxe      ,0 )	
 	
 	 -- NOT USED FOR THE MOMENT: -->		
 --	Logic.SetTechnologyState(_PlayerID,Technologies.T_CropCycle      		,0 )	
@@ -282,5 +292,10 @@ function Mission_ForbidAllTechnologies(_PlayerID)
 --	Logic.SetTechnologyState(_PlayerID,Technologies.T_PaddedBardingArmor    ,0 )	
 --	Logic.SetTechnologyState(_PlayerID,Technologies.T_LeatherBaringArmor    ,0 )		
 	
+	if AOTechnologies_ForbidAll ~= nil then
+		AOTechnologies_ForbidAll(_PlayerID)
+	end
 
 end
+
+IncludeGlobals("AOTechnologies_ForbidAll")
