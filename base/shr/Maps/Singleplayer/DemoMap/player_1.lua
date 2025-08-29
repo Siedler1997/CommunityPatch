@@ -133,10 +133,18 @@ createPlayer1 = function()
 		Logic.SetTechnologyState(PlayerID,Technologies.UP2_Tower      		,2 )	
 			
 			 --Beautifications -->	
-	Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification01      ,2 )
-		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification02      ,2 )
-		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification03      ,2 )
-		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification04      ,2 )
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification01, 2 ) --Darios-Statue
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification02, 2 ) --Brunnen
+--		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification03, 2 ) --Reiter-Statue
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification04, 2 ) --Kameraden-Statue
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification05, 2 ) --Obelisk
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification06, 2 ) --Astrolabium
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification07, 2 ) --Mechanische Uhr
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification08, 2 ) --Zugbrunnen
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification09, 2 ) --Blumen
+--		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification10, 2 ) --Teleskop
+--		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification11, 2 ) --Pavillon
+		Logic.SetTechnologyState(PlayerID,Technologies.B_Beautification12, 2 ) --Windrad
 			
 		
 		 --Feature Technologies -->			
@@ -280,10 +288,5 @@ createPlayer1 = function()
 	--	Logic.SetTechnologyState(PlayerID,Technologies.T_PaddedBardingArmor    ,2 )	
 	--	Logic.SetTechnologyState(PlayerID,Technologies.T_LeatherBaringArmor    ,2 )		
 	--	
-	
-	Logic.SetTechnologyState(PlayerID,Technologies.GT_PulledBarrel, 0 )
-	Logic.SetTechnologyState(PlayerID,Technologies.UP1_GunsmithWorkshop, 0 )
-	Logic.SetTechnologyState(PlayerID,Technologies.T_FleeceLinedLeatherArmor, 0 )
-	Logic.SetTechnologyState(PlayerID,Technologies.T_Sights, 0 )
-	Logic.SetTechnologyState(PlayerID,Technologies.T_UpgradeRifle1, 0 )
+
 end
