@@ -73,8 +73,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Bonus auf die Motivation ist geringer
 		- profitieren von 'Leichte Ziegel' und 'Maurerhandwerk'
 		- Neue Ziergebäude
-			- benötigen neben diversen Hochschul-Technologien auch mindestens eine Architektenstube zum Bau
-				- deshalb nur in den AddOns verfügbar
+			- benötigen neben den Technologien des Alchemie-Zweigs auch bestimmte andere Gebäude sowie Technologien
+			- sind nur in den AddOns verfügbar
 			- folgende neuen Ziergebäude gibt es
 				- Podium
 				- Kerzenhalter
@@ -105,7 +105,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Militärgebäude: Rekrutierungsgeschwindigkeit von Soldaten unabhängig von der Ausbaustufe
 		- Kaserne/Garnison und Schießplatz/Schießanlage: 30 Sek. (vorher: 20/30 Sek.)
 		- Stall/Reiterei unverändert (20 Sek.)
-	- Architektenstube ermöglicht Bau dunkler Türme sowie neuer Ziergebäuden in den AddOns (siehe 'Ziergebäude' bzw. 'Türme')
+		- Kasernen können Banditen-Axtkämpfer rekrutieren (nach Erforschung von 'Gesetze')
+	- Architektenstube ermöglicht Bau dunkler Türme
 	- Wohnstätten
 		- haben die gleiche ArmorClass wie andere Gebäude (siehe "Türme")
 		- sind stärker gegen alles außer Schwertkämpfer und schwere Kavallerie
@@ -151,7 +152,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- 'Fährtenlesen': Bonus auf Sichtweite reduziert (+10 -> +6)
 	- NPCs (Militär)
 		- verlangen ebenfalls Sold
-		- Banditen
+		- Banditen-Axtkämpfer
 			- zählen als Schwertkämpfer
 			- können Soldaten an Kasernen nachfüllen
 			- haben Rekrutierungskosten (Hauptmänner und Soldaten)
@@ -159,6 +160,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Rüstungspunkt: 3
 				- Schadenpunkte: 14
 			- nutzen die neue DC_Blunt
+			- sind in Kasernen rekrutierbar (nach Erforschung von 'Gesetze')
 		- Barbaren 
 			- haben einen Rüstungspunkt weniger (=1)
 			- haben zwei Schadenpunkte mehr (=14)
@@ -170,7 +172,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Schadenpunkte: 16
 			- nutzen die neue DC_Blunt
 			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
-		- Bogenschützen-Banditen
+		- Banditen-Bogenschützen
 			- haben 150 Lebenspunkte (vorher: 120)
 			- sind etwas schneller (340 -> 360)
 			- Hauptmänner und Soldaten haben 
@@ -195,8 +197,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- profitieren von verschiedenen Waffen- und Rüstungstechnologien
 			- Schwarze Ritter: Technologien der Schwertkämpfer
 			- Barbaren: Technologien der Speerkämpfer
-			- Banditen: Technologien der Schwertkämpfer
-			- Bogen-Banditen: Technologien der Bogenschützen
+			- Banditen-Axtkämpfern: Technologien der Schwertkämpfer
+			- Banditen-Bogenschützen: Technologien der Bogenschützen
 			- Speerwerfer: Technologien der Bogenschützen
 			- Bärenmenschen: Technologien der Speerkämpfer
 			- Veteranen: Je nach Typ wie Barbaren oder Schwarze Ritter
@@ -211,7 +213,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- 3 Arten: Braun-, Eis- und Schwarzbär
 				- Deutlich stärker und zäher als Wölfe
 		- AddOn-Einheiten sind schon früher (also im Hauptspiel bzw. Nebelreich) zu finden
-			- Bogen-Banditen
+			- Banditen-Bogenschützen
 			- Schafe
 			- Veteranen
 			- Wilde Wölfe
@@ -371,7 +373,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- seine Fähigkeit 'Feuerkraft' betrifft auch
 				- Ari 
 				- Kanonen
-				- Bogen-Banditen
+				- Banditen-Bogenschützen
 				- Speerwerfer
 		- Varg 
 			- hat einen Rüstungspunkt weniger (=3)
@@ -751,7 +753,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Sichtweite
 		- ist vom Spieler regulär nicht erforschbar
 	- Verschiedene Versionen von CU_Barbarian_LeaderClub, CU_BlackKnight_LeaderMace & CU_BanditLeaderBow unterscheiden sich leicht
-		- Versionen mit 1er-Endung haben Soldatenmaximum von 4
+		- Versionen mit 1er-Endung haben Soldatenmaximum von 4 (Ausnahme: CU_BanditLeaderSword1)
 		- Versionen mit 2er-Endung haben Soldatenmaximum von 8 und kosten etwas mehr Taler
 		- Stats sind identisch
 		- Über ihre UpgradeCategories können die höheren Stufen zugänglich gemacht werden (auch der KI)
@@ -773,7 +775,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Diverse Einheiten gehören ebenfalls der EntityCategory 'LongRange' an
 		- Ari (PU_Hero5)
 		- Kanonen (alle Arten)
-		- Bogen-Banditen (CU_BanditLeaderBow1-2)
+		- Banditen-Bogenschützen (CU_BanditLeaderBow1-2)
 		- Speerwerfer (CU_Evil_LeaderSkirmisher1)
 	- Kanonen haben als SoldierType 'PV_Cannon1', was bei max. 0 Soldaten aber eig. irrelevant ist
 	- Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
@@ -889,7 +891,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Scout bei Mapstart setzen
-	- 'T_Lockpicking' berücksichtigen
+	- Neue Techs
+		- 'T_Lockpicking' berücksichtigen
+		- sinnvoll einbinden, ggf auch sperren (via 'Mission_ForbidAllTechnologies', inkl. AddOn)
 	- Schwierigkeitgrad 'Albtraum'
 		- Statt Steuern halbieren Sold erhöhen
 		- Wieder mehr uniquen Content dorthin schieben
@@ -927,7 +931,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Tech-Trader
 	- Veteranen
 	- Varg
-	- Bogen-Banditen-Hauptmänner
+	- Banditen-Bogenschützen-Hauptmänner
 	- Leonardos Assistent (z.B. AeK Apotheker, oder umtexturierter Ingeniuer)
 	- Hauptmann, Ordensritter und Wächter
 - Umsetzung in Vanilla-DEdK
@@ -943,11 +947,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
-- SP Map Liste (Legenden)
-	- User Maps
-		- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
-		- Siedler1997 "Venedig" (vorher überarbeiten)
-		- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
 - Unused CU_TemplarCavalry und CU_TemplarSword
 	- Fixen
 	- Vollständig implementieren
@@ -1013,6 +1012,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Verschiebung von Overhead-Daten (RessourceAmount) fixen
 - Tribute mit alternativem PlayerName (Anfänge in der Testmap vorhanden)
 - Neue Maps
+ 	- Scripting Tutorial Map (Nebelreich -> Legenden und bissl erweitern)
+	- Siedler1997 "Venedig" (vorher überarbeiten)
+	- Belagerung von Evelance (Landscape überarbeiten, für Script Timo fragen)
 	- "Tal der Verdammten"
 		- Bonusmission (Nebelreich), wenn Kampagne auf Schwer beendet
 		- Erec lebt (mit Amnesie)
