@@ -33,6 +33,7 @@
 
 		IncludeLocals("player_1")
 		IncludeLocals("player_2")
+		IncludeLocals("player_4")
 		IncludeLocals("player_5")
 		IncludeLocals("player_6")
 
@@ -73,7 +74,7 @@
 		IncludeLocals("quest_trader2")
 		IncludeLocals("quest_trader3")
 		
-		
+		IncludeLocals("army_crawford")
 		IncludeLocals("army_tower1")
 		IncludeLocals("army_tower2")
 		IncludeLocals("army_defenders1")
@@ -99,16 +100,17 @@ function Mission_InitPlayerColorMapping()
 	
 	if p1color ~= 4 then
 		Display.SetPlayerColorMapping(2, FRIENDLY_COLOR1)		-- Crawford
+		Display.SetPlayerColorMapping(4, FRIENDLY_COLOR1)		-- South village
 		Display.SetPlayerColorMapping(7, FRIENDLY_COLOR1)		-- Bishop
 		Display.SetPlayerColorMapping(8, FRIENDLY_COLOR1)		-- Leonardo
 	else
 		Display.SetPlayerColorMapping(2, 9)		-- Crawford
+		Display.SetPlayerColorMapping(4, 9)		-- South village
 		Display.SetPlayerColorMapping(7, 9)		-- Bishop
 		Display.SetPlayerColorMapping(8, 9)		-- Leonardo
 	end
 
 	Display.SetPlayerColorMapping(3, FRIENDLY_COLOR2)		-- Outposts
-	Display.SetPlayerColorMapping(4, PLAYER_FRIEND_COLOR)	-- South village
 	Display.SetPlayerColorMapping(5, KERBEROS_COLOR)		-- Kerberos' units
 	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)			-- Robbers in Swamp
 end
@@ -155,7 +157,8 @@ function Mission_InitTechnologies()
 			ResearchAnimalTechs(5, animalTech2)
 			ResearchAnimalTechs(6, animalTech2)
 		end
-
+		
+		ResearchAllMilitaryTechs(4)
 		ResearchAllMilitaryTechs(5)
 		ResearchAllMilitaryTechs(6)
 	end
@@ -221,6 +224,7 @@ function Mission_FirstMapAction()
 
 	createPlayer1()
 	createPlayer2()
+	createPlayer4()
 	createPlayer5()
 	createPlayer6()
 

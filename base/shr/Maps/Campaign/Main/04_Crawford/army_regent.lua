@@ -7,7 +7,7 @@ createArmyRegent = function()
 
 		armyRegent						= {}
 	
-		armyRegent.player 				= 2
+		armyRegent.player 				= 4
 		armyRegent.id					= 3
 		armyRegent.strength				= 8
 		armyRegent.position				= GetPosition("defSpawnPoint4_CD")

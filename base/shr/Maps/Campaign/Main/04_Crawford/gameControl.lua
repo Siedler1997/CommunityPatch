@@ -13,7 +13,9 @@ startQuestTower1 = function()
 		InitMapNPCs() 					
 
 	--	ai
-	
+		createArmyCrawfordA()
+		createArmyCrawfordB()
+
 		createArmyDefenders1()
 		createArmyDefenders2()
 

@@ -899,11 +899,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
-			- Crawford
-				- letztes Tor erst gegen Ende des Briefings öffnen
-				- Stadtwache als simple Defense (Speerträger und Bogenschützen)
+			- Crawford: letztes Tor erst gegen Ende des Briefings öffnen
 			- Wasteland-Dörfer: Namen im Auftragsbuch
 			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
+				- Alternative: Kanonen in "Höhle" versetzen, um Logiklücke zu vermeiden
 		- Extra1
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
