@@ -911,9 +911,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 					- Brücken-Quest und Armee-Waypoints anpassen, um mehrere Routen zuzulassen
 				- Alternativ Spuren solcher Bauplätze entfernen
 			- 09_LandUnter: Anspielungen an Wiederbelebung Kerberos'
-			- Castrum
-				- Spawns an Gebäude koppeln
-				- Alternative Siegbedingung: Alle Spawner zerstören
 			- 'Thalbach' neu aufsetzen
 		- Extra2
 			- 03_Neighborhood: 

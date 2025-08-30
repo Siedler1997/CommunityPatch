@@ -114,7 +114,7 @@ String.Init("SP_Castrum")
 
   ---- CREATE the single troops
 
---	CreateGuardTroopsPL1()
+	CreateGuardTroopsPL1()
 
 	---- CREATE the ARMIES
 
@@ -151,6 +151,25 @@ String.Init("SP_Castrum")
 
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
+end
+
+function CreateGuardTroopsPL1()
+	local p1unitPos = GetPosition("p1swordpos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1swordpos2")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1spearpos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1spearpos2")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1archerpos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderBow2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1riflepos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle1,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1hcavalrypos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderHeavyCavalry1,0,3,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	p1unitPos = GetPosition("p1lcavalrypos1")
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderCavalry2,0,3,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 end
 
 function UpgradeEnemies()
@@ -193,6 +212,10 @@ function TimeLimitStartJob() -- Mission won after 70 minutes -------------------
 		Victory()
 	end
 
+	-- Alternative: Alle Spawner zerstört
+	if not IsExisting("p2tower1") and not IsExisting("p2tower2") and not IsExisting("p2tower3") and not IsExisting("p2tower4") and not IsExisting("p2tower5") then 	
+		Victory()
+	end
 end
 
 --		Redeploy(ArmyPL3Assault1,GetPosition("RedeploySpot1"),6000)
@@ -301,48 +324,51 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob1()
-
-	if IsDead(ArmyPL2Assault1) then
-		Redeploy(ArmyPL2Assault1,GetPosition("SP_ArmyPL2Assault1"),6000)
-		TMR_ArmyPL2Assault1 = 0
+	if IsExisting("p2tower2") then
+		if IsDead(ArmyPL2Assault1) then
+			Redeploy(ArmyPL2Assault1,GetPosition("SP_ArmyPL2Assault1"),6000)
+			TMR_ArmyPL2Assault1 = 0
 		
 		
-	local troopDescription_1 = {
+		local troopDescription_1 = {
 
-		leaderType 							= EnemySpearType,
-		maxNumberOfSoldiers			= 8, -- 4
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemySpearType,
+			maxNumberOfSoldiers			= 8, -- 4
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
 
-	local troopDescription_2 	= {
+		local troopDescription_2 	= {
 
-		leaderType 							= EnemySwordType,
-		maxNumberOfSoldiers			= 8,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemySwordType,
+			maxNumberOfSoldiers			= 8,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault1,troopDescription_2)
 		
-	end
+		end
 
-	TMR_ArmyPL2Assault1 = TMR_ArmyPL2Assault1 + 1
+		TMR_ArmyPL2Assault1 = TMR_ArmyPL2Assault1 + 1
 
-	if TMR_ArmyPL2Assault1 < 480 then 	-- Richtiger Wert: 480 (8 Min)
+		if TMR_ArmyPL2Assault1 < 480 then 	-- Richtiger Wert: 480 (8 Min)
 
-		Defend(ArmyPL2Assault1)
+			Defend(ArmyPL2Assault1)
 
+		else
+
+			Advance(ArmyPL2Assault1)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault1)
-
+		return true
 	end
 end
 
@@ -377,48 +403,51 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob2()
-
-	if IsDead(ArmyPL2Assault2) then
-		Redeploy(ArmyPL2Assault2,GetPosition("SP_ArmyPL2Assault2"),6000)
-		TMR_ArmyPL2Assault2 = 0
+	if IsExisting("p2tower2") then
+		if IsDead(ArmyPL2Assault2) then
+			Redeploy(ArmyPL2Assault2,GetPosition("SP_ArmyPL2Assault2"),6000)
+			TMR_ArmyPL2Assault2 = 0
 
 			
-	local troopDescription_1 = {
+		local troopDescription_1 = {
 
-		leaderType 							= EnemyBowType,
-		maxNumberOfSoldiers			= 8,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyBowType,
+			maxNumberOfSoldiers			= 8,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	local troopDescription_2 = {
+		local troopDescription_2 = {
 
-		leaderType 							= EnemyCannon1Type,
-		maxNumberOfSoldiers			= 8,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyCannon1Type,
+			maxNumberOfSoldiers			= 8,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
-	troopDescription_2.leaderType = EnemyRifleType
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+		troopDescription_2.leaderType = EnemyRifleType
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault2,troopDescription_2)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault2 = TMR_ArmyPL2Assault2 + 1
+		TMR_ArmyPL2Assault2 = TMR_ArmyPL2Assault2 + 1
 
-	if TMR_ArmyPL2Assault2 < 485 then 	-- Richtiger Wert: 485 (8 Min + 5 sec)
+		if TMR_ArmyPL2Assault2 < 485 then 	-- Richtiger Wert: 485 (8 Min + 5 sec)
 
-		Defend(ArmyPL2Assault2)
+			Defend(ArmyPL2Assault2)
 
+		else
+
+			Advance(ArmyPL2Assault2)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault2)
-
+		return true
 	end
 end
 
@@ -453,47 +482,50 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob3()
-
-	if IsDead(ArmyPL2Assault3) then
-		Redeploy(ArmyPL2Assault3,GetPosition("SP_ArmyPL2Assault3"),6000)
-		TMR_ArmyPL2Assault3 = 0
+	if IsExisting("p2tower1") then
+		if IsDead(ArmyPL2Assault3) then
+			Redeploy(ArmyPL2Assault3,GetPosition("SP_ArmyPL2Assault3"),6000)
+			TMR_ArmyPL2Assault3 = 0
 
 			
-	local troopDescription_1 	= {
+		local troopDescription_1 	= {
 
-		leaderType 							= EnemySwordType,
-		maxNumberOfSoldiers			= 8, -- 4
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemySwordType,
+			maxNumberOfSoldiers			= 8, -- 4
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
 
-	local troopDescription_2 	= {
+		local troopDescription_2 	= {
 
-		leaderType 							= EnemyCannon2Type,
-		maxNumberOfSoldiers			= 1,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyCannon2Type,
+			maxNumberOfSoldiers			= 1,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault3,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault3,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault3,troopDescription_2)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault3 = TMR_ArmyPL2Assault3 + 1
+		TMR_ArmyPL2Assault3 = TMR_ArmyPL2Assault3 + 1
 
-	if TMR_ArmyPL2Assault3 < 590 then 	-- Richtiger Wert: 520 (9 Min)
+		if TMR_ArmyPL2Assault3 < 590 then 	-- Richtiger Wert: 520 (9 Min)
 
-		Defend(ArmyPL2Assault3)
+			Defend(ArmyPL2Assault3)
 
+		else
+
+			Advance(ArmyPL2Assault3)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault3)
-
+		return true
 	end
 end
 --___________________________________________________________________________________________
@@ -527,48 +559,51 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob4()
-
-	if IsDead(ArmyPL2Assault4) then
-		Redeploy(ArmyPL2Assault4,GetPosition("SP_ArmyPL2Assault4"),6000)
-		TMR_ArmyPL2Assault4 = 0
+	if IsExisting("p2tower3") then
+		if IsDead(ArmyPL2Assault4) then
+			Redeploy(ArmyPL2Assault4,GetPosition("SP_ArmyPL2Assault4"),6000)
+			TMR_ArmyPL2Assault4 = 0
 
 			
-	local troopDescription_1 = {
+		local troopDescription_1 = {
 
-		leaderType 							= EnemyHeavyCavalryType,
-		maxNumberOfSoldiers			= 3,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyHeavyCavalryType,
+			maxNumberOfSoldiers			= 3,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
 
-	local troopDescription_2	= {
+		local troopDescription_2	= {
 
-		leaderType 							= Entities.PU_LeaderCavalry2,
-		maxNumberOfSoldiers			= 3,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= Entities.PU_LeaderCavalry2,
+			maxNumberOfSoldiers			= 3,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault4,troopDescription_2)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault4 = TMR_ArmyPL2Assault4 + 1
+		TMR_ArmyPL2Assault4 = TMR_ArmyPL2Assault4 + 1
 
-	if TMR_ArmyPL2Assault4 < 580 then 	-- Richtiger Wert: 580 (10 Min)
+		if TMR_ArmyPL2Assault4 < 580 then 	-- Richtiger Wert: 580 (10 Min)
 
-		Defend(ArmyPL2Assault4)
+			Defend(ArmyPL2Assault4)
 
+		else
+
+			Advance(ArmyPL2Assault4)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault4)
-
+		return true
 	end
 end
 --___________________________________________________________________________________________
@@ -602,45 +637,48 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob5()
-
-	if IsDead(ArmyPL2Assault5) then
-		Redeploy(ArmyPL2Assault5,GetPosition("SP_ArmyPL2Assault5"),8000)
-		TMR_ArmyPL2Assault5 = 0
+	if IsExisting("p2tower4") then
+		if IsDead(ArmyPL2Assault5) then
+			Redeploy(ArmyPL2Assault5,GetPosition("SP_ArmyPL2Assault5"),8000)
+			TMR_ArmyPL2Assault5 = 0
 
 			
-	local troopDescription_1 = {
+		local troopDescription_1 = {
 
-		leaderType 							= EnemyCannon1Type,
-		maxNumberOfSoldiers			= 1,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyCannon1Type,
+			maxNumberOfSoldiers			= 1,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
 
-	local troopDescription_2	= {
+		local troopDescription_2	= {
 
-		leaderType 							= EnemyCannon2Type,
-		maxNumberOfSoldiers			= 1,
-		minNumberOfSoldiers			= 0,
-		experiencePoints 				= EnemyExperience,
-	}
+			leaderType 							= EnemyCannon2Type,
+			maxNumberOfSoldiers			= 1,
+			minNumberOfSoldiers			= 0,
+			experiencePoints 				= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault5,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault5,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault5,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault5,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault5,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault5,troopDescription_2)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault5 = TMR_ArmyPL2Assault5 + 1
+		TMR_ArmyPL2Assault5 = TMR_ArmyPL2Assault5 + 1
 
-	if TMR_ArmyPL2Assault5 < 460 then 	-- Richtiger Wert: 460 (8 Min)
+		if TMR_ArmyPL2Assault5 < 460 then 	-- Richtiger Wert: 460 (8 Min)
 
-		Defend(ArmyPL2Assault5)
+			Defend(ArmyPL2Assault5)
 
-	else
+		else
 
-		Advance(ArmyPL2Assault5)
+			Advance(ArmyPL2Assault5)
 		
+		end
+	else
+		return true
 	end
 end
 
@@ -676,59 +714,62 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2AssaultJob6()
-
-	if IsDead(ArmyPL2Assault6) then
-		Redeploy(ArmyPL2Assault6,GetPosition("SP_ArmyPL2Assault6"),7000)
-		TMR_ArmyPL2Assault6 = 0
+	if IsExisting("p2tower4") then
+		if IsDead(ArmyPL2Assault6) then
+			Redeploy(ArmyPL2Assault6,GetPosition("SP_ArmyPL2Assault6"),7000)
+			TMR_ArmyPL2Assault6 = 0
 
 			
-	local troopDescription_1 		= {
+		local troopDescription_1 		= {
 
-		leaderType 								= EnemyBowType,
-		maxNumberOfSoldiers				= 8,
-		minNumberOfSoldiers				= 0,
-		experiencePoints 					= EnemyExperience,
-	}
+			leaderType 								= EnemyBowType,
+			maxNumberOfSoldiers				= 8,
+			minNumberOfSoldiers				= 0,
+			experiencePoints 					= EnemyExperience,
+		}
 
 
-	local troopDescription_2		= {
+		local troopDescription_2		= {
 
-		leaderType 								= EnemySwordType,
-		maxNumberOfSoldiers				= 8,
-		minNumberOfSoldiers				= 0,
-		experiencePoints 					= EnemyExperience,
-	}
+			leaderType 								= EnemySwordType,
+			maxNumberOfSoldiers				= 8,
+			minNumberOfSoldiers				= 0,
+			experiencePoints 					= EnemyExperience,
+		}
 
-	local troopDescription_3 		= {
+		local troopDescription_3 		= {
 
-		leaderType 								= EnemySpearType,
-		maxNumberOfSoldiers				= 8,
-		minNumberOfSoldiers				= 0,
-		experiencePoints 					= EnemyExperience,
-	}
+			leaderType 								= EnemySpearType,
+			maxNumberOfSoldiers				= 8,
+			minNumberOfSoldiers				= 0,
+			experiencePoints 					= EnemyExperience,
+		}
 
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_1)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
-	troopDescription_3.leaderType = EnemyRifleType
-	EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_1)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_2)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
+		troopDescription_3.leaderType = EnemyRifleType
+		EnlargeArmy(ArmyPL2Assault6,troopDescription_3)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault6 = TMR_ArmyPL2Assault6 + 1
+		TMR_ArmyPL2Assault6 = TMR_ArmyPL2Assault6 + 1
 
-	if TMR_ArmyPL2Assault6 < 485 then 	-- 	-- Richtiger Wert: 485 (8 Min +5 Sec)
+		if TMR_ArmyPL2Assault6 < 485 then 	-- 	-- Richtiger Wert: 485 (8 Min +5 Sec)
 
-		Defend(ArmyPL2Assault6)
+			Defend(ArmyPL2Assault6)
 
+		else
+
+			Advance(ArmyPL2Assault6)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault6)
-
+		return true
 	end
 end
 
@@ -759,42 +800,44 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2KillerControl()
-
-	if IsDead(ArmyPL2Killer) then
-		Redeploy(ArmyPL2Killer,GetPosition("SP_ArmyPL2Killer"),7000)
-		TMR_ArmyPL2Killer = 0
+	if IsExisting("p2tower3") then
+		if IsDead(ArmyPL2Killer) then
+			Redeploy(ArmyPL2Killer,GetPosition("SP_ArmyPL2Killer"),7000)
+			TMR_ArmyPL2Killer = 0
 			
-		local troopDescription_1 	= {
+			local troopDescription_1 	= {
 	
-			leaderType 							= Entities.PU_LeaderHeavyCavalry2,
-			maxNumberOfSoldiers			= 3,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 				= VERYHIGH_EXPERIENCE,
-		}
+				leaderType 							= Entities.PU_LeaderHeavyCavalry2,
+				maxNumberOfSoldiers			= 3,
+				minNumberOfSoldiers			= 0,
+				experiencePoints 				= VERYHIGH_EXPERIENCE,
+			}
 	
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
-		EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
+			EnlargeArmy(ArmyPL2Killer,troopDescription_1)
 
-	end
+		end
 
-	TMR_ArmyPL2Killer = TMR_ArmyPL2Killer + 1
+		TMR_ArmyPL2Killer = TMR_ArmyPL2Killer + 1
 
-	if TMR_ArmyPL2Killer < 300 then 	-- Richtiger Wert: 300 (5 Min)
+		if TMR_ArmyPL2Killer < 300 then 	-- Richtiger Wert: 300 (5 Min)
 
-		Defend(ArmyPL2Killer)
+			Defend(ArmyPL2Killer)
 
+		else
+
+			Advance(ArmyPL2Killer)
+
+		end
 	else
-
-		Advance(ArmyPL2Killer)
-
+		return true
 	end
-	
 end
 
 ---------------------------------------------------------------------------------------------
@@ -821,48 +864,50 @@ end
 ---------------------------------------------------------------------------------------------
 
 function ArmyPL2Assault7Control()
-
-	if IsDead(ArmyPL2Assault7) and IsExisting("p2_vc") then
-		Redeploy(ArmyPL2Assault7,GetPosition("SP_ArmyPL2Assault7"),7000)
-		TMR_ArmyPL2Assault7 = 0
+	if IsExisting("p2tower5") then
+		if IsDead(ArmyPL2Assault7) then
+			Redeploy(ArmyPL2Assault7,GetPosition("SP_ArmyPL2Assault7"),7000)
+			TMR_ArmyPL2Assault7 = 0
 			
-		local troopDescription = {
+			local troopDescription = {
 
-			leaderType 					= EnemySwordType,
-			maxNumberOfSoldiers	= 8,
-			minNumberOfSoldiers	= 0,
-			experiencePoints 		= EnemyExperience,
-		}
+				leaderType 					= EnemySwordType,
+				maxNumberOfSoldiers	= 8,
+				minNumberOfSoldiers	= 0,
+				experiencePoints 		= EnemyExperience,
+			}
 
-		EnlargeArmy(ArmyPL2Assault7,troopDescription)
-		EnlargeArmy(ArmyPL2Assault7,troopDescription)
+			EnlargeArmy(ArmyPL2Assault7,troopDescription)
+			EnlargeArmy(ArmyPL2Assault7,troopDescription)
 
-		troopDescription.leaderType = EnemySpearType
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			troopDescription.leaderType = EnemySpearType
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
 	
-		troopDescription.leaderType = EnemyBowType
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			troopDescription.leaderType = EnemyBowType
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
 	
-		troopDescription.leaderType = EnemyRifleType
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
-		EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			troopDescription.leaderType = EnemyRifleType
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
+			EnlargeArmy(ArmyPL2Assault7, troopDescription)
 
-	end
+		end
 
-	TMR_ArmyPL2Assault7 = TMR_ArmyPL2Assault7 + 1
+		TMR_ArmyPL2Assault7 = TMR_ArmyPL2Assault7 + 1
 
-	if TMR_ArmyPL2Assault7 < 600 then 	-- Richtiger Wert: 300 (5 Min)
+		if TMR_ArmyPL2Assault7 < 600 then 	-- Richtiger Wert: 300 (5 Min)
 
-		Defend(ArmyPL2Assault7)
+			Defend(ArmyPL2Assault7)
 
+		else
+
+			Advance(ArmyPL2Assault7)
+
+		end
 	else
-
-		Advance(ArmyPL2Assault7)
-
+		return true
 	end
-	
 end
 
 --XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
