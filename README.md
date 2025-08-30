@@ -721,6 +721,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Neue Bodentexturen
 		- Marmor
 		- Lava (aus Siedler 7)
+	- Neue Wassertextur: Blut
 	- NPCs können vom Spieler normal kontrolliert werden
 		- einige geben passendes AudioFeedback und haben ebenso passende VideoPreviews
 		- auch militärisch erscheindende NPCs (z.B. der Ordensritter) 

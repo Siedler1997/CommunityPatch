@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+    <Logic>
+    </Logic>
+
+    <Display>
+
+        <ReflectionRasterSize>512</ReflectionRasterSize>  <!-- Size of the texture used for reflections -->
+
+        <WaterFlowSpeed>-1.00</WaterFlowSpeed>  <!-- Speed of the water flow; 0 disables the water flow -->
+
+        <WaterBumpTexName>Water/Caust</WaterBumpTexName>  <!-- Prefix for water texture; texture names will be Name0000.png, Name0001.png etc. -->
+        <WaterBumpTexNum>32</WaterBumpTexNum>  <!-- Number of textures for water texture anim -->
+        <WaterAnimDuration>2.50</WaterAnimDuration>  <!-- Duration of water texture anim in seconds -->
+
+        <SkyTexName>Water/Sky</SkyTexName>  <!-- Name of the sky (environment) texture used for reflection -->
+
+        <!-- TODO [DiMe] Remove the following entries they are not used anymore -->
+            <ShoreWaveAnimDuration>9.00</ShoreWaveAnimDuration>  <!-- Duration of shore wave anim in seconds -->
+            <ShoreWaveKeyFrame>
+            <Pos>  -2.00</Pos>    <!-- Relative position of the shore wave; must be negative -->
+            <Alpha> 0.00</Alpha>  <!-- Alpha value (transparency) -->
+            <Scale> 1.00</Scale>  <!-- Factor for scaling the shore wave; the inverse of the given value is used for scaling in uv space -->
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -1.80</Pos>
+            <Alpha> 0.02</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -1.60</Pos>
+            <Alpha> 0.05</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -1.40</Pos>
+            <Alpha> 0.07</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -1.20</Pos>
+            <Alpha> 0.12</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -1.00</Pos>
+            <Alpha> 0.15</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.80</Pos>
+            <Alpha> 0.18</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.38</Pos>
+            <Alpha> 0.24</Alpha>
+            <Scale> 1.10</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.15</Pos>
+            <Alpha> 0.40</Alpha>
+            <Scale> 1.30</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.05</Pos>
+            <Alpha> 0.40</Alpha>
+            <Scale> 1.45</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.00</Pos>
+            <Alpha> 0.40</Alpha>
+            <Scale> 1.50</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.05</Pos>
+            <Alpha> 0.30</Alpha>
+            <Scale> 1.45</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.15</Pos>
+            <Alpha> 0.18</Alpha>
+            <Scale> 1.30</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.38</Pos>
+            <Alpha> 0.09</Alpha>
+            <Scale> 1.10</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+            <Pos>  -0.80</Pos>
+            <Alpha> 0.00</Alpha>
+            <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+        <!-- Remove till here -->
+
+        <!-- Currently only one shore wave type is supported. -->
+
+        <ShoreWave id="ShoreWaveA">
+
+            <ShoreWaveTexName>wave</ShoreWaveTexName>  <!-- NOT USED IN THE MOMENT - Name of the texture used for the shore wave -->
+            <ShoreWaveAnimDuration>9.00</ShoreWaveAnimDuration>  <!-- Duration of shore wave anim in seconds -->
+
+            <!-- Following are the key frames for the shore wave animation. You can use any number
+            of key frames (but you should not use more than 16). The second shore wave will
+            be generate exactly in the middle of the animation. -->
+
+            <ShoreWaveKeyFrame>
+                <Pos>  -2.00</Pos>    <!-- Relative position of the shore wave; must be negative -->
+                <Alpha> 0.00</Alpha>  <!-- Alpha value (transparency) -->
+                <Scale> 1.00</Scale>  <!-- Factor for scaling the shore wave; the inverse of the given value is used for scaling in uv space -->
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -1.80</Pos>
+                <Alpha> 0.02</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -1.60</Pos>
+                <Alpha> 0.05</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -1.40</Pos>
+                <Alpha> 0.07</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -1.20</Pos>
+                <Alpha> 0.12</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -1.00</Pos>
+                <Alpha> 0.15</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.80</Pos>
+                <Alpha> 0.18</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.38</Pos>
+                <Alpha> 0.24</Alpha>
+                <Scale> 1.10</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.15</Pos>
+                <Alpha> 0.40</Alpha>
+                <Scale> 1.30</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.05</Pos>
+                <Alpha> 0.40</Alpha>
+                <Scale> 1.45</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.00</Pos>
+                <Alpha> 0.40</Alpha>
+                <Scale> 1.50</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.05</Pos>
+                <Alpha> 0.30</Alpha>
+                <Scale> 1.45</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.15</Pos>
+                <Alpha> 0.18</Alpha>
+                <Scale> 1.30</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.38</Pos>
+                <Alpha> 0.09</Alpha>
+                <Scale> 1.10</Scale>
+            </ShoreWaveKeyFrame>
+            <ShoreWaveKeyFrame>
+                <Pos>  -0.80</Pos>
+                <Alpha> 0.00</Alpha>
+                <Scale> 1.00</Scale>
+            </ShoreWaveKeyFrame>
+
+        </ShoreWave>
+
+    </Display>
+
+    <!-- *** Water Types - NEVER REASSIGN ANY VALUE *** -->
+
+    <WaterType id="WaterA" value="1">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+            <Red>167</Red>
+            <Green>167</Green>
+            <Blue>127</Blue>
+            </Color>
+            <TransparencyFactor>0.001</TransparencyFactor>
+            <TransparencyOffset>0.3</TransparencyOffset>
+            <TransparencyMin>0.0</TransparencyMin>
+            <TransparencyMax>1</TransparencyMax>
+            <DrawShoreWave>false</DrawShoreWave>
+            <Freezes>true</Freezes>
+            <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="WaterB" value="2">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>174</Red>
+        <Green>198</Green>
+        <Blue>100</Blue>
+        </Color>
+        <TransparencyFactor>0.003</TransparencyFactor>
+        <TransparencyOffset>0.2</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>0.9</TransparencyMax>
+        <DrawShoreWave>true</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="WaterC" value="3">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>31</Red>
+        <Green>123</Green>
+        <Blue>125</Blue>
+        </Color>
+        <TransparencyFactor>0.001</TransparencyFactor>
+        <TransparencyOffset>0.2</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="WaterD" value="4">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>230</Red>
+        <Green>250</Green>
+        <Blue>150</Blue>
+        </Color>
+        <TransparencyFactor>0.006</TransparencyFactor>
+        <TransparencyOffset>0.0</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>0.9</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="WaterE" value="5">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>230</Red>
+        <Green>250</Green>
+        <Blue>150</Blue>
+        </Color>
+        <TransparencyFactor>0.001</TransparencyFactor>
+        <TransparencyOffset>0.0</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>0.5</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Mediterran-Ocean" value="10">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>31</Red>
+        <Green>123</Green>
+        <Blue>125</Blue>
+        </Color>
+        <TransparencyFactor>0.001</TransparencyFactor>
+        <TransparencyOffset>0.2</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Mediterran-River" value="11">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>76</Red>
+        <Green>130</Green>
+        <Blue>118</Blue>
+        </Color>
+        <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.3</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Mediterran-Lake" value="12">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>84</Red>
+        <Green>185</Green>
+        <Blue>188</Blue>
+        </Color>
+        <TransparencyFactor>0.002</TransparencyFactor>
+        <TransparencyOffset>0.3</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Nordic-Swamp" value="20">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>143</Red>
+        <Green>132</Green>
+        <Blue>62</Blue>
+        </Color>
+        <TransparencyFactor>0.015</TransparencyFactor>
+        <TransparencyOffset>0.1</TransparencyOffset>
+        <TransparencyMin>0.1</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Evelance-Swamp" value="30">
+        <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>140</Red>
+        <Green>90</Green>
+        <Blue>0</Blue>
+        </Color>
+        <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.1</TransparencyOffset>
+        <TransparencyMin>0.1</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+<!-- Addon -->
+
+    <WaterType id="Moor" value="40">
+         <Logic>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>123</Red>
+        <Green>100</Green>
+        <Blue>0</Blue>
+        </Color>
+        <TransparencyFactor>0.015</TransparencyFactor>
+        <TransparencyOffset>0.1</TransparencyOffset>
+        <TransparencyMin>0.1</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>true</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+    
+    <WaterType id="Moor-NonFreezing-Swamp" value="41">
+        <Logic>
+        	<Freezes>false</Freezes>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>120</Red>
+        <Green>100</Green>
+        <Blue>50</Blue>
+        </Color>
+        <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.1</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>false</DrawShoreWave>
+        <Freezes>false</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+    <WaterType id="Mediterran-NonFreezing-Shorewave" value="45">
+        <Logic>
+        	<Freezes>false</Freezes>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>76</Red>
+        <Green>130</Green>
+        <Blue>118</Blue>
+        </Color>
+        <!-- <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.3</TransparencyOffset> -->
+        <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.0</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>0.9</TransparencyMax>
+        <DrawShoreWave>true</DrawShoreWave>
+        <Freezes>false</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+    
+    <WaterType id="European-NonFreezing-Shorewave" value="50">
+        <Logic>
+        	<Freezes>false</Freezes>
+        </Logic>
+        <Display>
+        <Color>
+        <Red>120</Red>
+        <Green>180</Green>
+        <Blue>150</Blue>
+        </Color>
+        <TransparencyFactor>0.005</TransparencyFactor>
+        <TransparencyOffset>0.3</TransparencyOffset>
+        <TransparencyMin>0.0</TransparencyMin>
+        <TransparencyMax>1</TransparencyMax>
+        <DrawShoreWave>true</DrawShoreWave>
+        <Freezes>false</Freezes>
+        <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+        <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+        </Display>
+    </WaterType>
+
+  <!-- CP -->
+
+  <WaterType id="Blood" value="56">
+    <Logic>
+    </Logic>
+    <Display>
+      <Color>
+        <Red>138</Red>
+        <Green>3</Green>
+        <Blue>3</Blue>
+      </Color>
+      <TransparencyFactor>0.005</TransparencyFactor>
+      <TransparencyOffset>0.1</TransparencyOffset>
+      <TransparencyMin>0.1</TransparencyMin>
+      <TransparencyMax>1</TransparencyMax>
+      <DrawShoreWave>false</DrawShoreWave>
+      <Freezes>false</Freezes>
+      <IceBaseTexture>Water/Ice01Base</IceBaseTexture>
+      <IceDetailTexture>Water/Ice01Detail</IceDetailTexture>
+    </Display>
+  </WaterType>
+</root>
