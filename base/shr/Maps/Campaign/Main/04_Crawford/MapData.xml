@@ -318292,10 +318292,10 @@
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_WallStraightGate_Closed</Type>
    <Position>
-    <X>5.100000e+004</X>
+    <X>5.110000e+004</X>
     <Y>3.210000e+004</Y>
    </Position>
-   <Orientation>0.000000e+000</Orientation>
+   <Orientation>1.800000e+002</Orientation>
    <Flags>0</Flags>
    <PlayerID>7</PlayerID>
    <Health>-1</Health>
