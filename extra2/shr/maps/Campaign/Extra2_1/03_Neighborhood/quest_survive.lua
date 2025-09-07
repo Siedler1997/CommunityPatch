@@ -61,7 +61,7 @@ function createSupportNogersund()
 		minNumberOfSoldiers	= 0,
 		maxNumberOfSoldiers = 9,
 		experiencePoints 	= VERYHIGH_EXPERIENCE,
-		leaderType          = Entities.PU_LeaderSword3,
+		leaderType          = Entities.PU_LeaderSword4,
 		position            = GetPosition("supportNogersund")
 	}
 	
@@ -70,7 +70,7 @@ function createSupportNogersund()
 		minNumberOfSoldiers	= 0,
 		maxNumberOfSoldiers = 9,
 		experiencePoints 	= VERYHIGH_EXPERIENCE,
-		leaderType          = Entities.PU_LeaderBow3,
+		leaderType          = Entities.PU_LeaderBow4,
 		position            = GetPosition("supportNogersund")
 	}
 	
@@ -222,13 +222,18 @@ function createArmiesAndTroops()
 	-- create cannons
 	if Counter.Tick2("counterSupportCannon", 60*4 + GetRandom(60*1)) then
 		if IsExisting("foundry") then
-
+			local randomCannon = GetRandom(1,10)
+			local cannonType = Entities.PV_Cannon1
+			--rarely produce a better cannon
+			if cannonType == 10 then
+				cannonType = Entities.PV_Cannon3
+			end
 			local troopDescription	= {
 
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 9,
 				experiencePoints 	= LOW_EXPERIENCE,
-				leaderType          = Entities.PV_Cannon1,
+				leaderType          = cannonType,
 				position            = GetPosition("supportCannon")
 			}
 	
