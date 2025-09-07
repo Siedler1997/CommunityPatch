@@ -130,7 +130,7 @@ function createArmiesAndTroops()
     		local armySword = {}
 			CreateTroop(armySword,troopDescription)
 			
-			Sound.Play2DSound(Sounds.fanfare, 0,127)
+			Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[1]"))
 		end
 	end
@@ -151,7 +151,7 @@ function createArmiesAndTroops()
     		local armySword = {}
 			CreateTroop(armySword,troopDescription)
 			
-			Sound.Play2DSound(Sounds.fanfare, 0,127)
+			Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[5]"))
 		end
 	end
@@ -172,7 +172,7 @@ function createArmiesAndTroops()
 			local armyBow = {}
     		CreateTroop(armyBow,troopDescription)
     		
-    		Sound.Play2DSound(Sounds.fanfare, 0,127)
+    		Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[2]"))
 		end
 	end
@@ -193,7 +193,7 @@ function createArmiesAndTroops()
 			local armyCavalry = {}
     		CreateTroop(armyCavalry,troopDescription)
     		
-    		Sound.Play2DSound(Sounds.fanfare, 0,127)
+    		Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[3]"))
     	end
 	end	
@@ -214,7 +214,7 @@ function createArmiesAndTroops()
 			local armyCavalry = {}
     		CreateTroop(armyCavalry,troopDescription)
     		
-    		Sound.Play2DSound(Sounds.fanfare, 0,127)
+    		Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[6]"))
     	end
 	end	
@@ -240,7 +240,7 @@ function createArmiesAndTroops()
 			local armyCannon = {}
     		CreateTroop(armyCannon,troopDescription)
     		
-    		Sound.Play2DSound(Sounds.fanfare, 0,127)
+    		Sound.Play2DSound(Sounds.fanfare, 0,100)
 			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteSupport[4]"))
 		end
 	end
