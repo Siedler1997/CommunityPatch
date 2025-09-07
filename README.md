@@ -977,7 +977,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Yuki: Wechsel zu einer Fernkampf-Version
 			- Kala: Berserkerwut (Varg) oder Bär(en) rufen
 			- Dovbar: Wirbelschlag (Erec, aber etwas schwächer)
-- Bauern: Work-Animation verfügbar machen (muss keine konkrete Verwendung haben)
+- Unbenutzte Animationen nutzbar machen (müssen keine konkrete Verwendung haben)
+	- Bauern: Work-Animation
+	- Talk-Animationen 
+		- einige Helden und andere Units haben eine
+		- in der Kampgane in Cutscenes nutzen (nicht in Briefings?)
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
 - Upgrade-Technologien für böse Einheiten
