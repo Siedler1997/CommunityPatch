@@ -10,6 +10,8 @@ VERYHIGH_EXPERIENCE 	= 3
 UPGRADE     = 0
 TECHNOLOGY  = 1
 
+IsValidPlayerID = {1,2,3,4,5,6,7,8}
+
 CP_Installed = true
 CP_HeroMarkColor = 2
 CP_EvilMod = {}	
@@ -2508,4 +2510,31 @@ function CreateScout(_playerId, _position, _entityType, _name, _isChestOpener)
 			CreateChestOpener(_name)
 		end
 	end
+end
+
+-- by Noigi
+function SetAlarmModeForAI(_pID,_flag)
+	_flag = _flag or 1;
+	if _flag == 1 then
+		ChangePlayersPlayerID(_pID);
+		GUI.EnterWorkerAlarmMode();
+	elseif _flag == 0 then
+		ChangePlayersPlayerID(_pID);
+		GUI.QuitWorkerAlarmMode();
+	else
+		assert(false,"SetAlarmModeForAI: Invalid Input! Flag: ".._flag.." (must be 0 or 1!)")
+	end
+	ChangePlayersPlayerID(1);
+end
+
+-- Benoetigte Funktionen
+function ChangePlayersPlayerID(_newPlayer)
+	assert(IsValidPlayerID[_newPlayer]);
+	local oldPlayer = GUI.GetPlayerID();
+	GUI.SetControlledPlayer(_newPlayer);
+	Logic.ActivateUpdateOfExplorationForAllPlayers();
+	if gvMission then gvMission.PlayerID = _newPlayer; end
+	Logic.PlayerSetIsHumanFlag( oldPlayer, 0 );
+	Logic.PlayerSetIsHumanFlag( _newPlayer, 1 );
+	Logic.PlayerSetGameStateToPlaying( _newPlayer );
 end
