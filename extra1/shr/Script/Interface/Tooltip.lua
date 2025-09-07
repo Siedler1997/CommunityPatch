@@ -361,7 +361,7 @@ function GUITooltip_FindUnits(_menu)
 		tempamount = tempamount + LCavAmount
 	elseif _menu == "MenuTop/Find_heavycavalry" then
 		local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry2)
-							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderHeavyCavalry1a)
 		tempamount = tempamount + HCavAmount
 	elseif _menu == "AOMenuTop/Find_rifle" then
 		local RifAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(pid,Entities.PU_LeaderRifle2)
