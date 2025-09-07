@@ -10,6 +10,8 @@ function createQuestSurvive()
 	-- start spawning of support troops
 	StartSimpleJob("createArmiesAndTroops")
 	
+	-- activate alarm for friendly AIs
+	StartSimpleJob("ActivateAIalarm")
 end
 
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -245,4 +247,25 @@ function createArmiesAndTroops()
 		end
 	end
 	
+end
+
+function ActivateAIalarm()
+	--No need to check that every second
+	if Counter.Tick2("ActivateAIalarm", 10) then
+		if IsExisting("p7villagecenter") and Logic.IsAlarmModeActive(Logic.GetEntityIDByName("p7villagecenter")) == false then
+			if not IsExisting("p7sawmill") then
+				SetAlarmModeForAI(7, 1)
+			end
+		end
+		if IsExisting("p6villagecenter") and Logic.IsAlarmModeActive(Logic.GetEntityIDByName("p6villagecenter")) == false then
+			if not IsExisting("stable") then
+				SetAlarmModeForAI(7, 1)
+			end
+		end
+		if IsExisting("p4villagecenter") and Logic.IsAlarmModeActive(Logic.GetEntityIDByName("p4villagecenter")) == false then
+			if not IsExisting("foundry") then
+				SetAlarmModeForAI(7, 1)
+			end
+		end
+	end
 end

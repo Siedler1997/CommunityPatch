@@ -841,6 +841,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Abfrage der Einheiten mittels 'CP_GetEvilModUnitState(_playerId)'
 			- Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
 			- Verwendung: siehe Kommentar in 'Comforts.lua'
+		- 'SetAlarmModeForAI' und 'ChangePlayersPlayerID' by Noigi
 - Bekannte Bugs & Einschränkungen
 	- Der Drache ist unsichtbar
 		- Grund: zu viele Bones im Modell und dadurch nicht vom Spiel darstellbar
@@ -892,6 +893,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Scout bei Mapstart setzen
+	- KIs sollen bei Bedarf Alarm aktivieren
 	- Neue Techs
 		- 'T_Lockpicking' berücksichtigen
 		- sinnvoll einbinden, ggf auch sperren (via 'Mission_ForbidAllTechnologies', inkl. AddOn)
@@ -914,9 +916,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 09_LandUnter: Anspielungen an Wiederbelebung Kerberos'
 			- 'Thalbach' neu aufsetzen
 		- Extra2
-			- 03_Neighborhood: 
-				- KIs sollen Alarm nutzen (bei Bedarf) 
-				- Belohnungen/Upgrades für halten strategischer Positionen
+			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 			- Hauptspiel-Kampagne in extra2: AddOn-Features sinnvoll einbinden
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für

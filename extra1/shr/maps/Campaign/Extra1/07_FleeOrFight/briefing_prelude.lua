@@ -89,6 +89,7 @@ end
 
 function BriefingPreludeStartBattleOnTheMap()
 	LocalMusic.BattlesOnTheMap = 2
+	SetAlarmModeForAI(7, 1)
 end
 
 function ControlPrincess()
