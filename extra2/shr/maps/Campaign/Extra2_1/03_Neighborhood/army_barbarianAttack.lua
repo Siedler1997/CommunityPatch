@@ -123,13 +123,7 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					if CP_Difficulty == 0 then
-						troopDescription.leaderType = Entities.PV_Cannon1
-					elseif CP_Difficulty == 1 then
-						troopDescription.leaderType = Entities.PV_Cannon2
-					else
-						troopDescription.leaderType = Entities.PV_Cannon3
-					end
+					troopDescription.leaderType = Entities.PV_Cannon1
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -142,11 +136,9 @@ function ControlBarbarianAttack()
 					end
 					
 					if CP_Difficulty == 0 then
-						troopDescription.leaderType = Entities.PV_Cannon2
-					elseif CP_Difficulty == 1 then
-						troopDescription.leaderType = Entities.PV_Cannon3
+						troopDescription.leaderType = Entities.PV_Cannon1
 					else
-						troopDescription.leaderType = Entities.PV_Cannon4
+						troopDescription.leaderType = Entities.PV_Cannon2
 					end
 					EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 	

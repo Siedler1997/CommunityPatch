@@ -14,11 +14,8 @@ function createArmyAttack1()
 		table.insert(troopsArmyAttack1, Entities.CU_Barbarian_LeaderClub2)
 		table.insert(troopsArmyAttack1, Entities.CU_BanditLeaderSword2)
 		table.insert(troopsArmyAttack1, Entities.CU_BanditLeaderBow2)
-		if CP_Difficulty == 1 then
-			table.insert(troopsArmyAttack1, Entities.PV_Cannon2)
-		else
-			table.insert(troopsArmyAttack1, Entities.PV_Cannon3)
-		end
+		table.insert(troopsArmyAttack1, Entities.PV_Cannon1)
+		table.insert(troopsArmyAttack1, Entities.PV_Cannon2)
 	end
     createArmy(2,1,armyAttack1,7,"armySpawn1",CP_Difficulty,troopsArmyAttack1)
 
