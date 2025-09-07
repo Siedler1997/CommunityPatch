@@ -437,7 +437,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 'Aura der Furcht' reduziert die Rüstung von Gegnern auf 50% (vorher: 80%)
 			- Neue Fähigkeit 'Wirbelschlag': Funktioniert genauso wie Erecs Wirbelschlag
 		- Mary de Mortfichet
-			- Neue Fähigkeit 'Exitus': 
+			- Neue Fähigkeit 'Exitus'
 				- Funktioniert so wie Drakes 'Meisterschuss' (Tötet einen Gegner sofort)
 				- Reichweite deutlich geringer (3 SM)
 		- Kala 
@@ -448,6 +448,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 'Giftpfeile'
 				- Schaden auf 30 erhöht (vorher: 20)
 				- Cooldown um 50% verlängert (= 0:30 -> 0:45)
+			- Neue Fähigkeit 'Raserei': Funktioniert wie Vargs Berserkerwut, erhöht den verursachten Schaden aber nur um 100%
 		- Dovbar steht als Held zur Verfügung
 			- Besitzt ähnliche Kampfeigenschaften wie Erec, aber mit anderen Fähigkeiten
 				- Disziplin: Erhöht Angriff und Verteidigung naher Verbündeter um jeweils 50%

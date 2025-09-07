@@ -183,6 +183,7 @@ Interface_InitWidgets()
 	gvGUI_WidgetID.Hero11_Shuriken = 			XGUIEng.GetWidgetID( "Hero11_Shuriken" ) 	
 	gvGUI_WidgetID.Hero12_PoisonRange= 			XGUIEng.GetWidgetID( "Hero12_PoisonRange" ) 	
 	gvGUI_WidgetID.Hero12_PoisonArrows= 		XGUIEng.GetWidgetID( "Hero12_PoisonArrows" ) 	
+	gvGUI_WidgetID.Hero12_Berserk= 				XGUIEng.GetWidgetID( "Hero12_Berserk" ) 	
 	
 	gvGUI_WidgetID.Scout_Torches= 				XGUIEng.GetWidgetID( "Scout_Torches" ) 	
 	

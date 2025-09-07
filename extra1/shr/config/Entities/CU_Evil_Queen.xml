@@ -164,7 +164,6 @@
 	    </Logic>
 	</Behavior>
 
-
 	<Behavior>
 	    <Logic classname="GGL::CCircularAttackProps">
 	        <Class>GGL::CCircularAttack</Class>
@@ -178,7 +177,20 @@
       		<Effect>FXKalaPoison</Effect>
 	    </Logic>
 	</Behavior>
-
-
+	
+	<Behavior>
+	    <Logic classname="GGL::CRangedEffectAbilityProps">
+	        <Class>GGL::CRangedEffectAbility</Class>
+	        <AffectsOwn>true</AffectsOwn>
+			<AffectsFriends>true</AffectsFriends>
+			<AffectsOnlyMilitary>true</AffectsOnlyMilitary>
+			<RechargeTimeSeconds>180</RechargeTimeSeconds>
+			<Range>1500.0</Range>
+			<DurationInSeconds>60</DurationInSeconds>
+			<!-- Lower than Vargs damage factor (3.0) but with the same armor debuff -->
+			<DamageFactor>2.0</DamageFactor>
+			<ArmorFactor>0.5</ArmorFactor>
+	    </Logic>
+	</Behavior>
 
 </root>

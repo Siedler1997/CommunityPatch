@@ -131,6 +131,10 @@
 				<EntityType>CU_Hero10</EntityType>
 				<SoundID>AOVoicesHero10\HERO10_longrangeaura_rnd_01</SoundID>
 			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>CU_Evil_Queen</EntityType>
+				<SoundID>AOVoicesHero12\HERO12_Attack_rnd_01</SoundID>
+			</ValueSound>
 			
 			<ParameterIndex>2</ParameterIndex>
 		</Data>

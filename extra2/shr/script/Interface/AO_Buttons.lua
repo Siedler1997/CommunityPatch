@@ -65,6 +65,10 @@ function GUIAction_Hero12PoisonArrows()
 end
 
 
+function GUIAction_Hero12Berserk()
+	GUI.SettlerAffectUnitsInArea(HeroSelection_GetCurrentSelectedHeroID())
+end
+
 function GUIAction_AOOnlineHelp(_SelectedEntityID, _SpokenText, _Text)
 		
 		local AOSpokenText		
