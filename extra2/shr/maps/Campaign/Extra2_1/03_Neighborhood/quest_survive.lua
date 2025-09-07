@@ -136,7 +136,7 @@ function createArmiesAndTroops()
 	end
 	
 	-- create polearmtroops
-	if Counter.Tick2("counterSupportSword", 60*3 + GetRandom(60*1)) then
+	if Counter.Tick2("counterSupportSpear", 60*3 + GetRandom(60*1)) then
 		if IsExisting("barracks") then
 
 			local troopDescription	= {
