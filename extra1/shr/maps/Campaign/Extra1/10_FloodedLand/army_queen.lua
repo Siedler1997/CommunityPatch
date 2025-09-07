@@ -65,19 +65,19 @@ function ControlArmyQueen()
 	end
 
 	if Counter.Tick2("ControlArmyQueen", 10) then
-	
-		--try to use special ability
-		GUI.SettlerCircularAttack(GetID("QueenNPC"))
-		Sound.PlayGUISound(Sounds.AOVoicesHero12_HERO12_poisonrange_rnd_02)
-	
+		if IsAlive("QueenNPC") then
+			--try to use special ability
+			GUI.SettlerCircularAttack(GetID("QueenNPC"))
+			Sound.PlayGUISound(Sounds.AOVoicesHero12_HERO12_poisonrange_rnd_02)
+		end
+
 		if IsDead(ArmyQueen[1]) and IsDead(ArmyQueen[2]) then			
 			return true
 		end
 		
 		
 		--Make Evil Queen  vulnerable when she is the last leader
-		if GetNumberOfLeaders(ArmyQueen[1]) == 1 
-		and IsDead(ArmyQueen[2]) then		
+		if GetNumberOfLeaders(ArmyQueen[1]) == 1 and IsDead(ArmyQueen[2]) then		
 			MakeVulnerable ("QueenNPC")
 		end
 		
@@ -87,6 +87,5 @@ function ControlArmyQueen()
 		end
 		
 	end
-	
-	
+
 end
