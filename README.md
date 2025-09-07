@@ -902,9 +902,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
-			- Wasteland-Dörfer: Namen im Auftragsbuch
 			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
 				- Alternative: Kanonen in "Höhle" versetzen, um Logiklücke zu vermeiden
+			- Wasteland-Dörfer: Namen im Auftragsbuch
 		- Extra1
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
@@ -916,7 +916,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 09_LandUnter: Anspielungen an Wiederbelebung Kerberos'
 			- 'Thalbach' neu aufsetzen
 		- Extra2
-			- 03_Neighborhood: Belohnungen/Upgrades für halten strategischer Positionen
 			- Hauptspiel-Kampagne in extra2: AddOn-Features sinnvoll einbinden
 - Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für

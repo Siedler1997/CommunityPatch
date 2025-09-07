@@ -1,4 +1,4 @@
-
+timeForUpgrades = 0
 ------------------------------------------------------------------------------------------------------------------------------------
 function createQuestSurvive()
 	
@@ -12,6 +12,13 @@ function createQuestSurvive()
 	
 	-- activate alarm for friendly AIs
 	StartSimpleJob("ActivateAIalarm")
+
+	--Give techs earlier on lower difficulties
+	if CP_Difficulty < 2 then
+		timeForUpgrades = timeForUpgrades + 5
+	end
+
+	StartSimpleJob("GivePlayerUpgrades")
 end
 
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -119,13 +126,17 @@ function createArmiesAndTroops()
 	-- create swordtroops
 	if Counter.Tick2("counterSupportSword", 60*2 + GetRandom(60*1)) then
 		if IsExisting("barracks") then
+			local unitType = Entities.PU_LeaderSword1
+			if Logic.IsTechnologyResearched(1, Technologies.T_UpgradeSword1) == 1 then
+				unitType = Entities.PU_LeaderSword2
+			end
 
 			local troopDescription	= {
 
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 9,
 				experiencePoints 	= LOW_EXPERIENCE,
-				leaderType          = Entities.PU_LeaderSword1,
+				leaderType          = unitType,
 				position            = GetPosition("supportSword")
 			}
 	
@@ -140,13 +151,17 @@ function createArmiesAndTroops()
 	-- create polearmtroops
 	if Counter.Tick2("counterSupportSpear", 60*3 + GetRandom(60*1)) then
 		if IsExisting("barracks") then
+			local unitType = Entities.PU_LeaderPoleArm1
+			if Logic.IsTechnologyResearched(1, Technologies.T_UpgradeSpear1) == 1 then
+				unitType = Entities.PU_LeaderPoleArm2
+			end
 
 			local troopDescription	= {
 
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 9,
 				experiencePoints 	= LOW_EXPERIENCE,
-				leaderType          = Entities.PU_LeaderPoleArm1,
+				leaderType          = unitType,
 				position            = GetPosition("supportSpear")
 			}
 	
@@ -161,13 +176,17 @@ function createArmiesAndTroops()
 	-- create bowtroops
 	if Counter.Tick2("counterSupportBow", 60*2 + GetRandom(60*1)) then
 		if IsExisting("archery") then
+			local unitType = Entities.PU_LeaderBow1
+			if Logic.IsTechnologyResearched(1, Technologies.T_UpgradeBow1) == 1 then
+				unitType = Entities.PU_LeaderBow2
+			end
 
 			local troopDescription	= {
 
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 9,
 				experiencePoints 	= LOW_EXPERIENCE,
-				leaderType          = Entities.PU_LeaderBow1,
+				leaderType          = unitType,
 				position            = GetPosition("supportBow")
 			}
 	
@@ -180,7 +199,7 @@ function createArmiesAndTroops()
 	end
 
 	-- create cavalrytroops
-	if Counter.Tick2("counterSupportCavalry", 60*3 + GetRandom(60*1)) then
+	if Counter.Tick2("counterSupportCavalry1", 60*3 + GetRandom(60*1)) then
 		if IsExisting("stable") then
 
 			local troopDescription	= {
@@ -201,7 +220,7 @@ function createArmiesAndTroops()
 	end	
 
 	-- create range cavalrytroops
-	if Counter.Tick2("counterSupportCavalry", 60*3 + GetRandom(60*1)) then
+	if Counter.Tick2("counterSupportCavalry2", 60*3 + GetRandom(60*1)) then
 		if IsExisting("stable") then
 
 			local troopDescription	= {
@@ -225,17 +244,17 @@ function createArmiesAndTroops()
 	if Counter.Tick2("counterSupportCannon", 60*4 + GetRandom(60*1)) then
 		if IsExisting("foundry") then
 			local randomCannon = GetRandom(1,10)
-			local cannonType = Entities.PV_Cannon1
+			local unitType = Entities.PV_Cannon1
 			--rarely produce a better cannon
-			if cannonType == 10 then
-				cannonType = Entities.PV_Cannon3
+			if unitType == 10 then
+				unitType = Entities.PV_Cannon3
 			end
 			local troopDescription	= {
 
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers = 9,
 				experiencePoints 	= LOW_EXPERIENCE,
-				leaderType          = cannonType,
+				leaderType          = unitType,
 				position            = GetPosition("supportCannon")
 			}
 	
@@ -266,6 +285,55 @@ function ActivateAIalarm()
 			if not IsExisting("foundry") then
 				SetAlarmModeForAI(7, 1)
 			end
+		end
+	end
+end
+
+function GivePlayerUpgrades()
+	--Every 60 seconds
+	if Counter.Tick2("GivePlayerUpgrades", 60) then
+		timeForUpgrades = timeForUpgrades + 1
+
+		local techToResearch
+		if timeForUpgrades == 10 then
+			if IsExisting("barracks") then
+				techToResearch = Technologies.T_UpgradeSpear1
+			end
+		elseif timeForUpgrades == 15 then
+			if IsExisting("p4blacksmith") then
+				techToResearch = Technologies.T_SoftArcherArmor
+			end
+		elseif timeForUpgrades == 20 then
+			if IsExisting("barracks") then
+				techToResearch = Technologies.T_UpgradeSword1
+			end
+		elseif timeForUpgrades == 25 then
+			if IsExisting("archery") then
+				techToResearch = Technologies.T_UpgradeBow1
+			end
+		elseif timeForUpgrades == 30 then
+			if IsExisting("p4blacksmith") then
+				techToResearch = Technologies.T_LeatherMailArmor
+			end
+		elseif timeForUpgrades == 35 then
+			if IsExisting("p4villagecenter") then
+				techToResearch = Technologies.T_Loom
+			end
+		elseif timeForUpgrades == 40 then
+			if IsExisting("p4villagecenter") or Logic.GetNumberOfEntitiesOfType(Entities.PB_VillageCenter1) > 0 then
+				techToResearch = Technologies.T_TownGuard
+			end
+		end
+
+		--building may be already destroyed
+		if techToResearch ~= nil then
+			ResearchTechnology(techToResearch)
+			GUI.AddNote(XGUIEng.GetStringTableText("CM03_03_Neighborhood/noteTechnology"))
+		end
+
+		--End job when all techs are researched
+		if timeForUpgrades == 40 then
+			return true
 		end
 	end
 end
