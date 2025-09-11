@@ -808,27 +808,32 @@ end
 -- CP Taxation Mod
 --------------------------------------------------------------------------------
 function GUIUpdate_BonusTaxation()
-	local PlayerID = GUI.GetPlayerID()
-	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+	--Let it work for all players, even AIs
+	for i = 1, 8 do
+		local PlayerID = i
+		local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+		
+		--Add gold from T_BookKeeping
+		if TechState == 4 then	
+			local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
+			local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
+			local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
 
-	if TechState == 4 then	
-		local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
-		local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
-		local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
-
-		if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
-			Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+			if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
+				Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+			end
 		end
-	end
 
-	--Get additional gold for draw wells
-	if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
-		local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
-		local random_num = GetRandom(1, 100)
+		--Get additional gold for draw wells (not included in balance)
+		if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
+			local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
+			local random_num = GetRandom(1, 100)
 
-		if random_num <= wells then
-			AddGold(PlayerID, 1)
-			--Message("Wells: " .. wells)
+			--1% chance per draw well
+			if random_num <= wells then
+				AddGold(PlayerID, 1)
+				--Message("Wells: " .. wells)
+			end
 		end
 	end
 end 

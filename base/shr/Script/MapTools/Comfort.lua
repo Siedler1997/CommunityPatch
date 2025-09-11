@@ -10,6 +10,20 @@ VERYHIGH_EXPERIENCE 	= 3
 UPGRADE     = 0
 TECHNOLOGY  = 1
 
+--[[
+--Default (20)
+LeaderPaymentLevel = {
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1
+}
+--]]
+
 IsValidPlayerID = {1,2,3,4,5,6,7,8}
 
 CP_Installed = true
@@ -2511,6 +2525,26 @@ function CreateScout(_playerId, _position, _entityType, _name, _isChestOpener)
 		end
 	end
 end
+
+--[[
+function GetLeaderPaymentLevel(_player)
+	assert(type(_player) == "number" and _player >= 1 and _player <= 8, "SetLeaderPaymentLevel: _player must be a valid player color (between 1 and 8)");
+	return LeaderPaymentLevel[_player]
+end
+function SetLeaderPaymentLevel(_player, _level)
+	assert(type(_player) == "number" and _player >= 1 and _player <= 8, "SetLeaderPaymentLevel: _player must be a valid player color (between 1 and 8)");
+	assert(type(_level) == "number" and _level >= 1, "SetLeaderPaymentLevel: _level must be a number larger than 1");
+
+	LeaderPaymentLevel[_player] = _level
+
+	--(De-)activate payment completely
+	if _level == 0 then
+		Logic.SetPlayerPaysLeaderFlag(_player,0)
+	else
+		Logic.SetPlayerPaysLeaderFlag(_player,1)
+	end
+end
+--]]
 
 -- by Noigi
 function SetAlarmModeForAI(_pID,_flag)

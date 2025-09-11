@@ -871,27 +871,88 @@ end
 -- CP Taxation Mod
 --------------------------------------------------------------------------------
 function GUIUpdate_BonusTaxation()
-	local PlayerID = GUI.GetPlayerID()
-	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+	--Let it work for all players, even AIs
+	for i = 1, 8 do
+		local PlayerID = i
+		local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+		
+		--Add gold from T_BookKeeping
+		if TechState == 4 then	
+			local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
+			local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
+			local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
 
-	if TechState == 4 then	
+			if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
+				Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+			end
+		end
+
+		--Get additional gold for draw wells (not included in balance)
+		if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
+			local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
+			local random_num = GetRandom(1, 100)
+			
+			--1% chance per draw well
+			if random_num <= wells then
+				AddGold(PlayerID, 1)
+				--Message("Wells: " .. wells)
+			end
+		end
+	end
+
+	--[[
+	--Let it work for all players, even AIs
+	for i = 1, 8 do
+		local PlayerID = i
+		local BonusTaxAndPaymentSum = 0
+
 		local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
 		local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
-		local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+		if PaydayTimeLeft == PaydayFrequency then
+			--Add gold from T_BookKeeping
+			local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
+			if TechState == 4 then	
+				BonusTaxAndPaymentSum = BonusTaxAndPaymentSum + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+			end
+		
+			--Sub additional leader payment if mapper set another payment level for that player
+			local paymentlevel = GetLeaderPaymentLevel(PlayerID)
+			--ignore if <= default
+			if paymentlevel > 1 then
+				local defaultPayment = Logic.GetPlayerPaydayLeaderCosts(PlayerID)
+				local modifiedPayment = Logic.GetPlayerPaydayLeaderCosts(PlayerID) * GetLeaderPaymentLevel(PlayerID)
+				--only get the additional payment
+				BonusTaxAndPaymentSum = BonusTaxAndPaymentSum - (modifiedPayment - defaultPayment)
+			end
+			
+			--Is the balance positive or negative?
+			if BonusTaxAndPaymentSum > 0 then
+				--Positive -> Give some gold
+				Tools.GiveResouces(PlayerID, BonusTaxAndPaymentSum, 0, 0, 0, 0, 0)	
+			else
+				--Negative -> Take as much gold as needed (or as possible if the player doesn't have enough)
+				local playerGold = GetGold(PlayerID)
+				if PlayerID == 1 then
+					Message(playerGold .. " " .. BonusTaxAndPaymentSum)
+				end
+				if playerGold >= -(BonusTaxAndPaymentSum) then
+					AddGold(PlayerID, BonusTaxAndPaymentSum)
+				else
+					AddGold(PlayerID, -playerGold)
+				end
+			end
+		end
 
-		if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
-			Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	
+		--Get additional gold for draw wells (not included in balance)
+		if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
+			local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
+			local random_num = GetRandom(1, 100)
+
+			if random_num <= wells then
+				AddGold(PlayerID, 1)
+				--Message("Wells: " .. wells)
+			end
 		end
 	end
-
-	--Get additional gold for draw wells
-	if Counter.Tick2("GUIUpdate_BonusTaxation",50) then
-		local wells = Logic.GetNumberOfEntitiesOfTypeOfPlayer(PlayerID, Entities.PB_Beautification08)
-		local random_num = GetRandom(1, 100)
-
-		if random_num <= wells then
-			AddGold(PlayerID, 1)
-			--Message("Wells: " .. wells)
-		end
-	end
+	--]]
 end 
