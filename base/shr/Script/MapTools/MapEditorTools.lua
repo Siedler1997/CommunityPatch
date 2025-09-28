@@ -101,7 +101,7 @@ end
 ---------------------------------------------------------------------------------------------------------------
 -- Setup AI 
 ---------------------------------------------------------------------------------------------------------------
-function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, _aggressiveLevel, _peaceTime, _evilMod)
+function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, _aggressiveLevel, _peaceTime, _advancedSettings)
 
 	-- Valid
 	if 	_strength == 0 or _strength > 3 or
@@ -118,6 +118,21 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 	-- check for buildings
 	if Logic.GetPlayerEntitiesInArea(_playerId, 0, position.X, position.Y, 0, 1, 8) == 0 then
 		return
+	end
+	
+	local armyStrength = 6
+	local armyGrouping = 0
+	local evilMod = false
+	if _advancedSettings ~= nil then
+		if _advancedSettings.armyStrength ~= nil then
+			armyStrength = _advancedSettings.armyStrength
+		end
+		if _advancedSettings.armyGrouping ~= nil then
+			armyGrouping = _advancedSettings.armyGrouping
+		end
+		if _advancedSettings.evilMod ~= nil then
+			evilMod = _advancedSettings.evilMod
+		end
 	end
 
 	-- setup AI
@@ -148,7 +163,7 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 				sulfur				=	_strength*50,
 				stone				=	_strength*50,
 				wood				=	_strength*50,
-				updateTime			=	20
+				updateTime			=	20-(2*_strength)
 			},
 			--------------------------------------------------
 			constructing			=	true,
@@ -162,12 +177,27 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 		SetupPlayerAi(_playerId,description)
 
 	-- Tech level
-		local CannonEntityType = Entities["PV_Cannon"..(_techlevel+1)]
-		if _evilMod == true then
-			if CannonEntityType == Entities.PV_Cannon3 then
-				CannonEntityType = Entities.PV_Cannon3a
-			elseif CannonEntityType == Entities.PV_Cannon4 then
-				CannonEntityType = Entities.PV_Cannon4a
+
+		local cannonTypes = {}
+		if _techlevel == 0 then
+			table.insert(cannonTypes, Entities.PV_Cannon1)
+		elseif _techlevel == 1 then
+			table.insert(cannonTypes, Entities.PV_Cannon1)
+			table.insert(cannonTypes, Entities.PV_Cannon2)
+		elseif _techlevel == 2 then
+			table.insert(cannonTypes, Entities.PV_Cannon2)
+			if evilMod == false then
+				table.insert(cannonTypes, Entities.PV_Cannon3)
+			else
+				table.insert(cannonTypes, Entities.PV_Cannon3a)
+			end
+		elseif _techlevel == 3 then
+			if evilMod == false then
+				table.insert(cannonTypes, Entities.PV_Cannon3)
+				table.insert(cannonTypes, Entities.PV_Cannon4)
+			else
+				table.insert(cannonTypes, Entities.PV_Cannon3a)
+				table.insert(cannonTypes, Entities.PV_Cannon4a)
 			end
 		end
 
@@ -192,15 +222,33 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 	if MapEditor_Armies == nil then
 		MapEditor_Armies = {}
 	end
+
+	local stables = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Stable1)
+					+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Stable2)
+	local barracks = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Barracks1)
+					+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Barracks2)
+	local archeries = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Archery1)
+					+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Archery2)
+	local foundries = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Foundry1)
+					+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId, Entities.PB_Foundry2)
 		
 	MapEditor_Armies[_playerId] = {}
 		
+	local allUnitTypes = { 	UpgradeCategories.LeaderBow,
+							UpgradeCategories.LeaderSword,
+							UpgradeCategories.LeaderPoleArm,
+							UpgradeCategories.LeaderCavalry,
+							UpgradeCategories.LeaderHeavyCavalry }
+	for c=1, table.getn(cannonTypes) do
+		table.insert(allUnitTypes, cannonTypes[c])
+	end
+
 	for i=1, _strength*2 do
 		
 		MapEditor_Armies[_playerId][i] 						=	{}
 		MapEditor_Armies[_playerId][i].player 				=	_playerId
 		MapEditor_Armies[_playerId][i].id					=	i
-		MapEditor_Armies[_playerId][i].strength				=	6
+		MapEditor_Armies[_playerId][i].strength				=	armyStrength
 		MapEditor_Armies[_playerId][i].position				=	GetPosition(_position)
 		local offset = (math.mod((i-1),3)-1)
 		MapEditor_Armies[_playerId][i].position.X			=	MapEditor_Armies[_playerId][i].position.X + offset*1000
@@ -210,13 +258,50 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 		MapEditor_Armies[_playerId][i].baseDefenseRange		=	(_range*2)/3
 		MapEditor_Armies[_playerId][i].outerDefenseRange	=	_range
 		MapEditor_Armies[_playerId][i].AttackAllowed		=	false
-		
-		MapEditor_Armies[_playerId][i].AllowedTypes			=	{ 	UpgradeCategories.LeaderBow,
-																	UpgradeCategories.LeaderSword,
-																	UpgradeCategories.LeaderPoleArm,
-																	UpgradeCategories.LeaderCavalry,
-																	UpgradeCategories.LeaderHeavyCavalry,
-																	CannonEntityType }
+		MapEditor_Armies[_playerId][i].ArmyGrouping			=	armyGrouping
+
+		if armyGrouping == 0 then
+			--No grouping - all types
+			MapEditor_Armies[_playerId][i].AllowedTypes			=	allUnitTypes
+		else
+			--every 3rd army is cavalry-only
+			if math.mod(i, 3) == 0 then
+				--Types to use if PreferredTypes aren't recruitable - usually all other types
+				MapEditor_Armies[_playerId][i].BackupTypes			=	{ 	UpgradeCategories.LeaderBow,
+																			UpgradeCategories.LeaderSword,
+																			UpgradeCategories.LeaderPoleArm }
+				for c=1, table.getn(cannonTypes) do
+					table.insert(MapEditor_Armies[_playerId][i].BackupTypes, cannonTypes[c])
+				end
+
+				--AI prefer these types for recruitment
+				MapEditor_Armies[_playerId][i].PreferredTypes	= { UpgradeCategories.LeaderCavalry,
+																UpgradeCategories.LeaderHeavyCavalry,
+																UpgradeCategories.LeaderHeavyCavalry }
+				--Initiate AllowedTypes depending on the existence of at least one stable
+				if stables > 0 then
+					MapEditor_Armies[_playerId][i].AllowedTypes		=	MapEditor_Armies[_playerId][i].PreferredTypes
+				else
+					MapEditor_Armies[_playerId][i].AllowedTypes		=	MapEditor_Armies[_playerId][i].BackupTypes
+				end
+			else
+				MapEditor_Armies[_playerId][i].BackupTypes = allUnitTypes
+				--All other armies are mixed, just without cavalry
+				MapEditor_Armies[_playerId][i].PreferredTypes			=	{ 	UpgradeCategories.LeaderBow,
+																			UpgradeCategories.LeaderSword,
+																			UpgradeCategories.LeaderPoleArm }
+				for c=1, table.getn(cannonTypes) do
+					table.insert(MapEditor_Armies[_playerId][i].PreferredTypes, cannonTypes[c])
+				end
+
+				--If the AI doesn't have barracks, archeries or foundries it's allowed to recruit any unit for their armies (=cavalry)
+				if (barracks + archeries + foundries) > 0 then
+					MapEditor_Armies[_playerId][i].AllowedTypes		=	MapEditor_Armies[_playerId][i].PreferredTypes
+				else
+					MapEditor_Armies[_playerId][i].AllowedTypes		=	MapEditor_Armies[_playerId][i].BackupTypes
+				end
+			end
+		end
 													
 		-- Spawn generator
 		SetupAITroopGenerator("MapEditor_Armies_".._playerId.."_"..i, MapEditor_Armies[_playerId][i])
@@ -253,29 +338,47 @@ function StartMapEditor_ArmyAttack(_playerId,_armyId,_delay)
 
 end
 function ControlMapEditor_Armies()
-
 	if Counter.Tick2("ControlMapEditor_Armies",10) then
-		
 		for player=1,8 do
-			
+			--Get ammount of military buildings per player
+			local stables = Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Stable1)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Stable2)
+			local barracks = Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Barracks1)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Barracks2)
+			local archeries = Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Archery1)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Archery2)
+			local foundries = Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Foundry1)
+							+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(player, Entities.PB_Foundry2)
 			for army=1,6 do
-				
 				if MapEditor_Armies[player] ~= nil then
-					
 					if MapEditor_Armies[player][army] ~= nil then
+						--Update army allowed types depending on buildings to avoid "dead" armies
+						if MapEditor_Armies[player][army].ArmyGrouping > 0 then
+							--every 3rd army is cavalry-only
+							if math.mod(army, 3) == 0 then
+								--Set AllowedTypes depending on the existence of at least one stable
+								if stables > 0 then
+									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].PreferredTypes
+								else
+									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].BackupTypes
+								end
+							else
+								--there might be cases where the AI have only stables
+								if (barracks + archeries + foundries) > 0 then
+									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].PreferredTypes
+								else
+									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].BackupTypes
+								end
+							end
+						end
 						
+						--Actual army control
 						TickOffensiveAIController(MapEditor_Armies[player][army])
-						
 					end
-					
 				end
-				
 			end
-			
 		end
-		
 	end
-
 end
 ---------------------------------------------------------------------------------------------------------------
 -- Default Defeat Condition...no HQ left
