@@ -1919,6 +1919,8 @@ function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_Shoeing, _PlayerId );
 	ResearchTechnology( Technologies.T_BetterChassis, _PlayerId );
 
+	ResearchTechnology( Technologies.T_BookKeeping, _PlayerId )
+
 	if _SuperTech == true then
 		ResearchTechnology( Technologies.T_SuperTechnology, _PlayerId );
 	end
