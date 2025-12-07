@@ -14,10 +14,7 @@ createArmyDefendDen = function()
 	
 		armyDefendDen.player 				= 8
 		armyDefendDen.id					= 0
-		armyDefendDen.strength				= 4
-		if CP_Difficulty > 0 then
-			armyDefendDen.strength = armyDefendDen.strength + 1
-		end
+		armyDefendDen.strength				= 4 + CP_Difficulty
 		armyDefendDen.position				= GetPosition("defend1")
 		armyDefendDen.rodeLength			= 1200
 		armyDefendDen.control				= {}
@@ -28,9 +25,10 @@ createArmyDefendDen = function()
 		troops = {
 		
 			Entities.PU_LeaderSword4,
+			Entities.CU_BlackKnight_LeaderMace2,
 			Entities.PU_LeaderBow4,
-			Entities.PV_Cannon4a,
-			Entities.PV_Cannon4a
+			Entities.PV_Cannon3a,
+			Entities.PV_Cannon3a
 		
 		}
 
@@ -48,10 +46,7 @@ createArmyDefendDen = function()
 	
 		armyDefendInnerCircle.player 					= 8
 		armyDefendInnerCircle.id						= 1
-		armyDefendInnerCircle.strength					= 3
-		if CP_Difficulty > 0 then
-			armyDefendInnerCircle.strength = armyDefendInnerCircle.strength + 1
-		end
+		armyDefendInnerCircle.strength					= 3 + CP_Difficulty
 		armyDefendInnerCircle.position					= GetPosition("defend2")
 		armyDefendInnerCircle.rodeLength				= 4000
 		armyDefendInnerCircle.control					= {}
@@ -64,7 +59,7 @@ createArmyDefendDen = function()
 			Entities.PU_LeaderSword4,
 			Entities.PU_LeaderSword4,
 			Entities.PU_LeaderPoleArm4,
-			Entities.PU_LeaderPoleArm4
+			Entities.PU_LeaderBow4
 		
 		}
 
@@ -85,10 +80,7 @@ createArmyDefendDen = function()
 	
 		armyDefend1.player 					= 8
 		armyDefend1.id						= 2
-		armyDefend1.strength				= 3
-		if CP_Difficulty > 0 then
-			armyDefend1.strength = armyDefend1.strength + 1
-		end
+		armyDefend1.strength				= 3 + CP_Difficulty
 		armyDefend1.position				= GetPosition("defend3")
 		armyDefend1.rodeLength				= 500
 		armyDefend1.control					= {}
@@ -99,8 +91,8 @@ createArmyDefendDen = function()
 		troops = {
 		
 			Entities.PU_LeaderPoleArm4,
-			Entities.PU_LeaderPoleArm4,
-			Entities.PV_Cannon4a
+			Entities.CU_BlackKnight_LeaderMace2,
+			Entities.PV_Cannon3a
 		
 		}
 
@@ -115,10 +107,7 @@ createArmyDefendDen = function()
 	
 		armyDefend2.player 					= 8
 		armyDefend2.id						= 3
-		armyDefend2.strength				= 2
-		if CP_Difficulty > 0 then
-			armyDefend2.strength = armyDefend2.strength + 1
-		end
+		armyDefend2.strength				= 2 + CP_Difficulty
 		armyDefend2.position				= GetPosition("defend4")
 		armyDefend2.rodeLength				= 500
 		armyDefend2.control					= {}
@@ -128,8 +117,9 @@ createArmyDefendDen = function()
 
 		troops = {
 		
-			Entities.PU_LeaderPoleArm3,
-			Entities.PU_LeaderPoleArm3
+			Entities.PU_LeaderPoleArm4,
+			Entities.PU_LeaderBow4,
+			Entities.CU_BlackKnight_LeaderMace2
 		
 		}
 
@@ -145,10 +135,7 @@ createArmyDefendDen = function()
 	
 		armyDefend3.player 					= 8
 		armyDefend3.id						= 4
-		armyDefend3.strength				= 3
-		if CP_Difficulty > 0 then
-			armyDefend3.strength = armyDefend3.strength + 1
-		end
+		armyDefend3.strength				= 3 + CP_Difficulty
 		armyDefend3.position				= GetPosition("defend5")
 		armyDefend3.rodeLength				= 500
 		armyDefend3.control					= {}
@@ -158,8 +145,9 @@ createArmyDefendDen = function()
 
 		troops = {
 		
-			Entities.PV_Cannon4a,
-			Entities.PV_Cannon4a
+			Entities.CU_BlackKnight_LeaderMace2,
+			Entities.PV_Cannon3a,
+			Entities.PV_Cannon3a
 		
 		}
 
@@ -183,10 +171,7 @@ createArmyDefendDen = function()
 	
 		armyDefendPatrol.player 			= 8
 		armyDefendPatrol.id					= 5
-		armyDefendPatrol.strength			= 6
-		if CP_Difficulty > 0 then
-			armyDefendPatrol.strength		= armyDefendPatrol.strength + 1
-		end
+		armyDefendPatrol.strength			= 6 + CP_Difficulty
 		armyDefendPatrol.position			= GetPosition("defend1")
 		armyDefendPatrol.rodeLength			= 500
 

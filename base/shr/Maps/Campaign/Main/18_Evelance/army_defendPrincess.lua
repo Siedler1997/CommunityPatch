@@ -5,18 +5,20 @@ setupArmyDefendPrincess = function()
 		
 	armyDefendPrincess.player 			= 	5
 	armyDefendPrincess.id				= 	9
-	armyDefendPrincess.strength			= 	6
 	armyDefendPrincess.position			= 	GetPosition("PrincessDefend")			-- in front of Bastilles
 	armyDefendPrincess.rodeLength		= 	2000
 		                                    	  	
 	-- Spawn parameter                  	  	
 	if CP_Difficulty == 0 then
-		armyDefendPrincess.spawnTypes 		= 	{	{ Entities.PU_LeaderBow4, 8},
+		armyDefendPrincess.strength			= 	6
+		armyDefendPrincess.spawnTypes 		= 	{	{ Entities.PU_LeaderSword3, 8},
+													{ Entities.CU_BanditLeaderSword2, 8},
+													{ Entities.PU_LeaderPoleArm3, 8},
 													{ Entities.CU_BlackKnight_LeaderMace2, 8},
-													{ Entities.CU_BlackKnight_LeaderMace2, 8},
-													{ Entities.CU_Barbarian_LeaderClub2, 8},
-													{ Entities.CU_Barbarian_LeaderClub2, 8},
-													{ Entities.PV_Cannon3a, 0}
+													{ Entities.PU_LeaderBow3, 8},
+													{ Entities.PU_LeaderBow3, 8},
+													{ Entities.PV_Cannon3a, 0} ,
+													{ Entities.PV_Cannon3a, 0} 
 												}
 	else
 		armyDefendPrincess.strength			= 8
@@ -25,7 +27,7 @@ setupArmyDefendPrincess = function()
 													{ Entities.PU_LeaderSword4, 8},
 													{ Entities.PU_LeaderSword4, 8},
 													{ Entities.PU_LeaderPoleArm4, 8},
-													{ Entities.PU_LeaderPoleArm4, 8},
+													{ Entities.CU_BlackKnight_LeaderMace2, 8},
 													{ Entities.PV_Cannon3a, 0},
 													{ Entities.PV_Cannon3a, 0}
 												}

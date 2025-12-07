@@ -11,17 +11,21 @@ setupArmyDespair = function()
                                 	 	
 	ArmyDespair.player 				=	5
 	ArmyDespair.id					=	2
-	ArmyDespair.strength			=	5
 	ArmyDespair.position			=	GetPosition("DespairSpawn")
 	ArmyDespair.rodeLength			=	2500
 	
 	-- Spawn parameter
 	if CP_Difficulty == 0 then
-		ArmyDespair.spawnTypes 			=	{ 	{ Entities.CU_BlackKnight_LeaderMace2, 4},
-												{ Entities.PU_LeaderBow4, 4},
-												{ Entities.PV_Cannon3a, 0},
-												{ Entities.CU_Barbarian_LeaderClub2, 12},
-												{ Entities.PU_LeaderBow4, 12} }
+		ArmyDespair.strength			=	5
+		ArmyDespair.spawnTypes 			=	{	{ Entities.PU_LeaderSword3, 8},
+												{ Entities.CU_BanditLeaderSword2, 8},
+												{ Entities.PU_LeaderPoleArm3, 8},
+												{ Entities.CU_BlackKnight_LeaderMace2, 8},
+												{ Entities.PU_LeaderBow3, 8},
+												{ Entities.PU_LeaderBow3, 8},
+												{ Entities.PV_Cannon3a, 0} ,
+												{ Entities.PV_Cannon3a, 0} 
+											}
 	else
 		ArmyDespair.strength			=	8
 		ArmyDespair.spawnTypes 		= 	{	{ Entities.PU_LeaderBow4, 8},
@@ -29,7 +33,7 @@ setupArmyDespair = function()
 											{ Entities.PU_LeaderSword4, 8},
 											{ Entities.PU_LeaderSword4, 8},
 											{ Entities.PU_LeaderPoleArm4, 8},
-											{ Entities.PU_LeaderPoleArm4, 8},
+											{ Entities.CU_BlackKnight_LeaderMace2, 8},
 											{ Entities.PV_Cannon3a, 0},
 											{ Entities.PV_Cannon3a, 0}
 										}

@@ -26,7 +26,7 @@ setupArmyCenterOutpost = function()
 													{ Entities.PU_LeaderBow4, 12},
 													{ Entities.PU_LeaderPoleArm4, 12},
 													{ Entities.PU_LeaderSword4, 12},
-													{ Entities.PU_LeaderPoleArm4, 12},
+													{ Entities.CU_BlackKnight_LeaderMace2, 12},
 													{ Entities.PU_LeaderSword4, 12},
 													{ Entities.PV_Cannon3a, 0} }
 	end

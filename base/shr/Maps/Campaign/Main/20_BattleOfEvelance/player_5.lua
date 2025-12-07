@@ -12,12 +12,18 @@ createPlayer5 = function()
 
 	--	set up default information
 	
+		local advancedSettings = {
+			evilMod				=	true,
+			otherUnitsToRecruit	= { UpgradeCategories.BlackKnightLeaderMace1 }
+		}
+	
 		if CP_Difficulty == 0 then
-			MapEditor_SetupAI(player5.id, 2, 3000, 3, "lionsDen", 1, 0, true)
+			MapEditor_SetupAI(player5.id, 2, 3000, 3, "lionsDen", 1, 0, advancedSettings)
 		elseif CP_Difficulty == 1 then
-			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 2, 0, true)
+			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 2, 0, advancedSettings)
 		else
-			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 3, 0, true)
+			advancedSettings.armyStrength = 8
+			MapEditor_SetupAI(player5.id, 3, 5000, 3, "lionsDen", 3, 0, advancedSettings)
 		end
 		local description = {
 		

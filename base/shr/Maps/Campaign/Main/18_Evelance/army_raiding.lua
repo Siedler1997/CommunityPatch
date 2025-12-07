@@ -163,9 +163,15 @@ end
 
 AllowP5Cannon4 = function()
 
+	--Remove old cannons to increase chance of better units
+	if CP_Difficulty == 2 then
+		table.remove(ArmyRaiding.AllowedTypes, Entities.PV_Cannon2)
+		table.remove(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon2)
+	end
+
+	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon3a)
 	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4a)
-	table.insert(ArmyRaiding.AllowedTypes, 	Entities.PV_Cannon4a)
-	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4a)
+	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon3a)
 	table.insert(ArmyRaiding2.AllowedTypes, Entities.PV_Cannon4a)
 
 

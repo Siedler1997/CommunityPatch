@@ -10,12 +10,18 @@ createPlayer4 = function()
 
 	--	set up default information
 	
+		local advancedSettings = {
+			evilMod				= true,
+			armyGrouping		= ArmyGrouping_Grouped
+		}
+
 		if CP_Difficulty == 0 then
-			MapEditor_SetupAI(player4.id, 2, 3000, 3, "outpost", 1, 0, true)
+			MapEditor_SetupAI(player4.id, 2, 3000, 3, "outpost", 1, 0, advancedSettings)
 		elseif CP_Difficulty == 1 then
-			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 2, 0, true)
+			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 2, 0, advancedSettings)
 		else
-			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 3, 0, true)
+			advancedSettings.armyStrength = 8
+			MapEditor_SetupAI(player4.id, 3, 5000, 3, "outpost", 3, 0, advancedSettings)
 		end
 		local description = {
 		
@@ -65,7 +71,7 @@ createPlayer4 = function()
 				sulfur				=	150,
 				stone				=	50,
 				wood				=	150,
-				updateTime			=	5
+				updateTime			=	1
 			}
 		end
 		

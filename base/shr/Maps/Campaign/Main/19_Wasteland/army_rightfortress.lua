@@ -16,7 +16,11 @@ setupArmyRightFortress = function()
 												{ Entities.PU_LeaderBow1, 4},
 												{ Entities.PU_LeaderSword1, 4} }
 	else
-		ArmyRightFortress.strength		= 7
+		if CP_Difficulty == 1 then
+			ArmyRightFortress.strength			= 7
+		else
+			ArmyRightFortress.strength			= 8
+		end
 		ArmyRightFortress.spawnTypes 		= { { Entities.PU_LeaderPoleArm2, 4},
 												{ Entities.PU_LeaderSword2, 4},
 												{ Entities.PU_LeaderPoleArm2, 4},
@@ -28,6 +32,7 @@ setupArmyRightFortress = function()
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon1, 1})
 		else
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3a, 1})
+			table.insert(ArmyRightFortress.spawnTypes, { Entities.CU_BlackKnight_LeaderMace1, 4})
 		end
 	end
 

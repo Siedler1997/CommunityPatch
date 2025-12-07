@@ -11,25 +11,25 @@ setupArmyKerberosDefense = function()
 		
 		ArmyKerberosDefense[i].player 			= 	7
 		ArmyKerberosDefense[i].id				= 	5 + i
-		ArmyKerberosDefense[i].strength			= 	6
 		ArmyKerberosDefense[i].position			= 	GetPosition("tower_spawn"..i)			-- in front of Bastilles
 		ArmyKerberosDefense[i].rodeLength		= 	2000
 		                                    	  	
 		-- Spawn parameter                  	  	
 		if CP_Difficulty == 0 then
-			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.CU_BlackKnight_LeaderMace2, 8},
+			ArmyKerberosDefense[i].strength			= 	6
+			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderSword3, 8},
+															{ Entities.PU_LeaderPoleArm3, 8},
 															{ Entities.CU_BlackKnight_LeaderMace2, 8},
-															{ Entities.CU_BlackKnight_LeaderMace2, 8},
-															{ Entities.CU_Barbarian_LeaderClub2, 8},
-															{ Entities.PU_LeaderBow4, 8},
-															{ Entities.PV_Cannon1, 0} 
+															{ Entities.CU_BanditLeaderSword2, 8},
+															{ Entities.PU_LeaderBow3, 8},
+															{ Entities.PV_Cannon3a, 0} 
 														}
 		else
 			ArmyKerberosDefense[i].strength			= 8
 			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderSword4, 8},
 															{ Entities.PU_LeaderSword4, 8},
 															{ Entities.PU_LeaderPoleArm4, 8},
-															{ Entities.PU_LeaderPoleArm4, 8},
+															{ Entities.CU_BlackKnight_LeaderMace2, 8},
 															{ Entities.PU_LeaderBow4, 8},
 															{ Entities.PU_LeaderBow4, 8},
 															{ Entities.PV_Cannon3a, 0} ,

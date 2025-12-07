@@ -12,24 +12,24 @@ setupArmyKerberosDefense = function()
 	                                    	  	
 	-- Spawn parameter    
 	if CP_Difficulty == 0 then              	  	
-		ArmyKerberosDefense.spawnTypes 			= 	{ 	{ Entities.CU_BlackKnight_LeaderMace2, 12},
-														{ Entities.CU_BlackKnight_LeaderMace2, 12},
-														{ Entities.CU_Barbarian_LeaderClub2, 12},
-														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PV_Cannon3a, 0},
-														{ Entities.PV_Cannon3a, 0},
-														{ Entities.PV_Cannon3a, 0}, 
+		ArmyKerberosDefense.spawnTypes 			= 	{	{ Entities.PU_LeaderSword3, 8},
+														{ Entities.CU_BanditLeaderSword2, 8},
+														{ Entities.PU_LeaderPoleArm3, 8},
+														{ Entities.CU_BlackKnight_LeaderMace2, 8},
+														{ Entities.PU_LeaderBow3, 8},
+														{ Entities.PU_LeaderBow3, 8},
+														{ Entities.PV_Cannon3a, 0} ,
+														{ Entities.PV_Cannon3a, 0} 
 													}
 	else
-		ArmyKerberosDefense.spawnTypes 			= 	{ 	{ Entities.PU_LeaderSword4, 12},
-														{ Entities.PU_LeaderSword4, 12},
-														{ Entities.PU_LeaderPoleArm4, 12},
-														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PU_LeaderBow4, 	 8},
-														{ Entities.PV_Cannon4a, 0},
-														{ Entities.PV_Cannon4a, 0},
-														{ Entities.PV_Cannon4a, 0}, 
+		ArmyKerberosDefense.spawnTypes 			= 	{	{ Entities.PU_LeaderSword4, 8},
+														{ Entities.PU_LeaderSword4, 8},
+														{ Entities.PU_LeaderPoleArm4, 8},
+														{ Entities.CU_BlackKnight_LeaderMace2, 8},
+														{ Entities.PU_LeaderBow4, 8},
+														{ Entities.PU_LeaderBow4, 8},
+														{ Entities.PV_Cannon3a, 0} ,
+														{ Entities.PV_Cannon3a, 0} 
 													}
 	end
 													
@@ -60,28 +60,29 @@ setupArmyKerberosDefense = function()
 		
 		ArmyKerberosDefense[i].player 			= 	5
 		ArmyKerberosDefense[i].id				= 	3 + i
-		ArmyKerberosDefense[i].strength			= 	5
 		ArmyKerberosDefense[i].position			= 	GetPosition("P5DefenseSpawnPos"..i)			-- in front of Bastilles
 		ArmyKerberosDefense[i].rodeLength		= 	2000
 		                                    	  	
 		-- Spawn parameter                  	  	
 		if CP_Difficulty == 0 then
-			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderBow3, 8},
+			ArmyKerberosDefense[i].strength			= 	5
+			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderSword3, 8},
+															{ Entities.PU_LeaderPoleArm3, 8},
 															{ Entities.CU_BlackKnight_LeaderMace2, 8},
-															{ Entities.CU_Barbarian_LeaderClub2, 8},
-															{ Entities.PV_Cannon3a, 0},
-															{ Entities.PV_Cannon3a, 0}
+															{ Entities.CU_BanditLeaderSword2, 8},
+															{ Entities.PU_LeaderBow3, 8},
+															{ Entities.PV_Cannon3a, 0} 
 														}
 		else
 			ArmyKerberosDefense[i].strength			= 8
-			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderBow4, 8},
+			ArmyKerberosDefense[i].spawnTypes 		= 	{	{ Entities.PU_LeaderSword4, 8},
+															{ Entities.PU_LeaderSword4, 8},
+															{ Entities.PU_LeaderPoleArm4, 8},
+															{ Entities.CU_BlackKnight_LeaderMace2, 8},
 															{ Entities.PU_LeaderBow4, 8},
-															{ Entities.PU_LeaderSword4, 8},
-															{ Entities.PU_LeaderSword4, 8},
-															{ Entities.PU_LeaderPoleArm4, 8},
-															{ Entities.PU_LeaderPoleArm4, 8},
-															{ Entities.PV_Cannon3a, 0},
-															{ Entities.PV_Cannon3a, 0}
+															{ Entities.PU_LeaderBow4, 8},
+															{ Entities.PV_Cannon3a, 0} ,
+															{ Entities.PV_Cannon3a, 0} 
 														}
 		end
 														

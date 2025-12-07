@@ -229,10 +229,19 @@ function Mission_FirstMapAction()
 			if CP_Difficulty == 1 then
 				CreateRandomGoldChests()	
 				CreateRandomChests()
+				
+				--Remove new rocks so that AI uses vanilla route
+				DestroyEntity("hard_rock1")
+				DestroyEntity("hard_rock2")
 
-				--Keep the rocks so that AI uses modded route
-				--DestroyEntity("hard_rock1")
-				--DestroyEntity("hard_rock2")
+				Logic.CreateEntity(Entities.PB_DarkTower2, 39200, 45600, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 31600, 43500, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 34100, 37700, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 27200, 37800, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 27500, 29600, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 21500, 29400, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 42300, 12300, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower2, 39900, 15900, 0, 4);
 			end
 
 			if CP_Difficulty == 2 then
@@ -242,6 +251,32 @@ function Mission_FirstMapAction()
 				for i = 2, table.getn(towers1) do
 					ReplaceEntity(towers1[i], Entities.PB_DarkTower2)
 				end
+
+				Logic.CreateEntity(Entities.PB_DarkTower3, 23600, 24400, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 24500, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 27200, 25000, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 26400, 25300, 0, 4);
+
+				Logic.CreateEntity(Entities.PB_DarkTower3, 39200, 45600, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 31600, 43500, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 34100, 37700, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 27200, 37800, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 27500, 29600, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 21500, 29400, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 42300, 12300, 0, 4);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 39900, 15900, 0, 4);
+
+				Logic.CreateEntity(Entities.PB_DarkTower3, 36300, 25200, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 36700, 24300, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 45700, 26200, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 40100, 22000, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 42000, 31900, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 43600, 33500, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 40700, 37300, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 35400, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 36100, 32200, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 48200, 27300, 0, 5);
+				Logic.CreateEntity(Entities.PB_DarkTower3, 45700, 29700, 0, 5);
 			end
 			
 			--[[
@@ -250,20 +285,6 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.XD_RuinMonastery1,vcpos.X,vcpos.Y,0,0)
 			--]]
 
-			Logic.CreateEntity(Entities.PB_DarkTower3, 23600, 24400, 0, 4);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 24500, 0, 4);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 27200, 25000, 0, 4);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 26400, 25300, 0, 4);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 36300, 25200, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 36700, 24300, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 45700, 26200, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 40100, 22000, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 42000, 31900, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 43600, 33500, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 40700, 37300, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 40200, 35400, 0, 5);
-			Logic.CreateEntity(Entities.PB_DarkTower3, 36100, 32200, 0, 5);
-			
 			local southernSpear1 = AI.Entity_CreateFormation(7,Entities.PU_LeaderPoleArm4,0,8,29687,8770,0,0,CP_Difficulty,0)
 			AI.Entity_CreateFormation(7,Entities.PU_LeaderBow4,0,8,29687,8770,0,0,CP_Difficulty,0)
 			Move(southernSpear1, "southernSpearPos1")

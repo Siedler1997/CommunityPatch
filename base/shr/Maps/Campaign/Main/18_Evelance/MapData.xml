@@ -13250,7 +13250,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>1.010000e+004</X>
     <Y>5.550000e+004</Y>
@@ -309860,7 +309860,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>1.000000e+004</X>
     <Y>5.500000e+004</Y>
@@ -309875,7 +309875,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>9.900000e+003</X>
     <Y>5.460000e+004</Y>
@@ -309890,7 +309890,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>1.070000e+004</X>
     <Y>5.550000e+004</Y>
@@ -309905,7 +309905,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>1.060000e+004</X>
     <Y>5.510000e+004</Y>
@@ -309920,7 +309920,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4a</Type>
+   <Type>PV_Cannon3a</Type>
    <Position>
     <X>1.050000e+004</X>
     <Y>5.470000e+004</Y>

@@ -6,7 +6,14 @@ createPlayer5 = function()
 	--	set up  player ai
 	
 	if CP_Difficulty > 0 then
-		MapEditor_SetupAI(playerId, 1, 5000, 1, "KI3_HQ", 2, 0)
+		local advancedSettings = {
+			otherUnitsToRecruit	= { UpgradeCategories.BlackKnightLeaderMace1 }
+		}
+		if CP_Difficulty == 2 then
+			--Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, playerId)
+			advancedSettings.armyStrength = 8
+		end
+		MapEditor_SetupAI(playerId, 1, 5000, 1, "KI3_HQ", 2, 0, advancedSettings)
 		--Logic.SetDiplomacyState( 1, 5, Diplomacy.Neutral )
 	end
 	local aiDescription = {
