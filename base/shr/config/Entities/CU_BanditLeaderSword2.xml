@@ -164,6 +164,19 @@
 	</Behavior>
 
 	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CLeaderEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>400</BasePriority>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
 		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
 			<Class>GGL::CReplaceableEntityBehavior</Class>
 			<EntityType>XD_DroppedAxeShield</EntityType>

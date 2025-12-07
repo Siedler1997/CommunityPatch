@@ -155,6 +155,20 @@
 	</Behavior>
 
 	<Behavior>
+	    <Logic classname="EGL::CGLEBehaviorProps">
+	        <Class>GGL::CSoldierEvadeBehavior</Class>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
+	    <Logic classname="GGL::CEvadeExecutionBehaviorProps">
+	        <Class>GGL::CEvadeExecutionBehavior</Class>
+	        <BasePriority>300</BasePriority>
+	        <ShouldEvade>false</ShouldEvade>
+	    </Logic>
+	</Behavior>
+
+	<Behavior>
 		<Logic classname="GGL::CReplaceableEntityBehaviorProperties">
 			<Class>GGL::CReplaceableEntityBehavior</Class>
 			<EntityType>XD_DroppedAxeShield</EntityType>
