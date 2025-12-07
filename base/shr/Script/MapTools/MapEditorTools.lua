@@ -121,8 +121,9 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 	end
 	
 	local armyStrength = 6
-	local armyGrouping = 0
+	local armyGrouping = ArmyGrouping_Mixed
 	local evilMod = false
+	local otherUnitsToRecruit = {}
 	if _advancedSettings ~= nil then
 		if _advancedSettings.armyStrength ~= nil then
 			armyStrength = _advancedSettings.armyStrength
@@ -132,6 +133,9 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 		end
 		if _advancedSettings.evilMod ~= nil then
 			evilMod = _advancedSettings.evilMod
+		end
+		if _advancedSettings.otherUnitsToRecruit ~= nil then
+			otherUnitsToRecruit = _advancedSettings.otherUnitsToRecruit
 		end
 	end
 
@@ -242,6 +246,9 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 	for c=1, table.getn(cannonTypes) do
 		table.insert(allUnitTypes, cannonTypes[c])
 	end
+	for s=1, table.getn(otherUnitsToRecruit) do
+		table.insert(allUnitTypes, otherUnitsToRecruit[s])
+	end
 
 	for i=1, _strength*2 do
 		
@@ -260,7 +267,7 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 		MapEditor_Armies[_playerId][i].AttackAllowed		=	false
 		MapEditor_Armies[_playerId][i].ArmyGrouping			=	armyGrouping
 
-		if armyGrouping == 0 then
+		if armyGrouping == ArmyGrouping_Mixed then
 			--No grouping - all types
 			MapEditor_Armies[_playerId][i].AllowedTypes			=	allUnitTypes
 		else
@@ -272,6 +279,9 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 																			UpgradeCategories.LeaderPoleArm }
 				for c=1, table.getn(cannonTypes) do
 					table.insert(MapEditor_Armies[_playerId][i].BackupTypes, cannonTypes[c])
+				end
+				for s=1, table.getn(otherUnitsToRecruit) do
+					table.insert(MapEditor_Armies[_playerId][i].BackupTypes, otherUnitsToRecruit[s])
 				end
 
 				--AI prefer these types for recruitment
@@ -292,6 +302,9 @@ function MapEditor_SetupAI(_playerId, _strength, _range, _techlevel, _position, 
 																			UpgradeCategories.LeaderPoleArm }
 				for c=1, table.getn(cannonTypes) do
 					table.insert(MapEditor_Armies[_playerId][i].PreferredTypes, cannonTypes[c])
+				end
+				for s=1, table.getn(otherUnitsToRecruit) do
+					table.insert(MapEditor_Armies[_playerId][i].PreferredTypes, otherUnitsToRecruit[s])
 				end
 
 				--If the AI doesn't have barracks, archeries or foundries it's allowed to recruit any unit for their armies (=cavalry)
@@ -353,7 +366,7 @@ function ControlMapEditor_Armies()
 				if MapEditor_Armies[player] ~= nil then
 					if MapEditor_Armies[player][army] ~= nil then
 						--Update army allowed types depending on buildings to avoid "dead" armies
-						if MapEditor_Armies[player][army].ArmyGrouping > 0 then
+						if MapEditor_Armies[player][army].ArmyGrouping ~= ArmyGrouping_Mixed then
 							--every 3rd army is cavalry-only
 							if math.mod(army, 3) == 0 then
 								--Set AllowedTypes depending on the existence of at least one stable

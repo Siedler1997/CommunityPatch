@@ -7,6 +7,10 @@ MEDIUM_EXPERIENCE 		= 1
 HIGH_EXPERIENCE 		= 2
 VERYHIGH_EXPERIENCE 	= 3
 
+ArmyGrouping_Mixed = 0
+ArmyGrouping_Grouped = 1
+ArmyGrouping_Adaptive = 2
+
 UPGRADE     = 0
 TECHNOLOGY  = 1
 
@@ -1918,7 +1922,7 @@ function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_BetterTrainingBarracks, _PlayerId );
 	ResearchTechnology( Technologies.T_Shoeing, _PlayerId );
 	ResearchTechnology( Technologies.T_BetterChassis, _PlayerId );
-
+	
 	ResearchTechnology( Technologies.T_BookKeeping, _PlayerId )
 
 	if _SuperTech == true then
@@ -2526,6 +2530,88 @@ function CreateScout(_playerId, _position, _entityType, _name, _isChestOpener)
 			CreateChestOpener(_name)
 		end
 	end
+end
+
+function GetCounterTroopTypes(_playerId, _cannonType, _bluntUnitTypes)
+	local counters = nil
+
+	local SwordAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderSword1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderSword2)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderSword3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderSword4)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderSword2a)
+	local SpearAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderPoleArm1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderPoleArm2)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderPoleArm3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderPoleArm4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderPoleArm2a)
+	local BowAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderBow1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderBow2)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderBow3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderBow4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderBow2a)
+	local HCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderHeavyCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderHeavyCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderHeavyCavalry1a)
+--[[
+	local LCavAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderCavalry1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderCavalry2)	
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PU_LeaderCavalry1a)
+	local CanAmount = Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon1) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon2)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon3) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon4)
+						+ Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon3a) + Logic.GetNumberOfEntitiesOfTypeOfPlayer(_playerId,Entities.PV_Cannon4a)
+--]]
+	local allUnits = SwordAmount + SpearAmount + BowAmount + HCavAmount --+ CanAmount + LCavAmount
+	--[[
+	local allUnitTypes = { 	UpgradeCategories.LeaderBow,
+							UpgradeCategories.LeaderSword,
+							UpgradeCategories.LeaderPoleArm,
+							UpgradeCategories.LeaderCavalry,
+							UpgradeCategories.LeaderHeavyCavalry }
+	--]]
+	if allUnits >= 6 then
+		--Check for single types
+		if SwordAmount / allUnits >= 0.9 then
+			counters = {
+				UpgradeCategories.LeaderHeavyCavalry
+			}
+			if _cannonType ~= nil then
+				table.insert(counters, _cannonType)
+			end
+			if _bluntUnitTypes ~= nil then
+				if type(_bluntUnitTypes) == "number" then
+					table.insert(counters, _bluntUnitTypes)
+				elseif type(_bluntUnitTypes) == "table" then
+					for i = 1, table.getn(_bluntUnitTypes) do
+						table.insert(counters, _bluntUnitTypes[i])
+					end
+				end
+			end
+		elseif SpearAmount / allUnits >= 0.9 then
+			counters = {
+				UpgradeCategories.LeaderSword,
+				UpgradeCategories.LeaderBow
+			}
+			if _cannonType ~= nil then
+				table.insert(counters, _cannonType)
+			end
+		elseif BowAmount / allUnits >= 0.9 then
+			counters = {
+				UpgradeCategories.LeaderSword,
+				UpgradeCategories.LeaderBow
+			}
+			if _cannonType ~= nil then
+				table.insert(counters, _cannonType)
+			end
+		elseif HCavAmount / allUnits >= 0.9 then
+			counters = {
+				UpgradeCategories.LeaderPoleArm,
+				UpgradeCategories.LeaderBow,
+				UpgradeCategories.LeaderCavalry
+			}
+		elseif CanAmount / allUnits >= 0.9 then
+			counters = {
+				UpgradeCategories.LeaderHeavyCavalry,
+				UpgradeCategories.LeaderCavalry
+			}
+		else
+			--Check for specific unit combinations
+		end
+	end
+
+	return counters
 end
 
 --[[
