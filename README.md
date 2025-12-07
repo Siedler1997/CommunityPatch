@@ -899,13 +899,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- 'T_Lockpicking' berücksichtigen
 		- sinnvoll einbinden, ggf auch sperren (via 'Mission_ForbidAllTechnologies', inkl. AddOn)
 	- Schwierigkeitgrad 'Albtraum'
-		- Statt Steuern halbieren Sold erhöhen
+		- Steuerhalbierung entfernen
+			- stattdessen andere Stellschrauben nutzen (bessere KI: Steuerhöhe/Predigt, Adaptive KI, etc.)
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
-			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
-				- Alternative: Kanonen in "Höhle" versetzen, um Logiklücke zu vermeiden
+			- Evelance
+				- Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
+					- Alternative: Kanonen in "Höhle" versetzen, um Logiklücke zu vermeiden
 			- Wasteland-Dörfer: Namen im Auftragsbuch
+			- Schlacht um Evelance
+				- Vorposten Kaserne/Schießplatz/Kanonengießerei geben
 		- Extra1
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen
@@ -984,6 +988,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- in der Kampgane in Cutscenes nutzen (nicht in Briefings?)
 - Langzeitwetter ("XNetwork.Manager_IsGameRunning() == 1", SP only)
 - Nebelvolk: Mehr Varianz bei Einheiten (aus AeK?)
+- Berittene Scharfschützen
 - Upgrade-Technologien für böse Einheiten
 - Mehr Sounds
 	- Eigener Todes-Sound für Nebelkrieger, Helden und Kanonen
