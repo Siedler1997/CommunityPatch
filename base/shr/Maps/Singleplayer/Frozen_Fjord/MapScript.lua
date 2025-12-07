@@ -79,7 +79,8 @@ function Mission_InitTechnologies()
 	ResearchAllMilitaryTechs(6, true)
 	ResearchAllMilitaryTechs(7)
 	ResearchAllMilitaryTechs(8)
-
+	
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 3)
 	--ResearchAnimalTechs(5)
 end
 

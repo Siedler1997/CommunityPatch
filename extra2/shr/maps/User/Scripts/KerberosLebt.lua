@@ -50,6 +50,8 @@ function InitTechnologies()
 	ResearchAllMilitaryTechsAddOn(3)
 	ResearchAllMilitaryTechsAddOn(6)
 
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 3)
+
 	ResearchAnimalTechs(2)
 end
 
@@ -608,8 +610,13 @@ end
 function CreatePlayer3()
 	player3 					= {}
 	player3.id 					= 3
+	
+	local advancedSettings = {
+		evilMod				=	true,
+		otherUnitsToRecruit	= { UpgradeCategories.BlackKnightLeaderMace1 }
+	}
 
-  MapEditor_SetupAI(player3.id, 2, 10000, 3, "p3_hq", 0, 0)
+	MapEditor_SetupAI(player3.id, 2, 10000, 3, "p3_hq", 0, 0, advancedSettings)
 
 	local description 			= {
     serfLimit = 12,

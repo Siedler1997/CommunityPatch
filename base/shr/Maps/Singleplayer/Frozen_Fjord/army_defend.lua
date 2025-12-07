@@ -10,13 +10,13 @@ createArmyDefend = function()
 				Entities.PU_LeaderHeavyCavalry2,
 				Entities.PU_LeaderPoleArm3,
 				Entities.PU_LeaderPoleArm3,
-				Entities.PV_Cannon4 
+				Entities.PV_Cannon3a 
 				}
 	troops2	= { Entities.PU_LeaderBow4,
 				Entities.PU_LeaderBow4,
 				Entities.PU_LeaderSword4,
 				Entities.PU_LeaderSword4,
-				Entities.PV_Cannon4 
+				Entities.PV_Cannon3a 
 				}
 	troops3	= { Entities.PU_LeaderHeavyCavalry1,
 				Entities.PU_LeaderCavalry2,

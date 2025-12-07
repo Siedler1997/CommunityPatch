@@ -104,6 +104,7 @@ function FirstMapAction()
   StartSimpleJob("Bonus1");
   StartSimpleJob("Bonus2");
   StartSimpleJob("Kermit");
+  StartSimpleJob("SuperTech");
   LocalMusic.UseSet = EVELANCEMUSIC 
 	
   ScoutFoerster_gvScoutFoerster.GROWTH_LEVELS = table.getn(ScoutFoerster_SET_Evelance)
@@ -150,6 +151,9 @@ function FirstMapAction()
   local position = "P2_AI_HQ";
   local aggressiveness = 3;
   local peacetime = 800;
+    local advancedSettings = {
+	    evilMod				=	true
+    }
   MapEditor_SetupAI(aiID, strength, range, techlevel, position, aggressiveness, peacetime);
   SetupPlayerAi(aiID, description);
   SetPlayerName(aiID, "juja mary");
@@ -162,7 +166,11 @@ function FirstMapAction()
   local position = "P3_AI_HQ";
   local aggressiveness = 3;
   local peacetime = 1600;
-  MapEditor_SetupAI( aiID, strength, range, techlevel, position, aggressiveness, peacetime);
+    local advancedSettings = {
+	    evilMod				=	true,
+	    otherUnitsToRecruit	= { UpgradeCategories.LeaderBarbarian }
+    }
+  MapEditor_SetupAI( aiID, strength, range, techlevel, position, aggressiveness, peacetime, advancedSettings);
   SetupPlayerAi(aiID, description);
   SetPlayerName(aiID, "Varg SpiderFive");
 
@@ -174,7 +182,11 @@ function FirstMapAction()
   local position = "P4_AI_HQ";
   local aggressiveness = 3;   
   local peacetime = 2400;  
-  MapEditor_SetupAI(aiID, strength, range, techlevel, position, aggressiveness, peacetime);
+    local advancedSettings = {
+	    evilMod				=	true,
+	    otherUnitsToRecruit	= { UpgradeCategories.BlackKnightLeaderMace1 }
+    }
+  MapEditor_SetupAI(aiID, strength, range, techlevel, position, aggressiveness, peacetime, advancedSettings);
   SetupPlayerAi(aiID, description);
   SetPlayerName(aiID, "Kerberos Bangolos");
 
@@ -185,6 +197,8 @@ function FirstMapAction()
   Logic.AddMercenaryOffer(mercTent, Entities.PU_LeaderRifle2, 10, ResourceType.Wood, 750);
   Logic.AddMercenaryOffer(mercTent, Entities.PU_LeaderHeavyCavalry2, 10, ResourceType.Wood, 750);
   
+    gvGUI.BonusHeroId = GetEntityId("drake")
+
 	StartSimpleJob("ControlEnemyHeroes")
 
   --Tools.ExploreArea(-1, -1, 900)
@@ -542,6 +556,17 @@ function Bonus2()
     return true
   end  
   
+end 
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function SuperTech()
+    --Sobald eine Festung zerstört wird, legen die KIs richtig los
+    if IsDead("P2_AI_HQ") or IsDead("P3_AI_HQ") or IsDead("P4_AI_HQ") then
+        ResearchTechnology( Technologies.T_SuperTechnology, 2 );
+        ResearchTechnology( Technologies.T_SuperTechnology, 3 );
+        ResearchTechnology( Technologies.T_SuperTechnology, 4 );
+        return true
+    end
 end 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
