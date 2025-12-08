@@ -89,6 +89,7 @@
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">
 			  <Class>GGL::CGLBehaviorAnimationEx</Class>
+			  <SuspensionAnimation>CU_LeaderOutlaw1_Idle1</SuspensionAnimation>
 			  <AnimSet>SET_CU_LEADEROUTLAW1</AnimSet>
 		</Logic>
 		  <Display classname="ED::CBehaviorProps">
@@ -101,6 +102,7 @@
 			  <Speed>360</Speed>
 			  <RotationSpeed>30</RotationSpeed>
 			  <MoveTaskList>TL_LEADER_WALK</MoveTaskList>
+			  <MoveIdleAnim>CU_LeaderOutlaw1_Idle1</MoveIdleAnim>
 		</Logic>
 		  <Display classname="ED::CBehaviorProps">
 			  <Class>ED::CDisplayBehaviorMovement</Class>
