@@ -84,7 +84,7 @@
 		  <Exploration>20</Exploration>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-    	<ExperiencePoints>0</ExperiencePoints>
+    	<ExperiencePoints>20</ExperiencePoints>
 	</Logic>
 	<Behavior>
 		  <Logic classname="GGL::CGLAnimationBehaviorExProps">

@@ -82,7 +82,7 @@
 		  <Exploration>20</Exploration>
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-    	<ExperiencePoints>30</ExperiencePoints>
+    	<ExperiencePoints>20</ExperiencePoints>
     	
     	<Upgrade>                       
     	   <Category>BlackKnightSoldierMace1</Category>

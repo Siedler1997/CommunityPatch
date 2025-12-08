@@ -81,7 +81,7 @@
 		  <AdjustWalkAnimSpeed>true</AdjustWalkAnimSpeed>
 		  <Exploration>20</Exploration>
     	<IdleTaskList>TL_MILITARY_IDLE</IdleTaskList>
-    	<ExperiencePoints>5</ExperiencePoints>
+    	<ExperiencePoints>15</ExperiencePoints>
     	<Upgrade>                       
             <Category>SoldierBandit</Category>
         </Upgrade>
