@@ -1880,15 +1880,6 @@ function GetRandom(_min, _max)
 	return math.random(_min, _max)
 end
 
--- Feeds the AI with a recruitment plan
-function SetAIUnitsToBuild( _aiID, ... )
-    for i = table.getn(DataTable), 1, -1 do
-        if DataTable[i].player == _aiID and DataTable[i].AllowedTypes then
-            DataTable[i].AllowedTypes = arg;
-        end
-    end
-end
-
 --Researchs Armor-, Attack- and other useful techs for military purposes (except animal techs)
 function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_LeatherMailArmor, _PlayerId );
@@ -2450,6 +2441,7 @@ function IsPositionInMap(_pos, _correction)
 	end
 end
 
+-- Feeds the AI with a recruitment plan
 function SetAIUnitsToBuild( _aiID, _types )
     for i = table.getn(DataTable), 1, -1 do
         if DataTable[i].player == _aiID and DataTable[i].AllowedTypes then
