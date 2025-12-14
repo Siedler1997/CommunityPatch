@@ -149,6 +149,15 @@ function FirstMapAction()
 			GUI.SetTaxLevel(1)
 
 			ReplaceEntity("vc_player", Entities.CB_Grange)
+			
+			local towers1 = { Logic.GetPlayerEntities(3, Entities.CB_Evil_Tower1, 48, 0) }
+			for i = 2, table.getn(towers1) do
+				ReplaceEntity(towers1[i], Entities.CB_Evil_Tower2)
+			end
+			local towers2 = { Logic.GetPlayerEntities(4, Entities.CB_Evil_Tower1, 48, 0) }
+			for i = 2, table.getn(towers2) do
+				ReplaceEntity(towers2[i], Entities.CB_Evil_Tower2)
+			end
 		end
 
 		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1, 53200, 25000, 90, 3), "NephilimBaseHQ");

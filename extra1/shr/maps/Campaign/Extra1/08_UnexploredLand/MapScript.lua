@@ -138,6 +138,11 @@ function FirstMapAction()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			GUI.SetTaxLevel(1)
+			
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.CB_Evil_Tower1, 48, 0) }
+			for i = 2, table.getn(towers1) do
+				ReplaceEntity(towers1[i], Entities.CB_Evil_Tower2)
+			end
 		end
 
 		SetEntityName(Logic.CreateEntity(Entities.CB_Bastille1, 23500, 14000, 90, 7), "RobberyTower1");

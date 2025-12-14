@@ -251,6 +251,11 @@ function Mission_FirstMapAction()
 			GUI.SetTaxLevel(1)
 			
 			ReplaceEntity("p7_7", Entities.PB_Blacksmith1)
+
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.CB_Evil_Tower1, 48, 0) }
+			for i = 2, table.getn(towers1) do
+				ReplaceEntity(towers1[i], Entities.CB_Evil_Tower2)
+			end
 		else
 			CreateRandomChests()
 		end

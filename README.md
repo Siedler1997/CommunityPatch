@@ -896,7 +896,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
 	- Dunkle Schatztruhen auf schwer nutzen
-	- Dunkle Wohnstätten (abhängig vom Schwierigkeitsgrad)
 	- Low-Tier Units verteilen
 	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Scout bei Mapstart setzen
@@ -910,6 +909,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
+			- Die große Seuche: Mary als Gegner
 			- Evelance
 				- Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)?
 			- Wasteland-Dörfer: Namen im Auftragsbuch
