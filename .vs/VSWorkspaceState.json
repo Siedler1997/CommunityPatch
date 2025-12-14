@@ -3,13 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\config",
-    "\\base\\shr\\text",
-    "\\base\\shr\\text\\de",
-    "\\base\\shr\\text\\de\\InGame",
-    "\\extra2",
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance",
     "\\extra2\\shr",
-    "\\extra2\\shr\\config"
+    "\\extra2\\shr\\config",
+    "\\extra2\\shr\\config\\Entities"
   ],
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua",
   "PreviewInSolutionExplorer": false
 }

@@ -871,9 +871,15 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Bug: KIs können einige (neue) Einheiten nicht rekrutieren 
+	- Banditen-Axtkämpfer
+	- Nebelkrieger
+	- Alle(?) neuen Einheiten
+	- vermutlich hardcoded
 - Verbesserte KI
 	- Advanced Settings
 		- MaxArmySize
+		- zufällige Soldatenzahl und XP
 		- Zusammensetzung
 			- Mixed: Vanilla. Alles ist dabei!
 			- Grouped: ein paar Armeen sind nach Typ geordnet
@@ -905,8 +911,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Map spezifisch
 		- Basegame
 			- Evelance
-				- Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)
-					- Alternative: Kanonen in "Höhle" versetzen, um Logiklücke zu vermeiden
+				- Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)?
 			- Wasteland-Dörfer: Namen im Auftragsbuch
 			- Schlacht um Evelance
 				- Vorposten Kaserne/Schießplatz/Kanonengießerei geben
