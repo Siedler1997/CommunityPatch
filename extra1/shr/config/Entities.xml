@@ -817,7 +817,9 @@
 		<Entity>CB_DestroyAbleRuinMonastery1</Entity>
 		<Entity>CB_DestroyAbleRuinResidence1</Entity>
 		<Entity>CB_DestroyAbleRuinSmallTower1</Entity>
+		<Entity>CB_DestroyAbleRuinSmallTower2</Entity>
 		<Entity>CB_DestroyAbleRuinSmallTower3</Entity>
+		<Entity>CB_DestroyAbleRuinSmallTower4</Entity>
 		
 		<!--NPCs-->
 		<Entity>CU_Thief</Entity>

@@ -770,6 +770,10 @@
 	<Entity>PV_Cannon4a</Entity>
 	<Entity>PU_Hero1_Guard</Entity>
 	<Entity>CB_DestroyAbleRuinMonastery1</Entity>
+	<Entity>CB_DestroyAbleRuinSmallTower1</Entity>
+	<Entity>CB_DestroyAbleRuinSmallTower2</Entity>
+	<Entity>CB_DestroyAbleRuinSmallTower3</Entity>
+	<Entity>CB_DestroyAbleRuinSmallTower4</Entity>
 	<Entity>CU_VeteranCaptain</Entity>
 	<Entity>CU_VeteranLieutenant</Entity>
 	<Entity>CU_VeteranMajor</Entity>
