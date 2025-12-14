@@ -22,7 +22,8 @@ OptionsMenu.S10PrefPlayerColors = {
 	5,
 	6,
 	9,
-	13
+	13,
+	16
 }
 OptionsMenu.S10PrefPlayerColorIndex = 1
 

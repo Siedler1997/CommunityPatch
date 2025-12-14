@@ -51,7 +51,6 @@ end
 ------------------------------------------------------------------------------
 function InitPlayerColorMapping()
 	Display.SetPlayerColorMapping(2,15)
-	Display.SetPlayerColorMapping(5,16)
     Display.SetPlayerColorMapping(6,ROBBERS_COLOR)
 	
 	local p1color = GetPlayerPreferredColor()
@@ -75,6 +74,12 @@ function InitPlayerColorMapping()
 		else
 			Display.SetPlayerColorMapping(4,6)
 		end
+	end
+
+	if p1color ~= 16 then
+		Display.SetPlayerColorMapping(5,16)
+	else
+		Display.SetPlayerColorMapping(5,MORTFICHET_COLOR)
 	end
 	
 end

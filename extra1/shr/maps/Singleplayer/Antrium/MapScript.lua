@@ -85,8 +85,12 @@ function InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(3, 4)		
 	end
 	Display.SetPlayerColorMapping(4, BARBARIAN_COLOR)
-
-	Display.SetPlayerColorMapping(5, 16)
+	
+	if p1color ~= 16 then
+		Display.SetPlayerColorMapping(5,16)
+	else
+		Display.SetPlayerColorMapping(5,MORTFICHET_COLOR)
+	end
 	Display.SetPlayerColorMapping(6, ROBBERS_COLOR)
 	Display.SetPlayerColorMapping(7, 15)
 end

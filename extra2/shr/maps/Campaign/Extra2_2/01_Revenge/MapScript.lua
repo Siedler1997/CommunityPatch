@@ -70,7 +70,11 @@ function Mission_InitPlayerColorMapping()
 	else
 		Display.SetPlayerColorMapping(2, 3)	
 	end
-	Display.SetPlayerColorMapping(4, 16)	
+	if p1color ~= 16 then
+		Display.SetPlayerColorMapping(4,16)
+	else
+		Display.SetPlayerColorMapping(4,MORTFICHET_COLOR)
+	end
 	Display.SetPlayerColorMapping(5, NPC_COLOR)	
 	Display.SetPlayerColorMapping(7, ROBBERS_COLOR)	
 	Display.SetPlayerColorMapping(8, KERBEROS_COLOR)		

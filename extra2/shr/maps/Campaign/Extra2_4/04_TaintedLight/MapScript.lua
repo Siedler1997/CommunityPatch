@@ -98,7 +98,11 @@ function InitPlayerColorMapping()
 	if p1color == 6 then
 		Display.SetPlayerColorMapping(6, 1)
 	end
-	Display.SetPlayerColorMapping(7, 16)
+	if p1color ~= 16 then
+		Display.SetPlayerColorMapping(7,16)
+	else
+		Display.SetPlayerColorMapping(7,MORTFICHET_COLOR)
+	end
 	Display.SetPlayerColorMapping(8, ROBBERS_COLOR)
 
 end
