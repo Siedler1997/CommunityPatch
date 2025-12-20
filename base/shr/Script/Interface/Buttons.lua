@@ -678,7 +678,17 @@ end
 --------------------------------------------------------------------------------
 
 function GUIAction_SetTaxes(_level)	
-	GUI.SetTaxLevel(_level)
+	if CP_HardTaxes == false then
+		GUI.SetTaxLevel(_level)
+	else
+		if _level == 2 then
+			GUI.SetTaxLevel(5)
+		elseif _level == 4 then
+			GUI.SetTaxLevel(6)
+		else
+			GUI.SetTaxLevel(_level)
+		end
+	end
 end
 
 --------------------------------------------------------------------------------

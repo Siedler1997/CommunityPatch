@@ -39,6 +39,9 @@ for i = 1, 8 do
 	CP_EvilMod[i].TowerState = 0
 end
 
+-- HardTaxes: Normale und sehr hohe Steuern sind halbiert, niedrige und hohe Steuern nicht verfuegbar
+CP_HardTaxes = false
+
 -------------------------------------------------------------------------------------------------------
 -- Start the briefing system by using the specified briefing table.
 -- @param _briefing Table with all pages of the briefing (see tutorial for more information).
@@ -1841,7 +1844,7 @@ function CreateMilitaryGroup(_player,_entity,_soldiers,_position,_name,_lookAt)
 
 end
 
--- Gibt die bevorzugte Spielerfarbe des Spielers zurück
+-- Gibt die bevorzugte Spielerfarbe des Spielers zurueck
 function GetPlayerPreferredColor()
 	local color = 1
 	
@@ -1853,11 +1856,11 @@ function GetPlayerPreferredColor()
 end
 
 --- GetRandom   mcb  1.0    (Original ???)  
--- Gibt eine Pseudozufallszahl zwischen _min und _max zurück.  
+-- Gibt eine Pseudozufallszahl zwischen _min und _max zurueck.  
 -- Ist _max nicht gesetzt, zwischen 1 und _min.  
--- Wird ein numerisches table übergeben, wird ein pseudozufälliger Eintrag zurückgegeben.  
+-- Wird ein numerisches table uebergeben, wird ein pseudozufaelliger Eintrag zurueckgegeben.  
 -- 
--- Benötigt:
+-- Benoetigt:
 -- nix
 function GetRandom(_min, _max)
 	if type(_min)=="table" then
@@ -1930,7 +1933,7 @@ function ResearchAnimalTechs(_PlayerId, _AnimalTech2)
 	end
 end
 
--- (von Peermanent? oder JugarTeam?) geändert bei Kingsia
+-- (von Peermanent? oder JugarTeam?) geaendert bei Kingsia
 function SucheAufDerWelt(_player, _entity, _groesse, _punkthier)
 	local punktX1, punktX2, punktY1, punktY2, data
 	local gefunden = {}
@@ -1958,7 +1961,7 @@ function SucheAufDerWelt(_player, _entity, _groesse, _punkthier)
 		local punktY2 = _punkthier.Y + _groesse / 4
 		rueck = SucheAufDerWelt(_player, _entity, _klgroesse, {X=punktX1,Y=punktY1})
 		for i = 1, table.getn(rueck) do
-			if not IstDrin(rueck[i], gefunden) then -- wegen Überschneidungen
+			if not IstDrin(rueck[i], gefunden) then -- wegen Ueberschneidungen
 				table.insert(gefunden, rueck[i])
 			end
 		end
@@ -2246,13 +2249,13 @@ function RaidersControl()
 	for i = 1, table.getn(raid_table) do
 		local rtable = raid_table[i]
 		if RaidersAreAlive(raid_table[i].raid_id) then	--Existiert das Rudel noch?
-			for w = 1, table.getn(rtable.raid_units) do	--entfernt tote Wölfe aus den Tabellen
+			for w = 1, table.getn(rtable.raid_units) do	--entfernt tote Woelfe aus den Tabellen
 				if not IsExisting(rtable.raid_units[w]) then
 					table.remove(rtable.raid_units, w)
 				end
 			end
 			
-			if math.mod(raid_ccount, 5) == 0 then	--Kontrolle (Angriff/Rückzug)
+			if math.mod(raid_ccount, 5) == 0 then	--Kontrolle (Angriff/Rueckzug)
 				local enemy = GetNearestEnemyInArea(rtable.raid_data.r_player, rtable.raid_data.r_cpos, rtable.raid_data.r_range)
 				if enemy ~= false then
 					for k = 1, table.getn(rtable.raid_units) do
@@ -2270,8 +2273,8 @@ function RaidersControl()
 					end
 				end
 			end
-			if math.mod(raid_ccount, 60) == 0 then	--Vermehrung (wenn noch mind. 2 Wölfe vorhanden)
-				if table.getn(rtable.raid_units) < rtable.raid_data.r_resam and table.getn(rtable.raid_units) >= 2 then	--Limit noch nicht erreicht? Mind. 2 Wölfe vorhanden?
+			if math.mod(raid_ccount, 60) == 0 then	--Vermehrung (wenn noch mind. 2 Woelfe vorhanden)
+				if table.getn(rtable.raid_units) < rtable.raid_data.r_resam and table.getn(rtable.raid_units) >= 2 then	--Limit noch nicht erreicht? Mind. 2 Woelfe vorhanden?
 					local nachw_zahl = math.ceil(table.getn(rtable.raid_units)/4)										--Nachwuchs (aufgerundet) = aktuelle Anzahl / 4
 					if (table.getn(rtable.raid_units) + nachw_zahl) > rtable.raid_data.r_resam then
 						nachw_zahl = nachw_zahl * 0 + rtable.raid_data.r_resam - table.getn(rtable.raid_units)			--Nachwuchs = Maximum - aktuelle Anzahl
@@ -2312,12 +2315,12 @@ function RaidersControl()
 		end
 	end
 	
-	if raid_ccount == 120 then	--Setzt den Counter zurück, damit er keine utopischen Werte annimmt
+	if raid_ccount == 120 then	--Setzt den Counter zurueck, damit er keine utopischen Werte annimmt
 		raid_ccount = 0
 	end
 end
 
---Gibt zurück, ob ein Rudel noch Wölfe enthält, also existent ist
+--Gibt zurueck, ob ein Rudel noch Woelfe enthaelt, also existent ist
 function RaidersAreAlive(_id)
 	local alive = false;
 	for i = 1, table.getn(raid_table) do
@@ -2330,7 +2333,7 @@ function RaidersAreAlive(_id)
 	return alive;
 end
 
---Entfernt das Rudel aus der Liste und tötet alle verbliebenen Wölfe (falls extern aufgerufen)
+--Entfernt das Rudel aus der Liste und toetet alle verbliebenen Woelfe (falls extern aufgerufen)
 function RaidersDelete(_id)
 	for i = 1, table.getn(raid_table) do
 		if raid_table[i].raid_id == _id then
@@ -2346,7 +2349,7 @@ function RaidersDelete(_id)
 	end
 end
 
--- Gibt true zurück, wenn Gegner in der Nähe sind
+-- Gibt true zurueck, wenn Gegner in der Naehe sind
 -- by Tenji
 function AreEnemiesInArea( _player, _position, _range)
 	for i = 1,8 do
@@ -2358,7 +2361,7 @@ function AreEnemiesInArea( _player, _position, _range)
 	end
 end
 
--- Gibt den nächstgelegenen (lebenden) Gegner in der Nähe zurück
+-- Gibt den naechstgelegenen (lebenden) Gegner in der Naehe zurueck
 -- by Siedler1997
 function GetNearestEnemyInArea(_player, _pos, _range)
 	local minrange = _range/4
@@ -2404,7 +2407,7 @@ function GetDistance(_a, _b)
     return math.sqrt((_a.X - _b.X)^2+(_a.Y - _b.Y)^2)
 end
 
--- Liefert eine zufällige Position innerhalb eines Kreises
+-- Liefert eine zufaellige Position innerhalb eines Kreises
 -- by Siedler1997
 function Zufall_Kreis(_pos, _radius, _bcheck)
 	local posi = _pos
@@ -2419,13 +2422,13 @@ function Zufall_Kreis(_pos, _radius, _bcheck)
 	end
 end
 
--- Prüft, ob eine Position innerhalb der Map liegt
+-- Prueft, ob eine Position innerhalb der Map liegt
 -- by Siedler1997
 function IsPositionInMap(_pos, _correction)
 	local wsize = Logic.WorldGetSize()
 	local posX = _pos.X
 	local posY = _pos.Y
-	if _correction == false then	--nur Überprüfung?
+	if _correction == false then	--nur Ueberpruefung?
 		if posX >= 0 and posY >= 0 and posX <= wsize and posY <= wsize then
 			return true
 		else
@@ -2604,6 +2607,30 @@ function GetCounterTroopTypes(_playerId, _cannonType, _bluntUnitTypes)
 	end
 
 	return counters
+end
+
+function GetTrueTaxMultiplier(_pID)
+	local TechState = Logic.GetTechnologyState(_pID, Technologies.T_BookKeeping)
+	local TaxLevel = Logic.GetTaxLevel(_pID)
+	local TrueTaxLevel = TaxLevel
+	local taxes = 0
+
+	--Get true tax level
+	if TaxLevel == 5 then
+		TrueTaxLevel = 1
+	elseif TaxLevel == 6 then
+		TrueTaxLevel = 2
+	end
+
+	--Calculate base tax ammount
+	taxes = TrueTaxLevel
+	--[[
+	--If bookkeeping researched, multiplicate taxes with factor
+	if TechState == 4 then	
+		taxes = taxes * 1.2
+	end
+	--]]
+	return taxes
 end
 
 --[[

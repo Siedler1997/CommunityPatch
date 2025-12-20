@@ -675,7 +675,7 @@ function GUIUpdate_TaxTaxAmountOfWorker()
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
 	local PlayerID = GUI.GetPlayerID()
 	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping)
-	local TaxesString = Logic.GetTaxLevel(PlayerID) * 5
+	local TaxesString = GetTrueTaxMultiplier(PlayerID) * 5
 	
 	if TechState == 4 then	
 		TaxesString = TaxesString * 1.2
@@ -711,7 +711,7 @@ function GUIUpdate_TaxPaydayIncome()
 	local Payday = Logic.GetPlayerPaydayLeaderCosts(PlayerID)
 		
 	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
-		TaxAmount = TaxAmount + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+		TaxAmount = TaxAmount * 1.2
 	end
 
 	if Logic.GetPlayerPaysLeaderFlag(PlayerID) == 0 then
@@ -738,7 +738,7 @@ function GUIUpdate_TaxSumOfTaxes()
 	local TaxIncome = Logic.GetPlayerPaydayCost(PlayerID)	
 
 	if Logic.GetTechnologyState(PlayerID, Technologies.T_BookKeeping) == 4 then	
-		TaxIncome = TaxIncome + Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+		TaxIncome = TaxIncome * 1.2
 	end
 	
 	XGUIEng.SetText(CurrentWidgetID, TaxIncome)	
@@ -817,7 +817,7 @@ function GUIUpdate_BonusTaxation()
 		if TechState == 4 then	
 			local PaydayTimeLeft = Logic.GetPlayerPaydayTimeLeft(PlayerID)
 			local PaydayFrequency = Logic.GetPlayerPaydayFrequency(PlayerID)
-			local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * Logic.GetTaxLevel(PlayerID)
+			local extraTaxes = Logic.GetNumberOfAttractedWorker(PlayerID) * GetTrueTaxMultiplier(PlayerID)
 
 			if PaydayTimeLeft == PaydayFrequency and extraTaxes > 0 then
 				Tools.GiveResouces(PlayerID, extraTaxes, 0, 0, 0, 0, 0)	

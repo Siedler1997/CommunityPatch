@@ -414,9 +414,9 @@ function GUIUpdate_HeroButton()
 
 	if Logic.IsEntityInCategory(EntityID,EntityCategories.Hero1) == 1 then
 		SourceButton = "FindHeroSource1"	
-		--Gibt die Spielerfarbe zurück und speichert ihre RGB_Werte in 3 Variablen
+		--Gibt die Spielerfarbe zurueck und speichert ihre RGB_Werte in 3 Variablen
 		local ColorR, ColorG, ColorB = GUI.GetPlayerColor(GUI.GetPlayerID())
-		--Zu helle Spielerfarben (Weiß, Hellgrau) werden auf Dunkelgrau gesetzt
+		--Zu helle Spielerfarben (Weiss, Hellgrau) werden auf Dunkelgrau gesetzt
 		if ColorR > 180 and ColorG > 180 and ColorB > 180 then
 			ColorR = 136
 			ColorG = 136
@@ -1038,21 +1038,43 @@ function GUIUpdate_TaxesButtons()
 	local UpgradeCategory = Logic.GetUpgradeCategoryByBuildingType(Logic.GetEntityType(BuildingID))
 	local TechState = Logic.GetTechnologyState(PlayerID, Technologies.T_AdjustTaxes)
 	local CurrentWidgetID = XGUIEng.GetCurrentWidgetID()
-	
+
 	if TechState == 4 then
+		local visualTaxLevel = TaxLevel
+
+		if CP_HardTaxes == true then
+			if TaxLevel == 5 then
+				visualTaxLevel = 2
+			elseif TaxLevel == 6 then
+				visualTaxLevel = 4
+			end
+		end
+
 		XGUIEng.DisableButton(CurrentWidgetID, 0)
 		if UpgradeCategory == UpgradeCategories.Outpost then
 			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-			XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[TaxLevel] ,1)	
+			XGUIEng.HighLightButton(gvGUI_WidgetID.OP_TaxesButtons[visualTaxLevel] ,1)	
 		elseif UpgradeCategory == UpgradeCategories.Bank then
 			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-			XGUIEng.HighLightButton(gvGUI_WidgetID.Bank_TaxesButtons[TaxLevel] ,1)	
+			XGUIEng.HighLightButton(gvGUI_WidgetID.Bank_TaxesButtons[visualTaxLevel] ,1)	
 		else
 			XGUIEng.UnHighLightGroup(gvGUI_WidgetID.InGame, "taxesgroup")		
-			XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[TaxLevel] ,1)	
+			XGUIEng.HighLightButton(gvGUI_WidgetID.TaxesButtons[visualTaxLevel] ,1)	
 		end
 	else
 		XGUIEng.DisableButton(CurrentWidgetID, 1)
+	end
+	
+	if CP_HardTaxes == false then
+		XGUIEng.ShowWidget(CurrentWidgetID, 1)	
+	else
+		if CurrentWidgetID == gvGUI_WidgetID.OP_TaxesButtons[1] or CurrentWidgetID == gvGUI_WidgetID.OP_TaxesButtons[3]
+			or CurrentWidgetID == gvGUI_WidgetID.Bank_TaxesButtons[1] or CurrentWidgetID == gvGUI_WidgetID.Bank_TaxesButtons[3]
+			or CurrentWidgetID == gvGUI_WidgetID.TaxesButtons[1] or CurrentWidgetID == gvGUI_WidgetID.TaxesButtons[3] then
+			XGUIEng.ShowWidget(CurrentWidgetID, 0)	
+		else
+			XGUIEng.ShowWidget(CurrentWidgetID, 1)	
+		end
 	end
 end
 
