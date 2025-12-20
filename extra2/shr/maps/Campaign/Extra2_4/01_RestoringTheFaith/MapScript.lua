@@ -57,7 +57,6 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			animalTech2 = true
 		end
 		
@@ -221,7 +220,8 @@ function Mission_FirstMapAction()
 		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 500, 1500, 1000, 150)
 
 		if CP_Difficulty == 2 then
-			GUI.SetTaxLevel(1)
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 			
 			Logic.CreateEntity(Entities.PB_DarkTower3, 20000, 47300, 0, 2);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 46700, 0, 2);

@@ -783,6 +783,10 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Das Gebäude 'CB_Castle1' kann theoretisch zum Gebäude 'CB_Castle2' ausgebaut werden
 		- Da es keinen Ausbaubutton dafür gibt, ist dies nur per Script oder GUI-Hacks möglich
 	- Die GUI-Funktion 'GUIAction_AOOnlineHelp' ist obsolet, da alle Hilfe-Aktionen in 'GUIAction_OnlineHelp' ausgeführt werden
+	- 2 neue Steuerklassen implementiert
+		- 5: 5 Taler pro Siedler, kein Einfluss auf Motivation
+		- 6: 10 Taler pro Sielder, -20% Motivation
+		- Können mittels 'CP_HardTaxes = true' und 'GUI.SetTaxLevel(5)' moderate und sehr hohe Steuern ersetzen, um den Schwierigkeitsgrad zu erhöhen
 	- LevyTaxes ist nun funktionsfähig
 		- Button wird denoch ausgeblendet, da das Feature schwer zu balancen ist
 		- kann mit Aufruf folgender Funktionen in der IPCM aktiviert werden
@@ -843,6 +847,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Abfrage dunkler Türme mittels 'CP_GetEvilModTowerState(_playerId)'
 			- Verwendung: siehe Kommentar in 'Comforts.lua'
 		- 'SetAlarmModeForAI' und 'ChangePlayersPlayerID' by Noigi
+		- 'GetTrueTaxMultiplier(_pID)': Gibt den Steuermultiplikator zurück
 - Bekannte Bugs & Einschränkungen
 	- Der Drache ist unsichtbar
 		- Grund: zu viele Bones im Modell und dadurch nicht vom Spiel darstellbar
@@ -875,10 +880,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Banditen-Axtkämpfer
 	- Nebelkrieger
 	- Alle(?) neuen Einheiten
-	- vermutlich hardcoded
+	- vermutlich hardcoded...
 - Verbesserte KI
 	- Advanced Settings
-		- MaxArmySize
 		- zufällige Soldatenzahl und XP
 		- Zusammensetzung
 			- Mixed: Vanilla. Alles ist dabei!
@@ -889,9 +893,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- Rest: Mixed
 			- Picked: Mapper bestimmt
 			- Adaptive: abhängig vom Spieler, um diesen zu kontern
-	- Integrationen
-		- SetupPlayerAi
-		- EvilMod
+	- Integrationen: SetupPlayerAi
 - Kampagne nochmal überarbeiten
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
@@ -904,17 +906,13 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- 'T_Lockpicking' berücksichtigen
 		- sinnvoll einbinden, ggf auch sperren (via 'Mission_ForbidAllTechnologies', inkl. AddOn)
 	- Schwierigkeitgrad 'Albtraum'
-		- Steuerhalbierung entfernen
-			- stattdessen andere Stellschrauben nutzen (bessere KI: Steuerhöhe/Predigt, Adaptive KI, etc.)
 		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
 			- Die große Seuche: Mary als Gegner
-			- Evelance
-				- Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)?
+			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)?
 			- Wasteland-Dörfer: Namen im Auftragsbuch
-			- Schlacht um Evelance
-				- Vorposten Kaserne/Schießplatz/Kanonengießerei geben
+			- Schlacht um Evelance: Vorposten Kaserne/Schießplatz/Kanonengießerei geben
 		- Extra1
 			- 07_FleeOrFight
 				- Neue Signalfeuer Logik testen

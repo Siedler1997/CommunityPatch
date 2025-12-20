@@ -22,7 +22,6 @@ function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			animalTech2 = true
 		end
 		ResearchAnimalTechs(2, animalTech2)
@@ -144,7 +143,8 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			GUI.SetTaxLevel(1)
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 
 			--Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
 			

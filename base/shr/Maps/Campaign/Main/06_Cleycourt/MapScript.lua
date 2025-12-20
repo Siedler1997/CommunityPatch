@@ -57,7 +57,6 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			animalTech2 = true
 		end
 		ResearchAnimalTechs(6, animalTech2)
@@ -169,7 +168,8 @@ function Mission_FirstMapAction()
 			CreateRandomGoldChests()
 			Logic.CreateEntity(Entities.PB_Tower2,8100,15000,0,7)
 		else
-			GUI.SetTaxLevel(1)
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 			
 			Logic.CreateEntity(Entities.PB_Tower3,8100,15000,0,7)
 			StartCountdown(15 * 60, setupArmyP7PlayerAttack, false)

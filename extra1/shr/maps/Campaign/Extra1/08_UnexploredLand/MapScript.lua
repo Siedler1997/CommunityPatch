@@ -20,7 +20,6 @@ function InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 1 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			--ForbidTechnology(Technologies.UP2_Village)
 			animalTech2 = true
 		end
@@ -137,7 +136,8 @@ function FirstMapAction()
 	
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			GUI.SetTaxLevel(1)
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 			
 			local towers1 = { Logic.GetPlayerEntities(2, Entities.CB_Evil_Tower1, 48, 0) }
 			for i = 2, table.getn(towers1) do

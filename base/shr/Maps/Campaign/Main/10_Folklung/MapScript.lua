@@ -52,7 +52,6 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			animalTech2 = true
 		end
 		ResearchAnimalTechs(2, animalTech2)
@@ -227,8 +226,9 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_Tower3, 5700, 26300, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 15900, 24500, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower3, 9700, 29800, 0, 5);
-
-			GUI.SetTaxLevel(1)
+			
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 			
 			DestroyEntity("TheRock")
 			createArmyAttackPlayerA()

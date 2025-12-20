@@ -153,7 +153,6 @@ function Mission_InitTechnologies()
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
 			animalTech2 = true
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			ResearchAnimalTechs(5, animalTech2)
 			ResearchAnimalTechs(6, animalTech2)
 		end
@@ -289,7 +288,8 @@ function Mission_FirstMapAction()
 
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
-			GUI.SetTaxLevel(1)
+			CP_HardTaxes = true
+			GUI.SetTaxLevel(5)
 		else
 			CreateRandomChests()
 		end

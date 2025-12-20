@@ -122,7 +122,6 @@ function Mission_InitResources()
 function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			ResearchAnimalTechs(2)
 			ResearchAnimalTechs(3)
 			ResearchAnimalTechs(4)
@@ -215,7 +214,8 @@ function Mission_FirstMapAction()
 		if CP_Difficulty > 0 then
 			local wolfSet = RaidersDefaultSets.Vanilla
 			if CP_Difficulty == 2 then
-				GUI.SetTaxLevel(1)
+				CP_HardTaxes = true
+				GUI.SetTaxLevel(5)
 			else
 				CreateRandomGoldChests()
 			end

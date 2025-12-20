@@ -116,7 +116,6 @@ function Mission_InitTechnologies()
 	DisableExpanding(GetHumanPlayer())
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
 			ResearchAnimalTechs(2)
 			ResearchAnimalTechs(3)
 			ResearchAnimalTechs(4)
@@ -212,7 +211,8 @@ function Mission_FirstMapAction()
 		
 		if CP_Difficulty > 0 then
 			if CP_Difficulty == 2 then
-				GUI.SetTaxLevel(1)
+				CP_HardTaxes = true
+				GUI.SetTaxLevel(5)
 			else
 				CreateRandomGoldChests()
 			end

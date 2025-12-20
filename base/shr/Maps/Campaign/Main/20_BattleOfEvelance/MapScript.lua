@@ -94,7 +94,8 @@ function Mission_InitTechnologies()
 	if GDB.GetValue("Game\\Campaign_Difficulty") > 0 then
 		local animalTech2 = false
 		if GDB.GetValue("Game\\Campaign_Difficulty") == 2 then
-			ForbidTechnology(Technologies.T_AdjustTaxes, 1)
+			--ResearchTechnology(Technologies.T_AdjustTaxes, 1)
+			--ResearchTechnology(Technologies.T_BookKeeping, 1)
 			animalTech2 = true
 		end
 		ResearchAnimalTechs(3, animalTech2)
@@ -245,7 +246,8 @@ function Mission_FirstMapAction()
 			end
 
 			if CP_Difficulty == 2 then
-				GUI.SetTaxLevel(1)
+				CP_HardTaxes = true
+				GUI.SetTaxLevel(5)
 
 				local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_DarkTower3, 48, 0) }
 				for i = 2, table.getn(towers1) do
