@@ -158,10 +158,9 @@ function FirstMapAction()
 			for i = 2, table.getn(towers2) do
 				ReplaceEntity(towers2[i], Entities.CB_Evil_Tower2)
 			end
+			SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1, 53200, 25000, 90, 3), "NephilimBaseHQ");
+			SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 53800, 25100, 0, 3), "NephilimHQSpawnPos");
 		end
-
-		SetEntityName(Logic.CreateEntity(Entities.CB_RobberyTower1, 53200, 25000, 90, 3), "NephilimBaseHQ");
-		SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 53800, 25100, 0, 3), "NephilimHQSpawnPos");
 	end
 
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

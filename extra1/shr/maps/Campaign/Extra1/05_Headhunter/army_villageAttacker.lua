@@ -71,11 +71,8 @@ function controlArmyAttack(_army)
 
             Report("Spawn NOW!")
             
-            if CP_Difficulty == 0 then
-                createArmy(2,_army.info.id,_army,2,_army.info.spawnPosition,CP_Difficulty+1,troopsAttacker,10+CP_Difficulty*3)
-            else
-                createArmy(2,_army.info.id,_army,4,_army.info.spawnPosition,CP_Difficulty+1,troopsAttacker,10+CP_Difficulty*3)
-            end
+            createArmy(2,_army.info.id,_army,2+CP_Difficulty,_army.info.spawnPosition,CP_Difficulty+1,troopsAttacker,10+CP_Difficulty*3)
+
             _army.info.state = ATTACK
 
             return false

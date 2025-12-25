@@ -17,20 +17,21 @@ createArmyAttackPlayerA = function()
 														{Entities.PU_LeaderBow1, 4}	 }
 		ArmyAttackPlayerA.respawnTime       =   80
 	else
+		local soldiers = 4 + CP_Difficulty * 2
 		ArmyAttackPlayerA.strength			= 	8	                                	
-		ArmyAttackPlayerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8},
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8},
+		ArmyAttackPlayerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers},
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers},
 													 }
 		if CP_Difficulty == 1 then
 			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2, 4})
 			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2, 4})
 		else
-			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, 8})
-			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, 8})
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, soldiers})
+			table.insert(ArmyAttackPlayerA.spawnTypes, {Entities.PU_LeaderBow2a, soldiers})
 		end
 		ArmyAttackPlayerA.respawnTime       =   60
 	end

@@ -161,7 +161,7 @@ end3rdQuest = function()
 	ReplaceEntity("DeadTree", Entities.XD_TreeEvelance1)
 		
 	-- Player 4 joins
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		Logic.ChangeAllEntitiesPlayerID(4, 1)
 	else
 		Logic.SetDiplomacyState( 1, 4, Diplomacy.Friendly )
@@ -240,7 +240,7 @@ end5thQuest = function()
 	buildUpDone = true
 	
 	-- Change player
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		Logic.ChangeAllEntitiesPlayerID(6, 1)
 	else	
 		Logic.SetDiplomacyState( 1, 6, Diplomacy.Friendly )

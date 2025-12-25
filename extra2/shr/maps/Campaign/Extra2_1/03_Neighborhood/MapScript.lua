@@ -138,11 +138,11 @@ function FirstMapAction()
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
 			timeForSupport = timeForSupport + 60 * 15
+			local bosspos1 = GetPosition("armyOutpost")
+			local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
+			LookAt(bossID1, "supportNogersund")
 		end
 
-		local bosspos1 = GetPosition("armyOutpost")
-		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
-		LookAt(bossID1, "supportNogersund")
 	end
 	
 	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (8 + CP_Difficulty * 2)})

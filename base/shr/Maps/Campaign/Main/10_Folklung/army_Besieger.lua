@@ -16,15 +16,16 @@ createArmyBesiegerA = function()
 													{Entities.PU_LeaderBow2, 4}
 													 }
 	else
+		local soldiers = 4 + CP_Difficulty * 2
 		ArmyBesiegerA.strength			= 	8	                                	
-		ArmyBesiegerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8},
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.CU_Barbarian_LeaderClub2, 8}, 
-													{Entities.PU_LeaderBow2a, 8}, 
-													{Entities.PU_LeaderBow2a, 8}
+		ArmyBesiegerA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers},
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.CU_Barbarian_LeaderClub2, soldiers}, 
+													{Entities.PU_LeaderBow2a, soldiers}, 
+													{Entities.PU_LeaderBow2a, soldiers}
 													 }
 	end
 

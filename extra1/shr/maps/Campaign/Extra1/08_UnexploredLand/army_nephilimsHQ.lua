@@ -8,16 +8,7 @@ function CreateArmyNephilimsHQ()
 		ArmyNephilimsHQ[i]						= 	{}
 		ArmyNephilimsHQ[i].player 				=	2
 		ArmyNephilimsHQ[i].id					=	0+i
-		
-		if i>2 then
-			ArmyNephilimsHQ[i].strength				=	4
-		else
-			ArmyNephilimsHQ[i].strength				=	4
-		end
-		if CP_Difficulty > 0 then
-			ArmyTribalCamps[i].strength = ArmyTribalCamps[i].strength * 2
-		end
-					
+		ArmyNephilimsHQ[i].strength				=	4 + CP_Difficulty * 2
 		ArmyNephilimsHQ[i].position				=	GetPosition("NephilimMoveOutDefensePos")
 		ArmyNephilimsHQ[i].rodeLength			=	3000
 		ArmyNephilimsHQ[i].retreatStrength		=	0
@@ -36,11 +27,10 @@ function CreateArmyNephilimsHQ()
 													
 		ArmyNephilimsHQ[i].spawnGenerator		=	"Nephilim_HQ_Tower"..index
 		ArmyNephilimsHQ[i].spawnPos				=	GetPosition("Nephilim_HQSpawnPos"..index)
-		if CP_Difficulty == 0 then
-			ArmyNephilimsHQ[i].respawnTime			=	60
+		ArmyNephilimsHQ[i].respawnTime			=	60-10*CP_Difficulty
+		if CP_Difficulty < 2 then
 			ArmyNephilimsHQ[i].maxSpawnAmount		=	1
 		else
-			ArmyNephilimsHQ[i].respawnTime			=	45
 			ArmyNephilimsHQ[i].maxSpawnAmount		=	2
 		end
 		ArmyNephilimsHQ[i].endless				=	true

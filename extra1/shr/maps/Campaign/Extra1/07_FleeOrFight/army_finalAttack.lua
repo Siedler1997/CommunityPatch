@@ -15,10 +15,7 @@ function CreateArmyFinalAttackByIndex(_index)
 		ArmyFinalAttack[_index]				=	{}
 		ArmyFinalAttack[_index].player 		=	5
 		ArmyFinalAttack[_index].id			=	5+_index
-		ArmyFinalAttack[_index].strength	=	4
-		if CP_Difficulty > 0 then
-			ArmyFinalAttack[_index].strength = ArmyFinalAttack[_index].strength * 2
-		end
+		ArmyFinalAttack[_index].strength	=	4 + 2*CP_Difficulty
 		ArmyFinalAttack[_index].beAgressive	=	true
 		
 		assert(_index<=3)
@@ -43,15 +40,26 @@ function CreateArmyFinalAttackByIndex(_index)
 			minNumberOfSoldiers	= 0,
 			experiencePoints 	= HIGH_EXPERIENCE,
 		}
-		if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
 			troopDescription.experiencePoints = troopDescription.experiencePoints + 1
 		end
-		for k = 1, (CP_Difficulty+1) do
+		troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
+		EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+		EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+		troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
+		EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+		EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+		if CP_Difficulty > 0 then
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
-			EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
 			EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
 			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 			EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+			if CP_Difficulty == 2 then
+				troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
+				EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+				troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
+				EnlargeArmy(ArmyFinalAttack[_index],troopDescription)
+			end
 		end
 
 end

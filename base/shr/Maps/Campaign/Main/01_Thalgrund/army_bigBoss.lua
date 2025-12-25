@@ -21,15 +21,14 @@ createArmyBigBoss = function()
 		
 			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
 		--	create pike men
 		
-			if CP_Difficulty == 0 then
+			if CP_Difficulty < 2 then
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
 			else
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 			end
 --			troopDescription.leaderType = Entities.PU_LeaderPoleArm1
@@ -37,7 +36,7 @@ createArmyBigBoss = function()
 			EnlargeArmy(armyBigBossA,troopDescription)
 
 		--	create bandit boss
-			if CP_Difficulty == 0 then
+			if CP_Difficulty < 2 then
 				troopDescription.leaderType = Entities.PU_LeaderCavalry1
 			else
 				troopDescription.leaderType = Entities.PU_LeaderCavalry2

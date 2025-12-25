@@ -15,24 +15,24 @@ createArmyDefendCamps = function()
 
 	--	create 
 		local soldiers = 4
-		local experience = 0
-		local etype = Entities.CU_BanditLeaderSword1
-		if CP_Difficulty > 0 then
+		local etype1 = Entities.CU_BlackKnight_LeaderMace1
+		local etype2 = Entities.PU_LeaderBow2
+		if CP_Difficulty == 2 then
 			soldiers = 8
-			experience = 2
-			etype = Entities.CU_BanditLeaderSword2
+			etype1 = Entities.CU_BlackKnight_LeaderMace2
+			etype2 = Entities.PU_LeaderBow2a
 		end
 		local troopDescription = {
 		
 			maxNumberOfSoldiers	= soldiers,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= experience,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
-		troopDescription.leaderType = etype
+		troopDescription.leaderType = etype1
 		EnlargeArmy(armyDefendCamp1,troopDescription)
 
-		troopDescription.leaderType = etype
+		troopDescription.leaderType = etype2
 		EnlargeArmy(armyDefendCamp1,troopDescription)
 
 	end

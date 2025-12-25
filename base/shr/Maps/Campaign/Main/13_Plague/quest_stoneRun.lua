@@ -30,7 +30,7 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone1 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			CreateGoldChest(stonePosition1)
 		else
 			CreateRandomGoldChest(stonePosition1)
@@ -56,7 +56,7 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone2 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			CreateGoldChest(stonePosition2)
 		else
 			CreateRandomGoldChest(stonePosition2)
@@ -82,7 +82,7 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone3 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			CreateIronChest(stonePosition3)
 		end
 		

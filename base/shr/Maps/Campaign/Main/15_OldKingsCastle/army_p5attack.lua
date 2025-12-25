@@ -10,16 +10,16 @@ setupArmyP5Attack = function()
 	ArmyP5Attack.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm, 
 											UpgradeCategories.LeaderSword, 
 											UpgradeCategories.LeaderBow,
+											UpgradeCategories.BlackKnightLeaderMace1,
 											UpgradeCategories.LeaderCavalry,
-											UpgradeCategories.LeaderHeavyCavalry }
+											UpgradeCategories.LeaderHeavyCavalry,
+											Entities.PV_Cannon3a }
 
 	if CP_Difficulty == 0 then
 		ArmyP5Attack.strength		= 	6
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
 	else
 		ArmyP5Attack.strength		= 	8
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
 		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
 	end
 
@@ -69,9 +69,10 @@ SetupArmyP5Upgrading = function()
 	TimeLine.Enter("Upgrade P5bow to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP5Bow")
 	TimeLine.Enter("Upgrade P5bow to lvl 3", TimeLine.Seconds + 45*60, "UpgradeP5Bow")
 	TimeLine.Enter("Upgrade P5bow to lvl 4", TimeLine.Seconds + 65*60, "UpgradeP5Bow")
-
+	
 	TimeLine.Enter("Upgrade P5cavalry to lvl 2", TimeLine.Seconds + 60*60, "UpgradeP2Cavalry")
 	TimeLine.Enter("Upgrade P5heavycavalry to lvl 2", TimeLine.Seconds + 65*60, "UpgradeP2HeavyCavalry")
+	TimeLine.Enter("Upgrade P5blackknight to lvl 2", TimeLine.Seconds + 45*60, "UpgradeP5BlackKnight")
 
 end
 

@@ -19,14 +19,10 @@ function CreateArmyAttackersEx(_Index,_Pos)
 	ArmyAttackers[_Index].player 		=	5
 	ArmyAttackers[_Index].id			=	1+_Index
 	ArmyAttackers[_Index].position		=	GetPosition(_Pos)
-	ArmyAttackers[_Index].strength		=	4
+	ArmyAttackers[_Index].strength		=	4 + 2 * CP_Difficulty
 	ArmyAttackers[_Index].rodeLength	=	2000
 	ArmyAttackers[_Index].respawnCount	=	0
 	ArmyAttackers[_Index].beAgressive	=	true
-
-	if CP_Difficulty > 0 then
-		ArmyAttackers[_Index].strength = ArmyAttackers[_Index].strength * 1.5
-	end
 	
 	SetupArmy(ArmyAttackers[_Index])
 		
@@ -64,6 +60,11 @@ function SpawnArmyAttackers(_index)
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		if CP_Difficulty == 2 then
+			EnlargeArmy(ArmyAttackers[_index],troopDescription)
+			EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		end
 	end
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
@@ -71,6 +72,11 @@ function SpawnArmyAttackers(_index)
 	EnlargeArmy(ArmyAttackers[_index],troopDescription)
 	if CP_Difficulty > 0 then
 		EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		if CP_Difficulty == 2 then
+			EnlargeArmy(ArmyAttackers[_index],troopDescription)
+			EnlargeArmy(ArmyAttackers[_index],troopDescription)
+		end
 	end
 					
 end

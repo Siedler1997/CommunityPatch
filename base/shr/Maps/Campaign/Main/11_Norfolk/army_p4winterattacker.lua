@@ -24,11 +24,7 @@ SetupArmyP4WinterGather = function(_army)
 
 	_army.retreatStrength = 0
 	
-	_army.strength = 4
-	
-	if CP_Difficulty > 0 then
-		_army.strength = _army.strength + 2
-	end
+	_army.strength = 4 + CP_Difficulty * 2
 
 	_army.baseDefenseRange	= 	1
 	_army.outerDefenseRange	= 	1000
@@ -66,7 +62,7 @@ StartArmyP4WinterAttacker = function()
 	SetupArmyP2WinterAttack(ArmyP4Attacker)
 	SetupArmyP2WinterAttack(ArmyP4Defense1)
 	if CP_Difficulty == 2 then
-		SetupArmyP2WinterAttack(ArmyP4Attacke2)
+		SetupArmyP2WinterAttack(ArmyP4Attacker2)
 	end
 	
 

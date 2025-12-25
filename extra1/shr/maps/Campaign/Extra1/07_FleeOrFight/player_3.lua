@@ -43,7 +43,7 @@ function CreatePlayer3()
 	
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player3.id)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player3.id)
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, player3.id)
 		end
 	

@@ -8,7 +8,7 @@ setupArmyPart5Attack = function()
 
 	ArmyPart5Attack.player 				= 2
 	ArmyPart5Attack.id				= 1
-	ArmyPart5Attack.strength			= 3
+	ArmyPart5Attack.strength			= 4 + 2 * CP_Difficulty
 	ArmyPart5Attack.retreatStrength			= 0
 	ArmyPart5Attack.position			= GetPosition("P5SpawnArmy")
 	ArmyPart5Attack.baseDefenseRange		= 6000
@@ -18,11 +18,11 @@ setupArmyPart5Attack = function()
 	ArmyPart5Attack.AllowedTypes 			= {	UpgradeCategories.LeaderSword, 
 								UpgradeCategories.LeaderHeavyCavalry,
 								UpgradeCategories.LeaderBow,
-								Entities.PV_Cannon4
+								Entities.PV_Cannon3
 								}
 
-	if CP_Difficulty > 0 then
-		ArmyPart5Attack.strength = 8
+	if CP_Difficulty == 2 then
+		table.insert(ArmyPart5Attack.AllowedTypes, UpgradeCategories.BlackKnightLeaderMace1)
 		table.insert(ArmyPart5Attack.AllowedTypes, UpgradeCategories.LeaderPoleArm)
 		table.insert(ArmyPart5Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
 	end

@@ -24,7 +24,7 @@ createArmyRaiders = function()
 		local troopDescription = {
 			leaderType 			= etype,
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers	= 8,
+			maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
 			experiencePoints 	= VERYHIGH_EXPERIENCE,
 		}			
 	

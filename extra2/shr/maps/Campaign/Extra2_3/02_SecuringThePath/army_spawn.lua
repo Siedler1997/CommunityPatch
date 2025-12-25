@@ -296,7 +296,9 @@ end
 
 SpawnT3_1 = function()
 		local etype = Entities.PU_LeaderBow2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			etype = Entities.PU_LeaderBow2a
+		elseif CP_Difficulty == 2 then
 			etype = Entities.PU_LeaderBow3
 		end
 
@@ -361,7 +363,9 @@ end
 
 SpawnT2_1 = function()
 		local etype = Entities.PU_LeaderSword2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			etype = Entities.PU_LeaderSword2a
+		elseif CP_Difficulty == 2 then
 			etype = Entities.PU_LeaderSword3
 		end
 
@@ -424,7 +428,9 @@ end
 
 SpawnT1_1 = function()
 		local etype = Entities.PU_LeaderSword2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			etype = Entities.PU_LeaderSword2a
+		elseif CP_Difficulty == 2 then
 			etype = Entities.PU_LeaderSword3
 		end
 
@@ -479,33 +485,29 @@ function CreateArmyVillage()
 	ArmyVillage.rodeLength				= 7000
 	ArmyVillage.AttackAllowed			= true
 
-			local troopDescription 	= {
-	
+		local troopDescription 	= {
 			leaderType 				= Entities.PU_LeaderBow4,
-			maxNumberOfSoldiers			= 8,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty,
+			maxNumberOfSoldiers		= 8,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty
 		}
-			local troopDescription_1 	= {
-	
+		local troopDescription_1 	= {
 			leaderType 				= Entities.PU_LeaderSword4,
-			maxNumberOfSoldiers			= 8,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty,
+			maxNumberOfSoldiers		= 8,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty
 		}
-			local troopDescription_2 	= {
-	
+		local troopDescription_2 	= {
 			leaderType 				= Entities.PU_LeaderPoleArm4,
-			maxNumberOfSoldiers			= 8,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty,
+			maxNumberOfSoldiers		= 8,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty
 		}
-			local troopDescription_3 	= {
-	
+		local troopDescription_3 	= {
 			leaderType 				= Entities.PU_LeaderHeavyCavalry2,
-			maxNumberOfSoldiers			= 3,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty,
+			maxNumberOfSoldiers		= 3,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty
 		}
 
 	EnlargeArmy(ArmyVillage,troopDescription)

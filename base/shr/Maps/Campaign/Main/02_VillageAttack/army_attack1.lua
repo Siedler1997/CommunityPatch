@@ -1,15 +1,6 @@
 ARMY1_START_DELAY 	= 10 * 60
 ARMY1_DELAY 		= (5 * 60) + 20
 
-ARMY1_TROOP2_TYPE1	= Entities.CU_BlackKnight_LeaderMace1
-ARMY1_TROOP2_TYPE2	= Entities.CU_BanditLeaderSword1
-
-if CP_Difficulty > 0 then
-	ARMY1_TROOP2_TYPE1 = Entities.CU_BlackKnight_LeaderMace2
-	
-	ARMY1_TROOP2_TYPE2 = Entities.CU_BanditLeaderSword2
-end
-
 ARMY1_ATTACKS			= 1
 
 
@@ -34,23 +25,25 @@ createArmyAttack1 = function()
 
 	--	create 
 			
-		local soldiers = 4 + 2 * CP_Difficulty
-		local experience = 0
-		local etype = Entities.CU_BlackKnight_LeaderMace1
-		if CP_Difficulty > 0 then
-			experience = HIGH_EXPERIENCE
-			etype = Entities.CU_BlackKnight_LeaderMace2
+		local soldiers = 4
+		local etype1 = Entities.CU_BlackKnight_LeaderMace1
+		local etype2 = Entities.PU_LeaderBow1
+		if CP_Difficulty == 1 then
+			etype2 = Entities.PU_LeaderBow2
+		elseif CP_Difficulty == 2 then
+			soldiers = 6
+			etype1 = Entities.CU_BlackKnight_LeaderMace2
+			etype2 = Entities.PU_LeaderBow2a
 		end
-
 		local troopDescription = {
 		
+			maxNumberOfSoldiers	= soldiers,
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = soldiers,
-			experiencePoints 	= experience,
-			leaderType = etype
+			experiencePoints 	= CP_Difficulty,
 		}			
-
+		troopDescription.leaderType = etype1
 		EnlargeArmy(armyAttack1,troopDescription)
+		troopDescription.leaderType = etype2
 		EnlargeArmy(armyAttack1,troopDescription)
 
 		
@@ -200,20 +193,22 @@ createArmyAttack1 = function()
 						
 
 			--	create new troops for next attack
-				local soldiers = 4 + 2 * CP_Difficulty
-				local experience = 0
-				local etype = Entities.CU_BlackKnight_LeaderMace1
-				if CP_Difficulty > 0 then
-					experience = HIGH_EXPERIENCE
-					etype = Entities.CU_BlackKnight_LeaderMace2
+				local soldiers = 4
+				local etype1 = Entities.CU_BlackKnight_LeaderMace1
+				local etype2 = Entities.PU_LeaderBow1
+				if CP_Difficulty == 1 then
+					etype2 = Entities.PU_LeaderBow2
+				elseif CP_Difficulty == 2 then
+					soldiers = 6
+					etype1 = Entities.CU_BlackKnight_LeaderMace2
+					etype2 = Entities.PU_LeaderBow2a
 				end
-					
 				local troopDescription = {
-				
+		
 					maxNumberOfSoldiers	= soldiers,
 					minNumberOfSoldiers	= 0,
-					experiencePoints 	= experience,
-				}				
+					experiencePoints 	= CP_Difficulty,
+				}			
 	
 				-- define new attacking armies
 				
@@ -224,15 +219,9 @@ createArmyAttack1 = function()
 				
 				if armyAttack1.control.attack >= 0 then
 					
-					troopDescription.leaderType = etype
+					troopDescription.leaderType = etype1
 					EnlargeArmy(armyAttack1,troopDescription)
-    	    		
-					if CP_Difficulty == 0 then
-						etype = Entities.CU_BanditLeaderSword1
-					else
-						etype = Entities.CU_BanditLeaderSword2
-					end
-					troopDescription.leaderType = etype
+					troopDescription.leaderType = etype2
 					EnlargeArmy(armyAttack1,troopDescription)
 
 				end

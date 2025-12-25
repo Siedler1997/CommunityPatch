@@ -198,23 +198,23 @@ function Mission_FirstMapAction()
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.B_PowerPlant, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_WeatherForecast, 0)
 			Logic.SetTechnologyState(gvMission.PlayerID,Technologies.T_ChangeWeather, 0)
+
+			ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
+			Logic.CreateEntity(Entities.PB_Tower3, 44800, 10400, 0, 6);
+			Logic.CreateEntity(Entities.PB_Tower3, 41500, 10300, 0, 6);
+		
+			local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,43100,11400,0,0,3,0)
+			LookAt(bossID1, "KI1_Defense")
+		
+			local towers1 = { Logic.GetPlayerEntities(6, Entities.PB_Tower2, 5, 0) }
+			for i = 1, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_Tower3)
+				end
+			end
 		else
 			CreateRandomGoldChests()
 			CreateRandomChests()
-		end
-
-		ReplaceEntity("KI1_Target1", Entities.PB_Headquarters2)
-		Logic.CreateEntity(Entities.PB_Tower3, 44800, 10400, 0, 6);
-		Logic.CreateEntity(Entities.PB_Tower3, 41500, 10300, 0, 6);
-		
-		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,43100,11400,0,0,3,0)
-		LookAt(bossID1, "KI1_Defense")
-		
-		local towers1 = { Logic.GetPlayerEntities(6, Entities.PB_Tower2, 5, 0) }
-		for i = 1, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_Tower3)
-			end
 		end
 
 	end

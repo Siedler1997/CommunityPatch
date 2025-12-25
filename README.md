@@ -876,6 +876,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
+- Helias: Bekehrung von Nephilims reverten?
+- Neue Spielerfarben: Olivgrün, Braun, Dunkelrot und Dunkellila
 - Bug: KIs können einige (neue) Einheiten nicht rekrutieren 
 	- Banditen-Axtkämpfer
 	- Nebelkrieger
@@ -898,15 +900,11 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
 	- Dunkle Schatztruhen auf schwer nutzen
-	- Low-Tier Units verteilen
-	- Balancing in Bezug auf modifizierte DamageClasses prüfen
 	- Scout bei Mapstart setzen
 	- KIs sollen bei Bedarf Alarm aktivieren
 	- Neue Techs
 		- 'T_Lockpicking' berücksichtigen
 		- sinnvoll einbinden, ggf auch sperren (via 'Mission_ForbidAllTechnologies', inkl. AddOn)
-	- Schwierigkeitgrad 'Albtraum'
-		- Wieder mehr uniquen Content dorthin schieben
 	- Map spezifisch
 		- Basegame
 			- Die große Seuche: Mary als Gegner

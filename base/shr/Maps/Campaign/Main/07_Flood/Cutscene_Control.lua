@@ -46,51 +46,37 @@ end
 
 -------------------------------------------------------------------------------------------------------------------------
 function Cutscene_Intro_Start()
-	 Cutscene_Intro_Init()
+	Cutscene_Intro_Init()
 
-	if CP_Difficulty == 0 then	 
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat1"), "CutsceneSoldat1" )
-        CreateEntity(4, Entities.PU_LeaderSword1, GetPosition("CutsceneIntroSoldat2"), "CutsceneSoldat2" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat3"), "CutsceneSoldat3" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat4"), "CutsceneSoldat4" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat5"), "CutsceneSoldat5" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat6"), "CutsceneSoldat6" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat7"), "CutsceneSoldat7" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat8"), "CutsceneSoldat8" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat9"), "CutsceneSoldat9" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat10"), "CutsceneSoldat10" )
-        CreateEntity(4, Entities.PU_LeaderSword1, GetPosition("CutsceneIntroSoldat11"), "CutsceneSoldat11" )
-        CreateEntity(4, Entities.PU_LeaderSword1, GetPosition("CutsceneIntroSoldat12"), "CutsceneSoldat12" )
-        CreateEntity(4, Entities.PU_LeaderSword1, GetPosition("CutsceneIntroSoldat13"), "CutsceneSoldat13" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat14"), "CutsceneSoldat14" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat15"), "CutsceneSoldat15" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat16"), "CutsceneSoldat16" )
-        CreateEntity(4, Entities.PU_LeaderBow1, GetPosition("CutsceneIntroSoldat17"), "CutsceneSoldat17" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat18"), "CutsceneSoldat18" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm1, GetPosition("CutsceneIntroSoldat19"), "CutsceneSoldat19" )
-        CreateEntity(4, Entities.PU_LeaderSword1, GetPosition("CutsceneIntroSoldat20"), "CutsceneSoldat20" )
-    else
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat1"), "CutsceneSoldat1" )
-        CreateEntity(4, Entities.PU_LeaderSword2, GetPosition("CutsceneIntroSoldat2"), "CutsceneSoldat2" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat3"), "CutsceneSoldat3" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat4"), "CutsceneSoldat4" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat5"), "CutsceneSoldat5" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat6"), "CutsceneSoldat6" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat7"), "CutsceneSoldat7" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat8"), "CutsceneSoldat8" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat9"), "CutsceneSoldat9" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat10"), "CutsceneSoldat10" )
-        CreateEntity(4, Entities.PU_LeaderSword2, GetPosition("CutsceneIntroSoldat11"), "CutsceneSoldat11" )
-        CreateEntity(4, Entities.PU_LeaderSword2, GetPosition("CutsceneIntroSoldat12"), "CutsceneSoldat12" )
-        CreateEntity(4, Entities.PU_LeaderSword2, GetPosition("CutsceneIntroSoldat13"), "CutsceneSoldat13" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat14"), "CutsceneSoldat14" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat15"), "CutsceneSoldat15" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat16"), "CutsceneSoldat16" )
-        CreateEntity(4, Entities.PU_LeaderBow2, GetPosition("CutsceneIntroSoldat17"), "CutsceneSoldat17" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat18"), "CutsceneSoldat18" )
-        CreateEntity(4, Entities.PU_LeaderPoleArm2, GetPosition("CutsceneIntroSoldat19"), "CutsceneSoldat19" )
-        CreateEntity(4, Entities.PU_LeaderSword2, GetPosition("CutsceneIntroSoldat20"), "CutsceneSoldat20" )
+    local cutsceneSpearType = Entities.PU_LeaderPoleArm1
+    local cutsceneBowType = Entities.PU_LeaderBow1
+    local cutsceneSwordType = Entities.PU_LeaderSword1
+	if CP_Difficulty > 0 then	
+        cutsceneSpearType = Entities.PU_LeaderPoleArm2
+        cutsceneBowType = Entities.PU_LeaderBow2
+        cutsceneSwordType = Entities.PU_LeaderSword2
     end
+     
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat1"), "CutsceneSoldat1" )
+    CreateEntity(4, cutsceneSwordType, GetPosition("CutsceneIntroSoldat2"), "CutsceneSoldat2" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat3"), "CutsceneSoldat3" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat4"), "CutsceneSoldat4" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat5"), "CutsceneSoldat5" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat6"), "CutsceneSoldat6" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat7"), "CutsceneSoldat7" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat8"), "CutsceneSoldat8" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat9"), "CutsceneSoldat9" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat10"), "CutsceneSoldat10" )
+    CreateEntity(4, cutsceneSwordType, GetPosition("CutsceneIntroSoldat11"), "CutsceneSoldat11" )
+    CreateEntity(4, cutsceneSwordType, GetPosition("CutsceneIntroSoldat12"), "CutsceneSoldat12" )
+    CreateEntity(4, cutsceneSwordType, GetPosition("CutsceneIntroSoldat13"), "CutsceneSoldat13" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat14"), "CutsceneSoldat14" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat15"), "CutsceneSoldat15" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat16"), "CutsceneSoldat16" )
+    CreateEntity(4, cutsceneBowType, GetPosition("CutsceneIntroSoldat17"), "CutsceneSoldat17" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat18"), "CutsceneSoldat18" )
+    CreateEntity(4, cutsceneSpearType, GetPosition("CutsceneIntroSoldat19"), "CutsceneSoldat19" )
+    CreateEntity(4, cutsceneSwordType, GetPosition("CutsceneIntroSoldat20"), "CutsceneSoldat20" )
 
 --local i
 --for i=1,20 do

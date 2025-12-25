@@ -5,7 +5,7 @@ function createArmyPatrol2()
 
 	troopsArmyPatrol2 = { }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyPatrol2, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troopsArmyPatrol2, Entities.CU_BanditLeaderSword1)
 		table.insert(troopsArmyPatrol2, Entities.CU_BanditLeaderBow1)
@@ -14,11 +14,7 @@ function createArmyPatrol2()
 		table.insert(troopsArmyPatrol2, Entities.CU_Barbarian_LeaderClub2)
 		table.insert(troopsArmyPatrol2, Entities.CU_BanditLeaderSword2)
 		table.insert(troopsArmyPatrol2, Entities.CU_BanditLeaderBow2)
-		if CP_Difficulty == 1 then
-			table.insert(troopsArmyPatrol2, Entities.PV_Cannon2)
-		else
-			table.insert(troopsArmyPatrol2, Entities.PV_Cannon3)
-		end
+		table.insert(troopsArmyPatrol2, Entities.PV_Cannon3a)
 	end
 
     createArmy(2,3,armyPatrol2,7,"armyPatrol2",CP_Difficulty,troopsArmyPatrol2)

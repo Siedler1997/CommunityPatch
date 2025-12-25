@@ -216,9 +216,13 @@ function Mission_FirstMapAction()
 	
 	Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
 	
-	if CP_Difficulty > 0 then
+	if CP_Difficulty < 2 then
+		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 500, 3000, 3000, 500)
+	else
 		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 500, 1500, 1000, 150)
+	end
 
+	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
@@ -232,8 +236,6 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_DarkTower2, 25200, 46700, 0, 2);
 		end
 	else
-		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 500, 3000, 3000, 500)
-
 		CreateRandomChests()
 	end
 	

@@ -11,9 +11,8 @@ function createGuardArmies()
     	}
 
     
-	local experience = HIGH_EXPERIENCE
+	local experience = CP_Difficulty + 1
 	if CP_Difficulty > 0 then
-		experience = experience + 1
 		table.insert(troopsGuard, Entities.PU_LeaderRifle2)
 	end
 

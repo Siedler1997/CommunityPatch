@@ -7,7 +7,7 @@ function startChapterOne()
 	StartCutscene(Cutscenes[INTROCUTSCENE],createBriefingPrelude)
 	createBriefingShepherd()
 	
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		-- create troops for village defense
 		local troopDescription	= {
 			minNumberOfSoldiers	= 0,

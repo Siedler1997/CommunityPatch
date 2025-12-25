@@ -3,12 +3,18 @@
 
 
 spawnBarbArmy = function()
+	local bowtype = Entities.PU_LeaderBow2a
+	local swordtype = Entities.PU_LeaderSword2a
+	if CP_Difficulty == 2 then
+		bowtype = Entities.PU_LeaderBow3
+		swordtype = Entities.PU_LeaderSword3
+	end
 
 	local i = 0
 	local guards = 0
 	for i = 2,11,2 do
 		guards = GetPosition("guard"..i)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderBow3, 0, 8, guards.X+i*10, guards.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, bowtype, 0, 8, guards.X+i*10, guards.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "guards"..i) 
 		--LookAt("guards"..i,"p2")
 		--Attack("guards"..i,"p2")
@@ -17,7 +23,7 @@ spawnBarbArmy = function()
 
 	for i = 1,11,2 do
 		guards = GetPosition("guard"..i)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, guards.X+i*10, guards.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, guards.X+i*10, guards.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "guards"..i) 
 		--LookAt("guards"..i,"p2")
 		--Attack("guards"..i,"p2")
@@ -30,22 +36,26 @@ end
 
 
 spawnChasers = function()
+	local swordtype = Entities.PU_LeaderSword2a
+	if CP_Difficulty == 2 then
+		swordtype = Entities.PU_LeaderSword3
+	end
 
-for i = 1,4,1 do
-hunt = GetPosition("spawn"..i)
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "hunters"..i) 
-LookAt(battle,"p2")
-Attack("hunters"..i,"step1")
-end
+	for i = 1,4,1 do
+		hunt = GetPosition("spawn"..i)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+		SetEntityName(battle, "hunters"..i) 
+		LookAt(battle,"p2")
+		Attack("hunters"..i,"step1")
+	end
 
-hunter = GetPosition("keep1")
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, hunter.X+i*10, hunter.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "possy") 
-LookAt(battle,"p2")
-Attack("possy","Ragnar")
+	hunter = GetPosition("keep1")
+	battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, hunter.X+i*10, hunter.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+	SetEntityName(battle, "possy") 
+	LookAt(battle,"p2")
+	Attack("possy","Ragnar")
 
-briefingSpawnChasers()
+	briefingSpawnChasers()
 end
 
 
@@ -87,27 +97,30 @@ end
 
 
 createDefenders = function()
+	local swordtype = Entities.PU_LeaderSword2a
+	if CP_Difficulty == 2 then
+		swordtype = Entities.PU_LeaderSword3
+	end
 
+	for i = 1,4,1 do
+		hunt = GetPosition("spawn"..i)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+		SetEntityName(battle, "defenders"..i) 
+		LookAt(battle,"p2")
+		Attack("defenders"..i,"bam21")
+	end
 
-for i = 1,4,1 do
-hunt = GetPosition("spawn"..i)
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "defenders"..i) 
-LookAt(battle,"p2")
-Attack("defenders"..i,"bam21")
-end
+	for i = 1,4,1 do
+		hunt = GetPosition("spawn"..i)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+		SetEntityName(battle, "defenders1"..i) 
+		LookAt(battle,"p2")
+		Attack("defenders1"..i,"step22")
+	end
 
-for i = 1,4,1 do
-hunt = GetPosition("spawn"..i)
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "defenders1"..i) 
-LookAt(battle,"p2")
-Attack("defenders1"..i,"step22")
-end
+	varg = CreateEntity(2,Entities.CU_Barbarian_Hero,GetPosition("step1"),"Varg")
 
-varg = CreateEntity(2,Entities.CU_Barbarian_Hero,GetPosition("step1"),"Varg")
-
-StartSimpleJob("IsVargDead")
+	StartSimpleJob("IsVargDead")
 
 end
 
@@ -269,20 +282,26 @@ end
 
 
 spawnAttackers = function()
+	local bowtype = Entities.PU_LeaderBow2a
+	local swordtype = Entities.PU_LeaderSword2a
+	if CP_Difficulty == 2 then
+		bowtype = Entities.PU_LeaderBow3
+		swordtype = Entities.PU_LeaderSword3
+	end
 
-for i = 1,4,1 do
-hunt = GetPosition("spawn"..i)
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderBow3, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "attackers"..i) 
-LookAt(battle,"p2")
-Attack("attackers"..i,"p2")
-end
+	for i = 1,4,1 do
+		hunt = GetPosition("spawn"..i)
+		battle = AI.Entity_CreateFormation(2, bowtype, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+		SetEntityName(battle, "attackers"..i) 
+		LookAt(battle,"p2")
+		Attack("attackers"..i,"p2")
+	end
 
-for i = 1,4,1 do
-hunt = GetPosition("spawn"..i)
-battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty, 0)
-SetEntityName(battle, "attackers1"..i) 
-LookAt(battle,"p2")
-Attack("attackers1"..i,"p8")
-end
+	for i = 1,4,1 do
+		hunt = GetPosition("spawn"..i)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, hunt.X+i*10, hunt.Y+i*10, 0, 0, CP_Difficulty+1, 0)
+		SetEntityName(battle, "attackers1"..i) 
+		LookAt(battle,"p2")
+		Attack("attackers1"..i,"p8")
+	end
 end

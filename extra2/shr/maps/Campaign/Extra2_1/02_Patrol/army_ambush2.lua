@@ -7,11 +7,10 @@ function createArmyAmbush2()
 		Entities.CU_AggressiveWolf_White
     	}
        
-	local strenghth = 5
-	if CP_Difficulty == 0 then
+	local strenghth = 5 + CP_Difficulty
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyAmbush2, Entities.CU_Barbarian_LeaderClub1)
 	else
-		strenghth = strenghth + 2
 		table.insert(troopsArmyAmbush2, Entities.CU_Barbarian_LeaderClub2)
 	end
 

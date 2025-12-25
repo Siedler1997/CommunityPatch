@@ -1,9 +1,9 @@
 MAIN_FORCE_RESPAWN_TIME = 5 * 60
-if CP_Difficulty > 0 then
-	MAIN_FORCE_RESPAWN_TIME = MAIN_FORCE_RESPAWN_TIME - 60
-end
 
 createArmyMainForce = function()
+	if CP_Difficulty > 0 then
+		MAIN_FORCE_RESPAWN_TIME = MAIN_FORCE_RESPAWN_TIME - 60 * CP_Difficulty
+	end
 
 	--	set up
 
@@ -92,12 +92,8 @@ createArmyMainForce = function()
 				minNumberOfSoldiers	= 0,
 				maxNumberOfSoldiers	= 9,
 				leaderType 			= mainForcePool[Logic.GetRandom(table.getn(mainForcePool)) +1],
-				experiencePoints 	= HIGH_EXPERIENCE,
+				experiencePoints 	= 1 + CP_Difficulty,
 			}	
-			
-			if CP_Difficulty == 0 then	
-				troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
-			end
 		
 			EnlargeArmy(armyMainForce,troopDescription)
 

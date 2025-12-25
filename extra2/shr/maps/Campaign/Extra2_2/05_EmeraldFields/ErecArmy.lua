@@ -8,7 +8,7 @@ setupArmyEArmyAttack = function()
 
 	ArmyEArmyAttack.player 				= 3
 	ArmyEArmyAttack.id				= 1
-	ArmyEArmyAttack.strength			= 3
+	ArmyEArmyAttack.strength			= 5-CP_Difficulty
 	ArmyEArmyAttack.retreatStrength			= 0
 	ArmyEArmyAttack.position			= GetPosition("ErecArmySpawn")
 	ArmyEArmyAttack.baseDefenseRange		= 6000
@@ -16,11 +16,15 @@ setupArmyEArmyAttack = function()
 	ArmyEArmyAttack.rodeLength			= 3000
 	ArmyEArmyAttack.beAgressive			= true
 	ArmyEArmyAttack.AllowedTypes 			= {	UpgradeCategories.LeaderPoleArm, 
+												UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword,
+												UpgradeCategories.LeaderSword,
+												UpgradeCategories.LeaderHeavyCavalry,
 												UpgradeCategories.LeaderHeavyCavalry,
 												UpgradeCategories.LeaderCavalry,
 												UpgradeCategories.LeaderBow,
-												UpgradeCategories.LeaderRifle, 
+												UpgradeCategories.LeaderRifle,
+												Entities.PV_Cannon1, 
 												Entities.PV_Cannon2
 								}
 

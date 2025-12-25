@@ -193,30 +193,29 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			local hq_ai1_pos = GetPosition("HQ_AI1")
+
+			local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
+			LookAt(bossID1, "Garek")
+		
+			Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
+
+			local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
+			LookAt(bossID1, "camp_fire4")
+			local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
+			LookAt(bossID2, "camp_fire2")
+			local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
+			LookAt(bossID3, "camp_fire3")
+			local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
+			LookAt(bossID4, "camp_fire1")
+			local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
+			LookAt(bossID5, "camp_fire2")
 		else
 			CreateRandomGoldChests()
 			CreateRandomChests()
 		end
 
-		local hq_ai1_pos = GetPosition("HQ_AI1")
-
-		local bossID1 = AI.Entity_CreateFormation(8,Entities.CU_VeteranCaptain,0,0,(hq_ai1_pos.X + 800),(hq_ai1_pos.Y - 800),0,0,3,0)
-		LookAt(bossID1, "Garek")
-		
-		if CP_Difficulty == 2 then
-			Logic.CreateEntity(Entities.XD_Rock7, (hq_ai1_pos.X + 800), (hq_ai1_pos.Y + 2400), 0, 0);
-		end
-
-		local bossID1 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,14300,6400,0,0,3,0)
-		LookAt(bossID1, "camp_fire4")
-		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,27600,2900,0,0,3,0)
-		LookAt(bossID2, "camp_fire2")
-		local bossID3 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,23600,7000,0,0,3,0)
-		LookAt(bossID3, "camp_fire3")
-		local bossID4 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,30700,8400,0,0,3,0)
-		LookAt(bossID4, "camp_fire1")
-		local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
-		LookAt(bossID5, "camp_fire2")
 	end
 
 	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})

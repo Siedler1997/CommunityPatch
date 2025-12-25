@@ -1,7 +1,7 @@
-TIME_TO_WINTER = 60 * (120 - 30 * CP_Difficulty)
+TIME_TO_WINTER = 60 * 90
 
 function CreateQuestWinter()
-
+	TIME_TO_WINTER = TIME_TO_WINTER - 60 * (10 * CP_Difficulty)
 	StartSimpleJob("QuestWinter")
 
 end

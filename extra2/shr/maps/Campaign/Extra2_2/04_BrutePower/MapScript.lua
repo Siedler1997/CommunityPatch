@@ -168,7 +168,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		GlobalMissionScripting.GiveResouces(1, 1300, 2500, 3400, 4500, 900, 150)
 	else
 		GlobalMissionScripting.GiveResouces(1, 800, 1200, 1000, 1000, 300, 0)

@@ -27,7 +27,7 @@ function ControlArmyReinforcement()
 	
 			maxNumberOfSoldiers	= 12,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= MEDIUM_EXPERIENCE,
+			experiencePoints 	= 3-CP_Difficulty,
 			leaderType = Entities.PU_LeaderRifle2
 		}
 	

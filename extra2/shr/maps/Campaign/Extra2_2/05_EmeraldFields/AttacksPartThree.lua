@@ -8,7 +8,7 @@ setupArmyPart3Attack = function()
 
 	ArmyPart3Attack.player 				= 7
 	ArmyPart3Attack.id				= 1
-	ArmyPart3Attack.strength			= 3
+	ArmyPart3Attack.strength			= 3 + 2 * CP_Difficulty
 	ArmyPart3Attack.retreatStrength			= 0
 	ArmyPart3Attack.position			= GetPosition("P3SpawnArmy")
 	ArmyPart3Attack.baseDefenseRange		= 6000
@@ -21,8 +21,7 @@ setupArmyPart3Attack = function()
 								UpgradeCategories.LeaderHeavyCavalry
 								}
 
-	if CP_Difficulty > 0 then
-		ArmyPart3Attack.strength = ArmyPart3Attack.strength * 2
+	if CP_Difficulty == 2 then
 		table.insert(ArmyPart3Attack.AllowedTypes, UpgradeCategories.LeaderPoleArm)
 		table.insert(ArmyPart3Attack.AllowedTypes, UpgradeCategories.LeaderCavalry)
 		table.insert(ArmyPart3Attack.AllowedTypes, UpgradeCategories.LeaderRifle)

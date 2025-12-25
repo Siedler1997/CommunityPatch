@@ -14,7 +14,7 @@ function createDefenderArmies()
 	if CP_Difficulty == 0 then
 		table.insert(troopsDefender, Entities.PU_LeaderSword3)
 		table.insert(troopsDefender, Entities.PU_LeaderPoleArm2)
-		table.insert(troopsDefender, Entities.PV_Cannon2)
+		table.insert(troopsDefender, Entities.PV_Cannon1)
     elseif CP_Difficulty == 1 then
 		table.insert(troopsDefender, Entities.PU_LeaderSword3)
 		table.insert(troopsDefender, Entities.PU_LeaderPoleArm3)
@@ -61,13 +61,12 @@ function controlArmy()
 		local troopDescription = {
 		    maxNumberOfSoldiers         = 8,
 			minNumberOfSoldiers	        = 0,
-			experiencePoints 	        = MEDIUM_EXPERIENCE,
+			experiencePoints 	        = 1 + CP_Difficulty,
 			leaderType                  = Entities.PU_LeaderSword3,
 			position                    = GetPosition("spawny1")
 		}
         local randomnum = GetRandom(1, 100)
 	    if CP_Difficulty > 0 then
-            troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
 			if randomnum <= 20 then
                 troopDescription.leaderType = Entities.PV_Cannon3
             elseif randomnum <= 40 then
@@ -79,7 +78,7 @@ function controlArmy()
             end
         else
 			if randomnum <= 20 then
-                troopDescription.leaderType = Entities.PV_Cannon2
+                troopDescription.leaderType = Entities.PV_Cannon1
             elseif randomnum <= 40 then
                 troopDescription.leaderType = Entities.PU_LeaderBow4
             elseif randomnum <= 70 then

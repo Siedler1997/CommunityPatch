@@ -10,13 +10,8 @@ setupArmyP5Defense = function()
 	                                	
 	ArmyP5Defense.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm, 
 											UpgradeCategories.LeaderSword, 
-											UpgradeCategories.LeaderBow }
-
-	if CP_Difficulty == 0 then
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon2)
-	else
-		table.insert(ArmyP5Attack.AllowedTypes, Entities.PV_Cannon4a)
-	end
+											UpgradeCategories.LeaderBow, 
+											Entities.PV_Cannon3a }
 
 	ArmyP5Defense.ignoreAttack		=	true
 

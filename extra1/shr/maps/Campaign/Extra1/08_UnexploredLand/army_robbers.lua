@@ -16,18 +16,12 @@ function CreateArmyRobbers()
 		ArmyRobbers[i].AttackAllowed		=	false
 		ArmyRobbers[i].pulse				=	true
 
-		if CP_Difficulty == 0 then
-			ArmyRobbers[i].spawnTypes			=	{ 	{ Entities.CU_BanditLeaderSword1, 12 },
-													{ Entities.CU_BanditLeaderBow1, 12 } }
-			ArmyRobbers[i].respawnTime			=	5*60
-			ArmyRobbers[i].maxSpawnAmount		= 	1
-		else
-			ArmyRobbers[i].spawnTypes			=	{ 	{ Entities.CU_BanditLeaderSword2, 12 },
-													{ Entities.CU_BanditLeaderBow2, 12 } }
-			ArmyRobbers[i].respawnTime			=	3*60
-			ArmyRobbers[i].maxSpawnAmount		= 	2
-		end	
-
+		ArmyRobbers[i].spawnTypes			=	{ 	
+												{ Entities.CU_BanditLeaderSword2, 12 },
+												{ Entities.CU_BanditLeaderSword2, 12 },
+												{ Entities.CU_BanditLeaderBow2, 12 } }
+		ArmyRobbers[i].respawnTime			=	60
+		ArmyRobbers[i].maxSpawnAmount		= 	1
 												
 		ArmyRobbers[i].spawnGenerator		=	"RobberyTower"..i
 		ArmyRobbers[i].spawnPos				=	GetPosition("RobbersSpawnPos"..i)

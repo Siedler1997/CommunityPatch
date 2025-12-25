@@ -21,13 +21,9 @@ setupArmyP4Intruder = function()
 	
 		local troopDescription 			=	{	maxNumberOfSoldiers	= 	8,
 												minNumberOfSoldiers	= 	0,
-												experiencePoints 	= 	LOW_EXPERIENCE,
+												experiencePoints 	= 	CP_Difficulty,
 												leaderType			=	Entities.CU_Barbarian_LeaderClub1
 											}
-
-		if CP_Difficulty > 1 then
-			troopDescription.experiencePoints = HIGH_EXPERIENCE
-		end			
 	
 		EnlargeArmy(ArmyP4Intruder[i], troopDescription)
 		EnlargeArmy(ArmyP4Intruder[i], troopDescription)

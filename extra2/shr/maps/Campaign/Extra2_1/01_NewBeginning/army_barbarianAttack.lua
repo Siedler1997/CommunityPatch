@@ -79,7 +79,7 @@ function ControlBarbarianAttack()
 
 					local troopDescription = {
 				
-						maxNumberOfSoldiers	= 9,
+						maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
 						minNumberOfSoldiers	= 0,
 						experiencePoints 	= CP_Difficulty,
 					}

@@ -77,16 +77,20 @@ function ControlBarbarianAttack()
 						
 					local troopLeaderType = {}
 					
-					if CP_Difficulty == 0 then
+					if CP_Difficulty < 2 then
 						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub1
 						troopLeaderType[2] = Entities.CU_BanditLeaderSword1
 						troopLeaderType[3] = Entities.CU_BanditLeaderBow1
-						troopLeaderType[4] = Entities.PV_Cannon2
+						troopLeaderType[4] = Entities.PV_Cannon1
+						troopLeaderType[5] = Entities.PV_Cannon2
+						troopLeaderType[6] = Entities.CU_Barbarian_LeaderClub1
 					else
 						troopLeaderType[1] = Entities.CU_Barbarian_LeaderClub2
 						troopLeaderType[2] = Entities.CU_BanditLeaderSword2
 						troopLeaderType[3] = Entities.CU_BanditLeaderBow2
 						troopLeaderType[4] = Entities.PV_Cannon3
+						troopLeaderType[5] = Entities.PV_Cannon2
+						troopLeaderType[6] = Entities.CU_Barbarian_LeaderClub2
 					end
 
 					for j=1,ArmyBarbarianAttack[i].spawnCount do
@@ -94,7 +98,7 @@ function ControlBarbarianAttack()
 						-- if spawn count is greater than 8
 						if j < 9 then
 							if IsExisting("towerSpawn"..RandomPos) then
-								troopDescription.leaderType = troopLeaderType[GetRandom(1,4)]
+								troopDescription.leaderType = troopLeaderType[GetRandom(1,6)]
 								EnlargeArmy(ArmyBarbarianAttack[i],troopDescription)
 							end
 						end

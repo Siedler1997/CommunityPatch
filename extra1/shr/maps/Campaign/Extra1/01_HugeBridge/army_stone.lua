@@ -8,13 +8,13 @@ function createArmyStone()
 	armyStone = {}
     
 	if CP_Difficulty == 0 then
-        createArmy(2,3,armyStone,4,"army2",VERYLOW_EXPERIENCE,troopsDefender,8,2000)
+        createArmy(2,3,armyStone,4,"army2",CP_Difficulty,troopsDefender,8,2000)
     else
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderSkirmisher1)
-        createArmy(2,3,armyStone,4,"army2",HIGH_EXPERIENCE,troopsDefender,16,2000)
+        createArmy(2,3,armyStone,4,"army2",CP_Difficulty,troopsDefender,8+CP_Difficulty*4,2000)
     end
 
     delayTickerArmyStone = 5

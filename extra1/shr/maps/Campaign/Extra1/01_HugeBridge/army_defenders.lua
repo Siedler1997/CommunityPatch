@@ -10,14 +10,14 @@ function createArmyDefender0()
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword1)
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword1)
         table.insert(troopsDefender, Entities.CU_BanditLeaderBow1)
-        createArmy(6,0,armyDefender0,1,"army0",VERYLOW_EXPERIENCE,troopsDefender,4,1000)
-        createArmy(6,8,armyDefender2,4,"army5",VERYLOW_EXPERIENCE,troopsDefender,4,3000)
+        createArmy(6,0,armyDefender0,1,"army0",CP_Difficulty,troopsDefender,4,1000)
+        createArmy(6,8,armyDefender2,4,"army5",CP_Difficulty,troopsDefender,4,3000)
     else
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword2)
         table.insert(troopsDefender, Entities.CU_BanditLeaderSword2)
         table.insert(troopsDefender, Entities.CU_BanditLeaderBow2)
-        createArmy(6,0,armyDefender0,1,"army0",MEDIUM_EXPERIENCE,troopsDefender,4+2*CP_Difficulty,1000)
-        createArmy(6,8,armyDefender2,4,"army5",MEDIUM_EXPERIENCE,troopsDefender,4+2*CP_Difficulty,3000)
+        createArmy(6,0,armyDefender0,1,"army0",CP_Difficulty,troopsDefender,4+2*CP_Difficulty,1000)
+        createArmy(6,8,armyDefender2,4,"army5",CP_Difficulty,troopsDefender,4+2*CP_Difficulty,3000)
     end
 
     delayTickerArmy0 = 5
@@ -46,11 +46,8 @@ function createArmyDefender1()
 
 	armyDefender1 = {}
     
-	if CP_Difficulty == 0 then
-        createArmy(2,0,armyDefender1,1,"army1",VERYLOW_EXPERIENCE,troopsDefender,8,2000)
-    else
-        createArmy(2,0,armyDefender1,1,"army1",MEDIUM_EXPERIENCE,troopsDefender,16,2000)
-    end
+    createArmy(2,0,armyDefender1,1,"army1",CP_Difficulty,troopsDefender,8+CP_Difficulty*4,2000)
+
     armyDefender1.rodeLength = 2000
     
     delayTickerArmy1 = 5

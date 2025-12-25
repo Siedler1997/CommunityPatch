@@ -234,10 +234,9 @@ function Mission_FirstMapAction()
 			GUI.SetTaxLevel(5)
 			
 			ReplaceEntity("keep", Entities.PB_Headquarters1)
+			ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)
+			ReplaceEntity("p1_smith", Entities.PB_Blacksmith1)
 		end
-		
-		ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)
-		ReplaceEntity("p1_smith", Entities.PB_Blacksmith1)
 		
 		GlobalMissionScripting.GiveResouces(1, 1500, 2000, 2000, 2000, 1000, 150)
 	else

@@ -9,7 +9,7 @@ function createArmyAlarm3()
     
 	local RandomPoint = GetRandom(1,4)
 	
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyAlarm3, Entities.CU_Barbarian_LeaderClub1)
 	else
 		table.insert(troopsArmyAlarm3, Entities.CU_Barbarian_LeaderClub2)

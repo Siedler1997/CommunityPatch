@@ -100,7 +100,7 @@ QUESTEnemyMMAttacks2221_COUNTER 		=	QUESTEnemyMMAttacks2221_DELAY
 EnemyMMArmy2221 = function()
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderSword1
-	if CP_Difficulty > 0 then
+	if CP_Difficulty < 2 then
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderSword2
 	end
@@ -178,7 +178,7 @@ QUESTEnemyMMAttacks2222_COUNTER 		=	QUESTEnemyMMAttacks2222_DELAY
 EnemyMMArmy2222 = function()
 	local etype1 = Entities.CU_BanditLeaderSword1
 	local etype2 = Entities.CU_BanditLeaderBow1
-	if CP_Difficulty > 0 then
+	if CP_Difficulty < 2 then
 		etype1 = Entities.CU_BanditLeaderSword2
 		etype2 = Entities.CU_BanditLeaderBow2
 	end
@@ -256,7 +256,7 @@ QUESTEnemyMMAttacks2223_COUNTER 		=	QUESTEnemyMMAttacks2223_DELAY
 EnemyMMArmy2223 = function()
 	local etype1 = Entities.CU_Barbarian_LeaderClub1
 	local etype2 = Entities.CU_BanditLeaderBow1
-	if CP_Difficulty > 0 then
+	if CP_Difficulty < 2 then
 		etype1 = Entities.CU_Barbarian_LeaderClub2
 		etype2 = Entities.CU_BanditLeaderBow2
 	end

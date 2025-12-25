@@ -201,16 +201,17 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			local bosspos1 = GetPosition("HQ_AI1")
+			local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 1000),(bosspos1.Y - 1000),0,0,3,0)
+
+			local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,38400,14400,0,0,3,0)
+			LookAt(bossID2, "camp_fire1")
 		else
 			CreateRandomGoldChests()
 			CreateRandomChests()
 		end
 
-		local bosspos1 = GetPosition("HQ_AI1")
-		local bossID1 = AI.Entity_CreateFormation(4,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 1000),(bosspos1.Y - 1000),0,0,3,0)
-
-		local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,38400,14400,0,0,3,0)
-		LookAt(bossID2, "camp_fire1")
 
 		--[[		
 		local bearPos = GetPosition("Kerberos")

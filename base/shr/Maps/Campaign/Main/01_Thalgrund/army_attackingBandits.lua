@@ -36,20 +36,16 @@ createArmyAttackingBandits = function()
 		local troopDescription = {
 			maxNumberOfSoldiers = armyAttackingBanditsA.control.units,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= CP_Difficulty,
 		}			
 		
-		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
-			EnlargeArmy(armyAttackingBanditsA,troopDescription)
-			troopDescription.leaderType = Entities.CU_BanditLeaderBow1
-			EnlargeArmy(armyAttackingBanditsA,troopDescription)
-		else
-			troopDescription.maxNumberOfSoldiers = 8
-			troopDescription.experiencePoints = 2
-			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
-			EnlargeArmy(armyAttackingBanditsA,troopDescription)
-			troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+		troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+		EnlargeArmy(armyAttackingBanditsA,troopDescription)
+		troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+		EnlargeArmy(armyAttackingBanditsA,troopDescription)
+		if CP_Difficulty == 2 then
+			armyAttackingBanditsA.strength = 3
+			troopDescription.leaderType = Entities.PU_LeaderPoleArm3
 			EnlargeArmy(armyAttackingBanditsA,troopDescription)
 		end
 		
@@ -204,23 +200,19 @@ createArmyAttackingBandits = function()
 				
 					maxNumberOfSoldiers	= armyAttackingBanditsA.control.units,
 					minNumberOfSoldiers	= 0,
-					experiencePoints 	= LOW_EXPERIENCE,
+					experiencePoints 	= CP_Difficulty,
 				}				
 	
+				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
+				EnlargeArmy(armyAttackingBanditsA,troopDescription)
+				troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+				EnlargeArmy(armyAttackingBanditsA,troopDescription)
+				troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+				EnlargeArmy(armyAttackingBanditsA,troopDescription)
 
-				if CP_Difficulty == 0 then
-					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
-					EnlargeArmy(armyAttackingBanditsA,troopDescription)
-					EnlargeArmy(armyAttackingBanditsA,troopDescription)
-					troopDescription.leaderType = Entities.CU_BanditLeaderBow1
-					EnlargeArmy(armyAttackingBanditsA,troopDescription)
-				else
-					troopDescription.maxNumberOfSoldiers = 8
-					troopDescription.experiencePoints = 2
-					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
-					EnlargeArmy(armyAttackingBanditsA,troopDescription)
-					EnlargeArmy(armyAttackingBanditsA,troopDescription)
-					troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+				if CP_Difficulty == 2 then
+					armyAttackingBanditsA.strength = 4
+					troopDescription.leaderType = Entities.PU_LeaderSword1
 					EnlargeArmy(armyAttackingBanditsA,troopDescription)
 				end
 				

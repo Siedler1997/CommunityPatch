@@ -213,16 +213,18 @@ SpawnArchery = function()
 		Redeploy(ArmyVillage,GetPosition("p3_def5"),3000)
 	
 		local etype = Entities.PU_LeaderBow1
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
 			etype = Entities.PU_LeaderBow2
+		elseif CP_Difficulty == 2 then
+			etype = Entities.PU_LeaderBow2a
 		end
 
 		local troopDescription 	= {
 	
 			leaderType 				= etype,
-			maxNumberOfSoldiers			= 4,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 				= CP_Difficulty,
+			maxNumberOfSoldiers		= 8,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty,
 		}
 		
 		EnlargeArmy(ArmyVillage,troopDescription)
@@ -324,17 +326,16 @@ function ControlArmyBarrack()
 		SPAWN_TIMER = GetRandom(10) + 10
 	
 		local etype = Entities.PU_LeaderSword3
-		local soldiers = 4 + CP_Difficulty*2
-		if CP_Difficulty > 0 then
+		if CP_Difficulty == 2 then
 			etype = Entities.PU_LeaderSword4
 		end
 
 		local troopDescription 	= {
 	
 			leaderType 				= etype,
-			maxNumberOfSoldiers			= soldiers,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty+1,
+			maxNumberOfSoldiers		= 4 + CP_Difficulty*2,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty+1,
 		}
 		
 		EnlargeArmy(ArmyBarrack,troopDescription)	
@@ -366,9 +367,9 @@ function createLightCavalry(_spawnPos,_entityDescription)
 		local troopDescription 	= {
 	
 			leaderType 				= _entityDescription,
-			maxNumberOfSoldiers			= 3,
-			minNumberOfSoldiers			= 0,
-			experiencePoints 			= CP_Difficulty+1,
+			maxNumberOfSoldiers		= 3,
+			minNumberOfSoldiers		= 0,
+			experiencePoints 		= CP_Difficulty+1,
 		}
 
 		cavalry1 = CreateTroop(LightCavalry,troopDescription)

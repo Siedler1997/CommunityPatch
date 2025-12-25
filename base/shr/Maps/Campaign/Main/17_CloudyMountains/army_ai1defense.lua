@@ -12,13 +12,13 @@ setupArmyAI1Defense = function()
 	ArmyAI1Defense.rodeLength			= 3000
 	ArmyAI1Defense.AllowedTypes 		= {	UpgradeCategories.LeaderPoleArm, 
 											UpgradeCategories.LeaderSword, 
-											UpgradeCategories.LeaderBow }
+											UpgradeCategories.LeaderBow,
+											UpgradeCategories.BlackKnightLeaderMace1,
+											Entities.PV_Cannon2}
 	if CP_Difficulty == 2 then
-		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon3a)
-		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon3a)
+		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon1)
 	else
-		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon2)
-		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon2)
+		table.insert(ArmyAI1Defense.AllowedTypes, Entities.PV_Cannon3a)
 	end
 
 	ArmyAI1Defense.Attack				= false

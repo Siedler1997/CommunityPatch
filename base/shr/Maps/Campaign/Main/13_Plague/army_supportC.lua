@@ -20,19 +20,20 @@ createArmySupportC = function()
 	--	create 
 			
 		local troopDescription = {
-		
 			leaderType 			= Entities.PV_Cannon3,
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers	= 0,
-			experiencePoints 	= VERYHIGH_EXPERIENCE,
+			experiencePoints 	= VERYHIGH_EXPERIENCE - CP_Difficulty,
 		}			
 	
 		EnlargeArmy(armySupportC,troopDescription)
 		EnlargeArmy(armySupportC,troopDescription)
 		EnlargeArmy(armySupportC,troopDescription)
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			EnlargeArmy(armySupportC,troopDescription)
-			EnlargeArmy(armySupportC,troopDescription)
+			if CP_Difficulty == 0 then
+				EnlargeArmy(armySupportC,troopDescription)
+			end
 		end
 		
 	--	start controlling job		

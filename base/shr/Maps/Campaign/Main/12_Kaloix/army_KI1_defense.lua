@@ -54,7 +54,7 @@ DefenseAllowBowLeader = function()
 end
 
 DefenseAllowCannon1 = function()
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon1)
 	else
 		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon2)
@@ -62,7 +62,7 @@ DefenseAllowCannon1 = function()
 end
 
 DefenseAllowCannon2 = function()
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon2)
 	else
 		table.insert(armyKI1Defense.AllowedTypes, Entities.PV_Cannon3a)

@@ -3,8 +3,8 @@ setupArmyP3Defense = function()
 	ArmyP3Defense1		= {}
 	ArmyP3Defense2		= {}
 
-	initArmyP3Defense(ArmyP3Defense1, "ArmyP3Defense1", 1, "Concentrating_Area", 7000, 4)
-	initArmyP3Defense(ArmyP3Defense2, "ArmyP3Defense2", 2, "Concentrating_Area2", 3500, 3)
+	initArmyP3Defense(ArmyP3Defense1, "ArmyP3Defense1", 1, "Concentrating_Area", 7000, 4+CP_Difficulty)
+	initArmyP3Defense(ArmyP3Defense2, "ArmyP3Defense2", 2, "Concentrating_Area2", 3500, 3+CP_Difficulty)
 
 	StartJob("ControlArmyP3Defense")
 

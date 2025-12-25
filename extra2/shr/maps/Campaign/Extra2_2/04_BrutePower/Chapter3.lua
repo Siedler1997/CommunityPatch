@@ -596,7 +596,7 @@ end
 function CreateAttackCaravans()
 	local etype1 = Entities.CU_BanditLeaderSword1
 	local etype2 = Entities.CU_BanditLeaderBow1
-	if CP_Difficulty > 0 then
+	if CP_Difficulty < 2 then
 		etype1 = Entities.CU_BanditLeaderSword2
 		etype2 = Entities.CU_BanditLeaderBow2
 	end

@@ -234,6 +234,25 @@ function Mission_FirstMapAction()
 			if CP_Difficulty == 2 then
 				CP_HardTaxes = true
 				GUI.SetTaxLevel(5)
+
+				local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 48, 0) }
+				for i = 1, table.getn(towers1) do
+					if IsExisting(towers1[i]) then
+						ReplaceEntity(towers1[i], Entities.PB_Tower3)
+					end
+				end
+				local towers2 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 48, 0) }
+				for i = 1, table.getn(towers2) do
+					if IsExisting(towers2[i]) then
+						ReplaceEntity(towers2[i], Entities.PB_Tower3)
+					end
+				end
+			
+				Logic.CreateEntity(Entities.PB_Tower3, 35500, 27800, 0, 2);
+				Logic.CreateEntity(Entities.PB_Tower3, 40400, 27300, 0, 2);
+				Logic.CreateEntity(Entities.PB_Tower3, 44900, 24000, 0, 2);
+
+				ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 			else
 				CreateRandomGoldChests()
 				CreateRandomChests()
@@ -242,24 +261,6 @@ function Mission_FirstMapAction()
 			--DestroyEntity("vc_empty")
 
 			ReplaceEntity("ChangeCannon3", Entities.PV_Cannon3)
-			ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
-
-			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 48, 0) }
-			for i = 1, table.getn(towers1) do
-				if IsExisting(towers1[i]) then
-					ReplaceEntity(towers1[i], Entities.PB_Tower3)
-				end
-			end
-			local towers2 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 48, 0) }
-			for i = 1, table.getn(towers2) do
-				if IsExisting(towers2[i]) then
-					ReplaceEntity(towers2[i], Entities.PB_Tower3)
-				end
-			end
-			
-			Logic.CreateEntity(Entities.PB_Tower3, 35500, 27800, 0, 2);
-			Logic.CreateEntity(Entities.PB_Tower3, 40400, 27300, 0, 2);
-			Logic.CreateEntity(Entities.PB_Tower3, 44900, 24000, 0, 2);
 		end
 
 		RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

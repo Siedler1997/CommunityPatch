@@ -114,27 +114,28 @@ function FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
-		end
 
-		local bosspos1 = GetPosition("armyDefender")
-		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
-		LookAt(bossID1, "vc_empty")
+			local bosspos1 = GetPosition("armyDefender")
+			local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 0),0,0,3,0)
+			LookAt(bossID1, "vc_empty")
 		
-		local bosspos2 = GetPosition("armyPatrol1")
-		local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos2.X + 0),(bosspos2.Y - 0),0,0,3,0)
-		LookAt(bossID2, bossID1)
+			local bosspos2 = GetPosition("armyPatrol1")
+			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos2.X + 0),(bosspos2.Y - 0),0,0,3,0)
+			LookAt(bossID2, bossID1)
 		
-		local bosspos3 = GetPosition("armyPatrol2")
-		local bossID3 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos3.X + 0),(bosspos3.Y - 0),0,0,3,0)
-		LookAt(bossID3, bossID1)
+			local bosspos3 = GetPosition("armyPatrol2")
+			local bossID3 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos3.X + 0),(bosspos3.Y - 0),0,0,3,0)
+			LookAt(bossID3, bossID1)
 
-		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 5, 0) }
-		for i = 2, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 5, 0) }
+			for i = 2, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+				end
 			end
+			--DestroyEntity("vc_empty")
 		end
-        --DestroyEntity("vc_empty")
+
 	end
 
 	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

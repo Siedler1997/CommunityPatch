@@ -5,10 +5,10 @@ setupArmyRobbers = function()
 	ArmyRobbers3 = {}
 	ArmyRobbers4 = {}
 
-	createRobbers(ArmyRobbers1, 2, 1, 3800)
-	createRobbers(ArmyRobbers2, 2, 2, 1500)
-	createRobbers(ArmyRobbers3, 2, 3, 3500)
-	createRobbers(ArmyRobbers4, 4, 4, 3500)
+	createRobbers(ArmyRobbers1, 3+CP_Difficulty, 1, 3800)
+	createRobbers(ArmyRobbers2, 3+CP_Difficulty, 2, 1500)
+	createRobbers(ArmyRobbers3, 3+CP_Difficulty, 3, 3500)
+	createRobbers(ArmyRobbers4, 5+CP_Difficulty, 4, 3500)
 
 	StartJob("ControlArmyRobbers")
 end
@@ -22,14 +22,15 @@ createRobbers = function(_army, _strength, _index, _defenseRange)
 	_army.rodeLength		= _defenseRange
 	
 	-- Spawn parameter
-	_army.spawnTypes 	= { { Entities.CU_BanditLeaderSword2, 8},
-							{ Entities.CU_BanditLeaderBow2, 8} }
-
+	local soldiers = 4 + CP_Difficulty * 2
 	if CP_Difficulty == 0 then
-		_army.strength	= _strength
+		_army.spawnTypes 	= { { Entities.CU_BanditLeaderSword1, soldiers},
+								{ Entities.CU_BanditLeaderSword1, soldiers},
+								{ Entities.CU_BanditLeaderBow1, soldiers} }
 	else
-		_army.strength	= _strength * 1.5
-		table.insert(_army.spawnTypes, { Entities.CU_BanditLeaderSword2, 8})
+		_army.spawnTypes 	= { { Entities.CU_BanditLeaderSword2, soldiers},
+								{ Entities.CU_BanditLeaderSword2, soldiers},
+								{ Entities.CU_BanditLeaderBow2, soldiers} }
 	end
 									
 	_army.spawnPos			= GetPosition("Robbers".._index)

@@ -4,12 +4,7 @@ function CreateArmyStonePit()
 	ArmyStonePit					=	{}
 	ArmyStonePit.player 			=	4
 	ArmyStonePit.id					=	5
-	ArmyStonePit.strength			=	4
-	if CP_Difficulty == 1 then
-		ArmyStonePit.strength = ArmyStonePit.strength + 2
-	elseif CP_Difficulty == 2 then
-		ArmyStonePit.strength = ArmyStonePit.strength * 2
-	end
+	ArmyStonePit.strength			=	4 + CP_Difficulty * 2
 	ArmyStonePit.position			=	GetPosition("ArmyStonePit")
 	ArmyStonePit.rodeLength			=	2000
 	ArmyStonePit.retreatStrength	=	0
@@ -24,14 +19,19 @@ function CreateArmyStonePit()
 	
 		maxNumberOfSoldiers	= 16,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 	}	
 	if CP_Difficulty > 0 then
-		troopDescription.experiencePoints = troopDescription.experiencePoints + 2
 		troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 		EnlargeArmy(ArmyStonePit,troopDescription)
 		troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 		EnlargeArmy(ArmyStonePit,troopDescription)
+		if CP_Difficulty == 2 then
+			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
+			EnlargeArmy(ArmyStonePit,troopDescription)
+			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
+			EnlargeArmy(ArmyStonePit,troopDescription)
+		end
 	end			
 	
 	troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1

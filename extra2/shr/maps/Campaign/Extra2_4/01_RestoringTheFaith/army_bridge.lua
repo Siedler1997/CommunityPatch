@@ -3,7 +3,7 @@
 setupTrolls = function ()
     local soldiers = 6
 
-    if CP_Difficulty > 0 then
+    if CP_Difficulty == 2 then
         soldiers = soldiers + 2
     end
 

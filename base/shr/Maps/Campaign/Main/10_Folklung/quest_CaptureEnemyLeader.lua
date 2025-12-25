@@ -173,7 +173,7 @@ end
 
 
 function Action_EnemyLeaderDead()
-	if CP_Difficulty >= 1 then
+	if CP_Difficulty == 2 then
 		ResearchAllMilitaryTechs(2, true)
 		ResearchAllMilitaryTechs(4, true)
 		ResearchAllMilitaryTechs(5, true)

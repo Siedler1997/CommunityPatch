@@ -1,10 +1,5 @@
 -- at small Castle in NorthEast; end-boss defenders
 
-DESPAIR_RESPAWN = 3 * 60
-if CP_Difficulty == 0 then
-	DESPAIR_RESPAWN = DESPAIR_RESPAWN - 30
-end
-
 setupArmyDespair = function()
 
 	ArmyDespair 					=	{}
@@ -40,7 +35,7 @@ setupArmyDespair = function()
 	end
 	ArmyDespair.spawnPos			=	GetPosition("DespairSpawn")
 	ArmyDespair.spawnGenerator		=	"DespairHQ"
-	ArmyDespair.respawnTime			=	DESPAIR_RESPAWN
+	ArmyDespair.respawnTime			=	3 * 60 - CP_Difficulty * 30
 	ArmyDespair.maxSpawnAmount		=	1
 	ArmyDespair.endless				=	true
 	ArmyDespair.refresh				=	false

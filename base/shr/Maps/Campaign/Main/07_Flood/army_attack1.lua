@@ -46,14 +46,16 @@ createArmyAttack1 = function()
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = 4,
-			experiencePoints 	= LOW_EXPERIENCE,
+			maxNumberOfSoldiers = 8,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderSword1
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderSword2
+		else
+			troopDescription.leaderType = Entities.PU_LeaderSword3
 		end	
 		EnlargeArmy(armyAttack1,troopDescription)				
 

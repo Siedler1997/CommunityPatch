@@ -24,7 +24,7 @@ createArmyResources1 = function()
 		
 			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= CP_Difficulty,
 		}				
 	
 --		troopDescription.leaderType = Entities.PU_LeaderSword1				
@@ -35,18 +35,18 @@ createArmyResources1 = function()
 			EnlargeArmy(armyResources1,troopDescription)
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 		else
-			troopDescription.experiencePoints = HIGH_EXPERIENCE
 			if CP_Difficulty == 1 then
 				troopDescription.leaderType = Entities.PU_LeaderBow2
+				EnlargeArmy(armyResources1,troopDescription)
+				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 			else
 				troopDescription.leaderType = Entities.PU_LeaderBow3
+				EnlargeArmy(armyResources1,troopDescription)
+				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 			end
-			EnlargeArmy(armyResources1,troopDescription)
-
-			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
-		end						
+		end			
 		EnlargeArmy(armyResources1,troopDescription)
-		EnlargeArmy(armyResources1,troopDescription)
+		EnlargeArmy(armyResources1,troopDescription)			
 	
 	--	job		
 		
@@ -88,15 +88,11 @@ createArmyResources1 = function()
 			
 				maxNumberOfSoldiers	= 8,
 				minNumberOfSoldiers	= 0,
-				experiencePoints 	= LOW_EXPERIENCE,
-			}				
-			
-			if CP_Difficulty > 0 then
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
-			end
+				experiencePoints 	= CP_Difficulty,
+			}		
 
 			if Logic.GetRandom() > 30 then
-				if CP_Difficulty == 0 then
+				if CP_Difficulty < 2 then
 					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1	
 				else
 					troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
@@ -123,13 +119,7 @@ createArmyResources1 = function()
 			
 			Retreat(armyResources1)
 			
-			if CP_Difficulty == 0 then
-				armyResources1.control.timer = 5 * 60
-			elseif CP_Difficulty == 1 then
-				armyResources1.control.timer = 3 * 60
-			else
-				armyResources1.control.timer = 60
-			end
+			armyResources1.control.timer = (5-CP_Difficulty) * 60
 			
 		else
 

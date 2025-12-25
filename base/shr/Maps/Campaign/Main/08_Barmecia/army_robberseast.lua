@@ -10,19 +10,12 @@ createArmyRobbersEast = function()
 	--	set up
 
 		Report("Setting up robbers army")
-		
-		local strength = 4
-		if CP_Difficulty == 1 then
-			strength = 6
-		elseif CP_Difficulty == 2 then
-			strength = 8
-		end
 
 		ArmyRobbersEast								= {}
 	
 		ArmyRobbersEast.player 						= gvMission.PlayerIDRobbers2
 		ArmyRobbersEast.id								= gvMission.PlayerIDRobbers2
-		ArmyRobbersEast.strength					= strength
+		ArmyRobbersEast.strength					= 4 + 2 * CP_Difficulty
 		ArmyRobbersEast.position					= GetPosition("BanditsHQ2")
 		ArmyRobbersEast.rodeLength				= 1000
 		ArmyRobbersEast.beAgressive				= true
@@ -33,18 +26,12 @@ createArmyRobbersEast = function()
 		SetupArmy(ArmyRobbersEast)
 
 	--	create
-		local soldiers = 6
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			soldiers = soldiers + 2
-			experience = experience + 2
-		end
 
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = soldiers,
-			experiencePoints 	= experience
+			maxNumberOfSoldiers = 4 + 2 * CP_Difficulty,
+			experiencePoints 	= CP_Difficulty
 		}		
 
 		if CP_Difficulty == 0 then
@@ -59,6 +46,10 @@ createArmyRobbersEast = function()
 			troopDescription.leaderType = Entities.CU_BanditLeaderBow2
 			EnlargeArmy(ArmyRobbersEast,troopDescription)
 			EnlargeArmy(ArmyRobbersEast,troopDescription)
+			if CP_Difficulty == 2 then
+				EnlargeArmy(ArmyKidnapper,troopDescription)
+				EnlargeArmy(ArmyKidnapper,troopDescription)
+			end
 			
 			troopDescription.leaderType = Entities.CU_BanditLeaderSword2
 			EnlargeArmy(ArmyRobbersEast,troopDescription)
@@ -178,29 +169,37 @@ end
 			Retreat(ArmyRobbersEast)
 						
 			--	create 
-			local soldiers = 6
-			local experience = LOW_EXPERIENCE
-			local strength = 4
-			local etype = Entities.CU_BanditLeaderSword1
-			if CP_Difficulty > 0 then
-				strength = 6
-				soldiers = soldiers + 2
-				experience = experience + 2
-				etype = Entities.CU_BanditLeaderSword2
-			end
 					
 			local troopDescription = {
-				
-					minNumberOfSoldiers	= 0,
-					maxNumberOfSoldiers = soldiers,
-					experiencePoints 	= experience,
-					leaderType			= etype
-				}			
+				minNumberOfSoldiers	= 0,
+				maxNumberOfSoldiers = 4+2*CP_Difficulty,
+				experiencePoints 	= CP_Difficulty
+			}			
 	
 				-- define new attacking armies
 				
 				if ArmyRobbersEast.control.attack >= 0 then
-					for i = 1, strength do
+					if CP_Difficulty == 0 then
+						troopDescription.leaderType = Entities.CU_BanditLeaderBow1
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+			
+						troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+					else
+						troopDescription.leaderType = Entities.CU_BanditLeaderBow2
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						if CP_Difficulty == 2 then
+							EnlargeArmy(ArmyKidnapper,troopDescription)
+							EnlargeArmy(ArmyKidnapper,troopDescription)
+						end
+			
+						troopDescription.leaderType = Entities.CU_BanditLeaderSword2
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
+						EnlargeArmy(ArmyRobbersEast,troopDescription)
 						EnlargeArmy(ArmyRobbersEast,troopDescription)
 					end
 				end

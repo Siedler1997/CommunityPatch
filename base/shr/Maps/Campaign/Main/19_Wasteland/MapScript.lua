@@ -196,6 +196,16 @@ function Mission_FirstMapAction()
 			end
 
 			Logic.CreateEntity(Entities.XD_RockDarkEvelance7,21000,60300,0,0)
+
+			local bosspos1 = GetPosition("KI3_SpawnPos")
+			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
+			LookAt(bossID1, "RescueObject1")
+		
+			local bosspos2 = GetPosition("KI2_SpawnPos")
+			local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
+			LookAt(bossID2, "Banned_Info_NPC")
+
+			ReplaceEntity("start_1", Entities.PB_Headquarters1)
 		else
 			CreateRandomGoldChests()
 			CreateRandomChests()
@@ -203,15 +213,6 @@ function Mission_FirstMapAction()
 
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 		ReplaceEntity("KI3_HQ", Entities.PB_Headquarters2)
-		ReplaceEntity("start_1", Entities.PB_Headquarters1)
-
-		local bosspos1 = GetPosition("KI3_SpawnPos")
-		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos1.X - 600),(bosspos1.Y + 800),0,0,3,0)
-		LookAt(bossID1, "RescueObject1")
-		
-		local bosspos2 = GetPosition("KI2_SpawnPos")
-		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
-		LookAt(bossID2, "Banned_Info_NPC")
 	end
 		
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

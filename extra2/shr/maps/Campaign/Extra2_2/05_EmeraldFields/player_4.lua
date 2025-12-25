@@ -59,8 +59,8 @@ createPlayer4 = function()
 
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 4)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 4)
-	--[[
-	if CP_Difficulty == 0
+	
+	if CP_Difficulty < 2 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 4)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 4)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 4)
@@ -70,5 +70,4 @@ createPlayer4 = function()
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 4)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 4)
 	end
-	--]]
 end

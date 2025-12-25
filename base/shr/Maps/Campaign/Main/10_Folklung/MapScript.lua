@@ -236,11 +236,11 @@ function Mission_FirstMapAction()
 
 			ReplaceEntity("TheRock2", Entities.XD_CliffGrey1)
 			ReplaceEntity("TheRock3", Entities.XD_CliffGrey1)
+
+			local vcpos = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,270,0)
 		end
-		
-		local vcpos = GetPosition("vc_empty")
-		DestroyEntity("vc_empty")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,270,0)
 	end
 
 	RaidersCreate({player = 4, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})		

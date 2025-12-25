@@ -131,29 +131,29 @@ function FirstMapAction()
 			GUI.SetTaxLevel(5)
 
 			Logic.CreateEntity(Entities.XD_Rock7,49600,27700,0,0)
+
+			local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 3, 0) }
+			for i = 2, table.getn(towers1) do
+				ReplaceEntity(towers1[i], Entities.PB_Tower2)
+			end
+
+			Logic.CreateEntity(Entities.PB_Tower3, 26400, 15800, 0, 2);
+			Logic.CreateEntity(Entities.PB_Tower3, 45100, 31200, 0, 2);
+			Logic.CreateEntity(Entities.PB_Tower3, 47600, 31300, 0, 2);
+			Logic.CreateEntity(Entities.PB_Tower3, 22000, 32700, 0, 2);
+
+			Logic.CreateEntity(Entities.PB_Tower3, 41600, 24300, 0, 2);
+			Logic.CreateEntity(Entities.PB_Tower3, 32400, 21200, 0, 2);
+			Logic.CreateEntity(Entities.PB_Tower3, 23100, 40900, 0, 2);
+			SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, 40200, 42000, 0, 2), "tower12")
+
+			local smpos = {X = 35600, Y = 45400}
+			local tpos = GetPosition("control1")
+			SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, tpos.X, tpos.Y, 0, 2), "tower13")
+			DestroyEntity("control1")
+			SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
+			Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
 		end
-
-		local towers1 = { Logic.GetPlayerEntities(1, Entities.PB_Tower3, 3, 0) }
-		for i = 2, table.getn(towers1) do
-			ReplaceEntity(towers1[i], Entities.PB_Tower2)
-		end
-
-		Logic.CreateEntity(Entities.PB_Tower3, 26400, 15800, 0, 2);
-		Logic.CreateEntity(Entities.PB_Tower3, 45100, 31200, 0, 2);
-		Logic.CreateEntity(Entities.PB_Tower3, 47600, 31300, 0, 2);
-		Logic.CreateEntity(Entities.PB_Tower3, 22000, 32700, 0, 2);
-
-		Logic.CreateEntity(Entities.PB_Tower3, 41600, 24300, 0, 2);
-		Logic.CreateEntity(Entities.PB_Tower3, 32400, 21200, 0, 2);
-		Logic.CreateEntity(Entities.PB_Tower3, 23100, 40900, 0, 2);
-		SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, 40200, 42000, 0, 2), "tower12")
-
-		local smpos = {X = 35600, Y = 45400}
-		local tpos = GetPosition("control1")
-		SetEntityName(Logic.CreateEntity(Entities.PB_Tower3, tpos.X, tpos.Y, 0, 2), "tower13")
-		DestroyEntity("control1")
-		SetEntityName(Logic.CreateEntity(Entities.CB_SteamMashine, smpos.X, smpos.Y, 0, 2), "control1")
-		Logic.CreateEntity(Entities.PU_LeaderPoleArm4, (smpos.X + 300), (smpos.Y + 200), 45, 2)
 	end
 
 	RaidersCreate({player = 8, pos = "rudelpos1", revier = 2000, range = 4000, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

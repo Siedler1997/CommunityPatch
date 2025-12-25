@@ -269,17 +269,12 @@ end
 
 BriefingStockpileFinished = function()
 	createQuestConquerTown3()
-	if CP_Difficulty > 0 then
-		AddStone(8000)
-		AddWood(2000)
-		AddClay(2000)
-		AddIron(2500)
-	else
-		AddStone(2000)
-		AddWood(1000)
-		AddClay(1000)
-		AddIron(1000)
-	end
+
+	AddStone(8000-2000*CP_Difficulty)
+	AddWood(2000-500*CP_Difficulty)
+	AddClay(2000-500*CP_Difficulty)
+	AddIron(2500-500*CP_Difficulty)
+
 	createQuestCaptureNorth()
 end
 

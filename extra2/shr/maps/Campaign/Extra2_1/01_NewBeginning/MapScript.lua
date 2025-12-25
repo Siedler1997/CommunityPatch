@@ -142,29 +142,30 @@ function FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
-		end
 
-		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 48, 0) }
-		for i = 2, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 48, 0) }
+			for i = 2, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+				end
 			end
-		end
-		DestroyEntity("p4_extratower")
-        local towerpos = GetPosition("p4_watchtower")
-        --local vcpos = GetPosition("vc_empty")
-		DestroyEntity("p4_watchtower")
+			DestroyEntity("p4_extratower")
+			local towerpos = GetPosition("p4_watchtower")
+			--local vcpos = GetPosition("vc_empty")
+			DestroyEntity("p4_watchtower")
 
-        --DestroyEntity("vc_empty")
-        --Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
-        Logic.CreateEntity(Entities.XD_RuinSmallTower2,towerpos.X,towerpos.Y,0,0)
+			--DestroyEntity("vc_empty")
+			--Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
+			Logic.CreateEntity(Entities.XD_RuinSmallTower2,towerpos.X,towerpos.Y,0,0)
         
-		local bosspos1 = GetPosition("armySpawn")
-		local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 300),0,0,3,0)
-		LookAt(bossID1, "Drake")
-		local bosspos2 = GetPosition("armyOutpost")
-		local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos2.X + 100),(bosspos2.Y + 500),0,0,3,0)
-		--LookAt(bossID2, "Drake")
+			local bosspos1 = GetPosition("armySpawn")
+			local bossID1 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos1.X + 0),(bosspos1.Y - 300),0,0,3,0)
+			LookAt(bossID1, "Drake")
+			local bosspos2 = GetPosition("armyOutpost")
+			local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranLieutenant,0,0,(bosspos2.X + 100),(bosspos2.Y + 500),0,0,3,0)
+			--LookAt(bossID2, "Drake")
+		end
+
 	end
 
 	RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})

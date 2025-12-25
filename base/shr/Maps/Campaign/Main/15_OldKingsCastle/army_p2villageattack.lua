@@ -69,13 +69,14 @@ StartArmyP2VillageAttack = function()
 
 	TimeLine.Enter("Upgrade P2cavalry to lvl 2", TimeLine.Seconds + 60*60, "UpgradeP2Cavalry")
 	TimeLine.Enter("Upgrade P2heavycavalry to lvl 2", TimeLine.Seconds + 65*60, "UpgradeP2HeavyCavalry")
+	TimeLine.Enter("Upgrade P2blackknight to lvl 2", TimeLine.Seconds + 45*60, "UpgradeP2BlackKnight")
 
 	local i
 	for i=2,10 do
 		TimeLine.Enter("P2 Attack Wave"..i, TimeLine.Seconds + i*10*60, "GiveP2ArmyResources")
 	end
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		TimeLine.Enter("Upgrade P2pole to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2PoleArm")
 		TimeLine.Enter("Upgrade P2sword to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Sword")
 		TimeLine.Enter("Upgrade P2bow to lvl 2", TimeLine.Seconds + 25*60, "UpgradeP2Bow")
@@ -89,10 +90,10 @@ end
 AllowArmyP2VillageAttackCannons = function()
 	if CP_Difficulty == 0 then
 		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon2)
-		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon2)
+		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3a)
 	else
 		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3a)
-		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon3a)
+		table.insert(ArmyP2VillageAttack.AllowedTypes, 	Entities.PV_Cannon4a)
 	end
 end
 

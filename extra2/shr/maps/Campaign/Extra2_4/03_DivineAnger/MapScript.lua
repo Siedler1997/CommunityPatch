@@ -184,28 +184,28 @@ function Mission_FirstMapAction()
 	-- SetPlayerName(8, "Ordens Truppen")
 	SetPlayerName(8, String.Key("_Player8Name"))
 	
+	if CP_Difficulty < 2 then
+		GlobalMissionScripting.GiveResouces(1, 1500, 1500, 2000, 2000, 1500, 1000)
+	else
+		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 800, 500, 150)
+	end
+
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
 			
-			--ReplaceEntity("keep", Entities.PB_Headquarters1)
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 10, 0) }
+			for i = 2, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
+				end
+			end
 		else
 			CreateRandomChests()
 		end
-
-		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 10, 0) }
-		for i = 2, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_DarkTower3)
-			end
-		end
-
-		GlobalMissionScripting.GiveResouces(1, 1000, 1000, 1000, 800, 500, 150)
 	else
 		CreateRandomChests()
-
-		GlobalMissionScripting.GiveResouces(1, 1500, 1500, 2000, 2000, 1500, 1000)
 	end
 
 	RaidersCreate({player = 5, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Europe, samount = (3 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

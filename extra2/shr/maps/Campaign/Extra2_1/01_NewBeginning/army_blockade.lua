@@ -5,7 +5,7 @@ function createArmyBlockade()
 
 	troopsArmyBlockade = { }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyBlockade, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troopsArmyBlockade, Entities.CU_BanditLeaderBow1)
     else

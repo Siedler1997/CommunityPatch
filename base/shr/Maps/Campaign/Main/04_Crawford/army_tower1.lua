@@ -9,21 +9,12 @@ createArmyTower1 = function()
 	
 		armyTower1.player 				= 5
 		armyTower1.id					= 1
-		armyTower1.strength				= 2
+		armyTower1.strength				= 2+CP_Difficulty
 		armyTower1.position				= GetPosition("spawn1")
 		armyTower1.rodeLength			= 2000
 		armyTower1.control				= {}
 		armyTower1.control.timer		= 0
-		if CP_Difficulty == 0 then
-			armyTower1.control.delay		= 5 * 60
-		else
-			armyTower1.strength = armyTower1.strength + 2
-			if CP_Difficulty == 1 then
-				armyTower1.control.delay		= 3 * 60
-			else
-				armyTower1.control.delay		= 60
-			end
-		end
+		armyTower1.control.delay		= (5-CP_Difficulty) * 60
 		
 		
 		SetupArmy(armyTower1)
@@ -66,13 +57,7 @@ createArmyTower1 = function()
 		--	set up completed?
 
 			if HasFullStrength(armyTower1) then
-				if CP_Difficulty == 0 then
-					armyTower1.control.delay = 5 * 60 + Logic.GetRandom(120)
-				elseif CP_Difficulty == 1 then
-					armyTower1.control.delay = 3 * 60 + Logic.GetRandom(120)
-				else
-					armyTower1.control.delay = 60 + Logic.GetRandom(120)
-				end
+				armyTower1.control.delay = (5-CP_Difficulty) * 60 + Logic.GetRandom(120)
 			
 				StartJob("ControlArmyTower1")
 				
@@ -86,7 +71,7 @@ createArmyTower1 = function()
 			
 				maxNumberOfSoldiers	= 8,
 				minNumberOfSoldiers	= 0,
-				experiencePoints 	= LOW_EXPERIENCE,
+				experiencePoints 	= CP_Difficulty,
 			}				
 		
 			if CP_Difficulty == 0 then
@@ -97,7 +82,6 @@ createArmyTower1 = function()
 				end
 				EnlargeArmy(armyTower1, troopDescription)
 			else
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 				EnlargeArmy(armyTower1, troopDescription)
 				EnlargeArmy(armyTower1, troopDescription)
@@ -105,8 +89,8 @@ createArmyTower1 = function()
 					troopDescription.leaderType = Entities.PU_LeaderBow2
 				else
 					troopDescription.leaderType = Entities.PU_LeaderBow3
+					EnlargeArmy(armyTower1, troopDescription)
 				end
-				EnlargeArmy(armyTower1, troopDescription)
 				EnlargeArmy(armyTower1, troopDescription)
 			end
 	

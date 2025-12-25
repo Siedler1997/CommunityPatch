@@ -54,12 +54,10 @@ createPlayer3 = function()
 
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 3)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 3)
-	if CP_Difficulty > 0 then
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 3)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 3)
-	end
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 3)
 
 	setupArmyP3Defense()
 end

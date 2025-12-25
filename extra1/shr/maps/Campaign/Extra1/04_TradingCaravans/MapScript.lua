@@ -152,17 +152,17 @@ function FirstMapAction()
 			Logic.CreateEntity(Entities.PV_Cannon3,39200,39100,110,2)
 
 			ReplaceEntity("vc_player", Entities.CB_Grange)
-		end
 
-		for i = 1, 3 do
-			ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
+			for i = 1, 3 do
+				ReplaceEntity("P4_TradeLord2_Gate"..i, Entities.XD_WallStraightGate_Closed)
+			end
+			
+			local vcpos = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,0,0)
+			
+			Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
 		end
-		--[[
-		local vcpos = GetPosition("vc_empty")
-		DestroyEntity("vc_empty")
-		Logic.CreateEntity(Entities.XD_RuinResidence2,vcpos.X,vcpos.Y,0,0)
-		--]]
-		Logic.CreateEntity(Entities.PB_DarkTower3,39700,38900,0,2)
 	end
 
 	RaidersCreate({player = 8, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Mediterranean, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

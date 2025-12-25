@@ -8,12 +8,12 @@ function createArmyBridge()
 	armyBridge = {}
 
 	if CP_Difficulty == 0 then
-        createArmy(2,4,armyBridge,8,"army3",VERYLOW_EXPERIENCE,troopsDefender,9,1000)
+        createArmy(2,4,armyBridge,8,"army3",CP_Difficulty,troopsDefender,9,1000)
     else
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderBearman1)
 		table.insert(troopsDefender, Entities.CU_Evil_LeaderSkirmisher1)
-        createArmy(2,4,armyBridge,8,"army3",VERYHIGH_EXPERIENCE,troopsDefender,16,1000)
+        createArmy(2,4,armyBridge,8,"army3",CP_Difficulty,troopsDefender,16,1000)
     end
 
     delayTickerArmy3 = 5

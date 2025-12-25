@@ -8,9 +8,9 @@ function startChapterOne()
 	
 	-- create troops in village
 	local leadertype = Entities.PU_LeaderSword3
-	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty > 0 then
-		leadertype = Entities.PU_LeaderSword2
+	local experience = VERYHIGH_EXPERIENCE
+	if CP_Difficulty == 2 then
+		leadertype = Entities.PU_LeaderSword2a
 		experience = experience - 1
 	end
 

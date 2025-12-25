@@ -150,28 +150,28 @@ function FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			local towers3 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 5, 0) }
+			for i = 2, table.getn(towers3) do
+				if IsExisting(towers3[i]) then
+					ReplaceEntity(towers3[i], Entities.PB_DarkTower3)
+				end
+			end
+		
+			local vcpos = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			local ruinVC = Logic.CreateEntity(Entities.CB_DestroyAbleRuinMonastery1,vcpos.X,vcpos.Y,0,8)
+			Logic.SetModelAndAnimSet(ruinVC,Models.XD_RuinMonastery2)
+		
+			ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)
+			ReplaceEntity("p1_clay", Entities.PB_ClayMine1)
+			ReplaceEntity("p1_iron", Entities.PB_IronMine1)
+			ReplaceEntity("p1_tavern", Entities.PB_Tavern1)
+		
+			ReplaceEntity("t21", Entities.PB_VillageCenter1)
 		else
 			CreateRandomChests()
 		end
-
-		local towers3 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 5, 0) }
-		for i = 2, table.getn(towers3) do
-			if IsExisting(towers3[i]) then
-				ReplaceEntity(towers3[i], Entities.PB_DarkTower3)
-			end
-		end
-		
-		local vcpos = GetPosition("vc_empty")
-		DestroyEntity("vc_empty")
-		local ruinVC = Logic.CreateEntity(Entities.CB_DestroyAbleRuinMonastery1,vcpos.X,vcpos.Y,0,8)
-		Logic.SetModelAndAnimSet(ruinVC,Models.XD_RuinMonastery2)
-		
-		ReplaceEntity("p1_vc", Entities.PB_VillageCenter1)
-		ReplaceEntity("p1_clay", Entities.PB_ClayMine1)
-		ReplaceEntity("p1_iron", Entities.PB_IronMine1)
-		ReplaceEntity("p1_tavern", Entities.PB_Tavern1)
-		
-		ReplaceEntity("t21", Entities.PB_VillageCenter1)
 	else
 		CreateRandomChests()
 	end

@@ -28,11 +28,7 @@ SetupArmyP2WinterGather = function(_army)
 
 	_army.retreatStrength = 0
 	
-	_army.strength = 4
-
-	if CP_Difficulty > 0 then
-		_army.strength = _army.strength + 2
-	end
+	_army.strength = 4 + CP_Difficulty * 2
 
 	_army.baseDefenseRange	= 	1
 	_army.outerDefenseRange	= 	1500
@@ -82,15 +78,15 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 
 	_army.player 			= 	2
 	_army.id				= 	_index
-	_army.strength			= 	4
+	_army.strength			= 	4 + CP_Difficulty * 2
 	_army.position			= 	GetPosition("P2_WinterGather")
 	_army.rodeLength		= 	_defenseRange
 	_army.beAgressive		=	true
 	
 	if CP_Difficulty > 0 then
-		_army.strength = _army.strength + 2
 		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderPoleArm, 
 										UpgradeCategories.LeaderSword,
+										UpgradeCategories.BlackKnightLeaderMace1,
 										UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon3a,
@@ -99,6 +95,7 @@ initArmyP2WinterAttacker = function(_army, _name, _index, _pos, _defenseRange)
 	else
 		_army.AllowedTypes 		= 	{ 	UpgradeCategories.LeaderPoleArm, 
 										UpgradeCategories.LeaderSword,
+										UpgradeCategories.BlackKnightLeaderMace1,
 										Entities.PV_Cannon1,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon2,

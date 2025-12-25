@@ -7,10 +7,7 @@ function CreateArmyCaravanAttack()
 		
 	ArmyCaravanAttack.player 		= 2
 	ArmyCaravanAttack.id			= 5
-	ArmyCaravanAttack.strength		= 2
-	if CP_Difficulty > 0 then
-		ArmyCaravanAttack.strength = ArmyCaravanAttack.strength * 3
-	end
+	ArmyCaravanAttack.strength		= 2 + 2 * CP_Difficulty
 	ArmyCaravanAttack.position		= GetPosition("Caravan_WP1")
 	ArmyCaravanAttack.rodeLength	= 4000
 	ArmyCaravanAttack.workPos		=	{}

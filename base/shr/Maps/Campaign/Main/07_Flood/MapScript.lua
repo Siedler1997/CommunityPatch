@@ -226,14 +226,14 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+		
+			local vcpos3 = GetPosition("vc_empty3")
+			DestroyEntity("vc_empty3")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,0,0)
 		else
 			CreateRandomGoldChests()
 			CreateRandomChests()
 		end
-		
-		local vcpos3 = GetPosition("vc_empty3")
-		DestroyEntity("vc_empty3")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,0,0)
 	end
 
 	RaidersCreate({player = 6, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

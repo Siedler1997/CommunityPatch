@@ -1018,7 +1018,7 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 		local etype1 = Entities.CU_Barbarian_LeaderClub1
 		local etype2 = Entities.CU_BanditLeaderSword1
-		if CP_Difficulty > 0 then
+		if CP_Difficulty < 2 then
 			etype1 = Entities.CU_Barbarian_LeaderClub2
 			etype2 = Entities.CU_BanditLeaderSword2
 		end
@@ -1056,7 +1056,7 @@ function Player2HQLife()
 		local etype2 = Entities.PU_LeaderBow3
 		local etype3 = Entities.PU_LeaderHeavyCavalry1
 		local etype4 = Entities.PU_LeaderCavalry1
-		if CP_Difficulty > 0 then
+		if CP_Difficulty < 2 then
 			etype1 = Entities.PU_LeaderPoleArm4
 			etype2 = Entities.PU_LeaderBow4
 			etype3 = Entities.PU_LeaderHeavyCavalry2

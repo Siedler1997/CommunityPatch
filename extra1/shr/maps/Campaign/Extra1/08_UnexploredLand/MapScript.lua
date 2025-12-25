@@ -143,21 +143,21 @@ function FirstMapAction()
 			for i = 2, table.getn(towers1) do
 				ReplaceEntity(towers1[i], Entities.CB_Evil_Tower2)
 			end
+
+			SetEntityName(Logic.CreateEntity(Entities.CB_Bastille1, 23500, 14000, 90, 7), "RobberyTower1");
+			SetEntityName(Logic.CreateEntity(Entities.CB_Bastille1, 46200, 65700, 270, 7), "RobberyTower2");
+		
+			SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 24100, 13900, 90, 7), "RobbersSpawnPos1");
+			SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 45600, 65800, 270, 7), "RobbersSpawnPos2");
+		
+			Logic.CreateEntity(Entities.XD_LargeCampFire, 24400, 14000, 0, 7);
+			Logic.CreateEntity(Entities.XD_LargeCampFire, 45300, 65800, 180, 7);
+
+			local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_LeaderOutlaw1,0,0,45500,65900,0,0,3,0)
+			LookAt(bossID1, "ArmyMovePos0")
+			local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_LeaderOutlaw1,0,0,24200,14000,0,0,3,0)
+			LookAt(bossID2, "NPCHQ3")
 		end
-
-		SetEntityName(Logic.CreateEntity(Entities.CB_Bastille1, 23500, 14000, 90, 7), "RobberyTower1");
-		SetEntityName(Logic.CreateEntity(Entities.CB_Bastille1, 46200, 65700, 270, 7), "RobberyTower2");
-		
-		SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 24100, 13900, 90, 7), "RobbersSpawnPos1");
-		SetEntityName(Logic.CreateEntity(Entities.XD_ScriptEntity, 45600, 65800, 270, 7), "RobbersSpawnPos2");
-		
-		Logic.CreateEntity(Entities.XD_LargeCampFire, 24400, 14000, 0, 7);
-		Logic.CreateEntity(Entities.XD_LargeCampFire, 45300, 65800, 180, 7);
-
-		local bossID1 = AI.Entity_CreateFormation(7,Entities.CU_LeaderOutlaw1,0,0,45500,65900,0,0,3,0)
-		LookAt(bossID1, "ArmyMovePos0")
-		local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_LeaderOutlaw1,0,0,24200,14000,0,0,3,0)
-		LookAt(bossID2, "NPCHQ3")
 	end
 
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})

@@ -11,8 +11,8 @@ setupArmyP7PlayerAttack = function()
 	                                	
 		-- Spawn parameter
 		ArmyP7PlayerAttack.spawnTypes 		= 	{	{Entities.CU_BlackKnight_LeaderMace2, 8},
-												{Entities.PU_LeaderPoleArm2, 4},
-												{Entities.PU_LeaderBow2, 4} }
+												{Entities.PU_LeaderPoleArm2a, 8},
+												{Entities.PU_LeaderBow2a, 8} }
 										
 		ArmyP7PlayerAttack.spawnPos				= 	GetPosition("SpawnPos")
 		ArmyP7PlayerAttack.spawnGenerator		= 	"SpawnGenerator"

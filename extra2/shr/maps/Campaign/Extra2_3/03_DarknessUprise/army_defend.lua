@@ -1,14 +1,14 @@
 createArmyDefend = function()
 	local strength = 4 + CP_Difficulty*2
 	local cannontype = Entities.PV_Cannon1
-	if CP_Difficulty > 0 then	
+	if CP_Difficulty == 2 then	
 		cannontype = Entities.PV_Cannon3
 	end
 	armyDef1					= {}
 
 	armyDef1.player 				= 2
 	armyDef1.id						= 0
-	armyDef1.strength				= strength
+	armyDef1.strength				= 4 + CP_Difficulty*2
 	armyDef1.retreatStrength			= 2
 	armyDef1.position				= GetPosition("adef_1")
 	armyDef1.rodeLength				= 1000
@@ -138,19 +138,25 @@ createArmyDefend = function()
 	if CP_Difficulty > 0 then	
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 2)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 2)
-		for i = 1, 3 do
+		for i = 1, 2 do
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 2)
 			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)
+		end
+		if CP_Difficulty == 2 then
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, 2)
+			Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, 2)
 		end
 	end
 

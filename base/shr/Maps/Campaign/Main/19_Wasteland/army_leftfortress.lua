@@ -4,7 +4,7 @@ setupArmyLeftFortress = function()
 
 	ArmyLeftFortress.player 				= 2
 	ArmyLeftFortress.id						= 0
-	ArmyLeftFortress.strength				= 6
+	ArmyLeftFortress.strength				= 6 + CP_Difficulty
 	ArmyLeftFortress.retreatStrength		= 1
 	ArmyLeftFortress.position				= GetPosition("KI1_DefensePos")
 	ArmyLeftFortress.baseDefenseRange		= 6000
@@ -12,12 +12,12 @@ setupArmyLeftFortress = function()
 	ArmyLeftFortress.rodeLength				= 3000
 	ArmyLeftFortress.AllowedTypes 			= {	UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword, 
-												UpgradeCategories.LeaderBow }
+												UpgradeCategories.LeaderBow,
+												Entities.PV_Cannon3 }
 
 	if CP_Difficulty == 0 then
 		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon2)
 	else
-		ArmyLeftFortress.strength = ArmyLeftFortress.strength + 2
 		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon4)
 	end
 

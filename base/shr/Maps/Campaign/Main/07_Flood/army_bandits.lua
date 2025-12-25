@@ -18,8 +18,8 @@ createArmyBandits = function()
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = 4,
-			experiencePoints 	= LOW_EXPERIENCE,
+			maxNumberOfSoldiers = 8,
+			experiencePoints 	= CP_Difficulty,
 		}			
 		
 		if CP_Difficulty == 0 then
@@ -27,10 +27,15 @@ createArmyBandits = function()
 			EnlargeArmy(armyBandits1,troopDescription)	
 			troopDescription.leaderType = Entities.PU_LeaderSword1
 			EnlargeArmy(armyBandits1,troopDescription)	
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderBow2
 			EnlargeArmy(armyBandits1,troopDescription)	
 			troopDescription.leaderType = Entities.PU_LeaderSword2
+			EnlargeArmy(armyBandits1,troopDescription)	
+		else
+			troopDescription.leaderType = Entities.PU_LeaderBow3
+			EnlargeArmy(armyBandits1,troopDescription)	
+			troopDescription.leaderType = Entities.PU_LeaderSword3
 			EnlargeArmy(armyBandits1,troopDescription)	
 		end
 	end

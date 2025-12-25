@@ -88,10 +88,10 @@ function PreludeBriefingFinished()
 
 	-- Start countdowns and bridge quest
 	if CP_Difficulty > 0 then
-		local timerLength = 20
+		local timerLength = 30
 
 		if CP_Difficulty == 2 then
-			timerLength = timerLength - 5
+			timerLength = timerLength - 10
 			createTimerForBombers()
 		end
 

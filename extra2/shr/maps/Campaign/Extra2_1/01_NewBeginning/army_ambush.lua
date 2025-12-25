@@ -5,7 +5,7 @@ function createArmyAmbush()
 
 	troopsArmyAmbush = { }
         
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyAmbush, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troopsArmyAmbush, Entities.CU_BanditLeaderSword1)
 		table.insert(troopsArmyAmbush, Entities.CU_BanditLeaderBow1)

@@ -72,17 +72,19 @@ AllowBowLeader = function()
 end
 
 AllowCannon1 = function()
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon1)
 	else
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
+	end
+	if CP_Difficulty > 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 6)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 6)
 	end
 end
 
 AllowCannon2 = function()
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon2)
 	else
 		table.insert(armyKI1.AllowedTypes, Entities.PV_Cannon3a)

@@ -69,6 +69,11 @@ UpgradeP2HeavyCavalry = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 2)
 end
 
+UpgradeP2BlackKnight = function()
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 2)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 2)
+end
+
 GiveP2ArmyResources = function()
 
 	Tools.GiveResouces(2, 3000, 0, 1000, 0, 1000, 1000)

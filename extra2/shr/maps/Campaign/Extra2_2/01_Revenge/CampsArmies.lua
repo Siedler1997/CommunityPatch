@@ -105,7 +105,7 @@ end
 GenerateArmy2 = function()
 	local troops	= 	{ }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troops, Entities.CU_BanditLeaderSword1)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troops, Entities.CU_BanditLeaderBow1)
@@ -143,7 +143,7 @@ end
 GenerateArmy3 = function()
 	local troops	= 	{ }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troops, Entities.CU_BanditLeaderSword1)
 		table.insert(troops, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troops, Entities.CU_BanditLeaderBow1)

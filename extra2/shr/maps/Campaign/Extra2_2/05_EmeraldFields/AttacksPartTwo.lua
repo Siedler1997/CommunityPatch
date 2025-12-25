@@ -8,7 +8,7 @@ setupArmyPart2Attack = function()
 
 	ArmyPart2Attack.player 				= 6
 	ArmyPart2Attack.id				= 2
-	ArmyPart2Attack.strength			= 3
+	ArmyPart2Attack.strength			= 3 + 2 * CP_Difficulty
 	ArmyPart2Attack.retreatStrength			= 0
 	ArmyPart2Attack.position			= GetPosition("P2SpawnArmy")
 	ArmyPart2Attack.baseDefenseRange		= 6000
@@ -20,8 +20,7 @@ setupArmyPart2Attack = function()
 								UpgradeCategories.LeaderBow
 								}
 
-	if CP_Difficulty > 0 then
-		ArmyPart2Attack.strength = ArmyPart2Attack.strength * 2
+	if CP_Difficulty == 2 then
 		table.insert(ArmyPart2Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
 	end
 

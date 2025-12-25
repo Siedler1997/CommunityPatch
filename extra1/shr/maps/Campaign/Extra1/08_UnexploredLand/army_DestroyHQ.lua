@@ -14,10 +14,8 @@ function CreateArmyDestroyHQ(_index)
 	ArmyDestroyHQ[_index].id				= 	6+_index
 	if CP_Difficulty == 0 then
 		ArmyDestroyHQ[_index].strength			=	2+GetRandom(0,1)
-	elseif CP_Difficulty == 1 then
-		ArmyDestroyHQ[_index].strength			=	4
 	else
-		ArmyDestroyHQ[_index].strength			=	6
+		ArmyDestroyHQ[_index].strength			=	2 + CP_Difficulty * 2
 	end
 	ArmyDestroyHQ[_index].position			=	GetPosition("HQ".._index.."EnemyPos")
 	ArmyDestroyHQ[_index].rodeLength		=	4000

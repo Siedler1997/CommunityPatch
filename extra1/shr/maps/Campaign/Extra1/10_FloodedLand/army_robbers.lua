@@ -12,16 +12,15 @@ function CreateArmyRobbers()
 	ArmyRobbers.outerDefenseRange	=	3000
 	ArmyRobbers.AttackAllowed		=	false
 	ArmyRobbers.pulse				=	true
+	ArmyRobbers.respawnTime			=	(5-CP_Difficulty)*60
 	
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		ArmyRobbers.spawnTypes			=	{ 	{ Entities.CU_BanditLeaderSword1, 12 },
 												{ Entities.CU_BanditLeaderBow1, 12 } }
-		ArmyRobbers.respawnTime			=	5*60
 		ArmyRobbers.maxSpawnAmount		= 	1
 	else
 		ArmyRobbers.spawnTypes			=	{ 	{ Entities.CU_BanditLeaderSword2, 12 },
 												{ Entities.CU_BanditLeaderBow2, 12 } }
-		ArmyRobbers.respawnTime			=	3*60
 		ArmyRobbers.maxSpawnAmount		= 	2
 	end
 	ArmyRobbers.experiencePoints	=	CP_Difficulty

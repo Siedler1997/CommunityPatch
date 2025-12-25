@@ -27,10 +27,9 @@ function CreateArmyPatrol()
 	
 		maxNumberOfSoldiers	= 16,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 	}	
 	if CP_Difficulty > 0 then
-		troopDescription.experiencePoints = troopDescription.experiencePoints + 2
 		troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1

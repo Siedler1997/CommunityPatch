@@ -5,7 +5,7 @@ function CreateArmyMerchantAttack()
 
 	ArmyMerchantAttack.player 			=	5
 	ArmyMerchantAttack.id				=	0
-	ArmyMerchantAttack.strength			=	5
+	ArmyMerchantAttack.strength			=	5+CP_Difficulty
 	ArmyMerchantAttack.position			=	GetPosition("P2_Army_MerchantIsle_SpawnPoint1")
 	ArmyMerchantAttack.rodeLength		=	2000
 	ArmyMerchantAttack.beAgressive		=	true
@@ -43,10 +43,16 @@ function SpawnMerchantAttackTroops()
 	EnlargeArmy(ArmyMerchantAttack,troopDescription)
 	EnlargeArmy(ArmyMerchantAttack,troopDescription)
 	EnlargeArmy(ArmyMerchantAttack,troopDescription)
+	if CP_Difficulty > 0 then
+		EnlargeArmy(ArmyMerchantAttack,troopDescription)
+	end
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 	EnlargeArmy(ArmyMerchantAttack,troopDescription)
 	EnlargeArmy(ArmyMerchantAttack,troopDescription)
+	if CP_Difficulty == 2 then
+		EnlargeArmy(ArmyMerchantAttack,troopDescription)
+	end
 	
 	SpawnAllArmyAttackers()
 	

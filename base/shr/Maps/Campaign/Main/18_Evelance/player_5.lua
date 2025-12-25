@@ -94,3 +94,8 @@ UpgradeP5HeavyCavalery = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 5)
 
 end
+
+UpgradeP5BlackKnight = function()
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 5)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 5)
+end

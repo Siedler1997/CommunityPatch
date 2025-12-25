@@ -19,6 +19,7 @@ function CreateArmyBig2()
 		ArmyBig2[i].outerDefenseRange	=	1000
 		ArmyBig2[i].pulse				=	true
 		ArmyBig2[i].AttackAllowed		=	false
+		ArmyBig2[i].respawnTime			=	(5-2*CP_Difficulty)*60
 		
 		SetupArmy(ArmyBig2[i])
 
@@ -33,10 +34,10 @@ function CreateArmyBig2()
 			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 			EnlargeArmy(ArmyBig2[i],troopDescription)
 			EnlargeArmy(ArmyBig2[i],troopDescription)
-			ArmyBig2[i].respawnTime			=	60
-			ArmyBig2[i].maxSpawnAmount		=	2
+			if CP_Difficulty == 2 then
+				ArmyBig2[i].maxSpawnAmount		=	2
+			end
 		else
-			ArmyBig2[i].respawnTime			=	5*60
 			ArmyBig2[i].maxSpawnAmount		=	1
 		end		
 		

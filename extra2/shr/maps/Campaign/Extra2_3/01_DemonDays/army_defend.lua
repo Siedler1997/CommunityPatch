@@ -72,14 +72,21 @@ createArmyDefend = function()
 	armyDef3.retreatStrength			= 2
 	armyDef3.position				= GetPosition("adef_3")
 	armyDef3.rodeLength				= 1000
-	armyDef3.AllowedTypes 				= {
-										Entities.PV_Cannon3,
-										Entities.PV_Cannon4
-												
-										}
 
-	if CP_Difficulty == 0 then
-		table.insert(armyDef3.AllowedTypes, Entities.PV_Cannon2)
+	if CP_Difficulty < 2 then
+		armyDef3.AllowedTypes = {
+								Entities.PV_Cannon1,
+								Entities.PV_Cannon1,
+								Entities.PV_Cannon1,
+								Entities.PV_Cannon3
+								}
+	else
+		armyDef3.AllowedTypes = {
+								Entities.PV_Cannon1,
+								Entities.PV_Cannon3,
+								Entities.PV_Cannon3,
+								Entities.PV_Cannon3
+								}
 	end
 
 	armyDef3.baseDefenseRange		= 3000

@@ -15,7 +15,7 @@ setupArmyP2FirstAttack = function()
 	
 		maxNumberOfSoldiers	= 4,
 		minNumberOfSolderis	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= CP_Difficulty,
 		leaderType			= Entities.PU_LeaderPoleArm1
 	}			
 	
@@ -36,7 +36,7 @@ setupArmyP2FirstAttack = function()
 		EnlargeArmy(ArmyP2FirstAttack, troopDescription)
 	end
 
-	troopDescription.leaderType = Entities.PV_Cannon2
+	troopDescription.leaderType = Entities.PV_Cannon1
 	troopDescription.maxNumberOfSoldiers = 0
 
 	EnlargeArmy(ArmyP2FirstAttack, troopDescription)

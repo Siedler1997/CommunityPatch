@@ -12,13 +12,14 @@ setupArmyP2Attacker = function()
 	if CP_Difficulty > 0 then
 		ArmyP2Attacker.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderSword,
+													UpgradeCategories.BlackKnightLeaderMace1,
 													Entities.PV_Cannon2,
 													Entities.PV_Cannon3a }
 	else
 		ArmyP2Attacker.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 													UpgradeCategories.LeaderSword,
+													UpgradeCategories.BlackKnightLeaderMace1,
 													Entities.PV_Cannon1,
-													Entities.PV_Cannon2,
 													Entities.PV_Cannon2,
 													Entities.PV_Cannon3a }
 	end

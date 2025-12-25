@@ -10,7 +10,8 @@ setupArmyP2IronAttack = function()
 	                                	
 	ArmyP2IronAttack.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword, 
-												UpgradeCategories.LeaderBow
+												UpgradeCategories.LeaderBow, 
+												UpgradeCategories.BlackKnightLeaderMace1
 											}
 
 	-- Attack parameter
@@ -52,10 +53,10 @@ end
 AllowArmyP2IronAttackCannons = function()
 	if CP_Difficulty == 0 then
 		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon2)
-		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon2)
+		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3a)
 	else
 		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3a)
-		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon3a)
+		table.insert(ArmyP2IronAttack.AllowedTypes, 	Entities.PV_Cannon4a)
 	end
 end
 

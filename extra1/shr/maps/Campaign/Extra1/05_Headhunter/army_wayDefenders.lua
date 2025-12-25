@@ -9,15 +9,9 @@ function createArmyWayDefenders()
         Entities.CU_Evil_LeaderSkirmisher1,
     	}
 
-    if CP_Difficulty == 0 then
-        createArmy(2,4,armyWayDefenders1,2,"armyWay1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-        createArmy(2,5,armyWayDefenders2,2,"armyWay2",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-        createArmy(2,6,armyCamp1,4,"armyCamp1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-    else
-        createArmy(2,4,armyWayDefenders1,4,"armyWay1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-        createArmy(2,5,armyWayDefenders2,4,"armyWay2",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-        createArmy(2,6,armyCamp1,7,"armyCamp1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
-    end
+    createArmy(2,4,armyWayDefenders1,2+2*CP_Difficulty,"armyWay1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+    createArmy(2,5,armyWayDefenders2,2+2*CP_Difficulty,"armyWay2",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
+    createArmy(2,6,armyCamp1,4+2*CP_Difficulty,"armyCamp1",CP_Difficulty+1,troopsDefenders,12+CP_Difficulty*2)
 
     StartSimpleJob("controlArmyWayDefenders")
 
@@ -40,18 +34,13 @@ function controlArmyWayDefenders()
     end
 ------------------------------------------------------------------------------------------------------------------------------------
 function createArmyCamps()
-    local strength = 3
-    if CP_Difficulty > 0 then
-        strength = strength * 2
-    end
-
     armyCamp2 = {}
 
-    createArmy(2,7,armyCamp2,strength,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders,16)
+    createArmy(2,7,armyCamp2,3 + 2 * CP_Difficulty,"armyCamp2",VERYHIGH_EXPERIENCE,troopsDefenders,16)
 
     armyCamp3 = {}
 
-    createArmy(2,8,armyCamp3,strength,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders,16)
+    createArmy(2,8,armyCamp3,3 + 2 * CP_Difficulty,"armyCamp3",VERYHIGH_EXPERIENCE,troopsDefenders,16)
 
     delayArmyAdvancing = 10
 

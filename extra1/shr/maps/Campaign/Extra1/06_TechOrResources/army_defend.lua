@@ -33,10 +33,7 @@ function controlCreateDefendingArmies()
         end
 
     
-	local experience = HIGH_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 1
-	end
+	local experience = CP_Difficulty + 1
 
     createArmy(7,8,armyEight,8,"defendArea1",experience,troopsDefendA)
     StartSimpleJob("controlArmyEight")

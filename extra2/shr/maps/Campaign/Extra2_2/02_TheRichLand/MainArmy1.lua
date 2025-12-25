@@ -59,7 +59,7 @@ end
 SpawnArmyBase1 = function()
 	local mainArmy1	= 	{ }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(mainArmy1, Entities.CU_BanditLeaderSword1)
 		table.insert(mainArmy1, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(mainArmy1, Entities.CU_BanditLeaderBow1)

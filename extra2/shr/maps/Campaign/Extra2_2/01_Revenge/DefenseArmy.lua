@@ -401,15 +401,17 @@ createDefenseArmy5 = function()
 DefenseBase5 = function()
 	local DefenseArmy	= 	{ }
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword1)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow1)
-	elseif CP_Difficulty == 1 then
+		if CP_Difficulty == 1 then
+			table.insert(DefenseArmy, Entities.PV_Cannon1)
+		end
+	else
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword2)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub2)
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow2)
-	else
 		table.insert(DefenseArmy, Entities.PV_Cannon3)
 	end
 
@@ -483,16 +485,18 @@ createDefenseArmy6 = function()
 
 DefenseBase6 = function()
 	local DefenseArmy	= 	{ }
-
-	if CP_Difficulty == 0 then
+	
+	if CP_Difficulty < 2 then
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword1)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow1)
-	elseif CP_Difficulty == 1 then
+		if CP_Difficulty == 1 then
+			table.insert(DefenseArmy, Entities.PV_Cannon1)
+		end
+	else
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderSword2)
 		table.insert(DefenseArmy, Entities.CU_Barbarian_LeaderClub2)
 		table.insert(DefenseArmy, Entities.CU_BanditLeaderBow2)
-	else
 		table.insert(DefenseArmy, Entities.PV_Cannon3)
 	end
 

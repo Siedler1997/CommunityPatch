@@ -7,7 +7,7 @@ function CreateArmyPatrol()
 		
 	ArmyPatrol.player 		= 	2
 	ArmyPatrol.id			= 	4
-	ArmyPatrol.strength		= 	5
+	ArmyPatrol.strength		= 	5 + CP_Difficulty
 	ArmyPatrol.position		= 	GetPosition("P2_RandomSpawn_1")
 	ArmyPatrol.rodeLength	= 	3000
 	ArmyPatrol.delay		=	2
@@ -15,10 +15,6 @@ function CreateArmyPatrol()
 	ArmyPatrol.retreatStrength	=	0
 	ArmyPatrol.AttackPos			=	GetPosition("P2_RandomSpawn_1")
 	
-	if CP_Difficulty > 0 then
-		ArmyPatrol.strength = ArmyPatrol.strength + 3
-	end
-
 	SetupArmy(ArmyPatrol)
 
 	StartSimpleJob("ControlArmyPatrol")
@@ -64,6 +60,7 @@ function CreateArmyPatrolTroops()
 			EnlargeArmy(ArmyPatrol,troopDescription)
 		end
 	else
+		maxNumberOfSoldiers	= 8
 		troopDescription.leaderType = Entities.PU_LeaderSword3
 		EnlargeArmy(ArmyPatrol,troopDescription)
 		troopDescription.leaderType = Entities.PU_LeaderPoleArm3

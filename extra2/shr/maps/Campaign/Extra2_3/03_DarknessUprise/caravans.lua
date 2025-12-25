@@ -56,9 +56,9 @@ createCaravan = function()
 		table.insert(troops, Entities.PU_LeaderCavalry2)
 		table.insert(troops, Entities.PU_LeaderRifle1)
 	else
-		table.insert(troops, Entities.PU_LeaderSword3)
-		table.insert(troops, Entities.PU_LeaderBow3)
-		table.insert(troops, Entities.PU_LeaderPoleArm3)
+		table.insert(troops, Entities.PU_LeaderSword2a)
+		table.insert(troops, Entities.PU_LeaderBow2a)
+		table.insert(troops, Entities.PU_LeaderPoleArm2a)
 		table.insert(troops, Entities.PU_LeaderCavalry2)
 		table.insert(troops, Entities.PU_LeaderRifle1)
 	end

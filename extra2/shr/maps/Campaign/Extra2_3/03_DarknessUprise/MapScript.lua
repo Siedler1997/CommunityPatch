@@ -256,27 +256,27 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
+			for i = 2, table.getn(towers1) do
+				if IsExisting(towers1[i]) then
+					ReplaceEntity(towers1[i], Entities.PB_Tower3)
+				end
+			end
+			local towers2 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 5, 0) }
+			for i = 2, table.getn(towers2) do
+				if IsExisting(towers2[i]) then
+					ReplaceEntity(towers2[i], Entities.PB_Tower3)
+				end
+			end
+			local towers3 = { Logic.GetPlayerEntities(4, Entities.PB_Tower2, 5, 0) }
+			for i = 2, table.getn(towers3) do
+				if IsExisting(towers3[i]) then
+					ReplaceEntity(towers3[i], Entities.PB_Tower3)
+				end
+			end
 		else
 			CreateRandomChests()
-		end
-
-		local towers1 = { Logic.GetPlayerEntities(2, Entities.PB_Tower2, 20, 0) }
-		for i = 2, table.getn(towers1) do
-			if IsExisting(towers1[i]) then
-				ReplaceEntity(towers1[i], Entities.PB_Tower3)
-			end
-		end
-		local towers2 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 5, 0) }
-		for i = 2, table.getn(towers2) do
-			if IsExisting(towers2[i]) then
-				ReplaceEntity(towers2[i], Entities.PB_Tower3)
-			end
-		end
-		local towers3 = { Logic.GetPlayerEntities(4, Entities.PB_Tower2, 5, 0) }
-		for i = 2, table.getn(towers3) do
-			if IsExisting(towers3[i]) then
-				ReplaceEntity(towers3[i], Entities.PB_Tower3)
-			end
 		end
 	else
 		CreateRandomChests()

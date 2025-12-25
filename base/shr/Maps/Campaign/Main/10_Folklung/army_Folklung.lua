@@ -48,7 +48,7 @@ createArmyFolklungA = function()
 	ArmyFolklungA.player 			= 	gvMission.PlayerIDFolklung
 	ArmyFolklungA.id				= 	3
 	ArmyFolklungA.strength			= 	6
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		ArmyFolklungA.strength = ArmyFolklungA.strength + 2
 	end
 	ArmyFolklungA.position			= 	GetPosition("FolklungSpawn")

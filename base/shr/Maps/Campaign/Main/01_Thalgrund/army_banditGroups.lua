@@ -1,70 +1,68 @@
 
 createArmyBanditGroups = function()
 
-if 0==1 then
+	if 0==1 then
 
-	--	bandit groups a
+		--	bandit groups a
 
-		armyBanditGroupsA				= {}
+			armyBanditGroupsA				= {}
 	
-		armyBanditGroupsA.player 		= 7
-		armyBanditGroupsA.id			= 5
-		armyBanditGroupsA.strength		= 1
-		armyBanditGroupsA.position		= GetPosition("smallArmyA")
-		armyBanditGroupsA.rodeLength	= 1000
+			armyBanditGroupsA.player 		= 7
+			armyBanditGroupsA.id			= 5
+			armyBanditGroupsA.strength		= 1
+			armyBanditGroupsA.position		= GetPosition("smallArmyA")
+			armyBanditGroupsA.rodeLength	= 1000
 		
-		SetupArmy(armyBanditGroupsA)
+			SetupArmy(armyBanditGroupsA)
 
-	--	create army
+		--	create army
 			
-		local troopDescription = {
+			local troopDescription = {
 		
-			maxNumberOfSoldiers	= 4,
-			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
-		}			
+				maxNumberOfSoldiers	= 4,
+				minNumberOfSoldiers	= 0,
+				experiencePoints 	= CP_Difficulty,
+			}			
 
-		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.PU_LeaderSword1
-		else
-			troopDescription.experiencePoints = 2
-			troopDescription.maxNumberOfSoldiers = 8
-			troopDescription.leaderType = Entities.CU_BanditLeaderSword2
-		end
+			if CP_Difficulty < 2 then
+				troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+			else
+				troopDescription.maxNumberOfSoldiers = 6
+				troopDescription.leaderType = Entities.CU_BanditLeaderSword2
+			end
 	
-		EnlargeArmy(armyBanditGroupsA,troopDescription)
+			EnlargeArmy(armyBanditGroupsA,troopDescription)
 
-	--	big boss c
+		--	big boss c
 
-		armyBanditGroupsB			= {}
+			armyBanditGroupsB			= {}
 	
-		armyBanditGroupsB.player 		= 7
-		armyBanditGroupsB.id			= 6
-		armyBanditGroupsB.strength		= 1
-		armyBanditGroupsB.position		= GetPosition("smallArmyB")
-		armyBanditGroupsB.rodeLength	= 1000
+			armyBanditGroupsB.player 		= 7
+			armyBanditGroupsB.id			= 6
+			armyBanditGroupsB.strength		= 1
+			armyBanditGroupsB.position		= GetPosition("smallArmyB")
+			armyBanditGroupsB.rodeLength	= 1000
 		
-		SetupArmy(armyBanditGroupsB)
+			SetupArmy(armyBanditGroupsB)
 
-	--	create army
+		--	create army
 			
-		local troopDescription = {
+			local troopDescription = {
 		
-			maxNumberOfSoldiers	= 6,
-			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
-		}			
+				maxNumberOfSoldiers	= 4,
+				minNumberOfSoldiers	= 0,
+				experiencePoints 	= CP_Difficulty,
+			}			
 		
-		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.PU_LeaderSword1
-		else
-			troopDescription.experiencePoints = 2
-			troopDescription.maxNumberOfSoldiers = 8
-			troopDescription.leaderType = Entities.CU_BanditLeaderSword2
-		end
+			if CP_Difficulty < 2 then
+				troopDescription.leaderType = Entities.CU_BanditLeaderSword1
+			else
+				troopDescription.maxNumberOfSoldiers = 6
+				troopDescription.leaderType = Entities.CU_BanditLeaderSword2
+			end
 	
-		EnlargeArmy(armyBanditGroupsB,troopDescription)
-
-end
+			EnlargeArmy(armyBanditGroupsB,troopDescription)
 
 	end
+
+end

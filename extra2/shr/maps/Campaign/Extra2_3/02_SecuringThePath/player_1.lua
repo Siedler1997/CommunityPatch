@@ -3,7 +3,7 @@ createPlayer1 = function()
 	local playerId = 1
 	
 	Logic.SetPlayerName(playerId, String.Player(playerId))
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		Tools.GiveResouces(playerId, 3000,1500,1300,1000,500,500) 
 	else
 		Tools.GiveResouces(playerId, 2000,1000,900,800,400,200) 

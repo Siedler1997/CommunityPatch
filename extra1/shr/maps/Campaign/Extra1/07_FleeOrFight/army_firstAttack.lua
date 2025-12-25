@@ -12,10 +12,7 @@ function CreateArmyFirstAttack()
 		armyFirstAttack[i].player 				=	2
 		-- id 1 - 4 used
 		armyFirstAttack[i].id					= 	i
-		armyFirstAttack[i].strength				=	3
-		if CP_Difficulty > 0 then
-			armyFirstAttack[i].strength = armyFirstAttack[i].strength * 2
-		end
+		armyFirstAttack[i].strength				=	3 + CP_Difficulty
 
 		if i == 1 or i == 6 then
 			armyFirstAttack[i].position		=	GetPosition("P2_Army_South_SpawnPoint2")
@@ -45,11 +42,16 @@ function CreateArmyFirstAttack()
 			experiencePoints 	= CP_Difficulty,
 		}			
 
-		for k = 1, (CP_Difficulty+1) do
-			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
+		troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
+		EnlargeArmy(armyFirstAttack[i],troopDescription)
+		EnlargeArmy(armyFirstAttack[i],troopDescription)
+		if CP_Difficulty > 0 then
 			EnlargeArmy(armyFirstAttack[i],troopDescription)
-			EnlargeArmy(armyFirstAttack[i],troopDescription)
-			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
+		end
+
+		troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
+		EnlargeArmy(armyFirstAttack[i],troopDescription)
+		if CP_Difficulty == 2 then
 			EnlargeArmy(armyFirstAttack[i],troopDescription)
 		end
 

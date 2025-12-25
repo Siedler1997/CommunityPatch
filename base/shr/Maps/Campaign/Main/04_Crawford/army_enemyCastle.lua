@@ -1,9 +1,5 @@
 
 createArmyEnemyCastle = function()
-		local experience = MEDIUM_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 2
-		end
 
 	--	dynamic one
 	--	-----------
@@ -30,26 +26,17 @@ createArmyEnemyCastle = function()
 		
 			maxNumberOfSoldiers	= 9,
 			minNumberOfSoldiers	= 2,
-			experiencePoints 	= experience,
-		}				
+			experiencePoints 	= CP_Difficulty+1,
+		}		
 		
-		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.PV_Cannon1
-		elseif CP_Difficulty == 1 then
-			troopDescription.leaderType = Entities.PV_Cannon2
-		else
-			troopDescription.leaderType = Entities.PV_Cannon3a
-		end			
-		EnlargeArmy(armyEnemyCastle,troopDescription)
-		
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
 		else
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 		end				
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
-		EnlargeArmy(armyEnemyCastle,troopDescription)
+		EnlargeArmy(armyEnemyCastle,troopDescription)	
 		
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderBow1
@@ -60,14 +47,17 @@ createArmyEnemyCastle = function()
 		end
 		EnlargeArmy(armyEnemyCastle,troopDescription)
 		EnlargeArmy(armyEnemyCastle,troopDescription)
-		EnlargeArmy(armyEnemyCastle,troopDescription)			
+		EnlargeArmy(armyEnemyCastle,troopDescription)		
 		
-		if CP_Difficulty == 0 then
+		troopDescription.leaderType = Entities.PV_Cannon2
+		EnlargeArmy(armyEnemyCastle,troopDescription)	
+
+		if CP_Difficulty < 2 then
 			troopDescription.leaderType = Entities.PV_Cannon1
 		else
-			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2
+			troopDescription.leaderType = Entities.PV_Cannon3a
 		end			
-		EnlargeArmy(armyEnemyCastle,troopDescription)
+		EnlargeArmy(armyEnemyCastle,troopDescription)	
 
 	--	job		
 		
@@ -82,10 +72,7 @@ createArmyEnemyCastle = function()
 	
 		armyDefendEnemyCastle.player 		= 5
 		armyDefendEnemyCastle.id			= 6
-		armyDefendEnemyCastle.strength		= 3
-		if CP_Difficulty > 0 then
-			armyDefendEnemyCastle.strength = armyDefendEnemyCastle.strength + 3
-		end
+		armyDefendEnemyCastle.strength		= 3 + 2*CP_Difficulty
 		armyDefendEnemyCastle.position		= GetPosition("enemyCastle")
 		armyDefendEnemyCastle.rodeLength	= 3000
 		
@@ -97,14 +84,15 @@ createArmyEnemyCastle = function()
 		
 			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 2,
-			experiencePoints 	= experience,
+			experiencePoints 	= CP_Difficulty+1,
 		}				
 
 		
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace1
 		else
 			troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
+			EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 		end					
 		EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 		
@@ -114,12 +102,12 @@ createArmyEnemyCastle = function()
 				troopDescription.leaderType = Entities.PU_LeaderBow2	
 			else
 				troopDescription.leaderType = Entities.PU_LeaderBow3
-			end
-			EnlargeArmy(armyDefendEnemyCastle,troopDescription)				
+				EnlargeArmy(armyDefendEnemyCastle,troopDescription)		
+			end		
 			EnlargeArmy(armyDefendEnemyCastle,troopDescription)
 		end
 		
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
 		else
 			troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry2

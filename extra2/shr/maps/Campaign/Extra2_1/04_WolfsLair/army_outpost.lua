@@ -14,13 +14,12 @@ function spawnArmyOutpost()
 		
 				troopsArmyOutpost = { }
 		
-				local strength = 5
-				if CP_Difficulty == 0 then
+				local strength = 5 + CP_Difficulty
+				if CP_Difficulty < 2 then
 					table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub1)
 					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow1)
 					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderSword1)
 				else
-					strength = strength + 2
 					table.insert(troopsArmyOutpost, Entities.CU_Barbarian_LeaderClub2)
 					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderBow2)
 					table.insert(troopsArmyOutpost, Entities.CU_BanditLeaderSword2)

@@ -16,7 +16,7 @@ function createBriefingFight()
 	LookAt("dario","camera")
 	LookAt("erec","camera")
 	
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		helias = CreateEntity(3,Entities.PU_Hero6,GetPosition("helias_spawn"),"helias")	
 		LookAt("helias","camera")
 	end
@@ -159,7 +159,7 @@ createVargErecBriefing = function()
 	local pos4 = GetPosition("troop_4")
 	local pos5 = GetPosition("troop_5")
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		ker_sup1 = AI.Entity_CreateFormation(1, Entities.CU_Barbarian_LeaderClub2,0,8,pos3.X,pos3.Y,0,0,3,0)
 		ker_sup2 = AI.Entity_CreateFormation(1, Entities.CU_BlackKnight_LeaderMace2,0,8,pos4.X,pos4.Y,0,0,3,0)
 		ker_sup3 = AI.Entity_CreateFormation(1, Entities.CU_BanditLeaderSword2,0,8,pos5.X,pos5.Y,0,0,3,0)

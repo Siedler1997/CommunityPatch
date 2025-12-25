@@ -17,7 +17,7 @@ function beginChapterOne()
     CreateChestOpener("Yuki")
     StartChestQuest()
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		-- create some troops for the player
 		local troopDescription1 = {
 

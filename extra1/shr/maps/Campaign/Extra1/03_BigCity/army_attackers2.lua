@@ -75,17 +75,12 @@ function ControlAttackers2()
 					-- set random army position
 					local RandomPos 			= GetRandom(1,4)
 					ArmyAttackers2[i].position	= GetPosition("EnemySpawn"..RandomPos)
-				
-					local experience = LOW_EXPERIENCE
-					if CP_Difficulty > 0 then
-						experience = experience + 2
-					end
 
 					local troopDescription = {
 				
 						maxNumberOfSoldiers	= 16,
 						minNumberOfSoldiers	= 0,
-						experiencePoints 	= experience,
+						experiencePoints 	= CP_Difficulty,
 					}
 				
 					troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1

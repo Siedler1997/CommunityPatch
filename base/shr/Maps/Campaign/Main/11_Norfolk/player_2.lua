@@ -78,7 +78,7 @@ createPlayer2 = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 0 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)

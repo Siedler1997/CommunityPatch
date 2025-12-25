@@ -8,7 +8,7 @@ setupArmyAI1Attack = function()
 
 	ArmyAI1Attack.player 				= 6
 	ArmyAI1Attack.id				= 1
-	ArmyAI1Attack.strength				= 3
+	ArmyAI1Attack.strength				= 3 + 2 * CP_Difficulty
 	ArmyAI1Attack.retreatStrength			= 0
 	ArmyAI1Attack.position				= GetPosition("spawn2")
 	ArmyAI1Attack.baseDefenseRange			= 6000
@@ -20,8 +20,7 @@ setupArmyAI1Attack = function()
 								UpgradeCategories.LeaderBow
 								}
 
-	if CP_Difficulty > 0 then
-		ArmyAI1Attack.strength = ArmyAI1Attack.strength * 2
+	if CP_Difficulty == 2 then
 		table.insert(ArmyAI1Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
 	end
 

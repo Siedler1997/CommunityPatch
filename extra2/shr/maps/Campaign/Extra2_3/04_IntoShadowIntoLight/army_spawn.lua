@@ -71,22 +71,9 @@ createArmySpawn = function()
 				}
 	Troops_7 = { }
 
-	local experience = LOW_EXPERIENCE
-	local soldiers = 4
-	if CP_Difficulty > 0 then
-		experience = experience + 2
-		soldiers = soldiers * 2
-		table.insert(Troops_5, Entities.PU_LeaderBow4)
-		table.insert(Troops_5, Entities.PU_LeaderPoleArm4)
-		table.insert(Troops_5, Entities.PU_LeaderSword4)
-		
-		table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry2)
-		table.insert(Troops_6, Entities.PU_LeaderBow4)
-		
-		table.insert(Troops_7, Entities.PU_LeaderBow2)
-		table.insert(Troops_7, Entities.PU_LeaderPoleArm2)
-		table.insert(Troops_7, Entities.PU_LeaderSword2)
-	else
+	local experience = CP_Difficulty
+	local soldiers = 4 + 2 * CP_Difficulty
+	if CP_Difficulty == 0 then
 		table.insert(Troops_5, Entities.PU_LeaderBow1)
 		table.insert(Troops_5, Entities.PU_LeaderPoleArm1)
 		table.insert(Troops_5, Entities.PU_LeaderSword1)
@@ -97,6 +84,28 @@ createArmySpawn = function()
 		table.insert(Troops_7, Entities.PU_LeaderBow1)
 		table.insert(Troops_7, Entities.PU_LeaderPoleArm1)
 		table.insert(Troops_7, Entities.PU_LeaderSword1)
+	elseif CP_Difficulty == 1 then
+		table.insert(Troops_5, Entities.PU_LeaderBow2)
+		table.insert(Troops_5, Entities.PU_LeaderPoleArm2)
+		table.insert(Troops_5, Entities.PU_LeaderSword2)
+		
+		table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry1)
+		table.insert(Troops_6, Entities.PU_LeaderBow3)
+		
+		table.insert(Troops_7, Entities.PU_LeaderBow2)
+		table.insert(Troops_7, Entities.PU_LeaderPoleArm2)
+		table.insert(Troops_7, Entities.PU_LeaderSword2)
+	else
+		table.insert(Troops_5, Entities.PU_LeaderBow4)
+		table.insert(Troops_5, Entities.PU_LeaderPoleArm4)
+		table.insert(Troops_5, Entities.PU_LeaderSword4)
+		
+		table.insert(Troops_6, Entities.PU_LeaderHeavyCavalry2)
+		table.insert(Troops_6, Entities.PU_LeaderBow4)
+		
+		table.insert(Troops_7, Entities.PU_LeaderBow2)
+		table.insert(Troops_7, Entities.PU_LeaderPoleArm2)
+		table.insert(Troops_7, Entities.PU_LeaderSword2)
 	end
 
 ------------------------------

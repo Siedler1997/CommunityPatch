@@ -19,6 +19,7 @@ function CreateArmyBig1()
 		ArmyBig1[i].outerDefenseRange	=	1000
 		ArmyBig1[i].pulse				=	true
 		ArmyBig1[i].AttackAllowed		=	false
+		ArmyBig1[i].respawnTime			=	(5-2*CP_Difficulty)*60
 		
 		SetupArmy(ArmyBig1[i])
 
@@ -26,18 +27,17 @@ function CreateArmyBig1()
 		
 			maxNumberOfSoldiers	= 16,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= CP_Difficulty,
 		}	
 		if CP_Difficulty > 0 then
-			troopDescription.experiencePoints = troopDescription.experiencePoints + 2
 			troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1
 			EnlargeArmy(ArmyBig1[i],troopDescription)
 			troopDescription.leaderType = Entities.CU_Evil_LeaderSkirmisher1
 			EnlargeArmy(ArmyBig1[i],troopDescription)
-			ArmyBig1[i].respawnTime			=	60
-			ArmyBig1[i].maxSpawnAmount		=	2
+			if CP_Difficulty == 2 then
+				ArmyBig1[i].maxSpawnAmount		=	2
+			end
 		else
-			ArmyBig1[i].respawnTime			=	5*60
 			ArmyBig1[i].maxSpawnAmount		=	1
 		end			
 		

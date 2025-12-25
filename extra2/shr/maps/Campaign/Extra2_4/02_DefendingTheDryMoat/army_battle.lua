@@ -11,12 +11,21 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 	local pos = 0
 	local i = 0 
 	local u= 0
+	local bowtype = Entities.PU_LeaderBow2a
+	local speartype = Entities.PU_LeaderPoleArm2a
+	local swordtype = Entities.PU_LeaderSword2a
+	if CP_Difficulty == 2 then
+		bowtype = Entities.PU_LeaderBow3
+		speartype = Entities.PU_LeaderPoleArm3
+		swordtype = Entities.PU_LeaderSword3
+	end
+
 		for i = 1,2,1 do
 		
 		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "battle"..i) 
 		Attack("battle"..i,"secret")
 		end
@@ -26,7 +35,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderSword3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, swordtype, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "battle"..i) 
 		Attack("battle"..i,"secret")
 
@@ -36,7 +45,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		p = GetRandom(1,6)
 		
 		pos = GetPosition("spawn"..p)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderPoleArm3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, speartype, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "battle"..i) 
 		Attack("battle"..i,"secret")
 		
@@ -46,7 +55,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		p = GetRandom(1,6)
 		
 		pos = GetPosition("spawn"..p)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderHeavyCavalry1, 0, 3, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderHeavyCavalry1, 0, 3, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty+1, 0)
 		SetEntityName(battle, "battle"..i) 
 		Attack("battle"..i,"secret")
 	
@@ -56,7 +65,7 @@ StartSimpleJob("AreSiegersDeadBeforeLastLine")
 		p = GetRandom(1,6)
 	
 		pos = GetPosition("spawn"..p)
-		battle = AI.Entity_CreateFormation(2, Entities.PU_LeaderBow3, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
+		battle = AI.Entity_CreateFormation(2, bowtype, 0, 8, pos.X+i*10, pos.Y+i*10, 0, 0, CP_Difficulty, 0)
 		SetEntityName(battle, "battle"..i) 
 		Attack("battle"..i,"secret")
 	
@@ -175,12 +184,15 @@ spDef = function()
 local l = 0
 local c= 0
 	for l = 1,8,1 do
-	p = GetRandom(1,7)
-	pos = GetPosition("spawn"..p)
-	battle = Tools.CreateGroup(8, Entities.PU_LeaderSword4, 6,pos.X+l*10, pos.Y+l*10 , 90)
-	SetEntityName(battle, "defense"..l) 
-	Attack("defense"..l,"spawn"..p)
-	
+		p = GetRandom(1,7)
+		pos = GetPosition("spawn"..p)
+		local unitType = Entities.PU_LeaderSword4
+		if l > 4 then
+			unitType = Entities.PU_LeaderPoleArm4
+		end
+		battle = Tools.CreateGroup(8, unitType, 6,pos.X+l*10, pos.Y+l*10 , 90)
+		SetEntityName(battle, "defense"..l) 
+		Attack("defense"..l,"spawn"..p)
 	end
 end
 
@@ -242,7 +254,9 @@ c = c + 1
 	for t = 1,6,1 do
 		local pos = GetPosition(campos[t]..c)
 		local siegerType = Entities.PU_LeaderSword2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			siegerType = Entities.PU_LeaderSword2a
+		elseif CP_Difficulty == 2 then
 			siegerType = Entities.PU_LeaderSword3
 		end
 
@@ -256,8 +270,9 @@ c = c + 1
 
 	for t = 1,6,1 do
 		local pos = GetPosition(campos[t]..c)
-		local siegerType = Entities.PU_LeaderSword2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			siegerType = Entities.PU_LeaderSword2a
+		elseif CP_Difficulty == 2 then
 			siegerType = Entities.PU_LeaderSword3
 		end
 		
@@ -272,7 +287,9 @@ c = c + 1
 	for t = 1,6,1 do
 		local pos = GetPosition(campos[t]..c)
 		local siegerType = Entities.PU_LeaderBow2
-		if CP_Difficulty == 2 then
+		if CP_Difficulty == 1 then
+			siegerType = Entities.PU_LeaderBow2a
+		elseif CP_Difficulty == 2 then
 			siegerType = Entities.PU_LeaderBow3
 		end
 		
@@ -301,9 +318,12 @@ c = c + 1
 c = c + 1
 
 	for t = 1,6,1 do
-		
 		local pos = GetPosition(campos[t]..c)
-		sieger = AI.Entity_CreateFormation(2, Entities.PU_LeaderHeavyCavalry1, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
+		local siegerType = Entities.PU_LeaderHeavyCavalry1
+		if CP_Difficulty == 2 then
+			siegerType = Entities.PU_LeaderHeavyCavalry2
+		end
+		sieger = AI.Entity_CreateFormation(2, siegerType, 0, 8, pos.X, pos.Y, 0, 0, CP_Difficulty, 0)
 		SetEntityName(sieger, campos[t]..c) 
 		--LookAt(campos[t]..c,"keep")
 		--Attack(campos[t]..c,"keep")

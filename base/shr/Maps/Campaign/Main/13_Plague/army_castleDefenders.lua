@@ -24,7 +24,7 @@ createArmyCastleDefenders = function()
 		}	
 	
 		if CP_Difficulty == 0 then
-			troopDescription.leaderType = Entities.PV_Cannon2
+			troopDescription.leaderType = Entities.PV_Cannon1
 			EnlargeArmy(armyCastleDefendersA,troopDescription)
 			troopDescription.leaderType = Entities.PU_LeaderBow3
 			EnlargeArmy(armyCastleDefendersA,troopDescription)
@@ -39,7 +39,7 @@ createArmyCastleDefenders = function()
 			EnlargeArmy(armyCastleDefendersA,troopDescription)
 		end
 	
-		troopDescription.leaderType = Entities.PV_Cannon4
+		troopDescription.leaderType = Entities.PV_Cannon3
 	
 		EnlargeArmy(armyCastleDefendersA,troopDescription)
 		EnlargeArmy(armyCastleDefendersA,troopDescription)

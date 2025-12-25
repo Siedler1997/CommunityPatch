@@ -215,7 +215,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			GlobalMissionScripting.GiveResouces(1, 1000, 1500, 1000, 1000, 1000, 1000)
 		else
 			GlobalMissionScripting.GiveResouces(1, 500, 800, 500, 500, 500, 500)
@@ -302,11 +302,14 @@ function Mission_FirstMapAction()
 				GUI.SetTaxLevel(5)
 				
 				ReplaceEntity("p1vc", Entities.PB_VillageCenter1)
-			end
 			
-			local vc1pos = GetPosition("vc_empty1") 
-			DestroyEntity("vc_empty1")	
-			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc1pos.X,vc1pos.Y,0,0)
+				local vc1pos = GetPosition("vc_empty1") 
+				DestroyEntity("vc_empty1")	
+				Logic.CreateEntity(Entities.XD_RuinMonastery2,vc1pos.X,vc1pos.Y,0,0)
+				
+				local ariIronPos = GetPosition("AriIronPos") 
+				Logic.CreateEntity(Entities.PB_IronMine3,ariIronPos.X,ariIronPos.Y,0,5)
+			end
 
 			--[[
 			local vc2pos = GetPosition("vc_empty2") 	

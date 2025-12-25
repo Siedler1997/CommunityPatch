@@ -18,16 +18,29 @@ spawnStartArmies = function()
 	LookAt("rebel_lead", "capitol")
 
 ---- barbarian invaders
-troops	= 	{		
-	Entities.PU_LeaderSword3,
-	Entities.PU_LeaderSword3,
-	Entities.PU_LeaderBow3,
-	Entities.PU_LeaderBow3,
-	Entities.PU_LeaderPoleArm3,
-	Entities.PU_LeaderRifle1,
-	Entities.PU_LeaderCavalry2,
-	Entities.PU_LeaderHeavyCavalry1
-}	
+	if CP_Difficulty < 2 then
+		troops	= 	{		
+			Entities.PU_LeaderSword2a,
+			Entities.PU_LeaderSword2a,
+			Entities.PU_LeaderBow2a,
+			Entities.PU_LeaderBow2a,
+			Entities.PU_LeaderPoleArm2a,
+			Entities.PU_LeaderRifle1,
+			Entities.PU_LeaderCavalry2,
+			Entities.PU_LeaderHeavyCavalry1
+		}	
+	else
+		troops	= 	{		
+			Entities.PU_LeaderSword3,
+			Entities.PU_LeaderSword3,
+			Entities.PU_LeaderBow3,
+			Entities.PU_LeaderBow3,
+			Entities.PU_LeaderPoleArm3,
+			Entities.PU_LeaderRifle1,
+			Entities.PU_LeaderCavalry2,
+			Entities.PU_LeaderHeavyCavalry1
+		}	
+	end
 
 templartroops	= 	{	
 	Entities.PU_LeaderSword4,
@@ -98,11 +111,7 @@ end
 ----------- cannons 
 for i = 1,4,1 do
 	local pos = GetPosition("cannon"..i)
-	if CP_Difficulty > 0 then
-		tun = CreateEntity(2,Entities.PV_Cannon4,pos,"cannon"..i)
-	else
-		tun = CreateEntity(2,Entities.PV_Cannon3,pos,"cannon"..i)
-	end
+	tun = CreateEntity(2,Entities.PV_Cannon3,pos,"cannon"..i)
 	LookAt("cannon"..i, "Dario")
 	Attack("cannon"..i,"cannon"..i)
 end

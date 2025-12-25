@@ -49,7 +49,7 @@ function CreateArmyQueen()
 
 	-- Create Queen
 	CreateEntity(4, Entities.CU_Evil_Queen, GetPosition("Queen"), "QueenNPC")
-	--make her inculnerable until here troops die
+	--make her invulnerable until her troops die
 	MakeInvulnerable("QueenNPC")
 	
 	AI.Entity_ConnectUnemployedLeaderToArmy(ArmyQueen[1].player, ArmyQueen[1].id, 1)

@@ -6,17 +6,17 @@ setupArmyDefenseRightMines = function()
 	armyDefenseRightMines.id				= 2
 	armyDefenseRightMines.position			= GetPosition("DefenceRightMinesPos")
 	armyDefenseRightMines.rodeLength			= 2000
-
+	armyDefenseRightMines.strength = 3+CP_Difficulty
+	
+	local soldiers = 4 + CP_Difficulty * 2
 	if CP_Difficulty == 0 then
-		armyDefenseRightMines.strength = 2
-		armyDefenseRightMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow1, 4},
-													{ Entities.CU_BanditLeaderSword1, 4},
-													{ Entities.CU_BanditLeaderSword1, 4} }
+		armyDefenseRightMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow1, soldiers},
+													{ Entities.CU_BanditLeaderSword1, soldiers},
+													{ Entities.CU_BanditLeaderSword1, soldiers} }
 	else
-		armyDefenseRightMines.strength = 3
-		armyDefenseRightMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow2, 8},
-													{ Entities.CU_BanditLeaderSword2, 8},
-													{ Entities.CU_BanditLeaderSword2, 8} }
+		armyDefenseRightMines.spawnTypes 		= { { Entities.CU_BanditLeaderBow2, soldiers},
+													{ Entities.CU_BanditLeaderSword2, soldiers},
+													{ Entities.CU_BanditLeaderSword2, soldiers} }
 	end
 
 	armyDefenseRightMines.spawnPos			= GetPosition("DefenceRightMinesSpawn")

@@ -23,6 +23,7 @@ setupArmyAI1Attack = function()
 	if CP_Difficulty == 2 then
 		ArmyAI1Attack.strength = ArmyAI1Attack.strength + 2
 		table.insert(ArmyAI1Attack.AllowedTypes, UpgradeCategories.LeaderRifle)
+		table.insert(ArmyAI1Attack.AllowedTypes, UpgradeCategories.BlackKnightLeaderMace1)
 	end
 
 	ArmyAI1Attack.Attack				= false

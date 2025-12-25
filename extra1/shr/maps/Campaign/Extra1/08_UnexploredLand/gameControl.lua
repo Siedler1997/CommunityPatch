@@ -39,7 +39,7 @@ function start1stChapter()
 	
 	-- Difficulty stuff
 	
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		CreatePlayer7()
 		CreateArmyRobbers()
 	end

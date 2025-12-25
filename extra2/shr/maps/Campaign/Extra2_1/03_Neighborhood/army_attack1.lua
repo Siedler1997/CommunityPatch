@@ -5,7 +5,7 @@ function createArmyAttack1()
 
 	troopsArmyAttack1 = { }
         
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troopsArmyAttack1, Entities.CU_Barbarian_LeaderClub1)
 		table.insert(troopsArmyAttack1, Entities.CU_BanditLeaderSword1)
 		table.insert(troopsArmyAttack1, Entities.CU_BanditLeaderBow1)

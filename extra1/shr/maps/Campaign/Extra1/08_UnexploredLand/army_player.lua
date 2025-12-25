@@ -1,7 +1,7 @@
 function CreateArmyPlayer()
 	local bowmen = Entities.PU_LeaderBow3
 	local swordmen = Entities.PU_LeaderSword3
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		bowmen = Entities.PU_LeaderBow2
 		swordmen = Entities.PU_LeaderSword2
 	end

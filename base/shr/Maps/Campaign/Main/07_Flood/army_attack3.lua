@@ -52,25 +52,29 @@ createArmyAttack3 = function()
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = 4,
-			experiencePoints 	= LOW_EXPERIENCE,
+			maxNumberOfSoldiers = 8,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
 		if Logic.GetRandom(100) > 50 then
 		
 			if CP_Difficulty == 0 then
 				troopDescription.leaderType = Entities.PU_LeaderSword1
-			else
+			elseif CP_Difficulty == 1 then
 				troopDescription.leaderType = Entities.PU_LeaderSword2
-			end	
+			else
+				troopDescription.leaderType = Entities.PU_LeaderSword3
+			end		
 			
 		else
 		
 			if CP_Difficulty == 0 then
 				troopDescription.leaderType = Entities.PU_LeaderBow1
-			else
+			elseif CP_Difficulty == 1 then
 				troopDescription.leaderType = Entities.PU_LeaderBow2
-			end	
+			else
+				troopDescription.leaderType = Entities.PU_LeaderBow3
+			end		
 
 		end
 		

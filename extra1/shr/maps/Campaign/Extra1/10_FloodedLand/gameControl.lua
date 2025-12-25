@@ -86,14 +86,12 @@ end
 -- Destroy queen defense 
 ------------------------------------------------------------------------------
 function start4thChapter()
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		CreateArmyPlayerAttack()
-		if CP_Difficulty == 2 then
-			ResearchAllMilitaryTechsAddOn(2, true)
-			ResearchAllMilitaryTechsAddOn(4, true)
-			ResearchAllMilitaryTechsAddOn(5, true)	-- Friendly Cavalry
-			ResearchAllMilitaryTechsAddOn(6, true)
-		end
+		ResearchAllMilitaryTechsAddOn(2, true)
+		ResearchAllMilitaryTechsAddOn(4, true)
+		ResearchAllMilitaryTechsAddOn(5, true)	-- Friendly Cavalry
+		ResearchAllMilitaryTechsAddOn(6, true)
 	end
 
 	CreateArmyAmbush()

@@ -42,18 +42,10 @@ createArmyCave2 = function()
 		
 			armyCave2.control.delay = -1
 		
-			local soldiers = 4
-			local experience = 0
-			if CP_Difficulty > 0 then
-				soldiers = 8
-				experience = HIGH_EXPERIENCE
-			end
-
 			local troopDescription = {
-			
 				minNumberOfSoldiers	= 0,
-				maxNumberOfSoldiers = soldiers,
-				experiencePoints 	= experience,
+				maxNumberOfSoldiers = 4 + 2 * CP_Difficulty,
+				experiencePoints 	= CP_Difficulty
 			}	
 			
 			if CP_Difficulty == 0 then
@@ -67,18 +59,29 @@ createArmyCave2 = function()
 			EnlargeArmy(armyCave2,troopDescription)
 
 			if CP_Difficulty == 0 then
-				troopDescription.leaderType = Entities.CU_BanditLeaderSword1 
+				troopDescription.leaderType = Entities.PU_LeaderPoleArm2 
+				EnlargeArmy(armyCave2,troopDescription)
+				EnlargeArmy(armyCave2,troopDescription)
+				troopDescription.leaderType = Entities.PU_LeaderSword2
+				EnlargeArmy(armyCave2,troopDescription)
+				EnlargeArmy(armyCave2,troopDescription)
+			elseif CP_Difficulty == 1 then
+				troopDescription.leaderType = Entities.PU_LeaderPoleArm2a
+				EnlargeArmy(armyCave2,troopDescription)
+				EnlargeArmy(armyCave2,troopDescription)
+				troopDescription.leaderType = Entities.PU_LeaderSword2a
+				EnlargeArmy(armyCave2,troopDescription)
 				EnlargeArmy(armyCave2,troopDescription)
 			else
+				troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+				EnlargeArmy(armyCave2,troopDescription)
+				EnlargeArmy(armyCave2,troopDescription)
+				troopDescription.leaderType = Entities.PU_LeaderSword3
+				EnlargeArmy(armyCave2,troopDescription)
 				troopDescription.experiencePoints = VERYHIGH_EXPERIENCE
 				troopDescription.leaderType = Entities.CU_VeteranCaptain
 				EnlargeArmy(armyCave2,troopDescription)
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
-				troopDescription.leaderType = Entities.CU_BanditLeaderSword2
 			end
-			EnlargeArmy(armyCave2,troopDescription)
-			EnlargeArmy(armyCave2,troopDescription)
-			EnlargeArmy(armyCave2,troopDescription)
 	
 		-- 	Stop Countdown
 			MapLocal_StopCountDown(0)

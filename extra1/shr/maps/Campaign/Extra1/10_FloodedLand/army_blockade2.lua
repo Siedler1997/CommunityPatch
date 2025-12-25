@@ -5,18 +5,9 @@ function CreateArmyBlockade2()
 	ArmyBlockade2.player 				=	3
 	ArmyBlockade2.id					=	3
 	ArmyBlockade2.strength				=	2
-	if CP_Difficulty > 0 then
-		if CP_Difficulty == 1 then
-			ArmyBlockade2.strength = ArmyBlockade2.strength + 2
-		else
-			ArmyBlockade2.strength = ArmyBlockade2.strength * 3
-		end
-		ArmyBlockade2.toggleAttackTime	=	3 * 60
-		ArmyBlockade2.respawnTime		=	3 * 60
-	else
-		ArmyBlockade2.toggleAttackTime	=	5*60
-		ArmyBlockade2.respawnTime		=	5*60
-	end
+	ArmyBlockade2.strength				=	2 + CP_Difficulty * 2
+	ArmyBlockade2.toggleAttackTime		=	(5-CP_Difficulty)*60
+	ArmyBlockade2.respawnTime			=	(5-CP_Difficulty)*60
 	ArmyBlockade2.position				=	GetPosition("ArmyBlockade2")
 	ArmyBlockade2.rodeLength			=	2000
 	ArmyBlockade2.retreatStrength		=	0

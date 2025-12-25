@@ -159,7 +159,7 @@ local page = 0
 	
 		BriefingMayorChapter3end[page] 					= 	{}
 		BriefingMayorChapter3end[page].title				= 	String.Key("BriefingMayorChapter3end[3].title") 
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			BriefingMayorChapter3end[page].text				=	String.Key("BriefingMayorChapter3end[3].text")
 		else
 			BriefingMayorChapter3end[page].text				=	String.Key("BriefingMayorChapter3end[3].text2")
@@ -202,7 +202,7 @@ local page = 0
 		BriefingMayorChapter3end[page].quest.id				=	6
 		BriefingMayorChapter3end[page].quest.type	    		=	MAINQUEST_OPEN
 		BriefingMayorChapter3end[page].quest.title			=	String.MainKey.."briefingEnd3rdChapter.quest.title"
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			BriefingMayorChapter3end[page].quest.text	    		=	String.MainKey.."briefingEnd3rdChapter.quest.text"
 		else
 			BriefingMayorChapter3end[page].quest.text	    		=	String.MainKey.."briefingEnd3rdChapter.quest.text2"

@@ -13,13 +13,13 @@ setupArmyAI1Attack = function()
 	ArmyAI1Attack.beAgressive			= true
 	ArmyAI1Attack.AllowedTypes 			= {	UpgradeCategories.LeaderPoleArm, 
 											UpgradeCategories.LeaderSword, 
-											UpgradeCategories.LeaderBow }
-	if CP_Difficulty == 2 then
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3a)
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3a)
+											UpgradeCategories.LeaderBow,
+											UpgradeCategories.BlackKnightLeaderMace1,
+											Entities.PV_Cannon2}
+	if CP_Difficulty < 2 then
+		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon1)
 	else
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon2)
-		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon2)
+		table.insert(ArmyAI1Attack.AllowedTypes, Entities.PV_Cannon3a)
 	end
 
 	ArmyAI1Attack.Attack				= false

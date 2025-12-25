@@ -422,11 +422,6 @@ end
 --------------------------------------------------------------------------------------------------
 
 function EnemyFirstArmy()
-	local experience = MEDIUM_EXPERIENCE
-	if CP_Difficulty > 0 then
-		experience = experience + 2
-	end
-
 	for i = 1, 10 do
 		local pos = GetPosition("EnemySpawn1")
 		if i >= 5 then

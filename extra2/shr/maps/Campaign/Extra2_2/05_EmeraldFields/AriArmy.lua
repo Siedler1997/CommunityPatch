@@ -8,7 +8,7 @@ setupArmyAriArmyAttack = function()
 
 	ArmyAriArmyAttack.player 			= 5
 	ArmyAriArmyAttack.id				= 1
-	ArmyAriArmyAttack.strength			= 3
+	ArmyAriArmyAttack.strength			= 5-CP_Difficulty
 	ArmyAriArmyAttack.retreatStrength		= 0
 	ArmyAriArmyAttack.position			= GetPosition("AriArmySpawn")
 	ArmyAriArmyAttack.baseDefenseRange		= 6000
@@ -16,11 +16,14 @@ setupArmyAriArmyAttack = function()
 	ArmyAriArmyAttack.rodeLength			= 3000
 	ArmyAriArmyAttack.beAgressive			= true
 	ArmyAriArmyAttack.AllowedTypes 			= {	UpgradeCategories.LeaderBow,
+												UpgradeCategories.LeaderBow,
+												UpgradeCategories.LeaderCavalry,
+												UpgradeCategories.LeaderCavalry,
 												UpgradeCategories.LeaderHeavyCavalry,
 												UpgradeCategories.LeaderRifle,
 												UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword,
-												UpgradeCategories.LeaderCavalry,
+												Entities.PV_Cannon1,
 												Entities.PV_Cannon2
 
 								}

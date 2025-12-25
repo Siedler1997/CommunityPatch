@@ -10,12 +10,8 @@ function CreateArmyTribalCamps()
 		ArmyTribalCamps[i].player 				=	2
 		ArmyTribalCamps[i].id					=	2+i
 
-		ArmyTribalCamps[i].strength				=	4
-		ArmyTribalCamps[i].respawnTime			=	5*60
-		if CP_Difficulty > 0 then
-			ArmyTribalCamps[i].strength = ArmyTribalCamps[i].strength * 2
-			ArmyTribalCamps[i].respawnTime = ArmyTribalCamps[i].respawnTime - 2*60
-		end
+		ArmyTribalCamps[i].strength				=	4 + CP_Difficulty * 2
+		ArmyTribalCamps[i].respawnTime			=	(5-CP_Difficulty)*60
 		
 		ArmyTribalCamps[i].position				=	GetPosition("P2_Nephilim_TribalCamp"..i)
 		ArmyTribalCamps[i].rodeLength			=	5000

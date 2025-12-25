@@ -70,7 +70,7 @@ armyTemplarAllied = function ()
 		Entities.PU_LeaderRifle2
     	}    
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
         createArmy(4,1,armyTemplar1,6,"lidah",HIGH_EXPERIENCE,troops)
     else
         createArmy(4,1,armyTemplar1,6,"lidah",VERYHIGH_EXPERIENCE,troops)

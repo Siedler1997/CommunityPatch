@@ -132,7 +132,6 @@ function BarbarianArmy()
 	local etype1 = Entities.CU_BlackKnight_LeaderMace2
 	local etype2 = Entities.PU_LeaderBow2
 	if CP_Difficulty == 2 then
-		etype1 = Entities.PU_LeaderSword3
 		etype2 = Entities.PU_LeaderBow3
 	end
 
@@ -209,7 +208,6 @@ function BarbarianArmy1()
 	local etype1 = Entities.CU_BlackKnight_LeaderMace2
 	local etype2 = Entities.PU_LeaderPoleArm2
 	if CP_Difficulty == 2 then
-		etype1 = Entities.PU_LeaderSword3
 		etype2 = Entities.PU_LeaderPoleArm3
 	end
 
@@ -294,7 +292,6 @@ function BarbarianArmy2()
 	if CP_Difficulty == 2 then
 		etype1 = Entities.PU_LeaderBow3
 		etype2 = Entities.PU_LeaderPoleArm3
-		etype3 = Entities.PU_LeaderSword3
 	end
 
 	local pos = GetPosition("BSpawn5")

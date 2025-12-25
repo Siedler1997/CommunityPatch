@@ -49,7 +49,7 @@ createCaravan2 = function()
 				Entities.PU_Travelling_Salesman,
 				}
 
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		table.insert(troops2, Entities.PU_LeaderBow1)
 		table.insert(troops2, Entities.PU_LeaderSword1)
 	else

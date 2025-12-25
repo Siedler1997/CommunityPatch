@@ -79,7 +79,8 @@ setupArmyRaiding = function()
 	TimeLine.Enter("Cavalery", 				TimeLine.Seconds +  40*60, "AllowP5Cavalery")
 	TimeLine.Enter("Upgrade cavalery",		TimeLine.Seconds +  55*60, "UpgradeP5Cavalery")
 	TimeLine.Enter("Upgrade hvy cavalery",	TimeLine.Seconds +  65*60, "UpgradeP5HeavyCavalery")
-
+	
+	TimeLine.Enter("Upgrade black knights",	TimeLine.Seconds +  40*60, "UpgradeP5BlackKnight")
 
 	TimeLine.Enter("Increase Size to 3/1", 	TimeLine.Seconds +  16*60, "IncreaseP5AttackSize")
 	TimeLine.Enter("Increase Size to 4/1", 	TimeLine.Seconds +  37*60, "IncreaseP5AttackSize")
@@ -93,7 +94,9 @@ setupArmyRaiding = function()
 		UpgradeP5Sword()
 		UpgradeP5Pike()
 		UpgradeP5Bow()
-		IncreaseP5AttackSize()
+		if CP_Difficulty == 2 then
+			IncreaseP5AttackSize()
+		end
 		TimeLine.Enter("Increase Size to X1", 	TimeLine.Seconds +  30*60, "IncreaseP5AttackSize")
 	end
 	
@@ -148,6 +151,10 @@ AllowP5Bow = function()
 
 	table.insert(ArmyRaiding.AllowedTypes, 	UpgradeCategories.LeaderBow)
 	table.insert(ArmyRaiding2.AllowedTypes, UpgradeCategories.LeaderBow)
+
+	--Allow black nights too
+	table.insert(ArmyRaiding.AllowedTypes, UpgradeCategories.BlackKnightLeaderMace1)
+	table.insert(ArmyRaiding2.AllowedTypes, UpgradeCategories.BlackKnightLeaderMace1)
 
 end
 

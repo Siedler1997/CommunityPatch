@@ -201290,7 +201290,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4</Type>
+   <Type>PV_Cannon3</Type>
    <Position>
     <X>3.731037e+004</X>
     <Y>5.498281e+004</Y>
@@ -201305,7 +201305,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon4</Type>
+   <Type>PV_Cannon3</Type>
    <Position>
     <X>3.864570e+004</X>
     <Y>5.556888e+004</Y>

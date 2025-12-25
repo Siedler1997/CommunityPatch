@@ -17,19 +17,15 @@ createArmySwamp1 = function()
 		SetupArmy(armySwamp1)
 
 	--	create
-		local soldiers = 4
-		local experience = LOW_EXPERIENCE
 		local etype = Entities.CU_BanditLeaderSword1
-		if CP_Difficulty > 0 then
-			soldiers = soldiers + 4
-			experience = HIGH_EXPERIENCE
+		if CP_Difficulty == 2 then
 			etype = Entities.CU_BanditLeaderSword2
 		end
 		local troopDescription = {
 		
-			maxNumberOfSoldiers	= soldiers,
+			maxNumberOfSoldiers	= 4 + 2 * CP_Difficulty,
 			minNumberOfSoldiers	= 0,
-			experiencePoints 	= experience,
+			experiencePoints 	= CP_Difficulty,
 			leaderType			= etype
 		}			
 	

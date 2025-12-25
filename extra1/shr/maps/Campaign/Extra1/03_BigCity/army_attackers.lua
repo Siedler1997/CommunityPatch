@@ -32,17 +32,15 @@ function CreateArmyAttackersByIndex(_index)
 	SetupArmy(ArmyAttackers[_index])
 	
 	local soldiers = 12
-	local experience = LOW_EXPERIENCE
 	if CP_Difficulty > 0 then
 		soldiers = soldiers + 4
-		experience = experience + 2
 	end
 	
 	local troopDescription = {
 
 		maxNumberOfSoldiers	= soldiers,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= experience,
+		experiencePoints 	= CP_Difficulty,
 	}
 
 	troopDescription.leaderType = Entities.CU_Evil_LeaderBearman1

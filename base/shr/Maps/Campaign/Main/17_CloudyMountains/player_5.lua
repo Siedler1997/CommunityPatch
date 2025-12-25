@@ -66,9 +66,11 @@ createPlayer5 = function()
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 5)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 5)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 5)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 5)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 5)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 5)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 5)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 5)
 	end
 
 	setupArmyAI1Attack()

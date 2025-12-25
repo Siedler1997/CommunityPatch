@@ -95,7 +95,7 @@ end
 BriefingIntroFinished = function()
 	createBriefingChapterIpart2()
 	
-	if CP_Difficulty == 0 then
+	if CP_Difficulty < 2 then
 		AddGold(1500)
 		AddStone(600)
 		AddWood(1000)

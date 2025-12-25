@@ -25,12 +25,11 @@ function createAssaultArmies()
 		Entities.PU_LeaderBow4,
 		}
 
-	local experience = HIGH_EXPERIENCE
+	local experience = CP_Difficulty + 1
 	if CP_Difficulty == 0 then
 		table.insert(troopsArmyOne, Entities.PV_Cannon2)
 		table.insert(troopsArmyTwo, Entities.PU_LeaderPoleArm4)
 	else
-		experience = experience + 1
 		table.insert(troopsArmyOne, Entities.PV_Cannon4)
 		table.insert(troopsArmyOne, Entities.PU_LeaderRifle2)
 		table.insert(troopsArmyTwo, Entities.PU_LeaderRifle2)

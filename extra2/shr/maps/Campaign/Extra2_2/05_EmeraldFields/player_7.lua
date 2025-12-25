@@ -29,27 +29,15 @@ createPlayer7 = function()
 			},
 			--------------------------------------------------
 			refresh = {
-				gold				=	7,
-				clay				=	5,
-				iron				=	7,
-				sulfur				=	5,
-				stone				=	5,
-				wood				=	7,
+				gold				=	7*(CP_Difficulty+2),
+				clay				=	5*(CP_Difficulty+1),
+				iron				=	7*(CP_Difficulty+1),
+				sulfur				=	5*(CP_Difficulty+1),
+				stone				=	5*(CP_Difficulty+1),
+				wood				=	7*(CP_Difficulty+1),
 				updateTime			=	2
 			},
 		}
-
-		if CP_Difficulty > 0 then
-			description.refresh = {
-				gold				=	20,
-				clay				=	10,
-				iron				=	15,
-				sulfur				=	10,
-				stone				=	10,
-				wood				=	15,
-				updateTime			=	2
-			}
-		end
 		
 		SetupPlayerAi(Player7.id,description)
 
@@ -69,16 +57,20 @@ createPlayer7 = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 7)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 7)
 
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 7)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 7)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, 7)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 7)
-		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 7)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 7)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, 7)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 7)
 	end
 end

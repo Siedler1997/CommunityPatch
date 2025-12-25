@@ -31,16 +31,12 @@ createArmyAttack2 = function()
 		SetupArmy(armyAttack2)
 
 	--	create 
-		local experience = 0
-		if CP_Difficulty > 0 then
-			experience = HIGH_EXPERIENCE
-		end
 
 		local troopDescription = {
 		
 			minNumberOfSoldiers	= 0,
 			maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
-			experiencePoints 	= experience,
+			experiencePoints 	= CP_Difficulty,
 		}			
 
 		
@@ -49,7 +45,7 @@ createArmyAttack2 = function()
 		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderSword2
 		else
-			troopDescription.leaderType = Entities.PU_LeaderSword3
+			troopDescription.leaderType = Entities.PU_LeaderSword2a
 		end
 		EnlargeArmy(armyAttack2,troopDescription)
 		
@@ -63,7 +59,7 @@ createArmyAttack2 = function()
 		EnlargeArmy(armyAttack2,troopDescription)
 		
 		if CP_Difficulty == 2 then
-			troopDescription.leaderType = Entities.PU_LeaderBow3
+			troopDescription.leaderType = Entities.PU_LeaderBow2a
 			EnlargeArmy(armyAttack2,troopDescription)
 		end
 
@@ -176,16 +172,12 @@ createArmyAttack2 = function()
 			Retreat(armyAttack2)
 						
 			--	create further army
-				local experience = 0
-				if CP_Difficulty > 0 then
-					experience = HIGH_EXPERIENCE
-				end
 
 				local troopDescription = {
 				
 					maxNumberOfSoldiers	= 4 + CP_Difficulty * 2,
 					minNumberOfSoldiers	= 0,
-					experiencePoints 	= experience,
+					experiencePoints 	= CP_Difficulty,
 				}				
 
 			-- define new attacking armies
@@ -201,7 +193,7 @@ createArmyAttack2 = function()
 					elseif CP_Difficulty == 1 then
 						troopDescription.leaderType = Entities.PU_LeaderSword2
 					else
-						troopDescription.leaderType = Entities.PU_LeaderSword3
+						troopDescription.leaderType = Entities.PU_LeaderSword2a
 					end
 					EnlargeArmy(armyAttack2,troopDescription)
 		
@@ -215,7 +207,7 @@ createArmyAttack2 = function()
 					EnlargeArmy(armyAttack2,troopDescription)
 					
 					if CP_Difficulty == 2 then
-						troopDescription.leaderType = Entities.PU_LeaderBow3
+						troopDescription.leaderType = Entities.PU_LeaderBow2a
 						EnlargeArmy(armyAttack2,troopDescription)
 					end
 

@@ -14,22 +14,23 @@ initArmyP2Defense = function(_army, _name, _index, _pos, _defenseRange)
 
 	_army.player 			= 	2
 	_army.id				= 	_index
-	_army.strength			= 	6
+	_army.strength			= 	6+CP_Difficulty
 	_army.position			= 	GetPosition(_pos)
 	_army.rodeLength		= 	_defenseRange
 	
 	if CP_Difficulty > 0 then
 		_army.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 										UpgradeCategories.LeaderSword,
+										UpgradeCategories.BlackKnightLeaderMace1,
 										UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon3a }
 	else
 		_army.AllowedTypes 		= 	{	UpgradeCategories.LeaderPoleArm,
 										UpgradeCategories.LeaderSword,
+										UpgradeCategories.BlackKnightLeaderMace1,
 										UpgradeCategories.LeaderHeavyCavalry,
 										Entities.PV_Cannon1,
-										Entities.PV_Cannon2,
 										Entities.PV_Cannon2,
 										Entities.PV_Cannon3a }
 	end

@@ -20,28 +20,36 @@ createArmyErec = function()
 		local troopDescription = {
 			
 			minNumberOfSoldiers	= 0,
-			maxNumberOfSoldiers = 4,
-			experiencePoints 	= LOW_EXPERIENCE,
+			maxNumberOfSoldiers = 6,
+			experiencePoints 	= 2-CP_Difficulty,
 		}			
 	
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderSword4
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderSword3
+		else
+			troopDescription.leaderType = Entities.PU_LeaderSword2a
 		end
 		local support1 = CreateTroop(armyErec,troopDescription)  
 		local support2 = CreateTroop(armyErec,troopDescription)  
 
 		armyErec.position			= GetPosition("ErecTroopSpawn2")
-		troopDescription.leaderType = Entities.PU_LeaderBow2
+		if CP_Difficulty < 2 then
+			troopDescription.leaderType = Entities.PU_LeaderBow3
+		else
+			troopDescription.leaderType = Entities.PU_LeaderBow2a
+		end
 		local support3 = CreateTroop(armyErec,troopDescription)  
 		local support4 = CreateTroop(armyErec,troopDescription)  
 
 		armyErec.position			= GetPosition("ErecTroopSpawn3")
 		if CP_Difficulty == 0 then
 			troopDescription.leaderType = Entities.PU_LeaderSword4
-		else
+		elseif CP_Difficulty == 1 then
 			troopDescription.leaderType = Entities.PU_LeaderSword3
+		else
+			troopDescription.leaderType = Entities.PU_LeaderSword2a
 		end
 		local support5 = CreateTroop(armyErec,troopDescription)  
 --		local support6 = CreateTroop(armyErec,troopDescription)  

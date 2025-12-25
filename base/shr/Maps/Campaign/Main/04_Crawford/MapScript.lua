@@ -290,6 +290,25 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			for i = 1, 3 do
+				ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
+			end
+			for i = 1, 5 do
+				ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
+			end
+		
+			local bosspos1 = GetPosition("spawn1")
+			local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
+			LookAt(bossID1, "Helias")
+		
+			local bosspos2 = GetPosition("spawn2")
+			local bossID2 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 100),(bosspos2.Y + 500),0,0,3,0)
+			LookAt(bossID2, "Helias")
+		
+			local bosspos3 = GetPosition("enemyCastle")
+			local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
+			LookAt(bossID3, "Helias")
 		else
 			CreateRandomChests()
 		end
@@ -307,31 +326,9 @@ function Mission_FirstMapAction()
 		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,90,0)
 		--]]
 
-		for i = 1, 3 do
-			ReplaceEntity("p5_basetower"..i, Entities.PB_Tower3)
-		end
 
 		--DestroyEntity("p5_vc1")
 		--DestroyEntity("p5_vc2")
-		
-		local bosspos1 = GetPosition("spawn1")
-		local bossID1 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,bosspos1.X,(bosspos1.Y + 300),0,0,3,0)
-		LookAt(bossID1, "Helias")
-		
-		local bosspos2 = GetPosition("spawn2")
-		local bossID2 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 100),(bosspos2.Y + 500),0,0,3,0)
-		LookAt(bossID2, "Helias")
-		
-		local bosspos3 = GetPosition("enemyCastle")
-		local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
-		LookAt(bossID3, "Helias")
-
-		
-		if CP_Difficulty == 2 then
-			for i = 1, 5 do
-				ReplaceEntity("p5_optower"..i, Entities.PB_Tower3)
-			end
-		end
 	else
 		CreateRandomChests()
 	end

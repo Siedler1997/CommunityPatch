@@ -149,7 +149,7 @@ function Mission_FirstMapAction()
 
 	--	resources
 	
-		if CP_Difficulty == 0 then
+		if CP_Difficulty < 2 then
 			GlobalMissionScripting.GiveResouces(1, 2000, 500, 500, 500, 500, 500)
 		else
 			GlobalMissionScripting.GiveResouces(1, 1000, 500, 500, 500, 500, 500)
@@ -211,14 +211,15 @@ function Mission_FirstMapAction()
 				GUI.SetTaxLevel(5)
 				
 				Logic.CreateEntity(Entities.PB_DarkTower3, 8800, 28640, 0, 2);
+
+				local vc2pos = GetPosition("vc_empty2") 	
+				DestroyEntity("vc_empty2")
+				Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,270,0)
 			else
 				Logic.CreateEntity(Entities.PB_DarkTower2, 8800, 28640, 0, 2);
 				CreateRandomChests()
 			end
 			
-			local vc2pos = GetPosition("vc_empty2") 	
-			DestroyEntity("vc_empty2")
-			Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,270,0)
 			
 			RaidersCreate({player = 7, pos = "bearpos1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})
 			--RaidersCreate({player = 7, pos = "bearpos2", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})

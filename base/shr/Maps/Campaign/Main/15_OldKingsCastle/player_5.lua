@@ -41,6 +41,7 @@ createPlayer5 = function()
 		end
 		UpgradeP5Cavalry()
 		UpgradeP5HeavyCavalry()
+		UpgradeP5BlackKnight()
 	end
 	
 	setupArmyP5Attack()
@@ -71,6 +72,11 @@ end
 UpgradeP5HeavyCavalry = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 5)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 5)
+end
+
+UpgradeP5BlackKnight = function()
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 5)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 5)
 end
 
 GiveP5ArmyResources = function()

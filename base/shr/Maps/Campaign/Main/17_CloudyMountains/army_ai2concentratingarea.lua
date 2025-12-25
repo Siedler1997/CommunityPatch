@@ -6,17 +6,19 @@ setupArmyAI2 = function()
 	ArmyAI2.id				= 1
 	ArmyAI2.position		= GetPosition("AI2_ConcentratingArea")
 	ArmyAI2.rodeLength		= 4200
+	ArmyAI2.strength		= 5 + CP_Difficulty
 	
 	-- Spawn parameter
 	if CP_Difficulty == 0 then
-		ArmyAI2.strength	= 5
 		ArmyAI2.spawnTypes 	= { { Entities.PU_LeaderPoleArm3, 8},
 								{ Entities.PU_LeaderSword3, 8},
 								{ Entities.PU_LeaderBow3, 8},
 								{ Entities.PU_LeaderBow3, 8},
 								{ Entities.PV_Cannon3a, 0 } }
 	else
-		ArmyAI2.strength	= 8
+		if CP_Difficulty == 2 then
+			ArmyAI2.strength = ArmyAI2.strength + 1
+		end
 		ArmyAI2.spawnTypes 	= { { Entities.PU_LeaderPoleArm4, 8},
 								{ Entities.PU_LeaderPoleArm4, 8},
 								{ Entities.PU_LeaderSword4, 8},
@@ -39,7 +41,7 @@ setupArmyAI2 = function()
 	ArmyAI2.outerDefenseRange		= 4200
 	ArmyAI2.Attack					= false
 	ArmyAI2.AttackAllowed			= false
-	ArmyAI2.experiencePoints	=	CP_Difficulty
+	ArmyAI2.experiencePoints		= CP_Difficulty
 
 	-- Setup army
 	SetupArmy(ArmyAI2)

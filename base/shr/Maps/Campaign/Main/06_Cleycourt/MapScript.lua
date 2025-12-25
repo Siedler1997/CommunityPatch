@@ -173,19 +173,20 @@ function Mission_FirstMapAction()
 			
 			Logic.CreateEntity(Entities.PB_Tower3,8100,15000,0,7)
 			StartCountdown(15 * 60, setupArmyP7PlayerAttack, false)
+
+			local vcpos = GetPosition("vc_empty")
+			DestroyEntity("vc_empty")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,0,0)
+
+			--[[
+			local vcpos2 = GetPosition("vc_empty2")
+			DestroyEntity("vc_empty2")
+			--]]
+
+			local bosspos = GetPosition("KerberosCamp")
+			local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
+			LookAt(bossID, "Dario")
 		end
-		local vcpos = GetPosition("vc_empty")
-		DestroyEntity("vc_empty")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,0,0)
-
-		--[[
-		local vcpos2 = GetPosition("vc_empty2")
-		DestroyEntity("vc_empty2")
-		--]]
-
-		local bosspos = GetPosition("KerberosCamp")
-		local bossID = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos.X - 0),(bosspos.Y - 0),0,0,3,0)
-		LookAt(bossID, "Dario")
 	else
 		CreateRandomChests()
 		CreateRandomGoldChests()

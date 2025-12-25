@@ -9,22 +9,12 @@ createArmyTower2 = function()
 	
 		armyTower2.player 				= 5
 		armyTower2.id					= 2
-		armyTower2.strength				= 2
+		armyTower2.strength				= 2+CP_Difficulty
 		armyTower2.position				= GetPosition("spawn2")
 		armyTower2.rodeLength			= 2000
 		armyTower2.control				= {}
 		armyTower2.control.timer		= 0
-		armyTower2.control.delay		= ATTACK_DELAY_TOWER2
-		if CP_Difficulty == 0 then
-			armyTower2.control.delay		= 5 * 60
-		else
-			armyTower2.strength = armyTower2.strength + 2
-			if CP_Difficulty == 1 then
-				armyTower2.control.delay		= 3 * 60
-			else
-				armyTower2.control.delay		= 60
-			end
-		end
+		armyTower2.control.delay		= (5-CP_Difficulty) * 60
 		
 		SetupArmy(armyTower2)
 	
@@ -69,13 +59,7 @@ createArmyTower2 = function()
 		--	set up completed?
 
 			if HasFullStrength(armyTower2) then
-				if CP_Difficulty == 0 then
-					armyTower2.control.delay = 5 * 60 + Logic.GetRandom(180)
-				elseif CP_Difficulty == 1 then
-					armyTower2.control.delay = 3 * 60 + Logic.GetRandom(180)
-				else
-					armyTower2.control.delay = 60 + Logic.GetRandom(120)
-				end
+				armyTower2.control.delay = (5-CP_Difficulty) * 60 + Logic.GetRandom(120)
 			
 				StartJob("ControlArmyTower2")
 				
@@ -89,7 +73,7 @@ createArmyTower2 = function()
 			
 				maxNumberOfSoldiers	= 8,
 				minNumberOfSoldiers	= 0,
-				experiencePoints 	= LOW_EXPERIENCE,
+				experiencePoints 	= CP_Difficulty,
 			}				
 		
 			if CP_Difficulty == 0 then
@@ -101,13 +85,12 @@ createArmyTower2 = function()
 			
 				EnlargeArmy(armyTower2,troopDescription)
 			else
-				troopDescription.experiencePoints = HIGH_EXPERIENCE
 				if CP_Difficulty == 1 then
 					troopDescription.leaderType = Entities.PU_LeaderPoleArm2
 				else
 					troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+					EnlargeArmy(armyTower2, troopDescription)
 				end
-				EnlargeArmy(armyTower2, troopDescription)
 				EnlargeArmy(armyTower2, troopDescription)
 				troopDescription.leaderType = Entities.CU_BlackKnight_LeaderMace2
 				EnlargeArmy(armyTower2, troopDescription)

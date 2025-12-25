@@ -199,13 +199,13 @@ function Mission_FirstMapAction()
 		if CP_Difficulty == 2 then
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
+
+			local vcpos = GetPosition("vc_empty1")
+			DestroyEntity("vc_empty1")
+			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
 		else
 			CreateRandomChests()
 		end
-		
-		local vcpos = GetPosition("vc_empty1")
-		DestroyEntity("vc_empty1")
-		Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
 	else
 		CreateRandomChests()
 	end

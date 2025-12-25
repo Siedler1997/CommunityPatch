@@ -137,7 +137,7 @@ HeroicResistance = function()
 				return true
 			else
 				if CP_Difficulty == 1 then
-					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead(ArmyPatrolCavalry2) and IsDead("helias") then
+					if IsDead(ArmyPatrol3) and IsDead(ArmyPatrolCavalry1) and IsDead(ArmyPatrolCavalry2) then
 						end3rdQuest()
 						return true
 					end
@@ -161,7 +161,7 @@ HeroicResistance = function()
 					end
 				end
 			end
-			if IsAlive("helias") then
+			if IsExisting("helias") and IsAlive("helias") then
 				Attack("helias","my_castle")
 				local HeliasID =  GetID("helias")
 				if CP_Difficulty == 2 and Logic.GetEntityHealth(HeliasID) <= (Logic.GetEntityMaxHealth(HeliasID) * 0.95) then

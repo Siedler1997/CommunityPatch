@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "D:\\Repositories\\CommunityPatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks1.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\config\\Entities\\PB_Barracks1.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks2.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\config\\Entities\\PB_Barracks2.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\MapEditorTools.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\script\\MapTools\\MapEditorTools.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 24,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,172 +110,191 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\MapScript.lua",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAAAN4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-08T17:56:30.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "player_5.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\player_5.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-08T16:35:54.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Logic.xml",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml",
-              "RelativeDocumentMoniker": "base\\shr\\config\\Logic.xml",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml",
-              "RelativeToolTip": "base\\shr\\config\\Logic.xml",
-              "ViewState": "AgIAAHwDAAAAAAAAAAAAAJsDAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-12-08T16:34:47.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\19_Wasteland\\MapScript.lua",
-              "ViewState": "AgIAALMAAAAAAAAAAAAAAOUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-08T16:34:11.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PB_Barracks2.xml",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks2.xml",
-              "RelativeDocumentMoniker": "base\\shr\\config\\Entities\\PB_Barracks2.xml",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks2.xml",
-              "RelativeToolTip": "base\\shr\\config\\Entities\\PB_Barracks2.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-12-08T16:33:57.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PB_Barracks1.xml",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks1.xml",
-              "RelativeDocumentMoniker": "base\\shr\\config\\Entities\\PB_Barracks1.xml",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Entities\\PB_Barracks1.xml",
-              "RelativeToolTip": "base\\shr\\config\\Entities\\PB_Barracks1.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-12-08T16:33:20.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\17_CloudyMountains\\MapScript.lua",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAOQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-07T20:35:33.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "army_spawn.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_spawn.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-07T19:23:26.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "army_defend.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Singleplayer\\Frozen_Fjord\\army_defend.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-07T19:22:24.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MapEditorTools.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\MapEditorTools.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\script\\MapTools\\MapEditorTools.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\MapEditorTools.lua",
-              "RelativeToolTip": "extra2\\shr\\script\\MapTools\\MapEditorTools.lua",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-07T15:07:09.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
-              "ViewState": "AgIAACUBAAAAAAAAAAAAAEYBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-07T14:30:00.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Comfort.lua",
               "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
               "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Comfort.lua",
               "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
               "RelativeToolTip": "base\\shr\\Script\\MapTools\\Comfort.lua",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAewJoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAANAJAAAAAAAAAAAAwOYJAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-09-08T15:13:19.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "README.md",
               "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "D:\\Repositories\\CommunityPatch\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAJADAAAAAAAAAAAtwIcDAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGwDAAAAAAAAAAAAAHUDAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2023-09-24T14:38:22.087Z",
+              "WhenOpened": "2023-09-24T14:38:22.087Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "c6b82bbc-92d9-42bb-87cf-cc064b6c2933",
+        "Display": 0,
+        "X": 1326,
+        "Y": 275,
+        "Width": 929,
+        "Height": 1058,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance\\MapScript.lua",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAIwBEBAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-07T14:30:00.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "army_cave2.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_cave2.lua",
+              "ViewState": "AgIAABQAAAAAAAAAAAASwC4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T19:01:40.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "army_defendCamps.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_defendCamps.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T19:06:57.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "army_attack1.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\02_VillageAttack\\army_attack1.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T19:10:53.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "army_defenders1.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_defenders1.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T20:46:28.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "army_swamp1.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_swamp1.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T20:48:17.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "army_tower1.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\04_Crawford\\army_tower1.lua",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T21:00:12.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "army_DefendBase.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\10_Folklung\\army_DefendBase.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-23T14:10:03.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Logic.xml",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml",
+              "RelativeDocumentMoniker": "base\\shr\\config\\Logic.xml",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\config\\Logic.xml",
+              "RelativeToolTip": "base\\shr\\config\\Logic.xml",
+              "ViewState": "AgIAAMkCAAAAAAAAAAAAAAkDAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-23T18:07:41.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "player_2.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\15_OldKingsCastle\\player_2.lua",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEgAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-23T19:41:23.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "army_kerberosdefense.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\18_Evelance\\army_kerberosdefense.lua",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-23T20:07:38.728Z",
               "EditorCaption": ""
             }
           ]

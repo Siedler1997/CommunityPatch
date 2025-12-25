@@ -145,9 +145,7 @@ createPlayer1 = function()
 			
 		
 		 --Feature Technologies -->			
-	if CP_Difficulty < 2 then			
-		Logic.SetTechnologyState(PlayerID,Technologies.T_AdjustTaxes      		,2 )
-	end
+
 	Logic.SetTechnologyState(PlayerID,Technologies.T_EnableMilitia      	,2 )	
 	Logic.SetTechnologyState(PlayerID,Technologies.T_BlessSettlers1      	,2 )	
 	--	Logic.SetTechnologyState(PlayerID,Technologies.T_BlessSettlers2      	,2 )	

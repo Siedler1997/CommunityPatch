@@ -32,27 +32,15 @@ createPlayer2 = function()
 			},
 			--------------------------------------------------
 			refresh = {
-				gold				=	3,
-				clay				=	3,
-				iron				=	3,
-				sulfur				=	3,
-				stone				=	3,
-				wood				=	3,
+				gold				=	3*(CP_Difficulty+2),
+				clay				=	3*(CP_Difficulty+1),
+				iron				=	3*(CP_Difficulty+1),
+				sulfur				=	3*(CP_Difficulty+1),
+				stone				=	3*(CP_Difficulty+1),
+				wood				=	3*(CP_Difficulty+1),
 				updateTime			=	5
 			},
 		}
-
-		if CP_Difficulty > 0 then
-			description.refresh = {
-				gold				=	10,
-				clay				=	10,
-				iron				=	10,
-				sulfur				=	10,
-				stone				=	10,
-				wood				=	10,
-				updateTime			=	5
-			}
-		end
 		
 		SetupPlayerAi(player2.id,description)
 
@@ -63,13 +51,15 @@ createPlayer2 = function()
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)
 	
-	if CP_Difficulty > 0 then
+	if CP_Difficulty == 2 then
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 2)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 2)
 		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 2)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, 2)
 	end
 	
 end

@@ -16,15 +16,10 @@ setupArmyP2Intruder = function()
 		
 		-- Setup army
 		SetupArmy(ArmyP2Intruder[i])
-	
-		local experience = LOW_EXPERIENCE
-		if CP_Difficulty > 0 then
-			experience = experience + 1
-		end
 
 		local troopDescription 			=	{	maxNumberOfSoldiers	= 	4,
 												minNumberOfSoldiers	= 	0,
-												experiencePoints 	= 	experience,
+												experiencePoints 	= 	CP_Difficulty,
 												leaderType			=	Entities.PU_LeaderPoleArm1
 											}			
 

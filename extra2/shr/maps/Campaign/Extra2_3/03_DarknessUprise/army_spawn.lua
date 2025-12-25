@@ -322,7 +322,7 @@ end
 function cavalryAttack(_target)
 	local cavalrytype = Entities.PU_LeaderHeavyCavalry1
 	local bowtype = Entities.PU_LeaderBow3
-	if CP_Difficulty > 0 then	
+	if CP_Difficulty == 2 then	
 		cavalrytype = Entities.PU_LeaderHeavyCavalry2
 		bowtype = Entities.PU_LeaderBow4
 	end

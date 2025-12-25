@@ -8,7 +8,7 @@ setupArmyDArmyAttack = function()
 
 	ArmyDArmyAttack.player 				= 4
 	ArmyDArmyAttack.id				= 1
-	ArmyDArmyAttack.strength			= 3
+	ArmyDArmyAttack.strength			= 5-CP_Difficulty
 	ArmyDArmyAttack.retreatStrength			= 0
 	ArmyDArmyAttack.position			= GetPosition("DrakeArmySpawn")
 	ArmyDArmyAttack.baseDefenseRange		= 6000
@@ -16,12 +16,15 @@ setupArmyDArmyAttack = function()
 	ArmyDArmyAttack.rodeLength			= 3000
 	ArmyDArmyAttack.beAgressive			= true
 	ArmyDArmyAttack.AllowedTypes 			= {	UpgradeCategories.LeaderRifle,
+												UpgradeCategories.LeaderRifle,
+												UpgradeCategories.LeaderRifle,,
+												Entities.PV_Cannon3,
+												Entities.PV_Cannon4,
 												UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword,
 												UpgradeCategories.LeaderHeavyCavalry,
 												UpgradeCategories.LeaderBow, 
-												UpgradeCategories.LeaderCavalry,
-												Entities.PV_Cannon4
+												UpgradeCategories.LeaderCavalry
 								}
 
 	ArmyDArmyAttack.Attack				= false

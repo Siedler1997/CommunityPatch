@@ -42,12 +42,12 @@ function beginChapterOne()
     
 	if CP_Difficulty == 0 then
         Logic.AddMercenaryOffer(merchant,Entities.PU_Thief,4,ResourceType.Gold,150)
-        Logic.AddMercenaryOffer(merchant,Entities.CU_BanditLeaderBow1,2,ResourceType.Iron,200)
-        Logic.AddMercenaryOffer(merchant,Entities.CU_Barbarian_LeaderClub1,2,ResourceType.Sulfur,200)
+        Logic.AddMercenaryOffer(merchant,Entities.CU_BanditLeaderBow2,2,ResourceType.Iron,200)
+        Logic.AddMercenaryOffer(merchant,Entities.CU_Barbarian_LeaderClub2,2,ResourceType.Sulfur,200)
     else
         Logic.AddMercenaryOffer(merchant,Entities.PU_Thief,2,ResourceType.Gold,200)
-        Logic.AddMercenaryOffer(merchant,Entities.CU_BanditLeaderBow1,2,ResourceType.Iron,300)
-        Logic.AddMercenaryOffer(merchant,Entities.CU_Barbarian_LeaderClub1,2,ResourceType.Sulfur,300)
+        Logic.AddMercenaryOffer(merchant,Entities.CU_BanditLeaderBow2,2,ResourceType.Iron,300)
+        Logic.AddMercenaryOffer(merchant,Entities.CU_Barbarian_LeaderClub2,2,ResourceType.Sulfur,300)
     end
 	--Activate fog
 	CreateDynamicFog("fog", 1)

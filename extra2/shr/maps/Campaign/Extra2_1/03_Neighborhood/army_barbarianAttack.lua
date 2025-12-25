@@ -75,7 +75,7 @@ function ControlBarbarianAttack()
 						experiencePoints 	= CP_Difficulty,
 					}
 				
-					if CP_Difficulty == 0 then
+					if CP_Difficulty < 2 then
 						troopDescription.leaderType = Entities.CU_Barbarian_LeaderClub1
 					else
 						troopDescription.leaderType = Entities.CU_Barbarian_LeaderClub2
@@ -91,7 +91,7 @@ function ControlBarbarianAttack()
 						
 					end		
 			
-					if CP_Difficulty == 0 then
+					if CP_Difficulty < 2 then
 						troopDescription.leaderType = Entities.CU_BanditLeaderSword1
 					else
 						troopDescription.leaderType = Entities.CU_BanditLeaderSword2
@@ -107,7 +107,7 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					if CP_Difficulty == 0 then
+					if CP_Difficulty < 2 then
 						troopDescription.leaderType = Entities.CU_BanditLeaderBow1
 					else
 						troopDescription.leaderType = Entities.CU_BanditLeaderBow2
@@ -135,7 +135,7 @@ function ControlBarbarianAttack()
 						
 					end
 					
-					if CP_Difficulty == 0 then
+					if CP_Difficulty < 2 then
 						troopDescription.leaderType = Entities.PV_Cannon1
 					else
 						troopDescription.leaderType = Entities.PV_Cannon2

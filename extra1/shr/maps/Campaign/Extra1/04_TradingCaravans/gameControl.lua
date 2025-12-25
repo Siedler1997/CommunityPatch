@@ -18,9 +18,7 @@ function start1stChapter()
 	
 	if CP_Difficulty < 2 then
 		CreateRandomGoldChests()	
-	end
-
-	if CP_Difficulty > 0 then
+	else
 		local keychest = Logic.CreateEntity(Entities.XD_ChestClose,40700,2600,45,0)
 		SetEntityName(keychest, "Gate_KeyChest")
 		StartSimpleJob("HeroNearP4TradeLord2Chest")
