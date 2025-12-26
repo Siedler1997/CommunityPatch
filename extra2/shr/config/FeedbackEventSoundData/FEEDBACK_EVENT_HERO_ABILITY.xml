@@ -128,6 +128,10 @@
 			</ValueSound>
 			<!-- Community Patch-->
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1</EntityType>
+				<SoundID>aovoicesscout\scout_attack_rnd_01</SoundID>
+			</ValueSound>
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Hero10</EntityType>
 				<SoundID>AOVoicesHero10\HERO10_longrangeaura_rnd_01</SoundID>
 			</ValueSound>
@@ -185,6 +189,11 @@
 			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
 				<EntityType>CU_Barbarian_Hero</EntityType>
 				<SoundID>VoicesHero9\HERO9_CallWolfs_rnd_01</SoundID>
+			</ValueSound>
+			<!-- Community Patch-->
+			<ValueSound classname="GGUI::SoundFeedback::CEntityType">
+				<EntityType>PU_Hero1</EntityType>
+				<SoundID>aovoicesscout\scout_attack_rnd_01</SoundID>
 			</ValueSound>
 			<ParameterIndex>2</ParameterIndex>
 		</Data>
