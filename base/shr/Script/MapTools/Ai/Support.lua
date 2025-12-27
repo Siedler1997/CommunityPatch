@@ -184,6 +184,58 @@ chestDefaultCallback = function()
 		end
 
 	end
+	
+chestGenericCallback = function(_ammount, _ressourceType)
+	local ammount = 1000
+	if _ammount ~= nil then
+		ammount = _ammount
+	end
+
+	local ressourceType
+	local typeString
+	if _ressourceType ~= nil then
+		ressourceType = _ressourceType
+	else
+		--Choose random good
+		local randomRessource = GetRandom(6)
+		if randomRessource == 1 then
+			ressourceType = ResourceType.Gold
+		elseif randomRessource == 2 then
+			ressourceType = ResourceType.Clay
+		elseif randomRessource == 3 then
+			ressourceType = ResourceType.Wood
+		elseif randomRessource == 4 then
+			ressourceType = ResourceType.Stone
+		elseif randomRessource == 5 then
+			ressourceType = ResourceType.Iron
+		elseif randomRessource == 6 then
+			ressourceType = ResourceType.Sulfur
+		else
+			ressourceType = ResourceType.Gold
+		end
+	end
+
+	if ressourceType == ResourceType.Gold then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericGold")
+		AddGold(ammount)
+	elseif ressourceType == ResourceType.Clay then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericClay")
+		AddClay(ammount)
+	elseif ressourceType == ResourceType.Wood then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericWood")
+		AddWood(ammount)
+	elseif ressourceType == ResourceType.Stone then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericStone")
+		AddStone(ammount)
+	elseif ressourceType == ResourceType.Iron then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericIron")
+		AddIron(ammount)
+	elseif ressourceType == ResourceType.Sulfur then
+		typeString = XGUIEng.GetStringTableText("Support/ChestGenericSulfur")
+		AddSulfur(ammount)
+	end
+	Message(string.format(XGUIEng.GetStringTableText("Support/ChestGeneric"), ammount, typeString))
+	end
 
 -------------------------------------------------------------------------------------------------------
 --
