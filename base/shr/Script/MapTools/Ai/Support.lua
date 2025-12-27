@@ -134,17 +134,17 @@ CreateChest = function(_position,_callback,_dark)
 	return entityId
 	end
 
-CreateRandomGoldChest = function(_position)
-	return CreateChest(_position,chestDefaultCallbackRandomGold)
+CreateRandomGoldChest = function(_position, _dark)
+	return CreateChest(_position,chestDefaultCallbackRandomGold, _dark)
 	end
 
-CreateGoldChest = function(_position)
-	return CreateChest(_position,chestDefaultCallbackGold)
-	end
+CreateGoldChest = function(_position, _dark)
+	return CreateChest(_position, chestDefaultCallbackGold, _dark)
+end
 
-CreateIronChest = function(_position)
-	return CreateChest(_position,chestDefaultCallbackIron)
-	end
+CreateIronChest = function(_position, _dark)
+	return CreateChest(_position, chestDefaultCallbackIron, _dark)
+end
 
 chestDefaultCallbackGold = function()
 	Message(XGUIEng.GetStringTableText("Support/ChestGold1"))
@@ -152,7 +152,7 @@ chestDefaultCallbackGold = function()
 	end
 
 chestDefaultCallbackRandomGold = function()
-	local gold = (10 + Logic.GetRandom(40)) * 10
+	local gold = (10 + GetRandom(0, 40)) * 10
 	Message(XGUIEng.GetStringTableText("Support/ChestGold2a")..gold..XGUIEng.GetStringTableText("Support/ChestGold2b") )
 	AddGold(gold)
 	end
@@ -161,9 +161,9 @@ chestDefaultCallbackIron = function()
 	Message(XGUIEng.GetStringTableText("Support/ChestIron1"))
 	AddIron(2000)
 	end
-
+	
 chestDefaultCallback = function()
-	local rand = Logic.GetRandom(8)
+	local rand = GetRandom(0,8)
 	if rand == 0 then
 		Message(XGUIEng.GetStringTableText("Support/ChestRandomGold"))
 		AddGold(1000)
@@ -179,6 +179,9 @@ chestDefaultCallback = function()
 	elseif rand == 4 then
 		Message(XGUIEng.GetStringTableText("Support/ChestRandomWood"))
 		AddWood(1000)
+	elseif rand == 5 then
+		Message(XGUIEng.GetStringTableText("Support/ChestRandomStone"))
+		AddStone(1000)
 	else
 		Message(XGUIEng.GetStringTableText("Support/ChestRandomEmpty"))
 		end
@@ -235,7 +238,7 @@ chestGenericCallback = function(_ammount, _ressourceType)
 		AddSulfur(ammount)
 	end
 	Message(string.format(XGUIEng.GetStringTableText("Support/ChestGeneric"), ammount, typeString))
-	end
+end
 
 -------------------------------------------------------------------------------------------------------
 --
