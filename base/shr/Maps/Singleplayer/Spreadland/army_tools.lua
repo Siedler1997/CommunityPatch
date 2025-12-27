@@ -13,13 +13,16 @@ globalRespawnDelay = 10
 battleBehaviour = function(_army)
 
 	if HasFullStrength(_army) == false and globalRespawnTimer <= 0 and _army.control.spawnIsActive == true then
-	
+		local experience = LOW_EXPERIENCE
+		if _army.control.experience ~= nil then
+			experience = _army.control.experience
+		end
 		local troopDescription = {
 		
 			maxNumberOfSoldiers	= 8,
 			minNumberOfSoldiers	= 0,
 			position			= _army.control.spawnPosition,
-			experiencePoints 	= LOW_EXPERIENCE,
+			experiencePoints 	= experience,
 		}			
 	
 		troopDescription.leaderType = _army.control.troops[Logic.GetRandom(table.getn(_army.control.troops))+1]			

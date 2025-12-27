@@ -9,6 +9,7 @@
 	troops2	= { Entities.PU_LeaderHeavyCavalry2,
 				Entities.PU_LeaderSword4,
 				Entities.PU_LeaderBow4,
+				Entities.PV_Cannon3 ,
 				Entities.PV_Cannon4 ,
 				Entities.PU_LeaderRifle2
 				}
@@ -29,7 +30,7 @@
 				Entities.PV_Cannon4,
 				Entities.PV_Cannon3,
 				Entities.PV_Cannon3,
-				Entities.PV_Cannon3,
+				Entities.PV_Cannon4,
 				Entities.PU_LeaderSword4,
 				Entities.PU_LeaderSword4,
 				Entities.PU_LeaderRifle2

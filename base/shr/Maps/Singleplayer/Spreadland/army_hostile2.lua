@@ -15,7 +15,7 @@ createArmyHostile2 = function()
 	armyHostile2.control.defendPosition	= GetPosition("hostileArmy2")
 	armyHostile2.control.delay			= 20
 	armyHostile2.control.spawnPosition	= GetPosition("hostileSupport")
-	armyHostile2.control.troops			= { Entities.PU_LeaderSword2,Entities.PU_LeaderSword2,Entities.PU_LeaderBow2,Entities.PV_Cannon2 }
+	armyHostile2.control.troops			= { Entities.PU_LeaderSword2,Entities.PU_LeaderSword2,Entities.PU_LeaderBow2,Entities.PV_Cannon1,Entities.PV_Cannon2 }
 	armyHostile2.control.spawnIsActive	= true
 
 	
@@ -39,9 +39,12 @@ createArmyHostile2 = function()
 	EnlargeArmy(armyHostile2,troopDescription)
 	EnlargeArmy(armyHostile2,troopDescription)
 
-	troopDescription.leaderType = Entities.PV_Cannon2
+	troopDescription.leaderType = Entities.PV_Cannon1
 	
 	EnlargeArmy(armyHostile2,troopDescription)
+
+	troopDescription.leaderType = Entities.PV_Cannon2
+	
 	EnlargeArmy(armyHostile2,troopDescription)
 		
 	StartJob("ControlArmyHostile2")

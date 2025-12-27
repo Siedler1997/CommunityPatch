@@ -39,14 +39,24 @@ function ResearchAllMilitaryTechsAddOn(_PlayerId, _SuperTech)
 end
 
 
-GetRifle = function(_strength)
+GetRifle = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderRifle1
 	if _strength <= 0 then
-		return Entities.PU_LeaderRifle1
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderRifle1
+		else
+			unitType = Entities.PU_LeaderRifle1a
+		end
 	elseif _strength <= 1 then
-		return Entities.PU_LeaderRifle1
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderRifle1
+		else
+			unitType = Entities.PU_LeaderRifle1a
+		end
 	elseif _strength <= 2 then
-		return Entities.PU_LeaderRifle2
+		unitType = Entities.PU_LeaderRifle2
 	else
-		return Entities.PU_LeaderRifle2
+		unitType = Entities.PU_LeaderRifle2
 	end
+	return unitType
 end

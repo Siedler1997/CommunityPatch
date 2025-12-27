@@ -68,7 +68,7 @@ createArmySpawn = function()
 	troops4	= { 		Entities.PU_LeaderHeavyCavalry2,
 				}
 	troops5	= { 		Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2
+				Entities.PU_LeaderBow3
 				}
 	troops6	= { 		Entities.PU_LeaderPoleArm3,
 				}
@@ -77,6 +77,9 @@ createArmySpawn = function()
 				}
 	troops8	= { 		Entities.PU_LeaderSword3,
 				Entities.PU_LeaderPoleArm3,
+				}
+	troops9	= { 		Entities.PU_LeaderSword2a,
+				Entities.PU_LeaderPoleArm2a,
 				}
 ---------------------------------------------------
 
@@ -100,7 +103,7 @@ createArmySpawn = function()
 	--p2    guards from the mountains
 
 		robbers	= {}
-		createArmy(2, 0,robbers,3,"mineguard",MEDIUM_EXPERIENCE,troops1)
+		createArmy(2, 0,robbers,3,"mineguard",MEDIUM_EXPERIENCE,troops9)
 		StartJob("ControlarmyRobbers")
 
 	--p3   armydefendNorth

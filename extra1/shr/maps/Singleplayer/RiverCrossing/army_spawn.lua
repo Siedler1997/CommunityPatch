@@ -56,9 +56,9 @@ createArmy = function(_playerId,_id,_army,_strength,_position,_experience,_troop
 
 createArmySpawn = function()
 
-	troops1	= { 		Entities.PU_LeaderSword2,
+	troops1	= { 		Entities.PU_LeaderSword2a,
 			--	Entities.PV_Cannon4,
-				Entities.PU_LeaderPoleArm2,
+				Entities.PU_LeaderPoleArm2a,
 				}
 	troops2	= { 		Entities.PU_LeaderBow4,
 				--Entities.PV_Cannon4,
@@ -66,7 +66,7 @@ createArmySpawn = function()
                                 Entities.PU_LeaderSword3,
 				}
 	troops3	= { 		Entities.PU_LeaderBow4,
-				Entities.PU_LeaderRifle1,
+				Entities.PU_LeaderRifle1a,
 				Entities.PU_LeaderCavalry2,
 				Entities.PU_LeaderHavyCavalry1,
 				}
@@ -107,9 +107,9 @@ createArmySpawn = function()
 				Entities.PU_LeaderSword4,
 				Entities.PU_LeaderHeavyCavalry4,
 				}
-	troops10	= { 	Entities.PU_LeaderSword3,
+	troops10	= { 	Entities.PU_LeaderSword2a,
 			--	Entities.PV_Cannon4,
-				Entities.PU_LeaderPoleArm3,
+				Entities.PU_LeaderPoleArm2a,
 				}
 	troops11	= { 	Entities.PU_LeaderBow4,
 				Entities.PU_LeaderBow3,
@@ -117,9 +117,9 @@ createArmySpawn = function()
 				Entities.PU_LeaderHavyCavalry2,
 				Entities.PU_LeaderRifle2
 				}
-	troops12	= { 	Entities.PU_LeaderBow2,
-				Entities.PU_LeaderBow2,
-				Entities.PU_LeaderRifle1
+	troops12	= { 	Entities.PU_LeaderBow2a,
+				Entities.PU_LeaderBow2a,
+				Entities.PU_LeaderRifle1a
 				}
 
 
@@ -127,7 +127,7 @@ createArmySpawn = function()
 	--p1 	Dario's starting troops
 
 		armyDario	= {}
-		createArmy(1, 0,armyDario,1,"p1_spawn",MEDIUM_EXPERIENCE,troops1)
+		createArmy(1, 0,armyDario,1,"p1_spawn",MEDIUM_EXPERIENCE,troops4)
 		StartJob("ControlArmyDario")
 
 
@@ -237,13 +237,13 @@ createArmySpawn = function()
 	--player 5	group <7> middle castle defenders
 
 		p4group6	= {}
-		createArmy(5, 6,p4group6,4,"p5_spawn7",HIGH_EXPERIENCE,troops9)
+		createArmy(5, 6,p4group6,4,"p5_spawn7",VERYHIGH_EXPERIENCE,troops9)
 		StartJob("ControlP4group6")
 
 	--player 5	group <8> west castle defenders
 
 		p4group8	= {}
-		createArmy(5, 7,p4group8,4,"p5_spawn8",HIGH_EXPERIENCE,troops7)
+		createArmy(5, 7,p4group8,4,"p5_spawn8",VERYHIGH_EXPERIENCE,troops7)
 		StartJob("ControlP4group8")
 
 

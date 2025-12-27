@@ -9,14 +9,14 @@ TMR_ArmyPL2Assault7	= 0
 TMR_ArmyPL2Killer		= 0
 FirstSpawn 					= 1
 
-EnemySwordType = Entities.PU_LeaderSword3
-EnemySpearType = Entities.PU_LeaderPoleArm3
-EnemyBowType = Entities.PU_LeaderBow3
+EnemySwordType = Entities.PU_LeaderSword2a
+EnemySpearType = Entities.PU_LeaderPoleArm2a
+EnemyBowType = Entities.PU_LeaderBow2a
 EnemyHeavyCavalryType = Entities.PU_LeaderHeavyCavalry1
 EnemyCannon1Type = Entities.PV_Cannon1
 EnemyCannon2Type = Entities.PV_Cannon2
-EnemyRifleType = Entities.PU_LeaderRifle1
-EnemyExperience = 1
+EnemyRifleType = Entities.PU_LeaderRifle1a
+EnemyExperience = 0
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ end
 -- Set RESOURCES for Human Player 1 ------------------------------------------------------
 function InitResources()
 
-	GlobalMissionScripting.GiveResouces(1, 3500, 2000, 2000, 1600, 2000, 500)
+	GlobalMissionScripting.GiveResouces(1, 3000, 2000, 2000, 1600, 2000, 500)
 
 end
 ---------------------------------------------------------------------------------------------
@@ -72,8 +72,11 @@ function InitTechnologies()
 --]]
 
 	ResearchTechnology(Technologies.T_UpgradeSword1)
+	ResearchTechnology(Technologies.T_UpgradeSword2)
 	ResearchTechnology(Technologies.T_UpgradeSpear1)
+	ResearchTechnology(Technologies.T_UpgradeSpear2)
 	ResearchTechnology(Technologies.T_UpgradeBow1)
+	ResearchTechnology(Technologies.T_UpgradeBow2)
 end
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
@@ -145,7 +148,7 @@ String.Init("SP_Castrum")
 	StartSimpleJob("TimeLimitStartJob")
 	
 	GUIQuestTools.ToggleStopWatch(4200, 1)
-    StartCountdown(30 * 60, UpgradeEnemies, false)
+    StartCountdown(20 * 60, UpgradeEnemie1, false)
 	
     gvGUI.BonusHeroId = GetEntityId("Yuki")
 
@@ -155,15 +158,15 @@ end
 
 function CreateGuardTroopsPL1()
 	local p1unitPos = GetPosition("p1swordpos1")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword3,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1swordpos2")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword3,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1spearpos1")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm3,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1spearpos2")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderPoleArm3,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1archerpos1")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderBow2,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderBow3,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1riflepos1")
 	AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle1,0,8,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 	p1unitPos = GetPosition("p1hcavalrypos1")
@@ -172,12 +175,22 @@ function CreateGuardTroopsPL1()
 	AI.Entity_CreateFormation(1, Entities.PU_LeaderCavalry2,0,3,p1unitPos.X,p1unitPos.Y,0,0,2,0)
 end
 
-function UpgradeEnemies()
+function UpgradeEnemies1()
+	EnemySwordType = Entities.PU_LeaderSword3
+	EnemySpearType = Entities.PU_LeaderPoleArm3
+	EnemyBowType = Entities.PU_LeaderBow3
+	EnemyCannon1Type = Entities.PV_Cannon3
+
+	EnemyExperience = 1
+
+    StartCountdown(20 * 60, UpgradeEnemies2, false)
+end
+
+function UpgradeEnemies2()
 	EnemySwordType = Entities.PU_LeaderSword4
 	EnemySpearType = Entities.PU_LeaderPoleArm4
 	EnemyBowType = Entities.PU_LeaderBow4
 	EnemyHeavyCavalryType = Entities.PU_LeaderHeavyCavalry2
-	EnemyCannon1Type = Entities.PV_Cannon3
 	EnemyCannon2Type = Entities.PV_Cannon4
 	EnemyRifleType = Entities.PU_LeaderRifle2
 
@@ -185,7 +198,7 @@ function UpgradeEnemies()
 
 	ResearchAllMilitaryTechsAddOn(2)
 
-    StartCountdown(30 * 60, EnrageEnemies, false)
+    StartCountdown(20 * 60, EnrageEnemies, false)
 end
 
 function EnrageEnemies()

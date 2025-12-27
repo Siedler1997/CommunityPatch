@@ -76,11 +76,11 @@ createArmySpawn = function()
 	--p4 	*******sheep bandits**************
 
 		armyp4_1	= {}
-		createArmy(4, 0,armyp4_1,1,"p4_1",MEDIUM_EXPERIENCE,troops1)
+		createArmy(4, 0,armyp4_1,1,"p4_1",LOW_EXPERIENCE,troops1)
 		StartJob("Controlarmyp4_1")
 
 		armyp4_2	= {}
-		createArmy(4, 1,armyp4_2,1,"p4_2",MEDIUM_EXPERIENCE,troops2)
+		createArmy(4, 1,armyp4_2,1,"p4_2",LOW_EXPERIENCE,troops2)
 		StartJob("Controlarmyp4_2")
 
 end
@@ -218,7 +218,7 @@ createArmydefEdward = function()
 									UpgradeCategories.LeaderCavalry,
 									UpgradeCategories.LeaderBow,
 									UpgradeCategories.LeaderSword,
-									Entities.PV_Cannon4,
+									Entities.PV_Cannon3,
 								
 							  }
 
@@ -443,7 +443,7 @@ createArmydefDovbar = function()
 									UpgradeCategories.LeaderCavalry,
 									UpgradeCategories.LeaderBow,
 									UpgradeCategories.LeaderSword,
-									Entities.PV_Cannon4,
+									Entities.PV_Cannon3,
 								
 							  }
 

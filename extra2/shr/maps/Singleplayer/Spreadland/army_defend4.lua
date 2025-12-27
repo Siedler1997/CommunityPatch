@@ -17,7 +17,7 @@ createArmyDefend4 = function()
 											Entities.PU_LeaderSword4,
 											Entities.PU_LeaderPoleArm4,
 											Entities.PU_LeaderBow4,
-											Entities.PV_Cannon4,
+											Entities.PV_Cannon3,
 											Entities.PU_LeaderRifle2 }
 	
 	SetupArmy(armyDefend4)

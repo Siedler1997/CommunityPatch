@@ -15,6 +15,7 @@ createArmyPlayer2Attack = function()
 													Entities.PU_LeaderPoleArm4,
 													Entities.PU_LeaderSword4,
 													Entities.PU_LeaderPoleArm4,
+													Entities.PU_LeaderRifle2,
 													Entities.PV_Cannon3, 
 													Entities.PV_Cannon4}
 			armyAttack21.control.spawnIsActive	= true
@@ -40,6 +41,7 @@ createArmyPlayer3Attack = function()
 													Entities.PU_LeaderPoleArm4,
 													Entities.PU_LeaderSword4,
 													Entities.PU_LeaderPoleArm4,
+													Entities.PU_LeaderRifle2,
 													Entities.PV_Cannon3, 
 													Entities.PV_Cannon4}
 			armyAttack31.control.spawnIsActive	= true

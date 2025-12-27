@@ -291,7 +291,7 @@ setupAttackWave3 = function(_strength)
 	local counter = {}
 	counter.value = 0
 
-	troopDescription.leaderType = GetBow(_strength)
+	troopDescription.leaderType = GetBow(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -299,7 +299,7 @@ setupAttackWave3 = function(_strength)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 
-	troopDescription.leaderType = GetSword(_strength)
+	troopDescription.leaderType = GetSword(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -321,7 +321,7 @@ setupAttackWave2 = function(_strength)
 	local counter = {}
 	counter.value = 0
 
-	troopDescription.leaderType = GetBow(_strength)
+	troopDescription.leaderType = GetBow(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -329,7 +329,7 @@ setupAttackWave2 = function(_strength)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 
-	troopDescription.leaderType = GetSword(_strength)
+	troopDescription.leaderType = GetSword(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -351,17 +351,17 @@ setupAttackWave1 = function(_strength)
 	local counter = {}
 	counter.value = 0
 
-	troopDescription.leaderType = GetBow(_strength)
+	troopDescription.leaderType = GetBow(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	
-	troopDescription.leaderType = GetRifle(_strength)
+	troopDescription.leaderType = GetRifle(_strength, true)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 
-	troopDescription.leaderType = GetSword(_strength)
+	troopDescription.leaderType = GetSword(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -383,7 +383,7 @@ setupAttackWave4 = function(_strength)
 	local counter = {}
 	counter.value = 0
 	
-	troopDescription.leaderType = GetPoleArm(_strength)
+	troopDescription.leaderType = GetPoleArm(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
@@ -391,7 +391,7 @@ setupAttackWave4 = function(_strength)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 
-	troopDescription.leaderType = GetCannon(_strength)
+	troopDescription.leaderType = GetCannon(_strength, true)
 
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)
 --	CountedEnlargeArmy(armySouthernAssault,troopDescription,counter)

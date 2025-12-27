@@ -91,8 +91,13 @@ end
 -- This function is called on game start after all initialization is done
 function FirstMapAction()
 
+	local advancedSettings = {
+		armyGrouping	= ArmyGrouping_Grouped
+        armyStrength    = 8
+	}
+
 	-- Level 0 is deactivated...ignore
-	MapEditor_SetupAI(2, 2, 1500, 3, "Ataken", 1, 600)
+	MapEditor_SetupAI(2, 2, 1500, 3, "Ataken", 1, 600, advancedSettings)
 	MapEditor_SetupAI(3, 2, 1000, 0, "Nebelvolk", 2, 0)
 	MapEditor_SetupAI(4, 0, 1000, 3, "BirnBurg", 1, 0)
 	MapEditor_SetupAI(5, 1, 6000, 0, "Banditen", 1, 0)
@@ -133,20 +138,6 @@ end
 
 function ControlEnemyHeroes()
 	if Counter.Tick2("ControlEnemyHeroes", 5) then
-		--Varg
-		--[[
-		--Deactivated for Varg because I'm too lazy to prevent him from drowning after usage
-		if IsAlive("viking") then
-			if AreEnemiesInArea(GetPlayer("viking"), GetPosition("viking"), 2000) then
-				local HeroID = GetEntityId("viking")
-				if Logic.GetEntityHealth(HeroID) < (Logic.GetEntityMaxHealth(HeroID) * 0.9) then
-					GUI.SettlerSummon(HeroID)
-				end
-
-				GUI.SettlerAffectUnitsInArea(HeroID)
-			end
-		end
-		--]]
 		--Mary
 		if IsAlive("mary") then
 			if AreEnemiesInArea(GetPlayer("mary"), GetPosition("mary"), 2000) then
@@ -215,7 +206,7 @@ function CreateSettlers()
 	Move("Scharfsch","StartPos")
 
   local pos = GetPosition("Birnsch")
-  SetEntityName(AI.Entity_CreateFormation(4, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,1,0),"ScharfBirn")
+  SetEntityName(AI.Entity_CreateFormation(4, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0),"ScharfBirn")
 
 end
 
@@ -513,8 +504,8 @@ end
 -- Geschenk des B?rgermeisters
 function Mafertig()
   local pos = GetPosition("Geschenk")
-  AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,1,0)
-  AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,1,0)
+  AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0)
+  AI.Entity_CreateFormation(1, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0)
   CreateEntity(1,Entities.PV_Cannon4, pos)
   CreateEntity(1,Entities.PV_Cannon4, pos)
   EndJob(SchleifeA) -- Beendet den ersten SimpleJob
@@ -698,7 +689,7 @@ function Abfrage()
 -- Scharfsch?tzenersatz in Birnheim
     if IsDestroyed("ScharfBirn") then 
           local pos = GetPosition("Major")
-          SetEntityName(AI.Entity_CreateFormation(4, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,1,0),"ScharfBirn")
+          SetEntityName(AI.Entity_CreateFormation(4, Entities.PU_LeaderRifle2,0,8,pos.X,pos.Y,0,0,2,0),"ScharfBirn")
         	Move("ScharfBirn","Birnsch")
     end
 

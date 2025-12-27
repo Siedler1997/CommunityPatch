@@ -1,3 +1,18 @@
+
+troops1	= {	Entities.CU_Barbarian_LeaderClub2,
+			Entities.CU_BlackKnight_LeaderMace2,
+			Entities.CU_Barbarian_LeaderClub2,
+			Entities.CU_BanditLeaderBow2,
+			Entities.CU_BanditLeaderSword2
+}
+
+troops2	= {	Entities.CU_Evil_LeaderBearman1,
+			Entities.CU_Evil_LeaderSkirmisher1
+}
+
+troopExperience = 0
+soldiers = 6
+
 ----------------------------------
 
 --	Groups Bastille1	--
@@ -5,26 +20,16 @@
 ----------------------------------
 
 function CreateB1Groups()
-
-	troops1			= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-						}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
-
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B1Spawn1")
-	B1Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B1Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B1Group1, "B1Group1")
 	
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B1Spawn2")
-	B1Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B1Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B1Group2, "B1Group2")
 
 	Attack("B1Group1","AttackTargB1")
@@ -32,8 +37,6 @@ function CreateB1Groups()
 
 	StartJob("CheckB1Group1")
 	StartJob("CheckB1Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -53,18 +56,10 @@ end
 	Action_CheckB1Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B1Spawn1")
-		B1Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B1Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B1Group1, "B1Group1")
 
 		Attack("B1Group1","AttackTargB1")
@@ -92,18 +87,10 @@ end
 	Action_CheckB1Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B1Spawn2")
-		B1Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B1Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B1Group2, "B1Group2")
 
 		Attack("B1Group2","AttackTargB2")
@@ -121,23 +108,16 @@ end
 ----------------------------------
 
 function CreateB2Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B2Spawn1")
-	B2Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B2Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B2Group1, "B2Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B2Spawn2")
-	B2Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B2Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B2Group2, "B2Group2")
 
 	Attack("B2Group1","AttackTargB11")
@@ -145,8 +125,6 @@ function CreateB2Groups()
 
 	StartJob("CheckB2Group1")
 	StartJob("CheckB2Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -166,15 +144,10 @@ end
 	Action_CheckB2Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B2Spawn1")
-		B2Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B2Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B2Group1, "B2Group1")
 
 		Attack("B2Group1","AttackTargB11")
@@ -202,15 +175,10 @@ end
 	Action_CheckB2Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B2Spawn2")
-		B2Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B2Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B2Group2, "B2Group2")
 
 		Attack("B2Group2","AttackTargB21")
@@ -228,26 +196,16 @@ end
 ----------------------------------
 
 function CreateB3Groups()
-
-	troops1			= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-						}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
-
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B3Spawn1")
-	B3Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B3Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B3Group1, "B3Group1")
 
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B3Spawn2")
-	B3Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B3Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B3Group2, "B3Group2")
 
 	Attack("B3Group1","AttackTargB3")
@@ -255,8 +213,6 @@ function CreateB3Groups()
 
 	StartJob("CheckB3Group1")
 	StartJob("CheckB3Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -276,18 +232,10 @@ end
 	Action_CheckB3Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B3Spawn1")
-		B3Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B3Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B3Group1, "B3Group1")
 
 		Attack("B3Group1","AttackTargB3")
@@ -315,18 +263,10 @@ end
 	Action_CheckB3Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B3Spawn2")
-		B3Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B3Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B3Group2, "B3Group2")
 
 		Attack("B3Group2","AttackTargB3")
@@ -344,26 +284,16 @@ end
 ----------------------------------
 
 function CreateB4Groups()
-
-	troops1			= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-						}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
-
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B4Spawn1")
-	B4Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B4Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B4Group1, "B4Group1")
 
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B4Spawn2")
-	B4Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B4Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B4Group2, "B4Group2")
 
 	Attack("B4Group1","AttackTargB4")
@@ -371,8 +301,6 @@ function CreateB4Groups()
 
 	StartJob("CheckB4Group1")
 	StartJob("CheckB4Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -392,18 +320,10 @@ end
 	Action_CheckB4Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B4Spawn1")
-		B4Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B4Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B4Group1, "B4Group1")
 
 		Attack("B4Group1","AttackTargB4")
@@ -431,18 +351,10 @@ end
 	Action_CheckB4Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B4Spawn2")
-		B4Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B4Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B4Group2, "B4Group2")
 
 		Attack("B4Group2","AttackTargB4")
@@ -460,26 +372,16 @@ end
 ----------------------------------
 
 function CreateB5Groups()
-
-	troops1			= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-						}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
-
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B5Spawn1")
-	B5Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B5Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B5Group1, "B5Group1")
 
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B5Spawn2")
-	B5Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B5Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B5Group2, "B5Group2")
 
 	Attack("B5Group1","AttackTargB41")
@@ -487,8 +389,6 @@ function CreateB5Groups()
 
 	StartJob("CheckB5Group1")
 	StartJob("CheckB5Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -508,18 +408,10 @@ end
 	Action_CheckB5Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B5Spawn1")
-		B5Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B5Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B5Group1, "B5Group1")
 
 		Attack("B5Group1","AttackTargB41")
@@ -547,18 +439,10 @@ end
 	Action_CheckB5Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B5Spawn2")
-		B5Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B5Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B5Group2, "B5Group2")
 
 		Attack("B5Group2","AttackTargB41")
@@ -576,23 +460,16 @@ end
 ----------------------------------
 
 function CreateB6Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B6Spawn1")
-	B6Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B6Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B6Group1, "B6Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B6Spawn2")
-	B6Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B6Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B6Group2, "B6Group2")
 
 	Attack("B6Group1","AttackTargB41")
@@ -600,8 +477,6 @@ function CreateB6Groups()
 
 	StartJob("CheckB6Group1")
 	StartJob("CheckB6Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -621,15 +496,10 @@ end
 	Action_CheckB6Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B6Spawn1")
-		B6Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B6Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B6Group1, "B6Group1")
 
 		Attack("B6Group1","AttackTargB41")
@@ -657,15 +527,10 @@ end
 	Action_CheckB6Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B6Spawn2")
-		B6Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B6Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B6Group2, "B6Group2")
 
 		Attack("B6Group2","AttackTargB41")
@@ -683,26 +548,16 @@ end
 ----------------------------------
 
 function CreateB7Groups()
-
-	troops1			= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-						}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
-
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B7Spawn1")
-	B7Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B7Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B7Group1, "B7Group1")
 
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+	RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B7Spawn2")
-	B7Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+	B7Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B7Group2, "B7Group2")
 
 	Attack("B7Group1","AttackTargB21")
@@ -710,8 +565,6 @@ function CreateB7Groups()
 
 	StartJob("CheckB7Group1")
 	StartJob("CheckB7Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -731,18 +584,10 @@ end
 	Action_CheckB7Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B7Spawn1")
-		B7Group1 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B7Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B7Group1, "B7Group1")
 
 		Attack("B7Group1","AttackTargB21")
@@ -770,18 +615,10 @@ end
 	Action_CheckB7Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B7Spawn2")
-		B7Group2 = Tools.CreateGroup(2, RandomUnit1, 8, pos.X, pos.Y, 180)
+		B7Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B7Group2, "B7Group2")
 
 		Attack("B7Group2","AttackTargB11")
@@ -799,23 +636,16 @@ end
 ----------------------------------
 
 function CreateB8Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B8Spawn1")
-	B8Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B8Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B8Group1, "B8Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B8Spawn2")
-	B8Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B8Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B8Group2, "B8Group2")
 
 	Attack("B8Group1","AttackTargB31")
@@ -823,8 +653,6 @@ function CreateB8Groups()
 
 	StartJob("CheckB8Group1")
 	StartJob("CheckB8Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -844,15 +672,10 @@ end
 	Action_CheckB8Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B8Spawn1")
-		B8Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B8Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B8Group1, "B8Group1")
 
 		Attack("B8Group1","AttackTargB31")
@@ -880,15 +703,10 @@ end
 	Action_CheckB8Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B8Spawn2")
-		B8Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B8Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B8Group2, "B8Group2")
 
 		Attack("B8Group2","G3")
@@ -908,23 +726,16 @@ end
 ----------------------------------
 
 function CreateB21Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B2Spawn1")
-	B21Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B21Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B21Group1, "B21Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B2Spawn2")
-	B21Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B21Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B21Group2, "B21Group2")
 
 	Attack("B21Group1","AttackTargB21")
@@ -932,8 +743,6 @@ function CreateB21Groups()
 
 	StartJob("CheckB21Group1")
 	StartJob("CheckB21Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -953,15 +762,10 @@ end
 	Action_CheckB21Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B2Spawn1")
-		B21Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B21Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B21Group1, "B21Group1")
 
 		Attack("B21Group1","AttackTargB21")
@@ -989,15 +793,10 @@ end
 	Action_CheckB21Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B2Spawn2")
-		B21Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B21Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B21Group2, "B21Group2")
 
 		Attack("B21Group2","AttackTargB21")
@@ -1015,23 +814,16 @@ end
 ----------------------------------
 
 function CreateB61Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B6Spawn1")
-	B61Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B61Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B61Group1, "B61Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B6Spawn2")
-	B61Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B61Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B61Group2, "B61Group2")
 
 	Attack("B61Group1","AttackTargB41")
@@ -1039,8 +831,6 @@ function CreateB61Groups()
 
 	StartJob("CheckB61Group1")
 	StartJob("CheckB61Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -1060,15 +850,10 @@ end
 	Action_CheckB61Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B6Spawn1")
-		B61Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B61Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B61Group1, "B61Group1")
 
 		Attack("B61Group1","AttackTargB41")
@@ -1096,15 +881,10 @@ end
 	Action_CheckB61Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B6Spawn2")
-		B61Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B61Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B61Group2, "B61Group2")
 
 		Attack("B61Group2","AttackTargB41")
@@ -1122,23 +902,16 @@ end
 ----------------------------------
 
 function CreateB81Groups()
-
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
-
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B8Spawn1")
-	B81Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B81Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B81Group1, "B81Group1")
 
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+	RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 	local pos = GetPosition("B8Spawn2")
-	B81Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+	B81Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 	SetEntityName(B81Group2, "B81Group2")
 
 	Attack("B81Group1","MiddleStone2")
@@ -1146,8 +919,6 @@ function CreateB81Groups()
 
 	StartJob("CheckB81Group1")
 	StartJob("CheckB81Group2")
-
-
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -1167,15 +938,10 @@ end
 	Action_CheckB81Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B8Spawn1")
-		B81Group1 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B81Group1 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B81Group1, "B81Group1")
 
 		Attack("B81Group1","MiddleStone2")
@@ -1203,15 +969,10 @@ end
 	Action_CheckB81Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops5			= 	{	Entities.CU_Evil_LeaderBearman1,
-						Entities.CU_Evil_LeaderSkirmisher1
-
-						}
-
-	RandomUnit5 		= 	troops5[Logic.GetRandom(table.getn(troops5))+1]
+		RandomUnit5 		= 	troops2[GetRandom(table.getn(troops2))]
 
 		local pos = GetPosition("B8Spawn2")
-		B81Group2 = Tools.CreateGroup(2, RandomUnit5, 16, pos.X, pos.Y, 180)
+		B81Group2 = AI.Entity_CreateFormation(2, RandomUnit5, 0, soldiers*2, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B81Group2, "B81Group2")
 
 		Attack("B81Group2","MiddleStone2")

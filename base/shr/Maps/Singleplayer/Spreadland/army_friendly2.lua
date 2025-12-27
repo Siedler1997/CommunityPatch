@@ -4,7 +4,7 @@ createArmyFriendly2 = function()
 
 	armyFriendly2.player 					= 3
 	armyFriendly2.id						= armyPlayer3Count
-	armyFriendly2.strength					= 6
+	armyFriendly2.strength					= 8
 	armyFriendly2.position					= GetPosition("friendlyArmy2")
 	armyFriendly2.rodeLength				= 1000
 	
@@ -18,6 +18,7 @@ createArmyFriendly2 = function()
 	armyFriendly2.control.troops			= { Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderHeavyCavalry1,Entities.PU_LeaderCavalry2,Entities.PV_Cannon3 }
 	armyFriendly2.control.isDead			= false
 	armyFriendly2.control.spawnIsActive		= true
+	armyFriendly2.control.experience		= HIGH_EXPERIENCE
 	
 	SetupArmy(armyFriendly2)
 
@@ -25,11 +26,12 @@ createArmyFriendly2 = function()
 	
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= HIGH_EXPERIENCE,
 	}			
 
 	troopDescription.leaderType = Entities.PU_LeaderHeavyCavalry1
 		
+	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
@@ -38,6 +40,10 @@ createArmyFriendly2 = function()
 	
 	EnlargeArmy(armyFriendly2,troopDescription)
 	EnlargeArmy(armyFriendly2,troopDescription)
+	EnlargeArmy(armyFriendly2,troopDescription)
+
+	troopDescription.leaderType = Entities.PV_Cannon3
+	
 	EnlargeArmy(armyFriendly2,troopDescription)
 
 		

@@ -303,19 +303,19 @@ function CreateDefSouth()
 
 	local troopDescription = {
 
-		maxNumberOfSoldiers	= 5,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= HIGH_EXPERIENCE,
+		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2a
 
 	EnlargeArmy(DefSouth,troopDescription)
 	EnlargeArmy(DefSouth,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderSword2
+	troopDescription.leaderType = Entities.PU_LeaderSword2a
 	EnlargeArmy(DefSouth,troopDescription)
 	EnlargeArmy(DefSouth,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderBow2
+	troopDescription.leaderType = Entities.PU_LeaderBow2a
 	EnlargeArmy(DefSouth,troopDescription)
 	EnlargeArmy(DefSouth,troopDescription)
 
@@ -341,17 +341,17 @@ function CreateBandit1()
 
 	local troopDescription = {
 
-		maxNumberOfSoldiers	= 5,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= HIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2a
 
 	EnlargeArmy(Bandit1,troopDescription)
 	EnlargeArmy(Bandit1,troopDescription)
 	EnlargeArmy(Bandit1,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderBow2
+	troopDescription.leaderType = Entities.PU_LeaderBow2a
 	EnlargeArmy(Bandit1,troopDescription)
 	EnlargeArmy(Bandit1,troopDescription)
 
@@ -378,16 +378,16 @@ function CreateBandit2()
 
 	local troopDescription = {
 
-		maxNumberOfSoldiers	= 5,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= HIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderSword2
+	troopDescription.leaderType = Entities.PU_LeaderSword2a
 
 	EnlargeArmy(Bandit2,troopDescription)
 	EnlargeArmy(Bandit2,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderBow2
+	troopDescription.leaderType = Entities.PU_LeaderBow2a
 	EnlargeArmy(Bandit2,troopDescription)
 	EnlargeArmy(Bandit2,troopDescription)
 
@@ -981,17 +981,17 @@ function CreateFirstCon()
 
 	local troopDescription = {
 
-		maxNumberOfSoldiers	= 6,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= VERYHIGH_EXPERIENCE,
+		experiencePoints 	= HIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2a
 
 	EnlargeArmy(FirstCon,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderSword2
+	troopDescription.leaderType = Entities.PU_LeaderSword2a
 	EnlargeArmy(FirstCon,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderBow2
+	troopDescription.leaderType = Entities.PU_LeaderBow2a
 	EnlargeArmy(FirstCon,troopDescription)
 
 
@@ -1019,17 +1019,17 @@ function CreateSecCon()
 
 	local troopDescription = {
 
-		maxNumberOfSoldiers	= 6,
+		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 	= VERYHIGH_EXPERIENCE,
 	}
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2a
 
 	EnlargeArmy(SecCon,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderSword2
+	troopDescription.leaderType = Entities.PU_LeaderSword2a
 	EnlargeArmy(SecCon,troopDescription)
-	troopDescription.leaderType = Entities.PU_LeaderBow2
+	troopDescription.leaderType = Entities.PU_LeaderBow2a
 	EnlargeArmy(SecCon,troopDescription)
 
 

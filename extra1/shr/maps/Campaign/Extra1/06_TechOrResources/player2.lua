@@ -6,10 +6,15 @@ function createPlayer2()
 	player2 	= {}
 	player2.id 	= 2
 	
+		local advancedSettings = {
+			armyGrouping		= ArmyGrouping_Grouped
+		}
+
 		if CP_Difficulty == 1 then
 			MapEditor_SetupAI(player2.id, 2, 3000, 3, "p2_hq", 1, 0)
 		else
-			MapEditor_SetupAI(player2.id, 3, 5000, 3, "p2_hq", 3, 0)
+			advancedSettings.armyStrength = 8
+			MapEditor_SetupAI(player2.id, 3, 5000, 3, "p2_hq", 3, 0, advancedSettings)
 		end
 
 		local description = {

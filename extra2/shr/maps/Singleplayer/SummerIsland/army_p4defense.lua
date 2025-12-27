@@ -56,8 +56,7 @@ end
 
 AllowArmyP4DefenseCannons = function()
 
-	table.insert(ArmyP4Defense.AllowedTypes, 	Entities.PV_Cannon4)
-	table.insert(ArmyP4Defense.AllowedTypes, 	Entities.PV_Cannon4)
+	table.insert(ArmyP4Defense.AllowedTypes, 	Entities.PV_Cannon3)
 
 end
 

@@ -335,7 +335,7 @@ Action_npcinfo1 = function()
 -------------------------------------------------------------------------------------------------------------------------
 TributePaid1 = function()
 	local bravePos = GetPosition("p8barracks")
-	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword3,0,6,bravePos.X,bravePos.Y,0,0,2,0)
+	AI.Entity_CreateFormation(1, Entities.PU_LeaderSword3,0,8,bravePos.X,bravePos.Y,0,0,2,0)
 	return true
 end
 -------------------------------------------------------------------------------------------------------------------------

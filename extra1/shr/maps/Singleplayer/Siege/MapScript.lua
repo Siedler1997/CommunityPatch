@@ -208,6 +208,8 @@ function Mission_FirstMapAction()
 		
 		RaidersCreate({player = 6, pos = "bearpos1", revier = 1000, range = 3500, types = { Entities.CU_AggressiveBlackBear }, samount = 1, ramount = 1, experience = 3})
 		    	
+		gvGUI.BonusHeroId = GetEntityId("Yuki")
+
 		--Tools.ExploreArea(-1, -1, 900)
 		--StartSimpleJob("GetMousePos")
 

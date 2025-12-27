@@ -4,12 +4,12 @@ setupArmyP3Defense = function()
 
 	ArmyP3Defense.player 			= 	3
 	ArmyP3Defense.id				= 	0
-	ArmyP3Defense.strength			= 	6
+	ArmyP3Defense.strength			= 	4
 	ArmyP3Defense.position			= 	GetPosition("P3Defense")
 	ArmyP3Defense.rodeLength		= 	4500
 	                                	
 	ArmyP3Defense.AllowedTypes 		= 	{	
-		Entities.PV_Cannon3
+		Entities.PV_Cannon1
 	}
 	ArmyP3Defense.ignoreAttack		=	true
 
@@ -33,7 +33,7 @@ setupArmyP3Defense = function()
 	-- Control army
 	StartJob("ControlArmyP3Defense")
 	
-	TimeLine.Enter("Allow Cannon4", TimeLine.Seconds + 30*60, "AllowArmyP3DefenseCannons")
+	TimeLine.Enter("Allow Cannon3", TimeLine.Seconds + 30*60, "AllowArmyP3DefenseCannons")
 	TimeLine.Enter("Increase Size P2A to 5/1", TimeLine.Seconds + 30*60, "IncreaseArmyP3DefenseSize")
 	TimeLine.Enter("Increase Size P2A to 6/2", TimeLine.Seconds + 40*60, "IncreaseArmyP3DefenseSize")
 
@@ -41,13 +41,13 @@ end
 
 AllowArmyP3DefenseCannons = function()
 
-	table.insert(ArmyP3Defense.AllowedTypes, Entities.PV_Cannon4)
+	table.insert(ArmyP3Defense.AllowedTypes, Entities.PV_Cannon3)
 
 end
 
 IncreaseArmyP3DefenseSize = function()
 
-	ArmyP3Defense.strength = ArmyP3Defense.strength + 1
+	ArmyP3Defense.strength = ArmyP3Defense.strength + 2
 
 end
 

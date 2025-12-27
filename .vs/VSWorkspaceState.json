@@ -1,19 +1,20 @@
 {
   "ExpandedNodes": [
     "",
+    "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Maps",
-    "\\base\\shr\\Maps\\Campaign",
-    "\\base\\shr\\Maps\\Campaign\\Main",
-    "\\base\\shr\\Maps\\Campaign\\Main\\20_BattleOfEvelance",
+    "\\base\\shr\\Script",
+    "\\base\\shr\\Script\\MapTools",
+    "\\extra1",
     "\\extra1\\shr",
-    "\\extra1\\shr\\config",
-    "\\extra1\\shr\\config\\Entities",
     "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Campaign",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1",
-    "\\extra1\\shr\\maps\\Campaign\\Extra1\\08_UnexploredLand"
+    "\\extra1\\shr\\maps\\Singleplayer",
+    "\\extra2",
+    "\\extra2\\shr",
+    "\\extra2\\shr\\maps",
+    "\\extra2\\shr\\maps\\Singleplayer",
+    "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault"
   ],
-  "SelectedNode": "\\extra1",
+  "SelectedNode": "\\extra1\\shr\\maps\\Singleplayer\\Castrum",
   "PreviewInSolutionExplorer": false
 }

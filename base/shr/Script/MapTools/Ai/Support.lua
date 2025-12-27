@@ -1001,77 +1001,125 @@ AddWood = function(_playerId,_amount)
 	end
 
 
-GetPoleArm = function(_strength)
+GetPoleArm = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderPoleArm1
 	if _strength <= 0 then
-		return Entities.PU_LeaderPoleArm1
+		unitType = Entities.PU_LeaderPoleArm1
 	elseif _strength <= 1 then
-		return Entities.PU_LeaderPoleArm2
-	elseif _strength <= 2 then
-		return Entities.PU_LeaderPoleArm3
-	else
-		return Entities.PU_LeaderPoleArm4
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderPoleArm2
+		else
+			unitType = Entities.PU_LeaderPoleArm2a
 		end
+	elseif _strength <= 2 then
+		unitType = Entities.PU_LeaderPoleArm3
+	else
+		unitType = Entities.PU_LeaderPoleArm4
 	end
+	return unitType
+end
 
-GetSword = function(_strength)
+GetSword = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderSword1
 	if _strength <= 0 then
-		return Entities.PU_LeaderSword1
+		unitType = Entities.PU_LeaderSword1
 	elseif _strength <= 1 then
-		return Entities.PU_LeaderSword2
-	elseif _strength <= 2 then
-		return Entities.PU_LeaderSword3
-	else
-		return Entities.PU_LeaderSword4
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderSword2
+		else
+			unitType = Entities.PU_LeaderSword2a
 		end
+	elseif _strength <= 2 then
+		unitType = Entities.PU_LeaderSword3
+	else
+		unitType = Entities.PU_LeaderSword4
 	end
+	return unitType
+end
 
-GetBow = function(_strength)
+GetBow = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderBow1
 	if _strength <= 0 then
-		return Entities.PU_LeaderBow1
+		unitType = Entities.PU_LeaderBow1
 	elseif _strength <= 1 then
-		return Entities.PU_LeaderBow2
-	elseif _strength <= 2 then
-		return Entities.PU_LeaderBow3
-	else
-		return Entities.PU_LeaderBow4
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderBow2
+		else
+			unitType = Entities.PU_LeaderBow2a
 		end
+	elseif _strength <= 2 then
+		unitType = Entities.PU_LeaderBow3
+	else
+		unitType = Entities.PU_LeaderBow4
 	end
+	return unitType
+end
 
-GetHeavyCavalry = function(_strength)
+GetHeavyCavalry = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderHeavyCavalry1
 	if _strength <= 0 then
-		return Entities.PU_LeaderHeavyCavalry1
-	elseif _strength <= 1 then
-		return Entities.PU_LeaderHeavyCavalry1
-	elseif _strength <= 2 then
-		return Entities.PU_LeaderHeavyCavalry2
-	else
-		return Entities.PU_LeaderHeavyCavalry2
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderHeavyCavalry1
+		else
+			unitType = Entities.PU_LeaderHeavyCavalry1a
 		end
+	elseif _strength <= 1 then
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderHeavyCavalry1
+		else
+			unitType = Entities.PU_LeaderHeavyCavalry1a
+		end
+	elseif _strength <= 2 then
+		unitType = Entities.PU_LeaderHeavyCavalry2
+	else
+		unitType = Entities.PU_LeaderHeavyCavalry2
 	end
+	return unitType
+end
 
-GetLightCavalry = function(_strength)
+GetLightCavalry = function(_strength, _variant)
+	local unitType = Entities.PU_LeaderCavalry1
 	if _strength <= 0 then
-		return Entities.PU_LeaderCavalry1
-	elseif _strength <= 1 then
-		return Entities.PU_LeaderCavalry1
-	elseif _strength <= 2 then
-		return Entities.PU_LeaderCavalry2
-	else
-		return Entities.PU_LeaderCavalry2
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderCavalry1
+		else
+			unitType = Entities.PU_LeaderCavalry1a
 		end
+	elseif _strength <= 1 then
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PU_LeaderCavalry1
+		else
+			unitType = Entities.PU_LeaderCavalry1a
+		end
+	elseif _strength <= 2 then
+		unitType = Entities.PU_LeaderCavalry2
+	else
+		unitType = Entities.PU_LeaderCavalry2
 	end
+	return unitType
+end
 
-GetCannon = function(_strength)
+GetCannon = function(_strength, _variant)
+	local unitType = Entities.PV_Cannon1
 	if _strength <= 0 then
-		return Entities.PV_Cannon1
+		unitType = Entities.PV_Cannon1
 	elseif _strength <= 1 then
-		return Entities.PV_Cannon2
+		unitType = Entities.PV_Cannon2
 	elseif _strength <= 2 then
-		return Entities.PV_Cannon3
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PV_Cannon3
+		else
+			unitType = Entities.PV_Cannon3a
+		end
 	else
-		return Entities.PV_Cannon4
+		if _variant == nil or _variant ~= true then
+			unitType = Entities.PV_Cannon4
+		else
+			unitType = Entities.PV_Cannon4a
 		end
 	end
+	return unitType
+end
 
 
 StartSpeech = function(_key)

@@ -35,7 +35,7 @@ Check3Archers = function()
 
 
                         local pos 		= GetPosition("SpawnThiefSouth")
-                        Archers3Attack	 	= Tools.CreateGroup(3, Entities.PU_LeaderPoleArm2, 4, pos.X, pos.Y, 180)
+                        Archers3Attack	 	= AI.Entity_CreateFormation(3,Entities.PU_LeaderPoleArm2a,0,8, pos.X, pos.Y,0,0,1,0)
                         SetEntityName(Archers3Attack, "Attack3OnArchers")
 
 			Attack("Attack3OnArchers","TargetBridge")

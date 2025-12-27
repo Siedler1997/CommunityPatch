@@ -10,15 +10,15 @@ createArmyBarbarianHorde = function()
 	ArmyBarbarianHordeA.spawnTypes 		= 	{	 {Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
-												{Entities.PU_LeaderBow2, 4}, 
+												{Entities.PU_LeaderBow2a, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
-												{Entities.PU_LeaderBow2, 4}, 
+												{Entities.PU_LeaderBow2a, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
 												{Entities.CU_Barbarian_LeaderClub2, 6}, 
-												{Entities.PU_LeaderBow2, 4}
+												{Entities.PU_LeaderBow2a, 6}
 												 }
     
 	ArmyBarbarianHordeA.spawnPos          =   GetPosition("BarbarianHordeSpawn")

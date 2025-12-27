@@ -380,7 +380,7 @@ function ControlMapEditor_Armies()
 									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].BackupTypes
 								end
 							else
-								--there might be cases where the AI have only stables
+								--there might be cases where the AI only has stables
 								if (barracks + archeries + foundries) > 0 then
 									MapEditor_Armies[player][army].AllowedTypes		=	MapEditor_Armies[player][army].PreferredTypes
 								else

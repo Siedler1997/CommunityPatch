@@ -721,7 +721,7 @@ function CreateArmyPL4Assault()
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.PU_LeaderPoleArm4,
+		leaderType 					= Entities.PU_LeaderBow2a,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 		= VERYHIGH_EXPERIENCE,
@@ -801,7 +801,7 @@ function CreateArmyPL4DefHQ()
 
 	local troopDescription_2 = {
 
-		leaderType 					= Entities.CU_BanditLeaderBow2,
+		leaderType 					= Entities.PU_LeaderBow2a,
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 		= MEDIUM_EXPERIENCE,
@@ -809,7 +809,7 @@ function CreateArmyPL4DefHQ()
 
 	local troopDescription_3 = {
 
-		leaderType 					= Entities.PV_Cannon3,
+		leaderType 					= Entities.PV_Cannon1,
 		maxNumberOfSoldiers	= 1,
 		minNumberOfSoldiers	= 0,
 		experiencePoints 		= HIGH_EXPERIENCE,

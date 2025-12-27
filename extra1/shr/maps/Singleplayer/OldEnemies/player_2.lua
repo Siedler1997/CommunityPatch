@@ -74,6 +74,9 @@ createPlayer2 = function()
 	
 	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, 2)
 	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, 2)
+	
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, 2)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, 2)
 
 	--[[
 	local position = GetPosition("village2")

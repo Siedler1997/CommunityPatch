@@ -147,12 +147,13 @@ function FirstMapAction()
   local aiID = 2;
   local strength = 3;
   local range = 10000000;
-  local techlevel = 3;
+  local techlevel = 2;
   local position = "P2_AI_HQ";
   local aggressiveness = 3;
   local peacetime = 800;
     local advancedSettings = {
-	    evilMod				=	true
+	    evilMod				=	true,
+	    armyGrouping		= ArmyGrouping_Grouped
     }
   MapEditor_SetupAI(aiID, strength, range, techlevel, position, aggressiveness, peacetime);
   SetupPlayerAi(aiID, description);
@@ -162,12 +163,13 @@ function FirstMapAction()
   local aiID = 3;
   local strength = 3;
   local range = 1000000;
-  local techlevel = 3;
+  local techlevel = 2;
   local position = "P3_AI_HQ";
   local aggressiveness = 3;
   local peacetime = 1600;
     local advancedSettings = {
 	    evilMod				=	true,
+	    armyGrouping		= ArmyGrouping_Grouped,
 	    otherUnitsToRecruit	= { UpgradeCategories.LeaderBarbarian }
     }
   MapEditor_SetupAI( aiID, strength, range, techlevel, position, aggressiveness, peacetime, advancedSettings);
@@ -178,12 +180,13 @@ function FirstMapAction()
   local aiID = 4;
   local strength = 3;
   local range = 100000;
-  local techlevel = 3;    
+  local techlevel = 2;    
   local position = "P4_AI_HQ";
   local aggressiveness = 3;   
   local peacetime = 2400;  
     local advancedSettings = {
 	    evilMod				=	true,
+	    armyGrouping		= ArmyGrouping_Grouped,
 	    otherUnitsToRecruit	= { UpgradeCategories.BlackKnightLeaderMace1 }
     }
   MapEditor_SetupAI(aiID, strength, range, techlevel, position, aggressiveness, peacetime, advancedSettings);
@@ -363,16 +366,106 @@ end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function PreludeBriefingFinished()
-  Explore.Hide("ShowKermit")
-  ResolveBriefing(PreludeBriefingShowKermit)
-  ResolveBriefing(BriefingMonkMarker)
-  ResolveBriefing(BriefingMonk1Marker)
-  ResolveBriefing(BriefingMonk2Marker)
-  ResolveBriefing(BriefingMonk4Marker)
-  ResolveBriefing(BriefingMonk5Marker)
+    Explore.Hide("ShowKermit")
+    ResolveBriefing(PreludeBriefingShowKermit)
+    ResolveBriefing(BriefingMonkMarker)
+    ResolveBriefing(BriefingMonk1Marker)
+    ResolveBriefing(BriefingMonk2Marker)
+    ResolveBriefing(BriefingMonk4Marker)
+    ResolveBriefing(BriefingMonk5Marker)
   
+    StartCountdown(30 * 60, UpgradeMary1, false)
+    StartCountdown(35 * 60, UpgradeKerberos1, false)
+    StartCountdown(40 * 60, UpgradeVarg1, false)
 end
 
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function UpgradeMary1()
+    IncreaseArmySize(2)
+	ResearchAllMilitaryTechsAddOn(2)
+    StartCountdown(30 * 60, UpgradeMary2, false)
+end
+function UpgradeMary2()
+    UpgradeUnits(2)
+end
+
+function UpgradeKerberos1()
+    IncreaseArmySize(4)
+	ResearchAllMilitaryTechsAddOn(4)
+    StartCountdown(30 * 60, UpgradeKerberos2, false)
+end
+function UpgradeKerberos2()
+    UpgradeUnits(4)
+end
+
+function UpgradeVarg1()
+    IncreaseArmySize(3)
+	ResearchAllMilitaryTechsAddOn(3)
+    StartCountdown(30 * 60, UpgradeVarg2, false)
+end
+function UpgradeVarg2()
+    UpgradeUnits(3)
+end
+
+function IncreaseArmySize(_pId)
+	for army=1,6 do
+		if MapEditor_Armies[_pId] ~= nil then
+			if MapEditor_Armies[_pId][army] ~= nil then
+                MapEditor_Armies[_pId][army].strength = 8
+            end
+        end
+    end
+end
+
+function UpgradeUnits(_pId)
+	ResearchTechnology(Technologies.T_UpgradeSword3, _pId);
+	ResearchTechnology(Technologies.T_UpgradeSpear3, _pId);
+	ResearchTechnology(Technologies.T_UpgradeBow3, _pId);
+	
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBarbarian, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightLeaderMace1, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderRifle, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBarbarian, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.BlackKnightSoldierMace1, _pId)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierRifle, _pId)
+    
+    --Replace weak cannon with stronger one as it cant be upgraded like other units
+	for army=1,6 do
+		if MapEditor_Armies[_pId] ~= nil then
+			if MapEditor_Armies[_pId][army] ~= nil then
+				--Update army allowed types depending on buildings to avoid "dead" armies
+				if MapEditor_Armies[_pId][army].ArmyGrouping ~= ArmyGrouping_Mixed then
+					--every 3rd army is cavalry-only
+					if math.mod(army, 3) == 0 then
+                        local useBackup = false
+                        if MapEditor_Armies[_pId][army].AllowedTypes == MapEditor_Armies[_pId][army].BackupTypes then
+                            useBackup = true
+                        end
+                        table.remove(MapEditor_Armies[_pId][army].BackupTypes, Entities.PV_Cannon2)
+                        table.insert(MapEditor_Armies[_pId][army].BackupTypes, Entities.PV_Cannon4a)
+						if useBackup == true then
+                            MapEditor_Armies[_pId][army].AllowedTypes = MapEditor_Armies[_pId][army].BackupTypes
+                        end
+					else
+                        local usePreferred = false
+                        if MapEditor_Armies[_pId][army].AllowedTypes == MapEditor_Armies[_pId][army].PreferredTypes then
+                            usePreferred = true
+                        end
+                        table.remove(MapEditor_Armies[_pId][army].PreferredTypes, Entities.PV_Cannon2)
+                        table.insert(MapEditor_Armies[_pId][army].PreferredTypes, Entities.PV_Cannon4a)
+						if usePreferred == true then
+                            MapEditor_Armies[_pId][army].AllowedTypes = MapEditor_Armies[_pId][army].PreferredTypes
+                        end
+					end
+				end
+			end
+		end
+	end
+end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function CreateEffect( _player, _type, _position )
 
@@ -515,9 +608,6 @@ function Help()
     Message("@color:255,255,0 etwas br\195\188chig geworden ");
     Message("@color:255,255,0 vielleicht k\195\182nnen wir sie nun zerst\195\182ren");
     
-		ResearchAllMilitaryTechs(2)
-		ResearchAllMilitaryTechs(3)
-		ResearchAllMilitaryTechs(4)
     return true
   end
   

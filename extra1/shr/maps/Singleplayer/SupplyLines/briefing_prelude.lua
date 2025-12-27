@@ -3,6 +3,8 @@ createBriefingPrelude = function()
 
 	briefingPrelude = 	{}	
 
+	briefingPrelude.finished = BriefingPreludeFinished
+
 	local page = 0
 
 	--	page - briefieng 1
@@ -81,7 +83,23 @@ createBriefingPrelude = function()
 		StartBriefing(briefingPrelude)
 	
 	end
+	
 
+BriefingPreludeFinished = function()
+
+	-- create messenger
+
+	local x, y 		= Tools.GetPosition("MessengerSpawn")
+	local LeaderID  	= Logic.CreateEntity(Entities.PU_Serf, x, y, 250, 8)
+	Logic.SetEntityName(LeaderID, "TendrelSerf")
+
+	EnableNpcMarker("TendrelSerf")
+
+	Move("TendrelSerf", "Dario")
+
+	StartSimpleJob("CoinacMoveToDario")
+
+end
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------

@@ -82,7 +82,7 @@ createArmySpawn = function()
 
 	troops6 = { 		Entities.PU_LeaderBow2,
 				Entities.PU_LeaderBow2,
-				Entities.PU_LeaderBow3,
+				Entities.PU_LeaderBow2a,
 				Entities.PU_LeaderPoleArm2,
 				}
 	troops7	= { 		Entities.PU_LeaderHeavyCavalry1,
@@ -90,7 +90,7 @@ createArmySpawn = function()
 				}
 
 	troops8	= { 		--Entities.PU_LeaderBow2,
-				Entities.PU_LeaderBow3,
+				Entities.PU_LeaderBow2a,
 				}
 	troops9	= { 		
 				Entities.PU_LeaderRifle2,

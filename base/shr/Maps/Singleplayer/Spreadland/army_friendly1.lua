@@ -4,7 +4,7 @@ createArmyFriendly1 = function()
 
 	armyFriendly1.player 					= 3
 	armyFriendly1.id						= armyPlayer3Count
-	armyFriendly1.strength					= 7
+	armyFriendly1.strength					= 8
 	armyFriendly1.position					= GetPosition("friendlyArmy1")
 	armyFriendly1.rodeLength				= 1000
 	
@@ -17,8 +17,9 @@ createArmyFriendly1 = function()
 	armyFriendly1.control.defendPosition	= GetPosition("friendlyArmy1")
 	armyFriendly1.control.delay				= 20
 	armyFriendly1.control.spawnPosition		= GetPosition("friendlySupport")
-	armyFriendly1.control.troops			= { Entities.PU_LeaderSword3,Entities.PU_LeaderPoleArm3,Entities.PU_LeaderBow3 }
+	armyFriendly1.control.troops			= { Entities.PU_LeaderSword2,Entities.PU_LeaderPoleArm2,Entities.PU_LeaderBow2 }
 	armyFriendly1.control.isDead			= false
+	armyFriendly1.control.experience		= HIGH_EXPERIENCE
 	
 	SetupArmy(armyFriendly1)
 
@@ -26,20 +27,21 @@ createArmyFriendly1 = function()
 	
 		maxNumberOfSoldiers	= 8,
 		minNumberOfSoldiers	= 0,
-		experiencePoints 	= LOW_EXPERIENCE,
+		experiencePoints 	= HIGH_EXPERIENCE,
 	}			
 
-	troopDescription.leaderType = Entities.PU_LeaderPoleArm3
+	troopDescription.leaderType = Entities.PU_LeaderPoleArm2
 		
 	EnlargeArmy(armyFriendly1,troopDescription)
 	EnlargeArmy(armyFriendly1,troopDescription)
+	EnlargeArmy(armyFriendly1,troopDescription)
 
-	troopDescription.leaderType = Entities.PU_LeaderBow3
+	troopDescription.leaderType = Entities.PU_LeaderBow2
 	
 	EnlargeArmy(armyFriendly1,troopDescription)
 	EnlargeArmy(armyFriendly1,troopDescription)
 
-	troopDescription.leaderType = Entities.PU_LeaderSword3
+	troopDescription.leaderType = Entities.PU_LeaderSword2
 
 	EnlargeArmy(armyFriendly1,troopDescription)
 	EnlargeArmy(armyFriendly1,troopDescription)

@@ -129982,14 +129982,14 @@
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_ScriptEntity</Type>
    <Position>
-    <X>1.647777e+004</X>
-    <Y>3.195038e+004</Y>
+    <X>1.036600e+004</X>
+    <Y>3.261930e+004</Y>
    </Position>
    <Orientation>2.473000e+002</Orientation>
    <Flags>0</Flags>
    <PlayerID>8</PlayerID>
    <Health>-1</Health>
-   <Name>MessengerSpawn</Name>
+   <Name>MessengerSpawn</Name> 
    <ScriptCommandLine></ScriptCommandLine>
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.047200e+000</Scale>
@@ -130252,8 +130252,8 @@
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_ScriptEntity</Type>
    <Position>
-    <X>9.366000e+003</X>
-    <Y>3.261930e+004</Y>
+    <X>1.890000e+004</X>
+    <Y>3.350000e+004</Y>
    </Position>
    <Orientation>2.473000e+002</Orientation>
    <Flags>0</Flags>

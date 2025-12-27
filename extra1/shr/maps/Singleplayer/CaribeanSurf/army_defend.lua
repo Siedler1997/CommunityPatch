@@ -39,7 +39,7 @@ createArmyDefend = function()
 	armySpawn2.AllowedTypes 			= { --UpgradeCategories.LeaderPoleArm, 
 									--	UpgradeCategories.LeaderSword,
 									--	UpgradeCategories.LeaderBow,
-										Entities.PV_Cannon2
+										Entities.PV_Cannon1
 												
 										}
 

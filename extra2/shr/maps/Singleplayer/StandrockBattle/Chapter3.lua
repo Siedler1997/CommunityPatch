@@ -22,85 +22,85 @@ end
 function FirstWave()
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike1, "Pike1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike2, "Pike2")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike3, "Pike3")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike4, "Pike4")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike5, "Pike5")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike6, "Pike6")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike7, "Pike7")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike8, "Pike8")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike9, "Pike9")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike10, "Pike10")
 
 
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers1, "Archers1")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers2, "Archers2")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers3, "Archers3")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers4, "Archers4")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers5, "Archers5")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers6, "Archers6")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers7, "Archers7")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers8, "Archers8")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers9, "Archers9")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers10, "Archers10")
 
 	CreateEntity(7,Entities.PV_Cannon2,GetPosition("EnemySpawn3"),"Cannon1")
@@ -111,71 +111,71 @@ function FirstWave()
 	CreateEntity(7,Entities.PV_Cannon4,GetPosition("EnemySpawn3"),"Cannon6")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry1, "Cavalry1")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry2, "Cavalry2")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry3, "Cavalry3")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry4, "Cavalry4")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry5, "Cavalry5")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry6, "Cavalry6")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry7 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry7, "Cavalry7")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry8 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry8, "Cavalry8")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry9 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry9, "Cavalry9")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry10 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry10, "Cavalry10")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry11 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry11 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry11, "Cavalry11")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry12 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry12 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry12, "Cavalry12")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords1, "Swords1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords2, "Swords2")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords3, "Swords3")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords4, "Swords4")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords5, "Swords5")
 
 
@@ -383,88 +383,88 @@ CampArmy_COUNTER 	        =	CampArmy_DELAY
 function SecondWave()
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike1, "Pike1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike2, "Pike2")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike3, "Pike3")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike4, "Pike4")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike5, "Pike5")
 
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers1, "Archers1")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers2, "Archers2")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers3, "Archers3")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1a,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers4, "Archers4")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderRifle1a,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers5, "Archers5")
 
 
-	CreateEntity(7,Entities.PV_Cannon2,GetPosition("EnemySpawn3"),"Cannon1")
+	CreateEntity(7,Entities.PV_Cannon3,GetPosition("EnemySpawn3"),"Cannon1")
 	CreateEntity(7,Entities.PV_Cannon3,GetPosition("EnemySpawn3"),"Cannon2")
 	CreateEntity(7,Entities.PV_Cannon4,GetPosition("EnemySpawn3"),"Cannon3")
 
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry1, "Cavalry1")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry2, "Cavalry2")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry3, "Cavalry3")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry4 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry4, "Cavalry4")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry5 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry5, "Cavalry5")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry6 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry6, "Cavalry6")
 
 
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords1, "Swords1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords2, "Swords2")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords3, "Swords3")
 
 	StartJob("TimerAttack")
@@ -504,29 +504,29 @@ function ThirdWave()
 	NowYouCanWin = 1
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike1, "Pike1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike2, "Pike2")
 
 	local pos = GetPosition("EnemySpawn1")
-	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm3,0,8,pos.X,pos.Y,0,0,2,0)
+	Pike3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderPoleArm4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Pike3, "Pike3")
 
 
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers1, "Archers1")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers2, "Archers2")
 
 	local pos = GetPosition("EnemySpawn2")
-	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow3,0,8,pos.X,pos.Y,0,0,2,0)
+	Archers3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderBow4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Archers3, "Archers3")
 
 
@@ -538,15 +538,15 @@ function ThirdWave()
 
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry1, "Cavalry1")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry2, "Cavalry2")
 
 	local pos = GetPosition("EnemySpawn3")
-	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,2,0)
+	Cavalry3 = AI.Entity_CreateFormation(7, Entities.PU_LeaderCavalry2,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Cavalry3, "Cavalry3")
 
 
@@ -554,11 +554,11 @@ function ThirdWave()
 
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords1 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords1, "Swords1")
 
 	local pos = GetPosition("EnemySpawn1")
-	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword3,0,8,pos.X,pos.Y,0,0,2,0)
+	Swords2 = AI.Entity_CreateFormation(7, Entities.PU_LeaderSword4,0,8,pos.X,pos.Y,0,0,3,0)
 	SetEntityName(Swords2, "Swords2")
 
 
@@ -686,7 +686,7 @@ GenerateArmy3 = function()
 
 
 		local pos = GetPosition("CampSpawn3")
-		RaidAttack4 = AI.Entity_CreateFormation(7, RandomUnit,0,8,pos.X,pos.Y,0,0,2,0)
+		RaidAttack4 = AI.Entity_CreateFormation(7, RandomUnit,0,8,pos.X,pos.Y,0,0,3,0)
 		SetEntityName(RaidAttack4, "RandAttack4")
 
 
@@ -750,7 +750,7 @@ GenerateArmy2 = function()
 				Entities.PU_LeaderPoleArm3,
 				Entities.PU_LeaderSword3,
 				Entities.PU_LeaderCavalry3,
-				Entities.PU_LeaderRifle1
+				Entities.PU_LeaderRifle1a
 				}
 
 
@@ -768,15 +768,15 @@ GenerateArmy2 = function()
 
 
 		local pos = GetPosition("EnemySpawn1")
-		RaidAttack1 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,2,0)
+		RaidAttack1 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,3,0)
 		SetEntityName(RaidAttack1, "RandAttack1")
 
 		local pos = GetPosition("EnemySpawn2")
-		RaidAttack2 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,2,0)
+		RaidAttack2 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,3,0)
 		SetEntityName(RaidAttack2, "RandAttack2")
 
 		local pos = GetPosition("EnemySpawn3")
-		RaidAttack3 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,2,0)
+		RaidAttack3 = AI.Entity_CreateFormation(7, RandomUnit1,0,8,pos.X,pos.Y,0,0,3,0)
 		SetEntityName(RaidAttack3, "RandAttack3")
 
 

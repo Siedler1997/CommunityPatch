@@ -9,9 +9,9 @@ setuppl6army = function()
 	pl6army.rodeLength		        = 500
 	
 	-- Spawn parameter
-	pl6army.spawnTypes 			= { { Entities.PU_LeaderPoleArm1, 4},
-						    { Entities.PU_LeaderSword1, 4},
-						    { Entities.PU_LeaderBow1, 4} }
+	pl6army.spawnTypes 			= { { Entities.PU_LeaderPoleArm2, 4},
+						    { Entities.PU_LeaderSword2, 4},
+						    { Entities.PU_LeaderBow2, 4} }
 	pl6army.spawnPos			= GetPosition("pl6army")
 	pl6army.spawnGenerator		        = "Hqpl6"
 	pl6army.respawnTime			= 60*4

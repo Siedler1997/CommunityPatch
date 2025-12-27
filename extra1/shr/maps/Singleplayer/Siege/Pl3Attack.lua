@@ -149,7 +149,7 @@ createarmyAttack8 = function()
 	armyAttack8.retreatStrength			= 1
 	armyAttack8.position				= GetPosition("Pl3Attack4")
 	armyAttack8.rodeLength				= 500
-	armyAttack8.AllowedTypes 			= { Entities.PV_Cannon4 }
+	armyAttack8.AllowedTypes 			= { Entities.PV_Cannon3 }
 
 	armyAttack8.baseDefenseRange			= 2000
 	armyAttack8.outerDefenseRange		        = 3000

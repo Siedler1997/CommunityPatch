@@ -9,27 +9,27 @@ Arrival = function()
 	  caravanErec   = CreateEntity(1,Entities.PU_Hero4,GetPosition("SpawnArrival13"),"Erec")
 
  	  local pos = GetPosition("SpawnArrival7")
- 	  ArchersGroup1 = Tools.CreateGroup(1, Entities.PU_LeaderBow4, 8, pos.X, pos.Y, 0)
+ 	  ArchersGroup1 = AI.Entity_CreateFormation(1,Entities.PU_LeaderBow4,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(ArchersGroup1,"Archers1")
 
  	  local pos = GetPosition("SpawnArrival8")
- 	  ArchersGroup2 = Tools.CreateGroup(1, Entities.PU_LeaderBow4, 8, pos.X, pos.Y, 0)
+ 	  ArchersGroup2 = AI.Entity_CreateFormation(1,Entities.PU_LeaderBow4,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(ArchersGroup2,"Archers2")
 
  	  local pos = GetPosition("SpawnArrival11")
- 	  SwordsGroup1 = Tools.CreateGroup(1, Entities.PU_LeaderSword4, 8, pos.X, pos.Y, 0)
+ 	  SwordsGroup1 = AI.Entity_CreateFormation(1,Entities.PU_LeaderSword4,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(SwordsGroup1,"Swords1")
 
  	  local pos = GetPosition("SpawnArrival12")
- 	  SwordsGroup2 = Tools.CreateGroup(1, Entities.PU_LeaderSword4, 8, pos.X, pos.Y, 0)
+ 	  SwordsGroup2 = AI.Entity_CreateFormation(1,Entities.PU_LeaderSword4,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(SwordsGroup2,"Swords2")
 
  	  local pos = GetPosition("SpawnArrival9")
- 	  CavalryGroup1 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 0)
+ 	  CavalryGroup1 = AI.Entity_CreateFormation(1,Entities.PU_LeaderHeavyCavalry2,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(CavalryGroup1,"Cavalry1")
 
  	  local pos = GetPosition("SpawnArrival10")
- 	  CavalryGroup2 = Tools.CreateGroup(1, Entities.PU_LeaderHeavyCavalry2, 3, pos.X, pos.Y, 0)
+ 	  CavalryGroup2 = AI.Entity_CreateFormation(1,Entities.PU_LeaderHeavyCavalry2,0,8, pos.X, pos.Y,0,0,2,0)
 	  SetEntityName(CavalryGroup2,"Cavalry2")
 
 

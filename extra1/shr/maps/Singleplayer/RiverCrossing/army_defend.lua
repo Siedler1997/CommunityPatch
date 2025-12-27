@@ -119,7 +119,7 @@ createArmyDefend = function()
 											UpgradeCategories.LeaderSword,
 											UpgradeCategories.LeaderBow,
 											UpgradeCategories.LeaderRifle,
-											Entities.PV_Cannon4
+											Entities.PV_Cannon3
 										}
 
 	armySpawn5.baseDefenseRange			= 3000
@@ -146,7 +146,7 @@ createArmyDefend = function()
 	armySpawn6.AllowedTypes 			= { --UpgradeCategories.LeaderPoleArm, 
 										--	UpgradeCategories.LeaderSword,
 										--	UpgradeCategories.LeaderBow,
-											Entities.PV_Cannon4,
+											Entities.PV_Cannon3,
 											LeaderHeavyCavalry
 										}
 

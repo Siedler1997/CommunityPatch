@@ -7,22 +7,14 @@ function start1stChapter()
 	startQuestVictory()
 	CreatePl1Defenders()
 
-	troops	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit 		= 	troops[Logic.GetRandom(table.getn(troops))+1]
+	RandomUnit 		= 	troops1[GetRandom(table.getn(troops1))]
 
 	local pos = GetPosition("B9Target1")
-	B9Group1 = Tools.CreateGroup(2, RandomUnit, 6, pos.X, pos.Y, 180)
+	B9Group1 = Tools.CreateGroup(2, RandomUnit, soldiers, pos.X, pos.Y, 180)
 	SetEntityName(B9Group1, "B9Group1")
 
 	local pos = GetPosition("B9Target2")
-	B9Group2 = Tools.CreateGroup(2, RandomUnit, 6, pos.X, pos.Y, 180)
+	B9Group2 = Tools.CreateGroup(2, RandomUnit, soldiers, pos.X, pos.Y, 180)
 	SetEntityName(B9Group2, "B9Group2")
 
 	StartJob("CheckB9Group1")
@@ -32,6 +24,35 @@ function start1stChapter()
 	StartJob("BriefStopped")
 	StartJob("GenerateCaravans")
 	StartJob("StartReinforce")
+
+    StartCountdown(15 * 60, UpgradeEnemie1, false)
+end
+
+------------------------------------------------------------------------------------------------
+
+function UpgradeEnemie1()
+
+	troopExperience = 1
+	soldiers = 8
+	table.insert(troops1, Entities.PV_Cannon2)
+	
+    StartCountdown(15 * 60, UpgradeEnemie2, false)
+
+end
+
+function UpgradeEnemie2()
+	
+	troopExperience = 2
+	table.remove(troops1, Entities.PV_Cannon2)
+	table.insert(troops1, Entities.PV_Cannon4a)
+	ResearchAllMilitaryTechsAddOn(2)
+
+    StartCountdown(15 * 60, UpgradeEnemie3, false)
+end
+
+function UpgradeEnemie3()
+	
+	ResearchTechnology(Technologies.T_SuperTechnology, 2);
 
 end
 
@@ -371,20 +392,7 @@ MAX = 0
 ---------------------------------------------------------------------------------------------------------------------------
 
 GenerateArmy = function()
-
-	troops	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit 		= 	troops[Logic.GetRandom(table.getn(troops))+1]
-
-
-
-
+	RandomUnit 		= 	troops1[GetRandom(table.getn(troops1))]
 end
 
 -----------------------------------------------------------------------------------------------------------------------	
@@ -404,18 +412,10 @@ end
 	Action_CheckB9Group1 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B9Spawn1")
-		B9Group1 = Tools.CreateGroup(2, RandomUnit1, 6, pos.X, pos.Y, 180)
+        B9Group1 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B9Group1, "B9Group1")
 
 		Attack("B9Group1","B9Target1")
@@ -443,18 +443,10 @@ end
 	Action_CheckB9Group2 = function()
 	-------------------------------------------------------------------------------------------------------------------
 
-	troops1	= 	{	Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_Barbarian_LeaderClub2,
-				Entities.CU_BlackKnight_LeaderMace2,
-				Entities.CU_BanditLeaderBow2,
-				Entities.CU_BanditLeaderSword2
-				}
-
-	RandomUnit1 		= 	troops1[Logic.GetRandom(table.getn(troops1))+1]
+		RandomUnit1 		= 	troops1[GetRandom(table.getn(troops1))]
 
 		local pos = GetPosition("B9Spawn2")
-		B9Group2 = Tools.CreateGroup(2, RandomUnit1, 6, pos.X, pos.Y, 180)
+        B9Group2 = AI.Entity_CreateFormation(2, RandomUnit1, 0, soldiers, pos.X, pos.Y, 0, 0, troopExperience, 0)
 		SetEntityName(B9Group2, "B9Group2")
 
 		Attack("B9Group2","B9Target2")
