@@ -23,7 +23,7 @@
 		  <NeedsPlayer>true</NeedsPlayer>
 		  <ForceNoPlayer>false</ForceNoPlayer>
 		  <Fearless>true</Fearless>
-			<!--<Convertible>false</Convertible>-->
+		  <Convertible>false</Convertible>
         <Hat/>
         <Cost>
 			  <Gold>200</Gold>

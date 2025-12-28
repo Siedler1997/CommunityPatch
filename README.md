@@ -187,7 +187,17 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- sind resistenter gegen alle Schadensarten außer ihre eigene und Scharfschützen
 			- verursachen etwas weniger Schaden an schwerer Kavallerie
 			- Hauptmänner sind leicht umtexturiert
-			- sind von Helias konvertierbar (aber weiterhin furchtlos)
+		- Barbaren 
+			- haben einen Rüstungspunkt weniger (=1)
+			- haben zwei Schadenpunkte mehr (=14)
+			- nutzen die neue DC_Blunt
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
+		- Schwarze Ritter 
+			- haben die selben Stats wie Langschwertkämpfer
+				- Rüstungspunkt: 4
+				- Schadenpunkte: 16
+			- nutzen die neue DC_Blunt
+			- sind auch als Variante mit bis zu 8 Soldaten erhältlich
 		- 'Veteranen' 
 			- können keine Gefolgsleute mehr haben
 			- regenerieren ihre Lebenspunkte etwas schneller
@@ -416,9 +426,9 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 				- heilt Betroffene um 25% ihrer maximalen HP
 			- Helias Bekehrung
 				- Cooldown um 50% verlängert (1:00 Min. -> 1:30 Min)
+				- benötigt weniger Zeit
 				- kann auf etwas größerer Distanz gestartet werden
 				- kann über etwas größere Distanz gehalten werden
-				- wirkt jetzt auch auf das Nebelvolk
 		- Yukis 
 			- 'Feuerwerk der Furcht'
 				- Fluchtdistanz auf 20 SM gesenkt (vorher: 30 SM)

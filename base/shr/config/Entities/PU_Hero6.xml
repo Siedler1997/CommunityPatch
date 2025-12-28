@@ -153,7 +153,7 @@
 	        <ConversionStartRange>1600</ConversionStartRange>
 	        <ConversionMaxRange>3000</ConversionMaxRange>
 	        <ConversionTaskList>TL_CONVERT_SETTLERS</ConversionTaskList>
-	        <HPToMSFactor>50.0</HPToMSFactor>
+	        <HPToMSFactor>35.0</HPToMSFactor> <!--50.0-->
 	    </Logic>
 	</Behavior>
 	
