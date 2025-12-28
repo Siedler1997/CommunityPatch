@@ -17,9 +17,13 @@ function start1stChapter()
 	StartChestQuest()
 	
 	if CP_Difficulty < 2 then
-		CreateRandomGoldChests()	
+		local isDarkChest = false
+		if CP_Difficulty == 1 then
+			isDarkChest = true
+		end
+		CreateRandomGoldChests(isDarkChest)	
 	else
-		local keychest = Logic.CreateEntity(Entities.XD_ChestClose,40700,2600,45,0)
+		local keychest = Logic.CreateEntity(Entities.XD_DarkChestClose,40700,2600,45,0)
 		SetEntityName(keychest, "Gate_KeyChest")
 		StartSimpleJob("HeroNearP4TradeLord2Chest")
 	end
@@ -58,7 +62,7 @@ end
 function HeroNearP4TradeLord2Chest()
 	for i = 1, table.getn(chestOpener), 1 do
 		if IsNear(chestOpener[i], "Gate_KeyChest", 250) then
-			ReplaceEntity("Gate_KeyChest", Entities.XD_ChestOpen)
+			ReplaceEntity("Gate_KeyChest", Entities.XD_DarkChestOpen)
 			SpokenMessage("CM01_15_OldKingsCastle_Txt/Message_KeyFound")
 			StartSimpleJob("HeroNearP4TradeLord2Gate")
 			return true

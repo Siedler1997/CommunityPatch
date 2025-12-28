@@ -180,7 +180,7 @@ function Mission_FirstMapAction()
 	CreateChestOpener("Ari")
 	CreateChestOpener("Pilgrim")
 		
-	CreateRandomChests()
+	CreateRandomChests(true)
 		
 	StartChestQuest()
 			

@@ -30,11 +30,13 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone1 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty < 2 then
-			CreateGoldChest(stonePosition1)
-		else
-			CreateRandomGoldChest(stonePosition1)
+		local isDarkChest = false
+		local chestGoodAmmount = 2000-CP_Difficulty*500
+		if CP_Difficulty > 0 then
+			isDarkChest = true
 		end
+
+		CreateChest(stonePosition1, (function() chestGenericCallback(chestGoodAmmount, ResourceType.Gold) end), isDarkChest)
 		
 		return true
 		
@@ -56,11 +58,13 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone2 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty < 2 then
-			CreateGoldChest(stonePosition2)
-		else
-			CreateRandomGoldChest(stonePosition2)
+		local isDarkChest = false
+		local chestGoodAmmount = 2000-CP_Difficulty*500
+		if CP_Difficulty > 0 then
+			isDarkChest = true
 		end
+
+		CreateChest(stonePosition2, (function() chestGenericCallback(chestGoodAmmount, ResourceType.Gold) end), isDarkChest)
 		
 		return true
 		
@@ -82,9 +86,13 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_QuestStone3 = function()
 	-------------------------------------------------------------------------------------------------------------------
-		if CP_Difficulty < 2 then
-			CreateIronChest(stonePosition3)
+		local isDarkChest = false
+		local chestGoodAmmount = 2000-CP_Difficulty*500
+		if CP_Difficulty > 0 then
+			isDarkChest = true
 		end
+
+		CreateChest(stonePosition3, (function() chestGenericCallback(chestGoodAmmount, ResourceType.Iron) end), isDarkChest)
 		
 		return true
 		

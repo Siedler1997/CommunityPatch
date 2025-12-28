@@ -961,7 +961,7 @@ end
 
 -- Diese Funktion erzeugt eine Schatztruhe mit zufälligem Inhalt
 function createChest()
-	CreateRandomGoldChest(GetPosition("chest"))
+	CreateRandomGoldChest(GetPosition("chest"), true)
 	CreateChestOpener("dario")
 	CreateChestOpener("erec")
 	CreateChestOpener("pilgrim")

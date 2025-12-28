@@ -231,8 +231,11 @@ function Mission_FirstMapAction()
 			DestroyEntity("vc_empty3")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos3.X,vcpos3.Y,0,0)
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
+		end
+		for i=1,3 do
+			ReplaceEntity("chest"..i, Entities.XD_DarkChestClose)
 		end
 	end
 
@@ -242,5 +245,5 @@ function Mission_FirstMapAction()
 	RaidersCreate({player = 6, pos = "rudelpos2_wp1", revier = 1000, range = 4000, types = { Entities.CU_AggressiveBear }, samount = 1, ramount = 1, experience = CP_Difficulty+1})	
 	
 	--StartSimpleJob("GetMousePos")
-	--Tools.ExploreArea(-1, -1, 900)
+	Tools.ExploreArea(-1, -1, 900)
 end

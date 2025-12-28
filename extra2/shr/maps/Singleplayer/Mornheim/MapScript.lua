@@ -242,7 +242,7 @@ function Mission_FirstMapAction()
 	
 		--	create some random chests
 	
-			CreateRandomChests()
+			CreateRandomChests(true)
 
 		--	go!
 		

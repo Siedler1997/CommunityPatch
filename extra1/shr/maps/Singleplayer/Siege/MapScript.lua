@@ -160,7 +160,7 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Salim")
 	
 	--	CreateRandomGoldChests()
-		CreateRandomChests()
+		CreateRandomChests(true)
 		
 	--	StartChestQuest()
 	

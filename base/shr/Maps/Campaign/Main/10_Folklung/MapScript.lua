@@ -216,7 +216,7 @@ function Mission_FirstMapAction()
 	else
 		Logic.CreateEntity(Entities.PB_Tower3, 5200, 35700, 0, 5);
 		if CP_Difficulty == 1 then
-			CreateRandomChests()	
+			CreateRandomChests(true)	
 			Logic.CreateEntity(Entities.PB_Tower2, 11200, 23900, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 5700, 26300, 0, 5);
 			Logic.CreateEntity(Entities.PB_Tower2, 15900, 24500, 0, 5);

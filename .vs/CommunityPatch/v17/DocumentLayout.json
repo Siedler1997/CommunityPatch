@@ -3,48 +3,40 @@
   "WorkspaceRootPath": "D:\\Repositories\\CommunityPatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra1\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Ai\\Support.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Ai\\Support.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\Extra2Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra2\\shr\\script\\MapTools\\Extra2Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:base\\shr\\Script\\MapTools\\Comfort.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositories\\CommunityPatch\\extra1\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:extra1\\shr\\config\\Logic.xml||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua",
+              "RelativeDocumentMoniker": "extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua",
+              "RelativeToolTip": "extra1\\shr\\maps\\Campaign\\Extra1\\02_BigRiver\\MapScript.lua",
+              "ViewState": "AgIAAHYAAAAAAAAAAADgv7IAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-27T21:38:24.655Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -101,53 +106,18 @@
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "gameControl.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua",
-              "RelativeToolTip": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\gameControl.lua",
-              "ViewState": "AgIAAAIAAAAAAAAAAADwvzMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T21:55:34.462Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MapScript.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua",
-              "RelativeToolTip": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\MapScript.lua",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAKkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T21:37:34.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Comfort.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Comfort.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
-              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Comfort.lua",
-              "ViewState": "AgIAADsHAAAAAAAAAAAAAKYBAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-09-08T15:13:19.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "README.md",
               "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "D:\\Repositories\\CommunityPatch\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAACQDAAAAAAAAAAApwD8DAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAACcCAAAAAAAAAAAAADcCAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2023-09-24T14:38:22.087Z",
               "EditorCaption": ""
@@ -171,7 +141,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -181,7 +151,7 @@
               "RelativeDocumentMoniker": "extra1\\shr\\config\\Logic.xml",
               "ToolTip": "D:\\Repositories\\CommunityPatch\\extra1\\shr\\config\\Logic.xml",
               "RelativeToolTip": "extra1\\shr\\config\\Logic.xml",
-              "ViewState": "AgIAANkCAAAAAAAAAAAAAB8DAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAI4CAAAAAAAAAAAAAKYCAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2025-12-24T09:41:19.255Z",
               "EditorCaption": ""
@@ -189,77 +159,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "army_Fortress.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Singleplayer\\DemoMap\\army_Fortress.lua",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Title": "Comfort.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Comfort.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Comfort.lua",
+              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Comfort.lua",
+              "ViewState": "AgIAACkFAAAAAAAAAAAAACEHAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-25T19:19:00.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "army_PlayerBarbarian.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua",
-              "RelativeToolTip": "base\\shr\\Maps\\Singleplayer\\DemoMap\\army_PlayerBarbarian.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-25T19:19:29.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Support.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Ai\\Support.lua",
-              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Ai\\Support.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Ai\\Support.lua",
-              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Ai\\Support.lua",
-              "ViewState": "AgIAANQGAAAAAAAAAAApwP8GAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-25T19:45:36.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Extra2Comfort.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\Extra2Comfort.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\script\\MapTools\\Extra2Comfort.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\script\\MapTools\\Extra2Comfort.lua",
-              "RelativeToolTip": "extra2\\shr\\script\\MapTools\\Extra2Comfort.lua",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-25T20:34:17.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SpawnDefense.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua",
-              "RelativeToolTip": "extra2\\shr\\maps\\Singleplayer\\Lightridge\\SpawnDefense.lua",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAD8AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T14:31:28.252Z",
+              "WhenOpened": "2025-09-08T15:13:19.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SpawnGroups.lua",
-              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua",
-              "RelativeDocumentMoniker": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua",
-              "ToolTip": "D:\\Repositories\\CommunityPatch\\extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua",
-              "RelativeToolTip": "extra2\\shr\\maps\\Singleplayer\\WinterAssault\\SpawnGroups.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Title": "Support.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Ai\\Support.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Script\\MapTools\\Ai\\Support.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Script\\MapTools\\Ai\\Support.lua",
+              "RelativeToolTip": "base\\shr\\Script\\MapTools\\Ai\\Support.lua",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAgwIgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T21:39:36.934Z",
+              "WhenOpened": "2025-12-25T19:45:36.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\07_Flood\\MapScript.lua",
+              "ViewState": "AgIAALcAAAAAAAAAAAAawOwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-27T14:45:14.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "quest_key.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\07_Flood\\quest_key.lua",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAIgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-27T14:59:11.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MapScript.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\11_Norfolk\\MapScript.lua",
+              "ViewState": "AgIAALAAAAAAAAAAAAAiwMYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-27T15:02:02.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "quest_stoneRun.lua",
+              "DocumentMoniker": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua",
+              "RelativeDocumentMoniker": "base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua",
+              "ToolTip": "D:\\Repositories\\CommunityPatch\\base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua",
+              "RelativeToolTip": "base\\shr\\Maps\\Campaign\\Main\\13_Plague\\quest_stoneRun.lua",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-27T15:11:08.622Z",
               "EditorCaption": ""
             }
           ]

@@ -257,7 +257,7 @@ function Mission_FirstMapAction()
 				ReplaceEntity(towers1[i], Entities.CB_Evil_Tower2)
 			end
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 		end
 
 		local towers1 = { Logic.GetPlayerEntities(3, Entities.PB_Tower2, 48, 0) }

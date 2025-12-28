@@ -213,8 +213,8 @@ function Mission_FirstMapAction()
 				end
 			end
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 		end
 
 	end

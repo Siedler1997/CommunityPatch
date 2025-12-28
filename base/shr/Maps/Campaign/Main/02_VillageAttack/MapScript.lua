@@ -225,7 +225,7 @@ function Mission_FirstMapAction()
 				local bossID2 = AI.Entity_CreateFormation(2,Entities.CU_VeteranCaptain,0,0,(bosspos2.X + 1000),(bosspos2.Y + 600),0,0,3,0)
 				LookAt(bossID2, "defendRoute")
 			else
-				CreateRandomGoldChests()
+				CreateRandomGoldChests(true)
 			end
 		else
 			CreateRandomGoldChests()

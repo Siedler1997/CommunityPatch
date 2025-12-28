@@ -9,9 +9,15 @@ function beginChapterOne()
 	militiaVisited = 0
 
     -- Logic.SetPlayerPaysLeaderFlag(1,0)
-
-    CreateRandomGoldChests()
-    CreateRandomChests()
+	
+	local isDarkChest = false
+	if CP_Difficulty < 2 then
+		isDarkChest = true
+		if CP_Difficulty == 1 then
+			CreateRandomGoldChests()
+			CreateRandomChests()
+		end
+	end
     CreateChestOpener("Dario")
     CreateChestOpener("Drake")
     CreateChestOpener("Yuki")

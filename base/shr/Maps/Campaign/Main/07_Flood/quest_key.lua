@@ -135,9 +135,13 @@ destroyQuestSearchChest = function()
 		CreateEntity(0,Entities.XD_Sparkles,GetPosition("exit"),"cave")
 		
 		DestroyEntity("chest3")
-		CreateEntity(0,Entities.XD_ChestOpen,BackupPositionChest3,"chest3")
+		local openChestType = Entities.XD_ChestOpen
+		if CP_Difficulty > 0 then
+			openChestType = Entities.XD_DarkChestOpen
+		end
+		CreateEntity(0,openChestType,BackupPositionChest3,"chest3")
 
---		ReplaceEntity("chest3",Entities.XD_ChestOpen)
+--		ReplaceEntity("chest3",openChestType)
 		
 		StartJob("QuestExitCleycourt")	
 		
@@ -169,8 +173,12 @@ destroyQuestSearchChest = function()
 		end
 		
 		DestroyEntity("chest1")
-		CreateEntity(0,Entities.XD_ChestOpen,BackupPositionChest1,"chest1")
---		ReplaceEntity("chest1",Entities.XD_ChestOpen)
+		local openChestType = Entities.XD_ChestOpen
+		if CP_Difficulty > 0 then
+			openChestType = Entities.XD_DarkChestOpen
+		end
+		CreateEntity(0,openChestType,BackupPositionChest1,"chest1")
+--		ReplaceEntity("chest1",openChestType)
 		
 		return true
 		
@@ -200,8 +208,12 @@ destroyQuestSearchChest = function()
 		end
 
 		DestroyEntity("chest2")
-		CreateEntity(0,Entities.XD_ChestOpen,BackupPositionChest2,"chest2")
---		ReplaceEntity("chest2",Entities.XD_ChestOpen)
+		local openChestType = Entities.XD_ChestOpen
+		if CP_Difficulty > 0 then
+			openChestType = Entities.XD_DarkChestOpen
+		end
+		CreateEntity(0,openChestType,BackupPositionChest2,"chest2")
+--		ReplaceEntity("chest2",openChestType)
 		
 		return true
 		

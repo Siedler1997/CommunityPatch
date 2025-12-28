@@ -23,7 +23,11 @@ function beginChapterOne()
     createQuestPriest()
 
     if CP_Difficulty < 2 then
-        CreateRandomGoldChests()
+		local isDarkChest = false
+		if CP_Difficulty == 1 then
+			isDarkChest = true
+		end
+        CreateRandomGoldChests(isDarkChest)
     end
 end
 ------------------------------------------------------------------------------------------------------------------------------------

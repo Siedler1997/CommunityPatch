@@ -254,8 +254,8 @@ function Mission_FirstMapAction()
 
 				ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
 			else
-				CreateRandomGoldChests()
-				CreateRandomChests()
+				CreateRandomGoldChests(true)
+				CreateRandomChests(true)
 			end
 
 			--DestroyEntity("vc_empty")

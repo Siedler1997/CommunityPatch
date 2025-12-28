@@ -4,7 +4,11 @@
 function start1stChapter()
 
 	-- Chests
-	CreateRandomGoldChest(GetPosition("Chest"))
+	local isDarkChest = false
+	if CP_Difficulty > 0 then
+		isDarkChest = true
+	end
+	CreateRandomGoldChest(GetPosition("Chest"), isDarkChest)
 	CreateChestOpener("Ari")
 	CreateChestOpener("Mirai")
 	CreateChestOpener("Dario")

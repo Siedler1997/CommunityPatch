@@ -208,8 +208,8 @@ function Mission_FirstMapAction()
 			local bossID2 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,38400,14400,0,0,3,0)
 			LookAt(bossID2, "camp_fire1")
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 		end
 
 

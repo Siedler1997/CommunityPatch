@@ -174,7 +174,7 @@ function Mission_FirstMapAction()
 -------------------------overrides the CreateGoldChest function --------------
 	for i = 1,25,1 do
 		local pos = GetPosition("GoldChest"..i)
-		CreateChest(pos,chestCallbackG)
+		CreateChest(pos,chestCallbackG, true)
 	end
 	StartChestQuest()
 -----------------------------------------------------------------------------

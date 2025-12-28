@@ -96,8 +96,8 @@ function Mission_FirstMapAction()
   CreateChestOpener("Salim")
   CreateChestOpener("Drake")
 
-  CreateRandomGoldChests()
-  CreateRandomChests()
+  CreateRandomGoldChests(true)
+  CreateRandomChests(true)
   
   StartChestQuest()
 

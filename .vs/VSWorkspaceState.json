@@ -3,18 +3,14 @@
     "",
     "\\base",
     "\\base\\shr",
-    "\\base\\shr\\Script",
-    "\\base\\shr\\Script\\MapTools",
-    "\\extra1",
-    "\\extra1\\shr",
-    "\\extra1\\shr\\maps",
-    "\\extra1\\shr\\maps\\Singleplayer",
-    "\\extra2",
-    "\\extra2\\shr",
-    "\\extra2\\shr\\maps",
-    "\\extra2\\shr\\maps\\Singleplayer",
-    "\\extra2\\shr\\maps\\Singleplayer\\WinterAssault"
+    "\\base\\shr\\Maps",
+    "\\base\\shr\\Maps\\Campaign",
+    "\\base\\shr\\Maps\\Campaign\\Main",
+    "\\base\\shr\\text\\de",
+    "\\base\\shr\\text\\de\\InGame",
+    "\\base\\shr\\text\\en",
+    "\\base\\shr\\text\\en\\InGame"
   ],
-  "SelectedNode": "\\extra1\\shr\\maps\\Singleplayer\\Castrum",
+  "SelectedNode": "\\base\\shr\\Maps\\Campaign\\Main\\13_Plague",
   "PreviewInSolutionExplorer": false
 }

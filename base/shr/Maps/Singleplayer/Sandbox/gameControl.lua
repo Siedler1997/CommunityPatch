@@ -79,7 +79,7 @@ start2ndSubQuest = function()
 
 	Report("start 2nd sub quest")
 
-	CreateChest(GetPosition("ChestPos"), end2ndSubQuest)
+	CreateChest(GetPosition("ChestPos"), end2ndSubQuest, true)
 	
 end
 

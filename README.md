@@ -899,7 +899,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 - Kampagne nochmal überarbeiten
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
-	- Dunkle Schatztruhen auf schwer nutzen
 	- Scout bei Mapstart setzen
 	- KIs sollen bei Bedarf Alarm aktivieren
 	- Neue Techs

@@ -207,8 +207,8 @@ function Mission_FirstMapAction()
 
 			ReplaceEntity("start_1", Entities.PB_Headquarters1)
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 		end
 
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)

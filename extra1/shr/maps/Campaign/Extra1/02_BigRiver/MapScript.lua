@@ -172,7 +172,11 @@ function SpecialManualGoldChest()
 		local Position = {}
 		Position = GetPosition("SpecialManualGoldChest")	
 		Camera.ScrollGameTimeSynced	(Position.X, Position.Y)
-		CreateRandomGoldChest(Position)
+		local isDarkChest = false
+		if CP_Difficulty > 0 then
+			isDarkChest = true
+		end
+		CreateRandomGoldChest(Position, isDarkChest)
 		Logic.CreateEffect(GGL_Effects.FXYukiFireworksJoy, Position.X, Position.Y, 1)
 		Sound.PlayGUISound(Sounds.Military_SO_Fireworks)
 		Sound.PlayGUISound(Sounds.OnKlick_Select_mary_de_mortfichet)

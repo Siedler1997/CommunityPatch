@@ -358,7 +358,11 @@ end3rdSubQuest = function()
 
 	GotOnePotionPart()
 	
-	ReplaceEntity("Ingredient", Entities.XD_ChestOpen)
+	local openChestType = Entities.XD_ChestOpen
+	if CP_Difficulty > 0 then
+		openChestType = Entities.XD_DarkChestOpen
+	end
+	ReplaceEntity("Ingredient", openChestType)
 	
 	-- multiple ways...water or monk
 	createBriefingIngredients()

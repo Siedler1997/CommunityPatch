@@ -170,7 +170,7 @@ function FirstMapAction()
 		
 			ReplaceEntity("t21", Entities.PB_VillageCenter1)
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 		end
 	else
 		CreateRandomChests()

@@ -145,7 +145,7 @@ function Mission_FirstMapAction()
 		CreateChestOpener("Pilgrim")
 --		CreateChestOpener("Salim")
 	
-		CreateRandomChests()
+		CreateRandomChests(true)
 		
 		StartChestQuest()
 

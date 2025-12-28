@@ -310,7 +310,7 @@ function Mission_FirstMapAction()
 			local bossID3 = AI.Entity_CreateFormation(5,Entities.CU_VeteranCaptain,0,0,(bosspos3.X - 1000),(bosspos3.Y - 50),0,0,3,0)
 			LookAt(bossID3, "Helias")
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 		end
 		--[[
 		local vcpos1 = GetPosition("vc_empty")

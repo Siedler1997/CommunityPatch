@@ -214,10 +214,10 @@ function Mission_FirstMapAction()
 			local bossID2 = AI.Entity_CreateFormation(6,Entities.CU_Barbarian_Hero,0,0,(bosspos2.X + 300),(bosspos2.Y + 1700),0,0,0,0)
 			SetEntityName(bossID2, "P4_Boss")
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 		end
-
+		ReplaceEntity("Ingredient", Entities.XD_DarkChestClose)
 	end
 
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 4000, types = RaidersDefaultSets.Highland, samount = (2 + CP_Difficulty), ramount = (5 + CP_Difficulty * 2)})

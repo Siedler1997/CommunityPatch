@@ -360,7 +360,11 @@ end4thSubQuest = function()
 
 	SpokenMessage(String.MainKey.."Message_KeyFound")
 	
-	ReplaceEntity("GateKey1", Entities.XD_ChestOpen)
+	local openChestType = Entities.XD_ChestOpen
+	if CP_Difficulty > 0 then
+		openChestType = Entities.XD_DarkChestOpen
+	end
+	ReplaceEntity("GateKey1", openChestType)
 	
 	haveGate1Key = true
 

@@ -511,7 +511,7 @@ end
 -- Schatztruhen
 -- Schatztruhe 1
 function CreateChest1()
-	CreateRandomGoldChest(GetPosition("Chest1"))
+	CreateRandomGoldChest(GetPosition("Chest1"), true)
 	CreateChestOpener("Helias")
 	CreateChestOpener("Erec")
 	CreateChestOpener("Drake")
@@ -523,7 +523,7 @@ end
 
 -- Schatztruhe 2
 function CreateChest2()
-	CreateRandomGoldChest(GetPosition("Chest2"))
+	CreateRandomGoldChest(GetPosition("Chest2"), true)
 	CreateChestOpener("Helias")
 	CreateChestOpener("Erec")
 	CreateChestOpener("Drake")
@@ -535,7 +535,7 @@ end
 
 -- Schatztruhe 3
 function CreateChest3()
-	CreateRandomGoldChest(GetPosition("Chest3"))
+	CreateRandomGoldChest(GetPosition("Chest3"), true)
 	CreateChestOpener("Helias")
 	CreateChestOpener("Erec")
 	CreateChestOpener("Drake")
@@ -547,7 +547,7 @@ end
 
 -- Schatztruhe 4
 function CreateChest4()
-	CreateRandomGoldChest(GetPosition("Chest4"))
+	CreateRandomGoldChest(GetPosition("Chest4"), true)
 	CreateChestOpener("Helias")
 	CreateChestOpener("Erec")
 	CreateChestOpener("Drake")

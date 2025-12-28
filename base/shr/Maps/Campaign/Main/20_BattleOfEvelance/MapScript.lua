@@ -228,8 +228,8 @@ function Mission_FirstMapAction()
 			Move(southernSpear2, "southernSpearPos2")
 		else
 			if CP_Difficulty == 1 then
-				CreateRandomGoldChests()	
-				CreateRandomChests()
+				CreateRandomGoldChests(true)	
+				CreateRandomChests(true)
 				
 				--Remove new rocks so that AI uses vanilla route
 				DestroyEntity("hard_rock1")

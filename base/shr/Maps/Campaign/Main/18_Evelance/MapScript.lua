@@ -220,8 +220,8 @@ function Mission_FirstMapAction()
 			CP_HardTaxes = true
 			GUI.SetTaxLevel(5)
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 
 			--[[
 			local vcpos = GetPosition("vc_empty")

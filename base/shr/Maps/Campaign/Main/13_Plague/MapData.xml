@@ -1685,7 +1685,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon2</Type>
+   <Type>PV_Cannon3</Type>
    <Position>
     <X>1.112804e+004</X>
     <Y>8.404890e+003</Y>
@@ -2059,21 +2059,21 @@
    <AmbientSoundType></AmbientSoundType>
    <Scale>1.000000e+000</Scale>
   </Entity>
-  <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>CU_LeaderOutlaw1</Type>
-   <Position>
-    <X>9.983031e+003</X>
-    <Y>9.699189e+003</Y>
-   </Position>
-   <Orientation>8.499995e+001</Orientation>
-   <Flags>0</Flags>
-   <PlayerID>6</PlayerID>
-   <Health>-1</Health>
-   <Name>banditLeader</Name>
-   <ScriptCommandLine></ScriptCommandLine>
-   <AmbientSoundType></AmbientSoundType>
-   <Scale>1.000000e+000</Scale>
-  </Entity>
+	 <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
+		 <Type>XD_ScriptEntity</Type>
+		 <Position>
+            <X>9.983031e+003</X>
+            <Y>9.699189e+003</Y>
+		 </Position>
+		 <Orientation>8.499995e+001</Orientation>
+		 <Flags>0</Flags>
+		 <PlayerID>6</PlayerID>
+		 <Health>-1</Health>
+		 <Name>pos_banditLeader</Name>
+		 <ScriptCommandLine></ScriptCommandLine>
+		 <AmbientSoundType></AmbientSoundType>
+         <Scale>1.000000e+000</Scale>
+	 </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
    <Type>XD_WallStraight</Type>
    <Position>
@@ -2465,7 +2465,7 @@
    <Scale>1.000000e+000</Scale>
   </Entity>
   <Entity classname="EGL::CGLEEntityCreator" classid="0x0753286d">
-   <Type>PV_Cannon2</Type>
+   <Type>PV_Cannon3</Type>
    <Position>
     <X>1.041577e+004</X>
     <Y>8.379478e+003</Y>

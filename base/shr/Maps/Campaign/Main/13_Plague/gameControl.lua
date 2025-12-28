@@ -39,12 +39,16 @@ start1stQuest = function()
 
 		Move("npcPilgrim","PlayerPosition")
 
+		local banditpos = GetPosition("pos_banditLeader")
+		local banditLeader = AI.Entity_CreateFormation(6,Entities.CU_LeaderOutlaw1,0,0,banditpos.X,banditpos.Y,0,0,3,0)
+		SetEntityName(banditLeader, "banditLeader")
+		LookAt("banditLeader", "Dario")
+
 	--	briefing
 
 		createBriefingPrelude()
 		
 	--	quest
-
 		startQuestBandits()
 	
 		startQuestDefeat()

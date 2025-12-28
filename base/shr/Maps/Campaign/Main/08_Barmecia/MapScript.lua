@@ -204,7 +204,7 @@ function Mission_FirstMapAction()
 			DestroyEntity("vc_empty1")
 			Logic.CreateEntity(Entities.XD_RuinMonastery2,vcpos.X,vcpos.Y,90,0)
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 		end
 	else
 		CreateRandomChests()

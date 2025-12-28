@@ -233,17 +233,21 @@ function Mission_FirstMapAction()
 
 	
 	if CP_Difficulty < 2 then
+		local isDarkChest = false
+		if CP_Difficulty == 1 then
+			isDarkChest = true
+		end
 		for i = 1,5,1 do
 			local pos = GetPosition("RandomChest"..i)
-			CreateChest(pos,chestCallbackG)
+			CreateChest(pos,chestCallbackG,isDarkChest)
 		end
 		for i = 6,8,1 do
 			local pos = GetPosition("RandomChest"..i)
-			CreateChest(pos,chestCallbackI)
+			CreateChest(pos,chestCallbackI,isDarkChest)
 		end
 		for i = 9,11,1 do
 			local pos = GetPosition("RandomChest"..i)
-			CreateChest(pos,chestCallbackG)
+			CreateChest(pos,chestCallbackG,isDarkChest)
 		end
 	end
 

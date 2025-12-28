@@ -4,8 +4,12 @@ function beginChapterOne()
     Report("begin chapter one")
 
     Logic.SetPlayerPaysLeaderFlag(1,0)
-
-    CreateRandomGoldChests()
+    
+	local isDarkChest = false
+	if CP_Difficulty > 0 then
+		isDarkChest = true
+	end
+    CreateRandomGoldChests(isDarkChest)
 
     CreateChestOpener("Dario")
     CreateChestOpener("Pilgrim")

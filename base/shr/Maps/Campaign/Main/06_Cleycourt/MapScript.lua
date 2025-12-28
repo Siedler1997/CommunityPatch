@@ -164,8 +164,8 @@ function Mission_FirstMapAction()
 --	EnableDebugging()
 	if CP_Difficulty > 0 then
 		if CP_Difficulty == 1 then
-			CreateRandomChests()
-			CreateRandomGoldChests()
+			CreateRandomChests(true)
+			CreateRandomGoldChests(true)
 			Logic.CreateEntity(Entities.PB_Tower2,8100,15000,0,7)
 		else
 			CP_HardTaxes = true

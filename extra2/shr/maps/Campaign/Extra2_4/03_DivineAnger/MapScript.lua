@@ -202,7 +202,7 @@ function Mission_FirstMapAction()
 				end
 			end
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 		end
 	else
 		CreateRandomChests()

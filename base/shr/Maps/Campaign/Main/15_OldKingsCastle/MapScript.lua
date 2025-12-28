@@ -212,10 +212,10 @@ function Mission_FirstMapAction()
 			local bossID5 = AI.Entity_CreateFormation(3,Entities.CU_LeaderOutlaw1,0,0,37300,4800,0,0,3,0)
 			LookAt(bossID5, "camp_fire2")
 		else
-			CreateRandomGoldChests()
-			CreateRandomChests()
+			CreateRandomGoldChests(true)
+			CreateRandomChests(true)
 		end
-
+		ReplaceEntity("GateKey1", Entities.XD_DarkChestClose)
 	end
 
 	RaidersCreate({player = 3, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Europe, samount = (2 + CP_Difficulty), ramount = (7 + CP_Difficulty * 2)})

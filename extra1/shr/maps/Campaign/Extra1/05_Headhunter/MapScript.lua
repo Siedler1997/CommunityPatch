@@ -140,7 +140,7 @@ function FirstMapAction()
 				ReplaceEntity("cannon"..i, Entities.PV_Cannon3)
 			end
 		else
-			CreateRandomGoldChests()
+			CreateRandomGoldChests(true)
 		end
 	else
 		CreateRandomGoldChests()

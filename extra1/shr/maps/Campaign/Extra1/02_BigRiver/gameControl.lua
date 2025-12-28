@@ -2,8 +2,12 @@
 function beginChapterOne()
 
 	if CP_Difficulty < 2 then
-        CreateRandomGoldChests()
-        CreateRandomChests()
+		local isDarkChest = false
+		if CP_Difficulty > 0 then
+			isDarkChest = true
+		end
+        CreateRandomGoldChests(isDarkChest)
+        CreateRandomChests(isDarkChest)
     end
 
     CreateChestOpener("Dario")

@@ -217,7 +217,7 @@ function Mission_FirstMapAction()
 				Logic.CreateEntity(Entities.XD_RuinMonastery2,vc2pos.X,vc2pos.Y,270,0)
 			else
 				Logic.CreateEntity(Entities.PB_DarkTower2, 8800, 28640, 0, 2);
-				CreateRandomChests()
+				CreateRandomChests(true)
 			end
 			
 			

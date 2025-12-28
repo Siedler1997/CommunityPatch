@@ -231,7 +231,7 @@ function Mission_FirstMapAction()
 				GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen1"))
 				GUI.UpgradeSingleBuilding(GetEntityId("ArmyGen2"))	
 			else
-				CreateRandomChests()
+				CreateRandomChests(true)
 			end
 
 		else

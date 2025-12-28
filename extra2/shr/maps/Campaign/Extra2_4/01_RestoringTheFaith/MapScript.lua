@@ -230,7 +230,7 @@ function Mission_FirstMapAction()
 			Logic.CreateEntity(Entities.PB_DarkTower3, 20000, 47300, 0, 2);
 			Logic.CreateEntity(Entities.PB_DarkTower3, 25200, 46700, 0, 2);
 		else
-			CreateRandomChests()
+			CreateRandomChests(true)
 
 			Logic.CreateEntity(Entities.PB_DarkTower2, 20000, 47300, 0, 2);
 			Logic.CreateEntity(Entities.PB_DarkTower2, 25200, 46700, 0, 2);

@@ -11,7 +11,11 @@ function start1stChapter()
 	CreateChestOpener("Quintos")
 	CreateChestOpener("Mirai")
 	if CP_Difficulty < 2 then
-		CreateRandomGoldChests()
+		local isDarkChest = false
+		if CP_Difficulty > 0 then
+			isDarkChest = true
+		end
+		CreateRandomGoldChests(isDarkChest)
 	end
 	StartChestQuest()
 	
