@@ -858,6 +858,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Verwendung: siehe Kommentar in 'Comforts.lua'
 		- 'SetAlarmModeForAI' und 'ChangePlayersPlayerID' by Noigi
 		- 'GetTrueTaxMultiplier(_pID)': Gibt den Steuermultiplikator zurück
+		- 'RemoveValueFromTable(table, value)': Entfernt einen bestimmten Wert aus einem table 
 - Bekannte Bugs & Einschränkungen
 	- Der Drache ist unsichtbar
 		- Grund: zu viele Bones im Modell und dadurch nicht vom Spiel darstellbar
@@ -886,7 +887,8 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Helias: Bekehrung von Nephilims reverten?
+- Bug: Leibeigene resetten sich dauernd:
+	- liegt vmtl. am CLeaderBehavior, also zurücksetzen?
 - Neue Spielerfarben: Olivgrün, Braun, Dunkelrot und Dunkellila
 - Bug: KIs können einige (neue) Einheiten nicht rekrutieren 
 	- Banditen-Axtkämpfer
@@ -907,6 +909,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Adaptive: abhängig vom Spieler, um diesen zu kontern
 	- Integrationen: SetupPlayerAi
 - Kampagne nochmal überarbeiten
+	- KIs nutzen für SetupAI z.T. kein rebuild
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
 	- Scout bei Mapstart setzen
@@ -918,7 +921,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 		- Basegame
 			- Die große Seuche: Mary als Gegner
 			- Evelance: Regen kann auch hier schon Leos Kanonen zerstören (Konsequenzen fürs Finale!)?
-			- Wasteland-Dörfer: Namen im Auftragsbuch
 			- Schlacht um Evelance: Vorposten Kaserne/Schießplatz/Kanonengießerei geben
 		- Extra1
 			- 07_FleeOrFight

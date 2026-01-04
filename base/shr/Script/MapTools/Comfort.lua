@@ -2679,3 +2679,12 @@ function ChangePlayersPlayerID(_newPlayer)
 	Logic.PlayerSetIsHumanFlag( _newPlayer, 1 );
 	Logic.PlayerSetGameStateToPlaying( _newPlayer );
 end
+
+function RemoveValueFromTable(tbl, val) 
+    for i,v in pairs(tbl) do
+        if v == val then
+            table.remove(tbl,i)
+            break
+        end
+    end
+end

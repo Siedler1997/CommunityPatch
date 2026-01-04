@@ -13,7 +13,7 @@ CP_Difficulty = 0
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called from main script to initialize the diplomacy states
 function Mission_InitDiplomacy()
-	Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
+	--Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
 end
@@ -24,18 +24,20 @@ function Mission_InitPlayerColorMapping()
 
 	local p1color = GetPlayerPreferredColor()
 	Display.SetPlayerColorMapping(1, p1color)
+	Display.SetPlayerColorMapping(2, KERBEROS_COLOR)
 	
-	if p1color ~= 6 then
-		Display.SetPlayerColorMapping(2,ENEMY_COLOR2)
-	end
 	Display.SetPlayerColorMapping(3,ARIS_ROBBERS)
-	if p1color ~= 4 then
-		Display.SetPlayerColorMapping(4,FRIENDLY_COLOR1)
+	Display.SetPlayerColorMapping(4,FRIENDLY_COLOR2)
+	if p1color ~= 5 then
+		Display.SetPlayerColorMapping(5,BARBARIAN_COLOR)
 	else
-		Display.SetPlayerColorMapping(4,9)
+		Display.SetPlayerColorMapping(5,ENEMY_COLOR2)
 	end
-	Display.SetPlayerColorMapping(5,KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(6,FRIENDLY_COLOR2)
+	if p1color ~= 3 then
+		Display.SetPlayerColorMapping(6,BARMECIA_COLOR)
+	else
+		Display.SetPlayerColorMapping(6,PLAYER_FRIEND_COLOR)
+	end
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
 	Display.SetPlayerColorMapping(8,NPC_COLOR)
 end
@@ -57,11 +59,17 @@ function Mission_InitTechnologies()
 			animalTech2 = true
 		end
 		ResearchAnimalTechs(2, animalTech2)
+		ResearchAnimalTechs(3, animalTech2)
+		ResearchAnimalTechs(4, animalTech2)
 		ResearchAnimalTechs(5, animalTech2)
+		ResearchAnimalTechs(6, animalTech2)
 		ResearchAnimalTechs(7, animalTech2)
 
 		ResearchAllMilitaryTechs(2)
+		ResearchAllMilitaryTechs(3)
+		ResearchAllMilitaryTechs(4)
 		ResearchAllMilitaryTechs(5)
+		ResearchAllMilitaryTechs(6)
 		ResearchAllMilitaryTechs(7)
 	end
 end
@@ -124,6 +132,7 @@ function Mission_FirstMapAction()
 	IncludeLocals("briefing_prelude")
 	IncludeLocals("briefing_rain")
 	IncludeLocals("briefing_fugitive")
+	IncludeLocals("briefing_fugitive2")
 	IncludeLocals("briefing_buildup")
 	IncludeLocals("briefing_dryvillage")
 	IncludeLocals("briefing_swamp")
@@ -139,10 +148,13 @@ function Mission_FirstMapAction()
 	IncludeLocals("quest_weathermaster")
 	IncludeLocals("quest_buildAlchemy")
 	
-	
+	IncludeLocals("army_PlayerAttack")
 	IncludeLocals("army_centeroutpost")
 	IncludeLocals("army_leftfortress")
 	IncludeLocals("army_rightfortress")
+	IncludeLocals("army_p4defense")
+	IncludeLocals("army_p5defense")
+	IncludeLocals("army_p6defense")
 
        IncludeLocals("Cutscene_Control")
        
@@ -188,7 +200,7 @@ function Mission_FirstMapAction()
 				end
 			end
 
-			local towers2 = { Logic.GetPlayerEntities(5, Entities.PB_DarkTower2, 4, 0) }
+			local towers2 = { Logic.GetPlayerEntities(2, Entities.PB_DarkTower2, 10, 0) }
 			for i = 1, table.getn(towers2) do
 				if IsExisting(towers2[i]) then
 					ReplaceEntity(towers2[i], Entities.PB_DarkTower3)
@@ -204,6 +216,10 @@ function Mission_FirstMapAction()
 			local bosspos2 = GetPosition("KI2_SpawnPos")
 			local bossID2 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,(bosspos2.X - 300),(bosspos2.Y + 0),0,0,3,0)
 			LookAt(bossID2, "Banned_Info_NPC")
+		
+			local bosspos3 = GetPosition("KI1_DefensePos")
+			local bossID3 = AI.Entity_CreateFormation(7,Entities.CU_VeteranCaptain,0,0,bosspos3.X,bosspos3.Y,0,0,3,0)
+			LookAt(bossID3, "p2beauty")
 
 			ReplaceEntity("start_1", Entities.PB_Headquarters1)
 		else
@@ -212,7 +228,7 @@ function Mission_FirstMapAction()
 		end
 
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
-		ReplaceEntity("KI3_HQ", Entities.PB_Headquarters2)
+		ReplaceEntity("KI3_HQ", Entities.PB_Outpost2)
 	end
 		
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
@@ -228,6 +244,25 @@ function Mission_FirstMapAction()
 
 	--StartSimpleJob("GetMousePos")
 	--Tools.ExploreArea(-1, -1, 900)
-	--ResearchAllMilitaryTechs(1, true)
+	--[[
+	ResearchAllUniversityTechnologies(1)
+	ResearchAllMilitaryTechs(1, true)
+	ResearchTechnology( Technologies.B_Weathermachine );
+	ResearchTechnology( Technologies.B_PowerPlant );
+	GlobalMissionScripting.GiveResouces(1, 100000, 100000, 100000, 100000, 50000, 50000)
+	for i=1,3 do
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, 1)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderSword, 1)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderBow, 1)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierPoleArm, 1)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierSword, 1)
+		Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierBow, 1)
+	end
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderCavalry, 1)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderHeavyCavalry, 1)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierCavalry, 1)
+	Logic.UpgradeSettlerCategory(UpgradeCategories.SoldierHeavyCavalry, 1)
+	--]]
 	--SetPosition ("Dario", GetPosition("RainNPC"))
+	--CreateEntity(1, Entities.PU_Hero1, GetPosition("FugitiveTarget"))
 end

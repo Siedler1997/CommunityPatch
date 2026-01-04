@@ -3,7 +3,7 @@ setupArmyLeftFortress = function()
 	ArmyLeftFortress						= {}
 
 	ArmyLeftFortress.player 				= 2
-	ArmyLeftFortress.id						= 0
+	ArmyLeftFortress.id						= 3
 	ArmyLeftFortress.strength				= 6 + CP_Difficulty
 	ArmyLeftFortress.retreatStrength		= 1
 	ArmyLeftFortress.position				= GetPosition("KI1_DefensePos")
@@ -13,17 +13,18 @@ setupArmyLeftFortress = function()
 	ArmyLeftFortress.AllowedTypes 			= {	UpgradeCategories.LeaderPoleArm, 
 												UpgradeCategories.LeaderSword, 
 												UpgradeCategories.LeaderBow,
-												Entities.PV_Cannon3 }
+												UpgradeCategories.BlackKnightLeaderMace1,
+												Entities.PV_Cannon3a }
 
 	if CP_Difficulty == 0 then
 		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon2)
 	else
-		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon4)
+		table.insert(ArmyLeftFortress.AllowedTypes, Entities.PV_Cannon4a)
 	end
 
 	ArmyLeftFortress.Attack					= false
-	ArmyLeftFortress.AttackPos				= GetPosition("KI1_AttackPos")
 	ArmyLeftFortress.AttackAllowed			= false
+	ArmyLeftFortress.AttackPos				= GetPosition("KI1_DefensePos")
 
 
 	-- Setup army
@@ -36,14 +37,13 @@ setupArmyLeftFortress = function()
 	StartJob("ControlArmyLeftFortress")
 end
 
+--[[
 StartLeftFortress_Attack = function()
-
 	-- Begin attack
+	--ArmyLeftFortress.Attack = true
 	ArmyLeftFortress.AttackAllowed = true
-
 end
-
-
+--]]
 -----------------------------------------------------------------------------------------------------------------------
 --
 --	JOB: "ControlArmyLeftFortress"
@@ -58,6 +58,14 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_ControlArmyLeftFortress = function()
 	-------------------------------------------------------------------------------------------------------------------
+		local currentWeatherState = Logic.GetWeatherState()
+		if currentWeatherState == 3 or bringLifeToTreeDone == true then
+			--ArmyLeftFortress.Attack = true
+			ArmyLeftFortress.AttackAllowed = true
+		else
+			--ArmyLeftFortress.Attack = false
+			ArmyLeftFortress.AttackAllowed = false
+		end
 		TickOffensiveAIController(ArmyLeftFortress)
 		return false		
 	end

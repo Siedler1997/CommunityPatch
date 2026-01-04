@@ -2,8 +2,8 @@ setupArmyRightFortress = function()
 
 	ArmyRightFortress				= {}
 
-	ArmyRightFortress.player 		= 5
-	ArmyRightFortress.id			= 8
+	ArmyRightFortress.player 		= 2
+	ArmyRightFortress.id			= 4
 	ArmyRightFortress.strength		= 5 + CP_Difficulty
 	ArmyRightFortress.position		= GetPosition("KI3_DefensePos")
 	ArmyRightFortress.rodeLength	= 5000
@@ -21,14 +21,13 @@ setupArmyRightFortress = function()
 												{ Entities.PU_LeaderPoleArm2, 4},
 												{ Entities.PU_LeaderBow2, 4},
 												{ Entities.PU_LeaderSword2, 4},
-												{ Entities.PU_LeaderBow2, 4} }
+												{ Entities.PU_LeaderBow2, 4},
+												{ Entities.CU_BlackKnight_LeaderMace1, 4} }
 		
 		if CP_Difficulty == 1 then
-			table.insert(ArmyRightFortress.spawnTypes, { Entities.CU_BlackKnight_LeaderMace1, 4})
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon1, 1})
 		else
 			table.insert(ArmyRightFortress.spawnTypes, { Entities.PV_Cannon3a, 1})
-			table.insert(ArmyRightFortress.spawnTypes, { Entities.CU_BlackKnight_LeaderMace2, 6})
 		end
 	end
 

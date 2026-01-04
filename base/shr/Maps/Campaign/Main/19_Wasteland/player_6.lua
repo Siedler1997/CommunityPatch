@@ -1,7 +1,8 @@
-createPlayer5 = function()
+createPlayer6 = function()
 
-	local playerId = 5
-	Logic.SetPlayerName(5, "CM01_19_Wasteland_Txt/_Player5Name")
+	-- Setup ai
+	local playerId = 6
+	Logic.SetPlayerName(6, "CM01_19_Wasteland_Txt/_Player6Name")
 	
 	for i=1,2 do
 		Logic.UpgradeSettlerCategory(UpgradeCategories.LeaderPoleArm, playerId)

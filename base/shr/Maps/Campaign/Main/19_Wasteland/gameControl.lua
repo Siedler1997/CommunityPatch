@@ -1,3 +1,4 @@
+VillagesRemainNames = {}
 -------------------------------------------------------------------------------------------------------------------------
 --
 --									1st Quest:	reach mountain fortress(expedition)
@@ -9,7 +10,6 @@ start1stQuest = function()
 	Report("start 1st quest")
 
 	--	ai
-	
 	createPlayer2()
 	createPlayer3()
 	createPlayer4()
@@ -18,28 +18,42 @@ start1stQuest = function()
 	--createPlayer7()
 	
 	--	briefing
+	--	createBriefingMapStart()
 	
+	--	createQuestReachMountainFortress()
+	--	StartCutscene("Intro", createBriefingMapStart)
 
---	createBriefingMapStart()
-	
+
+	--	briefing
+	--	createBriefingPrelude()
+
+	Logic.ChangeAllEntitiesPlayerID(7, 1)
+
+	-- Attach soldiers
+	local i
+	for i=1,3 do
+		Tools.AttachSoldiersToLeader("P1_Leader"..i, 4)
+	end
+
+	--	briefingPrelude.refugee = GetID("NPC_Prelude")
+	--	EnableNpcMarker("NPC_Prelude")
+
 	--	quests
-	
---	createQuestReachMountainFortress()
---	StartCutscene("Intro", createBriefingMapStart)
+	VillagesRemainNames = {
+		XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player3Name"),
+		XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player4Name"),
+		XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player5Name"),
+		XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player6Name")
+	}
+	--start2ndQuest()	--unused
+	--start3rdQuest()	--Bring life to tree(rain)
+	start4thQuest()		--Rescue villagers
+	start6thQuest()		--Search allies
+	--createQuestBuildAlchemy()
+	createQuestSnow()
 
-	start2ndQuest() 
-	start4thQuest()
-	start6thQuest()
-	createQuestBuildAlchemy()
-	
---	EnableNpcMarker("weathermaster")
-	EnableNpcMarker("weathermaster_off")
-	EnableNpcMarker("Fugitive")
-
---	StartCutscene("Intro", createBriefingMapStart)
+	--	StartCutscene("Intro", createBriefingMapStart)
 	StartCutscene("Intro")
-	
-	
 end
 
 end1stQuest = function()
@@ -48,82 +62,52 @@ end1stQuest = function()
 	Report("end 1st quest")
 end	
 
-
--------------------------------------------------------------------------------------------------------------------------
-
-
-
-
 -------------------------------------------------------------------------------------------------------------------------
 --
---									2nd Quest:	Free village in the swamp(snow)
+--									2nd Quest:	Make winter
 --
 -------------------------------------------------------------------------------------------------------------------------
 
 start2ndQuest = function()
-				
-	Report("start 2nd quest")				
-			
-	--	briefing
+	Report("start 2nd quest")			
 	
---	createBriefingPrelude()
-
-	Logic.ChangeAllEntitiesPlayerID(7, 1)
-
-		-- Attach soldiers
-		local i
-		for i=1,3 do
-			Tools.AttachSoldiersToLeader("P1_Leader"..i, 4)
-		end
-
---		briefingPrelude.refugee = GetID("NPC_Prelude")
---		EnableNpcMarker("NPC_Prelude")
-
-	--	quests
+	-- Add new quest
+	Logic.AddQuest(
+		1,									
+		4,						
+		MAINQUEST_OPEN,		
+		"CM01_19_Wasteland_Txt/mainquest004_name_Snow",
+		"CM01_19_Wasteland_Txt/mainquest004_desc_Snow",			
+		1	
+	)
+	--already started
+	--createQuestSnow()
 	
---	createQuestSnow() SnowQuest erst nach SwampQuest
-
-	-- Enable BuildUpNPC
-	InitNPCLookAt("BuildUpNPC")
-	SetNPCLookAtTarget("BuildUpNPC",1)
-	EnableNpcMarker("BuildUpNPC")
-
-	InitNPCLookAt("Banned_Info_NPC")
-	SetNPCLookAtTarget("Banned_Info_NPC",1)
-	EnableNpcMarker("Banned_Info_NPC")
-
-	end
+	local Miner = Logic.GetEntityIDByName("weathermaster_off")
+	Logic.SetEntityName(Miner, "weathermaster")
+	
+	EnableNpcMarker("weathermaster")
+end
 
 -------------------------------------------------------------------------------------------------------------------------
 	
-end2ndQuest = function()	
+end2ndQuest = function()
 
 	Report("end 2nd quest")
-
---	ResolveBriefing(briefingPrelude[3])
-
+	
+	if briefingSwamp ~= nil then
+		ResolveBriefing(briefingSwamp[3])
+	end
+	
+	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player3Name"))
 	VillageDone()
 	
 	DisableNpcMarker("Banned_Info_NPC")
-	
-	-- Let serf run to heroes
-	EnableNpcMarker("SnowNPC")
+	SetNPCLookAtTarget("Banned_Info_NPC",0)
 
-	-- Start npc near tree
-	InitNPCLookAt("RainNPC")
-	SetNPCLookAtTarget("RainNPC",1)
-	SetNPCWaypoints("RainNPC", "RainNPCMove", 10)
-	EnableNpcMarker("RainNPC")
-
-	-- Give resources to player
-	Tools.GiveResouces(gvMission.PlayerID, 1000, 1000, 1000, 1000, 1000, 1000)
-	
-	Explore.Show("ShowSnowNPCPos", "SnowNPCPos", 6000)
-
-	start3rdQuest()
+	--start3rdQuest()
 end
-			
-
+	
 -------------------------------------------------------------------------------------------------------------------------
 --
 --									3rd Quest:	Bring life to tree(rain)
@@ -131,19 +115,10 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 
 start3rdQuest = function()
-
 	Report("start 3rd quest")
 
 	--	quests
-	
---RainQuest erst, nachdem Spieler mit Serf geredet hat
---		createQuestRain()
---	
-
-	-- Show dry village briefing
-	createBriefingDryVillage()
-
-
+	createQuestRain()
 end
 
 -------------------------------------------------------------------------------------------------------------------------
@@ -154,23 +129,55 @@ end3rdQuest = function()
 
 	ResolveBriefing(briefingDryVillage[2])
 		
-	
 	briefingRainFinished()
 		
 	-- Replace tree
 	ReplaceEntity("DeadTree", Entities.XD_TreeEvelance1)
 		
+	-- Build up done Bring life to tree done
+	bringLifeToTreeDone = true
+
 	-- Player 4 joins
+	local playerId = 4
 	if CP_Difficulty < 2 then
-		Logic.ChangeAllEntitiesPlayerID(4, 1)
+		Logic.ChangeAllEntitiesPlayerID(playerId, 1)
 	else
-		Logic.SetDiplomacyState( 1, 4, Diplomacy.Friendly )
-		Logic.SetShareExplorationWithPlayerFlag(1, 4, 1)
+		local aiDescription = {
+			serfLimit	=	4,
+			extracting	=	false,
+			rebuild	=	{
+				delay				=	15,
+				randomTime			=	15
+			},
+			resources = {
+				gold				=	2000,
+				clay				=	800,
+				iron				=	800,
+				sulfur				=	800,
+				stone				=	800,
+				wood				=	800
+			},
+			refresh = {
+				gold				=	50,
+				clay				=	20,
+				iron				=	20,
+				sulfur				=	20,
+				stone				=	20,
+				wood				=	20,
+				updateTime			=	5
+			}
+		}
+		SetupPlayerAi(playerId, aiDescription)
+
+		setupArmyP4Defense()
 	end
+	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
+	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
+	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
 	
+	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player4Name"))
 	VillageDone()
 end
-
 
 -------------------------------------------------------------------------------------------------------------------------
 --
@@ -178,34 +185,63 @@ end
 --
 -------------------------------------------------------------------------------------------------------------------------
 
-
 start4thQuest = function()
-
 	Report("start 4th quest")
 
 	--	quests
-	
 	createQuestRescueVillagers()
-
 end
 
 -------------------------------------------------------------------------------------------------------------------------
 
-end4thQuest = function()	
-
+end4thQuest = function()
 	Report("end 4th quest")
+	
+	if BriefingFugitive ~= nil then
+		ResolveBriefing(BriefingFugitive[2])
+	end
+	
+	-- Player 5 joins
+	local playerId = 5
+	if CP_Difficulty < 2 then
+		Logic.ChangeAllEntitiesPlayerID(playerId, 1)
+	else
+		local aiDescription = {
+			serfLimit	=	4,
+			extracting	=	false,
+			rebuild	=	{
+				delay				=	15,
+				randomTime			=	15
+			},
+			resources = {
+				gold				=	2000,
+				clay				=	800,
+				iron				=	800,
+				sulfur				=	800,
+				stone				=	800,
+				wood				=	800
+			},
+			refresh = {
+				gold				=	50,
+				clay				=	20,
+				iron				=	20,
+				sulfur				=	20,
+				stone				=	20,
+				wood				=	20,
+				updateTime			=	5
+			}
+		}
+		SetupPlayerAi(playerId, aiDescription)
 
-	-- Village done
+		setupArmyP5Defense()
+	end
+	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
+	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
+	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
+	
+	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player5Name"))
 	VillageDone()
-
---	ResolveBriefing(briefingPrelude[4])
-
--- TK kopplung an BuildupQuest raus
---	if talkedToBuildUpNPC == nil then
---		start5thQuest()
---	end
 end
-
 
 -------------------------------------------------------------------------------------------------------------------------
 --
@@ -213,50 +249,70 @@ end
 --
 -------------------------------------------------------------------------------------------------------------------------
 
-
 start5thQuest = function()
-
 	Report("start 5th quest")
 
 	--	quests
-	
 	createQuestBuildUpVillage()
 
 	-- 	briefing
 	createBriefingBuildUp()
-
 end
 
 -------------------------------------------------------------------------------------------------------------------------
 
-end5thQuest = function()	
-
+end5thQuest = function()
 	Report("end 5th quest")
-
-	-- Village done
-	VillageDone()
 
 	-- Build up done
 	buildUpDone = true
 	
 	-- Change player
+	local playerId = 6
 	if CP_Difficulty < 2 then
-		Logic.ChangeAllEntitiesPlayerID(6, 1)
-	else	
-		Logic.SetDiplomacyState( 1, 6, Diplomacy.Friendly )
-		Logic.SetShareExplorationWithPlayerFlag(1, 6, 1)
+		ChangePlayer("BuildUpNPC", 8)
+		Logic.ChangeAllEntitiesPlayerID(playerId, 1)
+		ChangePlayer("BuildUpNPC", playerId)
+		Move("BuildUpNPC", "BuildUpNPC_TargetPos")
+	else
+		local aiDescription = {
+			serfLimit	=	4,
+			extracting	=	false,
+			rebuild	=	{
+				delay				=	15,
+				randomTime			=	15
+			},
+			resources = {
+				gold				=	2000,
+				clay				=	800,
+				iron				=	800,
+				sulfur				=	800,
+				stone				=	800,
+				wood				=	800
+			},
+			refresh = {
+				gold				=	50,
+				clay				=	20,
+				iron				=	20,
+				sulfur				=	20,
+				stone				=	20,
+				wood				=	20,
+				updateTime			=	5
+			}
+		}
+		SetupPlayerAi(playerId, aiDescription)
 
-		local pos = GetPosition("BuildUpQuestPos")
-		local Data = { Logic.GetPlayerEntitiesInArea(1, Entities.PB_Residence3, pos.X, pos.Y, 6400, 6)};
-		for i=2, Data[1]+1 do
-			ChangePlayer(Data[i],4)
-		end
+		setupArmyP6Defense()
 	end
+	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
+	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
+	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
 	
 	ResolveBriefing(briefingBuildUp[2])
-	
-	end
 
+	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player6Name"))
+	VillageDone()
+end
 
 -------------------------------------------------------------------------------------------------------------------------
 --
@@ -264,44 +320,38 @@ end5thQuest = function()
 --
 -------------------------------------------------------------------------------------------------------------------------
 
-
 start6thQuest = function()
-
 	Report("start 6th quest")
 
 	--	quests
 	
 	createQuestSearchAllies()
-
-
-
 end
 
 -------------------------------------------------------------------------------------------------------------------------
 
-end6thQuest = function()	
-
+end6thQuest = function()
 	Report("end 6th quest")
+
 	SearchAlliesDone()
-	
-	end
+end
 
 -------------------------------------------------------------------------------------------------------------------------
 
 VillageDone = function()
-
 	-- No counter
 	if VillageDoneCount == nil then
 		VillageDoneCount = 1
 	else
 		VillageDoneCount = VillageDoneCount + 1
 	end
+	--string.format(XString.Key("mainquest006_desc_SearchAllies"), XGUIEng.GetStringTableText("MenuGeneric/Female_Salut_Generic"))
+	--Logic.SetSubQuestDoneFlag(	1,	6,	(VillageDoneCount-1),	1,	1) 
 
-	Logic.SetSubQuestDoneFlag(	1,	6,	(VillageDoneCount-1),	1,	1) 
-
-	-- All four rescued mission is done
-	if VillageDoneCount == 4 then
-			
+	if VillageDoneCount < 4 then
+		UpdateSearchAllies()
+	else
+		-- All four rescued missions are done
 		end6thQuest()	
 		StartCutscene("MissionComplete")	
 		Victory()
@@ -315,7 +365,6 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 
 start1stSubQuest = function()
-
 	Report("start 1st sub quest")
 
 	--	quest
@@ -328,12 +377,10 @@ start1stSubQuest = function()
 end
 
 end1stSubQuest = function()
-
 	Report("end 1st sub quest")
 
 	-- Let it snow
 	Logic.AddWeatherElement(3, 1000000000, 0, 3, 5, 10)
-	
 end
 
 -------------------------------------------------------------------------------------------------------------------------
@@ -348,7 +395,18 @@ GameCallback_NPCInteraction = function(_heroId,_npcId)
 
 	-- Hero is talking to build up npc
 
-	if _npcId == GetID("BuildUpNPC") then
+	if _npcId == GetID("SnowNPC") then
+
+		-- already done
+		if talkedToSnowNPC == nil then
+
+			-- Build up briefing...quest must be generated seperatly
+			createBriefingDryVillage()
+			
+			talkedToSnowNPC = true
+		end
+		
+	elseif _npcId == GetID("BuildUpNPC") then
 
 		-- already done
 		if talkedToBuildUpNPC == nil then
@@ -366,7 +424,7 @@ GameCallback_NPCInteraction = function(_heroId,_npcId)
 
 			-- Rain briefing...quest must be generated seperatly
 			createBriefingRain(_heroId)
-			createQuestRain()
+			start3rdQuest()
 			talkedToRainNPC = true
 		end
 		
@@ -388,8 +446,18 @@ GameCallback_NPCInteraction = function(_heroId,_npcId)
 
 			-- Rain briefing...quest must be generated seperatly
 			createBriefingFugitive()
-			
 			talkedToFugitiveNPC = true
+		end
+
+	elseif _npcId == GetID("Fugitive2") then	
+
+		-- already done
+		if talkedToFugitiveNPC2 == nil then
+
+			-- Rain briefing...quest must be generated seperatly
+			createBriefingFugitive2()
+			
+			talkedToFugitiveNPC2 = true
 		end
 		
 	elseif _npcId == GetID("weathermaster") then	

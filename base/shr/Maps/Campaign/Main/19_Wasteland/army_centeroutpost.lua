@@ -2,8 +2,8 @@ setupArmyCenterOutpost = function()
 
 	ArmyCenterOutpost		= {}
 
-	ArmyCenterOutpost.player 			= 5
-	ArmyCenterOutpost.id				= 0
+	ArmyCenterOutpost.player 			= 2
+	ArmyCenterOutpost.id				= 1
 	ArmyCenterOutpost.strength			= 4
 	ArmyCenterOutpost.position			= GetPosition("KI2_SpawnPos")
 	ArmyCenterOutpost.rodeLength		= 2500
@@ -13,6 +13,7 @@ setupArmyCenterOutpost = function()
 		ArmyCenterOutpost.spawnTypes 		= { { Entities.PU_LeaderCavalry2, 3},
 													{ Entities.PU_LeaderHeavyCavalry2, 3},
 													{ Entities.PU_LeaderBow3, 12},
+													{ Entities.CU_BlackKnight_LeaderMace2, 12},
 													{ Entities.PV_Cannon3a, 0} }
 	else
 		if CP_Difficulty == 1 then
@@ -36,7 +37,7 @@ setupArmyCenterOutpost = function()
 	ArmyCenterOutpost.endless			= true
 
 	-- Attack parameter
-	ArmyCenterOutpost.retreatStrength	= 2
+	ArmyCenterOutpost.retreatStrength	= 0
 
 	ArmyCenterOutpost.baseDefenseRange	= 2000
 	ArmyCenterOutpost.outerDefenseRange	= 4000
@@ -57,13 +58,13 @@ setupArmyCenterOutpost = function()
 	StartJob("ControlArmyCenterOutpost")
 end
 
+--[[
 StartCenterOutpost_Attack = function()
-
 	-- Begin attack
+	--ArmyCenterOutpost.Attack = true
 	ArmyCenterOutpost.AttackAllowed = true
-
 end
-
+--]]
 -----------------------------------------------------------------------------------------------------------------------
 --
 --	JOB: "ControlArmyLeftFortress"
@@ -78,6 +79,14 @@ end
 	-------------------------------------------------------------------------------------------------------------------
 	Action_ControlArmyCenterOutpost = function()
 	-------------------------------------------------------------------------------------------------------------------
+		local currentWeatherState = Logic.GetWeatherState()
+		if currentWeatherState == 3 or buildUpDone == true then
+			--ArmyCenterOutpost.Attack = true
+			ArmyCenterOutpost.AttackAllowed = true
+		else
+			--ArmyCenterOutpost.Attack = false
+			ArmyCenterOutpost.AttackAllowed = false
+		end
 		TickOffensiveAIController(ArmyCenterOutpost)
 		return false		
 	end

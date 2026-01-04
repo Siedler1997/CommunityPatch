@@ -347,6 +347,6 @@ function Mission_EndMovie()
 	--Display_SetDefaultValues()
 	Display.SetFarClipPlaneMinAndMax(0, 0) --0,12000
 	CutsceneDone()
-	
+
 end
 
