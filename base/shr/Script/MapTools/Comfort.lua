@@ -1906,6 +1906,8 @@ function ResearchAllMilitaryTechs(_PlayerId, _SuperTech)
 	ResearchTechnology( Technologies.T_EnhancedGunPowder, _PlayerId );
 	ResearchTechnology( Technologies.T_BlisteringCannonballs, _PlayerId );
 
+	ResearchTechnology( Technologies.T_Tracking, _PlayerId );
+	ResearchTechnology( Technologies.T_TownGuard, _PlayerId );
 	ResearchTechnology( Technologies.T_Loom, _PlayerId );
 	ResearchTechnology( Technologies.T_Shoes, _PlayerId );
 	
