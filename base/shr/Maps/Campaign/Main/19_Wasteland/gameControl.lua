@@ -15,7 +15,7 @@ start1stQuest = function()
 	createPlayer4()
 	createPlayer5()
 	createPlayer6()
-	--createPlayer7()
+	createPlayer8()
 	
 	--	briefing
 	--	createBriefingMapStart()
@@ -174,6 +174,7 @@ end3rdQuest = function()
 	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
 	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
 	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( playerId, 8, Diplomacy.Hostile )
 	
 	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player4Name"))
 	VillageDone()
@@ -238,6 +239,7 @@ end4thQuest = function()
 	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
 	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
 	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( playerId, 8, Diplomacy.Hostile )
 	
 	RemoveValueFromTable(VillagesRemainNames, XGUIEng.GetStringTableText("CM01_19_Wasteland_Txt/_Player5Name"))
 	VillageDone()
@@ -270,9 +272,8 @@ end5thQuest = function()
 	-- Change player
 	local playerId = 6
 	if CP_Difficulty < 2 then
-		ChangePlayer("BuildUpNPC", 8)
 		Logic.ChangeAllEntitiesPlayerID(playerId, 1)
-		ChangePlayer("BuildUpNPC", playerId)
+		ChangePlayer("BuildUpNPC", 6)
 		Move("BuildUpNPC", "BuildUpNPC_TargetPos")
 	else
 		local aiDescription = {
@@ -307,6 +308,7 @@ end5thQuest = function()
 	Logic.SetDiplomacyState( 1, playerId, Diplomacy.Friendly )
 	Logic.SetShareExplorationWithPlayerFlag(1, playerId, 1)
 	Logic.SetDiplomacyState( playerId, 2, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( playerId, 8, Diplomacy.Hostile )
 	
 	ResolveBriefing(briefingBuildUp[2])
 

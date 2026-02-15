@@ -2,7 +2,7 @@ setupArmyCenterOutpost = function()
 
 	ArmyCenterOutpost		= {}
 
-	ArmyCenterOutpost.player 			= 2
+	ArmyCenterOutpost.player 			= 8
 	ArmyCenterOutpost.id				= 1
 	ArmyCenterOutpost.strength			= 4
 	ArmyCenterOutpost.position			= GetPosition("KI2_SpawnPos")

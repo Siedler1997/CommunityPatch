@@ -16,6 +16,7 @@ function Mission_InitDiplomacy()
 	--Logic.SetDiplomacyState( 1, 5, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 2, Diplomacy.Hostile )
 	Logic.SetDiplomacyState( 1, 7, Diplomacy.Hostile )
+	Logic.SetDiplomacyState( 1, 8, Diplomacy.Hostile )
 end
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- This function is called to set the player colors
@@ -39,7 +40,7 @@ function Mission_InitPlayerColorMapping()
 		Display.SetPlayerColorMapping(6,PLAYER_FRIEND_COLOR)
 	end
 	Display.SetPlayerColorMapping(7,KERBEROS_COLOR)
-	Display.SetPlayerColorMapping(8,NPC_COLOR)
+	Display.SetPlayerColorMapping(8,KERBEROS_COLOR)
 end
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -64,6 +65,7 @@ function Mission_InitTechnologies()
 		ResearchAnimalTechs(5, animalTech2)
 		ResearchAnimalTechs(6, animalTech2)
 		ResearchAnimalTechs(7, animalTech2)
+		ResearchAnimalTechs(8, animalTech2)
 
 		ResearchAllMilitaryTechs(2)
 		ResearchAllMilitaryTechs(3)
@@ -71,6 +73,7 @@ function Mission_InitTechnologies()
 		ResearchAllMilitaryTechs(5)
 		ResearchAllMilitaryTechs(6)
 		ResearchAllMilitaryTechs(7)
+		ResearchAllMilitaryTechs(8)
 	end
 end
 
@@ -127,6 +130,7 @@ function Mission_FirstMapAction()
 	IncludeLocals("player_5")
 	IncludeLocals("player_6")
 	IncludeLocals("player_7")
+	IncludeLocals("player_8")
 
 	IncludeLocals("briefing_mapstart")
 	IncludeLocals("briefing_prelude")
@@ -228,7 +232,7 @@ function Mission_FirstMapAction()
 		end
 
 		ReplaceEntity("vc_player", Entities.PB_VillageCenter1)
-		ReplaceEntity("KI3_HQ", Entities.PB_Outpost2)
+		--ReplaceEntity("KI3_HQ", Entities.PB_Outpost2)
 	end
 		
 	RaidersCreate({player = 7, pos = "rudelpos1", revier = {"rudelpos1", "rudelpos1_wp1", "rudelpos1_wp2"}, range = 3500, types = RaidersDefaultSets.Evelance, samount = (2 + CP_Difficulty), ramount = (6 + CP_Difficulty * 2)})
@@ -265,4 +269,5 @@ function Mission_FirstMapAction()
 	--]]
 	--SetPosition ("Dario", GetPosition("RainNPC"))
 	--CreateEntity(1, Entities.PU_Hero1, GetPosition("FugitiveTarget"))
+	--SetHealth("NPC_HQInfo", 50)
 end

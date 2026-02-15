@@ -1,7 +1,7 @@
 setupArmyAttackPlayerA = function()
 	ArmyAttackPlayerA					= {}
 
-	ArmyAttackPlayerA.player 			= 	2
+	ArmyAttackPlayerA.player 			= 	8
 	ArmyAttackPlayerA.id				= 	2
 	ArmyAttackPlayerA.strength			=	4 + 2*CP_Difficulty
 	ArmyAttackPlayerA.position			= 	GetPosition("KI3_DefensePos")
@@ -15,14 +15,14 @@ setupArmyAttackPlayerA = function()
 												{ Entities.PV_Cannon2, 4},
 												{ Entities.PU_LeaderPoleArm2, 4} }
 	else
-		ArmyAttackPlayerA.spawnTypes 		= { { Entities.PU_LeaderPoleArm2, 4},
-												{ Entities.PU_LeaderSword2, 4},
-												{ Entities.PU_LeaderSword2, 4},
-												{ Entities.PU_LeaderBow2, 4},
-												{ Entities.PU_LeaderBow2, 4},
-												{ Entities.CU_BlackKnight_LeaderMace1, 4},
-												{ Entities.PV_Cannon4a, 4},
-												{ Entities.PU_LeaderPoleArm2, 4} }
+		ArmyAttackPlayerA.spawnTypes 		= { { Entities.PU_LeaderPoleArm3, 6},
+												{ Entities.PU_LeaderSword3, 6},
+												{ Entities.PU_LeaderSword3, 6},
+												{ Entities.PU_LeaderBow3, 6},
+												{ Entities.PU_LeaderBow3, 6},
+												{ Entities.CU_BlackKnight_LeaderMace2, 6},
+												{ Entities.PV_Cannon4a, 1},
+												{ Entities.PU_LeaderPoleArm3, 6} }
 	end
     
 	ArmyAttackPlayerA.respawnTime       =   60*(20-5*CP_Difficulty)
