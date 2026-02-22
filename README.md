@@ -887,13 +887,14 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Bug: Leibeigene regenerieren keine HP
-- Neue Spielerfarben: Olivgrün, Braun, Dunkelrot und Dunkellila
-- Bug: KIs können einige (neue) Einheiten nicht rekrutieren 
-	- Banditen-Axtkämpfer
-	- Nebelkrieger
-	- Alle(?) neuen Einheiten
-	- vermutlich hardcoded...
+- Bugs
+	- Leibeigene regenerieren keine HP
+	- KIs können einige (neue) Einheiten nicht rekrutieren 
+		- Banditen-Axtkämpfer
+		- Nebelkrieger
+		- Alle(?) neuen Einheiten
+		- vermutlich hardcoded...
+	- Kostenanzeige für den Kauf von Soldaten falsch (je nach Tech Level)
 - Verbesserte KI
 	- Advanced Settings
 		- zufällige Soldatenzahl und XP
@@ -934,7 +935,6 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- 'Thalbach' neu aufsetzen
 		- Extra2
 			- Hauptspiel-Kampagne in extra2: AddOn-Features sinnvoll einbinden
-- Korrekte Kostenanzeige für den Kauf von Soldaten
 - Eigene Texturen für
 	- Tech-Trader
 	- Veteranen
@@ -955,6 +955,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## Weitere Ideen:
+- Neue Spielerfarben: Olivgrün, Braun, Dunkelrot und Dunkellila
 - Unused CU_TemplarCavalry und CU_TemplarSword
 	- Fixen
 	- Vollständig implementieren
