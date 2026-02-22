@@ -909,6 +909,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 			- Adaptive: abhängig vom Spieler, um diesen zu kontern
 	- Integrationen: SetupPlayerAi
 - Kampagne nochmal überarbeiten
+	- Player 0 für Mauern nutzen
 	- KIs nutzen für SetupAI z.T. kein rebuild
 	- KI-Helden sollen neue Fähigkeiten nutzen
 	- Holzhaufen verteilen
