@@ -795,7 +795,7 @@ GUIAction_WorkerFeedbackBySelection( _WorkerID )
 			and Motivation < gvGUI.MotivationThresholds.Angry 
 			then	
 				SoundID = Sounds.VoicesWorker_WORKER_Unhappy_rnd_01	
-	elseif TaxLevel == 4 then
+	elseif TaxLevel == 4 or TaxLevel == 6 then
 		SoundID = Sounds.VoicesWorker_WORKER_TaxesToHigh_rnd_01
 	
 	elseif WorkID == 0 then
