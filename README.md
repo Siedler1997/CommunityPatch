@@ -887,8 +887,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 
 
 ## ToDos:
-- Bug: Leibeigene resetten sich dauernd:
-	- liegt vmtl. am CLeaderBehavior, also zurücksetzen?
+- Bug: Leibeigene regenerieren keine HP
 - Neue Spielerfarben: Olivgrün, Braun, Dunkelrot und Dunkellila
 - Bug: KIs können einige (neue) Einheiten nicht rekrutieren 
 	- Banditen-Axtkämpfer

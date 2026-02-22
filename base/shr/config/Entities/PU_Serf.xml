@@ -180,8 +180,8 @@
 		  </Logic>
 	</Behavior>
 	<Behavior>
-		  <Logic classname="GGL::CLeaderBehaviorProps">
-			  <Class>GGL::CLeaderBehavior</Class>
+		  <Logic classname="GGL::CSerfBattleBehaviorProps">
+			  <Class>GGL::CSerfBattleBehavior</Class>
 
 				<BattleTaskList>TL_BATTLE</BattleTaskList>
            
