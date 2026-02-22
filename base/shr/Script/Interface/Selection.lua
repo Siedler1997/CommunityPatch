@@ -513,7 +513,7 @@ function GameCallback_GUI_SelectionChanged()
 			end
 			
 			
-			if gvGUI.FunnyCommentsSelectionCounter >= 24 then
+			if gvGUI.FunnyCommentsSelectionCounter >= 32 then
 				Sound.PlayQueuedFeedbackSound(FunnyComment,127)				
 				SelectionSound = 0
 				gvGUI.FunnyCommentsSelectionCounter = 0

@@ -671,7 +671,7 @@ Mit folgenden Schritten lässt sich der Patch installieren:
 	- Alarm: Wird dabei gleichzeitig [Strg] gedrückt gehalten, werden zusätzlich auch alle Leibeigenen zu den Waffen gerufen
 		- Beim Beenden des Alarms können auf dem gleichen Weg alle Milizsoldaten wieder zu Leibeigenen werden
 	- FunnyComments und Gebäude-Selektionssound ertönen deutlich seltener
-		- Statt jede 8te nur noch jede 24te Selektion
+		- Statt jede 8te nur noch jede 32te Selektion
 	- Predigten rebalanced
 		- Priester arbeiten nur halb so schnell bzw. erzeugen nur halb so schnell 'Faith'
 		- Predigten 
